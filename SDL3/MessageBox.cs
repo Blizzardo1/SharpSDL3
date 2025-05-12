@@ -57,23 +57,23 @@ public static partial class MessageBox {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
 
-        object[] yes = ["Yes", MessageBoxResult.Yes];
-        object[] no = ["No", MessageBoxResult.No];
-        object[] cancel = ["Cancel", MessageBoxResult.Cancel];
-        object[] ok = ["Ok", MessageBoxResult.OK];
-        object[] retry = ["Retry", MessageBoxResult.Retry];
-        object[] ignore = ["Ignore", MessageBoxResult.Ignore];
-        object[] abort = ["Abort", MessageBoxResult.Abort];
-        object[] tryAgain = ["Try Again", MessageBoxResult.TryAgain];
-        object[] continueButton = ["Continue", MessageBoxResult.Continue];
-        object[] ignoreAll = ["Ignore All", MessageBoxResult.Ignore];
-        object[] noToAll = ["No To All", MessageBoxResult.OK];
+        object[] yes = ["Yes", MessageBoxResult.Yes, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] no = ["No", MessageBoxResult.No, MessageBoxDefaultButton.EscapeKeyDefault];
+        object[] cancel = ["Cancel", MessageBoxResult.Cancel, MessageBoxDefaultButton.EscapeKeyDefault];
+        object[] ok = ["Ok", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] retry = ["Retry", MessageBoxResult.Retry, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] ignore = ["Ignore", MessageBoxResult.Ignore, MessageBoxDefaultButton.EscapeKeyDefault];
+        object[] abort = ["Abort", MessageBoxResult.Abort, MessageBoxDefaultButton.EscapeKeyDefault];
+        object[] tryAgain = ["Try Again", MessageBoxResult.TryAgain, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] continueButton = ["Continue", MessageBoxResult.Continue, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] ignoreAll = ["Ignore All", MessageBoxResult.Ignore, MessageBoxDefaultButton.EscapeKeyDefault];
+        object[] noToAll = ["No To All", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] yesToAll = ["Yes To All", MessageBoxResult.OK];
         object[] help = ["Help", MessageBoxResult.OK];
-        object[] close = ["Close", MessageBoxResult.OK];
-        object[] apply = ["Apply", MessageBoxResult.OK];
-        object[] save = ["Save", MessageBoxResult.OK];
-        object[] reset = ["Reset", MessageBoxResult.OK];
+        object[] close = ["Close", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] apply = ["Apply", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] save = ["Save", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] reset = ["Reset", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
 
         // With the following corrected code:
         object[][] buttonData = buttons switch {
@@ -81,7 +81,7 @@ public static partial class MessageBox {
             MessageBoxButtons.YesNoCancel => [cancel, no, yes],
             MessageBoxButtons.Ok => [ok],
             MessageBoxButtons.OkCancel => [cancel, ok],
-            MessageBoxButtons.AbortRetryIgnore => [retry, abort],
+            MessageBoxButtons.AbortRetryIgnore => [ignore, retry, abort],
             MessageBoxButtons.TryAgain => [tryAgain],
             MessageBoxButtons.TryAgainCancel => [cancel, tryAgain],
             MessageBoxButtons.ContinueCancel => [cancel, continueButton],
@@ -102,7 +102,7 @@ public static partial class MessageBox {
 
         for (int i = 0; i < buttonData.Length; i++) {
             buttonDataArray[i] = new MessageBoxButtonData {
-                Flags = MessageBoxDefaultButton.ReturnKeyDefault,
+                Flags = accelerator == (MessageBoxDefaultButton)buttonData[i][2] ? accelerator : MessageBoxDefaultButton.EscapeKeyDefault,
                 ButtonID = (int)buttonData[i][1],
                 Text = (byte*)Marshal.StringToHGlobalAnsi((string)buttonData[i][0])
             };
