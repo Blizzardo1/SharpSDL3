@@ -1,0 +1,36 @@
+namespace SDL3.Enums;
+
+public enum GpuVertexElementFormat
+{
+	Invalid = 0,
+	Int = 1,
+	Int2 = 2,
+	Int3 = 3,
+	Int4 = 4,
+	Uint = 5,
+	Uint2 = 6,
+	Uint3 = 7,
+	Uint4 = 8,
+	Float = 9,
+	Float2 = 10,
+	Float3 = 11,
+	Float4 = 12,
+	Byte2 = 13,
+	Byte4 = 14,
+	UByte2 = 15,
+	UByte4 = 16,
+	Byte2Norm = 17,
+	Byte4Norm = 18,
+	UByte2Norm = 19,
+	UByte4Norm = 20,
+	Short2 = 21,
+	Short4 = 22,
+	Ushort2 = 23,
+	Ushort4 = 24,
+	Short2Norm = 25,
+	Short4Norm = 26,
+	Ushort2Norm = 27,
+	Ushort4Norm = 28,
+	Half2 = 29,
+	Half4 = 30
+}
