@@ -68,28 +68,28 @@ public static partial class MessageBox {
         object[] close = ["Close", MessageBoxResult.OK];
         object[] apply = ["Apply", MessageBoxResult.OK];
         object[] save = ["Save", MessageBoxResult.OK];
-        object[] retryIgnoreAll = ["Retry", "Ignore All"];
+        object[] reset = ["Reset", MessageBoxResult.OK];
 
         // With the following corrected code:
         object[][] buttonData = buttons switch {
-            MessageBoxButtons.YesNo => [ yes, no ],
-            MessageBoxButtons.YesNoCancel => [yes, no, cancel],
+            MessageBoxButtons.YesNo => [ no, yes],
+            MessageBoxButtons.YesNoCancel => [cancel, no, yes],
             MessageBoxButtons.Ok => [ok],
-            MessageBoxButtons.OkCancel => [ok, cancel],
-            MessageBoxButtons.AbortRetryIgnore => [abort, retry, ignore],
+            MessageBoxButtons.OkCancel => [cancel, ok],
+            MessageBoxButtons.AbortRetryIgnore => [retry, abort],
             MessageBoxButtons.TryAgain => [tryAgain],
-            MessageBoxButtons.TryAgainCancel => [tryAgain, cancel],
-            MessageBoxButtons.ContinueCancel => [continueButton, cancel],
-            MessageBoxButtons.RetryCancel => [retry, cancel],
-            MessageBoxButtons.YesNoCancelRetry => [yes, no, cancel, retry],
-            MessageBoxButtons.YesNoCancelIgnore => [yes, no, cancel, ignore],
-            MessageBoxButtons.HelpClose => [help, close],
-            MessageBoxButtons.ApplyCancel => [apply, cancel],
-            MessageBoxButtons.SaveCancel => [save, cancel],
-            MessageBoxButtons.ResetCancel => [save, cancel],
-            MessageBoxButtons.RetryIgnoreAll => [retry, ignoreAll],
-            MessageBoxButtons.NoToAllCancel => [noToAll, cancel],
-            MessageBoxButtons.YesToAllCancel => [yesToAll, cancel],
+            MessageBoxButtons.TryAgainCancel => [cancel, tryAgain],
+            MessageBoxButtons.ContinueCancel => [cancel, continueButton],
+            MessageBoxButtons.RetryCancel => [cancel, retry],
+            MessageBoxButtons.YesNoCancelRetry => [retry, cancel, no, yes],
+            MessageBoxButtons.YesNoCancelIgnore => [ignore, cancel, no, yes],
+            MessageBoxButtons.HelpClose => [close, help],
+            MessageBoxButtons.ApplyCancel => [cancel, apply],
+            MessageBoxButtons.SaveCancel => [cancel, save],
+            MessageBoxButtons.ResetCancel => [cancel, reset],
+            MessageBoxButtons.RetryIgnoreAll => [ignoreAll, retry],
+            MessageBoxButtons.NoToAllCancel => [cancel, noToAll],
+            MessageBoxButtons.YesToAllCancel => [cancel, yesToAll],
             _ => throw new ArgumentOutOfRangeException(nameof(buttons)),
         };
 
@@ -116,13 +116,6 @@ public static partial class MessageBox {
         try {
             var result = ShowMessageBox(ref messageboxdata, out int buttonid);
 
-            foreach (var button in buttonDataArray) {
-                Marshal.FreeHGlobal((nint)button.Text);
-            }
-
-            Marshal.FreeHGlobal((nint)messageboxdata.Title);
-            Marshal.FreeHGlobal((nint)messageboxdata.Message);
-
             if (!result) {
                 throw new InvalidOperationException("Failed to display the message box.");
             }
@@ -133,6 +126,9 @@ public static partial class MessageBox {
             foreach (var button in buttonDataArray) {
                 Marshal.FreeHGlobal((nint)button.Text);
             }
+
+            Marshal.FreeHGlobal((nint)messageboxdata.Title);
+            Marshal.FreeHGlobal((nint)messageboxdata.Message);
         }
     }
 
