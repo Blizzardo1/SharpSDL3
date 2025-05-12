@@ -6,6 +6,6 @@ namespace SDL3.Structs;
 public struct MessageBoxColor
 {
 	public byte R;
-	public byte D;
+	public byte G;
 	public byte B;
 }

@@ -48,6 +48,11 @@ public static partial class MessageBox {
     }
 
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator) {
+        MessageBoxColorScheme scheme = default;
+        return ShowMessageBox(windowOwner, message, title, flags, buttons, accelerator, ref scheme);
+    }
+
+    public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator, ref MessageBoxColorScheme scheme) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
@@ -110,7 +115,7 @@ public static partial class MessageBox {
             Message = (byte*)Marshal.StringToHGlobalAnsi(message),
             NumButtons = buttonData.Length,
             Buttons = (MessageBoxButtonData*)Marshal.UnsafeAddrOfPinnedArrayElement(buttonDataArray, 0), // Use marshaling to pass the array
-            ColorScheme = null
+            ColorScheme = (MessageBoxColorScheme*)Marshal.UnsafeAddrOfPinnedArrayElement([scheme], 0) // Use marshaling to pass the array
         };
 
         try {
