@@ -1,0 +1,160 @@
+﻿using SDL3.Enums;
+using SDL3.Structs;
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+using static SDL3.Sdl;
+
+namespace SDL3;
+
+public static partial class MessageBox {
+    public static unsafe SdlBool ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid) {
+        // Validate input parameters
+        if (messageboxdata.NumButtons < 0 || messageboxdata.Buttons == null) {
+            throw new ArgumentException("Invalid MessageBoxData: Buttons must be defined and NumButtons must be non-negative.");
+        }
+
+        Logger.LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi((nint)messageboxdata.Title)}");
+        // Call the native method
+        var result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
+
+        // Check the result and handle errors
+        if (!result) {
+            throw new InvalidOperationException("Failed to display the message box.");
+        }
+
+        return result;
+    }
+
+    public static MessageBoxResult ShowMessageBox(string message) {
+        return ShowMessageBox(nint.Zero, message, "Message");
+    }
+
+    public static MessageBoxResult ShowMessageBox(string message, string title) {
+        return ShowMessageBox(nint.Zero, message, title);
+    }
+
+    public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title) {
+        return ShowMessageBox(windowOwner, message, title, MessageBoxFlags.Information);
+    }
+
+    public static MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags) {
+        return ShowMessageBox(windowOwner, message, title, flags, MessageBoxButtons.Ok);
+    }
+
+    public static MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons ) {
+        return ShowMessageBox(windowOwner, message, title, flags, buttons, MessageBoxDefaultButton.ReturnKeyDefault);
+    }
+
+    public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator) {
+        if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
+            throw new ArgumentException("Title and message cannot be null or empty.");
+        }
+
+        object[] yes = ["Yes", MessageBoxResult.Yes];
+        object[] no = ["No", MessageBoxResult.No];
+        object[] cancel = ["Cancel", MessageBoxResult.Cancel];
+        object[] ok = ["Ok", MessageBoxResult.OK];
+        object[] retry = ["Retry", MessageBoxResult.Retry];
+        object[] ignore = ["Ignore", MessageBoxResult.Ignore];
+        object[] abort = ["Abort", MessageBoxResult.Abort];
+        object[] tryAgain = ["Try Again", MessageBoxResult.TryAgain];
+        object[] continueButton = ["Continue", MessageBoxResult.Continue];
+        object[] ignoreAll = ["Ignore All", MessageBoxResult.Ignore];
+        object[] noToAll = ["No To All", MessageBoxResult.OK];
+        object[] yesToAll = ["Yes To All", MessageBoxResult.OK];
+        object[] help = ["Help", MessageBoxResult.OK];
+        object[] close = ["Close", MessageBoxResult.OK];
+        object[] apply = ["Apply", MessageBoxResult.OK];
+        object[] save = ["Save", MessageBoxResult.OK];
+        object[] retryIgnoreAll = ["Retry", "Ignore All"];
+
+        // With the following corrected code:
+        object[][] buttonData = buttons switch {
+            MessageBoxButtons.YesNo => [ yes, no ],
+            MessageBoxButtons.YesNoCancel => [yes, no, cancel],
+            MessageBoxButtons.Ok => [ok],
+            MessageBoxButtons.OkCancel => [ok, cancel],
+            MessageBoxButtons.AbortRetryIgnore => [abort, retry, ignore],
+            MessageBoxButtons.TryAgain => [tryAgain],
+            MessageBoxButtons.TryAgainCancel => [tryAgain, cancel],
+            MessageBoxButtons.ContinueCancel => [continueButton, cancel],
+            MessageBoxButtons.RetryCancel => [retry, cancel],
+            MessageBoxButtons.YesNoCancelRetry => [yes, no, cancel, retry],
+            MessageBoxButtons.YesNoCancelIgnore => [yes, no, cancel, ignore],
+            MessageBoxButtons.HelpClose => [help, close],
+            MessageBoxButtons.ApplyCancel => [apply, cancel],
+            MessageBoxButtons.SaveCancel => [save, cancel],
+            MessageBoxButtons.ResetCancel => [save, cancel],
+            MessageBoxButtons.RetryIgnoreAll => [retry, ignoreAll],
+            MessageBoxButtons.NoToAllCancel => [noToAll, cancel],
+            MessageBoxButtons.YesToAllCancel => [yesToAll, cancel],
+            _ => throw new ArgumentOutOfRangeException(nameof(buttons)),
+        };
+
+        var buttonDataArray = new MessageBoxButtonData[buttonData.Length];
+
+        for (int i = 0; i < buttonData.Length; i++) {
+            buttonDataArray[i] = new MessageBoxButtonData {
+                Flags = MessageBoxDefaultButton.ReturnKeyDefault,
+                ButtonID = (int)buttonData[i][1],
+                Text = (byte*)Marshal.StringToHGlobalAnsi((string)buttonData[i][0])
+            };
+        }
+
+        var messageboxdata = new MessageBoxData {
+            Flags = flags,
+            Window = windowOwner,
+            Title = (byte*)Marshal.StringToHGlobalAnsi(title),
+            Message = (byte*)Marshal.StringToHGlobalAnsi(message),
+            NumButtons = buttonData.Length,
+            Buttons = (MessageBoxButtonData*)Marshal.UnsafeAddrOfPinnedArrayElement(buttonDataArray, 0), // Use marshaling to pass the array
+            ColorScheme = null
+        };
+
+        try {
+            var result = ShowMessageBox(ref messageboxdata, out int buttonid);
+
+            foreach (var button in buttonDataArray) {
+                Marshal.FreeHGlobal((nint)button.Text);
+            }
+
+            Marshal.FreeHGlobal((nint)messageboxdata.Title);
+            Marshal.FreeHGlobal((nint)messageboxdata.Message);
+
+            if (!result) {
+                throw new InvalidOperationException("Failed to display the message box.");
+            }
+
+            return (MessageBoxResult)buttonid;
+        } finally {
+            // Ensure all unmanaged resources are freed
+            foreach (var button in buttonDataArray) {
+                Marshal.FreeHGlobal((nint)button.Text);
+            }
+        }
+    }
+
+    public static SdlBool ShowSimpleMessageBox(MessageBoxFlags flags, string message, string title, nint window) {
+        if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
+            throw new ArgumentException("Title and message cannot be null or empty.");
+        }
+        
+        var result = SDL_ShowSimpleMessageBox(flags, title, message, window);
+
+        if (!result) {
+            throw new InvalidOperationException("Failed to display the simple message box.");
+        }
+        return result;
+    }
+
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid);
+
+    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_ShowSimpleMessageBox(MessageBoxFlags flags, string title, string message,
+        nint window);
+}

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This is SDL3-CS, C# bindings for SDL3.
 
 License
@@ -24,3 +25,7 @@ You are encouraged to write your own wrapper objects if you care about "appropri
 
 The SDL headers themselves do not provide enough information to generate complete C# bindings.
 If you update the bindings, search "WARN_" in generated files for unhandled definitions or those that require manual intervention.
+=======
+# SharpSDL3
+A Modern SDL Library written in C# to produce wonderful applications for Android, iOS, Linux, Mac OS, Windows, and other .NET capable platforms.
+>>>>>>> c87474f9ab3d84171449dbe30059b4c9b22a53ce

@@ -3,8 +3,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 using SDL3.Enums;
-
-using static SDL3.AsyncIO;
 using static SDL3.Delegates;
 
 namespace SDL3;
