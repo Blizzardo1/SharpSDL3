@@ -1,15 +1,8 @@
-﻿using SharpSDL3;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Runtime.CompilerServices;
+﻿using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 using static SharpSDL3.Sdl;
-using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 

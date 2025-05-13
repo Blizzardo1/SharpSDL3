@@ -13,5 +13,14 @@ public enum InitFlags : uint
 	Gamepad = 0x2000,
 	Events = 0x4000,
 	Sensor = 0x08000,
-	Camera = 0x10000
+    Camera = 0x10000,
+    Everything = Camera
+        | Sensor
+        | Events
+        | Gamepad
+        | Haptic
+        | Joystick
+        | Video
+        | Audio
+        | Timer,
 }

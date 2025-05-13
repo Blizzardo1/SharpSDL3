@@ -1,3 +1,4 @@
+using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Structs;
@@ -5,7 +6,7 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Explicit)]
 public unsafe struct Event
 {
-	[FieldOffset(0)] public uint Type;
+	[FieldOffset(0)] public EventType Type;
 	[FieldOffset(0)] public CommonEvent Common;
 	[FieldOffset(0)] public DisplayEvent Display;
 	[FieldOffset(0)] public WindowEvent Window;

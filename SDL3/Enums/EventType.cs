@@ -1,6 +1,6 @@
 namespace SharpSDL3.Enums;
 
-public enum EventType
+public enum EventType : uint
 {
 	First = 0,
 	Quit = 256,
