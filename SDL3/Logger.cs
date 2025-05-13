@@ -2,10 +2,10 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using SDL3.Enums;
-using static SDL3.Delegates;
+using SharpSDL3.Enums;
+using static SharpSDL3.Delegates;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 public static unsafe partial class Logger
 {

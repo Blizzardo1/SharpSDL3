@@ -1,13 +1,13 @@
-﻿using SDL3.Enums;
+﻿using SharpSDL3.Enums;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
-using static SDL3.Delegates;
+using static SharpSDL3.Sdl;
+using static SharpSDL3.Delegates;
 
-namespace SDL3; 
+namespace SharpSDL3; 
 public static unsafe partial class Tray {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

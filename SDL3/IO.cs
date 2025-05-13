@@ -1,12 +1,12 @@
-﻿using SDL3.Enums;
-using SDL3.Structs;
+﻿using SharpSDL3.Enums;
+using SharpSDL3.Structs;
 using System.IO;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
+using static SharpSDL3.Sdl;
 
-namespace SDL3; 
+namespace SharpSDL3; 
 public static partial class IO {
 
     public static SdlBool CloseIO(nint context) {

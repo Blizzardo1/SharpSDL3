@@ -1,11 +1,11 @@
-﻿using SDL3.Enums;
+﻿using SharpSDL3.Enums;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
+using static SharpSDL3.Sdl;
 
-namespace SDL3; 
+namespace SharpSDL3; 
 public static partial class Platform {
 
     // /usr/local/include/SDL3/SDL_platform.h

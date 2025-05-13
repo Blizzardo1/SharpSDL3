@@ -2,11 +2,11 @@ using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
-using SDL3.Enums;
-using SDL3.Structs;
-using static SDL3.Delegates;
+using SharpSDL3.Enums;
+using SharpSDL3.Structs;
+using static SharpSDL3.Delegates;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 public static unsafe partial class Sdl
 {
@@ -259,198 +259,6 @@ public static unsafe partial class Sdl
 	[LibraryImport(NativeLibName)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_CleanupTLS();
-
-	// /usr/local/include/SDL3/SDL_mutex.h
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial nint SDL_CreateMutex();
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_LockMutex(nint mutex);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_TryLockMutex(nint mutex);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_UnlockMutex(nint mutex);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_DestroyMutex(nint mutex);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial nint SDL_CreateRWLock();
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_LockRWLockForReading(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_LockRWLockForWriting(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_TryLockRWLockForReading(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_TryLockRWLockForWriting(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_UnlockRWLock(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_DestroyRWLock(nint rwlock);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial nint SDL_CreateSemaphore(uint initialValue);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_DestroySemaphore(nint sem);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_WaitSemaphore(nint sem);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_TryWaitSemaphore(nint sem);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_WaitSemaphoreTimeout(nint sem, int timeoutMs);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_SignalSemaphore(nint sem);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial uint SDL_GetSemaphoreValue(nint sem);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial nint SDL_CreateCondition();
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_DestroyCondition(nint cond);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_SignalCondition(nint cond);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_BroadcastCondition(nint cond);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_WaitCondition(nint cond, nint mutex);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_WaitConditionTimeout(nint cond, nint mutex, int timeoutMs);
-
-    public static void WaitCondition(nint cond, nint mutex) {
-        if (cond == nint.Zero) {
-            throw new ArgumentNullException(nameof(cond), "Condition variable cannot be null.");
-        }
-
-        if (mutex == nint.Zero) {
-            throw new ArgumentNullException(nameof(mutex), "Mutex cannot be null.");
-        }
-
-        try {
-            SDL_LockMutex(mutex); // Ensure the mutex is locked before waiting
-            SDL_WaitCondition(cond, mutex);
-        } finally {
-            SDL_UnlockMutex(mutex); // Always unlock the mutex after waiting
-        }
-    }
-
-public static SdlBool WaitConditionTimeout(nint cond, nint mutex, int timeoutMs) {
-        if (cond == nint.Zero || mutex == nint.Zero) {
-            throw new ArgumentNullException(cond == nint.Zero ? nameof(cond) : nameof(mutex), "Condition or mutex cannot be null.");
-        }
-
-        if (timeoutMs < 0) {
-            throw new ArgumentOutOfRangeException(nameof(timeoutMs), "Timeout must be non-negative.");
-        }
-
-        var result = SDL_WaitConditionTimeout(cond, mutex, timeoutMs);
-
-        if (!result) {
-            var error = GetError();
-            if (!string.IsNullOrEmpty(error)) {
-                throw new InvalidOperationException($"SDL_WaitConditionTimeout failed: {error}");
-            }
-        }
-
-        return result;
-    }
-
-    [LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_ShouldInit(ref InitState state);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial SdlBool SDL_ShouldQuit(ref InitState state);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_SetInitialized(ref InitState state, SdlBool initialized);
-
-    public static SdlBool ShouldInit(ref InitState state) {
-        if (state.Status == 0) {
-            Logger.LogInfo(LogCategory.System, "ShouldInit: Initialization is required.");
-            return SDL_ShouldInit(ref state);
-        }
-
-        Logger.LogInfo(LogCategory.System, "ShouldInit: Already initialized.");
-        return false;
-    }
-
-  
-	public static SdlBool ShouldQuit(ref InitState state) {
-        if (state.Thread == 0) {
-            Logger.LogWarn(LogCategory.System, "ShouldQuit: State thread is not set.");
-            return false;
-        }
-
-        SdlBool result = SDL_ShouldQuit(ref state);
-        if (!result.Equals(SdlBool.True)) {
-            Logger.LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned false.");
-        } else {
-            Logger.LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned true.");
-        }
-
-        return result;
-    }
-   	public static void SetInitialized(ref InitState state, SdlBool initialized) {
-        if (state.Thread == 0) {
-            Logger.LogWarn(LogCategory.System, "SetInitialized: State thread is not set.");
-        }
-
-        if (initialized.Equals(SdlBool.False)) {
-            Logger.LogInfo(LogCategory.System, "SetInitialized: Marking state as uninitialized.");
-        } else {
-            Logger.LogInfo(LogCategory.System, "SetInitialized: Marking state as initialized.");
-        }
-
-        SDL_SetInitialized(ref state, initialized);
-    }
 
 
 	[LibraryImport(NativeLibName)]
@@ -1242,25 +1050,6 @@ public static SdlBool WaitConditionTimeout(nint cond, nint mutex, int timeoutMs)
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial SdlBool SDL_DisableScreenSaver();
 
-	[LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_ShowOpenFileDialog(SdlDialogFileCallback callback, nint userdata, nint window,
-		Span<DialogFileFilter> filters, int nfilters, string defaultLocation, SdlBool allowMany);
-
-	[LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_ShowSaveFileDialog(SdlDialogFileCallback callback, nint userdata, nint window,
-		Span<DialogFileFilter> filters, int nfilters, string defaultLocation);
-
-	[LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_ShowOpenFolderDialog(SdlDialogFileCallback callback, nint userdata, nint window,
-		string defaultLocation, SdlBool allowMany);
-
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback,
-		nint userdata, uint props);
 
 	[LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -1479,31 +1268,59 @@ public static SdlBool WaitConditionTimeout(nint cond, nint mutex, int timeoutMs)
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial nint SDL_GetPreferredLocales(out int count);
 
-	// /usr/local/include/SDL3/SDL_version.h
 
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial int SDL_GetVersion();
 
-	[LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	[return: MarshalUsing(typeof(OwnedStringMarshaller))]
-	private static partial string SDL_GetRevision();
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial int SDL_RunApp(int argc, nint argv, SdlMainFunc mainFunction, nint reserved);
 
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_SetMainReady();
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void SDL_SetMainReady();
+    public static int EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc appInit,
+   SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit) {
+        ArgumentNullException.ThrowIfNull(appInit);
+        ArgumentNullException.ThrowIfNull(appIter);
+        ArgumentNullException.ThrowIfNull(sdlAppEvent);
+        ArgumentNullException.ThrowIfNull(appQuit);
 
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial int SDL_RunApp(int argc, nint argv, SdlMainFunc mainFunction, nint reserved);
+        // Add logging or additional validation if needed
+        Console.WriteLine("Entering App Main Callbacks with provided delegates.");
 
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial int SDL_EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc AppInit,
-		SdlAppIterateFunc AppIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc AppQuit);
+        return SDL_EnterAppMainCallbacks(argc, argv, appInit, appIter, sdlAppEvent, appQuit);
+    }
 
-	[LibraryImport(NativeLibName)]
-	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-	private static partial void SDL_GDKSuspendComplete();
+    public static int RunApp(int argc, nint argv, SdlMainFunc mainFunction, nint reserved) {
+        ArgumentNullException.ThrowIfNull(mainFunction);
+
+        // Add logging or additional validation if needed
+        Console.WriteLine("Running SDL application with provided main function.");
+
+        // Ensure the SDL library is ready before running the app
+        SetMainReady();
+
+        // Call the native method
+        int result = SDL_RunApp(argc, argv, mainFunction, reserved);
+
+        // Log the result or handle post-run logic
+        Console.WriteLine($"SDL_RunApp completed with result: {result}");
+
+        return result;
+    }
+
+    public static void SetMainReady() {
+        SDL_SetMainReady();
+    }
+    public static void GDKSuspendComplete() {
+        SDL_GDKSuspendComplete();
+    }
+
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial int SDL_EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc AppInit,
+        SdlAppIterateFunc AppIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc AppQuit);
+
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void SDL_GDKSuspendComplete();
 }

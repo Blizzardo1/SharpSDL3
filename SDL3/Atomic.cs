@@ -1,10 +1,10 @@
-﻿using SDL3.Enums;
-using SDL3.Structs;
+﻿using SharpSDL3.Enums;
+using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 public static unsafe partial class Atomic {
     // /usr/local/include/SDL3/SDL_atomic.h

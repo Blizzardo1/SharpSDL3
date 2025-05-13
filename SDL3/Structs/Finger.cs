@@ -1,6 +1,6 @@
 using System.Runtime.InteropServices;
 
-namespace SDL3.Structs;
+namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct Finger

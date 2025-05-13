@@ -1,4 +1,4 @@
-namespace SDL3;
+namespace SharpSDL3;
 
 public partial class AsyncIO
 {

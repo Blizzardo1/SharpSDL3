@@ -1,10 +1,10 @@
-﻿using SDL3.Enums;
+﻿using SharpSDL3.Enums;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
+using static SharpSDL3.Sdl;
 
-namespace SDL3; 
+namespace SharpSDL3; 
 public static partial class System {
     // /usr/local/include/SDL3/SDL_system.h
 
@@ -55,11 +55,11 @@ public static partial class System {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_TimeToDateTime(long ticks, out SDL3.Structs.DateTime dt, SdlBool localTime);
+    private static partial SdlBool SDL_TimeToDateTime(long ticks, out SharpSDL3.Structs.DateTime dt, SdlBool localTime);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_DateTimeToTime(ref SDL3.Structs.DateTime dt, nint ticks);
+    private static partial SdlBool SDL_DateTimeToTime(ref SharpSDL3.Structs.DateTime dt, nint ticks);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

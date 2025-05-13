@@ -1,13 +1,13 @@
-﻿using SDL3.Enums;
+﻿using SharpSDL3.Enums;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
-using SDL3.Structs;
+using static SharpSDL3.Sdl;
+using SharpSDL3.Structs;
 
-namespace SDL3; 
+namespace SharpSDL3; 
 public static unsafe partial class Renderer {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

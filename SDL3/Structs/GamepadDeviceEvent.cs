@@ -1,8 +1,8 @@
 using System.Runtime.InteropServices;
 
-using SDL3.Enums;
+using SharpSDL3.Enums;
 
-namespace SDL3.Structs;
+namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct GamepadDeviceEvent

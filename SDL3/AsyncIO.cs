@@ -2,11 +2,11 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using SDL3.Enums;
+using SharpSDL3.Enums;
 
-using SDL3.Structs;
+using SharpSDL3.Structs;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 public static partial class AsyncIO {
 

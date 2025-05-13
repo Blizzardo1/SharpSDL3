@@ -2,9 +2,9 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using static SDL3.Sdl;
+using static SharpSDL3.Sdl;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 public static partial class Metal {
     // /usr/local/include/SDL3/SDL_metal.h

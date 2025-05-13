@@ -1,7 +1,7 @@
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 
-namespace SDL3;
+namespace SharpSDL3;
 
 /// <summary>
 ///     Custom marshaller for caller-owned strings returned by SDL.

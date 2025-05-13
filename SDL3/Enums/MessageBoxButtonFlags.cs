@@ -1,6 +1,6 @@
 using System;
 
-namespace SDL3.Enums;
+namespace SharpSDL3.Enums;
 
 [Flags]
 public enum MessageBoxDefaultButton : uint {
