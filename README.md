@@ -1,4 +1,8 @@
-This is SDL3-CS, C# bindings for SDL3.
+This is SDL3-CS, C# bindings for SDL3.  
+
+This is SharpSDL3, a C# wrapper for SDL3. Originally, this stems from [flibitijibibo's work](https://github.com/flibitijibibo/SDL2-CS), but since he dislikes adapting the APIs to a more C#-like style (dropping `SDL_` prefixes etc.), here's a fork that does adapt the style.
+
+This project is also inspired by [GeorchW's SharpSDL2](https://github.com/GeorchW/SharpSDL2).  
 
 ## License
 
