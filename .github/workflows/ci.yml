@@ -10,5 +10,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: dotnet build SDL3.Core
       run: |
-        dotnet build SDL3/SDL3.Core.csproj -c Debug
-        dotnet build SDL3/SDL3.Core.csproj -c Release
+        dotnet build SDL3/SharpSDL3.csproj -c Debug
+        dotnet build SDL3/SharpSDL3.csproj -c Release
