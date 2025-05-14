@@ -1,4 +1,5 @@
 ﻿using SharpSDL3.Structs;
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
@@ -46,6 +47,8 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_Version();
 
+    public static int TtfVersion() => TTF_Version();
+
     /**
      * Query the version of the FreeType library in use.
      *
@@ -65,6 +68,14 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_GetFreeTypeVersion(int* major, int* minor, int* patch);
 
+    public static void GetFreeTypeVersion(out int major, out int minor, out int patch) {
+        fixed (int* pMajor = &major)
+        fixed (int* pMinor = &minor)
+        fixed (int* pPatch = &patch) {
+            TTF_GetFreeTypeVersion(pMajor, pMinor, pPatch);
+        }
+    }
+
     /**
      * Query the version of the HarfBuzz library in use.
      *
@@ -81,6 +92,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_GetHarfBuzzVersion(int* major, int* minor, int* patch);
+
+    public static void GetHarfBuzzVersion(out int major, out int minor, out int patch) {
+        fixed (int* pMajor = &major)
+        fixed (int* pMinor = &minor)
+        fixed (int* pPatch = &patch) {
+            TTF_GetHarfBuzzVersion(pMajor, pMinor, pPatch);
+        }
+    }
 
     /**
      * Initialize SDL_ttf.
@@ -102,6 +121,8 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_Init();
+
+    public static bool Init() => TTF_Init();
 
     /**
      * Create a font from a file, using a specified point size.
@@ -126,6 +147,19 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Font* TTF_OpenFont(string file, float ptsize);
+
+    public static Font* OpenFont(string file, float ptsize) {
+        if (string.IsNullOrEmpty(file)) {
+            throw new ArgumentException("Font file path cannot be null or empty.", nameof(file));
+        }
+
+        Font* fontPtr = TTF_OpenFont(file, ptsize);
+        if (fontPtr == null) {
+            throw new InvalidOperationException($"Failed to open font. SDL Error: {Sdl.GetError()}");
+        }
+
+        return fontPtr;
+    }
 
     /**
      * Create a font from an SDL_IOStream, using a specified point size.
@@ -155,6 +189,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Font* TTF_OpenFontIO(IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio, float ptsize);
+
+    public static Font* OpenFontIO(IOStream* src, bool closeio, float ptsize) {
+        if (src == null) {
+            throw new ArgumentNullException(nameof(src), "SDL_IOStream cannot be null.");
+        }
+        Font* fontPtr = TTF_OpenFontIO(src, closeio, ptsize);
+        if (fontPtr == null) {
+            throw new InvalidOperationException($"Failed to open font. SDL Error: {Sdl.GetError()}");
+        }
+        return fontPtr;
+    }
 
     /**
      * Create a font with the specified properties.
@@ -202,6 +247,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Font* TTF_OpenFontWithProperties(int props);
+    public static Font* OpenFontWithProperties(int props) {
+        Font* fontPtr = TTF_OpenFontWithProperties(props);
+        if (fontPtr == null) {
+            throw new InvalidOperationException($"Failed to open font. SDL Error: {Sdl.GetError()}");
+        }
+        return fontPtr;
+    }
 
     public const string TTF_PROP_FONT_CREATE_FILENAME_STRING = "SDL_ttf.font.create.filename";
     public const string TTF_PROP_FONT_CREATE_IOSTREAM_POINTER = "SDL_ttf.font.create.iostream";
@@ -236,6 +288,17 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Font* TTF_CopyFont(Font* existing_font);
 
+    public static Font* CopyFont(Font* existingFont) {
+        if (existingFont == null) {
+            throw new ArgumentNullException(nameof(existingFont), "Existing font cannot be null.");
+        }
+        Font* fontPtr = TTF_CopyFont(existingFont);
+        if (fontPtr == null) {
+            throw new InvalidOperationException($"Failed to copy font. SDL Error: {Sdl.GetError()}");
+        }
+        return fontPtr;
+    }
+
     /**
      * Get the properties associated with a font.
      *
@@ -263,6 +326,17 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontProperties(Font* font);
 
+    public static int GetFontProperties(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        int props = TTF_GetFontProperties(font);
+        if (props == 0) {
+            throw new InvalidOperationException($"Failed to get font properties. SDL Error: {Sdl.GetError()}");
+        }
+        return props;
+    }
+
     public const string TTF_PROP_FONT_OUTLINE_LINE_CAP_NUMBER = "SDL_ttf.font.outline.line_cap";
     public const string TTF_PROP_FONT_OUTLINE_LINE_JOIN_NUMBER = "SDL_ttf.font.outline.line_join";
     public const string TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER = "SDL_ttf.font.outline.miter_limit";
@@ -285,6 +359,16 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontGeneration(Font* font);
+    public static int GetFontGeneration(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        int generation = TTF_GetFontGeneration(font);
+        if (generation == 0) {
+            throw new InvalidOperationException($"Failed to get font generation. SDL Error: {Sdl.GetError()}");
+        }
+        return generation;
+    }
 
     /**
      * Add a fallback font.
@@ -314,6 +398,16 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_AddFallbackFont(Font* font, Font* fallback);
 
+    public static bool AddFallbackFont(Font* font, Font* fallback) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        if (fallback == null) {
+            throw new ArgumentNullException(nameof(fallback), "Fallback font cannot be null.");
+        }
+        return TTF_AddFallbackFont(font, fallback);
+    }
+
     /**
      * Remove a fallback font.
      *
@@ -334,6 +428,16 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_RemoveFallbackFont(Font* font, Font* fallback);
 
+    public static void RemoveFallbackFont(Font* font, Font* fallback) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        if (fallback == null) {
+            throw new ArgumentNullException(nameof(fallback), "Fallback font cannot be null.");
+        }
+        TTF_RemoveFallbackFont(font, fallback);
+    }
+
     /**
      * Remove all fallback fonts.
      *
@@ -352,6 +456,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_ClearFallbackFonts(Font* font);
+
+    public static void ClearFallbackFonts(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_ClearFallbackFonts(font);
+    }
 
     /**
      * Set a font's size dynamically.
@@ -375,6 +486,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontSize(Font* font, float ptsize);
+
+    public static bool SetFontSize(Font* font, float ptsize) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontSize(font, ptsize);
+    }
 
     /**
      * Set font size dynamically with target resolutions, in dots per inch.
@@ -402,6 +520,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontSizeDPI(Font* font, float ptsize, int hdpi, int vdpi);
 
+    public static bool SetFontSizeDPI(Font* font, float ptsize, int hdpi, int vdpi) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontSizeDPI(font, ptsize, hdpi, vdpi);
+    }
+
     /**
      * Get the size of a font.
      *
@@ -420,6 +545,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float TTF_GetFontSize(Font* font);
+
+    public static float GetFontSize(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        float size = TTF_GetFontSize(font);
+        if (size == 0.0f) {
+            throw new InvalidOperationException($"Failed to get font size. SDL Error: {Sdl.GetError()}");
+        }
+        return size;
+    }
 
     /**
      * Get font target resolutions, in dots per inch.
@@ -441,6 +577,16 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetFontDPI(Font* font, int* hdpi, int* vdpi);
+    public static bool GetFontDPI(Font* font, out int hdpi, out int vdpi) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        fixed (int* pHdpi = &hdpi)
+        fixed (int* pVdpi = &vdpi) {
+            return TTF_GetFontDPI(font, pHdpi, pVdpi);
+        }
+    }
+
     /**
      * Set a font's current style.
      *
@@ -469,6 +615,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontStyle(Font* font, FontStyle style);
 
+    public static void SetFontStyle(Font* font, FontStyle style) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_SetFontStyle(font, style);
+    }
+
     /**
      * Query a font's current style.
      *
@@ -493,6 +646,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial FontStyle TTF_GetFontStyle(Font* font);
+
+    public static FontStyle GetFontStyle(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontStyle(font);
+    }
 
     /**
      * Set a font's current outline.
@@ -520,6 +680,12 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontOutline(Font* font, int outline);
+    public static bool SetFontOutline(Font* font, int outline) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontOutline(font, outline);
+    }
 
     /**
      * Query a font's current outline.
@@ -536,6 +702,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontOutline(Font* font);
+
+    public static int GetFontOutline(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontOutline(font);
+    }
 
     /**
      * Set a font's current hinter setting.
@@ -565,6 +738,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontHinting(Font* font, Hinting hinting);
 
+    public static void SetFontHinting(Font* font, Hinting hinting) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_SetFontHinting(font, hinting);
+    }
+
     /**
      * Query the number of faces of a font.
      *
@@ -578,6 +758,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetNumFontFaces(Font* font);
+
+    public static int GetNumFontFaces(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetNumFontFaces(font);
+    }
 
     /**
      * Query a font's current FreeType hinter setting.
@@ -603,6 +790,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Hinting TTF_GetFontHinting(Font* font);
+
+    public static Hinting GetFontHinting(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontHinting(font);
+    }
 
     /**
      * Enable Signed Distance Field rendering for a font.
@@ -633,6 +827,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontSDF(Font* font, [MarshalAs(UnmanagedType.Bool)] bool enabled);
 
+    public static bool SetFontSDF(Font* font, bool enabled) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontSDF(font, enabled);
+    }
+
     /**
      * Query whether Signed Distance Field rendering is enabled for a font.
      *
@@ -650,6 +851,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetFontSDF(Font* font);
 
+    public static bool GetFontSDF(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontSDF(font);
+    }
+
     /**
      * Query a font's weight, in terms of the lightness/heaviness of the strokes.
      *
@@ -664,6 +872,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial FontWeight TTF_GetFontWeight(Font* font);
+
+    public static FontWeight GetFontWeight(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontWeight(font);
+    }
 
     /**
      * Set a font's current wrap alignment option.
@@ -684,6 +899,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontWrapAlignment(Font* font, HorizontalAlignment align);
 
+    public static void SetFontWrapAlignment(Font* font, HorizontalAlignment align) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_SetFontWrapAlignment(font, align);
+    }
+
     /**
      * Query a font's current wrap alignment option.
      *
@@ -699,6 +921,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial HorizontalAlignment TTF_GetFontWrapAlignment(Font* font);
+
+    public static HorizontalAlignment GetFontWrapAlignment(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontWrapAlignment(font);
+    }
 
     /**
      * Query the total height of a font.
@@ -716,6 +945,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontHeight(Font* font);
 
+    public static int GetFontHeight(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontHeight(font);
+    }
+
     /**
      * Query the offset from the baseline to the top of a font.
      *
@@ -732,6 +968,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontAscent(Font* font);
 
+    public static int GetFontAscent(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontAscent(font);
+    }
+
     /**
      * Query the offset from the baseline to the bottom of a font.
      *
@@ -747,6 +990,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontDescent(Font* font);
+
+    public static int GetFontDescent(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontDescent(font);
+    }
 
     /**
      * Set the spacing between lines of text for a font.
@@ -767,6 +1017,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontLineSkip(Font* font, int lineskip);
 
+    public static void SetFontLineSkip(Font* font, int lineskip) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_SetFontLineSkip(font, lineskip);
+    }
+
     /**
      * Query the spacing between lines of text for a font.
      *
@@ -782,6 +1039,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontLineSkip(Font* font);
+
+    public static int GetFontLineSkip(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontLineSkip(font);
+    }
 
     /**
      * Set if kerning is enabled for a font.
@@ -807,6 +1071,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontKerning(Font* font, [MarshalAs(UnmanagedType.Bool)] bool enabled);
 
+    public static void SetFontKerning(Font* font, bool enabled) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_SetFontKerning(font, enabled);
+    }
+
     /**
      * Query whether or not kerning is enabled for a font.
      *
@@ -823,6 +1094,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetFontKerning(Font* font);
+
+    public static bool GetFontKerning(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontKerning(font);
+    }
 
     /**
      * Query whether a font is fixed-width.
@@ -845,6 +1123,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_FontIsFixedWidth(Font* font);
 
+    public static bool IsFixedWidth(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_FontIsFixedWidth(font);
+    }
+
     /**
      * Query whether a font is scalable or not.
      *
@@ -863,6 +1148,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_FontIsScalable(Font* font);
+
+    public static bool IsScalable(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_FontIsScalable(font);
+    }
 
     /**
      * Query a font's family name.
@@ -885,6 +1177,13 @@ public static unsafe partial class Ttf {
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string TTF_GetFontFamilyName(Font* font);
 
+    public static string GetFontFamilyName(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontFamilyName(font);
+    }
+
     /**
      * Query a font's style name.
      *
@@ -905,6 +1204,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string TTF_GetFontStyleName(Font* font);
+
+    public static string GetFontStyleName(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontStyleName(font);
+    }
 
     /**
      * Set the direction to be used for text shaping by a font.
@@ -929,6 +1235,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontDirection(Font* font, Direction direction);
 
+    public static bool SetFontDirection(Font* font, Direction direction) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontDirection(font, direction);
+    }
+
     /**
      * Get the direction to be used for text shaping by a font.
      *
@@ -946,6 +1259,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Direction TTF_GetFontDirection(Font* font);
 
+    public static Direction GetFontDirection(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontDirection(font);
+    }
+
     /**
      * Convert from a 4 character string to a 32-bit tag.
      *
@@ -961,6 +1281,16 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_StringToTag(string str);
+
+    public static int StringToTag(string str) {
+        if (str == null) {
+            throw new ArgumentNullException(nameof(str), "String cannot be null.");
+        }
+        if (str.Length != 4) {
+            throw new ArgumentException("String must be exactly 4 characters long.", nameof(str));
+        }
+        return TTF_StringToTag(str);
+    }
 
     /**
      * Convert from a 32-bit tag to a 4 character string.
@@ -980,6 +1310,18 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_TagToString(int tag, string str, Size size);
+
+    /// <summary>
+    /// May not work properly
+    /// </summary>
+    /// <param name="tag"></param>
+    /// <param name="size"></param>
+    /// <returns></returns>
+    public static string TagToString(int tag, Size size) {
+        Span<char> buffer = stackalloc char[5];
+        TTF_TagToString(tag, new string(buffer), size);
+        return new string(buffer);
+    }
 
     /**
      * Set the script to be used for text shaping by a font.
@@ -1007,6 +1349,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontScript(Font* font, int script);
 
+    public static bool SetFontScript(Font* font, int script) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontScript(font, script);
+    }
+
     /**
      * Get the script used for text shaping a font.
      *
@@ -1026,6 +1375,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontScript(Font* font);
 
+    public static int GetFontScript(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetFontScript(font);
+    }
+
     /**
      * Get the script used by a 32-bit codepoint.
      *
@@ -1044,6 +1400,10 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetGlyphScript(int ch);
+
+    public static int GetGlyphScript(int ch) {
+        return TTF_GetGlyphScript(ch);
+    }
 
     /**
      * Set language to be used for text shaping by a font.
@@ -1069,6 +1429,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_SetFontLanguage(Font* font, string language_bcp47);
 
+    public static bool SetFontLanguage(Font* font, string language_bcp47) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_SetFontLanguage(font, language_bcp47);
+    }
+
     /**
      * Check whether a glyph is provided by the font for a UNICODE codepoint.
      *
@@ -1086,16 +1453,11 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_FontHasGlyph(Font* font, int ch);
 
-    /**
-     * The type of data in a glyph image
-     *
-     * \since This enum is available since SDL_ttf 3.0.0.
-     */
-    public enum TTF_ImageType {
-        TTF_IMAGE_INVALID,
-        TTF_IMAGE_ALPHA,    /**< The color channels are white */
-        TTF_IMAGE_COLOR,    /**< The color channels have image data */
-        TTF_IMAGE_SDF,      /**< The alpha channel has signed distance field information */
+    public static bool FontHasGlyph(Font* font, int ch) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_FontHasGlyph(font, ch);
     }
 
     /**
@@ -1115,7 +1477,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial Surface* TTF_GetGlyphImage(Font* font, int ch, TTF_ImageType* image_type);
+    private static partial Surface* TTF_GetGlyphImage(Font* font, int ch, ImageType* image_type);
+
+    public static Surface* GetGlyphImage(Font* font, int ch, ImageType* image_type) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetGlyphImage(font, ch, image_type);
+    }
 
     /**
      * Get the pixel image for a character index.
@@ -1137,7 +1506,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial Surface* TTF_GetGlyphImageForIndex(Font* font, int glyph_index, TTF_ImageType* image_type);
+    private static partial Surface* TTF_GetGlyphImageForIndex(Font* font, int glyph_index, ImageType* image_type);
+
+    public static Surface* GetGlyphImageForIndex(Font* font, int glyph_index, ImageType* image_type) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetGlyphImageForIndex(font, glyph_index, image_type);
+    }
 
     /**
      * Query the metrics (dimensions) of a font's glyph for a UNICODE codepoint.
@@ -1173,6 +1549,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetGlyphMetrics(Font* font, int ch, int* minx, int* maxx, int* miny, int* maxy, int* advance);
 
+    public static bool GetGlyphMetrics(Font* font, int ch, int* minx, int* maxx, int* miny, int* maxy, int* advance) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetGlyphMetrics(font, ch, minx, maxx, miny, maxy, advance);
+    }
+
     /**
      * Query the kerning size between the glyphs of two UNICODE codepoints.
      *
@@ -1193,6 +1576,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetGlyphKerning(Font* font, int previous_ch, int ch, int* kerning);
+
+    public static bool GetGlyphKerning(Font* font, int previous_ch, int ch, int* kerning) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetGlyphKerning(font, previous_ch, ch, kerning);
+    }
 
     /**
      * Calculate the dimensions of a rendered string of UTF-8 text.
@@ -1218,6 +1608,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetStringSize(Font* font, string text, Size length, int* w, int* h);
+
+    public static bool GetStringSize(Font* font, string text, Size length, int* w, int* h) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetStringSize(font, text, length, w, h);
+    }
 
     /**
      * Calculate the dimensions of a rendered string of UTF-8 text.
@@ -1250,6 +1647,13 @@ public static unsafe partial class Ttf {
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_GetStringSizeWrapped(Font* font, string text, Size length, int wrap_width, int* w, int* h);
 
+    public static bool GetStringSizeWrapped(Font* font, string text, Size length, int wrap_width, int* w, int* h) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_GetStringSizeWrapped(font, text, length, wrap_width, w, h);
+    }
+
     /**
      * Calculate how much of a UTF-8 string will fit in a given width.
      *
@@ -1280,6 +1684,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
     private static partial bool TTF_MeasureString(Font* font, string text, Size length, int max_width, int* measured_width, Size* measured_length);
+
+    public static bool MeasureString(Font* font, string text, Size length, int max_width, int* measured_width, Size* measured_length) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_MeasureString(font, text, length, max_width, measured_width, measured_length);
+    }
 
     /**
      * Render UTF-8 text at fast quality to a new 8-bit surface.
@@ -1320,6 +1731,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Solid(Font* font, string text, Size length, Color fg);
 
+    public static Surface* RenderTextSolid(Font* font, string text, Size length, Color fg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Solid(font, text, length, fg);
+    }
+
     /**
      * Render word-wrapped UTF-8 text at fast quality to a new 8-bit surface.
      *
@@ -1358,6 +1776,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Solid_Wrapped(Font* font, string text, Size length, Color fg, int wrapLength);
 
+    public static Surface* RenderTextSolidWrapped(Font* font, string text, Size length, Color fg, int wrapLength) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Solid_Wrapped(font, text, length, fg, wrapLength);
+    }
+
     /**
      * Render a single 32-bit glyph at fast quality to a new 8-bit surface.
      *
@@ -1388,6 +1813,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderGlyph_Solid(Font* font, int ch, Color fg);
+
+    public static Surface* RenderGlyphSolid(Font* font, int ch, Color fg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderGlyph_Solid(font, ch, fg);
+    }
 
     /**
      * Render UTF-8 text at high quality to a new 8-bit surface.
@@ -1429,6 +1861,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Shaded(Font* font, string text, Size length, Color fg, Color bg);
 
+    public static Surface* RenderTextShaded(Font* font, string text, Size length, Color fg, Color bg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Shaded(font, text, length, fg, bg);
+    }
+
     /**
      * Render word-wrapped UTF-8 text at high quality to a new 8-bit surface.
      *
@@ -1469,6 +1908,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Shaded_Wrapped(Font* font, string text, Size length, Color fg, Color bg, int wrap_width);
 
+    public static Surface* RenderTextShadedWrapped(Font* font, string text, Size length, Color fg, Color bg, int wrap_width) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Shaded_Wrapped(font, text, length, fg, bg, wrap_width);
+    }
+
     /**
      * Render a single UNICODE codepoint at high quality to a new 8-bit surface.
      *
@@ -1501,6 +1947,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderGlyph_Shaded(Font* font, int ch, Color fg, Color bg);
+
+    public static Surface* RenderGlyphShaded(Font* font, int ch, Color fg, Color bg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderGlyph_Shaded(font, ch, fg, bg);
+    }
 
     /**
      * Render UTF-8 text at high quality to a new ARGB surface.
@@ -1539,6 +1992,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Blended(Font* font, string text, Size length, Color fg);
+
+    public static Surface* RenderTextBlended(Font* font, string text, Size length, Color fg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Blended(font, text, length, fg);
+    }
 
     /**
      * Render word-wrapped UTF-8 text at high quality to a new ARGB surface.
@@ -1579,6 +2039,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_Blended_Wrapped(Font* font, string text, Size length, Color fg, int wrap_width);
 
+    public static Surface* RenderTextBlendedWrapped(Font* font, string text, Size length, Color fg, int wrap_width) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_Blended_Wrapped(font, text, length, fg, wrap_width);
+    }
+
     /**
      * Render a single UNICODE codepoint at high quality to a new ARGB surface.
      *
@@ -1609,6 +2076,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderGlyph_Blended(Font* font, int ch, Color fg);
+
+    public static Surface* RenderGlyphBlended(Font* font, int ch, Color fg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderGlyph_Blended(font, ch, fg);
+    }
 
     /**
      * Render UTF-8 text at LCD subpixel quality to a new ARGB surface.
@@ -1648,6 +2122,13 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_LCD(Font* font, string text, Size length, Color fg, Color bg);
+
+    public static Surface* RenderTextLCD(Font* font, string text, Size length, Color fg, Color bg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_LCD(font, text, length, fg, bg);
+    }
 
     /**
      * Render word-wrapped UTF-8 text at LCD subpixel quality to a new ARGB
@@ -1689,6 +2170,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderText_LCD_Wrapped(Font* font, string text, Size length, Color fg, Color bg, int wrap_width);
 
+    public static Surface* RenderTextLCDWrapped(Font* font, string text, Size length, Color fg, Color bg, int wrap_width) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderText_LCD_Wrapped(font, text, length, fg, bg, wrap_width);
+    }
+
     /**
      * Render a single UNICODE codepoint at LCD subpixel quality to a new ARGB
      * surface.
@@ -1722,52 +2210,11 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Surface* TTF_RenderGlyph_LCD(Font* font, int ch, Color fg, Color bg);
 
-
-    /**
-     * A text engine used to create text objects.
-     *
-     * This is a public interface that can be used by applications and libraries
-     * to perform customize rendering with text objects. See
-     * <SDL3_ttf/SDL_textengine.h> for details.
-     *
-     * There are three text engines provided with the library:
-     *
-     * - Drawing to an Surface, created with TTF_CreateSurfaceTextEngine()
-     * - Drawing with an SDL 2D renderer, created with
-     *   TTF_CreateRendererTextEngine()
-     * - Drawing with the SDL GPU API, created with TTF_CreateGPUTextEngine()
-     *
-     * \since This struct is available since SDL_ttf 3.0.0.
-     */
-    public struct TTF_TextEngine {
-
-    }
-
-    /**
-     * Internal data for TTF_Text
-     *
-     * \since This struct is available since SDL_ttf 3.0.0.
-     */
-    public struct TTF_TextData { }
-
-    /**
-     * Text created with TTF_CreateText()
-     *
-     * \since This struct is available since SDL_ttf 3.0.0.
-     *
-     * \sa TTF_CreateText
-     * \sa TTF_GetTextProperties
-     * \sa TTF_DestroyText
-     */
-    [StructLayout(LayoutKind.Sequential)]
-    public unsafe struct TTF_Text {
-        public string Text;             /**< A copy of the UTF-8 string that this text object represents, useful for layout, debugging and retrieving substring text. This is updated when the text object is modified and will be freed automatically when the object is destroyed. */
-        public int NumLines;          /**< The number of lines in the text, 0 if it's empty */
-
-        public int RefCount;           /**< Application reference count, used when freeing surface */
-
-        public TTF_TextData* _internal; /**< Private */
-
+    public static Surface* RenderGlyphLCD(Font* font, int ch, Color fg, Color bg) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        return TTF_RenderGlyph_LCD(font, ch, fg, bg);
     }
 
     /**
@@ -1785,7 +2232,11 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_CreateSurfaceTextEngine();
+    private static partial TextEngine* TTF_CreateSurfaceTextEngine();
+
+    public static TextEngine* CreateSurfaceTextEngine() {
+        return TTF_CreateSurfaceTextEngine();
+    }
 
     /**
      * Draw text to an SDL surface.
@@ -1813,7 +2264,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_DrawSurfaceText(TTF_Text* text, int x, int y, Surface* surface);
+    private static partial bool TTF_DrawSurfaceText(TtfText* text, int x, int y, Surface* surface);
+
+    public static bool DrawSurfaceText(TtfText* text, int x, int y, Surface* surface) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (surface == null) {
+            throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
+        }
+        return TTF_DrawSurfaceText(text, x, y, surface);
+    }
 
     /**
      * Destroy a text engine created for drawing text on SDL surfaces.
@@ -1833,7 +2294,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_DestroySurfaceTextEngine(TTF_TextEngine* engine);
+    private static partial void TTF_DestroySurfaceTextEngine(TextEngine* engine);
+
+    public static void DestroySurfaceTextEngine(TextEngine* engine) {
+        if (engine == null) {
+            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
+        }
+        TTF_DestroySurfaceTextEngine(engine);
+    }
 
     /**
      * Create a text engine for drawing text on an SDL renderer.
@@ -1853,7 +2321,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_CreateRendererTextEngine(nint renderer);
+    private static partial TextEngine* TTF_CreateRendererTextEngine(nint renderer);
+
+    public static TextEngine* CreateRendererTextEngine(nint renderer) {
+        if (renderer == IntPtr.Zero) {
+            throw new ArgumentNullException(nameof(renderer), "Renderer cannot be null.");
+        }
+        return TTF_CreateRendererTextEngine(renderer);
+    }
 
     /**
      * Create a text engine for drawing text on an SDL renderer, with the
@@ -1881,7 +2356,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_CreateRendererTextEngineWithProperties(int props);
+    private static partial TextEngine* TTF_CreateRendererTextEngineWithProperties(int props);
+    public static TextEngine* CreateRendererTextEngineWithProperties(int props) {
+        if (props == 0) {
+            throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
+        }
+        return TTF_CreateRendererTextEngineWithProperties(props);
+    }
+
 
     public const string TTF_PROP_RENDERER_TEXT_ENGINE_RENDERER = "SDL_ttf.renderer_text_engine.create.renderer";
     public const string TTF_PROP_RENDERER_TEXT_ENGINE_ATLAS_TEXTURE_SIZE = "SDL_ttf.renderer_text_engine.create.atlas_texture_size";
@@ -1912,7 +2394,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_DrawRendererText(TTF_Text* text, float x, float y);
+    private static partial bool TTF_DrawRendererText(TtfText* text, float x, float y);
+
+    public static bool DrawRendererText(TtfText* text, float x, float y) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_DrawRendererText(text, x, y);
+    }
 
     /**
      * Destroy a text engine created for drawing text on an SDL renderer.
@@ -1932,7 +2421,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_DestroyRendererTextEngine(TTF_TextEngine* engine);
+    private static partial void TTF_DestroyRendererTextEngine(TextEngine* engine);
+
+    public static void DestroyRendererTextEngine(TextEngine* engine) {
+        if (engine == null) {
+            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
+        }
+        TTF_DestroyRendererTextEngine(engine);
+    }
 
     /**
      * Create a text engine for drawing text with the SDL GPU API.
@@ -1953,7 +2449,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_CreateGPUTextEngine(nint device);
+    private static partial TextEngine* TTF_CreateGPUTextEngine(nint device);
+
+    public static TextEngine* CreateGPUTextEngine(nint device) {
+        if (device == IntPtr.Zero) {
+            throw new ArgumentNullException(nameof(device), "Device cannot be null.");
+        }
+        return TTF_CreateGPUTextEngine(device);
+    }
 
     /**
      * Create a text engine for drawing text with the SDL GPU API, with the
@@ -1981,7 +2484,15 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_CreateGPUTextEngineWithProperties(int props);
+    private static partial TextEngine* TTF_CreateGPUTextEngineWithProperties(int props);
+
+    public static TextEngine* CreateGPUTextEngineWithProperties(int props) {
+        if (props == 0) {
+            throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
+        }
+        return TTF_CreateGPUTextEngineWithProperties(props);
+    }
+
 
     public const string TTF_PROP_GPU_TEXT_ENGINE_DEVICE = "SDL_ttf.gpu_text_engine.create.device";
     public const string TTF_PROP_GPU_TEXT_ENGINE_ATLAS_TEXTURE_SIZE = "SDL_ttf.gpu_text_engine.create.atlas_texture_size";
@@ -2015,7 +2526,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial GPUAtlasDrawSequence* TTF_GetGPUTextDrawData(TTF_Text* text);
+    private static partial GPUAtlasDrawSequence* TTF_GetGPUTextDrawData(TtfText* text);
+
+    public static GPUAtlasDrawSequence* GetGPUTextDrawData(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetGPUTextDrawData(text);
+    }
 
     /**
      * Destroy a text engine created for drawing text with the SDL GPU API.
@@ -2035,7 +2553,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_DestroyGPUTextEngine(TTF_TextEngine* engine);
+    private static partial void TTF_DestroyGPUTextEngine(TextEngine* engine);
+
+    public static void DestroyGPUTextEngine(TextEngine* engine) {
+        if (engine == null) {
+            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
+        }
+        TTF_DestroyGPUTextEngine(engine);
+    }
 
     /**
      * The winding order of the vertices returned by TTF_GetGPUTextDrawData
@@ -2065,7 +2590,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_SetGPUTextEngineWinding(TTF_TextEngine* engine, TTF_GPUTextEngineWinding winding);
+    private static partial void TTF_SetGPUTextEngineWinding(TextEngine* engine, TTF_GPUTextEngineWinding winding);
+
+    public static void SetGPUTextEngineWinding(TextEngine* engine, TTF_GPUTextEngineWinding winding) {
+        if (engine == null) {
+            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
+        }
+        TTF_SetGPUTextEngineWinding(engine, winding);
+    }
 
     /**
      * Get the winding order of the vertices returned by TTF_GetGPUTextDrawData
@@ -2085,7 +2617,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_GPUTextEngineWinding TTF_GetGPUTextEngineWinding(TTF_TextEngine* engine);
+    private static partial TTF_GPUTextEngineWinding TTF_GetGPUTextEngineWinding(TextEngine* engine);
+
+    public static TTF_GPUTextEngineWinding GetGPUTextEngineWinding(TextEngine* engine) {
+        if (engine == null) {
+            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
+        }
+        return TTF_GetGPUTextEngineWinding(engine);
+    }
 
     /**
      * Create a text object from UTF-8 text and a text engine.
@@ -2108,7 +2647,17 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_Text* TTF_CreateText(TTF_TextEngine* engine, Font* font, string text, Size length);
+    private static partial TtfText* TTF_CreateText(TextEngine* engine, Font* font, string text, Size length);
+
+    public static TtfText* CreateText(TextEngine* engine, Font* font, string text, Size length) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_CreateText(engine, font, text, length);
+    }
 
     /**
      * Get the properties associated with a text object.
@@ -2124,7 +2673,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int TTF_GetTextProperties(TTF_Text* text);
+    private static partial int TTF_GetTextProperties(TtfText* text);
+    
+    public static int GetTextProperties(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextProperties(text);
+    }
 
     /**
      * Set the text engine used by a text object.
@@ -2146,7 +2702,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextEngine(TTF_Text* text, TTF_TextEngine* engine);
+    private static partial bool TTF_SetTextEngine(TtfText* text, TextEngine* engine);
+
+    public static bool SetTextEngine(TtfText* text, TextEngine* engine) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextEngine(text, engine);
+    }
 
     /**
      * Get the text engine used by a text object.
@@ -2164,7 +2727,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial TTF_TextEngine* TTF_GetTextEngine(TTF_Text* text);
+    private static partial TextEngine* TTF_GetTextEngine(TtfText* text);
+
+    public static TextEngine* GetTextEngine(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextEngine(text);
+    }
 
     /**
      * Set the font used by a text object.
@@ -2190,7 +2760,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextFont(TTF_Text* text, Font* font);
+    private static partial bool TTF_SetTextFont(TtfText* text, Font* font);
+
+    public static bool SetTextFont(TtfText* text, Font* font) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextFont(text, font);
+    }
 
     /**
      * Get the font used by a text object.
@@ -2208,7 +2785,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial Font* TTF_GetTextFont(TTF_Text* text);
+    private static partial Font* TTF_GetTextFont(TtfText* text);
+
+    public static Font* GetTextFont(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextFont(text);
+    }
 
     /**
      * Set the direction to be used for text shaping a text object.
@@ -2229,7 +2813,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextDirection(TTF_Text* text, Direction direction);
+    private static partial bool TTF_SetTextDirection(TtfText* text, Direction direction);
+
+    public static bool SetTextDirection(TtfText* text, Direction direction) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextDirection(text, direction);
+    }
 
     /**
      * Get the direction to be used for text shaping a text object.
@@ -2246,7 +2837,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial Direction TTF_GetTextDirection(TTF_Text* text);
+    private static partial Direction TTF_GetTextDirection(TtfText* text);
+
+    public static Direction GetTextDirection(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextDirection(text);
+    }
 
     /**
      * Set the script to be used for text shaping a text object.
@@ -2270,7 +2868,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextScript(TTF_Text* text, int script);
+    private static partial bool TTF_SetTextScript(TtfText* text, int script);
+
+    public static bool SetTextScript(TtfText* text, int script) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextScript(text, script);
+    }
 
     /**
      * Get the script used for text shaping a text object.
@@ -2292,7 +2897,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int TTF_GetTextScript(TTF_Text* text);
+    private static partial int TTF_GetTextScript(TtfText* text);
+
+    public static int GetTextScript(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextScript(text);
+    }
 
     /**
      * Set the color of a text object.
@@ -2318,7 +2930,21 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextColor(TTF_Text* text, byte r, byte g, byte b, byte a);
+    private static partial bool TTF_SetTextColor(TtfText* text, byte r, byte g, byte b, byte a);
+
+    public static bool SetTextColor(TtfText* text, byte r, byte g, byte b, byte a) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextColor(text, r, g, b, a);
+    }
+
+    public static bool SetTextColor(TtfText* text, Color color) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextColor(text, color.R, color.G, color.B, color.A);
+    }
 
     /**
      * Set the color of a text object.
@@ -2344,7 +2970,21 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextColorFloat(TTF_Text* text, float r, float g, float b, float a);
+    private static partial bool TTF_SetTextColorFloat(TtfText* text, float r, float g, float b, float a);
+
+    public static bool SetTextColorFloat(TtfText* text, float r, float g, float b, float a) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextColorFloat(text, r, g, b, a);
+    }
+
+    public static bool SetTextColorFloat(TtfText* text, FColor color) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextColorFloat(text, color.R, color.G, color.B, color.A);
+    }
 
     /**
      * Get the color of a text object.
@@ -2372,7 +3012,24 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextColor(TTF_Text* text, byte* r, byte* g, byte* b, byte* a);
+    private static partial bool TTF_GetTextColor(TtfText* text, byte* r, byte* g, byte* b, byte* a);
+
+    public static bool GetTextColor(TtfText* text, out byte r, out byte g, out byte b, out byte a) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (byte* pr = &r, pg = &g, pb = &b, pa = &a) {
+            return TTF_GetTextColor(text, pr, pg, pb, pa);
+        }
+    }
+
+    public static Color GetTextColor(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        GetTextColor(text, out byte r, out byte g, out byte b, out byte a);
+        return new Color() { R = r, G = g, B = b, A = a };
+    }
 
     /**
      * Get the color of a text object.
@@ -2400,7 +3057,25 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextColorFloat(TTF_Text* text, float* r, float* g, float* b, float* a);
+    private static partial bool TTF_GetTextColorFloat(TtfText* text, float* r, float* g, float* b, float* a);
+
+    public static bool GetTextColorFloat(TtfText* text, out float r, out float g, out float b, out float a) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (float* pr = &r, pg = &g, pb = &b, pa = &a) {
+            return TTF_GetTextColorFloat(text, pr, pg, pb, pa);
+        }
+    }
+
+    public static bool GetTextColorFloat(TtfText* text, out FColor color) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        GetTextColorFloat(text, out float r, out float g, out float b, out float a);
+        color = new FColor() { R = r, G = g, B = b, A = a };
+        return true;
+    }
 
     /**
      * Set the position of a text object.
@@ -2424,7 +3099,21 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextPosition(TTF_Text* text, int x, int y);
+    private static partial bool TTF_SetTextPosition(TtfText* text, int x, int y);
+
+    public static bool SetTextPosition(TtfText* text, int x, int y) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextPosition(text, x, y);
+    }
+
+    public static bool SetTextPosition(TtfText* text, Point position) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextPosition(text, position.X, position.Y);
+    }
 
     /**
      * Get the position of a text object.
@@ -2445,7 +3134,24 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextPosition(TTF_Text* text, int* x, int* y);
+    private static partial bool TTF_GetTextPosition(TtfText* text, int* x, int* y);
+
+    public static bool GetTextPosition(TtfText* text, out int x, out int y) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (int* px = &x, py = &y) {
+            return TTF_GetTextPosition(text, px, py);
+        }
+    }
+
+    public static Point GetTextPosition(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        GetTextPosition(text, out int x, out int y);
+        return new Point() { X = x, Y = y };
+    }
 
     /**
      * Set whether wrapping is enabled on a text object.
@@ -2468,7 +3174,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextWrapWidth(TTF_Text* text, int wrap_width);
+    private static partial bool TTF_SetTextWrapWidth(TtfText* text, int wrap_width);
+
+    public static bool SetTextWrapWidth(TtfText* text, int wrap_width) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextWrapWidth(text, wrap_width);
+    }
 
     /**
      * Get whether wrapping is enabled on a text object.
@@ -2489,7 +3202,16 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextWrapWidth(TTF_Text* text, int* wrap_width);
+    private static partial bool TTF_GetTextWrapWidth(TtfText* text, int* wrap_width);
+
+    public static bool GetTextWrapWidth(TtfText* text, out int wrap_width) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (int* pWrapWidth = &wrap_width) {
+            return TTF_GetTextWrapWidth(text, pWrapWidth);
+        }
+    }
 
     /**
      * Set whether whitespace should be visible when wrapping a text object.
@@ -2517,7 +3239,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextWrapWhitespaceVisible(TTF_Text* text, [MarshalAs(UnmanagedType.Bool)] bool visible);
+    private static partial bool TTF_SetTextWrapWhitespaceVisible(TtfText* text, [MarshalAs(UnmanagedType.Bool)] bool visible);
+
+    public static bool SetTextWrapWhitespaceVisible(TtfText* text, bool visible) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_SetTextWrapWhitespaceVisible(text, visible);
+    }
 
     /**
      * Return whether whitespace is shown when wrapping a text object.
@@ -2536,7 +3265,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_TextWrapWhitespaceVisible(TTF_Text* text);
+    private static partial bool TTF_TextWrapWhitespaceVisible(TtfText* text);
+
+    public static bool TextWrapWhitespaceVisible(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_TextWrapWhitespaceVisible(text);
+    }
 
     /**
      * Set the UTF-8 text used by a text object.
@@ -2562,7 +3298,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_SetTextString(TTF_Text* text, string str, Size length);
+    private static partial bool TTF_SetTextString(TtfText* text, string str, Size length);
+
+    public static bool SetTextString(TtfText* text, string str, Size length) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (str == null) {
+            throw new ArgumentNullException(nameof(str), "String cannot be null.");
+        }
+        return TTF_SetTextString(text, str, length);
+    }
 
     /**
      * Insert UTF-8 text into a text object.
@@ -2592,7 +3338,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_InsertTextString(TTF_Text* text, int offset, string str, Size length);
+    private static partial bool TTF_InsertTextString(TtfText* text, int offset, string str, Size length);
+
+    public static bool InsertTextString(TtfText* text, int offset, string str, Size length) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (str == null) {
+            throw new ArgumentNullException(nameof(str), "String cannot be null.");
+        }
+        return TTF_InsertTextString(text, offset, str, length);
+    }
 
     /**
      * Append UTF-8 text to a text object.
@@ -2618,7 +3374,17 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_AppendTextString(TTF_Text* text, string str, Size length);
+    private static partial bool TTF_AppendTextString(TtfText* text, string str, Size length);
+
+    public static bool AppendTextString(TtfText* text, string str, Size length) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (str == null) {
+            throw new ArgumentNullException(nameof(str), "String cannot be null.");
+        }
+        return TTF_AppendTextString(text, str, length);
+    }
 
     /**
      * Delete UTF-8 text from a text object.
@@ -2647,7 +3413,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_DeleteTextString(TTF_Text* text, int offset, int length);
+    private static partial bool TTF_DeleteTextString(TtfText* text, int offset, int length);
+
+    public static bool DeleteTextString(TtfText* text, int offset, int length) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_DeleteTextString(text, offset, length);
+    }
 
     /**
      * Get the size of a text object.
@@ -2671,7 +3444,24 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextSize(TTF_Text* text, int* w, int* h);
+    private static partial bool TTF_GetTextSize(TtfText* text, int* w, int* h);
+
+    public static bool GetTextSize(TtfText* text, out int w, out int h) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (int* pw = &w, ph = &h) {
+            return TTF_GetTextSize(text, pw, ph);
+        }
+    }
+
+    public static Size GetTextSize(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        GetTextSize(text, out int w, out int h);
+        return new Size() { Width = w, Height = h };
+    }
 
     /**
      * Get the substring of a text object that surrounds a text offset.
@@ -2697,7 +3487,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextSubString(TTF_Text* text, int offset, SubString* substring);
+    private static partial bool TTF_GetTextSubString(TtfText* text, int offset, SubString* substring);
+
+    public static bool GetTextSubString(TtfText* text, int offset, SubString* substring) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_GetTextSubString(text, offset, substring);
+    }
 
     /**
      * Get the substring of a text object that contains the given line.
@@ -2723,7 +3520,19 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextSubStringForLine(TTF_Text* text, int line, SubString* substring);
+    private static partial bool TTF_GetTextSubStringForLine(TtfText* text, int line, SubString* substring);
+
+    public static bool GetTextSubStringForLine(TtfText* text, int line, out SubString substring) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (line < 0) {
+            throw new ArgumentOutOfRangeException(nameof(line), "Line index cannot be negative.");
+        }
+        fixed (SubString* pSubstring = &substring) {
+            return TTF_GetTextSubStringForLine(text, line, pSubstring);
+        }
+    }
 
     /**
      * Get the substrings of a text object that contain a range of text.
@@ -2746,7 +3555,19 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SubString** TTF_GetTextSubStringsForRange(TTF_Text* text, int offset, int length, int* count);
+    private static partial SubString** TTF_GetTextSubStringsForRange(TtfText* text, int offset, int length, int* count);
+
+    public static SubString** GetTextSubStringsForRange(TtfText* text, int offset, int length, out int count) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        if (offset < 0) {
+            throw new ArgumentOutOfRangeException(nameof(offset), "Offset cannot be negative.");
+        }
+        fixed (int* pCount = &count) {
+            return TTF_GetTextSubStringsForRange(text, offset, length, pCount);
+        }
+    }
 
     /**
      * Get the portion of a text string that is closest to a point.
@@ -2771,7 +3592,23 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetTextSubStringForPoint(TTF_Text* text, int x, int y, SubString* substring);
+    private static partial bool TTF_GetTextSubStringForPoint(TtfText* text, int x, int y, SubString* substring);
+
+    public static bool GetTextSubStringForPoint(TtfText* text, int x, int y, out SubString substring) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (SubString* pSubstring = &substring) {
+            return TTF_GetTextSubStringForPoint(text, x, y, pSubstring);
+        }
+    }
+
+    public static bool GetTextSubStringForPoint(TtfText* text, Point point, out SubString substring) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return GetTextSubStringForPoint(text, point.X, point.Y, out substring);
+    }
 
     /**
      * Get the previous substring in a text object
@@ -2792,7 +3629,16 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetPreviousTextSubString(TTF_Text* text, SubString* substring, SubString* previous);
+    private static partial bool TTF_GetPreviousTextSubString(TtfText* text, SubString* substring, SubString* previous);
+
+    public static bool GetPreviousTextSubString(TtfText* text, SubString* substring, out SubString previous) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (SubString* pPrevious = &previous) {
+            return TTF_GetPreviousTextSubString(text, substring, pPrevious);
+        }
+    }
 
     /**
      * Get the next substring in a text object
@@ -2814,7 +3660,16 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_GetNextTextSubString(TTF_Text* text, SubString* substring, SubString* next);
+    private static partial bool TTF_GetNextTextSubString(TtfText* text, SubString* substring, SubString* next);
+
+    public static bool GetNextTextSubString(TtfText* text, SubString* substring, out SubString next) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        fixed (SubString* pNext = &next) {
+            return TTF_GetNextTextSubString(text, substring, pNext);
+        }
+    }
 
     /**
      * Update the layout of a text object.
@@ -2835,7 +3690,14 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_UpdateText(TTF_Text* text);
+    private static partial bool TTF_UpdateText(TtfText* text);
+
+    public static bool UpdateText(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        return TTF_UpdateText(text);
+    }
 
     /**
      * Destroy a text object created by a text engine.
@@ -2851,7 +3713,14 @@ public static unsafe partial class Ttf {
      */
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_DestroyText(TTF_Text* text);
+    private static partial void TTF_DestroyText(TtfText* text);
+
+    public static void DestroyText(TtfText* text) {
+        if (text == null) {
+            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
+        }
+        TTF_DestroyText(text);
+    }
 
     /**
      * Dispose of a previously-created font.
@@ -2879,6 +3748,13 @@ public static unsafe partial class Ttf {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_CloseFont(Font* font);
 
+    public static void CloseFont(Font* font) {
+        if (font == null) {
+            throw new ArgumentNullException(nameof(font), "Font cannot be null.");
+        }
+        TTF_CloseFont(font);
+    }
+
     /**
      * Deinitialize SDL_ttf.
      *
@@ -2902,6 +3778,10 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_Quit();
+
+    public static void Quit() {
+        TTF_Quit();
+    }
 
     /**
      * Check if SDL_ttf is initialized.
@@ -2928,4 +3808,8 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_WasInit();
+
+    public static int WasInit() {
+        return TTF_WasInit();
+    }
 }

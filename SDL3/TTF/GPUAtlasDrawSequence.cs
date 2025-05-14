@@ -19,7 +19,7 @@ public static unsafe partial class Ttf {
         public int NumVertices;                       /**< Number of vertices */
         public int* Indices;                           /**< An array of indices into the 'vertices' arrays */
         public int NumIndices;                        /**< Number of indices */
-        public TTF_ImageType ImageType;               /**< The image type of this draw sequence */
+        public ImageType ImageType;               /**< The image type of this draw sequence */
 
         public GPUAtlasDrawSequence* next;  /**< The next sequence (will be NULL in case of the last sequence) */
     }
