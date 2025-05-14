@@ -11,6 +11,18 @@ namespace SharpSDL3;
 public static unsafe partial class Sdl {
     internal const string NativeLibName = "SDL3";
 
+    /// <summary>
+    /// This macro turns the version numbers into a numeric value.
+    /// </summary>
+    /// <remarks>
+    /// This macro is available since SDL 3.2.0.
+    /// </remarks>
+    /// <param name="major">The Major versiom number</param>
+    /// <param name="minor">The Minor version number</param>
+    /// <param name="patch">The Patch version number</param>
+    /// <returns>The version as a number</returns>
+    public static int VersionNum(int major, int minor, int patch) => major * 1000000 + minor * 1000 + patch;
+
     public static SdlBool AddHintCallback(string name, SdlHintCallback callback, nint userdata) {
         if (string.IsNullOrEmpty(name)) {
             Logger.LogWarn(LogCategory.System, "AddHintCallback: Name is null or empty.");

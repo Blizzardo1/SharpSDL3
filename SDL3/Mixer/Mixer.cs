@@ -14,9 +14,9 @@ public static unsafe partial class Mixer {
     /// Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
     /// </summary>
     public const int Major = 3;
-
     public const int Micro = 0;
     public const int Minor = 0;
+
     public const string NativeLibName = "SDL3_mixer";
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
@@ -676,18 +676,6 @@ public static unsafe partial class Mixer {
     }
 
     public static void PauseMusic() => Mix_PauseMusic();
-
-    public static int PlayChannel(int channel, Chunk chunk, int loops) {
-        if (chunk.AudioBuffer == null) // Check if the chunk is uninitialized by verifying its pointer.
-            throw new ArgumentNullException(nameof(chunk));
-        return Mix_PlayChannel(channel, &chunk, loops);
-    }
-
-    public static int PlayChannelTimed(int channel, Chunk chunk, int loops, int ticks) {
-        if (chunk.AudioBuffer == null) // Check if the chunk is uninitialized by verifying its pointer.
-            throw new ArgumentNullException(nameof(chunk));
-        return Mix_PlayChannelTimed(channel, &chunk, loops, ticks);
-    }
 
     public static int Playing(int channel) {
         if (channel < 0)
