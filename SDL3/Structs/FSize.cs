@@ -23,4 +23,16 @@ public struct FSize(float width, float height) {
     public override readonly int GetHashCode() {
         return HashCode.Combine(Width, Height);
     }
+
+    public override readonly string ToString() {
+        return $"Width: {Width}, Height: {Height}";
+    }
+
+    public static implicit operator FSize((float width, float height) tuple) {
+        return new FSize(tuple.width, tuple.height);
+    }
+
+    public static explicit operator FSize(Size size) {
+        return new FSize(size.Width, size.Height);
+    }
 }

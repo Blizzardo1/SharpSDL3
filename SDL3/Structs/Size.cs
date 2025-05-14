@@ -28,4 +28,12 @@ public struct Size(int width, int height) : IEquatable<Size> {
     public static bool operator !=(Size left, Size right) {
         return !(left == right);
     }
+
+    public static implicit operator Size((int width, int height) tuple) {
+        return new Size(tuple.width, tuple.height);
+    }
+
+    public static explicit operator Size(FSize sizeF) {
+        return new Size((int)sizeF.Width, (int)sizeF.Height);
+    }
 }
