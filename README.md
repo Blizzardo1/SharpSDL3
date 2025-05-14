@@ -1,4 +1,4 @@
-This is SDL3-CS, C# bindings for SDL3.  
+This is SDL3-CS, C# bindings for SDL3.  [![CI](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml/badge.svg)](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml)
 
 This is SharpSDL3, a C# wrapper for SDL3. Originally, this stems from [flibitijibibo's work](https://github.com/flibitijibibo/SDL3-CS), but since he dislikes adapting the APIs to a more C#-like style (dropping `SDL_` prefixes etc.), here's a fork that does adapt the style.
 
