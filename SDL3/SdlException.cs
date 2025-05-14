@@ -1,10 +1,4 @@
-﻿using SharpSDL3.Enums;
-using SharpSDL3.Structs;
-using System;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices;
-using System.Runtime.InteropServices.Marshalling;
-using static SharpSDL3.Mixer.Mixer;
+﻿using System;
 
 namespace SharpSDL3;
 /// <summary>

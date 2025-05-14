@@ -2,89 +2,132 @@ using System.Runtime.InteropServices;
 
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
+using SharpSDL3.TTF;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Delegates 
-{
-	
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate AppResult SdlAppEventFunc(nint appstate, Event* evt);
+public static unsafe partial class Delegates {
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate AppResult SdlAppInitFunc(nint appstate, int argc, nint argv);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint FtAllocFunc(Memory memory, long size);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate AppResult SdlAppIterateFunc(nint appstate);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void FtBitmapLcdFilterFunc(nint bitmap, string weights);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlAppQuitFunc(nint appstate, AppResult result);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int FtDebugHookFunc(void* arg);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate AssertState SdlAssertionHandler(AssertData* data, nint userdata);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void FtFreeFunc(Memory memory, nint block);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlAudioPostmixCallback(nint userdata, AudioSpec* spec, float* buffer, int buflen);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int FtModuleConstructor(FtModule module);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlAudioStreamCallback(nint userdata, nint stream, int additionalAmount, int totalAmount);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void FtModuleDestructor(FtModule module);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlCleanupPropertyCallback(nint userdata, nint value);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint FtModuleRequester(FtModule module, string name);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlClipboardCleanupCallback(nint userdata);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint FtReallocFunc(Memory memory, long cur_size, long new_size, nint block);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate nint SdlClipboardDataCallback(nint userdata, byte* mimeType, nint size);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate AppResult SdlAppEventFunc(nint appstate, Event* evt);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlDialogFileCallback(nint userdata, nint filelist, int filter);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate AppResult SdlAppInitFunc(nint appstate, int argc, nint argv);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate nint SdlEglAttribArrayCallback();
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate AppResult SdlAppIterateFunc(nint appstate);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate nint SdlEglIntArrayCallback();
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlAppQuitFunc(nint appstate, AppResult result);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate EnumerationResult SdlEnumerateDirectoryCallback(nint userdata, byte* dirname, byte* fname);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate AssertState SdlAssertionHandler(AssertData* data, nint userdata);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlEnumeratePropertiesCallback(nint userdata, uint props, byte* name);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlAudioPostmixCallback(nint userdata, AudioSpec* spec, float* buffer, int buflen);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate bool SdlEventFilter(nint userdata, Event* evt);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlAudioStreamCallback(nint userdata, nint stream, int additionalAmount, int totalAmount);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlHintCallback(nint userdata, byte* name, byte* oldValue, byte* newValue);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlCleanupPropertyCallback(nint userdata, nint value);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate HitTestResult SdlHitTest(nint win, Point* area, nint data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlClipboardCleanupCallback(nint userdata);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlLogOutputFunction(nint userdata,  LogCategory category, LogPriority priority, byte* message);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint SdlClipboardDataCallback(nint userdata, byte* mimeType, nint size);
 
-	// /usr/local/include/SDL3/SDL_main.h
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlDialogFileCallback(nint userdata, nint filelist, int filter);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate int SdlMainFunc(int argc, nint argv);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint SdlEglAttribArrayCallback();
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlMainThreadCallback(nint userdata);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate nint SdlEglIntArrayCallback();
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate ulong SdlNsTimerCallback(nint userdata, uint timerId, ulong interval);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate EnumerationResult SdlEnumerateDirectoryCallback(nint userdata, byte* dirname, byte* fname);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate int SdlThreadFunction(nint data);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlEnumeratePropertiesCallback(nint userdata, uint props, byte* name);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate uint SdlTimerCallback(nint userdata, uint timerId, uint interval);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate bool SdlEventFilter(nint userdata, Event* evt);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlTlsDestructorCallback(nint value);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int SdlHashCallback(void* userdata, void* key);
 
-	[UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-	public delegate void SdlTrayCallback(nint userdata, nint entry);
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlHashDestroyCallback(void* userdata, void* key, void* value);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlHashFreeCallback(void* userdata, void* key);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate bool SdlHashKeyMatchCallback(void* userdata, void* a, void* b);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlHintCallback(nint userdata, byte* name, byte* oldValue, byte* newValue);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate HitTestResult SdlHitTest(nint win, Point* area, nint data);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlLogOutputFunction(nint userdata, LogCategory category, LogPriority priority, byte* message);
+
+    // /usr/local/include/SDL3/SDL_main.h
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int SdlMainFunc(int argc, nint argv);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlMainThreadCallback(nint userdata);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate ulong SdlNsTimerCallback(nint userdata, uint timerId, ulong interval);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate int SdlThreadFunction(nint data);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate uint SdlTimerCallback(nint userdata, uint timerId, uint interval);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlTlsDestructorCallback(nint value);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void SdlTrayCallback(nint userdata, nint entry);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate ulong FtStreamIoFunc(FtStream stream, ulong offset, string buffer, ulong count);
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void FtStreamCloseFunc(FtStream stream);
+
 }
