@@ -312,6 +312,7 @@ public static unsafe partial class Textures {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureSize(nint texture, out float w, out float h);
+
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool

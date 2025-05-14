@@ -60,7 +60,7 @@ public unsafe struct IOStreamInterface {
      *  \return true if successful or false on write error when flushing data.
      */
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate bool Flush (nint userdata, IOStatus* status);
+    public delegate bool Flush(nint userdata, IOStatus* status);
 
     /**
      *  Close and free any allocated resources.

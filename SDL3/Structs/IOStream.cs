@@ -5,8 +5,8 @@ namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
 public struct IOStream {
-    IOStreamInterface Interface;
-    nint Userdata;
-    IOStatus Status;
-    int Props;
+    public IoStreamInterface Interface;
+    public nint Userdata;
+    public IOStatus Status;
+    public int Props;
 }
