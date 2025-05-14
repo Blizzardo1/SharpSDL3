@@ -5,7 +5,7 @@ public struct Size(int width, int height) : IEquatable<Size> {
     public int Width { readonly get => width; set => width = value; }
     public int Height { readonly get => height; set => height = value; }
 
-    public override bool Equals(object? obj) {
+    public override readonly bool Equals(object? obj) {
         return obj is Size size && Equals(size);
     }
 
