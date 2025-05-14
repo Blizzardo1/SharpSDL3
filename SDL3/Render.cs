@@ -36,18 +36,15 @@ public static unsafe partial class Render {
         return result;
     }
 
-    public static nint CreateRenderer(nint window, string name) {
+    public static nint CreateRenderer(nint window, string? name) {
         if (window == nint.Zero) {
             Logger.LogError(LogCategory.System, "Window is null");
             return nint.Zero;
         }
-        if (string.IsNullOrEmpty(name)) {
-            Logger.LogError(LogCategory.System, "Name is null or empty");
-            return nint.Zero;
-        }
+
         nint result = SDL_CreateRenderer(window, name);
         if (result == nint.Zero) {
-            Logger.LogError(LogCategory.System, "Failed to create renderer");
+            Logger.LogError(LogCategory.System, $"Failed to create renderer: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1156,7 +1153,7 @@ public static unsafe partial class Render {
 
     [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint SDL_CreateRenderer(nint window, string name);
+    private static partial nint SDL_CreateRenderer(nint window, string? name);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
