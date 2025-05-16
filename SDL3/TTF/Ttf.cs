@@ -1768,18 +1768,25 @@ public static unsafe partial class Ttf {
     [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool TTF_MeasureString([MarshalUsing(typeof(OwnedFontMarshaller))] Font font, string text, Size length, int max_width, int measured_width, int measured_length);
+    private static partial bool TTF_MeasureString([MarshalUsing(typeof(OwnedFontMarshaller))] Font font, string text, int length, int max_width, out int? measured_width, out int? measured_length);
 
-    public static bool MeasureString(Font font, string text, Size length, int max_width, int measured_width, int measured_length) {
-        bool result = TTF_MeasureString(font, text, length, max_width, measured_width, measured_length);
-        if(!result) {
+    public static bool MeasureString(Font font, string text, int length, int max_width, out int? measured_width, out int? measured_length) {
+        ArgumentException.ThrowIfNullOrEmpty(text);
+        bool result = TTF_MeasureString(font, text, length, max_width, out int? mW, out int? mL);
+
+        if (!result) {
             Logger.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
         }
+        measured_width = mW;
+        measured_length = mL;
         return result;
     }
 
-    public static bool MeasureString(Font font, string text, Size length, int max_width, Size measuredSize) {
-        return MeasureString(font, text, length, max_width, measuredSize.Width, measuredSize.Height);
+    public static bool MeasureString(Font font, string text, int length, int max_width, out Size? measuredSize) {
+        bool result = MeasureString(font, text, length, max_width, out int? mW, out int? mL);
+        
+        measuredSize = new(mW ?? 0, mL ?? 0);
+        return result;
     }
 
     /**
@@ -3829,7 +3836,7 @@ public static unsafe partial class Ttf {
         nint pSubStrings = GetTextSubStringsForRange(text, offset, length, out count);
         if (pSubStrings == nint.Zero) {
             Logger.LogError(LogCategory.Error, "Failed to get text substrings for range.");
-            return Array.Empty<SubString>();
+            return [];
         }
         SubString[] substrings = new SubString[count];
         for (int i = 0; i < count; i++) {

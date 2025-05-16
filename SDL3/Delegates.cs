@@ -1,36 +1,11 @@
 using System.Runtime.InteropServices;
 
 using SharpSDL3.Enums;
-using SharpSDL3.TTF;
 
 namespace SharpSDL3;
 
 public static unsafe partial class Delegates {
     private const UnmanagedType UType = UnmanagedType.LPUTF8Str;
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint FtAllocFunc(Memory memory, long size);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void FtBitmapLcdFilterFunc(nint bitmap, [MarshalAs(UType)] string weights);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int FtDebugHookFunc(nint arg);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void FtFreeFunc(Memory memory, nint block);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int FtModuleConstructor(FtModule module);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void FtModuleDestructor(FtModule module);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint FtModuleRequester(FtModule module, [MarshalAs(UType)] string name);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint FtReallocFunc(Memory memory, long cur_size, long new_size, nint block);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult SdlAppEventFunc(nint appstate, nint evt);
@@ -123,11 +98,4 @@ public static unsafe partial class Delegates {
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SdlTrayCallback(nint userdata, nint entry);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate ulong FtStreamIoFunc(FtStream stream, ulong offset, [MarshalAs(UType)] string buffer, ulong count);
-
-    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void FtStreamCloseFunc(FtStream stream);
-
 }
