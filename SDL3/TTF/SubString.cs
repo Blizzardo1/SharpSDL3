@@ -10,4 +10,6 @@ public struct SubString {
     public int LineIndex;             // The index of the line that contains this substring
     public int ClusterIndex;          // The internal cluster index, used for quickly iterating
     public Rect Rect;              // The rectangle, relative to the top left of the text, containing the substring
+
+    public nint Handle;
 }

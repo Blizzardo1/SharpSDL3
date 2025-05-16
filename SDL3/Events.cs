@@ -153,7 +153,8 @@ public static unsafe partial class Events {
             // Call the native method and check the result  
             var result = SDL_PollEvent(out eventPtr);
 
-            // Copy the unmanaged memory back to the managed structure  
+            // Copy the unmanaged memory back to the managed structure
+            // Crashes here. Figure out why
             @event = Marshal.PtrToStructure<Event>((nint)eventPtr);
 
             // Perform additional validation or processing if needed  

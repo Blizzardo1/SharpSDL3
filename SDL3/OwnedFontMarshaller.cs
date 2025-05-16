@@ -14,10 +14,7 @@ public unsafe static class OwnedFontMarshaller {
     /// <param name="managed">The <see cref="Font"/> struct</param>
     /// <returns>An unmanaged <see cref="nint"/> pointer</returns>
     public static nint ConvertToUnmanaged(Font managed) {
-        int size = Marshal.SizeOf<Font>();
-        nint unmanaged = Marshal.AllocHGlobal(size);
-        Marshal.StructureToPtr(managed, unmanaged, false);
-        return unmanaged;
+        return managed.Handle;
     }
 
     // MarshalMode.ManagedToUnmanagedOut
@@ -31,6 +28,8 @@ public unsafe static class OwnedFontMarshaller {
             return default;
         }
 
-        return Marshal.PtrToStructure<Font>(unmanaged)!;
+        Font font = Marshal.PtrToStructure<Font>(unmanaged)!;
+        font.Handle = unmanaged;
+        return font;
     }
 }

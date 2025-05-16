@@ -57,7 +57,9 @@ public unsafe struct Font {
     public FontList* Fallbacks;
     public FontList* FallbackFor;
 
-    public static Size GetTextSize(string text) => Ttf.GetTextSize(text);
+    public nint Handle;
+
+    public readonly Size GetTextSize(string text) => Ttf.MeasureString(this, text, 0);
     public readonly nint RenderTextSolid(string text, Color foregroundColor) => Ttf.RenderTextSolid(this, text, GetTextSize(text), foregroundColor);
     public readonly nint RenderGlyphSolid(char c, Color foregroundColor) => Ttf.RenderGlyphSolid(this, c, foregroundColor);
     public readonly nint RenderTextShaded(string text, Color foregroundColor, Color bg) => Ttf.RenderTextShaded(this, text, GetTextSize(text), foregroundColor, bg);

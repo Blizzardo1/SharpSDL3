@@ -25,7 +25,7 @@ public static unsafe partial class Sdl {
     /// <returns>The version as a number</returns>
     public static int VersionNum(int major, int minor, int patch) => major * 1000000 + minor * 1000 + patch;
 
-    public static SdlBool AddHintCallback(string name, SdlHintCallback callback, nint userdata) {
+    public static bool AddHintCallback(string name, SdlHintCallback callback, nint userdata) {
         if (string.IsNullOrEmpty(name)) {
             Logger.LogWarn(LogCategory.System, "AddHintCallback: Name is null or empty.");
             return false;
@@ -37,7 +37,7 @@ public static unsafe partial class Sdl {
         return SDL_AddHintCallback(name, callback, userdata);
     }
 
-    public static SdlBool AddSurfaceAlternateImage(nint surface, nint image) {
+    public static bool AddSurfaceAlternateImage(nint surface, nint image) {
         if (surface == nint.Zero || image == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "AddSurfaceAlternateImage: Surface or image pointer is null.");
             return false;
@@ -45,7 +45,7 @@ public static unsafe partial class Sdl {
         return SDL_AddSurfaceAlternateImage(surface, image);
     }
 
-    public static SdlBool BlitSurface(nint src, nint srcrect, nint dst, nint dstrect) {
+    public static bool BlitSurface(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurface: Source or destination pointer is null.");
             return false;
@@ -53,7 +53,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurface(src, srcrect, dst, dstrect);
     }
 
-    public static SdlBool BlitSurface9Grid(nint src, nint srcrect, int leftWidth, int rightWidth, int topHeight, int bottomHeight, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
+    public static bool BlitSurface9Grid(nint src, nint srcrect, int leftWidth, int rightWidth, int topHeight, int bottomHeight, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurface9Grid: Source or destination pointer is null.");
             return false;
@@ -61,7 +61,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurface9Grid(src, srcrect, leftWidth, rightWidth, topHeight, bottomHeight, scale, scaleMode, dst, dstrect);
     }
 
-    public static SdlBool BlitSurfaceScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
+    public static bool BlitSurfaceScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurfaceScaled: Source or destination pointer is null.");
             return false;
@@ -69,7 +69,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurfaceScaled(src, srcrect, dst, dstrect, scaleMode);
     }
 
-    public static SdlBool BlitSurfaceTiled(nint src, nint srcrect, nint dst, nint dstrect) {
+    public static bool BlitSurfaceTiled(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurfaceTiled: Source or destination pointer is null.");
             return false;
@@ -77,7 +77,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurfaceTiled(src, srcrect, dst, dstrect);
     }
 
-    public static SdlBool BlitSurfaceTiledWithScale(nint src, nint srcrect, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
+    public static bool BlitSurfaceTiledWithScale(nint src, nint srcrect, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurfaceTiledWithScale: Source or destination pointer is null.");
             return false;
@@ -85,7 +85,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurfaceTiledWithScale(src, srcrect, scale, scaleMode, dst, dstrect);
     }
 
-    public static SdlBool BlitSurfaceUnchecked(nint src, nint srcrect, nint dst, nint dstrect) {
+    public static bool BlitSurfaceUnchecked(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurfaceUnchecked: Source or destination pointer is null.");
             return false;
@@ -93,7 +93,7 @@ public static unsafe partial class Sdl {
         return SDL_BlitSurfaceUnchecked(src, srcrect, dst, dstrect);
     }
 
-    public static SdlBool BlitSurfaceUncheckedScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
+    public static bool BlitSurfaceUncheckedScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "BlitSurfaceUncheckedScaled: Source or destination pointer is null.");
             return false;
@@ -105,11 +105,11 @@ public static unsafe partial class Sdl {
         SDL_CleanupTLS();
     }
 
-    public static SdlBool ClearClipboardData() {
+    public static bool ClearClipboardData() {
         return SDL_ClearClipboardData();
     }
 
-    public static SdlBool ClearComposition(nint window) {
+    public static bool ClearComposition(nint window) {
         if (window == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "ClearComposition: Window handle is null.");
             return false;
@@ -117,11 +117,11 @@ public static unsafe partial class Sdl {
         return SDL_ClearComposition(window);
     }
 
-    public static SdlBool ClearError() {
+    public static bool ClearError() {
         return SDL_ClearError();
     }
 
-    public static SdlBool ClearProperty(uint props, string name) {
+    public static bool ClearProperty(uint props, string name) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             Logger.LogWarn(LogCategory.System, "ClearProperty: Properties handle is zero or name is null/empty.");
             return false;
@@ -129,7 +129,7 @@ public static unsafe partial class Sdl {
         return SDL_ClearProperty(props, name);
     }
 
-    public static SdlBool ClearSurface(nint surface, float r, float g, float b, float a) {
+    public static bool ClearSurface(nint surface, float r, float g, float b, float a) {
         if (surface == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "ClearSurface: Surface pointer is null.");
             return false;
@@ -156,7 +156,7 @@ public static unsafe partial class Sdl {
         return blendMode;
     }
 
-    public static SdlBool ConvertPixels(int width, int height, PixelFormat srcFormat, nint src, int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch) {
+    public static bool ConvertPixels(int width, int height, PixelFormat srcFormat, nint src, int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "ConvertPixels: Source or destination pointer is null.");
             return false;
@@ -164,7 +164,7 @@ public static unsafe partial class Sdl {
         return SDL_ConvertPixels(width, height, srcFormat, src, srcPitch, dstFormat, dst, dstPitch);
     }
 
-    public static SdlBool ConvertPixelsAndColorspace(int width, int height, PixelFormat srcFormat, Colorspace srcColorspace, uint srcProperties, nint src, int srcPitch, PixelFormat dstFormat, Colorspace dstColorspace, uint dstProperties, nint dst, int dstPitch) {
+    public static bool ConvertPixelsAndColorspace(int width, int height, PixelFormat srcFormat, Colorspace srcColorspace, uint srcProperties, nint src, int srcPitch, PixelFormat dstFormat, Colorspace dstColorspace, uint dstProperties, nint dst, int dstPitch) {
         if (src == nint.Zero || dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "ConvertPixelsAndColorspace: Source or destination pointer is null.");
             return false;
@@ -188,7 +188,7 @@ public static unsafe partial class Sdl {
         return SDL_ConvertSurfaceAndColorspace(surface, format, palette, colorspace, props);
     }
 
-    public static SdlBool CopyProperties(uint src, uint dst) {
+    public static bool CopyProperties(uint src, uint dst) {
         if (src == 0 || dst == 0) {
             Logger.LogWarn(LogCategory.System, "CopyProperties: Source or destination properties handle is zero.");
             return false;
@@ -352,7 +352,7 @@ public static unsafe partial class Sdl {
         SDL_DestroyWindow(window);
     }
 
-    public static SdlBool DestroyWindowSurface(nint window) {
+    public static bool DestroyWindowSurface(nint window) {
         if (window == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "DestroyWindowSurface: Window handle is null.");
             return false;
@@ -368,7 +368,7 @@ public static unsafe partial class Sdl {
         SDL_DetachThread(thread);
     }
 
-    public static SdlBool DisableScreenSaver() {
+    public static bool DisableScreenSaver() {
         return SDL_DisableScreenSaver();
     }
 
@@ -380,7 +380,7 @@ public static unsafe partial class Sdl {
         return SDL_DuplicateSurface(surface);
     }
 
-    public static SdlBool EnableScreenSaver() {
+    public static bool EnableScreenSaver() {
         return SDL_EnableScreenSaver();
     }
 
@@ -396,7 +396,7 @@ public static unsafe partial class Sdl {
         return SDL_EnterAppMainCallbacks(argc, argv, appInit, appIter, sdlAppEvent, appQuit);
     }
 
-    public static SdlBool EnumerateProperties(uint props, SdlEnumeratePropertiesCallback callback, nint userdata) {
+    public static bool EnumerateProperties(uint props, SdlEnumeratePropertiesCallback callback, nint userdata) {
         if (props == 0 || callback == null) {
             Logger.LogWarn(LogCategory.System, "EnumerateProperties: Properties handle is zero or callback is null.");
             return false;
@@ -419,7 +419,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    public static SdlBool FillSurfaceRects(nint dst, Span<Rect> rects, uint color) {
+    public static bool FillSurfaceRects(nint dst, Span<Rect> rects, uint color) {
         if (dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "FillSurfaceRects: Destination pointer is null.");
             return false;
@@ -453,7 +453,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    public static SdlBool FlipSurface(nint surface, FlipMode flip) {
+    public static bool FlipSurface(nint surface, FlipMode flip) {
         if (surface == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "FlipSurface: Surface pointer is null.");
             return false;
@@ -491,7 +491,7 @@ public static unsafe partial class Sdl {
             Logger.LogWarn(LogCategory.System, "GetBooleanProperty: Properties handle is zero or name is null/empty.");
             return defaultValue;
         }
-        SdlBool result = SDL_GetBooleanProperty(props, name, defaultValue);
+        bool result = SDL_GetBooleanProperty(props, name, defaultValue);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetBooleanProperty: Failed to retrieve boolean property.");
         }
@@ -551,13 +551,13 @@ public static unsafe partial class Sdl {
     }
 
     public static bool GetClosestFullscreenDisplayMode(uint displayId, int w, int h, float refreshRate,
-            SdlBool includeHighDensityModes, out DisplayMode closest) {
+            bool includeHighDensityModes, out DisplayMode closest) {
         if (displayId == 0) {
             Logger.LogWarn(LogCategory.System, "GetClosestFullscreenDisplayMode: Display ID is zero.");
             closest = default;
             return false;
         }
-        SdlBool result = SDL_GetClosestFullscreenDisplayMode(displayId, w, h, refreshRate, includeHighDensityModes,
+        bool result = SDL_GetClosestFullscreenDisplayMode(displayId, w, h, refreshRate, includeHighDensityModes,
             out closest);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetClosestFullscreenDisplayMode: Failed to retrieve closest mode.");
@@ -643,7 +643,7 @@ public static unsafe partial class Sdl {
             rect = default;
             return false;
         }
-        SdlBool result = SDL_GetDisplayBounds(displayId, out rect);
+        bool result = SDL_GetDisplayBounds(displayId, out rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetDisplayBounds: Failed to retrieve display bounds.");
         }
@@ -741,7 +741,7 @@ public static unsafe partial class Sdl {
             rect = default;
             return false;
         }
-        SdlBool result = SDL_GetDisplayUsableBounds(displayId, out rect);
+        bool result = SDL_GetDisplayUsableBounds(displayId, out rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetDisplayUsableBounds: Failed to retrieve usable bounds.");
         }
@@ -833,7 +833,7 @@ public static unsafe partial class Sdl {
             Logger.LogWarn(LogCategory.System, "GetHintBoolean: Name is null or empty.");
             return defaultValue;
         }
-        SdlBool result = SDL_GetHintBoolean(name, defaultValue);
+        bool result = SDL_GetHintBoolean(name, defaultValue);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetHintBoolean: Failed to retrieve hint boolean.");
         }
@@ -920,7 +920,7 @@ public static unsafe partial class Sdl {
         return key;
     }
 
-    public static uint GetKeyFromScancode(ScanCode scanCode, KeyMod modstate, SdlBool keyEvent) {
+    public static uint GetKeyFromScancode(ScanCode scanCode, KeyMod modstate, bool keyEvent) {
         if (scanCode == ScanCode.Unknown) {
             Logger.LogWarn(LogCategory.System, "GetKeyFromScancode: Scan code is unknown.");
             return 0;
@@ -944,7 +944,7 @@ public static unsafe partial class Sdl {
         return name;
     }
 
-    public static SdlBool GetMasksForPixelFormat(PixelFormat format, out int bpp, out uint rmask, out uint gmask,
+    public static bool GetMasksForPixelFormat(PixelFormat format, out int bpp, out uint rmask, out uint gmask,
         out uint bmask, out uint amask) {
         if (format == PixelFormat.Unknown) {
             Logger.LogWarn(LogCategory.System, "GetMasksForPixelFormat: Format is unknown.");
@@ -955,7 +955,7 @@ public static unsafe partial class Sdl {
             amask = 0;
             return false;
         }
-        SdlBool result = SDL_GetMasksForPixelFormat(format, out bpp, out rmask, out gmask, out bmask, out amask);
+        bool result = SDL_GetMasksForPixelFormat(format, out bpp, out rmask, out gmask, out bmask, out amask);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetMasksForPixelFormat: Failed to retrieve masks for pixel format.");
         }
@@ -1095,65 +1095,65 @@ public static unsafe partial class Sdl {
         return SDL_GetPropertyType(props, name);
     }
 
-    public static SdlBool GetRectAndLineIntersection(ref Rect rect, ref int x1, ref int y1, ref int x2, ref int y2) {
-        SdlBool result = SDL_GetRectAndLineIntersection(ref rect, ref x1, ref y1, ref x2, ref y2);
+    public static bool GetRectAndLineIntersection(ref Rect rect, ref int x1, ref int y1, ref int x2, ref int y2) {
+        bool result = SDL_GetRectAndLineIntersection(ref rect, ref x1, ref y1, ref x2, ref y2);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetRectAndLineIntersection: Failed to retrieve intersection.");
         }
         return result;
     }
 
-    public static SdlBool GetRectAndLineIntersectionFloat(ref FRect rect, ref float x1, ref float y1, ref float x2,
+    public static bool GetRectAndLineIntersectionFloat(ref FRect rect, ref float x1, ref float y1, ref float x2,
         ref float y2) {
-        SdlBool result = SDL_GetRectAndLineIntersectionFloat(ref rect, ref x1, ref y1, ref x2, ref y2);
+        bool result = SDL_GetRectAndLineIntersectionFloat(ref rect, ref x1, ref y1, ref x2, ref y2);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetRectAndLineIntersectionFloat: Failed to retrieve intersection.");
         }
         return result;
     }
 
-    public static SdlBool GetRectEnclosingPoints(Span<Point> points, int count, ref Rect clip, out Rect result) {
-        SdlBool resultBool = SDL_GetRectEnclosingPoints(points, count, ref clip, out result);
+    public static bool GetRectEnclosingPoints(Span<Point> points, int count, ref Rect clip, out Rect result) {
+        bool resultBool = SDL_GetRectEnclosingPoints(points, count, ref clip, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectEnclosingPoints: Failed to retrieve enclosing points.");
         }
         return resultBool;
     }
 
-    public static SdlBool GetRectEnclosingPointsFloat(Span<FPoint> points, int count, ref FRect clip, out FRect result) {
-        SdlBool resultBool = SDL_GetRectEnclosingPointsFloat(points, count, ref clip, out result);
+    public static bool GetRectEnclosingPointsFloat(Span<FPoint> points, int count, ref FRect clip, out FRect result) {
+        bool resultBool = SDL_GetRectEnclosingPointsFloat(points, count, ref clip, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectEnclosingPointsFloat: Failed to retrieve enclosing points.");
         }
         return resultBool;
     }
 
-    public static SdlBool GetRectIntersection(ref Rect a, ref Rect b, out Rect result) {
-        SdlBool resultBool = SDL_GetRectIntersection(ref a, ref b, out result);
+    public static bool GetRectIntersection(ref Rect a, ref Rect b, out Rect result) {
+        bool resultBool = SDL_GetRectIntersection(ref a, ref b, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectIntersection: Failed to retrieve intersection.");
         }
         return resultBool;
     }
 
-    public static SdlBool GetRectIntersectionFloat(ref FRect a, ref FRect b, out FRect result) {
-        SdlBool resultBool = SDL_GetRectIntersectionFloat(ref a, ref b, out result);
+    public static bool GetRectIntersectionFloat(ref FRect a, ref FRect b, out FRect result) {
+        bool resultBool = SDL_GetRectIntersectionFloat(ref a, ref b, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectIntersectionFloat: Failed to retrieve intersection.");
         }
         return resultBool;
     }
 
-    public static SdlBool GetRectUnion(ref Rect a, ref Rect b, out Rect result) {
-        SdlBool resultBool = SDL_GetRectUnion(ref a, ref b, out result);
+    public static bool GetRectUnion(ref Rect a, ref Rect b, out Rect result) {
+        bool resultBool = SDL_GetRectUnion(ref a, ref b, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectUnion: Failed to retrieve union.");
         }
         return resultBool;
     }
 
-    public static SdlBool GetRectUnionFloat(ref FRect a, ref FRect b, out FRect result) {
-        SdlBool resultBool = SDL_GetRectUnionFloat(ref a, ref b, out result);
+    public static bool GetRectUnionFloat(ref FRect a, ref FRect b, out FRect result) {
+        bool resultBool = SDL_GetRectUnionFloat(ref a, ref b, out result);
         if (!resultBool) {
             Logger.LogError(LogCategory.Error, "GetRectUnionFloat: Failed to retrieve union.");
         }
@@ -1240,7 +1240,7 @@ public static unsafe partial class Sdl {
             alpha = 0;
             return false;
         }
-        SdlBool result = SDL_GetSurfaceAlphaMod(surface, out alpha);
+        bool result = SDL_GetSurfaceAlphaMod(surface, out alpha);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetSurfaceAlphaMod: Failed to retrieve surface alpha mod.");
         }
@@ -1265,7 +1265,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "GetSurfaceBlendMode: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_GetSurfaceBlendMode(surface, blendMode);
+        bool result = SDL_GetSurfaceBlendMode(surface, blendMode);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetSurfaceBlendMode: Failed to retrieve surface blend mode.");
         }
@@ -1278,7 +1278,7 @@ public static unsafe partial class Sdl {
             rect = default;
             return false;
         }
-        SdlBool result = SDL_GetSurfaceClipRect(surface, out rect);
+        bool result = SDL_GetSurfaceClipRect(surface, out rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetSurfaceClipRect: Failed to retrieve surface clip rect.");
         }
@@ -1291,7 +1291,7 @@ public static unsafe partial class Sdl {
             key = 0;
             return false;
         }
-        SdlBool result = SDL_GetSurfaceColorKey(surface, out key);
+        bool result = SDL_GetSurfaceColorKey(surface, out key);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetSurfaceColorKey: Failed to retrieve surface color key.");
         }
@@ -1304,7 +1304,7 @@ public static unsafe partial class Sdl {
             r = g = b = 0;
             return false;
         }
-        SdlBool result = SDL_GetSurfaceColorMod(surface, out r, out g, out b);
+        bool result = SDL_GetSurfaceColorMod(surface, out r, out g, out b);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetSurfaceColorMod: Failed to retrieve surface color mod.");
         }
@@ -1371,7 +1371,7 @@ public static unsafe partial class Sdl {
             cursor = 0;
             return false;
         }
-        SdlBool result = SDL_GetTextInputArea(window, out rect, out cursor);
+        bool result = SDL_GetTextInputArea(window, out rect, out cursor);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetTextInputArea: Failed to retrieve text input area.");
         }
@@ -1444,7 +1444,7 @@ public static unsafe partial class Sdl {
             minAspect = maxAspect = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowAspectRatio(window, out minAspect, out maxAspect);
+        bool result = SDL_GetWindowAspectRatio(window, out minAspect, out maxAspect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowAspectRatio: Failed to retrieve window aspect ratio.");
         }
@@ -1457,7 +1457,7 @@ public static unsafe partial class Sdl {
             top = left = bottom = right = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowBordersSize(window, out top, out left, out bottom, out right);
+        bool result = SDL_GetWindowBordersSize(window, out top, out left, out bottom, out right);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowBorderSize: Failed to retrieve window border size.");
         }
@@ -1469,7 +1469,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "GetWindowBorderSize: Window pointer is null.");
             return default;
         }
-        SdlBool result = SDL_GetWindowBordersSize(window, out int top, out int left, out int bottom, out int right);
+        bool result = SDL_GetWindowBordersSize(window, out int top, out int left, out int bottom, out int right);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowBorderSize: Failed to retrieve window border size.");
         }
@@ -1568,7 +1568,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "GetWindowKeyboardGrab: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_GetWindowKeyboardGrab(window);
+        bool result = SDL_GetWindowKeyboardGrab(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowKeyboardGrab: Failed to retrieve window keyboard grab.");
         }
@@ -1581,7 +1581,7 @@ public static unsafe partial class Sdl {
             w = h = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowMaximumSize(window, out w, out h);
+        bool result = SDL_GetWindowMaximumSize(window, out w, out h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowMaximumSize: Failed to retrieve window maximum size.");
         }
@@ -1593,7 +1593,7 @@ public static unsafe partial class Sdl {
             return default;
         }
 
-        SdlBool result = SDL_GetWindowMaximumSize(window, out int w, out int h);
+        bool result = SDL_GetWindowMaximumSize(window, out int w, out int h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowMaximumSize: Failed to retrieve window maximum size.");
             return default;
@@ -1607,7 +1607,7 @@ public static unsafe partial class Sdl {
             w = h = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowMinimumSize(window, out w, out h);
+        bool result = SDL_GetWindowMinimumSize(window, out w, out h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowMinimumSize: Failed to retrieve window minimum size.");
         }
@@ -1618,7 +1618,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return default;
         }
-        SdlBool result = SDL_GetWindowMinimumSize(window, out int w, out int h);
+        bool result = SDL_GetWindowMinimumSize(window, out int w, out int h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowMinimumSize: Failed to retrieve window minimum size.");
             return default;
@@ -1631,7 +1631,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "GetWindowMouseGrab: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_GetWindowMouseGrab(window);
+        bool result = SDL_GetWindowMouseGrab(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowMouseGrab: Failed to retrieve window mouse grab.");
         }
@@ -1716,7 +1716,7 @@ public static unsafe partial class Sdl {
             x = y = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowPosition(window, out x, out y);
+        bool result = SDL_GetWindowPosition(window, out x, out y);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowPosition: Failed to retrieve window position.");
         }
@@ -1727,7 +1727,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return default;
         }
-        SdlBool result = SDL_GetWindowPosition(window, out int x, out int y);
+        bool result = SDL_GetWindowPosition(window, out int x, out int y);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowPosition: Failed to retrieve window position.");
             return default;
@@ -1778,7 +1778,7 @@ public static unsafe partial class Sdl {
             rect = default;
             return false;
         }
-        SdlBool result = SDL_GetWindowSafeArea(window, out rect);
+        bool result = SDL_GetWindowSafeArea(window, out rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSafeArea: Failed to retrieve window safe area.");
         }
@@ -1789,7 +1789,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return default;
         }
-        SdlBool result = SDL_GetWindowSafeArea(window, out Rect rect);
+        bool result = SDL_GetWindowSafeArea(window, out Rect rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSafeArea: Failed to retrieve window safe area.");
             return default;
@@ -1803,7 +1803,7 @@ public static unsafe partial class Sdl {
             w = h = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowSize(window, out w, out h);
+        bool result = SDL_GetWindowSize(window, out w, out h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSize: Failed to retrieve window size.");
         }
@@ -1814,7 +1814,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return default;
         }
-        SdlBool result = SDL_GetWindowSize(window, out int w, out int h);
+        bool result = SDL_GetWindowSize(window, out int w, out int h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSize: Failed to retrieve window size.");
             return default;
@@ -1828,7 +1828,7 @@ public static unsafe partial class Sdl {
             w = h = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowSizeInPixels(window, out w, out h);
+        bool result = SDL_GetWindowSizeInPixels(window, out w, out h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSizeInPixels: Failed to retrieve window size in pixels.");
         }
@@ -1839,7 +1839,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return default;
         }
-        SdlBool result = SDL_GetWindowSizeInPixels(window, out int w, out int h);
+        bool result = SDL_GetWindowSizeInPixels(window, out int w, out int h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSizeInPixels: Failed to retrieve window size in pixels.");
             return default;
@@ -1865,7 +1865,7 @@ public static unsafe partial class Sdl {
             vsync = 0;
             return false;
         }
-        SdlBool result = SDL_GetWindowSurfaceVSync(window, out vsync);
+        bool result = SDL_GetWindowSurfaceVSync(window, out vsync);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSurfaceVSync: Failed to retrieve window surface VSync.");
         }
@@ -1876,7 +1876,7 @@ public static unsafe partial class Sdl {
         if (window == nint.Zero) {
             return 0;
         }
-        SdlBool result = SDL_GetWindowSurfaceVSync(window, out int vsync);
+        bool result = SDL_GetWindowSurfaceVSync(window, out int vsync);
         if (!result) {
             Logger.LogError(LogCategory.Error, "GetWindowSurfaceVSync: Failed to retrieve window surface VSync.");
             return 0;
@@ -1909,7 +1909,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "HasClipboardData: MIME type is null or empty.");
             return false;
         }
-        SdlBool result = SDL_HasClipboardData(mimeType);
+        bool result = SDL_HasClipboardData(mimeType);
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasClipboardData: Failed to check clipboard data.");
         }
@@ -1917,7 +1917,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasClipboardText() {
-        SdlBool result = SDL_HasClipboardText();
+        bool result = SDL_HasClipboardText();
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasClipboardText: Failed to check clipboard text.");
         }
@@ -1925,7 +1925,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasKeyboard() {
-        SdlBool result = SDL_HasKeyboard();
+        bool result = SDL_HasKeyboard();
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasKeyboard: Failed to check keyboard.");
         }
@@ -1933,7 +1933,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasPrimarySelectionText() {
-        SdlBool result = SDL_HasPrimarySelectionText();
+        bool result = SDL_HasPrimarySelectionText();
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasPrimarySelectionText: Failed to check primary selection text.");
         }
@@ -1945,7 +1945,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "HasProperty: Property name is null or empty.");
             return false;
         }
-        SdlBool result = SDL_HasProperty(props, name);
+        bool result = SDL_HasProperty(props, name);
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasProperty: Failed to check property.");
         }
@@ -1953,7 +1953,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasRectIntersection(ref Rect a, ref Rect b) {
-        SdlBool result = SDL_HasRectIntersection(ref a, ref b);
+        bool result = SDL_HasRectIntersection(ref a, ref b);
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasRectIntersection: Failed to check rectangle intersection.");
         }
@@ -1961,7 +1961,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasRectIntersectionFloat(ref FRect a, ref FRect b) {
-        SdlBool result = SDL_HasRectIntersectionFloat(ref a, ref b);
+        bool result = SDL_HasRectIntersectionFloat(ref a, ref b);
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasRectIntersectionFloat: Failed to check rectangle intersection.");
         }
@@ -1969,7 +1969,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool HasScreenKeyboardSupport() {
-        SdlBool result = SDL_HasScreenKeyboardSupport();
+        bool result = SDL_HasScreenKeyboardSupport();
         if (!result) {
             Logger.LogError(LogCategory.Error, "HasScreenKeyboardSupport: Failed to check screen keyboard support.");
         }
@@ -1981,7 +1981,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "HideWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_HideWindow(window);
+        bool result = SDL_HideWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "HideWindow: Failed to hide window.");
         }
@@ -1994,7 +1994,7 @@ public static unsafe partial class Sdl {
             return false;
         }
 
-        SdlBool result = SDL_Init(flags);
+        bool result = SDL_Init(flags);
         if (!result) {
             Logger.LogError(LogCategory.Error, "Init: Failed to initialize SDL.");
         }
@@ -2006,7 +2006,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "InitSubSystem: Invalid initialization flags.");
             return false;
         }
-        SdlBool result = SDL_InitSubSystem(flags);
+        bool result = SDL_InitSubSystem(flags);
         if (!result) {
             Logger.LogError(LogCategory.Error, "InitSubSystem: Failed to initialize SDL subsystem.");
         }
@@ -2014,7 +2014,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool IsMainThread() {
-        SdlBool result = SDL_IsMainThread();
+        bool result = SDL_IsMainThread();
         if (!result) {
             Logger.LogError(LogCategory.Error, "IsMainThread: Failed to check if current thread is main thread.");
         }
@@ -2078,7 +2078,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "LockProperties: Properties are zero.");
             return false;
         }
-        SdlBool result = SDL_LockProperties(props);
+        bool result = SDL_LockProperties(props);
         if (!result) {
             Logger.LogError(LogCategory.Error, "LockProperties: Failed to lock properties.");
         }
@@ -2090,7 +2090,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "LockSurface: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_LockSurface(surface);
+        bool result = SDL_LockSurface(surface);
         if (!result) {
             Logger.LogError(LogCategory.Error, "LockSurface: Failed to lock surface.");
         }
@@ -2191,7 +2191,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "MaximizeWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_MaximizeWindow(window);
+        bool result = SDL_MaximizeWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "MaximizeWindow: Failed to maximize window.");
         }
@@ -2203,14 +2203,14 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "MinimizeWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_MinimizeWindow(window);
+        bool result = SDL_MinimizeWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "MinimizeWindow: Failed to minimize window.");
         }
         return result;
     }
 
-    public static SdlBool OutOfMemory() {
+    public static bool OutOfMemory() {
         return SDL_OutOfMemory();
     }
 
@@ -2220,7 +2220,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "PremultiplyAlpha: Invalid width or height.");
             return false;
         }
-        SdlBool result = SDL_PremultiplyAlpha(width, height, srcFormat, src, srcPitch, dstFormat, dst, dstPitch,
+        bool result = SDL_PremultiplyAlpha(width, height, srcFormat, src, srcPitch, dstFormat, dst, dstPitch,
                 linear);
         if (!result) {
             Logger.LogError(LogCategory.Error, "PremultiplyAlpha: Failed to premultiply alpha.");
@@ -2234,7 +2234,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "PremultiplyAlpha: Invalid rectangle dimensions.");
             return false;
         }
-        SdlBool result = SDL_PremultiplyAlpha(rect.W, rect.H, srcFormat, src, srcPitch, dstFormat, dst, dstPitch,
+        bool result = SDL_PremultiplyAlpha(rect.W, rect.H, srcFormat, src, srcPitch, dstFormat, dst, dstPitch,
                 linear);
         if (!result) {
             Logger.LogError(LogCategory.Error, "PremultiplyAlpha: Failed to premultiply alpha.");
@@ -2247,7 +2247,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "PremultiplySurfaceAlpha: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_PremultiplySurfaceAlpha(surface, linear);
+        bool result = SDL_PremultiplySurfaceAlpha(surface, linear);
         if (!result) {
             Logger.LogError(LogCategory.Error, "PremultiplySurfaceAlpha: Failed to premultiply surface alpha.");
         }
@@ -2271,7 +2271,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "RaiseWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_RaiseWindow(window);
+        bool result = SDL_RaiseWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "RaiseWindow: Failed to raise window.");
         }
@@ -2284,7 +2284,7 @@ public static unsafe partial class Sdl {
             r = g = b = a = 0;
             return false;
         }
-        SdlBool result = SDL_ReadSurfacePixel(surface, x, y, out r, out g, out b, out a);
+        bool result = SDL_ReadSurfacePixel(surface, x, y, out r, out g, out b, out a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixel: Failed to read surface pixel.");
         }
@@ -2297,7 +2297,7 @@ public static unsafe partial class Sdl {
             color = default;
             return false;
         }
-        SdlBool result = SDL_ReadSurfacePixel(surface, x, y, out byte r, out byte g, out byte b, out byte a);
+        bool result = SDL_ReadSurfacePixel(surface, x, y, out byte r, out byte g, out byte b, out byte a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixel: Failed to read surface pixel.");
             color = default;
@@ -2312,7 +2312,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixel: Surface pointer is null.");
             return default;
         }
-        SdlBool result = SDL_ReadSurfacePixel(surface, x, y, out byte r, out byte g, out byte b, out byte a);
+        bool result = SDL_ReadSurfacePixel(surface, x, y, out byte r, out byte g, out byte b, out byte a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixel: Failed to read surface pixel.");
             return default;
@@ -2326,7 +2326,7 @@ public static unsafe partial class Sdl {
             r = g = b = a = 0;
             return false;
         }
-        SdlBool result = SDL_ReadSurfacePixelFloat(surface, x, y, out r, out g, out b, out a);
+        bool result = SDL_ReadSurfacePixelFloat(surface, x, y, out r, out g, out b, out a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixelFloat: Failed to read surface pixel.");
         }
@@ -2339,7 +2339,7 @@ public static unsafe partial class Sdl {
             color = default;
             return false;
         }
-        SdlBool result = SDL_ReadSurfacePixelFloat(surface, x, y, out float r, out float g, out float b, out float a);
+        bool result = SDL_ReadSurfacePixelFloat(surface, x, y, out float r, out float g, out float b, out float a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixelFloat: Failed to read surface pixel.");
             color = default;
@@ -2354,7 +2354,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixelFloat: Surface pointer is null.");
             return default;
         }
-        SdlBool result = SDL_ReadSurfacePixelFloat(surface, x, y, out float r, out float g, out float b, out float a);
+        bool result = SDL_ReadSurfacePixelFloat(surface, x, y, out float r, out float g, out float b, out float a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ReadSurfacePixelFloat: Failed to read surface pixel.");
             return default;
@@ -2383,7 +2383,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ResetHint: Hint name is null or empty.");
             return false;
         }
-        SdlBool result = SDL_ResetHint(name);
+        bool result = SDL_ResetHint(name);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ResetHint: Failed to reset hint.");
         }
@@ -2403,7 +2403,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "RestoreWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_RestoreWindow(window);
+        bool result = SDL_RestoreWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "RestoreWindow: Failed to restore window.");
         }
@@ -2429,7 +2429,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "RunOnMainThread: Callback is null.");
             return false;
         }
-        SdlBool result = SDL_RunOnMainThread(callback, userdata, waitComplete);
+        bool result = SDL_RunOnMainThread(callback, userdata, waitComplete);
         if (!result) {
             Logger.LogError(LogCategory.Error, "RunOnMainThread: Failed to run on main thread.");
         }
@@ -2445,7 +2445,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SaveBmp: File path is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SaveBMP(surface, file);
+        bool result = SDL_SaveBMP(surface, file);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SaveBmp: Failed to save BMP file.");
         }
@@ -2461,7 +2461,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SaveBmpIp: Destination pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SaveBMP_IO(surface, dst, closeIo);
+        bool result = SDL_SaveBMP_IO(surface, dst, closeIo);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SaveBmpIp: Failed to save BMP to IO destination.");
         }
@@ -2495,7 +2495,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ScreenKeyboardShown: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_ScreenKeyboardShown(window);
+        bool result = SDL_ScreenKeyboardShown(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ScreenKeyboardShown: Failed to check screen keyboard visibility.");
         }
@@ -2503,7 +2503,7 @@ public static unsafe partial class Sdl {
     }
 
     public static bool ScreenSaverEnabled() {
-        SdlBool result = SDL_ScreenSaverEnabled();
+        bool result = SDL_ScreenSaverEnabled();
         if (!result) {
             Logger.LogError(LogCategory.Error, "ScreenSaverEnabled: Failed to check screen saver status.");
         }
@@ -2515,7 +2515,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetAppMetadata: App metadata is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetAppMetadata(appname, appversion, appidentifier);
+        bool result = SDL_SetAppMetadata(appname, appversion, appidentifier);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetAppMetadata: Failed to set app metadata.");
         }
@@ -2527,7 +2527,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetAppMetadataProperty: Name or value is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetAppMetadataProperty(name, value);
+        bool result = SDL_SetAppMetadataProperty(name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetAppMetadataProperty: Failed to set app metadata property.");
         }
@@ -2539,7 +2539,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetBooleanProperty: Properties are zero or name is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetBooleanProperty(props, name, value);
+        bool result = SDL_SetBooleanProperty(props, name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetBooleanProperty: Failed to set boolean property.");
         }
@@ -2552,7 +2552,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetClipboardData: Invalid parameters.");
             return false;
         }
-        SdlBool result = SDL_SetClipboardData(callback, cleanup, userdata, mimeTypes, numMimeTypes);
+        bool result = SDL_SetClipboardData(callback, cleanup, userdata, mimeTypes, numMimeTypes);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetClipboardData: Failed to set clipboard data.");
         }
@@ -2564,7 +2564,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetClipboardText: Text is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetClipboardText(text);
+        bool result = SDL_SetClipboardText(text);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetClipboardText: Failed to set clipboard text.");
         }
@@ -2576,14 +2576,14 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetCurrentThreadPriority: Invalid thread priority.");
             return false;
         }
-        SdlBool result = SDL_SetCurrentThreadPriority(priority);
+        bool result = SDL_SetCurrentThreadPriority(priority);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetCurrentThreadPriority: Failed to set thread priority.");
         }
         return result;
     }
 
-    public static SdlBool SetError(string fmt, params object[] args) {
+    public static bool SetError(string fmt, params object[] args) {
         if (string.IsNullOrEmpty(fmt)) {
             Logger.LogWarn(LogCategory.System, "SetError: Format string is null or empty.");
             return false;
@@ -2598,7 +2598,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetFloatProperty: Properties are zero or name is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetFloatProperty(props, name, value);
+        bool result = SDL_SetFloatProperty(props, name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetFloatProperty: Failed to set float property.");
         }
@@ -2610,7 +2610,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetHint: Name or value is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetHint(name, value);
+        bool result = SDL_SetHint(name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetHint: Failed to set hint.");
         }
@@ -2622,7 +2622,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetHintWithPriority: Name or value is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetHintWithPriority(name, value, priority);
+        bool result = SDL_SetHintWithPriority(name, value, priority);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetHintWithPriority: Failed to set hint with priority.");
         }
@@ -2646,7 +2646,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetNumberProperty: Properties are zero or name is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetNumberProperty(props, name, value);
+        bool result = SDL_SetNumberProperty(props, name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetNumberProperty: Failed to set number property.");
         }
@@ -2662,7 +2662,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetPaletteColors: Invalid first color or number of colors.");
             return false;
         }
-        SdlBool result = SDL_SetPaletteColors(palette, colors, firstcolor, ncolors);
+        bool result = SDL_SetPaletteColors(palette, colors, firstcolor, ncolors);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetPaletteColors: Failed to set palette colors.");
         }
@@ -2674,7 +2674,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetPointerProperty: Properties are zero or name is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetPointerProperty(props, name, value);
+        bool result = SDL_SetPointerProperty(props, name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetPointerProperty: Failed to set pointer property.");
         }
@@ -2687,7 +2687,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetPointerPropertyWithCleanup: Properties are zero or name is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetPointerPropertyWithCleanup(props, name, value, cleanup, userdata);
+        bool result = SDL_SetPointerPropertyWithCleanup(props, name, value, cleanup, userdata);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetPointerPropertyWithCleanup: Failed to set pointer property with cleanup.");
         }
@@ -2699,7 +2699,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetPrimarySelectionText: Text is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetPrimarySelectionText(text);
+        bool result = SDL_SetPrimarySelectionText(text);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetPrimarySelectionText: Failed to set primary selection text.");
         }
@@ -2711,7 +2711,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetScancodeName: Name is null or empty.");
             return false;
         }
-        SdlBool result = SDL_SetScancodeName(scanCode, name);
+        bool result = SDL_SetScancodeName(scanCode, name);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetScancodeName: Failed to set scancode name.");
         }
@@ -2723,7 +2723,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetStringProperty: Properties are zero or name/value is null/empty.");
             return false;
         }
-        SdlBool result = SDL_SetStringProperty(props, name, value);
+        bool result = SDL_SetStringProperty(props, name, value);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetStringProperty: Failed to set string property.");
         }
@@ -2735,7 +2735,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceAlphaMod: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceAlphaMod(surface, alpha);
+        bool result = SDL_SetSurfaceAlphaMod(surface, alpha);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceAlphaMod: Failed to set surface alpha mod.");
         }
@@ -2747,7 +2747,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceBlendMode: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceBlendMode(surface, blendMode);
+        bool result = SDL_SetSurfaceBlendMode(surface, blendMode);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceBlendMode: Failed to set surface blend mode.");
         }
@@ -2759,19 +2759,19 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceClipRect: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceClipRect(surface, ref rect);
+        bool result = SDL_SetSurfaceClipRect(surface, ref rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceClipRect: Failed to set surface clip rect.");
         }
         return result;
     }
 
-    public static bool SetSurfaceColorKey(nint surface, SdlBool enabled, uint key) {
+    public static bool SetSurfaceColorKey(nint surface, bool enabled, uint key) {
         if (surface == nint.Zero) {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorKey: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceColorKey(surface, enabled, key);
+        bool result = SDL_SetSurfaceColorKey(surface, enabled, key);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorKey: Failed to set surface color key.");
         }
@@ -2783,7 +2783,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorMod: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceColorMod(surface, r, g, b);
+        bool result = SDL_SetSurfaceColorMod(surface, r, g, b);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorMod: Failed to set surface color mod.");
         }
@@ -2795,7 +2795,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorMod: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceColorMod(surface, color.R, color.G, color.B);
+        bool result = SDL_SetSurfaceColorMod(surface, color.R, color.G, color.B);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorMod: Failed to set surface color mod.");
         }
@@ -2807,7 +2807,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorspace: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceColorspace(surface, colorspace);
+        bool result = SDL_SetSurfaceColorspace(surface, colorspace);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceColorspace: Failed to set surface colorspace.");
         }
@@ -2823,7 +2823,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfacePalette: Palette pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfacePalette(surface, palette);
+        bool result = SDL_SetSurfacePalette(surface, palette);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfacePalette: Failed to set surface palette.");
         }
@@ -2835,7 +2835,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetSurfaceRLE: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetSurfaceRLE(surface, enabled);
+        bool result = SDL_SetSurfaceRLE(surface, enabled);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetSurfaceRLE: Failed to set surface RLE.");
         }
@@ -2847,7 +2847,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetTextInputArea: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetTextInputArea(window, ref rect, cursor);
+        bool result = SDL_SetTextInputArea(window, ref rect, cursor);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetTextInputArea: Failed to set text input area.");
         }
@@ -2859,7 +2859,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetTls: ID or value is null.");
             return false;
         }
-        SdlBool result = SDL_SetTLS(id, value, destructor);
+        bool result = SDL_SetTLS(id, value, destructor);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetTls: Failed to set TLS.");
         }
@@ -2871,7 +2871,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowAlwaysOnTop: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowAlwaysOnTop(window, onTop);
+        bool result = SDL_SetWindowAlwaysOnTop(window, onTop);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowAlwaysOnTop: Failed to set window always on top.");
         }
@@ -2883,7 +2883,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowAspectRatio: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowAspectRatio(window, minAspect, maxAspect);
+        bool result = SDL_SetWindowAspectRatio(window, minAspect, maxAspect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowAspectRatio: Failed to set window aspect ratio.");
         }
@@ -2895,7 +2895,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowBordered: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowBordered(window, bordered);
+        bool result = SDL_SetWindowBordered(window, bordered);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowBordered: Failed to set window bordered.");
         }
@@ -2907,7 +2907,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowFocusable: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowFocusable(window, focusable);
+        bool result = SDL_SetWindowFocusable(window, focusable);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowFocusable: Failed to set window focusable.");
         }
@@ -2919,7 +2919,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowFullscreen: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowFullscreen(window, fullscreen);
+        bool result = SDL_SetWindowFullscreen(window, fullscreen);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowFullscreen: Failed to set window fullscreen.");
         }
@@ -2931,7 +2931,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowFullscreenMode: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowFullscreenMode(window, ref mode);
+        bool result = SDL_SetWindowFullscreenMode(window, ref mode);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowFullscreenMode: Failed to set window fullscreen mode.");
         }
@@ -2943,7 +2943,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowHitTest: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowHitTest(window, callback, callbackData);
+        bool result = SDL_SetWindowHitTest(window, callback, callbackData);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowHitTest: Failed to set window hit test.");
         }
@@ -2960,7 +2960,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowIcon: Icon pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowIcon(window, icon);
+        bool result = SDL_SetWindowIcon(window, icon);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowIcon: Failed to set window icon.");
         }
@@ -2972,7 +2972,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowKeyboardGrab: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowKeyboardGrab(window, grabbed);
+        bool result = SDL_SetWindowKeyboardGrab(window, grabbed);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowKeyboardGrab: Failed to set window keyboard grab.");
         }
@@ -2984,7 +2984,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowMaximumSize: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowMaximumSize(window, maxW, maxH);
+        bool result = SDL_SetWindowMaximumSize(window, maxW, maxH);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowMaximumSize: Failed to set window maximum size.");
         }
@@ -2996,7 +2996,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowMinimumSize: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowMinimumSize(window, minW, minH);
+        bool result = SDL_SetWindowMinimumSize(window, minW, minH);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowMinimumSize: Failed to set window minimum size.");
         }
@@ -3008,7 +3008,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowModal: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowModal(window, modal);
+        bool result = SDL_SetWindowModal(window, modal);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowModal: Failed to set window modal.");
         }
@@ -3020,7 +3020,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowMouseGrab: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowMouseGrab(window, grabbed);
+        bool result = SDL_SetWindowMouseGrab(window, grabbed);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowMouseGrab: Failed to set window mouse grab.");
         }
@@ -3032,7 +3032,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowMouseRect: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowMouseRect(window, ref rect);
+        bool result = SDL_SetWindowMouseRect(window, ref rect);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowMouseRect: Failed to set window mouse rect.");
         }
@@ -3044,7 +3044,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowOpacity: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowOpacity(window, opacity);
+        bool result = SDL_SetWindowOpacity(window, opacity);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowOpacity: Failed to set window opacity.");
         }
@@ -3060,7 +3060,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowParent: Parent pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowParent(window, parent);
+        bool result = SDL_SetWindowParent(window, parent);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowParent: Failed to set window parent.");
         }
@@ -3072,7 +3072,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowPosition: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowPosition(window, x, y);
+        bool result = SDL_SetWindowPosition(window, x, y);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowPosition: Failed to set window position.");
         }
@@ -3084,7 +3084,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowPosition: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowPosition(window, position.X, position.Y);
+        bool result = SDL_SetWindowPosition(window, position.X, position.Y);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowPosition: Failed to set window position.");
         }
@@ -3096,7 +3096,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowResizable: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowResizable(window, resizable);
+        bool result = SDL_SetWindowResizable(window, resizable);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowResizable: Failed to set window resizable.");
         }
@@ -3112,7 +3112,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowShape: Shape pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowShape(window, shape);
+        bool result = SDL_SetWindowShape(window, shape);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowShape: Failed to set window shape.");
         }
@@ -3124,7 +3124,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowSize: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowSize(window, w, h);
+        bool result = SDL_SetWindowSize(window, w, h);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowSize: Failed to set window size.");
         }
@@ -3136,7 +3136,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowSize: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowSize(window, rect.W, rect.H);
+        bool result = SDL_SetWindowSize(window, rect.W, rect.H);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowSize: Failed to set window size.");
         }
@@ -3148,19 +3148,19 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SetWindowSurfaceVSync: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowSurfaceVSync(window, vsync);
+        bool result = SDL_SetWindowSurfaceVSync(window, vsync);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SetWindowSurfaceVSync: Failed to set window surface VSync.");
         }
         return result;
     }
 
-    public static SdlBool SetWindowTitle(nint window, string title) {
+    public static bool SetWindowTitle(nint window, string title) {
         if (window == nint.Zero) {
             Logger.LogError(LogCategory.Error, "SetWindowTitle: Window handle is null.");
             return false;
         }
-        SdlBool result = SDL_SetWindowTitle(window, title);
+        bool result = SDL_SetWindowTitle(window, title);
         if (!result) {
             Logger.LogWarn(LogCategory.System, "SetWindowTitle: Failed to set window title.");
         }
@@ -3172,7 +3172,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ShowWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_ShowWindow(window);
+        bool result = SDL_ShowWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ShowWindow: Failed to show window.");
         }
@@ -3184,7 +3184,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "ShowWindowSystemMenu: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_ShowWindowSystemMenu(window, x, y);
+        bool result = SDL_ShowWindowSystemMenu(window, x, y);
         if (!result) {
             Logger.LogError(LogCategory.Error, "ShowWindowSystemMenu: Failed to show window system menu.");
         }
@@ -3212,7 +3212,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "StartTextInput: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_StartTextInput(window);
+        bool result = SDL_StartTextInput(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "StartTextInput: Failed to start text input.");
         }
@@ -3224,7 +3224,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "StartTextInputWithProperties: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_StartTextInputWithProperties(window, props);
+        bool result = SDL_StartTextInputWithProperties(window, props);
         if (!result) {
             Logger.LogError(LogCategory.Error, "StartTextInputWithProperties: Failed to start text input with properties.");
         }
@@ -3236,7 +3236,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "StopTextInput: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_StopTextInput(window);
+        bool result = SDL_StopTextInput(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "StopTextInput: Failed to stop text input.");
         }
@@ -3260,7 +3260,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SurfaceHasAlternateImages: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SurfaceHasAlternateImages(surface);
+        bool result = SDL_SurfaceHasAlternateImages(surface);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SurfaceHasAlternateImages: Failed to check surface alternate images.");
         }
@@ -3272,7 +3272,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SurfaceHasColorKey: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SurfaceHasColorKey(surface);
+        bool result = SDL_SurfaceHasColorKey(surface);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SurfaceHasColorKey: Failed to check surface color key.");
         }
@@ -3284,7 +3284,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SurfaceHasRLE: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SurfaceHasRLE(surface);
+        bool result = SDL_SurfaceHasRLE(surface);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SurfaceHasRLE: Failed to check surface RLE.");
         }
@@ -3296,7 +3296,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "SyncWindow: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_SyncWindow(window);
+        bool result = SDL_SyncWindow(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "SyncWindow: Failed to sync window.");
         }
@@ -3308,7 +3308,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "TextInputActive: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_TextInputActive(window);
+        bool result = SDL_TextInputActive(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "TextInputActive: Failed to check text input active.");
         }
@@ -3344,7 +3344,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurface: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_UpdateWindowSurface(window);
+        bool result = SDL_UpdateWindowSurface(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurface: Failed to update window surface.");
         }
@@ -3360,7 +3360,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Rectangles are empty or number of rectangles is zero.");
             return false;
         }
-        SdlBool result = SDL_UpdateWindowSurfaceRects(window, rects, numrects);
+        bool result = SDL_UpdateWindowSurfaceRects(window, rects, numrects);
         if (!result) {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Failed to update window surface rectangles.");
         }
@@ -3376,7 +3376,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Rectangles are empty.");
             return false;
         }
-        SdlBool result = SDL_UpdateWindowSurfaceRects(window, rects, rects.Length);
+        bool result = SDL_UpdateWindowSurfaceRects(window, rects, rects.Length);
         if (!result) {
             Logger.LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Failed to update window surface rectangles.");
         }
@@ -3412,7 +3412,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "WindowHasSurface: Window pointer is null.");
             return false;
         }
-        SdlBool result = SDL_WindowHasSurface(window);
+        bool result = SDL_WindowHasSurface(window);
         if (!result) {
             Logger.LogError(LogCategory.Error, "WindowHasSurface: Failed to check window surface.");
         }
@@ -3424,7 +3424,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_WriteSurfacePixel(surface, x, y, r, g, b, a);
+        bool result = SDL_WriteSurfacePixel(surface, x, y, r, g, b, a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixel: Failed to write surface pixel.");
         }
@@ -3436,7 +3436,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_WriteSurfacePixel(surface, x, y, color.R, color.G, color.B, color.A);
+        bool result = SDL_WriteSurfacePixel(surface, x, y, color.R, color.G, color.B, color.A);
         if (!result) {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixel: Failed to write surface pixel.");
         }
@@ -3464,7 +3464,7 @@ public static unsafe partial class Sdl {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixelFloat: Surface pointer is null.");
             return false;
         }
-        SdlBool result = SDL_WriteSurfacePixelFloat(surface, x, y, r, g, b, a);
+        bool result = SDL_WriteSurfacePixelFloat(surface, x, y, r, g, b, a);
         if (!result) {
             Logger.LogError(LogCategory.Error, "WriteSurfacePixelFloat: Failed to write surface pixel float.");
         }

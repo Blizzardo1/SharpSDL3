@@ -8,4 +8,6 @@ public struct IOStream {
     public nint Userdata;
     public IOStatus Status;
     public int Props;
+
+    public nint Handle;
 }
