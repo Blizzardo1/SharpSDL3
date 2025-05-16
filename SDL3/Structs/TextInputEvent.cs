@@ -11,5 +11,5 @@ public unsafe struct TextInputEvent
 	public uint Reserved;
 	public ulong Timestamp;
 	public uint WindowId;
-	public byte* Text;
+	public nint Text;
 }

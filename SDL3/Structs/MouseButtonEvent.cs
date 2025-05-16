@@ -13,7 +13,7 @@ public struct MouseButtonEvent
 	public uint WindowId;
 	public uint Which;
 	public byte Button;
-	public SdlBool Down;
+	public bool Down;
 	public byte Clicks;
 	public byte Padding;
 	public float X;

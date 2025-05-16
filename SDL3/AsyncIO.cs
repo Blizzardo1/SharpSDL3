@@ -116,7 +116,7 @@ public static partial class AsyncIO {
         return SDL_WriteAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_AsyncIOFromFile(string file, string mode);
 
@@ -140,7 +140,7 @@ public static partial class AsyncIO {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial long SDL_GetAsyncIOSize(nint asyncio);
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_LoadFileAsync(string file, nint queue, nint userdata);
 

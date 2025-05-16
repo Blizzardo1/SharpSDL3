@@ -7,13 +7,13 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct HidDeviceInfo
 {
-	public byte* Path;
+	public nint Path;
 	public ushort VendorId;
 	public ushort ProductId;
-	public byte* SerialNumber;
+	public nint SerialNumber;
 	public ushort ReleaseNumber;
-	public byte* ManufacturerString;
-	public byte* ProductString;
+	public nint ManufacturerString;
+	public nint ProductString;
 	public ushort UsagePage;
 	public ushort Usage;
 	public int InterfaceNumber;
@@ -21,5 +21,5 @@ public unsafe struct HidDeviceInfo
 	public int InterfaceSubclass;
 	public int InterfaceProtocol;
 	public HidBusType BusType;
-	public HidDeviceInfo* Next;
+	public nint Next;
 }

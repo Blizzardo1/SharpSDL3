@@ -9,5 +9,5 @@ public unsafe struct MessageBoxButtonData
 {
 	public MessageBoxDefaultButton Flags;
 	public int ButtonID;
-	public byte* Text;
+	public nint Text;
 }

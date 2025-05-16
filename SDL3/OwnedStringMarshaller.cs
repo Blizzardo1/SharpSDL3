@@ -13,8 +13,12 @@ public static unsafe class OwnedStringMarshaller
 	///     Converts an unmanaged string to a managed version.
 	/// </summary>
 	/// <returns>A managed string.</returns>
-	public static string ConvertToManaged(byte* unmanaged)
+	public static string ConvertToManaged(nint unmanaged)
 	{
-		return Marshal.PtrToStringUTF8((nint) unmanaged);
-	}
+		string? result = Marshal.PtrToStringUTF8(unmanaged);
+		if(result == null) {
+			return "";
+		}
+		return result;
+    }
 }

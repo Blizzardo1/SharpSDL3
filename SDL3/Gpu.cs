@@ -10,7 +10,7 @@ using static SharpSDL3.Sdl;
 namespace SharpSDL3; 
 public static partial class Gpu {
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUSupportsShaderFormats(GpuShaderFormat formatFlags, string name);
 
@@ -18,7 +18,7 @@ public static partial class Gpu {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUSupportsProperties(uint props);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUDevice(GpuShaderFormat formatFlags, SdlBool debugMode, string name);
 
@@ -34,12 +34,12 @@ public static partial class Gpu {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_GetNumGPUDrivers();
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetGPUDriver(int index);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetGPUDeviceDriver(nint device);
@@ -79,19 +79,19 @@ public static partial class Gpu {
     private static partial nint SDL_CreateGPUTransferBuffer(nint device,
         in GpuTransferBufferCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUBufferName(nint device, nint buffer, string text);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUTextureName(nint device, nint texture, string text);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_InsertGPUDebugLabel(nint commandBuffer, string text);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PushGPUDebugGroup(nint commandBuffer, string name);
 

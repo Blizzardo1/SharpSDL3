@@ -13,7 +13,7 @@ public static partial class Haptic {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetHaptics(out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetHapticNameForID(uint instanceId);
@@ -30,7 +30,7 @@ public static partial class Haptic {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetHapticID(nint haptic);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetHapticName(nint haptic);
@@ -73,15 +73,15 @@ public static partial class Haptic {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_HapticEffectSupported(nint haptic, ref HapticEffect effect);
+    private static partial SdlBool SDL_HapticEffectSupported(nint haptic, [MarshalUsing(typeof(OwnedHapticEffectParamRefMarshaller))] ref HapticEffect effect);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int SDL_CreateHapticEffect(nint haptic, ref HapticEffect effect);
+    private static partial int SDL_CreateHapticEffect(nint haptic, [MarshalUsing(typeof(OwnedHapticEffectParamRefMarshaller))] ref HapticEffect effect);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_UpdateHapticEffect(nint haptic, int effect, ref HapticEffect data);
+    private static partial SdlBool SDL_UpdateHapticEffect(nint haptic, int effect, [MarshalUsing(typeof(OwnedHapticEffectParamRefMarshaller))] ref HapticEffect data);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

@@ -14,7 +14,7 @@ public unsafe struct HapticCustom
 	public byte Channels;
 	public ushort Period;
 	public ushort Samples;
-	public ushort* Data;
+	public nint Data;
 	public ushort AttackLength;
 	public ushort AttackLevel;
 	public ushort FadeLength;

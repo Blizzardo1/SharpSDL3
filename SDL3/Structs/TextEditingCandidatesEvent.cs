@@ -11,7 +11,7 @@ public unsafe struct TextEditingCandidatesEvent
 	public uint Reserved;
 	public ulong Timestamp;
 	public uint WindowId;
-	public byte** Candidates;
+	public nint* Candidates;
 	public int NumCandidates;
 	public int SelectedCandidate;
 	public SdlBool Horizontal;

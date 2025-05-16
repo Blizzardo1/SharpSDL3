@@ -17,7 +17,7 @@ public static partial class Version {
         return SDL_GetVersion();
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetRevision();

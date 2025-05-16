@@ -9,7 +9,10 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3; 
 public static unsafe partial class Tray {
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+
+	// TODO: Implement the rest of the tray functions
+
+	[LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTray(nint icon, string tooltip);
 
@@ -17,7 +20,7 @@ public static unsafe partial class Tray {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetTrayIcon(nint tray, nint icon);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetTrayTooltip(nint tray, string tooltip);
 
@@ -39,7 +42,27 @@ public static unsafe partial class Tray {
 
     public static Span<nint> GetTrayEntries(nint menu) {
         nint result = SDL_GetTrayEntries(menu, out int size);
-        return new Span<nint>((void*)result, size);
+
+		if (result == nint.Zero) {
+			Logger.LogError(LogCategory.Error, "Failed to get tray entries.");
+            return [];
+		}
+
+		if (size < 0) {
+			Logger.LogError(LogCategory.Error, "Invalid size returned for tray entries.");
+			return [];
+		}
+		if (size == 0) {
+			return [];
+		}
+
+		nint[] entries = new nint[size];
+		
+		Marshal.Copy(result, entries, 0, size);
+
+        Span<nint> array = new(ref result);
+
+        return array.ToArray();
     }
 
     [LibraryImport(NativeLibName)]
@@ -50,15 +73,15 @@ public static unsafe partial class Tray {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_RemoveTrayEntry(nint entry);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_InsertTrayEntryAt(nint menu, int pos, string label, TrayEntryFlags flags);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetTrayEntryLabel(nint entry, string label);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetTrayEntryLabel(nint entry);

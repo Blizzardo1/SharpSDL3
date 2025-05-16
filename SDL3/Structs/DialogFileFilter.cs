@@ -5,6 +5,6 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct DialogFileFilter
 {
-	public byte* Name;
-	public byte* Pattern;
+	public nint Name;
+	public nint Pattern;
 }

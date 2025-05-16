@@ -19,7 +19,7 @@ public static unsafe partial class Ttf {
 
         public int RefCount;           /**< Application reference count, used when freeing surface */
 
-        public TextData* _internal; /**< Private */
+        public nint _internal; /**< Private */
 
     }
 }

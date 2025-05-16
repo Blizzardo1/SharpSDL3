@@ -7,7 +7,7 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct GpuGraphicsPipelineTargetInfo
 {
-	public GpuColorTargetDescription* ColorTargetDescription;
+	public nint ColorTargetDescription;
 	public uint NumColorTargets;
 	public GpuTextureFormat DepthStencilFormat;
 	public SdlBool HasDepthStencilTarget;

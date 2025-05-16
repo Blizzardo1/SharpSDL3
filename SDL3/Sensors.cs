@@ -22,7 +22,7 @@ public static unsafe partial class Sensors {
         }
     }
 
-    public static SdlBool GetSensorData(nint sensor, float* data, int numValues) {
+    public static SdlBool GetSensorData(nint sensor, nint data, int numValues) {
         SdlBool result = SDL_GetSensorData(sensor, data, numValues);
         if (!result) {
             throw new InvalidOperationException("SDL_GetSensorData failed");
@@ -128,7 +128,7 @@ public static unsafe partial class Sensors {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_GetSensorData(nint sensor, float* data, int numValues);
+    private static partial SdlBool SDL_GetSensorData(nint sensor, nint data, int numValues);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -138,12 +138,12 @@ public static unsafe partial class Sensors {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetSensorID(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorName(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorNameForID(uint instanceId);

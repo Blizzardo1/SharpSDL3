@@ -21,7 +21,8 @@ public struct Stroker {
     public long MiterLimit;
     public long Radius;
 
-    public StrokeBorderRec[] Borders; // [2]
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+    public StrokeBorderRec[] Borders;
     public FtLibrary Library;
 
 }

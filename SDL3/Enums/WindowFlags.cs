@@ -3,8 +3,7 @@ using System;
 namespace SharpSDL3.Enums;
 
 [Flags]
-public enum WindowFlags : ulong
-{
+public enum WindowFlags : ulong {
 	Fullscreen = 0x1,
 	Opengl = 0x2,
 	Occluded = 0x4,

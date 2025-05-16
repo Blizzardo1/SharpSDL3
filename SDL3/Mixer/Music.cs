@@ -3,8 +3,8 @@
 namespace SharpSDL3.Mixer;
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct Music {
-        public MusicInterface* @interface;
-        public void* Context;
+        public nint @interface;
+        public nint Context;
         public bool Playing;
         public Fading Fading;
         public int FadeStep;

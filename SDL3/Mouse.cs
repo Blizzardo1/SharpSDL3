@@ -95,7 +95,7 @@ public static partial class Mouse {
 
         SdlBool result = SDL_WarpMouseGlobal(x, y);
         if (!result) {
-            Logger.LogError(LogCategory.System, "Failed to warp mouse globally.");
+            Logger.LogError(LogCategory.Error, "Failed to warp mouse globally.");
         }
 
         return result;
@@ -108,7 +108,7 @@ public static partial class Mouse {
 
         SdlBool result = SDL_SetWindowRelativeMouseMode(window, enabled);
         if (!result) {
-            Logger.LogError(LogCategory.System, $"Failed to set relative mouse mode for the specified window. {GetError()}");
+            Logger.LogError(LogCategory.Error, $"Failed to set relative mouse mode for the specified window. {GetError()}");
         }
 
         return result;
@@ -121,7 +121,7 @@ public static partial class Mouse {
 
         SdlBool result = SDL_GetWindowRelativeMouseMode(window);
         if (!result) {
-            Logger.LogError(LogCategory.System, $"Failed to retrieve relative mouse mode for the specified window. {GetError()}");
+            Logger.LogError(LogCategory.Error, $"Failed to retrieve relative mouse mode for the specified window. {GetError()}");
         }
 
         return result;
@@ -130,7 +130,7 @@ public static partial class Mouse {
     public static bool CaptureMouse(bool enabled) {
         SdlBool result = SDL_CaptureMouse(enabled);
         if (!result) {
-            Logger.LogError(LogCategory.System, "Failed to capture mouse.");
+            Logger.LogError(LogCategory.Error, "Failed to capture mouse.");
         }
 
         return result;
@@ -211,7 +211,7 @@ public static partial class Mouse {
 
         SdlBool result = SDL_SetCursor(cursor);
         if (!result) {
-            Logger.LogError(LogCategory.System, "Failed to set the specified cursor.");
+            Logger.LogError(LogCategory.Error, "Failed to set the specified cursor.");
         }
 
         return result;
@@ -243,7 +243,7 @@ public static partial class Mouse {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetMice(out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetMouseNameForID(uint instanceId);

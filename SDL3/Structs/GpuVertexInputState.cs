@@ -5,8 +5,8 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct GpuVertexInputState
 {
-	public GpuVertexBufferDescription* VertexBufferDescriptions;
+	public nint VertexBufferDescriptions;
 	public uint NumVertexBuffers;
-	public GpuVertexAttribute* VertexAttributes;
+	public nint VertexAttributes;
 	public uint NumVertexAttributes;
 }

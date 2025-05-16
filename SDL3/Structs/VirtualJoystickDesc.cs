@@ -3,7 +3,7 @@ using System.Runtime.InteropServices;
 namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct VirtualJoystickDesc
+public struct VirtualJoystickDesc
 {
 	public uint Version;
 	public ushort Type;
@@ -16,12 +16,13 @@ public unsafe struct VirtualJoystickDesc
 	public ushort NHats;
 	public ushort NTouchpads;
 	public ushort NSensors;
-	public fixed ushort Padding2[2];
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+	public ushort[] Padding2;
 	public uint ButtonMask;
 	public uint AxisMask;
-	public byte* Name;
-	public VirtualJoystickTouchpadDesc* Touchpads;
-	public VirtualJoystickSensorDesc* Sensors;
+	public nint Name;
+	public nint Touchpads;
+	public nint Sensors;
 	public nint Userdata;
 	public nint Update; // WARN_ANONYMOUS_FUNCTION_POINTER
 	public nint SetPlayerIndex; // WARN_ANONYMOUS_FUNCTION_POINTER

@@ -35,7 +35,7 @@ public unsafe struct IOStreamInterface {
      *  \return the number of bytes read
      */
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate Structs.Size Read(nint userdata, nint ptr, Structs.Size size, IOStatus* status);
+    public delegate Structs.Size Read(nint userdata, nint ptr, Structs.Size size, nint status);
 
     /**
      *  Write exactly `size` bytes from the area pointed at by `ptr`
@@ -48,7 +48,7 @@ public unsafe struct IOStreamInterface {
      *  \return the number of bytes written
      */
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate Structs.Size Write(nint userdata, nint ptr, Structs.Size size, IOStatus* status);
+    public delegate Structs.Size Write(nint userdata, nint ptr, Structs.Size size, nint status);
 
     /**
      *  If the stream is buffering, make sure the data is written out.
@@ -60,7 +60,7 @@ public unsafe struct IOStreamInterface {
      *  \return true if successful or false on write error when flushing data.
      */
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate bool Flush(nint userdata, IOStatus* status);
+    public delegate bool Flush(nint userdata, nint status);
 
     /**
      *  Close and free any allocated resources.

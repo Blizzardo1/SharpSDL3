@@ -12,5 +12,5 @@ public unsafe struct ClipboardEvent
 	public ulong Timestamp;
 	public SdlBool Owner;
 	public int NumMimeTypes;
-	public byte** MimeTypes;
+	public nint* MimeTypes;
 }

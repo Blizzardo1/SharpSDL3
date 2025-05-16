@@ -11,6 +11,6 @@ public unsafe struct SensorEvent
 	public uint Reserved;
 	public ulong Timestamp;
 	public uint Which;
-	public fixed float Data[6];
+    public fixed float Data[6];
 	public ulong SensorTimestamp;
 }

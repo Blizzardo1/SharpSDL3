@@ -17,9 +17,9 @@ public static unsafe partial class Assertion {
         return handler;
     }
 
-    public static AssertData* GetAssertionReport() {
+    public static nint GetAssertionReport() {
         var report = SDL_GetAssertionReport();
-        if (report == null) {
+        if (report == nint.Zero) {
             throw new InvalidOperationException("Failed to get assertion report.");
         }
         return report;
@@ -49,11 +49,11 @@ public static unsafe partial class Assertion {
                 break;
 
             case AssertState.Break:
-                Logger.LogError(LogCategory.System, "Breaking on assertion...");
+                Logger.LogError(LogCategory.Error, "Breaking on assertion...");
                 break;
 
             case AssertState.Abort:
-                Logger.LogError(LogCategory.System, "Aborting due to assertion...");
+                Logger.LogError(LogCategory.Error, "Aborting due to assertion...");
                 break;
 
             case AssertState.Ignore:
@@ -86,13 +86,13 @@ public static unsafe partial class Assertion {
 
     [LibraryImport(Sdl.NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial AssertData* SDL_GetAssertionReport();
+    private static partial nint SDL_GetAssertionReport();
 
     [LibraryImport(Sdl.NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlAssertionHandler SDL_GetDefaultAssertionHandler();
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial AssertState SDL_ReportAssertion(ref AssertData data, string func, string file, int line);
 

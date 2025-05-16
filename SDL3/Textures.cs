@@ -259,16 +259,16 @@ public static unsafe partial class Textures {
         return SDL_UpdateYUVTexture(texture, ref rect, yplane, ypitch, uplane, upitch, vplane, vpitch);
     }
 
-    // nint refers to a Texture*
+    // nint refers to a nint
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
         int w, int h);
-    // nint refers to a Texture*
+    // nint refers to a nint
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureFromSurface(nint renderer, nint surface);
-    // nint refers to a Texture*
+    // nint refers to a nint
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureWithProperties(nint renderer, uint props);

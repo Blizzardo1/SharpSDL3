@@ -8,8 +8,8 @@ namespace SharpSDL3.Structs;
 public unsafe struct GpuShaderCreateInfo
 {
 	public nuint CodeSize;
-	public byte* Code;
-	public byte* EntryPoint;
+	public nint Code;
+	public nint EntryPoint;
 	public GpuShaderFormat Format;
 	public GpuShaderStage Stage;
 	public uint NumSamplers;

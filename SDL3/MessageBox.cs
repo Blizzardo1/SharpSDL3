@@ -11,11 +11,11 @@ namespace SharpSDL3;
 public static partial class MessageBox {
     public static unsafe SdlBool ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid) {
         // Validate input parameters
-        if (messageboxdata.NumButtons < 0 || messageboxdata.Buttons == null) {
+        if (messageboxdata.NumButtons < 0 || messageboxdata.Buttons == nint.Zero) {
             throw new ArgumentException("Invalid MessageBoxData: Buttons must be defined and NumButtons must be non-negative.");
         }
 
-        Logger.LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi((nint)messageboxdata.Title)}");
+        Logger.LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi(messageboxdata.Title)}");
         // Call the native method
         var result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
 
@@ -104,18 +104,18 @@ public static partial class MessageBox {
             buttonDataArray[i] = new MessageBoxButtonData {
                 Flags = accelerator == (MessageBoxDefaultButton)buttonData[i][2] ? accelerator : MessageBoxDefaultButton.EscapeKeyDefault,
                 ButtonID = (int)buttonData[i][1],
-                Text = (byte*)Marshal.StringToHGlobalAnsi((string)buttonData[i][0])
+                Text = Marshal.StringToHGlobalAnsi((string)buttonData[i][0])
             };
         }
 
         var messageboxdata = new MessageBoxData {
             Flags = flags,
             Window = windowOwner,
-            Title = (byte*)Marshal.StringToHGlobalAnsi(title),
-            Message = (byte*)Marshal.StringToHGlobalAnsi(message),
+            Title = Marshal.StringToHGlobalAnsi(title),
+            Message = Marshal.StringToHGlobalAnsi(message),
             NumButtons = buttonData.Length,
-            Buttons = (MessageBoxButtonData*)Marshal.UnsafeAddrOfPinnedArrayElement(buttonDataArray, 0), // Use marshaling to pass the array
-            ColorScheme = (MessageBoxColorScheme*)Marshal.UnsafeAddrOfPinnedArrayElement([scheme], 0) // Use marshaling to pass the array
+            Buttons = Marshal.UnsafeAddrOfPinnedArrayElement(buttonDataArray, 0), // Use marshaling to pass the array
+            ColorScheme = Marshal.UnsafeAddrOfPinnedArrayElement([scheme], 0) // Use marshaling to pass the array
         };
 
         try {
@@ -129,11 +129,11 @@ public static partial class MessageBox {
         } finally {
             // Ensure all unmanaged resources are freed
             foreach (var button in buttonDataArray) {
-                Marshal.FreeHGlobal((nint)button.Text);
+                Marshal.FreeHGlobal(button.Text);
             }
 
-            Marshal.FreeHGlobal((nint)messageboxdata.Title);
-            Marshal.FreeHGlobal((nint)messageboxdata.Message);
+            Marshal.FreeHGlobal(messageboxdata.Title);
+            Marshal.FreeHGlobal(messageboxdata.Message);
         }
     }
 
@@ -154,7 +154,7 @@ public static partial class MessageBox {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowSimpleMessageBox(MessageBoxFlags flags, string title, string message,
         nint window);

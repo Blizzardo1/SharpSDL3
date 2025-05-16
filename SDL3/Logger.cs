@@ -169,7 +169,7 @@ public static void SetLogPriorityPrefix(LogPriority priority) {
 		SDL_SetLogPriorityPrefix(priority, prefix);
 	}
 
-	[LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(Sdl.NativeLibName)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial SdlLogOutputFunction SDL_GetDefaultLogOutputFunction();
 
@@ -181,39 +181,39 @@ public static void SetLogPriorityPrefix(LogPriority priority) {
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial LogPriority SDL_GetLogPriority(LogCategory category);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_Log(string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogCritical(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogDebug(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogError(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogInfo(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogMessage(LogCategory category, LogPriority priority, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogTrace(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogVerbose(LogCategory category, string fmt);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_LogWarn(LogCategory category, string fmt);
 
@@ -233,7 +233,7 @@ public static void SetLogPriorityPrefix(LogPriority priority) {
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial void SDL_SetLogPriority(LogCategory category, LogPriority priority);
 
-	[LibraryImport(Sdl.NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+	[LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
 	[UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
 	private static partial SdlBool SDL_SetLogPriorityPrefix(LogPriority priority, string prefix);
 }

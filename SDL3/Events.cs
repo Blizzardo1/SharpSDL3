@@ -7,8 +7,7 @@ using static SharpSDL3.Delegates;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static partial class Events {
-
+public static unsafe partial class Events {
 
     public static bool AddEventWatch(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -70,8 +69,23 @@ public static partial class Events {
         if (@event.Type == 0) {
             throw new ArgumentException("Event type cannot be zero.", nameof(@event));
         }
-        // Call the native method and return the result
-        return SDL_GetWindowFromEvent(ref @event);
+        // Allocate unmanaged memory for the event structure
+        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
+        try {
+            // Copy the managed event structure to unmanaged memory
+            Marshal.StructureToPtr(@event, (nint)eventPtr, false);
+            // Call the native method and check the result
+            var result = SDL_GetWindowFromEvent(ref eventPtr);
+            // Perform additional validation or processing if needed
+            if (result == nint.Zero) {
+                Logger.LogError(LogCategory.Error, "Failed to get window from event.");
+            }
+            return result;
+        } catch (Exception ex) {
+            // Handle any exceptions that occur during memory allocation or copying
+            Marshal.FreeHGlobal((nint)eventPtr);
+            throw new InvalidOperationException("Failed to copy event structure to unmanaged memory.", ex);
+        }
     }
 
     public static bool HasEvent(uint type) {
@@ -96,35 +110,62 @@ public static partial class Events {
         return SDL_HasEvents(minType, maxType);
     }
 
-    public static int PeepEvents(Span<Event> events, int numevents, EventAction action, uint minType, uint maxType) {
+    public static int PeepEvents(Event[] events, int numevents, EventAction action, uint minType, uint maxType) {
         if (numevents <= 0) {
             throw new ArgumentOutOfRangeException(nameof(numevents), "Number of events must be greater than zero.");
         }
 
         if (events.Length < numevents) {
-            throw new ArgumentException("The provided span is smaller than the specified number of events.", nameof(events));
+            throw new ArgumentException("The provided array is smaller than the specified number of events.", nameof(events));
         }
 
         if (minType > maxType) {
             throw new ArgumentException("minType cannot be greater than maxType.", nameof(minType));
         }
 
-        return SDL_PeepEvents(events, numevents, action, minType, maxType);
+        // Allocate unmanaged memory for the events
+        IntPtr eventsPtr = Marshal.AllocHGlobal(Marshal.SizeOf<Event>() * numevents);
+
+        try {
+            // Call the native method
+            int result = SDL_PeepEvents((Event*)eventsPtr, numevents, action, minType, maxType);
+
+            // Copy the unmanaged memory back to the managed array
+            for (int i = 0; i < result; i++) {
+                events[i] = Marshal.PtrToStructure<Event>(eventsPtr + i * Marshal.SizeOf<Event>());
+            }
+
+            return result;
+        } finally {
+            // Free the unmanaged memory
+            Marshal.FreeHGlobal(eventsPtr);
+        }
     }
 
     public static bool PollEvent(out Event @event) {
-        // Initialize the event structure to ensure it is in a valid state
+        // Initialize the event structure to ensure it is in a valid state  
         @event = default;
 
-        // Call the native method and check the result
-        var result = SDL_PollEvent(out @event);
+        // Allocate unmanaged memory for the event structure  
+        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
 
-        // Perform additional validation or processing if needed
-        if (!result) {
-            // No event was polled, return false
-            return false;
+        try {
+            // Call the native method and check the result  
+            var result = SDL_PollEvent(out eventPtr);
+
+            // Copy the unmanaged memory back to the managed structure  
+            @event = Marshal.PtrToStructure<Event>((nint)eventPtr);
+
+            // Perform additional validation or processing if needed  
+            if (!result) {
+                // No event was polled, return false  
+                return false;
+            }
+            return true;
+        } finally {
+            // Free the unmanaged memory  
+            Marshal.FreeHGlobal((nint)eventPtr);
         }
-        return true;
     }
 
     public static void PumpEvents() {
@@ -136,8 +177,20 @@ public static partial class Events {
         if (@event.Type == 0) {
             throw new ArgumentException("Event type cannot be zero.", nameof(@event));
         }
+        // Allocate unmanaged memory for the event structure
+        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
+        
+        try {
+            // Copy the managed event structure to unmanaged memory
+            Marshal.StructureToPtr(@event, (nint)eventPtr, false);
+        } catch (Exception ex) {
+            // Handle any exceptions that occur during memory allocation or copying
+            Marshal.FreeHGlobal((nint)eventPtr);
+            throw new InvalidOperationException("Failed to copy event structure to unmanaged memory.", ex);
+        }
+
         // Call the native method and check the result
-        var result = SDL_PushEvent(ref @event);
+        var result = SDL_PushEvent(ref eventPtr);
         // Perform additional validation or processing if needed
         return result;
     }
@@ -182,26 +235,50 @@ public static partial class Events {
         // Initialize the event structure to ensure it is in a valid state
         @event = default;
         // Call the native method and check the result
-        var result = SDL_WaitEvent(out @event);
-        // Perform additional validation or processing if needed
-        if (!result) {
-            // No event was polled, return false
-            return false;
+        // Allocate unmanaged memory for the event structure
+        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
+        try {
+            // Call the native method and check the result
+            var result = SDL_WaitEvent(out eventPtr);
+            // Copy the unmanaged memory back to the managed structure
+            @event = Marshal.PtrToStructure<Event>((nint)eventPtr);
+            // Perform additional validation or processing if needed
+            if (!result) {
+                Logger.LogError(LogCategory.Error, "Failed to wait for event.");
+            }
+            return result;
+        } finally {
+            // Free the unmanaged memory
+            Marshal.FreeHGlobal((nint)eventPtr);
         }
-        return true;
     }
 
     public static bool WaitEventTimeout(out Event @event, int timeoutMs) {
         // Initialize the event structure to ensure it is in a valid state
         @event = default;
-        // Call the native method and check the result
-        var result = SDL_WaitEventTimeout(out @event, timeoutMs);
-        // Perform additional validation or processing if needed
-        if (!result) {
-            // No event was polled, return false
-            return false;
+        // Validate the timeout value to ensure it is non-negative
+        if (timeoutMs < 0) {
+            throw new ArgumentOutOfRangeException(nameof(timeoutMs), "Timeout value cannot be negative.");
         }
-        return true;
+        // Allocate unmanaged memory for the event structure
+        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
+        try {
+            // Copy the managed event structure to unmanaged memory
+            Marshal.StructureToPtr(@event, (nint)eventPtr, false);
+            // Call the native method and check the result
+            var result = SDL_WaitEventTimeout(out eventPtr, timeoutMs);
+            // Copy the unmanaged memory back to the managed structure
+            @event = Marshal.PtrToStructure<Event>((nint)eventPtr);
+            // Perform additional validation or processing if needed
+            if (!result) {
+                Logger.LogError(LogCategory.Error, "Failed to wait for event with timeout.");
+            }
+            return result;
+        } catch (Exception ex) {
+            // Handle any exceptions that occur during memory allocation or copying
+            Marshal.FreeHGlobal((nint)eventPtr);
+            throw new InvalidOperationException("Failed to copy event structure to unmanaged memory.", ex);
+        }
     }
 
     [LibraryImport(NativeLibName)]
@@ -230,7 +307,7 @@ public static partial class Events {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint SDL_GetWindowFromEvent(ref Event @event);
+    private static partial nint SDL_GetWindowFromEvent(ref Event* @event);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -242,18 +319,18 @@ public static partial class Events {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int SDL_PeepEvents(Span<Event> events, int numevents, EventAction action, uint minType, uint maxType);
+    private static partial int SDL_PeepEvents(Event* events, int numevents, EventAction action, uint minType, uint maxType);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_PollEvent(out Event @event);
+    private static partial SdlBool SDL_PollEvent(out Event* @event);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PumpEvents();
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_PushEvent(ref Event @event);
+    private static partial SdlBool SDL_PushEvent(ref Event* @event);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -273,8 +350,8 @@ public static partial class Events {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_WaitEvent(out Event @event);
+    private static partial SdlBool SDL_WaitEvent(out Event* @event);
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_WaitEventTimeout(out Event @event, int timeoutMs);
+    private static partial SdlBool SDL_WaitEventTimeout(out Event* @event, int timeoutMs);
 }

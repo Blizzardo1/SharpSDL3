@@ -1,21 +1,21 @@
 using System.Runtime.InteropServices;
 
 using SharpSDL3.Enums;
-using SharpSDL3.Structs;
 using SharpSDL3.TTF;
 
 namespace SharpSDL3;
 
 public static unsafe partial class Delegates {
+    private const UnmanagedType UType = UnmanagedType.LPUTF8Str;
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate nint FtAllocFunc(Memory memory, long size);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void FtBitmapLcdFilterFunc(nint bitmap, string weights);
+    public delegate void FtBitmapLcdFilterFunc(nint bitmap, [MarshalAs(UType)] string weights);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int FtDebugHookFunc(void* arg);
+    public delegate int FtDebugHookFunc(nint arg);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void FtFreeFunc(Memory memory, nint block);
@@ -27,13 +27,13 @@ public static unsafe partial class Delegates {
     public delegate void FtModuleDestructor(FtModule module);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint FtModuleRequester(FtModule module, string name);
+    public delegate nint FtModuleRequester(FtModule module, [MarshalAs(UType)] string name);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate nint FtReallocFunc(Memory memory, long cur_size, long new_size, nint block);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate AppResult SdlAppEventFunc(nint appstate, Event* evt);
+    public delegate AppResult SdlAppEventFunc(nint appstate, nint evt);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult SdlAppInitFunc(nint appstate, int argc, nint argv);
@@ -45,10 +45,10 @@ public static unsafe partial class Delegates {
     public delegate void SdlAppQuitFunc(nint appstate, AppResult result);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate AssertState SdlAssertionHandler(AssertData* data, nint userdata);
+    public delegate AssertState SdlAssertionHandler(nint data, nint userdata);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlAudioPostmixCallback(nint userdata, AudioSpec* spec, float* buffer, int buflen);
+    public delegate void SdlAudioPostmixCallback(nint userdata, nint spec, nint buffer, int buflen);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SdlAudioStreamCallback(nint userdata, nint stream, int additionalAmount, int totalAmount);
@@ -60,7 +60,7 @@ public static unsafe partial class Delegates {
     public delegate void SdlClipboardCleanupCallback(nint userdata);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint SdlClipboardDataCallback(nint userdata, byte* mimeType, nint size);
+    public delegate nint SdlClipboardDataCallback(nint userdata, nint mimeType, nint size);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SdlDialogFileCallback(nint userdata, nint filelist, int filter);
@@ -72,34 +72,34 @@ public static unsafe partial class Delegates {
     public delegate nint SdlEglIntArrayCallback();
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate EnumerationResult SdlEnumerateDirectoryCallback(nint userdata, byte* dirname, byte* fname);
+    public delegate EnumerationResult SdlEnumerateDirectoryCallback(nint userdata, nint dirname, nint fname);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlEnumeratePropertiesCallback(nint userdata, uint props, byte* name);
+    public delegate void SdlEnumeratePropertiesCallback(nint userdata, uint props, nint name);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate bool SdlEventFilter(nint userdata, Event* evt);
+    public delegate bool SdlEventFilter(nint userdata, nint evt);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int SdlHashCallback(void* userdata, void* key);
+    public delegate int SdlHashCallback(nint userdata, nint key);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlHashDestroyCallback(void* userdata, void* key, void* value);
+    public delegate void SdlHashDestroyCallback(nint userdata, nint key, nint value);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlHashFreeCallback(void* userdata, void* key);
+    public delegate void SdlHashFreeCallback(nint userdata, nint key);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate bool SdlHashKeyMatchCallback(void* userdata, void* a, void* b);
+    public delegate bool SdlHashKeyMatchCallback(nint userdata, nint a, nint b);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlHintCallback(nint userdata, byte* name, byte* oldValue, byte* newValue);
+    public delegate void SdlHintCallback(nint userdata, nint name, nint oldValue, nint newValue);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate HitTestResult SdlHitTest(nint win, Point* area, nint data);
+    public delegate HitTestResult SdlHitTest(nint win, nint area, nint data);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlLogOutputFunction(nint userdata, LogCategory category, LogPriority priority, byte* message);
+    public delegate void SdlLogOutputFunction(nint userdata, LogCategory category, LogPriority priority, [MarshalAs(UType)] string message);
 
     // /usr/local/include/SDL3/SDL_main.h
 
@@ -125,7 +125,7 @@ public static unsafe partial class Delegates {
     public delegate void SdlTrayCallback(nint userdata, nint entry);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate ulong FtStreamIoFunc(FtStream stream, ulong offset, string buffer, ulong count);
+    public delegate ulong FtStreamIoFunc(FtStream stream, ulong offset, [MarshalAs(UType)] string buffer, ulong count);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void FtStreamCloseFunc(FtStream stream);

@@ -1,11 +1,5 @@
-﻿using SharpSDL3.Image;
-using SharpSDL3.Structs;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System;
 using System.Runtime.InteropServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SharpSDL3;
 public static unsafe partial class Sdl {
@@ -111,10 +105,13 @@ public static unsafe partial class Sdl {
      * \sa IMG_Load_IO
      * \sa SDL_DestroySurface
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Surface* IMG_LoadTyped_IO(IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
 
-    public static Surface* LoadTypedImage(IOStream* src, bool closeio, string type) {
+    public static nint LoadTypedImage(nint src, bool closeio, string type) {
+        if(src == nint.Zero) {
+            throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
+        }
         return IMG_LoadTyped_IO(src, closeio, type);
     }
 
@@ -161,16 +158,16 @@ public static unsafe partial class Sdl {
      * \sa IMG_Load_IO
      * \sa SDL_DestroySurface
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Surface* IMG_Load(string file);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_Load(string file);
 
-    public static Surface* LoadImage(string file) {
+    public static nint LoadImage(string file) {
         if (string.IsNullOrWhiteSpace(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
 
-        Surface* surface = IMG_Load(file);
-        if (surface == null) {
+        nint surface = IMG_Load(file);
+        if (surface == nint.Zero) {
             Logger.LogError(Enums.LogCategory.System, $"Failed to load image from file: {file}. SDL Error: {SharpSDL3.Sdl.GetError()}");
         }
 
@@ -229,15 +226,15 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTyped_IO
      * \sa SDL_DestroySurface
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Surface* IMG_Load_IO(IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_Load_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
 
-    public static Surface* LoadImage(IOStream* src, bool closeio) {
-        if (src == null) {
+    public static nint LoadImageIo(nint src, bool closeio) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        Surface* surface = IMG_Load_IO(src, closeio);
-        if (surface == null) {
+        nint surface = IMG_Load_IO(src, closeio);
+        if (surface == nint.Zero) {
             Logger.LogError(Enums.LogCategory.System, $"Failed to load image from IOStream. SDL Error: {SharpSDL3.Sdl.GetError()}");
         }
         return surface;
@@ -276,15 +273,15 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTextureTyped_IO
      * \sa IMG_LoadTexture_IO
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Texture* IMG_LoadTexture(nint renderer, string file);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_LoadTexture(nint renderer, string file);
 
-    public static Texture* LoadTexture(nint renderer, string file) {
+    public static nint LoadTexture(nint renderer, string file) {
         if (string.IsNullOrWhiteSpace(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
-        Texture* texture = IMG_LoadTexture(renderer, file);
-        if (texture == null) {
+        nint texture = IMG_LoadTexture(renderer, file);
+        if (texture == nint.Zero) {
             Logger.LogError(Enums.LogCategory.System, $"Failed to load texture from file: {file}. SDL Error: {SharpSDL3.Sdl.GetError()}");
         }
         return texture;
@@ -336,14 +333,14 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroyTexture
      */
     [LibraryImport(ImageLibName)]
-    private static partial Texture* IMG_LoadTexture_IO(nint renderer, IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    private static partial nint IMG_LoadTexture_IO(nint renderer, nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
 
-    public static Texture* LoadTexture(nint renderer, IOStream* src, bool closeio) {
-        if (src == null) {
+    public static nint LoadTextureIo(nint renderer, nint src, bool closeio) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        Texture* texture = IMG_LoadTexture_IO(renderer, src, closeio);
-        if (texture == null) {
+        nint texture = IMG_LoadTexture_IO(renderer, src, closeio);
+        if (texture == nint.Zero) {
             Logger.LogError(Enums.LogCategory.System, $"Failed to load texture from IOStream. SDL Error: {SharpSDL3.Sdl.GetError()}");
         }
         return texture;
@@ -402,15 +399,15 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTexture_IO
      * \sa SDL_DestroyTexture
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Texture* IMG_LoadTextureTyped_IO(nint renderer, IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
 
-    public static Texture* LoadTexture(nint renderer, IOStream* src, bool closeio, string type) {
-        if (src == null) {
+    public static nint LoadTextureTypedIo(nint renderer, nint src, bool closeio, string type) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        Texture* texture = IMG_LoadTextureTyped_IO(renderer, src, closeio, type);
-        if (texture == null) {
+        nint texture = IMG_LoadTextureTyped_IO(renderer, src, closeio, type);
+        if (texture == nint.Zero) {
             Logger.LogError(Enums.LogCategory.System, $"Failed to load texture from IOStream. SDL Error: {SharpSDL3.Sdl.GetError()}");
         }
         return texture;
@@ -458,12 +455,12 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isAVIF(IOStream* src);
+    private static partial bool IMG_isAVIF(nint src);
 
-    public static bool IsAVIF(IOStream* src) {
-        if (src == null) {
+    public static bool IsAVIF(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isAVIF(src);
@@ -512,10 +509,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isICO(IOStream* src);
+    private static partial bool IMG_isICO(nint src);
 
-    public static bool IsICO(IOStream* src) {
-        if (src == null) {
+    public static bool IsICO(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isICO(src);
@@ -564,10 +561,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isCUR(IOStream* src);
+    private static partial bool IMG_isCUR(nint src);
 
-    public static bool IsCUR(IOStream* src) {
-        if (src == null) {
+    public static bool IsCUR(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isCUR(src);
@@ -616,10 +613,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isBMP(IOStream* src);
+    private static partial bool IMG_isBMP(nint src);
 
-    public static bool IsBMP(IOStream* src) {
-        if (src == null) {
+    public static bool IsBMP(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isBMP(src);
@@ -670,9 +667,9 @@ public static unsafe partial class Sdl {
 
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isGIF(IOStream* src);
-    public static bool IsGIF(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isGIF(nint src);
+    public static bool IsGIF(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isGIF(src);
@@ -721,10 +718,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isJPG(IOStream* src);
+    private static partial bool IMG_isJPG(nint src);
 
-    public static bool IsJPG(IOStream* src) {
-        if (src == null) {
+    public static bool IsJPG(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isJPG(src);
@@ -773,10 +770,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isJXL(IOStream* src);
+    private static partial bool IMG_isJXL(nint src);
 
-    public static bool IsJXL(IOStream* src) {
-        if (src == null) {
+    public static bool IsJXL(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isJXL(src);
@@ -825,9 +822,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isLBM(IOStream* src);
-    public static bool IsLBM(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isLBM(nint src);
+    public static bool IsLBM(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isLBM(src);
@@ -876,9 +873,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isPCX(IOStream* src);
-    public static bool IsPCX(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isPCX(nint src);
+    public static bool IsPCX(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPCX(src);
@@ -927,9 +924,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isPNG(IOStream* src);
-    public static bool IsPNG(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isPNG(nint src);
+    public static bool IsPNG(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPNG(src);
@@ -978,9 +975,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isPNM(IOStream* src);
-    public static bool IsPNM(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isPNM(nint src);
+    public static bool IsPNM(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPNM(src);
@@ -1029,9 +1026,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isSVG(IOStream* src);
-    public static bool IsSVG(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isSVG(nint src);
+    public static bool IsSVG(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isSVG(src);
@@ -1080,9 +1077,9 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isQOI(IOStream* src);
-    public static bool IsQOI(IOStream* src) {
-        if (src == null) {
+    private static partial bool IMG_isQOI(nint src);
+    public static bool IsQOI(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isQOI(src);
@@ -1131,10 +1128,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isTIF(IOStream* src);
+    private static partial bool IMG_isTIF(nint src);
 
-    public static bool IsTIF(IOStream* src) {
-        if (src == null) {
+    public static bool IsTIF(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isTIF(src);
@@ -1183,10 +1180,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isXCF(IOStream* src);
+    private static partial bool IMG_isXCF(nint src);
 
-    public static bool IsXCF(IOStream* src) {
-        if (src == null) {
+    public static bool IsXCF(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXCF(src);
@@ -1235,10 +1232,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isXPM(IOStream* src);
+    private static partial bool IMG_isXPM(nint src);
 
-    public static bool IsXPM(IOStream* src) {
-        if (src == null) {
+    public static bool IsXPM(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXPM(src);
@@ -1287,10 +1284,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isXV(IOStream* src);
+    private static partial bool IMG_isXV(nint src);
 
-    public static bool IsXV(IOStream* src) {
-        if (src == null) {
+    public static bool IsXV(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXV(src);
@@ -1339,10 +1336,10 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_isWEBP(IOStream* src);
+    private static partial bool IMG_isWEBP(nint src);
 
-    public static bool IsWEBP(IOStream* src) {
-        if (src == null) {
+    public static bool IsWEBP(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isWEBP(src);
@@ -1381,10 +1378,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadAVIF_IO(IOStream* src);
+    private static partial nint IMG_LoadAVIF_IO(nint src);
 
-    public static Surface* LoadAvifIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadAvifIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadAVIF_IO(src);
@@ -1423,10 +1420,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadICO_IO(IOStream* src);
+    private static partial nint IMG_LoadICO_IO(nint src);
 
-    public static Surface* LoadIcoIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadIcoIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadICO_IO(src);
@@ -1465,10 +1462,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadCUR_IO(IOStream* src);
+    private static partial nint IMG_LoadCUR_IO(nint src);
 
-    public static Surface* LoadCurIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadCurIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadCUR_IO(src);
@@ -1507,10 +1504,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadBMP_IO(IOStream* src);
+    private static partial nint IMG_LoadBMP_IO(nint src);
 
-    public static Surface* LoadBmpIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadBmpIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadBMP_IO(src);
@@ -1549,9 +1546,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadGIF_IO(IOStream* src);
-    public static Surface* LoadGifIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadGIF_IO(nint src);
+    public static nint LoadGifIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadGIF_IO(src);
@@ -1590,9 +1587,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadJPG_IO(IOStream* src);
-    public static Surface* LoadJpgIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadJPG_IO(nint src);
+    public static nint LoadJpgIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadJPG_IO(src);
@@ -1631,9 +1628,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadJXL_IO(IOStream* src);
-    public static Surface* LoadJxlIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadJXL_IO(nint src);
+    public static nint LoadJxlIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadJXL_IO(src);
@@ -1672,9 +1669,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadLBM_IO(IOStream* src);
-    public static Surface* LoadLbmIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadLBM_IO(nint src);
+    public static nint LoadLbmIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadLBM_IO(src);
@@ -1713,9 +1710,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadPCX_IO(IOStream* src);
-    public static Surface* LoadPcxIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadPCX_IO(nint src);
+    public static nint LoadPcxIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPCX_IO(src);
@@ -1754,9 +1751,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadPNG_IO(IOStream* src);
-    public static Surface* LoadPngIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadPNG_IO(nint src);
+    public static nint LoadPngIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPNG_IO(src);
@@ -1795,9 +1792,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadPNM_IO(IOStream* src);
-    public static Surface* LoadPnmIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadPNM_IO(nint src);
+    public static nint LoadPnmIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPNM_IO(src);
@@ -1836,9 +1833,9 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadSVG_IO(IOStream* src);
-    public static Surface* LoadSvgIo(IOStream* src) {
-        if (src == null) {
+    private static partial nint IMG_LoadSVG_IO(nint src);
+    public static nint LoadSvgIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadSVG_IO(src);
@@ -1877,10 +1874,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadQOI_IO(IOStream* src);
+    private static partial nint IMG_LoadQOI_IO(nint src);
 
-    public static Surface* LoadQoiIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadQoiIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadQOI_IO(src);
@@ -1919,10 +1916,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadTGA_IO(IOStream* src);
+    private static partial nint IMG_LoadTGA_IO(nint src);
 
-    public static Surface* LoadTgaIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadTgaIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTGA_IO(src);
@@ -1961,10 +1958,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadTIF_IO(IOStream* src);
+    private static partial nint IMG_LoadTIF_IO(nint src);
 
-    public static Surface* LoadTifIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadTifIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTIF_IO(src);
@@ -2003,10 +2000,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadXCF_IO(IOStream* src);
+    private static partial nint IMG_LoadXCF_IO(nint src);
 
-    public static Surface* LoadXcfIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadXcfIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXCF_IO(src);
@@ -2045,10 +2042,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadXPM_IO(IOStream* src);
+    private static partial nint IMG_LoadXPM_IO(nint src);
 
-    public static Surface* LoadXpmIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadXpmIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXPM_IO(src);
@@ -2087,10 +2084,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadWEBP_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadXV_IO(IOStream* src);
+    private static partial nint IMG_LoadXV_IO(nint src);
 
-    public static Surface* LoadXvIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadXvIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXV_IO(src);
@@ -2129,10 +2126,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadWEBP_IO(IOStream* src);
+    private static partial nint IMG_LoadWEBP_IO(nint src);
 
-    public static Surface* LoadWebpIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadWebpIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadWEBP_IO(src);
@@ -2158,10 +2155,10 @@ public static unsafe partial class Sdl {
      * \since This function is available since SDL_image 3.0.0.
      */
     [LibraryImport(ImageLibName)]
-    private static partial Surface* IMG_LoadSizedSVG_IO(IOStream* src, int width, int height);
+    private static partial nint IMG_LoadSizedSVG_IO(nint src, int width, int height);
 
-    public static Surface* LoadSizedSvgIo(IOStream* src, int width, int height) {
-        if (src == null) {
+    public static nint LoadSizedSvgIo(nint src, int width, int height) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadSizedSVG_IO(src, width, height);
@@ -2184,10 +2181,10 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_ReadXPMFromArrayToRGB888
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Surface* IMG_ReadXPMFromArray(string[] xpm);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_ReadXPMFromArray(string[] xpm);
 
-    public static Surface* ReadXpmFromArray(string[] xpm) {
+    public static nint ReadXpmFromArray(string[] xpm) {
         if (xpm == null) {
             throw new ArgumentNullException(nameof(xpm), "XPM data cannot be null.");
         }
@@ -2211,10 +2208,10 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_ReadXPMFromArray
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Surface* IMG_ReadXPMFromArrayToRGB888(string[] xpm);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_ReadXPMFromArrayToRGB888(string[] xpm);
 
-    public static Surface* ReadXpmFromArrayToRgb888(string[] xpm) {
+    public static nint ReadXpmFromArrayToRgb888(string[] xpm) {
         if (xpm == null) {
             throw new ArgumentNullException(nameof(xpm), "XPM data cannot be null.");
         }
@@ -2237,12 +2234,12 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_SaveAVIF_IO
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveAVIF(Surface* surface, string file, int quality);
+    private static partial bool IMG_SaveAVIF(nint surface, string file, int quality);
 
-    public static bool SaveAvif(Surface* surface, string file, int quality) {
-        if (surface == null) {
+    public static bool SaveAvif(nint surface, string file, int quality) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
         if (file == null) {
@@ -2274,13 +2271,13 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveAVIF_IO(Surface* surface, IOStream* dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
+    private static partial bool IMG_SaveAVIF_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
 
-    public static bool SaveAvifIo(Surface* surface, IOStream* dst, bool closeio, int quality) {
-        if (surface == null) {
+    public static bool SaveAvifIo(nint surface, nint dst, bool closeio, int quality) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == null) {
+        if (dst == nint.Zero) {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SaveAVIF_IO(surface, dst, closeio, quality);
@@ -2300,12 +2297,12 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_SavePNG_IO
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SavePNG(Surface* surface, string file);
+    private static partial bool IMG_SavePNG(nint surface, string file);
 
-    public static bool SavePng(Surface* surface, string file) {
-        if (surface == null) {
+    public static bool SavePng(nint surface, string file) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
         if (file == null) {
@@ -2335,12 +2332,12 @@ public static unsafe partial class Sdl {
      */
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SavePNG_IO(Surface* surface, IOStream* dst, [MarshalAs(UnmanagedType.Bool)] bool closeio);
-    public static bool SavePngIo(Surface* surface, IOStream* dst, bool closeio) {
-        if (surface == null) {
+    private static partial bool IMG_SavePNG_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    public static bool SavePngIo(nint surface, nint dst, bool closeio) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == null) {
+        if (dst == nint.Zero) {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SavePNG_IO(surface, dst, closeio);
@@ -2362,12 +2359,12 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_SaveJPG_IO
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveJPG(Surface* surface, string file, int quality);
+    private static partial bool IMG_SaveJPG(nint surface, string file, int quality);
 
-    public static bool SaveJpg(Surface* surface, string file, int quality) {
-        if (surface == null) {
+    public static bool SaveJpg(nint surface, string file, int quality) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
         if (file == null) {
@@ -2397,15 +2394,15 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_SaveJPG
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
     [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveJPG_IO(Surface* surface, IOStream* dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
+    private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
 
-    public static bool SaveJpgIo(Surface* surface, IOStream* dst, bool closeio, int quality) {
-        if (surface == null) {
+    public static bool SaveJpgIo(nint surface, nint dst, bool closeio, int quality) {
+        if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == null) {
+        if (dst == nint.Zero) {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SaveJPG_IO(surface, dst, closeio, quality);
@@ -2424,11 +2421,11 @@ public static unsafe partial class Sdl {
      *
      * \sa IMG_FreeAnimation
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
 
-    private static partial Animation* IMG_LoadAnimation(string file);
+    private static partial nint IMG_LoadAnimation(string file);
 
-    public static Animation* LoadAnimation(string file) {
+    public static nint LoadAnimation(string file) {
         if (file == null) {
             throw new ArgumentNullException(nameof(file), "File path cannot be null.");
         }
@@ -2455,10 +2452,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
     [LibraryImport(ImageLibName)]
-    private static partial Animation* IMG_LoadAnimation_IO(IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    private static partial nint IMG_LoadAnimation_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
 
-    public static Animation* LoadAnimationIo(IOStream* src, bool closeio) {
-        if (src == null) {
+    public static nint LoadAnimationIo(nint src, bool closeio) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadAnimation_IO(src, closeio);
@@ -2492,11 +2489,11 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimation_IO
      * \sa IMG_FreeAnimation
      */
-    [LibraryImport(ImageLibName, StringMarshalling = StringMarshalling.Utf8)]
-    private static partial Animation* IMG_LoadAnimationTyped_IO(IOStream* src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
+    private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
 
-    public static Animation* LoadAnimationTypedIo(IOStream* src, bool closeio, string type) {
-        if (src == null) {
+    public static nint LoadAnimationTypedIo(nint src, bool closeio, string type) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         if (type == null) {
@@ -2519,10 +2516,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimationTyped_IO
      */
     [LibraryImport(ImageLibName)]
-    private static partial void IMG_FreeAnimation(Animation* anim);
+    private static partial void IMG_FreeAnimation(nint anim);
 
-    public static void FreeAnimation(Animation* anim) {
-        if (anim == null) {
+    public static void FreeAnimation(nint anim) {
+        if (anim == nint.Zero) {
             throw new ArgumentNullException(nameof(anim), "Animation cannot be null.");
         }
         IMG_FreeAnimation(anim);
@@ -2547,10 +2544,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
     [LibraryImport(ImageLibName)]
-    private static partial Animation* IMG_LoadGIFAnimation_IO(IOStream* src);
+    private static partial nint IMG_LoadGIFAnimation_IO(nint src);
 
-    public static Animation* LoadGifAnimationIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadGifAnimationIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadGIFAnimation_IO(src);
@@ -2575,10 +2572,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
     [LibraryImport(ImageLibName)]
-    private static partial Animation* IMG_LoadWEBPAnimation_IO(IOStream* src);
+    private static partial nint IMG_LoadWEBPAnimation_IO(nint src);
 
-    public static Animation* LoadWebpAnimationIo(IOStream* src) {
-        if (src == null) {
+    public static nint LoadWebpAnimationIo(nint src) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadWEBPAnimation_IO(src);

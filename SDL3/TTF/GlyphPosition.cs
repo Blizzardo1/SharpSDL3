@@ -4,9 +4,9 @@ namespace SharpSDL3.TTF;
 
 [StructLayout(LayoutKind.Sequential)]
 public unsafe struct GlyphPosition {
-    public Font* Font;
+    public nint Font;
     public uint Index;
-    public CachedGlyph* Glyph;
+    public nint Glyph;
     public int XOffset;
     public int YOffset;
     public int XAdvance;

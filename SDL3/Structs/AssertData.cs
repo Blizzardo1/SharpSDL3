@@ -9,9 +9,9 @@ public unsafe struct AssertData
 {
 	public SdlBool AlwaysIgnore;
 	public uint TriggerCount;
-	public byte* Condition;
-	public byte* FileName;
+	public nint Condition;
+	public nint FileName;
 	public int LineNum;
-	public byte* Function;
-	public AssertData* Next;
+	public nint Function;
+	public nint Next;
 }

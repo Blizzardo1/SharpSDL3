@@ -26,7 +26,15 @@ public static unsafe partial class Touch {
 
     public static Span<nint> GetTouchDevices() {
         nint result = SDL_GetTouchDevices(out int count);
-        return new Span<nint>((void*)result, count);
+
+        if (result == nint.Zero) {
+            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+        }
+
+        nint[] data = new nint[count];
+        Marshal.Copy(result, data, 0, count);
+
+        return data;
     }
 
     public static TouchDeviceType GetTouchDeviceType(ulong touchId) {
@@ -42,15 +50,29 @@ public static unsafe partial class Touch {
 
     public static Span<nint> GetTouchFingers(ulong touchId) {
         nint result = SDL_GetTouchFingers(touchId, out int count);
-        return new Span<nint>((void*)result, count);
+        if (result == nint.Zero) {
+            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+        }
+
+        nint[] data = new nint[count];
+        Marshal.Copy(result, data, 0, count);
+
+        return data;
     }
 
     public static Span<nint> GetTouchFingers(ulong touchId, out int count) {
         nint result = SDL_GetTouchFingers(touchId, out count);
-        return new Span<nint>((void*)result, count);
+        if (result == nint.Zero) {
+            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+        }
+
+        nint[] data = new nint[count];
+        Marshal.Copy(result, data, 0, count);
+
+        return data;
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetTouchDeviceName(ulong touchId);

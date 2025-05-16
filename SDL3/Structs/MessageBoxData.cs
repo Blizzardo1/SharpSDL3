@@ -9,9 +9,9 @@ public unsafe struct MessageBoxData
 {
 	public MessageBoxFlags Flags;
 	public nint Window;
-	public byte* Title;
-	public byte* Message;
+	public nint Title;
+	public nint Message;
 	public int NumButtons;
-	public MessageBoxButtonData* Buttons;
-	public MessageBoxColorScheme* ColorScheme;
+	public nint Buttons;
+	public nint ColorScheme;
 }

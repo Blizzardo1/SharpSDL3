@@ -5,12 +5,13 @@ using SharpSDL3.Enums;
 namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct PixelFormatDetails
+public struct PixelFormatDetails
 {
 	public PixelFormat Format;
 	public byte BitsPerPixel;
 	public byte BytesPerPixel;
-	public fixed byte Padding[2];
+	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
+	public byte[] Padding;
 	public uint RMask;
 	public uint GMask;
 	public uint BMask;

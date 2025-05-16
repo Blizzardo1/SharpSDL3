@@ -20,13 +20,13 @@ namespace SharpSDL3;
 
         var result = SDL_OpenURL(url);
         if (!result) {
-            Logger.LogError(LogCategory.System, $"Failed to open URL: {url}");
+            Logger.LogError(LogCategory.Error, $"Failed to open URL: {url}");
         }
 
         return result;
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_OpenURL(string url);
 }

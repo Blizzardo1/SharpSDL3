@@ -6,7 +6,7 @@ namespace SharpSDL3.Structs;
 public unsafe struct Palette
 {
 	public int NColors;
-	public Color* Colors;
+	public nint Colors;
 	public uint Version;
 	public int RefCount;
 }

@@ -18,11 +18,13 @@ public struct FtLibrary {
     public nint CurRenderer;     /* current outline renderer */
     public FtModule AutoHinter;
 
-    public FtDebugHookFunc[] DebugHooks; // [4]
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 4)]
+    public FtDebugHookFunc[] DebugHooks;
 
     public string[] LcdWeights;      /* filter weights, if any */
     public FtBitmapLcdFilterFunc LcdFilterFunc;  /* filtering callback     */
-    public LongVector[] LcdGeometry; // [3] /* RGB subpixel positions */
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
+    public LongVector[] LcdGeometry; /* RGB subpixel positions */
     public int RefCount;
 
 }

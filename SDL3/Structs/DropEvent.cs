@@ -13,6 +13,6 @@ public unsafe struct DropEvent
 	public uint WindowId;
 	public float X;
 	public float Y;
-	public byte* Source;
-	public byte* Data;
+	public nint Source;
+	public nint Data;
 }

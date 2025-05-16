@@ -9,12 +9,12 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
 public static unsafe partial class Camera {
-    public static Surface* AcquireCameraFrame(nint camera, out ulong timestampNs) {
+    public static nint AcquireCameraFrame(nint camera, out ulong timestampNs) {
         if (camera == nint.Zero) {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
-        Surface* frame = SDL_AcquireCameraFrame(camera, out timestampNs);
-        if (frame == null) {
+        nint frame = SDL_AcquireCameraFrame(camera, out timestampNs);
+        if (frame == nint.Zero) {
             throw new InvalidOperationException($"Failed to acquire camera frame. Camera handle may be invalid.");
         }
         return frame;
@@ -105,12 +105,50 @@ public static unsafe partial class Camera {
 
     public static Span<nint> GetCameras(out int count) {
         nint result = SDL_GetCameras(out count);
-        return new Span<nint>((void*)result, count);
+        
+        if(result == nint.Zero) {
+            Logger.LogError(LogCategory.Error, "Failed to retrieve camera list.");
+            return [];
+        }
+
+        if (count <= 0) {
+            Logger.LogWarn(LogCategory.System, "No cameras found.");
+            return [];
+        }
+
+        nint[] ptrs = new nint[count];
+
+        for(int i = 0; i < count; i++) {
+            ptrs[i] = Marshal.ReadIntPtr(result, i * sizeof(nint));
+        }
+
+        Span<nint> cameras = new(ptrs);
+
+        return cameras.ToArray();
+
     }
 
     public static Span<nint> GetCameraSupportedFormats(uint devid, out int count) {
         nint result = SDL_GetCameraSupportedFormats(devid, out count);
-        return new Span<nint>((void*)result, count);
+        if (result == nint.Zero) {
+            Logger.LogError(LogCategory.Error, "Failed to retrieve camera formats.");
+            return [];
+        }
+
+        if (count <= 0) {
+            Logger.LogWarn(LogCategory.System, "No camera formats found.");
+            return [];
+        }
+
+        nint[] ptrs = new nint[count];
+
+        for (int i = 0; i < count; i++) {
+            ptrs[i] = Marshal.ReadIntPtr(result, i * sizeof(nint));
+        }
+
+        Span<nint> cameraFormats = new(ptrs);
+
+        return cameraFormats.ToArray();
     }
 
     public static string GetCurrentCameraDriver() {
@@ -145,13 +183,13 @@ public static unsafe partial class Camera {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial Surface* SDL_AcquireCameraFrame(nint camera, out ulong timestampNs);
+    private static partial nint SDL_AcquireCameraFrame(nint camera, out ulong timestampNs);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CloseCamera(nint camera);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetCameraDriver(int index);
@@ -164,7 +202,7 @@ public static unsafe partial class Camera {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetCameraID(nint camera);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetCameraName(uint instanceId);
@@ -189,7 +227,7 @@ public static unsafe partial class Camera {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetCameraSupportedFormats(uint devid, out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetCurrentCameraDriver();

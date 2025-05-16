@@ -15,7 +15,7 @@ public static unsafe partial class JoySticks {
     public static uint AttachVirtualJoystick(ref VirtualJoystickDesc desc) {
         // VirtualJoystickDesc is a struct, which is a value type and cannot be null.
         // Instead of checking for null, we can validate its fields if necessary.
-        if (desc.Name == null) {
+        if (desc.Name == nint.Zero) {
             throw new ArgumentException("Virtual joystick description must have a valid name.", nameof(desc));
         }
         uint instanceId = SDL_AttachVirtualJoystick(ref desc);
@@ -442,7 +442,7 @@ public static unsafe partial class JoySticks {
         return result;
     }
 
-    public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, float* data, int numValues) {
+    public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, nint data, int numValues) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
@@ -466,13 +466,23 @@ public static unsafe partial class JoySticks {
         if (data == null || data.Length == 0) {
             throw new ArgumentException("Data array cannot be null or empty.", nameof(data));
         }
-        fixed (float* pData = data) {
-            return SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, pData, data.Length);
-        }
+        
+        nint pData = Marshal.AllocHGlobal(data.Length * sizeof(float));
+
+        bool result = SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, pData, data.Length);
+        
+        Marshal.Copy(data, 0, pData, data.Length);
+        
+        Free(pData);
+
+        return result;
     }
 
     public static void SetJoystickEventsEnabled(bool enabled) {
         SDL_SetJoystickEventsEnabled(enabled);
+
+        Logger.LogInfo(LogCategory.System, $"Joystick events enabled: {enabled}");
+
     }
 
     public static SdlBool SetJoystickLED(nint joystick, byte red, byte green, byte blue) {
@@ -562,7 +572,7 @@ public static unsafe partial class JoySticks {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial uint SDL_AttachVirtualJoystick(ref VirtualJoystickDesc desc);
+    private static partial uint SDL_AttachVirtualJoystick([MarshalUsing(typeof(OwnedVirtualJoystickDescMarshaller))] ref VirtualJoystickDesc desc);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -625,22 +635,22 @@ public static unsafe partial class JoySticks {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetJoystickID(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickName(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickNameForID(uint instanceId);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickPath(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickPathForID(uint instanceId);
@@ -681,7 +691,7 @@ public static unsafe partial class JoySticks {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetJoysticks(out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = StringMarshalling.Utf8)]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickSerial(nint joystick);
@@ -758,7 +768,7 @@ public static unsafe partial class JoySticks {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SendJoystickVirtualSensorData(nint joystick, SensorType type,
-        ulong sensorTimestamp, float* data, int numValues);
+        ulong sensorTimestamp, nint data, int numValues);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
