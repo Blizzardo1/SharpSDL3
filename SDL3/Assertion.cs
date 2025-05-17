@@ -11,10 +11,7 @@ namespace SharpSDL3;
 public static unsafe partial class Assertion {
     public static SdlAssertionHandler GetAssertionHandler(out nint puserdata) {
         var handler = SDL_GetAssertionHandler(out puserdata);
-        if (handler == null) {
-            throw new InvalidOperationException("Failed to get assertion handler.");
-        }
-        return handler;
+        return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
     }
 
     public static nint GetAssertionReport() {
@@ -26,10 +23,7 @@ public static unsafe partial class Assertion {
     }
 
     public static SdlAssertionHandler GetDefaultAssertionHandler() {
-        var handler = SDL_GetDefaultAssertionHandler();
-        if (handler == null) {
-            throw new InvalidOperationException("Failed to get default assertion handler.");
-        }
+        var handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
         return handler;
     }
 

@@ -119,5 +119,5 @@ public enum EventType : uint
 	PollSentinel = 32512,
 	User = 32768,
 	Last = 65535,
-	EnumPadding = 2147483647
+    EnumPadding = 2147483647
 }

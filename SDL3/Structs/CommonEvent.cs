@@ -1,3 +1,4 @@
+using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Structs;
@@ -5,7 +6,7 @@ namespace SharpSDL3.Structs;
 [StructLayout(LayoutKind.Sequential)]
 public struct CommonEvent
 {
-	public uint Type;
+	public EventType Type;
 	public uint Reserved;
 	public ulong Timestamp;
 }

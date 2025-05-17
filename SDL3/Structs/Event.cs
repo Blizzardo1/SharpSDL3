@@ -3,10 +3,9 @@ using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Structs;
 
-[StructLayout(LayoutKind.Explicit)]
-public unsafe struct Event
-{
-	[FieldOffset(0)] public EventType Type;
+[StructLayout(LayoutKind.Explicit, Size = 128)]
+public unsafe struct Event {
+    [FieldOffset(0)] public EventType Type;
 	[FieldOffset(0)] public CommonEvent Common;
 	[FieldOffset(0)] public DisplayEvent Display;
 	[FieldOffset(0)] public WindowEvent Window;
@@ -44,5 +43,24 @@ public unsafe struct Event
 	[FieldOffset(0)] public RenderEvent Render;
 	[FieldOffset(0)] public DropEvent Drop;
 	[FieldOffset(0)] public ClipboardEvent Clipboard;
-	[FieldOffset(0)] public fixed byte Padding[128];
+
+    /// <summary>
+	/// <para>
+    /// This is necessary for ABI compatibility between Visual C++ and GCC.
+	/// </para>
+    /// Visual C++ will respect the push pack pragma and use 52 bytes (size of
+    /// SDL_TextEditingEvent, the largest structure for 32-bit and 64-bit
+    /// architectures) for this union, and GCC will use the alignment of the
+    /// largest datatype within the union, which is 8 bytes on 64-bit
+    /// architectures.
+    /// <para>
+    /// So... we'll add padding to force the size to be the same for both.
+	/// </para>
+    /// <para>
+    /// On architectures where pointers are 16 bytes, this needs rounding up to
+    /// the next multiple of 16, 64, and on architectures where pointers are
+    /// even larger the size of SDL_UserEvent will dominate as being 3 pointers.
+	/// </para>
+    /// </summary>
+    [FieldOffset(0)] private fixed byte Padding[128];
 }
