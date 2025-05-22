@@ -16,5 +16,5 @@ public struct PenButtonEvent
 	public float X;
 	public float Y;
 	public byte Button;
-	public bool Down;
+	public SdlBool Down;
 }

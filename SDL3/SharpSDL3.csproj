@@ -6,8 +6,6 @@
 	</PropertyGroup>
 
 	<PropertyGroup>
-		<DefaultItemExcludes>$(DefaultItemExcludes);SDL3.Legacy.cs</DefaultItemExcludes>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
-
 </Project>

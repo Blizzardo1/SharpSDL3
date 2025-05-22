@@ -11,7 +11,23 @@ namespace SharpSDL3;
 public static unsafe partial class Sdl {
     internal const string NativeLibName = "SDL3";
 
+    internal const UnmanagedType StringType = UnmanagedType.LPUTF8Str;
+    internal const UnmanagedType BoolType = UnmanagedType.I1;
     internal const StringMarshalling marshalling = StringMarshalling.Utf8;
+
+    public static unsafe nint StructureToPointer<T>(ref T str) where T : unmanaged {
+        int size = sizeof(T);
+        nint ptr = Marshal.AllocHGlobal(size);
+        Unsafe.CopyBlockUnaligned((void*)ptr, Unsafe.AsPointer(ref str), (uint)size);
+        return ptr;
+    }
+
+    public static unsafe T PointerToStructure<T>(nint ptr) where T : unmanaged {
+        T str = default;
+        Unsafe.Copy(ref str, (void*)ptr);
+        return str;
+    }
+   
 
     /// <summary>
     /// This macro turns the version numbers into a numeric value.
@@ -404,13 +420,13 @@ public static unsafe partial class Sdl {
         return SDL_EnumerateProperties(props, callback, userdata);
     }
 
-    public static bool FillSurfaceRect(nint dst, Rect rect, uint color) {
+    public static unsafe bool FillSurfaceRect(nint dst, Rect rect, uint color) {
         if (dst == nint.Zero) {
             Logger.LogWarn(LogCategory.System, "FillSurfaceRect: Destination pointer is null.");
             return false;
         }
-        nint rectPtr = Marshal.AllocHGlobal(Marshal.SizeOf<Rect>());
-        Marshal.StructureToPtr(rect, rectPtr, false);
+        nint rectPtr = Marshal.AllocHGlobal(sizeof(Rect));
+        *(Rect*)rectPtr = rect;
         bool result = SDL_FillSurfaceRect(dst, rectPtr, color);
         if (!result) {
             Logger.LogError(LogCategory.Error, "FillSurfaceRect: Failed to fill surface rectangle.");
@@ -577,7 +593,7 @@ public static unsafe partial class Sdl {
         return mode;
     }
 
-    public static void GetCurrentDisplayMode(uint displayId, out DisplayMode mode) {
+    public static unsafe void GetCurrentDisplayMode(uint displayId, out DisplayMode mode) {
         if (displayId == 0) {
             Logger.LogWarn(LogCategory.System, "GetCurrentDisplayMode: Display ID is zero.");
             mode = default;
@@ -590,7 +606,7 @@ public static unsafe partial class Sdl {
             return;
         }
 
-        mode = Marshal.PtrToStructure<DisplayMode>(modePtr);
+        mode = *(DisplayMode*)modePtr;
     }
 
     public static DisplayOrientation GetCurrentDisplayOrientation(uint displayId) {
@@ -622,7 +638,7 @@ public static unsafe partial class Sdl {
         return mode;
     }
 
-    public static void GetDesktopDisplayMode(uint displayId, out DisplayMode mode) {
+    public static unsafe void GetDesktopDisplayMode(uint displayId, out DisplayMode mode) {
         if (displayId == 0) {
             Logger.LogWarn(LogCategory.System, "GetDesktopDisplayMode: Display ID is zero.");
             mode = default;
@@ -634,7 +650,7 @@ public static unsafe partial class Sdl {
             mode = default;
             return;
         }
-        mode = Marshal.PtrToStructure<DisplayMode>(modePtr);
+        mode = *(DisplayMode*)modePtr;
     }
 
     public static bool GetDisplayBounds(uint displayId, out Rect rect) {
@@ -1524,12 +1540,12 @@ public static unsafe partial class Sdl {
         return mode;
     }
 
-    public static DisplayMode GetWindowFullScreenMode(nint window) {
+    public static unsafe DisplayMode GetWindowFullScreenMode(nint window) {
         if (window == nint.Zero) {
             Logger.LogError(LogCategory.Error, "GetWindowFullScreenMode: Window pointer is null.");
             return default;
         }
-        DisplayMode mode = Marshal.PtrToStructure<DisplayMode>(SDL_GetWindowFullscreenMode(window));
+        DisplayMode mode = *(DisplayMode*)SDL_GetWindowFullscreenMode(window);
         if (mode.DisplayId == 0) {
             Logger.LogError(LogCategory.Error, "GetWindowFullScreenMode: Failed to retrieve window fullscreen mode.");
         }
@@ -1650,14 +1666,14 @@ public static unsafe partial class Sdl {
         return rect;
     }
 
-    public static Rect GetWindowMouseRect(nint window) {
+    public static unsafe Rect GetWindowMouseRect(nint window) {
         nint result = GetWindowMouseRectPtr(window);
         if(result == nint.Zero) {
             Logger.LogError(LogCategory.Error, "GetWindowMouseRect: Failed to retrieve window mouse rect.");
             return new();
         }
 
-        Rect rect = Marshal.PtrToStructure<Rect>(result);
+        Rect rect = *(Rect*)result;
         
         return rect;
     }
@@ -3199,8 +3215,8 @@ public static unsafe partial class Sdl {
         return ShowWindowSystemMenu(window, position.X, position.Y);
     }
 
-    public static nuint SizeOf<T>() where T : unmanaged {
-        nuint size = (uint)Marshal.SizeOf<T>();
+    public static unsafe nuint SizeOf<T>() where T : unmanaged {
+        nuint size = (uint)sizeof(T);
         if (size == 0) {
             Logger.LogError(LogCategory.Error, "Sizeof: Failed to get size of type.");
         }

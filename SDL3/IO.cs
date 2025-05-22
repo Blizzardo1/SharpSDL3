@@ -482,7 +482,7 @@ public static partial class IO {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint SDL_LoadFile_IO(nint src, out nuint datasize, [MarshalAs(UnmanagedType.I1)] bool closeio);
+    private static partial nint SDL_LoadFile_IO(nint src, out nuint datasize, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

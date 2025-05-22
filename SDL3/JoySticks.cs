@@ -6,10 +6,8 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 
-using static SharpSDL3.Sdl;
-
 namespace SharpSDL3; 
-public static unsafe partial class JoySticks {
+public static unsafe partial class Sdl {
 
 
     public static uint AttachVirtualJoystick(ref VirtualJoystickDesc desc) {
@@ -396,9 +394,6 @@ public static unsafe partial class JoySticks {
     }
 
     public static nint OpenJoystick(uint instanceId) {
-        if (instanceId == 0) {
-            throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
-        }
         nint joystick = SDL_OpenJoystick(instanceId);
         if (joystick == nint.Zero) {
             throw new InvalidOperationException($"Failed to open joystick with instance ID {instanceId}.");

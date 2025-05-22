@@ -6,6 +6,7 @@ using System.Runtime.InteropServices;
 
 using static SharpSDL3.Sdl;
 using static SharpSDL3.Delegates;
+using SharpSDL3.Structs;
 
 namespace SharpSDL3; 
 public static unsafe partial class Tray {

@@ -1,5 +1,4 @@
-﻿using SharpSDL3.Enums;
-using SharpSDL3.Structs;
+﻿using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;

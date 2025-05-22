@@ -15,6 +15,6 @@ public struct PenTouchEvent
 	public PenInputFlags PenState;
 	public float X;
 	public float Y;
-	public bool Eraser;
-	public bool Down;
+	public SdlBool Eraser;
+	public SdlBool Down;
 }

@@ -106,7 +106,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroySurface
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(Sdl.BoolType)] bool closeio, string type);
 
     public static nint LoadTypedImage(nint src, bool closeio, string type) {
         if(src == nint.Zero) {
@@ -227,7 +227,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroySurface
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    private static partial nint IMG_Load_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    private static partial nint IMG_Load_IO(nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     public static nint LoadImageIo(nint src, bool closeio) {
         if (src == nint.Zero) {
@@ -333,7 +333,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroyTexture
      */
     [LibraryImport(ImageLibName)]
-    private static partial nint IMG_LoadTexture_IO(nint renderer, nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    private static partial nint IMG_LoadTexture_IO(nint renderer, nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     public static nint LoadTextureIo(nint renderer, nint src, bool closeio) {
         if (src == nint.Zero) {
@@ -400,7 +400,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroyTexture
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(Sdl.BoolType)] bool closeio, string type);
 
     public static nint LoadTextureTypedIo(nint renderer, nint src, bool closeio, string type) {
         if (src == nint.Zero) {
@@ -456,7 +456,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isAVIF(nint src);
 
     public static bool IsAVIF(nint src) {
@@ -508,7 +508,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isICO(nint src);
 
     public static bool IsICO(nint src) {
@@ -560,7 +560,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isCUR(nint src);
 
     public static bool IsCUR(nint src) {
@@ -612,7 +612,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isBMP(nint src);
 
     public static bool IsBMP(nint src) {
@@ -666,7 +666,7 @@ public static unsafe partial class Sdl {
 
 
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isGIF(nint src);
     public static bool IsGIF(nint src) {
         if (src == nint.Zero) {
@@ -717,7 +717,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isJPG(nint src);
 
     public static bool IsJPG(nint src) {
@@ -769,7 +769,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isJXL(nint src);
 
     public static bool IsJXL(nint src) {
@@ -821,7 +821,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isLBM(nint src);
     public static bool IsLBM(nint src) {
         if (src == nint.Zero) {
@@ -872,7 +872,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isPCX(nint src);
     public static bool IsPCX(nint src) {
         if (src == nint.Zero) {
@@ -923,7 +923,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isPNG(nint src);
     public static bool IsPNG(nint src) {
         if (src == nint.Zero) {
@@ -974,7 +974,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isPNM(nint src);
     public static bool IsPNM(nint src) {
         if (src == nint.Zero) {
@@ -1025,7 +1025,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isSVG(nint src);
     public static bool IsSVG(nint src) {
         if (src == nint.Zero) {
@@ -1076,7 +1076,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isQOI(nint src);
     public static bool IsQOI(nint src) {
         if (src == nint.Zero) {
@@ -1127,7 +1127,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isTIF(nint src);
 
     public static bool IsTIF(nint src) {
@@ -1179,7 +1179,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isXCF(nint src);
 
     public static bool IsXCF(nint src) {
@@ -1231,7 +1231,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isXPM(nint src);
 
     public static bool IsXPM(nint src) {
@@ -1283,7 +1283,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isXV(nint src);
 
     public static bool IsXV(nint src) {
@@ -1335,7 +1335,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_isWEBP(nint src);
 
     public static bool IsWEBP(nint src) {
@@ -2235,7 +2235,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveAVIF_IO
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_SaveAVIF(nint surface, string file, int quality);
 
     public static bool SaveAvif(nint surface, string file, int quality) {
@@ -2270,8 +2270,8 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveAVIF
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveAVIF_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
+    [return: MarshalAs(Sdl.BoolType)]
+    private static partial bool IMG_SaveAVIF_IO(nint surface, nint dst, [MarshalAs(Sdl.BoolType)] bool closeio, int quality);
 
     public static bool SaveAvifIo(nint surface, nint dst, bool closeio, int quality) {
         if (surface == nint.Zero) {
@@ -2298,7 +2298,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SavePNG_IO
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_SavePNG(nint surface, string file);
 
     public static bool SavePng(nint surface, string file) {
@@ -2331,8 +2331,8 @@ public static unsafe partial class Sdl {
      * \sa IMG_SavePNG
      */
     [LibraryImport(ImageLibName)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SavePNG_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    [return: MarshalAs(Sdl.BoolType)]
+    private static partial bool IMG_SavePNG_IO(nint surface, nint dst, [MarshalAs(Sdl.BoolType)] bool closeio);
     public static bool SavePngIo(nint surface, nint dst, bool closeio) {
         if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
@@ -2360,7 +2360,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveJPG_IO
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool IMG_SaveJPG(nint surface, string file, int quality);
 
     public static bool SaveJpg(nint surface, string file, int quality) {
@@ -2395,8 +2395,8 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveJPG
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    [return: MarshalAs(UnmanagedType.Bool)]
-    private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(UnmanagedType.Bool)] bool closeio, int quality);
+    [return: MarshalAs(Sdl.BoolType)]
+    private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(Sdl.BoolType)] bool closeio, int quality);
 
     public static bool SaveJpgIo(nint surface, nint dst, bool closeio, int quality) {
         if (surface == nint.Zero) {
@@ -2452,7 +2452,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
     [LibraryImport(ImageLibName)]
-    private static partial nint IMG_LoadAnimation_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    private static partial nint IMG_LoadAnimation_IO(nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     public static nint LoadAnimationIo(nint src, bool closeio) {
         if (src == nint.Zero) {
@@ -2490,7 +2490,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
     [LibraryImport(ImageLibName, StringMarshalling = Sdl.marshalling)]
-    private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio, string type);
+    private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(Sdl.BoolType)] bool closeio, string type);
 
     public static nint LoadAnimationTypedIo(nint src, bool closeio, string type) {
         if (src == nint.Zero) {

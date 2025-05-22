@@ -5,7 +5,6 @@ using SharpSDL3.Enums;
 namespace SharpSDL3;
 
 public static unsafe partial class Delegates {
-    private const UnmanagedType UType = UnmanagedType.LPUTF8Str;
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate AppResult SdlAppEventFunc(nint appstate, nint evt);
@@ -74,7 +73,10 @@ public static unsafe partial class Delegates {
     public delegate HitTestResult SdlHitTest(nint win, nint area, nint data);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void SdlLogOutputFunction(nint userdata, LogCategory category, LogPriority priority, [MarshalAs(UType)] string message);
+    public delegate void SdlLogOutputFunction(nint userdata,
+        LogCategory category,
+        LogPriority priority,
+        [MarshalAs(Sdl.StringType)] string message);
 
     // /usr/local/include/SDL3/SDL_main.h
 

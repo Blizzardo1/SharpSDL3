@@ -5,6 +5,7 @@ using System.Runtime.InteropServices;
 
 using static SharpSDL3.Sdl;
 using System;
+using SharpSDL3.Structs;
 
 namespace SharpSDL3;
 

@@ -1,4 +1,4 @@
-﻿using SharpSDL3.Enums;
+﻿using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -6,7 +6,7 @@ using static SharpSDL3.Delegates;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static partial class Timer {
+public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_timer.h
 
     public static uint AddTimer(uint interval, SdlTimerCallback callback, nint userdata) {

@@ -16,8 +16,7 @@ public struct VirtualJoystickDesc
 	public ushort NHats;
 	public ushort NTouchpads;
 	public ushort NSensors;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-	public ushort[] Padding2;
+	public unsafe fixed ushort Padding2[2];
 	public uint ButtonMask;
 	public uint AxisMask;
 	public nint Name;

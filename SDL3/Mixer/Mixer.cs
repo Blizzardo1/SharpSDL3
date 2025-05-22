@@ -99,14 +99,14 @@ public static unsafe partial class Mixer {
         return Mix_ExpireChannel(channel, ticks);
     }
 
-    public static int FadeInChannel(int channel, Chunk chunk, int loops, int ms) {
+    public static unsafe int FadeInChannel(int channel, Chunk chunk, int loops, int ms) {
         if (chunk.AudioBuffer == nint.Zero) {
             Logger.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
 
         nint pChunk = Sdl.Malloc(Sdl.SizeOf<Chunk>());
-        Marshal.StructureToPtr(chunk, pChunk, false);
+        *(Chunk*)pChunk = chunk;
         int result = Mix_FadeInChannel(channel, pChunk, loops, ms);
         Sdl.Free(pChunk);
 
@@ -133,7 +133,7 @@ public static unsafe partial class Mixer {
     }
 
     public static bool FadeInMusic(Music music, int loops, int ms) {
-        if (music.@interface == nint.Zero) {
+        if (music.Interface == nint.Zero) {
             Logger.LogError(LogCategory.Error, "Null Music");
             return false;
         }
@@ -142,7 +142,7 @@ public static unsafe partial class Mixer {
     }
 
     public static bool FadeInMusicPos(Music music, int loops, int ms, double position) {
-        if (music.@interface == nint.Zero) {
+        if (music.Interface == nint.Zero) {
             Logger.LogError(LogCategory.Error, "Null Music");
         }
 
@@ -184,7 +184,7 @@ public static unsafe partial class Mixer {
     public static nint GetMusicHookData() => Mix_GetMusicHookData();
 
     public static double GetMusicLoopEndTime(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetMusicLoopEndTime((nint)Unsafe.AsPointer(ref music));
     }
@@ -196,7 +196,7 @@ public static unsafe partial class Mixer {
     }
 
     public static double GetMusicLoopLengthTime(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetMusicLoopLengthTime((nint)Unsafe.AsPointer(ref music));
     }
@@ -208,7 +208,7 @@ public static unsafe partial class Mixer {
     }
 
     public static double GetMusicLoopStartTime(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetMusicLoopStartTime((nint)Unsafe.AsPointer(ref music));
     }
@@ -220,7 +220,7 @@ public static unsafe partial class Mixer {
     }
 
     public static double GetMusicPosition(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetMusicPosition((nint)Unsafe.AsPointer(ref music));
     }
@@ -232,7 +232,7 @@ public static unsafe partial class Mixer {
     }
 
     public static int GetMusicVolume(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetMusicVolume((nint)Unsafe.AsPointer(ref music));
     }
@@ -244,7 +244,7 @@ public static unsafe partial class Mixer {
     }
 
     public static int GetNumTracks(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_GetNumTracks((nint)Unsafe.AsPointer(ref music));
     }
@@ -421,7 +421,7 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_OpenAudio(AudioDeviceId deviceId, nint spec);
 
     [LibraryImport(NativeLibName)]
@@ -450,7 +450,7 @@ public static unsafe partial class Mixer {
     }
 
     public static void FreeMusic(Music music) {
-        if (music.@interface == nint.Zero) {
+        if (music.Interface == nint.Zero) {
             Logger.LogError(LogCategory.Error, "Music already freed");
             return;
         }
@@ -485,9 +485,10 @@ public static unsafe partial class Mixer {
             return default; // Return default Music struct instead of comparing.
         }
 
-        Music music = Marshal.PtrToStructure<Music>(musicPtr);
+        // Use unsafe code to avoid runtime marshalling
+        Music music = *(Music*)musicPtr;
 
-        if(music.@interface == nint.Zero) {
+        if (music.Interface == nint.Zero) {
             Logger.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
             return default; // Return default Music struct instead of comparing.
         }
@@ -505,7 +506,7 @@ public static unsafe partial class Mixer {
     /// <remarks>
     /// Dispose of the returned <see cref="Chunk"/> when no longer needed.
     /// </remarks>
-    public static Chunk LoadWav(string filePath) {
+    public static unsafe Chunk LoadWav(string filePath) {
         if (string.IsNullOrEmpty(filePath))
             throw new ArgumentNullException(nameof(filePath));
         nint chunkPtr = Mix_LoadWAV(filePath);
@@ -514,7 +515,7 @@ public static unsafe partial class Mixer {
             return default;
         }
 
-        Chunk chunk = Marshal.PtrToStructure<Chunk>(chunkPtr);
+        Chunk chunk = *(Chunk*)chunkPtr;
         if (chunk.AudioBuffer == nint.Zero) {
             Logger.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
             return default;
@@ -696,7 +697,7 @@ public static unsafe partial class Mixer {
     }
 
     public static double MusicDuration(Music music) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         return Mix_MusicDuration((nint)Unsafe.AsPointer(ref music));
     }
@@ -839,7 +840,7 @@ public static unsafe partial class Mixer {
     }
 
     public static bool StartTrack(Music music, int track) {
-        if (music.@interface == nint.Zero)
+        if (music.Interface == nint.Zero)
             throw new ArgumentNullException(nameof(music));
         if (track < 0)
             throw new ArgumentOutOfRangeException(nameof(track), "Track must be non-negative.");
@@ -896,7 +897,7 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_EachSoundFont(Mix_EachSoundFontCallback function, nint data);
 
     [LibraryImport(NativeLibName)]
@@ -913,12 +914,12 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeInMusic(nint music, int loops, int ms);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeInMusicPos(nint music, int loops, int ms, double position);
 
     [LibraryImport(NativeLibName)]
@@ -931,7 +932,7 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeOutMusic(int ms);
 
     [LibraryImport(NativeLibName)]
@@ -989,12 +990,12 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_GroupChannel(int which, int tag);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_GroupChannels(int from, int to, int tag);
 
     [LibraryImport(NativeLibName)]
@@ -1035,7 +1036,7 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_ModMusicJumpToOrder(int order);
 
     [LibraryImport(NativeLibName)]
@@ -1052,7 +1053,7 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PausedMusic();
 
     [LibraryImport(NativeLibName)]
@@ -1077,17 +1078,17 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PlayingMusic();
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PlayMusic(nint music, int loops);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_RegisterEffect(int chan, Mix_EffectFunc_t f, Mix_EffectDone_t d, nint arg);
 
     [LibraryImport(NativeLibName)]
@@ -1112,22 +1113,22 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetDistance(int channel, byte distance);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetMusicPosition(double position);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetPanning(int channel, byte left, byte right);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetPosition(int channel, short angle, byte distance);
 
     [LibraryImport(NativeLibName)]
@@ -1136,32 +1137,32 @@ public static unsafe partial class Mixer {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetReverseStereo(int channel, int flip);
 
     [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetSoundFonts(string paths);
 
     [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetTimidityCfg(string path);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_StartTrack(nint music, int track);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_UnregisterAllEffects(int channel);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_UnregisterEffect(int channel, Mix_EffectFunc_t f);
 
     [LibraryImport(NativeLibName)]

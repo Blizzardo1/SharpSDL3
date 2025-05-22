@@ -1,13 +1,14 @@
 ﻿using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Mixer;
+
 [StructLayout(LayoutKind.Sequential)]
-public unsafe struct Music {
-        public nint @interface;
-        public nint Context;
-        public bool Playing;
-        public Fading Fading;
-        public int FadeStep;
-        public int FadeSteps;
-        public string Filename;
+public struct Music {
+    public nint Interface;
+    public nint Context;
+    [MarshalAs(Sdl.BoolType)] public bool Playing;
+    public Fading Fading;
+    public int FadeStep;
+    public int FadeSteps;
+    [MarshalAs(Sdl.StringType)] public string Filename;
 }

@@ -1,10 +1,11 @@
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
 
 namespace SharpSDL3.Structs;
 
-[StructLayout(LayoutKind.Explicit, Size = 128)]
-public unsafe struct Event {
+[StructLayout(LayoutKind.Explicit)]
+public struct Event {
     [FieldOffset(0)] public EventType Type;
 	[FieldOffset(0)] public CommonEvent Common;
 	[FieldOffset(0)] public DisplayEvent Display;
@@ -62,5 +63,5 @@ public unsafe struct Event {
     /// even larger the size of SDL_UserEvent will dominate as being 3 pointers.
 	/// </para>
     /// </summary>
-    [FieldOffset(0)] private fixed byte Padding[128];
+    [FieldOffset(0)] private unsafe fixed byte Padding[128];
 }

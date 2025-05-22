@@ -10,8 +10,7 @@ public struct PixelFormatDetails
 	public PixelFormat Format;
 	public byte BitsPerPixel;
 	public byte BytesPerPixel;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 2)]
-	public byte[] Padding;
+	public unsafe fixed byte Padding[2];
 	public uint RMask;
 	public uint GMask;
 	public uint BMask;

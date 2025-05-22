@@ -32,13 +32,13 @@ public struct MusicInterface {
     /// <summary>
     /// Indicates whether the backend library is loaded.
     /// </summary>
-    [MarshalAs(UnmanagedType.Bool)]
+    [MarshalAs(Sdl.BoolType)]
     public bool Loaded;
 
     /// <summary>
     /// Indicates whether the backend is initialized for audio output.
     /// </summary>
-    [MarshalAs(UnmanagedType.Bool)]
+    [MarshalAs(Sdl.BoolType)]
     public bool Opened;
 
     /// <summary>
@@ -54,7 +54,7 @@ public struct MusicInterface {
     /// <param name="spec">The desired audio specification.</param>
     /// <returns>0 on success, or a negative error code on failure.</returns>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate int OpenDelegate(ref AudioSpec spec);
+    public delegate int OpenDelegate([In] AudioSpec spec);
 
     /// <summary>
     /// Creates a music object from an SDL_IOStream.
@@ -66,7 +66,7 @@ public struct MusicInterface {
     /// If the function returns <see cref="nint.Zero"/>, the caller is responsible for freeing <paramref name="src"/> if needed.
     /// </remarks>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint CreateFromIODelegate(nint src, [MarshalAs(UnmanagedType.Bool)] bool closeio);
+    public delegate nint CreateFromIODelegate(nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     /// <summary>
     /// Creates a music object from a file, used when SDL_IOStream is not supported.
@@ -74,7 +74,7 @@ public struct MusicInterface {
     /// <param name="file">The path to the music file.</param>
     /// <returns>An opaque pointer to the music object, or <see cref="nint.Zero"/> on failure.</returns>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint CreateFromFileDelegate([MarshalAs(UnmanagedType.LPStr)] string file);
+    public delegate nint CreateFromFileDelegate([MarshalAs(Sdl.StringType)] string file);
 
     /// <summary>
     /// Sets the volume for a music object.
@@ -107,7 +107,7 @@ public struct MusicInterface {
     /// <param name="music">An opaque pointer to the music object.</param>
     /// <returns>True if the music is playing, false otherwise.</returns>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    [return: MarshalAs(UnmanagedType.Bool)]
+    [return: MarshalAs(Sdl.BoolType)]
     public delegate bool IsPlayingDelegate(nint music);
 
     /// <summary>
@@ -185,7 +185,7 @@ public struct MusicInterface {
     /// <param name="tagType">The type of metadata tag to retrieve.</param>
     /// <returns>The metadata string, or an empty string if not available.</returns>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    [return: MarshalAs(UnmanagedType.LPStr)]
+    [return: MarshalAs(Sdl.StringType)]
     public delegate string GetMetaTagDelegate(nint music, MusicMetaTag tagType);
 
     /// <summary>

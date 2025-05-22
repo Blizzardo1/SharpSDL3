@@ -11,7 +11,7 @@ public struct AudioDeviceEvent
 	public uint Reserved;
 	public ulong Timestamp;
 	public uint Which;
-	public bool Recording;
+	public SdlBool Recording;
 	public byte Padding1;
 	public byte Padding2;
 	public byte Padding3;

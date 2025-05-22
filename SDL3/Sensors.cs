@@ -5,6 +5,7 @@ using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
 using static SharpSDL3.Sdl;
+using SharpSDL3.Structs;
 
 namespace SharpSDL3; 
 public static unsafe partial class Sensors {

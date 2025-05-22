@@ -9,7 +9,7 @@ using SharpSDL3.Structs;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Render {
+public static unsafe partial class Sdl {
 
     public static bool AddVulkanRenderSemaphores(nint renderer, uint waitStageMask, long waitSemaphore,
         long signalSemaphore) {
@@ -888,39 +888,36 @@ public static unsafe partial class Render {
     }
 
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, nint destrect) {
-        if (renderer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Renderer is null");
-            return false;
-        }
         FRect srect = new();
         FRect drect = new();
 
-        Marshal.PtrToStructure(srcrect, srect);
-        Marshal.PtrToStructure(destrect, drect);
+        if(srcrect != nint.Zero) {
+            Marshal.PtrToStructure(srcrect, srect);
+        }
 
-        return SDL_RenderTexture(renderer, texture, ref srect, ref drect);
+        if (destrect != nint.Zero) {
+            Marshal.PtrToStructure(destrect, drect);
+        }
+        
+        return RenderTexture(renderer, texture, ref srect, ref drect);
     }
 
     public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, nint destrect) {
-        if (renderer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Renderer is null");
-            return false;
-        }
         FRect drect = new();
 
-        Marshal.PtrToStructure(destrect, drect);
+        if (destrect != nint.Zero) {
+            Marshal.PtrToStructure(destrect, drect);
+        }
 
         return RenderTexture(renderer, texture, ref srcrect, ref drect);
     }
 
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, ref FRect destrect) {
-        if (renderer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Renderer is null");
-            return false;
-        }
         FRect srect = new();
 
-        Marshal.PtrToStructure(srcrect, srect);
+        if (srcrect != nint.Zero) {
+            Marshal.PtrToStructure(srcrect, srect);
+        }
 
         return RenderTexture(renderer, texture, ref srect, ref destrect);
     }

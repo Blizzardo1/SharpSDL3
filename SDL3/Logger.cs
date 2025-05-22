@@ -3,6 +3,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 using SharpSDL3.Enums;
+using SharpSDL3.Structs;
 using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
@@ -12,7 +13,7 @@ public static unsafe partial class Logger
 	public static SdlLogOutputFunction GetDefaultLogOutputFunction()
 	{
 		var callback = SDL_GetDefaultLogOutputFunction();
-        return callback == null ? throw new InvalidOperationException("Failed to retrieve default log output function.") : callback;
+        return callback ?? throw new InvalidOperationException("Failed to retrieve default log output function.");
     }
 
     public static void GetLogOutputFunction(out SdlLogOutputFunction callback, out nint userdata)

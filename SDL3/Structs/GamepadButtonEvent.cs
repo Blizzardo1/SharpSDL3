@@ -12,7 +12,7 @@ public struct GamepadButtonEvent
 	public ulong Timestamp;
 	public uint Which;
 	public byte Button;
-	public bool Down;
+	public SdlBool Down;
 	public byte Padding1;
 	public byte Padding2;
 }

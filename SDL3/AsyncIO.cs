@@ -2,8 +2,6 @@
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-using SharpSDL3.Enums;
-
 using SharpSDL3.Structs;
 
 namespace SharpSDL3;

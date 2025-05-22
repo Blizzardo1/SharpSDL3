@@ -1,4 +1,4 @@
-namespace SharpSDL3.Enums;
+namespace SharpSDL3.Structs;
 
 /// <summary>
 ///     Taken from https://github.com/ppy/SDL3-CS
