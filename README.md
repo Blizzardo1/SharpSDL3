@@ -12,6 +12,26 @@ SDL3 and SDL3-CS are released under the zlib license. See LICENSE for details.
 
 For more information about SDL3, visit the [SDL Wiki](https://wiki.libsdl.org/SDL3/FrontPage).
 
+## Status
+|Library | Progress |
+---------|-----------
+|SDL3 | Works, needs updating|
+|SDL3_image | WIP|
+|SDL3_mixer | Not Started|
+|SDL3_net | Not Started|
+|SDL3_ttf | Works, needs updating|
+
+## Documentation
+|Library | Progress|
+--------|----------
+|SDL3 | Not Started |
+|SDL3_image | Not Started |
+|SDL3_mixer | Not Started |
+|SDL3_net | Not Started |
+|SDL3_ttf | Not Started |
+
+
+
 ## About the C# bindings
 
 The bindings are auto-generated from the GenerateBindings subproject.  
