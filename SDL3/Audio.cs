@@ -5,10 +5,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
-using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static unsafe partial class Audio {
+public static unsafe partial class Sdl {
 
     public static bool AudioDevicePaused(uint dev) {
         bool result = SDL_AudioDevicePaused(dev);
