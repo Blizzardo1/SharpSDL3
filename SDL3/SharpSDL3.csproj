@@ -8,4 +8,8 @@
 	<PropertyGroup>
 		<Nullable>enable</Nullable>
 	</PropertyGroup>
+
+	<ItemGroup>
+	  <Compile Remove="Surface.cs" />
+	</ItemGroup>
 </Project>

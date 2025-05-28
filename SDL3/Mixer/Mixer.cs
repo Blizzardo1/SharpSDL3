@@ -101,7 +101,7 @@ public static unsafe partial class Mixer {
 
     public static unsafe int FadeInChannel(int channel, Chunk chunk, int loops, int ms) {
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Chunk");
+            Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
 
@@ -111,7 +111,7 @@ public static unsafe partial class Mixer {
         Sdl.Free(pChunk);
 
         if (result == -1) {
-            Logger.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
         }
         
         return result;
@@ -119,14 +119,14 @@ public static unsafe partial class Mixer {
 
     public static int FadeInChannelTimed(int channel, Chunk chunk, int loops, int ms, int ticks) {
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Chunk");
+            Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
 
         int result = Mix_FadeInChannelTimed(channel, (nint)Unsafe.AsPointer(ref chunk), loops, ms, ticks);
 
         if (result == -1) {
-            Logger.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
         }
 
         return result;
@@ -134,7 +134,7 @@ public static unsafe partial class Mixer {
 
     public static bool FadeInMusic(Music music, int loops, int ms) {
         if (music.Interface == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Music");
+            Sdl.LogError(LogCategory.Error, "Null Music");
             return false;
         }
 
@@ -143,7 +143,7 @@ public static unsafe partial class Mixer {
 
     public static bool FadeInMusicPos(Music music, int loops, int ms, double position) {
         if (music.Interface == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Music");
+            Sdl.LogError(LogCategory.Error, "Null Music");
         }
 
         return Mix_FadeInMusicPos((nint)Unsafe.AsPointer(ref music), loops, ms, position);
@@ -385,7 +385,7 @@ public static unsafe partial class Mixer {
     public static MixInit Initialize(MixInit flags) {
         MixInit result = Mix_Init(flags);
         if (result != flags)
-            Logger.LogError(LogCategory.Audio, $"Failed to initialize SDL3_mixer with flags {flags}: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to initialize SDL3_mixer with flags {flags}: {Sdl.GetError()}");
         return result;
     }
 
@@ -403,7 +403,7 @@ public static unsafe partial class Mixer {
         AudioSpec nativeSpec = spec ?? default;
         bool result = Mix_OpenAudio(deviceId, spec.HasValue ? (nint)Unsafe.AsPointer(ref nativeSpec) : nint.Zero);
         if (!result)
-            Logger.LogError(LogCategory.Audio, $"Failed to open audio device: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to open audio device: {Sdl.GetError()}");
     }
 
     /// <summary>
@@ -434,7 +434,7 @@ public static unsafe partial class Mixer {
 
     public static void FreeChunk(Chunk chunk) {
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Chunk already freed");
+            Sdl.LogError(LogCategory.Error, "Chunk already freed");
             return;
         }
         FreeChunk((nint)Unsafe.AsPointer(ref chunk));
@@ -442,7 +442,7 @@ public static unsafe partial class Mixer {
 
     public static void FreeChunk(nint chunk) {
         if (chunk == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Chunk already freed");
+            Sdl.LogError(LogCategory.Error, "Chunk already freed");
             return;
         }
 
@@ -451,7 +451,7 @@ public static unsafe partial class Mixer {
 
     public static void FreeMusic(Music music) {
         if (music.Interface == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Music already freed");
+            Sdl.LogError(LogCategory.Error, "Music already freed");
             return;
         }
 
@@ -460,7 +460,7 @@ public static unsafe partial class Mixer {
 
     public static void FreeMusic(nint music) {
         if (music == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Music already freed");
+            Sdl.LogError(LogCategory.Error, "Music already freed");
             return;
         }
 
@@ -481,7 +481,7 @@ public static unsafe partial class Mixer {
             throw new ArgumentNullException(nameof(filePath));
         nint musicPtr = Mix_LoadMUS(filePath);
         if (musicPtr == nint.Zero) {
-            Logger.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
             return default; // Return default Music struct instead of comparing.
         }
 
@@ -489,7 +489,7 @@ public static unsafe partial class Mixer {
         Music music = *(Music*)musicPtr;
 
         if (music.Interface == nint.Zero) {
-            Logger.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
             return default; // Return default Music struct instead of comparing.
         }
 
@@ -511,13 +511,13 @@ public static unsafe partial class Mixer {
             throw new ArgumentNullException(nameof(filePath));
         nint chunkPtr = Mix_LoadWAV(filePath);
         if (chunkPtr == nint.Zero) {
-            Logger.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
             return default;
         }
 
         Chunk chunk = *(Chunk*)chunkPtr;
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
             return default;
         }
 
@@ -534,7 +534,7 @@ public static unsafe partial class Mixer {
     /// <exception cref="SdlException">Thrown if playback fails.</exception>
     public static int PlayChannel(Chunk chunk, int loops, int channel = -1) {
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Chunk");
+            Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
 
@@ -552,7 +552,7 @@ public static unsafe partial class Mixer {
 
     public static int PlayChannelTimed(int channel, Chunk chunk, int loops, int ticks) {
         if (chunk.AudioBuffer == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Chunk");
+            Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
 
@@ -754,13 +754,13 @@ public static unsafe partial class Mixer {
 
     public static bool PlayMusic(nint music, int loops) {
         if (music == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Music");
+            Sdl.LogError(LogCategory.Error, "Null Music");
             return false;
         }
 
         bool result = Mix_PlayMusic(music, loops);
         if(!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to play music: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to play music: {Sdl.GetError()}");
         }
 
         return result;
@@ -875,7 +875,7 @@ public static unsafe partial class Mixer {
 
     public static int VolumeChunk(nint chunk, int volume) {
         if (chunk == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Null Chunk");
+            Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
         }
         return Mix_VolumeChunk(chunk, volume);

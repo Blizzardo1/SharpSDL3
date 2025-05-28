@@ -396,7 +396,7 @@ public static unsafe partial class Sdl {
     public static nint OpenJoystick(uint instanceId) {
         nint joystick = SDL_OpenJoystick(instanceId);
         if (joystick == nint.Zero) {
-            throw new InvalidOperationException($"Failed to open joystick with instance ID {instanceId}. {GetError()}");
+            throw new SdlException($"Failed to open joystick with instance ID {instanceId}. {GetError()}");
         }
         return joystick;
     }
@@ -476,7 +476,7 @@ public static unsafe partial class Sdl {
     public static void SetJoystickEventsEnabled(bool enabled) {
         SDL_SetJoystickEventsEnabled(enabled);
 
-        Logger.LogInfo(LogCategory.System, $"Joystick events enabled: {enabled}");
+        LogInfo(LogCategory.System, $"Joystick events enabled: {enabled}");
 
     }
 
@@ -567,7 +567,7 @@ public static unsafe partial class Sdl {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial uint SDL_AttachVirtualJoystick([MarshalUsing(typeof(OwnedVirtualJoystickDescMarshaller))] ref VirtualJoystickDesc desc);
+    private static partial uint SDL_AttachVirtualJoystick(ref VirtualJoystickDesc desc);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -630,22 +630,22 @@ public static unsafe partial class Sdl {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetJoystickID(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickName(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickNameForID(uint instanceId);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickPath(nint joystick);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickPathForID(uint instanceId);
@@ -686,7 +686,7 @@ public static unsafe partial class Sdl {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetJoysticks(out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetJoystickSerial(nint joystick);

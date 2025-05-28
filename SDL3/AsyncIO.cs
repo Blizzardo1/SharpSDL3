@@ -6,7 +6,7 @@ using SharpSDL3.Structs;
 
 namespace SharpSDL3;
 
-public static partial class AsyncIO {
+public static partial class Sdl {
 
     public static nint AsyncIOFromFile(string file, string mode) {
         if (string.IsNullOrEmpty(file)) {
@@ -114,48 +114,48 @@ public static partial class AsyncIO {
         return SDL_WriteAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_AsyncIOFromFile(string file, string mode);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CloseAsyncIO(nint asyncio, SdlBool flush, nint queue, nint userdata);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateAsyncIOQueue();
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyAsyncIOQueue(nint queue);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetAsyncIOResult(nint queue, out AsyncIoOutcome outcome);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial long SDL_GetAsyncIOSize(nint asyncio);
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_LoadFileAsync(string file, nint queue, nint userdata);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReadAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue,
         nint userdata);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SignalAsyncIOQueue(nint queue);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitAsyncIOResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WriteAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue,
         nint userdata);

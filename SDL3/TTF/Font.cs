@@ -69,7 +69,7 @@ public unsafe struct Font {
         internal set;
     }
 
-    public readonly Size GetTextSize(string text) => Ttf.MeasureString(this, text, 0);
+    public readonly Size GetTextSize(string text) => Ttf.MeasureString(this, text);
     public readonly nint RenderTextSolid(string text, Color foregroundColor) => Ttf.RenderTextSolid(this, text, (ulong)text.Length, foregroundColor);
     public readonly nint RenderGlyphSolid(char c, Color foregroundColor) => Ttf.RenderGlyphSolid(this, c, foregroundColor);
     public readonly nint RenderTextShaded(string text, Color foregroundColor, Color bg) => Ttf.RenderTextShaded(this, text, (ulong)text.Length, foregroundColor, bg);

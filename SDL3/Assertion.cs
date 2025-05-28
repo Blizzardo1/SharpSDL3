@@ -8,7 +8,7 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Assertion {
+public static unsafe partial class Sdl {
     public static SdlAssertionHandler GetAssertionHandler(out nint puserdata) {
         var handler = SDL_GetAssertionHandler(out puserdata);
         return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
@@ -39,23 +39,23 @@ public static unsafe partial class Assertion {
         // Handle the result or add additional logic
         switch (result) {
             case AssertState.Retry:
-                Logger.LogInfo(LogCategory.System, "Retrying assertion...");
+                LogInfo(LogCategory.System, "Retrying assertion...");
                 break;
 
             case AssertState.Break:
-                Logger.LogError(LogCategory.Error, "Breaking on assertion...");
+                LogError(LogCategory.Error, "Breaking on assertion...");
                 break;
 
             case AssertState.Abort:
-                Logger.LogError(LogCategory.Error, "Aborting due to assertion...");
+                LogError(LogCategory.Error, "Aborting due to assertion...");
                 break;
 
             case AssertState.Ignore:
-                Logger.LogWarn(LogCategory.System, "Ignoring assertion...");
+                LogWarn(LogCategory.System, "Ignoring assertion...");
                 break;
 
             case AssertState.AlwaysIgnore:
-                Logger.LogWarn(LogCategory.System, "Always ignoring assertion...");
+                LogWarn(LogCategory.System, "Always ignoring assertion...");
                 break;
         }
 
@@ -74,27 +74,27 @@ public static unsafe partial class Assertion {
         SDL_SetAssertionHandler(handler, userdata);
     }
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlAssertionHandler SDL_GetAssertionHandler(out nint puserdata);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetAssertionReport();
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlAssertionHandler SDL_GetDefaultAssertionHandler();
 
-    [LibraryImport(Sdl.NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial AssertState SDL_ReportAssertion(ref AssertData data, string func, string file, int line);
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ResetAssertionReport();
 
-    [LibraryImport(Sdl.NativeLibName)]
+    [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetAssertionHandler(SdlAssertionHandler handler, nint userdata);
 }

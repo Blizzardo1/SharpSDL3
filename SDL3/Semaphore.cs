@@ -7,7 +7,7 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
-public static partial class Semaphore {
+public static partial class Sdl {
 
     public static nint Create(uint initialValue) {
         nint sem = SDL_CreateSemaphore(initialValue);
@@ -38,7 +38,7 @@ public static partial class Semaphore {
         SDL_SignalSemaphore(sem);
     }
 
-    public static SdlBool TryWait(nint sem) {
+    public static bool TryWait(nint sem) {
         if (sem == 0) {
             throw new ArgumentNullException(nameof(sem), "Semaphore pointer is null");
         }
@@ -52,7 +52,7 @@ public static partial class Semaphore {
         SDL_WaitSemaphore(sem);
     }
 
-    public static SdlBool WaitTimeout(nint sem, int timeoutMs) {
+    public static bool WaitTimeout(nint sem, int timeoutMs) {
         if (sem == 0) {
             throw new ArgumentNullException(nameof(sem), "Semaphore pointer is null");
         }

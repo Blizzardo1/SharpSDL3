@@ -6,7 +6,7 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
-public static partial class Version {
+public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_version.h
 
     public static string GetRevision() {
@@ -17,7 +17,7 @@ public static partial class Version {
         return SDL_GetVersion();
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetRevision();

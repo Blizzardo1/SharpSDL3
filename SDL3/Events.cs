@@ -78,7 +78,7 @@ public static unsafe partial class Sdl {
             var result = SDL_GetWindowFromEvent(ref @event);
             // Perform additional validation or processing if needed
             if (result == nint.Zero) {
-                Logger.LogError(LogCategory.Error, "Failed to get window from event.");
+                LogError(LogCategory.Error, "Failed to get window from event.");
             }
             return result;
         } catch (Exception ex) {
@@ -150,7 +150,7 @@ public static unsafe partial class Sdl {
 
         if (!result) {
             // Failed to push the event, handle the error
-            Logger.LogError(LogCategory.Error, "Failed to push event.");
+            LogError(LogCategory.Error, "Failed to push event.");
         }
 
         return result;
@@ -196,7 +196,7 @@ public static unsafe partial class Sdl {
         var result = SDL_WaitEvent(out @event);
 
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to wait for event.");
+            LogError(LogCategory.Error, "Failed to wait for event.");
         }
 
         return result;
@@ -212,7 +212,7 @@ public static unsafe partial class Sdl {
 
         var result = SDL_WaitEventTimeout(out @event, timeoutMs);
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to wait for event with timeout.");
+            LogError(LogCategory.Error, "Failed to wait for event with timeout.");
             return false;
         }
 

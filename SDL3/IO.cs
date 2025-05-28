@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static partial class IO {
+public static partial class Sdl {
 
     public static bool CloseIO(IOStream context) {
         bool result = SDL_CloseIO(context.Handle);
@@ -466,23 +466,23 @@ public static partial class IO {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_IOFromDynamicMem();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_IOFromFile(string file, string mode);
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_IOFromMem(nint mem, nuint size);
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nuint SDL_IOprintf(nint context, string fmt);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_LoadFile(string file, out nuint datasize);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint SDL_LoadFile_IO(nint src, out nuint datasize, [MarshalAs(Sdl.BoolType)] bool closeio);
+    private static partial nint SDL_LoadFile_IO(nint src, out nuint datasize, [MarshalAs(BoolType)] bool closeio);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -547,7 +547,7 @@ public static partial class IO {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReadU8(nint src, out byte value);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SaveFile(string file, nint data, nuint datasize);
 

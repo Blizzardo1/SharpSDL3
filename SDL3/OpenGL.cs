@@ -8,7 +8,7 @@ using static SharpSDL3.Delegates;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static partial class OpenGL {
+public static partial class Sdl {
     public static nint EglGetCurrentConfig() {
         var result = SDL_EGL_GetCurrentConfig();
         if (result == IntPtr.Zero) {
@@ -220,7 +220,7 @@ public static partial class OpenGL {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_EGL_GetCurrentDisplay();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_EGL_GetProcAddress(string proc);
 
@@ -241,7 +241,7 @@ public static partial class OpenGL {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_DestroyContext(nint context);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_ExtensionSupported(string extension);
 
@@ -257,7 +257,7 @@ public static partial class OpenGL {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GL_GetCurrentWindow();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GL_GetProcAddress(string proc);
 
@@ -265,7 +265,7 @@ public static partial class OpenGL {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_GetSwapInterval(out int interval);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_LoadLibrary(string path);
     [LibraryImport(NativeLibName)]

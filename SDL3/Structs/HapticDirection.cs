@@ -6,6 +6,5 @@ namespace SharpSDL3.Structs;
 public unsafe struct HapticDirection
 {
 	public byte Type;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public int[] Dir;
+	public fixed int Dir[3];
 }

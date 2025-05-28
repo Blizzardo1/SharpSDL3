@@ -7,7 +7,7 @@ using System;
 using SharpSDL3.Structs;
 
 namespace SharpSDL3; 
-public static partial class Platform {
+public static partial class Sdl {
 
     // /usr/local/include/SDL3/SDL_platform.h
 
@@ -86,7 +86,7 @@ public static partial class Platform {
     }
 
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetPlatform();

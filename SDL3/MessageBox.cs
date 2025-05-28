@@ -8,14 +8,14 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
-public static partial class MessageBox {
-    public static unsafe SdlBool ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid) {
+public static partial class Sdl {
+    public static unsafe bool ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid) {
         // Validate input parameters
         if (messageboxdata.NumButtons < 0 || messageboxdata.Buttons == nint.Zero) {
             throw new ArgumentException("Invalid MessageBoxData: Buttons must be defined and NumButtons must be non-negative.");
         }
 
-        Logger.LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi(messageboxdata.Title)}");
+        LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi(messageboxdata.Title)}");
         // Call the native method
         var result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
 
@@ -137,7 +137,7 @@ public static partial class MessageBox {
         }
     }
 
-    public static SdlBool ShowSimpleMessageBox(MessageBoxFlags flags, string message, string title, nint window) {
+    public static bool ShowSimpleMessageBox(MessageBoxFlags flags, string message, string title, nint window) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
@@ -154,7 +154,7 @@ public static partial class MessageBox {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowSimpleMessageBox(MessageBoxFlags flags, string title, string message,
         nint window);

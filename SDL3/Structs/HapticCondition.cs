@@ -10,16 +10,10 @@ public unsafe struct HapticCondition {
 	public ushort Delay;
 	public ushort Button;
 	public ushort Interval;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public ushort[] RightSat;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public ushort[] LeftSat;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public short[] RightCoeff;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public short[] LeftCoeff;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public ushort[] Deadband;
-	[MarshalAs(UnmanagedType.ByValArray, SizeConst = 3)]
-	public short[] Center;
+	public fixed ushort RightSat[3];
+	public fixed ushort LeftSat[3];
+	public fixed short RightCoeff[3];
+	public fixed short LeftCoeff[3];
+	public fixed ushort Deadband[3];
+	public fixed short Center[3];
 }

@@ -7,10 +7,10 @@ using System.Runtime.InteropServices;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
- static partial class Misc {
+ static partial class Sdl {
     // /usr/local/include/SDL3/SDL_misc.h
 
-    public static SdlBool OpenURL(string url) {
+    public static bool OpenURL(string url) {
         if (string.IsNullOrWhiteSpace(url)) {
             throw new ArgumentException("URL cannot be null or empty.", nameof(url));
         }
@@ -21,13 +21,13 @@ namespace SharpSDL3;
 
         var result = SDL_OpenURL(url);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to open URL: {url}");
+            LogError(LogCategory.Error, $"Failed to open URL: {url}");
         }
 
         return result;
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_OpenURL(string url);
 }

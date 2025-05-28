@@ -6,7 +6,7 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
-public static partial class Metal {
+public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_metal.h
 
     public static nint CreateView(nint window) {

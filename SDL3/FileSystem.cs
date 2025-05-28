@@ -9,17 +9,17 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
-public static partial class FileSystem {
+public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_filesystem.h
-    public static SdlBool CopyFile(string oldpath, string newpath) {
+    public static bool CopyFile(string oldpath, string newpath) {
         return SDL_CopyFile(oldpath, newpath);
     }
 
-    public static SdlBool CreateDirectory(string path) {
+    public static bool CreateDirectory(string path) {
         return SDL_CreateDirectory(path);
     }
 
-    public static SdlBool EnumerateDirectory(string path, SdlEnumerateDirectoryCallback callback, nint userdata) {
+    public static bool EnumerateDirectory(string path, SdlEnumerateDirectoryCallback callback, nint userdata) {
         return SDL_EnumerateDirectory(path, callback, userdata);
     }
 
@@ -31,7 +31,7 @@ public static partial class FileSystem {
         return SDL_GetCurrentDirectory();
     }
 
-    public static SdlBool GetPathInfo(string path, out PathInfo info) {
+    public static bool GetPathInfo(string path, out PathInfo info) {
         return SDL_GetPathInfo(path, out info);
     }
 
@@ -43,60 +43,60 @@ public static partial class FileSystem {
         return SDL_GetUserFolder(folder);
     }
 
-    public static SdlBool RemovePath(string path) {
+    public static bool RemovePath(string path) {
         return SDL_RemovePath(path);
     }
 
-    public static SdlBool RenamePath(string oldpath, string newpath) {
+    public static bool RenamePath(string oldpath, string newpath) {
         return SDL_RenamePath(oldpath, newpath);
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CopyFile(string oldpath, string newpath);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CreateDirectory(string path);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_EnumerateDirectory(string path, SdlEnumerateDirectoryCallback callback,
         nint userdata);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetBasePath();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(CallerOwnedStringMarshaller))]
     private static partial string SDL_GetCurrentDirectory();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetPathInfo(string path, out PathInfo info);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(CallerOwnedStringMarshaller))]
     private static partial string SDL_GetPrefPath(string org, string app);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetUserFolder(Folder folder);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GlobDirectory(string path, string pattern, GlobFlags flags, out int count);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RemovePath(string path);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RenamePath(string oldpath, string newpath);
 }

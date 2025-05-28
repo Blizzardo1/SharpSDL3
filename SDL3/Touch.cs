@@ -4,11 +4,9 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SharpSDL3.Sdl;
-
 namespace SharpSDL3;
 
-public static unsafe partial class Touch {
+public static unsafe partial class Sdl {
 
     public static string GetTouchDeviceName(ulong touchId) {
         if (touchId == 0) {
@@ -28,7 +26,7 @@ public static unsafe partial class Touch {
         nint result = SDL_GetTouchDevices(out int count);
 
         if (result == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+            LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
         nint[] data = new nint[count];
@@ -51,7 +49,7 @@ public static unsafe partial class Touch {
     public static Span<nint> GetTouchFingers(ulong touchId) {
         nint result = SDL_GetTouchFingers(touchId, out int count);
         if (result == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+            LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
         nint[] data = new nint[count];
@@ -63,7 +61,7 @@ public static unsafe partial class Touch {
     public static Span<nint> GetTouchFingers(ulong touchId, out int count) {
         nint result = SDL_GetTouchFingers(touchId, out count);
         if (result == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Failed to retrieve touch devices.");
+            LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
         nint[] data = new nint[count];
@@ -72,7 +70,7 @@ public static unsafe partial class Touch {
         return data;
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetTouchDeviceName(ulong touchId);

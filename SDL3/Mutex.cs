@@ -8,7 +8,7 @@ using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
-public static partial class Mutex {
+public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_mutex.h
 
     public static void BroadcastCondition(nint cond) {
@@ -21,7 +21,7 @@ public static partial class Mutex {
     public static nint CreateCondition() {
         var cond = SDL_CreateCondition();
         if (cond == nint.Zero) {
-            throw new InvalidOperationException("Failed to create condition variable: " + GetError());
+            throw new InvalidOperationException($"Failed to create condition variable: {GetError()}");
         }
         return cond;
     }
@@ -29,7 +29,7 @@ public static partial class Mutex {
     public static nint CreateMutex() {
         var mutex = SDL_CreateMutex();
         if (mutex == nint.Zero) {
-            throw new InvalidOperationException("Failed to create mutex: " + GetError());
+            throw new InvalidOperationException($"Failed to create mutex: {GetError()}");
         }
         return mutex;
     }
@@ -37,7 +37,7 @@ public static partial class Mutex {
     public static nint CreateRWLock() {
         var rwlock = SDL_CreateRWLock();
         if (rwlock == nint.Zero) {
-            throw new InvalidOperationException("Failed to create RW lock: " + GetError());
+            throw new InvalidOperationException($"Failed to create RW lock: {GetError()}");
         }
         return rwlock;
     }
@@ -86,13 +86,13 @@ public static partial class Mutex {
 
     public static void SetInitialized(ref InitState state, SdlBool initialized) {
         if (state.Thread == 0) {
-            Logger.LogWarn(LogCategory.System, "SetInitialized: State thread is not set.");
+            LogWarn(LogCategory.System, "SetInitialized: State thread is not set.");
         }
 
         if (initialized.Equals(SdlBool.False)) {
-            Logger.LogInfo(LogCategory.System, "SetInitialized: Marking state as uninitialized.");
+            LogInfo(LogCategory.System, "SetInitialized: Marking state as uninitialized.");
         } else {
-            Logger.LogInfo(LogCategory.System, "SetInitialized: Marking state as initialized.");
+            LogInfo(LogCategory.System, "SetInitialized: Marking state as initialized.");
         }
 
         SDL_SetInitialized(ref state, initialized);
@@ -100,25 +100,25 @@ public static partial class Mutex {
 
     public static SdlBool ShouldInit(ref InitState state) {
         if (state.Status == 0) {
-            Logger.LogInfo(LogCategory.System, "ShouldInit: Initialization is required.");
+            LogInfo(LogCategory.System, "ShouldInit: Initialization is required.");
             return SDL_ShouldInit(ref state);
         }
 
-        Logger.LogInfo(LogCategory.System, "ShouldInit: Already initialized.");
+        LogInfo(LogCategory.System, "ShouldInit: Already initialized.");
         return false;
     }
 
     public static SdlBool ShouldQuit(ref InitState state) {
         if (state.Thread == 0) {
-            Logger.LogWarn(LogCategory.System, "ShouldQuit: State thread is not set.");
+            LogWarn(LogCategory.System, "ShouldQuit: State thread is not set.");
             return false;
         }
 
         SdlBool result = SDL_ShouldQuit(ref state);
         if (!result.Equals(SdlBool.True)) {
-            Logger.LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned false.");
+            LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned false.");
         } else {
-            Logger.LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned true.");
+            LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned true.");
         }
 
         return result;

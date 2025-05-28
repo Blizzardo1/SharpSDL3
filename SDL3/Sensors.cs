@@ -4,13 +4,10 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SharpSDL3.Sdl;
 using SharpSDL3.Structs;
 
 namespace SharpSDL3; 
-public static unsafe partial class Sensors {
-
-
+public static unsafe partial class Sdl {
     public static void CloseSensor(nint sensor) {
         if (sensor == nint.Zero) {
             throw new ArgumentException("Sensor handle cannot be null.", nameof(sensor));
@@ -23,7 +20,7 @@ public static unsafe partial class Sensors {
         }
     }
 
-    public static SdlBool GetSensorData(nint sensor, nint data, int numValues) {
+    public static bool GetSensorData(nint sensor, nint data, int numValues) {
         SdlBool result = SDL_GetSensorData(sensor, data, numValues);
         if (!result) {
             throw new InvalidOperationException("SDL_GetSensorData failed");
@@ -139,12 +136,12 @@ public static unsafe partial class Sensors {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetSensorID(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorName(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorNameForID(uint instanceId);

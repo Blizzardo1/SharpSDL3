@@ -37,7 +37,7 @@ public static unsafe partial class Ttf {
     public static bool AddFallbackFont(Font font, Font fallback) {
         bool result = TTF_AddFallbackFont(font.Handle, fallback.Handle);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to add fallback font. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to add fallback font. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -65,7 +65,7 @@ public static unsafe partial class Ttf {
             throw new ArgumentException("Font is invalid or already closed.", nameof(font));
         }
 
-        Logger.LogInfo(LogCategory.System, $"Closing font: {font.Name}");
+        Sdl.LogInfo(LogCategory.System, $"Closing font: {font.Name}");
 
         TTF_CloseFont(font.Handle);
     }
@@ -131,7 +131,7 @@ public static unsafe partial class Ttf {
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         if (engine.Handle == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Text engine cannot be null.");
+            Sdl.LogError(LogCategory.Error, "Text engine cannot be null.");
         }
         nint tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
         if (tPtr == nint.Zero) {
@@ -201,7 +201,7 @@ public static unsafe partial class Ttf {
     public static bool FontHasGlyph(Font font, int ch) {
         bool result = TTF_FontHasGlyph(font.Handle, ch);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to check if font has glyph for character {ch}. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to check if font has glyph for character {ch}. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -209,7 +209,7 @@ public static unsafe partial class Ttf {
     public static int GetFontAscent(Font font) {
         int result = TTF_GetFontAscent(font.Handle);
         if (result < 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get font ascent. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font ascent. SDL Error: {Sdl.GetError()}");
             return 0;
         }
         return result;
@@ -231,7 +231,7 @@ public static unsafe partial class Ttf {
 
         try {
             if (!result) {
-                Logger.LogError(LogCategory.Error, $"Failed to get font DPI. SDL Error: {Sdl.GetError()}");
+                Sdl.LogError(LogCategory.Error, $"Failed to get font DPI. SDL Error: {Sdl.GetError()}");
                 hdpi = 0;
                 vdpi = 0;
                 return false;
@@ -249,7 +249,7 @@ public static unsafe partial class Ttf {
     public static string GetFontFamilyName(Font font) {
         string result = TTF_GetFontFamilyName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
-            Logger.LogError(LogCategory.System, $"Failed to get font family name. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.System, $"Failed to get font family name. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -265,7 +265,7 @@ public static unsafe partial class Ttf {
     public static int GetFontHeight(Font font) {
         int result = TTF_GetFontHeight(font.Handle);
         if (result < 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get font height. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font height. SDL Error: {Sdl.GetError()}");
             return 0;
         }
         return result;
@@ -278,7 +278,7 @@ public static unsafe partial class Ttf {
     public static bool GetFontKerning(Font font) {
         bool result = TTF_GetFontKerning(font.Handle);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get font kerning. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font kerning. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -290,7 +290,7 @@ public static unsafe partial class Ttf {
     public static int GetFontOutline(Font font) {
         int result = TTF_GetFontOutline(font.Handle);
         if (result < 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get font outline. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font outline. SDL Error: {Sdl.GetError()}");
             return 0;
         }
         return result;
@@ -311,7 +311,7 @@ public static unsafe partial class Ttf {
     public static bool GetFontSDF(Font font) {
         bool result = TTF_GetFontSDF(font.Handle);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get font SDF. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font SDF. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -331,7 +331,7 @@ public static unsafe partial class Ttf {
     public static string GetFontStyleName(Font font) {
         string result = TTF_GetFontStyleName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
-            Logger.LogError(LogCategory.System, $"Failed to get font style name. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.System, $"Failed to get font style name. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -354,7 +354,7 @@ public static unsafe partial class Ttf {
         minor = Marshal.ReadInt32(mi);
         patch = Marshal.ReadInt32(pa);
         if (major == 0 && minor == 0 && patch == 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get FreeType version. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get FreeType version. SDL Error: {Sdl.GetError()}");
         }
         Sdl.Free(ma);
         Sdl.Free(mi);
@@ -379,7 +379,7 @@ public static unsafe partial class Ttf {
     public static bool GetGlyphKerning(Font font, int previous_ch, int ch, int kerning) {
         bool result = TTF_GetGlyphKerning(font.Handle, previous_ch, ch, kerning);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get glyph kerning for characters {previous_ch} and {ch}. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get glyph kerning for characters {previous_ch} and {ch}. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -388,7 +388,7 @@ public static unsafe partial class Ttf {
     public static bool GetGlyphMetrics(Font font, int ch, nint minx, nint maxx, nint miny, nint maxy, nint advance) {
         bool result = TTF_GetGlyphMetrics(font.Handle, ch, minx, maxx, miny, maxy, advance);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get glyph metrics for character {ch}. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get glyph metrics for character {ch}. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -401,7 +401,7 @@ public static unsafe partial class Ttf {
         int script = TTF_GetGlyphScript(ch);
 
         if (script == 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get glyph script for character {ch}. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get glyph script for character {ch}. SDL Error: {Sdl.GetError()}");
         }
 
         return script;
@@ -430,7 +430,7 @@ public static unsafe partial class Ttf {
         patch = Marshal.ReadInt32(pa);
         TTF_GetHarfBuzzVersion(ma, mi, pa);
         if (major == 0 && minor == 0 && patch == 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get FreeType HarfBuzz version. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get FreeType HarfBuzz version. SDL Error: {Sdl.GetError()}");
         }
         Sdl.Free(ma);
         Sdl.Free(mi);
@@ -439,13 +439,13 @@ public static unsafe partial class Ttf {
 
     public static unsafe bool GetNextTextSubString(Text text, SubString substring, out SubString next) {
         if (text.Handle == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Text cannot be null.");
+            Sdl.LogError(LogCategory.Error, "Text cannot be null.");
             next = new();
             return false;
         }
 
         if (substring.Handle == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Substring cannot be null.");
+            Sdl.LogError(LogCategory.Error, "Substring cannot be null.");
             next = new();
             return false;
         }
@@ -454,7 +454,7 @@ public static unsafe partial class Ttf {
             bool result = TTF_GetNextTextSubString(text.Handle, substring.Handle, pNext);
 
             if (!result) {
-                Logger.LogError(LogCategory.Error, "Failed to get next text substring.");
+                Sdl.LogError(LogCategory.Error, "Failed to get next text substring.");
             }
 
             next = *(SubString*)pNext;
@@ -473,7 +473,7 @@ public static unsafe partial class Ttf {
     public static int GetNumFontFaces(Font font) {
         int result = TTF_GetNumFontFaces(font.Handle);
         if (result < 0) {
-            Logger.LogError(LogCategory.Error, $"Failed to get number of font faces. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get number of font faces. SDL Error: {Sdl.GetError()}");
             return 0;
         }
         return result;
@@ -481,13 +481,13 @@ public static unsafe partial class Ttf {
 
     public static unsafe bool GetPreviousTextSubString(Text text, SubString substring, out SubString previous) {
         if (text.Handle == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Text cannot be null.");
+            Sdl.LogError(LogCategory.Error, "Text cannot be null.");
             previous = new();
             return false;
         }
 
         if (substring.Handle == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Substring cannot be null.");
+            Sdl.LogError(LogCategory.Error, "Substring cannot be null.");
             previous = new();
             return false;
         }
@@ -496,7 +496,7 @@ public static unsafe partial class Ttf {
         try {
             bool result = TTF_GetPreviousTextSubString(text.Handle, substring.Handle, pPrevious);
             if (!result) {
-                Logger.LogError(LogCategory.Error, "Failed to get previous text substring.");
+                Sdl.LogError(LogCategory.Error, "Failed to get previous text substring.");
             }
             previous = *(SubString*)pPrevious;
             return result;
@@ -513,7 +513,7 @@ public static unsafe partial class Ttf {
     public static bool GetStringSize(Font font, string text, ulong length, int w, int h) {
         bool result = TTF_GetStringSize(font.Handle, text, length, w, h);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get string size for text '{text}'. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get string size for text '{text}'. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -525,7 +525,7 @@ public static unsafe partial class Ttf {
     public static bool GetStringSizeWrapped(Font font, string text, ulong length, int wrap_width, int w, int h) {
         bool result = TTF_GetStringSizeWrapped(font.Handle, text, length, wrap_width, w, h);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to get wrapped string size for text '{text}'. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get wrapped string size for text '{text}'. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -545,7 +545,7 @@ public static unsafe partial class Ttf {
         try {
             bool result = TTF_GetTextColor(text.Handle, pr, pg, pb, pa);
             if (!result) {
-                Logger.LogError(LogCategory.System, $"Failed to get text color. SDL Error: {Sdl.GetError()}");
+                Sdl.LogError(LogCategory.System, $"Failed to get text color. SDL Error: {Sdl.GetError()}");
                 r = g = b = a = 0;
                 return false;
             }
@@ -579,7 +579,7 @@ public static unsafe partial class Ttf {
             bool result = TTF_GetTextColorFloat(text.Handle, pr, pg, pb, pa);
 
             if (!result) {
-                Logger.LogError(LogCategory.System, $"Failed to get text color. SDL Error: {Sdl.GetError()}");
+                Sdl.LogError(LogCategory.System, $"Failed to get text color. SDL Error: {Sdl.GetError()}");
                 r = g = b = a = 0;
                 return false;
             }
@@ -659,7 +659,7 @@ public static unsafe partial class Ttf {
         return new Point() { X = x, Y = y };
     }
 
-    public static int GetTextProperties(nint text) {
+    public static uint GetTextProperties(nint text) {
         if (text == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
@@ -717,7 +717,7 @@ public static unsafe partial class Ttf {
             bool result = TTF_GetTextSubStringForLine(text.Handle, line, pSubstring);
 
             if (!result) {
-                Logger.LogError(LogCategory.Error, "Failed to get text substring for line.");
+                Sdl.LogError(LogCategory.Error, "Failed to get text substring for line.");
                 substring = default;
                 return false;
             }
@@ -734,7 +734,7 @@ public static unsafe partial class Ttf {
     public static SubString GetTextSubStringForLine(Text text, int line) {
         bool result = GetTextSubStringForLine(text, line, out SubString substring);
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to get text substring for line.");
+            Sdl.LogError(LogCategory.Error, "Failed to get text substring for line.");
             return new SubString();
         }
         return substring;
@@ -748,7 +748,7 @@ public static unsafe partial class Ttf {
 
         bool result = TTF_GetTextSubStringForPoint(text.Handle, x, y, pSubstring);
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to get text substring for point.");
+            Sdl.LogError(LogCategory.Error, "Failed to get text substring for point.");
             substring = default;
             return false;
         }
@@ -764,7 +764,7 @@ public static unsafe partial class Ttf {
     public static SubString GetTextSubStringForPoint(Text text, int x, int y) {
         bool result = GetTextSubStringForPoint(text, x, y, out SubString substring);
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to get text substring for point.");
+            Sdl.LogError(LogCategory.Error, "Failed to get text substring for point.");
             return new SubString();
         }
         return substring;
@@ -773,7 +773,7 @@ public static unsafe partial class Ttf {
     public static SubString GetTextSubStringForPoint(Text text, Point point) {
         bool result = GetTextSubStringForPoint(text, point, out SubString substring);
         if (!result) {
-            Logger.LogError(LogCategory.Error, "Failed to get text substring for point.");
+            Sdl.LogError(LogCategory.Error, "Failed to get text substring for point.");
             return new SubString();
         }
         return substring;
@@ -794,7 +794,7 @@ public static unsafe partial class Ttf {
         count = Marshal.ReadInt32(pCount);
 
         if (pSubStrings == nint.Zero) {
-            Logger.LogError(LogCategory.Error, "Failed to get text substrings for range.");
+            Sdl.LogError(LogCategory.Error, "Failed to get text substrings for range.");
         }
 
         SubString[] substrings = new SubString[count];
@@ -843,7 +843,7 @@ public static unsafe partial class Ttf {
     public static bool IsFixedWidth(Font font) {
         bool result = TTF_FontIsFixedWidth(font.Handle);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to check if font is fixed width. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to check if font is fixed width. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -851,7 +851,7 @@ public static unsafe partial class Ttf {
     public static bool IsScalable(Font font) {
         bool result = TTF_FontIsScalable(font.Handle);
         if (!result) {
-            Logger.LogInfo(LogCategory.Error, $"Font is not scalable. SDL Error: {Sdl.GetError()}");
+            Sdl.LogInfo(LogCategory.Error, $"Font is not scalable. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -861,7 +861,7 @@ public static unsafe partial class Ttf {
         bool result = TTF_MeasureString(font.Handle, text, (nuint)text.Length, max_width, out int mW, out nuint mL);
 
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
         }
         measured_width = mW;
         measured_length = (int)mL;
@@ -878,6 +878,10 @@ public static unsafe partial class Ttf {
     public static Size MeasureString(Font font, string text, int max_width) {
         MeasureString(font, text, max_width, out Size measuredSize);
         return measuredSize;
+    }
+
+    public static Size MeasureString(Font font, string text) {
+        return MeasureString(font, text, 0);
     }
 
     /// <summary>
@@ -944,7 +948,7 @@ public static unsafe partial class Ttf {
 
         nint result = TTF_RenderGlyph_LCD(font.Handle, ch, fg, bg);
         if (result == nint.Zero) {
-            Logger.LogError(LogCategory.Error, $"Failed to render glyph {ch} with LCD quality. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to render glyph {ch} with LCD quality. SDL Error: {Sdl.GetError()}");
         }
         Surface surface = *(Surface*)result;
         return surface;
@@ -1025,7 +1029,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontDirection(Font font, Direction direction) {
         bool result = TTF_SetFontDirection(font.Handle, direction);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font direction. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font direction. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1044,7 +1048,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontLanguage(Font font, string language_bcp47) {
         bool result = TTF_SetFontLanguage(font.Handle, language_bcp47);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font language. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font language. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1056,7 +1060,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontOutline(Font font, int outline) {
         bool result = TTF_SetFontOutline(font.Handle, outline);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font outline. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font outline. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1064,7 +1068,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontScript(Font font, int script) {
         bool result = TTF_SetFontScript(font.Handle, script);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font script. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font script. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1072,7 +1076,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontSDF(Font font, bool enabled) {
         bool result = TTF_SetFontSDF(font.Handle, enabled);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font SDF. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font SDF. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1084,7 +1088,7 @@ public static unsafe partial class Ttf {
 
         bool result = TTF_SetFontSize(font.Handle, ptsize);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font size. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font size. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1092,7 +1096,7 @@ public static unsafe partial class Ttf {
     public static bool SetFontSizeDPI(Font font, float ptsize, int hdpi, int vdpi) {
         bool result = TTF_SetFontSizeDPI(font.Handle, ptsize, hdpi, vdpi);
         if (!result) {
-            Logger.LogError(LogCategory.Error, $"Failed to set font size DPI. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to set font size DPI. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -1501,7 +1505,7 @@ public static unsafe partial class Ttf {
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int TTF_GetTextProperties(nint text);
+    private static partial uint TTF_GetTextProperties(nint text);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]

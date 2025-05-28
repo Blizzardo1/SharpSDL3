@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
-public static partial class CpuInfo {
+public static partial class Sdl {
 
     // /usr/local/include/SDL3/SDL_cpuinfo.h
 

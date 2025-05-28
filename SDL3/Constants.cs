@@ -1,6 +1,6 @@
 namespace SharpSDL3;
 
-public partial class AsyncIO
+public partial class Constants
 {
 	
 	// /usr/local/include/SDL3/SDL_thread.h
