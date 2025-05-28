@@ -399,7 +399,7 @@ public static unsafe partial class Mixer {
     /// Call <see cref="CloseAudio"/> when done to close the device.
     /// If <paramref name="spec"/> is null, SDL3_mixer uses reasonable defaults.
     /// </remarks>
-    public static void OpenAudio(AudioDeviceId deviceId = default, AudioSpec? spec = null) {
+    public static void OpenAudio(AudioDeviceId deviceId, AudioSpec? spec = null) {
         AudioSpec nativeSpec = spec ?? default;
         bool result = Mix_OpenAudio(deviceId, spec.HasValue ? (nint)Unsafe.AsPointer(ref nativeSpec) : nint.Zero);
         if (!result)

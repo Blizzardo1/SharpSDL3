@@ -1,4 +1,5 @@
-﻿using System.Runtime.InteropServices;
+﻿using SharpSDL3.Structs;
+using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Mixer;
 
@@ -6,7 +7,7 @@ namespace SharpSDL3.Mixer;
 public struct Music {
     public nint Interface;
     public nint Context;
-    [MarshalAs(Sdl.BoolType)] public bool Playing;
+    public SdlBool Playing;
     public Fading Fading;
     public int FadeStep;
     public int FadeSteps;
