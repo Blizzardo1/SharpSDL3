@@ -396,7 +396,7 @@ public static unsafe partial class Sdl {
     public static nint OpenJoystick(uint instanceId) {
         nint joystick = SDL_OpenJoystick(instanceId);
         if (joystick == nint.Zero) {
-            throw new InvalidOperationException($"Failed to open joystick with instance ID {instanceId}.");
+            throw new InvalidOperationException($"Failed to open joystick with instance ID {instanceId}. {GetError()}");
         }
         return joystick;
     }
