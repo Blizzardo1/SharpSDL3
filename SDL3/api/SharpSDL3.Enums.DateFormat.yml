@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.DateFormat
+  commentId: T:SharpSDL3.Enums.DateFormat
+  id: DateFormat
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.DateFormat.Ddmmyyyy
+  - SharpSDL3.Enums.DateFormat.Mmddyyyy
+  - SharpSDL3.Enums.DateFormat.Yyyymmdd
+  langs:
+  - csharp
+  - vb
+  name: DateFormat
+  nameWithType: DateFormat
+  fullName: SharpSDL3.Enums.DateFormat
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/DateFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DateFormat
+    path: Enums/DateFormat.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum DateFormat
+    content.vb: Public Enum DateFormat
+- uid: SharpSDL3.Enums.DateFormat.Yyyymmdd
+  commentId: F:SharpSDL3.Enums.DateFormat.Yyyymmdd
+  id: Yyyymmdd
+  parent: SharpSDL3.Enums.DateFormat
+  langs:
+  - csharp
+  - vb
+  name: Yyyymmdd
+  nameWithType: DateFormat.Yyyymmdd
+  fullName: SharpSDL3.Enums.DateFormat.Yyyymmdd
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DateFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Yyyymmdd
+    path: Enums/DateFormat.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Yyyymmdd = 0
+    return:
+      type: SharpSDL3.Enums.DateFormat
+- uid: SharpSDL3.Enums.DateFormat.Ddmmyyyy
+  commentId: F:SharpSDL3.Enums.DateFormat.Ddmmyyyy
+  id: Ddmmyyyy
+  parent: SharpSDL3.Enums.DateFormat
+  langs:
+  - csharp
+  - vb
+  name: Ddmmyyyy
+  nameWithType: DateFormat.Ddmmyyyy
+  fullName: SharpSDL3.Enums.DateFormat.Ddmmyyyy
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DateFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ddmmyyyy
+    path: Enums/DateFormat.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ddmmyyyy = 1
+    return:
+      type: SharpSDL3.Enums.DateFormat
+- uid: SharpSDL3.Enums.DateFormat.Mmddyyyy
+  commentId: F:SharpSDL3.Enums.DateFormat.Mmddyyyy
+  id: Mmddyyyy
+  parent: SharpSDL3.Enums.DateFormat
+  langs:
+  - csharp
+  - vb
+  name: Mmddyyyy
+  nameWithType: DateFormat.Mmddyyyy
+  fullName: SharpSDL3.Enums.DateFormat.Mmddyyyy
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DateFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mmddyyyy
+    path: Enums/DateFormat.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mmddyyyy = 2
+    return:
+      type: SharpSDL3.Enums.DateFormat
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.DateFormat
+  commentId: T:SharpSDL3.Enums.DateFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.DateFormat.html
+  name: DateFormat
+  nameWithType: DateFormat
+  fullName: SharpSDL3.Enums.DateFormat

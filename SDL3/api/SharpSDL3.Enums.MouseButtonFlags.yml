@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.MouseButtonFlags
+  commentId: T:SharpSDL3.Enums.MouseButtonFlags
+  id: MouseButtonFlags
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.MouseButtonFlags.LMask
+  - SharpSDL3.Enums.MouseButtonFlags.MMask
+  - SharpSDL3.Enums.MouseButtonFlags.RMask
+  - SharpSDL3.Enums.MouseButtonFlags.X1Mask
+  - SharpSDL3.Enums.MouseButtonFlags.X2Mask
+  langs:
+  - csharp
+  - vb
+  name: MouseButtonFlags
+  nameWithType: MouseButtonFlags
+  fullName: SharpSDL3.Enums.MouseButtonFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseButtonFlags
+    path: Enums/MouseButtonFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum MouseButtonFlags : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum MouseButtonFlags As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.MouseButtonFlags.LMask
+  commentId: F:SharpSDL3.Enums.MouseButtonFlags.LMask
+  id: LMask
+  parent: SharpSDL3.Enums.MouseButtonFlags
+  langs:
+  - csharp
+  - vb
+  name: LMask
+  nameWithType: MouseButtonFlags.LMask
+  fullName: SharpSDL3.Enums.MouseButtonFlags.LMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LMask
+    path: Enums/MouseButtonFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LMask = 1
+    return:
+      type: SharpSDL3.Enums.MouseButtonFlags
+- uid: SharpSDL3.Enums.MouseButtonFlags.MMask
+  commentId: F:SharpSDL3.Enums.MouseButtonFlags.MMask
+  id: MMask
+  parent: SharpSDL3.Enums.MouseButtonFlags
+  langs:
+  - csharp
+  - vb
+  name: MMask
+  nameWithType: MouseButtonFlags.MMask
+  fullName: SharpSDL3.Enums.MouseButtonFlags.MMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MMask
+    path: Enums/MouseButtonFlags.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MMask = 2
+    return:
+      type: SharpSDL3.Enums.MouseButtonFlags
+- uid: SharpSDL3.Enums.MouseButtonFlags.RMask
+  commentId: F:SharpSDL3.Enums.MouseButtonFlags.RMask
+  id: RMask
+  parent: SharpSDL3.Enums.MouseButtonFlags
+  langs:
+  - csharp
+  - vb
+  name: RMask
+  nameWithType: MouseButtonFlags.RMask
+  fullName: SharpSDL3.Enums.MouseButtonFlags.RMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RMask
+    path: Enums/MouseButtonFlags.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RMask = 4
+    return:
+      type: SharpSDL3.Enums.MouseButtonFlags
+- uid: SharpSDL3.Enums.MouseButtonFlags.X1Mask
+  commentId: F:SharpSDL3.Enums.MouseButtonFlags.X1Mask
+  id: X1Mask
+  parent: SharpSDL3.Enums.MouseButtonFlags
+  langs:
+  - csharp
+  - vb
+  name: X1Mask
+  nameWithType: MouseButtonFlags.X1Mask
+  fullName: SharpSDL3.Enums.MouseButtonFlags.X1Mask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: X1Mask
+    path: Enums/MouseButtonFlags.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: X1Mask = 8
+    return:
+      type: SharpSDL3.Enums.MouseButtonFlags
+- uid: SharpSDL3.Enums.MouseButtonFlags.X2Mask
+  commentId: F:SharpSDL3.Enums.MouseButtonFlags.X2Mask
+  id: X2Mask
+  parent: SharpSDL3.Enums.MouseButtonFlags
+  langs:
+  - csharp
+  - vb
+  name: X2Mask
+  nameWithType: MouseButtonFlags.X2Mask
+  fullName: SharpSDL3.Enums.MouseButtonFlags.X2Mask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MouseButtonFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: X2Mask
+    path: Enums/MouseButtonFlags.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: X2Mask = 16
+    return:
+      type: SharpSDL3.Enums.MouseButtonFlags
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.MouseButtonFlags
+  commentId: T:SharpSDL3.Enums.MouseButtonFlags
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.MouseButtonFlags.html
+  name: MouseButtonFlags
+  nameWithType: MouseButtonFlags
+  fullName: SharpSDL3.Enums.MouseButtonFlags

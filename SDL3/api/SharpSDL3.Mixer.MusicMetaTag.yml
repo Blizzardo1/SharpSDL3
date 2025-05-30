@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer.MusicMetaTag
+  commentId: T:SharpSDL3.Mixer.MusicMetaTag
+  id: MusicMetaTag
+  parent: SharpSDL3.Mixer
+  children:
+  - SharpSDL3.Mixer.MusicMetaTag.Album
+  - SharpSDL3.Mixer.MusicMetaTag.Artist
+  - SharpSDL3.Mixer.MusicMetaTag.Copyright
+  - SharpSDL3.Mixer.MusicMetaTag.Last
+  - SharpSDL3.Mixer.MusicMetaTag.Title
+  langs:
+  - csharp
+  - vb
+  name: MusicMetaTag
+  nameWithType: MusicMetaTag
+  fullName: SharpSDL3.Mixer.MusicMetaTag
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MusicMetaTag
+    path: Mixer/MusicMetaTag.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public enum MusicMetaTag
+    content.vb: Public Enum MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicMetaTag.Title
+  commentId: F:SharpSDL3.Mixer.MusicMetaTag.Title
+  id: Title
+  parent: SharpSDL3.Mixer.MusicMetaTag
+  langs:
+  - csharp
+  - vb
+  name: Title
+  nameWithType: MusicMetaTag.Title
+  fullName: SharpSDL3.Mixer.MusicMetaTag.Title
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Title
+    path: Mixer/MusicMetaTag.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: Title = 0
+    return:
+      type: SharpSDL3.Mixer.MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicMetaTag.Artist
+  commentId: F:SharpSDL3.Mixer.MusicMetaTag.Artist
+  id: Artist
+  parent: SharpSDL3.Mixer.MusicMetaTag
+  langs:
+  - csharp
+  - vb
+  name: Artist
+  nameWithType: MusicMetaTag.Artist
+  fullName: SharpSDL3.Mixer.MusicMetaTag.Artist
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Artist
+    path: Mixer/MusicMetaTag.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: Artist = 1
+    return:
+      type: SharpSDL3.Mixer.MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicMetaTag.Album
+  commentId: F:SharpSDL3.Mixer.MusicMetaTag.Album
+  id: Album
+  parent: SharpSDL3.Mixer.MusicMetaTag
+  langs:
+  - csharp
+  - vb
+  name: Album
+  nameWithType: MusicMetaTag.Album
+  fullName: SharpSDL3.Mixer.MusicMetaTag.Album
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Album
+    path: Mixer/MusicMetaTag.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: Album = 2
+    return:
+      type: SharpSDL3.Mixer.MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicMetaTag.Copyright
+  commentId: F:SharpSDL3.Mixer.MusicMetaTag.Copyright
+  id: Copyright
+  parent: SharpSDL3.Mixer.MusicMetaTag
+  langs:
+  - csharp
+  - vb
+  name: Copyright
+  nameWithType: MusicMetaTag.Copyright
+  fullName: SharpSDL3.Mixer.MusicMetaTag.Copyright
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Copyright
+    path: Mixer/MusicMetaTag.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: Copyright = 3
+    return:
+      type: SharpSDL3.Mixer.MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicMetaTag.Last
+  commentId: F:SharpSDL3.Mixer.MusicMetaTag.Last
+  id: Last
+  parent: SharpSDL3.Mixer.MusicMetaTag
+  langs:
+  - csharp
+  - vb
+  name: Last
+  nameWithType: MusicMetaTag.Last
+  fullName: SharpSDL3.Mixer.MusicMetaTag.Last
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/MusicMetaTag.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Last
+    path: Mixer/MusicMetaTag.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: Last = 4
+    return:
+      type: SharpSDL3.Mixer.MusicMetaTag
+references:
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+- uid: SharpSDL3.Mixer.MusicMetaTag
+  commentId: T:SharpSDL3.Mixer.MusicMetaTag
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicMetaTag.html
+  name: MusicMetaTag
+  nameWithType: MusicMetaTag
+  fullName: SharpSDL3.Mixer.MusicMetaTag

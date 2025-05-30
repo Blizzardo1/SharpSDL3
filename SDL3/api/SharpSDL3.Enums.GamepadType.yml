@@ -1,0 +1,382 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GamepadType
+  commentId: T:SharpSDL3.Enums.GamepadType
+  id: GamepadType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GamepadType.Count
+  - SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConLeft
+  - SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConPair
+  - SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConRight
+  - SharpSDL3.Enums.GamepadType.NintendoSwitchPro
+  - SharpSDL3.Enums.GamepadType.Ps3
+  - SharpSDL3.Enums.GamepadType.Ps4
+  - SharpSDL3.Enums.GamepadType.Ps5
+  - SharpSDL3.Enums.GamepadType.Standard
+  - SharpSDL3.Enums.GamepadType.Unknown
+  - SharpSDL3.Enums.GamepadType.Xbox360
+  - SharpSDL3.Enums.GamepadType.XboxOne
+  langs:
+  - csharp
+  - vb
+  name: GamepadType
+  nameWithType: GamepadType
+  fullName: SharpSDL3.Enums.GamepadType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadType
+    path: Enums/GamepadType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GamepadType
+    content.vb: Public Enum GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Unknown
+  commentId: F:SharpSDL3.Enums.GamepadType.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: GamepadType.Unknown
+  fullName: SharpSDL3.Enums.GamepadType.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/GamepadType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Standard
+  commentId: F:SharpSDL3.Enums.GamepadType.Standard
+  id: Standard
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Standard
+  nameWithType: GamepadType.Standard
+  fullName: SharpSDL3.Enums.GamepadType.Standard
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Standard
+    path: Enums/GamepadType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Standard = 1
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Xbox360
+  commentId: F:SharpSDL3.Enums.GamepadType.Xbox360
+  id: Xbox360
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Xbox360
+  nameWithType: GamepadType.Xbox360
+  fullName: SharpSDL3.Enums.GamepadType.Xbox360
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Xbox360
+    path: Enums/GamepadType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Xbox360 = 2
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.XboxOne
+  commentId: F:SharpSDL3.Enums.GamepadType.XboxOne
+  id: XboxOne
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: XboxOne
+  nameWithType: GamepadType.XboxOne
+  fullName: SharpSDL3.Enums.GamepadType.XboxOne
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: XboxOne
+    path: Enums/GamepadType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: XboxOne = 3
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Ps3
+  commentId: F:SharpSDL3.Enums.GamepadType.Ps3
+  id: Ps3
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Ps3
+  nameWithType: GamepadType.Ps3
+  fullName: SharpSDL3.Enums.GamepadType.Ps3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ps3
+    path: Enums/GamepadType.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ps3 = 4
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Ps4
+  commentId: F:SharpSDL3.Enums.GamepadType.Ps4
+  id: Ps4
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Ps4
+  nameWithType: GamepadType.Ps4
+  fullName: SharpSDL3.Enums.GamepadType.Ps4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ps4
+    path: Enums/GamepadType.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ps4 = 5
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Ps5
+  commentId: F:SharpSDL3.Enums.GamepadType.Ps5
+  id: Ps5
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Ps5
+  nameWithType: GamepadType.Ps5
+  fullName: SharpSDL3.Enums.GamepadType.Ps5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ps5
+    path: Enums/GamepadType.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ps5 = 6
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.NintendoSwitchPro
+  commentId: F:SharpSDL3.Enums.GamepadType.NintendoSwitchPro
+  id: NintendoSwitchPro
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: NintendoSwitchPro
+  nameWithType: GamepadType.NintendoSwitchPro
+  fullName: SharpSDL3.Enums.GamepadType.NintendoSwitchPro
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NintendoSwitchPro
+    path: Enums/GamepadType.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NintendoSwitchPro = 7
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConLeft
+  commentId: F:SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConLeft
+  id: NintendoSwitchJoyConLeft
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: NintendoSwitchJoyConLeft
+  nameWithType: GamepadType.NintendoSwitchJoyConLeft
+  fullName: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NintendoSwitchJoyConLeft
+    path: Enums/GamepadType.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NintendoSwitchJoyConLeft = 8
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConRight
+  commentId: F:SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConRight
+  id: NintendoSwitchJoyConRight
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: NintendoSwitchJoyConRight
+  nameWithType: GamepadType.NintendoSwitchJoyConRight
+  fullName: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NintendoSwitchJoyConRight
+    path: Enums/GamepadType.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NintendoSwitchJoyConRight = 9
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConPair
+  commentId: F:SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConPair
+  id: NintendoSwitchJoyConPair
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: NintendoSwitchJoyConPair
+  nameWithType: GamepadType.NintendoSwitchJoyConPair
+  fullName: SharpSDL3.Enums.GamepadType.NintendoSwitchJoyConPair
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NintendoSwitchJoyConPair
+    path: Enums/GamepadType.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NintendoSwitchJoyConPair = 10
+    return:
+      type: SharpSDL3.Enums.GamepadType
+- uid: SharpSDL3.Enums.GamepadType.Count
+  commentId: F:SharpSDL3.Enums.GamepadType.Count
+  id: Count
+  parent: SharpSDL3.Enums.GamepadType
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: GamepadType.Count
+  fullName: SharpSDL3.Enums.GamepadType.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/GamepadType.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 11
+    return:
+      type: SharpSDL3.Enums.GamepadType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GamepadType
+  commentId: T:SharpSDL3.Enums.GamepadType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GamepadType.html
+  name: GamepadType
+  nameWithType: GamepadType
+  fullName: SharpSDL3.Enums.GamepadType

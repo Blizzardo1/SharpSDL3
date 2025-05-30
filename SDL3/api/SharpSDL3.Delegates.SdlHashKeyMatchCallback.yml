@@ -1,0 +1,73 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  id: Delegates.SdlHashKeyMatchCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlHashKeyMatchCallback
+  nameWithType: Delegates.SdlHashKeyMatchCallback
+  fullName: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlHashKeyMatchCallback
+    path: Delegates.cs
+    startLine: 65
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate bool Delegates.SdlHashKeyMatchCallback(nint userdata, nint a, nint b)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: a
+      type: System.IntPtr
+    - id: b
+      type: System.IntPtr
+    return:
+      type: System.Boolean
+    content.vb: Public Delegate Function Delegates.SdlHashKeyMatchCallback(userdata As IntPtr, a As IntPtr, b As IntPtr) As Boolean
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

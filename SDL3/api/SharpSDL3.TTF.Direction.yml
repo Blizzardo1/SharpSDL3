@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.Direction
+  commentId: T:SharpSDL3.TTF.Direction
+  id: Direction
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.Direction.BottomToTop
+  - SharpSDL3.TTF.Direction.Invalid
+  - SharpSDL3.TTF.Direction.LeftToRight
+  - SharpSDL3.TTF.Direction.RightToLeft
+  - SharpSDL3.TTF.Direction.TopToBottom
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: Direction
+  fullName: SharpSDL3.TTF.Direction
+  type: Enum
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Direction
+    path: TTF/Direction.cs
+    startLine: 1
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public enum Direction
+    content.vb: Public Enum Direction
+- uid: SharpSDL3.TTF.Direction.Invalid
+  commentId: F:SharpSDL3.TTF.Direction.Invalid
+  id: Invalid
+  parent: SharpSDL3.TTF.Direction
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: Direction.Invalid
+  fullName: SharpSDL3.TTF.Direction.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: TTF/Direction.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.TTF.Direction
+- uid: SharpSDL3.TTF.Direction.LeftToRight
+  commentId: F:SharpSDL3.TTF.Direction.LeftToRight
+  id: LeftToRight
+  parent: SharpSDL3.TTF.Direction
+  langs:
+  - csharp
+  - vb
+  name: LeftToRight
+  nameWithType: Direction.LeftToRight
+  fullName: SharpSDL3.TTF.Direction.LeftToRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftToRight
+    path: TTF/Direction.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: LeftToRight = 4
+    return:
+      type: SharpSDL3.TTF.Direction
+- uid: SharpSDL3.TTF.Direction.RightToLeft
+  commentId: F:SharpSDL3.TTF.Direction.RightToLeft
+  id: RightToLeft
+  parent: SharpSDL3.TTF.Direction
+  langs:
+  - csharp
+  - vb
+  name: RightToLeft
+  nameWithType: Direction.RightToLeft
+  fullName: SharpSDL3.TTF.Direction.RightToLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightToLeft
+    path: TTF/Direction.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: RightToLeft = 5
+    return:
+      type: SharpSDL3.TTF.Direction
+- uid: SharpSDL3.TTF.Direction.TopToBottom
+  commentId: F:SharpSDL3.TTF.Direction.TopToBottom
+  id: TopToBottom
+  parent: SharpSDL3.TTF.Direction
+  langs:
+  - csharp
+  - vb
+  name: TopToBottom
+  nameWithType: Direction.TopToBottom
+  fullName: SharpSDL3.TTF.Direction.TopToBottom
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TopToBottom
+    path: TTF/Direction.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: TopToBottom = 6
+    return:
+      type: SharpSDL3.TTF.Direction
+- uid: SharpSDL3.TTF.Direction.BottomToTop
+  commentId: F:SharpSDL3.TTF.Direction.BottomToTop
+  id: BottomToTop
+  parent: SharpSDL3.TTF.Direction
+  langs:
+  - csharp
+  - vb
+  name: BottomToTop
+  nameWithType: Direction.BottomToTop
+  fullName: SharpSDL3.TTF.Direction.BottomToTop
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Direction.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BottomToTop
+    path: TTF/Direction.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: BottomToTop = 7
+    return:
+      type: SharpSDL3.TTF.Direction
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: SharpSDL3.TTF.Direction
+  commentId: T:SharpSDL3.TTF.Direction
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Direction.html
+  name: Direction
+  nameWithType: Direction
+  fullName: SharpSDL3.TTF.Direction

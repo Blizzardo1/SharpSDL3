@@ -1,0 +1,666 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.KeyboardEvent
+  commentId: T:SharpSDL3.Structs.KeyboardEvent
+  id: KeyboardEvent
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.KeyboardEvent.Down
+  - SharpSDL3.Structs.KeyboardEvent.Key
+  - SharpSDL3.Structs.KeyboardEvent.Mod
+  - SharpSDL3.Structs.KeyboardEvent.Raw
+  - SharpSDL3.Structs.KeyboardEvent.Repeat
+  - SharpSDL3.Structs.KeyboardEvent.Reserved
+  - SharpSDL3.Structs.KeyboardEvent.ScanCode
+  - SharpSDL3.Structs.KeyboardEvent.Timestamp
+  - SharpSDL3.Structs.KeyboardEvent.Type
+  - SharpSDL3.Structs.KeyboardEvent.Which
+  - SharpSDL3.Structs.KeyboardEvent.WindowId
+  langs:
+  - csharp
+  - vb
+  name: KeyboardEvent
+  nameWithType: KeyboardEvent
+  fullName: SharpSDL3.Structs.KeyboardEvent
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyboardEvent
+    path: Structs/KeyboardEvent.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct KeyboardEvent
+    content.vb: Public Structure KeyboardEvent
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.KeyboardEvent.Type
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Type
+  id: Type
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: KeyboardEvent.Type
+  fullName: SharpSDL3.Structs.KeyboardEvent.Type
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type
+    path: Structs/KeyboardEvent.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public EventType Type
+    return:
+      type: SharpSDL3.Enums.EventType
+    content.vb: Public Type As EventType
+- uid: SharpSDL3.Structs.KeyboardEvent.Reserved
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Reserved
+  id: Reserved
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Reserved
+  nameWithType: KeyboardEvent.Reserved
+  fullName: SharpSDL3.Structs.KeyboardEvent.Reserved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved
+    path: Structs/KeyboardEvent.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Reserved
+    return:
+      type: System.UInt32
+    content.vb: Public Reserved As UInteger
+- uid: SharpSDL3.Structs.KeyboardEvent.Timestamp
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Timestamp
+  id: Timestamp
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Timestamp
+  nameWithType: KeyboardEvent.Timestamp
+  fullName: SharpSDL3.Structs.KeyboardEvent.Timestamp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Timestamp
+    path: Structs/KeyboardEvent.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ulong Timestamp
+    return:
+      type: System.UInt64
+    content.vb: Public Timestamp As ULong
+- uid: SharpSDL3.Structs.KeyboardEvent.WindowId
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.WindowId
+  id: WindowId
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: WindowId
+  nameWithType: KeyboardEvent.WindowId
+  fullName: SharpSDL3.Structs.KeyboardEvent.WindowId
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowId
+    path: Structs/KeyboardEvent.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint WindowId
+    return:
+      type: System.UInt32
+    content.vb: Public WindowId As UInteger
+- uid: SharpSDL3.Structs.KeyboardEvent.Which
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Which
+  id: Which
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Which
+  nameWithType: KeyboardEvent.Which
+  fullName: SharpSDL3.Structs.KeyboardEvent.Which
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Which
+    path: Structs/KeyboardEvent.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Which
+    return:
+      type: System.UInt32
+    content.vb: Public Which As UInteger
+- uid: SharpSDL3.Structs.KeyboardEvent.ScanCode
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.ScanCode
+  id: ScanCode
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: ScanCode
+  nameWithType: KeyboardEvent.ScanCode
+  fullName: SharpSDL3.Structs.KeyboardEvent.ScanCode
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ScanCode
+    path: Structs/KeyboardEvent.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ScanCode ScanCode
+    return:
+      type: SharpSDL3.Enums.ScanCode
+    content.vb: Public ScanCode As ScanCode
+- uid: SharpSDL3.Structs.KeyboardEvent.Key
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Key
+  id: Key
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Key
+  nameWithType: KeyboardEvent.Key
+  fullName: SharpSDL3.Structs.KeyboardEvent.Key
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Key
+    path: Structs/KeyboardEvent.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Key
+    return:
+      type: System.UInt32
+    content.vb: Public Key As UInteger
+- uid: SharpSDL3.Structs.KeyboardEvent.Mod
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Mod
+  id: Mod
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Mod
+  nameWithType: KeyboardEvent.Mod
+  fullName: SharpSDL3.Structs.KeyboardEvent.Mod
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mod
+    path: Structs/KeyboardEvent.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public KeyMod Mod
+    return:
+      type: SharpSDL3.Enums.KeyMod
+    content.vb: Public [Mod] As KeyMod
+- uid: SharpSDL3.Structs.KeyboardEvent.Raw
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Raw
+  id: Raw
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Raw
+  nameWithType: KeyboardEvent.Raw
+  fullName: SharpSDL3.Structs.KeyboardEvent.Raw
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Raw
+    path: Structs/KeyboardEvent.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Raw
+    return:
+      type: System.UInt16
+    content.vb: Public Raw As UShort
+- uid: SharpSDL3.Structs.KeyboardEvent.Down
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Down
+  id: Down
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Down
+  nameWithType: KeyboardEvent.Down
+  fullName: SharpSDL3.Structs.KeyboardEvent.Down
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Down
+    path: Structs/KeyboardEvent.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public SdlBool Down
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public Down As SdlBool
+- uid: SharpSDL3.Structs.KeyboardEvent.Repeat
+  commentId: F:SharpSDL3.Structs.KeyboardEvent.Repeat
+  id: Repeat
+  parent: SharpSDL3.Structs.KeyboardEvent
+  langs:
+  - csharp
+  - vb
+  name: Repeat
+  nameWithType: KeyboardEvent.Repeat
+  fullName: SharpSDL3.Structs.KeyboardEvent.Repeat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/KeyboardEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Repeat
+    path: Structs/KeyboardEvent.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public SdlBool Repeat
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public Repeat As SdlBool
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Enums.EventType
+  commentId: T:SharpSDL3.Enums.EventType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.EventType.html
+  name: EventType
+  nameWithType: EventType
+  fullName: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: SharpSDL3.Enums.ScanCode
+  commentId: T:SharpSDL3.Enums.ScanCode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ScanCode.html
+  name: ScanCode
+  nameWithType: ScanCode
+  fullName: SharpSDL3.Enums.ScanCode
+- uid: SharpSDL3.Enums.KeyMod
+  commentId: T:SharpSDL3.Enums.KeyMod
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.KeyMod.html
+  name: KeyMod
+  nameWithType: KeyMod
+  fullName: SharpSDL3.Enums.KeyMod
+- uid: System.UInt16
+  commentId: T:System.UInt16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort
+  nameWithType: ushort
+  fullName: ushort
+  nameWithType.vb: UShort
+  fullName.vb: UShort
+  name.vb: UShort
+- uid: SharpSDL3.Structs.SdlBool
+  commentId: T:SharpSDL3.Structs.SdlBool
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.SdlBool.html
+  name: SdlBool
+  nameWithType: SdlBool
+  fullName: SharpSDL3.Structs.SdlBool

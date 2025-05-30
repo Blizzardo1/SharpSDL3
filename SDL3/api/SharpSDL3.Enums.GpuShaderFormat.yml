@@ -1,0 +1,230 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuShaderFormat
+  commentId: T:SharpSDL3.Enums.GpuShaderFormat
+  id: GpuShaderFormat
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuShaderFormat.Dxbc
+  - SharpSDL3.Enums.GpuShaderFormat.Dxil
+  - SharpSDL3.Enums.GpuShaderFormat.MetalLib
+  - SharpSDL3.Enums.GpuShaderFormat.Msl
+  - SharpSDL3.Enums.GpuShaderFormat.Private
+  - SharpSDL3.Enums.GpuShaderFormat.Spirv
+  langs:
+  - csharp
+  - vb
+  name: GpuShaderFormat
+  nameWithType: GpuShaderFormat
+  fullName: SharpSDL3.Enums.GpuShaderFormat
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuShaderFormat
+    path: Enums/GpuShaderFormat.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum GpuShaderFormat : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum GpuShaderFormat As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.GpuShaderFormat.Private
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.Private
+  id: Private
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: Private
+  nameWithType: GpuShaderFormat.Private
+  fullName: SharpSDL3.Enums.GpuShaderFormat.Private
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Private
+    path: Enums/GpuShaderFormat.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Private = 1
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums.GpuShaderFormat.Spirv
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.Spirv
+  id: Spirv
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: Spirv
+  nameWithType: GpuShaderFormat.Spirv
+  fullName: SharpSDL3.Enums.GpuShaderFormat.Spirv
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Spirv
+    path: Enums/GpuShaderFormat.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Spirv = 2
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums.GpuShaderFormat.Dxbc
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.Dxbc
+  id: Dxbc
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: Dxbc
+  nameWithType: GpuShaderFormat.Dxbc
+  fullName: SharpSDL3.Enums.GpuShaderFormat.Dxbc
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Dxbc
+    path: Enums/GpuShaderFormat.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Dxbc = 4
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums.GpuShaderFormat.Dxil
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.Dxil
+  id: Dxil
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: Dxil
+  nameWithType: GpuShaderFormat.Dxil
+  fullName: SharpSDL3.Enums.GpuShaderFormat.Dxil
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Dxil
+    path: Enums/GpuShaderFormat.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Dxil = 8
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums.GpuShaderFormat.Msl
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.Msl
+  id: Msl
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: Msl
+  nameWithType: GpuShaderFormat.Msl
+  fullName: SharpSDL3.Enums.GpuShaderFormat.Msl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Msl
+    path: Enums/GpuShaderFormat.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Msl = 16
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums.GpuShaderFormat.MetalLib
+  commentId: F:SharpSDL3.Enums.GpuShaderFormat.MetalLib
+  id: MetalLib
+  parent: SharpSDL3.Enums.GpuShaderFormat
+  langs:
+  - csharp
+  - vb
+  name: MetalLib
+  nameWithType: GpuShaderFormat.MetalLib
+  fullName: SharpSDL3.Enums.GpuShaderFormat.MetalLib
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuShaderFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MetalLib
+    path: Enums/GpuShaderFormat.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MetalLib = 32
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuShaderFormat
+  commentId: T:SharpSDL3.Enums.GpuShaderFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuShaderFormat.html
+  name: GpuShaderFormat
+  nameWithType: GpuShaderFormat
+  fullName: SharpSDL3.Enums.GpuShaderFormat

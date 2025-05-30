@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.PackedLayout
+  commentId: T:SharpSDL3.Enums.PackedLayout
+  id: PackedLayout
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.PackedLayout.Layout1010102
+  - SharpSDL3.Enums.PackedLayout.Layout1555
+  - SharpSDL3.Enums.PackedLayout.Layout2101010
+  - SharpSDL3.Enums.PackedLayout.Layout332
+  - SharpSDL3.Enums.PackedLayout.Layout4444
+  - SharpSDL3.Enums.PackedLayout.Layout5551
+  - SharpSDL3.Enums.PackedLayout.Layout565
+  - SharpSDL3.Enums.PackedLayout.Layout8888
+  - SharpSDL3.Enums.PackedLayout.LayoutNone
+  langs:
+  - csharp
+  - vb
+  name: PackedLayout
+  nameWithType: PackedLayout
+  fullName: SharpSDL3.Enums.PackedLayout
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PackedLayout
+    path: Enums/PackedLayout.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum PackedLayout
+    content.vb: Public Enum PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.LayoutNone
+  commentId: F:SharpSDL3.Enums.PackedLayout.LayoutNone
+  id: LayoutNone
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: LayoutNone
+  nameWithType: PackedLayout.LayoutNone
+  fullName: SharpSDL3.Enums.PackedLayout.LayoutNone
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LayoutNone
+    path: Enums/PackedLayout.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LayoutNone = 0
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout332
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout332
+  id: Layout332
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout332
+  nameWithType: PackedLayout.Layout332
+  fullName: SharpSDL3.Enums.PackedLayout.Layout332
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout332
+    path: Enums/PackedLayout.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout332 = 1
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout4444
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout4444
+  id: Layout4444
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout4444
+  nameWithType: PackedLayout.Layout4444
+  fullName: SharpSDL3.Enums.PackedLayout.Layout4444
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout4444
+    path: Enums/PackedLayout.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout4444 = 2
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout1555
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout1555
+  id: Layout1555
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout1555
+  nameWithType: PackedLayout.Layout1555
+  fullName: SharpSDL3.Enums.PackedLayout.Layout1555
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout1555
+    path: Enums/PackedLayout.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout1555 = 3
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout5551
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout5551
+  id: Layout5551
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout5551
+  nameWithType: PackedLayout.Layout5551
+  fullName: SharpSDL3.Enums.PackedLayout.Layout5551
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout5551
+    path: Enums/PackedLayout.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout5551 = 4
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout565
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout565
+  id: Layout565
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout565
+  nameWithType: PackedLayout.Layout565
+  fullName: SharpSDL3.Enums.PackedLayout.Layout565
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout565
+    path: Enums/PackedLayout.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout565 = 5
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout8888
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout8888
+  id: Layout8888
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout8888
+  nameWithType: PackedLayout.Layout8888
+  fullName: SharpSDL3.Enums.PackedLayout.Layout8888
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout8888
+    path: Enums/PackedLayout.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout8888 = 6
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout2101010
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout2101010
+  id: Layout2101010
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout2101010
+  nameWithType: PackedLayout.Layout2101010
+  fullName: SharpSDL3.Enums.PackedLayout.Layout2101010
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout2101010
+    path: Enums/PackedLayout.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout2101010 = 7
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+- uid: SharpSDL3.Enums.PackedLayout.Layout1010102
+  commentId: F:SharpSDL3.Enums.PackedLayout.Layout1010102
+  id: Layout1010102
+  parent: SharpSDL3.Enums.PackedLayout
+  langs:
+  - csharp
+  - vb
+  name: Layout1010102
+  nameWithType: PackedLayout.Layout1010102
+  fullName: SharpSDL3.Enums.PackedLayout.Layout1010102
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedLayout.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layout1010102
+    path: Enums/PackedLayout.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Layout1010102 = 8
+    return:
+      type: SharpSDL3.Enums.PackedLayout
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.PackedLayout
+  commentId: T:SharpSDL3.Enums.PackedLayout
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.PackedLayout.html
+  name: PackedLayout
+  nameWithType: PackedLayout
+  fullName: SharpSDL3.Enums.PackedLayout

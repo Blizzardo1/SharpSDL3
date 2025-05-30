@@ -1,0 +1,591 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.Glyph
+  commentId: T:SharpSDL3.TTF.Glyph
+  id: Glyph
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.Glyph.Advance
+  - SharpSDL3.TTF.Glyph.Bitmap
+  - SharpSDL3.TTF.Glyph.Hinting
+  - SharpSDL3.TTF.Glyph.Index
+  - SharpSDL3.TTF.Glyph.Pixmap
+  - SharpSDL3.TTF.Glyph.Stored
+  - SharpSDL3.TTF.Glyph.SzLeft
+  - SharpSDL3.TTF.Glyph.SzRows
+  - SharpSDL3.TTF.Glyph.SzTop
+  - SharpSDL3.TTF.Glyph.SzWidth
+  langs:
+  - csharp
+  - vb
+  name: Glyph
+  nameWithType: Glyph
+  fullName: SharpSDL3.TTF.Glyph
+  type: Struct
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Glyph
+    path: TTF/Glyph.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public struct Glyph
+    content.vb: Public Structure Glyph
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.TTF.Glyph.Stored
+  commentId: F:SharpSDL3.TTF.Glyph.Stored
+  id: Stored
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Stored
+  nameWithType: Glyph.Stored
+  fullName: SharpSDL3.TTF.Glyph.Stored
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Stored
+    path: TTF/Glyph.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Stored
+    return:
+      type: System.Int32
+    content.vb: Public Stored As Integer
+- uid: SharpSDL3.TTF.Glyph.Index
+  commentId: F:SharpSDL3.TTF.Glyph.Index
+  id: Index
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: Glyph.Index
+  fullName: SharpSDL3.TTF.Glyph.Index
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index
+    path: TTF/Glyph.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public uint Index
+    return:
+      type: System.UInt32
+    content.vb: Public Index As UInteger
+- uid: SharpSDL3.TTF.Glyph.Bitmap
+  commentId: F:SharpSDL3.TTF.Glyph.Bitmap
+  id: Bitmap
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Bitmap
+  nameWithType: Glyph.Bitmap
+  fullName: SharpSDL3.TTF.Glyph.Bitmap
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bitmap
+    path: TTF/Glyph.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public Image Bitmap
+    return:
+      type: SharpSDL3.TTF.Image
+    content.vb: Public Bitmap As Image
+- uid: SharpSDL3.TTF.Glyph.Pixmap
+  commentId: F:SharpSDL3.TTF.Glyph.Pixmap
+  id: Pixmap
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Pixmap
+  nameWithType: Glyph.Pixmap
+  fullName: SharpSDL3.TTF.Glyph.Pixmap
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pixmap
+    path: TTF/Glyph.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public Image Pixmap
+    return:
+      type: SharpSDL3.TTF.Image
+    content.vb: Public Pixmap As Image
+- uid: SharpSDL3.TTF.Glyph.SzLeft
+  commentId: F:SharpSDL3.TTF.Glyph.SzLeft
+  id: SzLeft
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: SzLeft
+  nameWithType: Glyph.SzLeft
+  fullName: SharpSDL3.TTF.Glyph.SzLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SzLeft
+    path: TTF/Glyph.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int SzLeft
+    return:
+      type: System.Int32
+    content.vb: Public SzLeft As Integer
+- uid: SharpSDL3.TTF.Glyph.SzTop
+  commentId: F:SharpSDL3.TTF.Glyph.SzTop
+  id: SzTop
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: SzTop
+  nameWithType: Glyph.SzTop
+  fullName: SharpSDL3.TTF.Glyph.SzTop
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SzTop
+    path: TTF/Glyph.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int SzTop
+    return:
+      type: System.Int32
+    content.vb: Public SzTop As Integer
+- uid: SharpSDL3.TTF.Glyph.SzWidth
+  commentId: F:SharpSDL3.TTF.Glyph.SzWidth
+  id: SzWidth
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: SzWidth
+  nameWithType: Glyph.SzWidth
+  fullName: SharpSDL3.TTF.Glyph.SzWidth
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SzWidth
+    path: TTF/Glyph.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int SzWidth
+    return:
+      type: System.Int32
+    content.vb: Public SzWidth As Integer
+- uid: SharpSDL3.TTF.Glyph.SzRows
+  commentId: F:SharpSDL3.TTF.Glyph.SzRows
+  id: SzRows
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: SzRows
+  nameWithType: Glyph.SzRows
+  fullName: SharpSDL3.TTF.Glyph.SzRows
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SzRows
+    path: TTF/Glyph.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int SzRows
+    return:
+      type: System.Int32
+    content.vb: Public SzRows As Integer
+- uid: SharpSDL3.TTF.Glyph.Advance
+  commentId: F:SharpSDL3.TTF.Glyph.Advance
+  id: Advance
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Advance
+  nameWithType: Glyph.Advance
+  fullName: SharpSDL3.TTF.Glyph.Advance
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Advance
+    path: TTF/Glyph.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Advance
+    return:
+      type: System.Int32
+    content.vb: Public Advance As Integer
+- uid: SharpSDL3.TTF.Glyph.Hinting
+  commentId: F:SharpSDL3.TTF.Glyph.Hinting
+  id: Hinting
+  parent: SharpSDL3.TTF.Glyph
+  langs:
+  - csharp
+  - vb
+  name: Hinting
+  nameWithType: Glyph.Hinting
+  fullName: SharpSDL3.TTF.Glyph.Hinting
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Glyph.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hinting
+    path: TTF/Glyph.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public GlyphUnion Hinting
+    return:
+      type: SharpSDL3.TTF.GlyphUnion
+    content.vb: Public Hinting As GlyphUnion
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: SharpSDL3.TTF.Image
+  commentId: T:SharpSDL3.TTF.Image
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Image.html
+  name: Image
+  nameWithType: Image
+  fullName: SharpSDL3.TTF.Image
+- uid: SharpSDL3.TTF.GlyphUnion
+  commentId: T:SharpSDL3.TTF.GlyphUnion
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GlyphUnion.html
+  name: GlyphUnion
+  nameWithType: GlyphUnion
+  fullName: SharpSDL3.TTF.GlyphUnion

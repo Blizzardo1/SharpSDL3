@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.ThreadPriority
+  commentId: T:SharpSDL3.Enums.ThreadPriority
+  id: ThreadPriority
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.ThreadPriority.High
+  - SharpSDL3.Enums.ThreadPriority.Low
+  - SharpSDL3.Enums.ThreadPriority.Normal
+  - SharpSDL3.Enums.ThreadPriority.TimeCritical
+  langs:
+  - csharp
+  - vb
+  name: ThreadPriority
+  nameWithType: ThreadPriority
+  fullName: SharpSDL3.Enums.ThreadPriority
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/ThreadPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ThreadPriority
+    path: Enums/ThreadPriority.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum ThreadPriority
+    content.vb: Public Enum ThreadPriority
+- uid: SharpSDL3.Enums.ThreadPriority.Low
+  commentId: F:SharpSDL3.Enums.ThreadPriority.Low
+  id: Low
+  parent: SharpSDL3.Enums.ThreadPriority
+  langs:
+  - csharp
+  - vb
+  name: Low
+  nameWithType: ThreadPriority.Low
+  fullName: SharpSDL3.Enums.ThreadPriority.Low
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Low
+    path: Enums/ThreadPriority.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Low = 0
+    return:
+      type: SharpSDL3.Enums.ThreadPriority
+- uid: SharpSDL3.Enums.ThreadPriority.Normal
+  commentId: F:SharpSDL3.Enums.ThreadPriority.Normal
+  id: Normal
+  parent: SharpSDL3.Enums.ThreadPriority
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: ThreadPriority.Normal
+  fullName: SharpSDL3.Enums.ThreadPriority.Normal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Normal
+    path: Enums/ThreadPriority.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Normal = 1
+    return:
+      type: SharpSDL3.Enums.ThreadPriority
+- uid: SharpSDL3.Enums.ThreadPriority.High
+  commentId: F:SharpSDL3.Enums.ThreadPriority.High
+  id: High
+  parent: SharpSDL3.Enums.ThreadPriority
+  langs:
+  - csharp
+  - vb
+  name: High
+  nameWithType: ThreadPriority.High
+  fullName: SharpSDL3.Enums.ThreadPriority.High
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: High
+    path: Enums/ThreadPriority.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: High = 2
+    return:
+      type: SharpSDL3.Enums.ThreadPriority
+- uid: SharpSDL3.Enums.ThreadPriority.TimeCritical
+  commentId: F:SharpSDL3.Enums.ThreadPriority.TimeCritical
+  id: TimeCritical
+  parent: SharpSDL3.Enums.ThreadPriority
+  langs:
+  - csharp
+  - vb
+  name: TimeCritical
+  nameWithType: ThreadPriority.TimeCritical
+  fullName: SharpSDL3.Enums.ThreadPriority.TimeCritical
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TimeCritical
+    path: Enums/ThreadPriority.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TimeCritical = 3
+    return:
+      type: SharpSDL3.Enums.ThreadPriority
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.ThreadPriority
+  commentId: T:SharpSDL3.Enums.ThreadPriority
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ThreadPriority.html
+  name: ThreadPriority
+  nameWithType: ThreadPriority
+  fullName: SharpSDL3.Enums.ThreadPriority

@@ -1,0 +1,875 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  id: SharpSDL3.Mixer
+  children:
+  - SharpSDL3.Mixer.AudioDeviceId
+  - SharpSDL3.Mixer.Chunk
+  - SharpSDL3.Mixer.Fading
+  - SharpSDL3.Mixer.Mixer
+  - SharpSDL3.Mixer.Mixer.MixInit
+  - SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+  - SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+  - SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+  - SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+  - SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  - SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+  - SharpSDL3.Mixer.Music
+  - SharpSDL3.Mixer.MusicApi
+  - SharpSDL3.Mixer.MusicInterface
+  - SharpSDL3.Mixer.MusicInterface.CloseDelegate
+  - SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  - SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+  - SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+  - SharpSDL3.Mixer.MusicInterface.DurationDelegate
+  - SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+  - SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+  - SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  - SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+  - SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+  - SharpSDL3.Mixer.MusicInterface.JumpDelegate
+  - SharpSDL3.Mixer.MusicInterface.LoadDelegate
+  - SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+  - SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+  - SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+  - SharpSDL3.Mixer.MusicInterface.OpenDelegate
+  - SharpSDL3.Mixer.MusicInterface.PauseDelegate
+  - SharpSDL3.Mixer.MusicInterface.PlayDelegate
+  - SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+  - SharpSDL3.Mixer.MusicInterface.SeekDelegate
+  - SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+  - SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+  - SharpSDL3.Mixer.MusicInterface.StopDelegate
+  - SharpSDL3.Mixer.MusicInterface.TellDelegate
+  - SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+  - SharpSDL3.Mixer.MusicMetaTag
+  - SharpSDL3.Mixer.MusicType
+  langs:
+  - csharp
+  - vb
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  type: Namespace
+  assemblies:
+  - SharpSDL3
+references:
+- uid: SharpSDL3.Mixer.AudioDeviceId
+  commentId: T:SharpSDL3.Mixer.AudioDeviceId
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.AudioDeviceId.html
+  name: AudioDeviceId
+  nameWithType: AudioDeviceId
+  fullName: SharpSDL3.Mixer.AudioDeviceId
+- uid: SharpSDL3.Mixer.Chunk
+  commentId: T:SharpSDL3.Mixer.Chunk
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Chunk.html
+  name: Chunk
+  nameWithType: Chunk
+  fullName: SharpSDL3.Mixer.Chunk
+- uid: SharpSDL3.Mixer.Fading
+  commentId: T:SharpSDL3.Mixer.Fading
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Fading.html
+  name: Fading
+  nameWithType: Fading
+  fullName: SharpSDL3.Mixer.Fading
+- uid: SharpSDL3.Mixer.Mixer
+  commentId: T:SharpSDL3.Mixer.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer
+  nameWithType: Mixer
+  fullName: SharpSDL3.Mixer.Mixer
+- uid: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.Mix_ChannelFinishedCallback
+  nameWithType: Mixer.Mix_ChannelFinishedCallback
+  fullName: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+    name: Mix_ChannelFinishedCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+    name: Mix_ChannelFinishedCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback.html
+- uid: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.Mix_EachSoundFontCallback
+  nameWithType: Mixer.Mix_EachSoundFontCallback
+  fullName: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+    name: Mix_EachSoundFontCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+    name: Mix_EachSoundFontCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback.html
+- uid: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.Mix_EffectDone_t
+  nameWithType: Mixer.Mix_EffectDone_t
+  fullName: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+    name: Mix_EffectDone_t
+    href: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+    name: Mix_EffectDone_t
+    href: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.html
+- uid: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.Mix_EffectFunc_t
+  nameWithType: Mixer.Mix_EffectFunc_t
+  fullName: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+    name: Mix_EffectFunc_t
+    href: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+    name: Mix_EffectFunc_t
+    href: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.html
+- uid: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.Mix_MixCallback
+  nameWithType: Mixer.Mix_MixCallback
+  fullName: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+    name: Mix_MixCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_MixCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+    name: Mix_MixCallback
+    href: SharpSDL3.Mixer.Mixer.Mix_MixCallback.html
+- uid: SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+  commentId: T:SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.MusicFinishedCallback
+  nameWithType: Mixer.MusicFinishedCallback
+  fullName: SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+    name: MusicFinishedCallback
+    href: SharpSDL3.Mixer.Mixer.MusicFinishedCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+    name: MusicFinishedCallback
+    href: SharpSDL3.Mixer.Mixer.MusicFinishedCallback.html
+- uid: SharpSDL3.Mixer.Mixer.MixInit
+  commentId: T:SharpSDL3.Mixer.Mixer.MixInit
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Mixer.html
+  name: Mixer.MixInit
+  nameWithType: Mixer.MixInit
+  fullName: SharpSDL3.Mixer.Mixer.MixInit
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.MixInit
+    name: MixInit
+    href: SharpSDL3.Mixer.Mixer.MixInit.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.Mixer.html
+  - name: .
+  - uid: SharpSDL3.Mixer.Mixer.MixInit
+    name: MixInit
+    href: SharpSDL3.Mixer.Mixer.MixInit.html
+- uid: SharpSDL3.Mixer.Music
+  commentId: T:SharpSDL3.Mixer.Music
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Music.html
+  name: Music
+  nameWithType: Music
+  fullName: SharpSDL3.Mixer.Music
+- uid: SharpSDL3.Mixer.MusicApi
+  commentId: T:SharpSDL3.Mixer.MusicApi
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicApi.html
+  name: MusicApi
+  nameWithType: MusicApi
+  fullName: SharpSDL3.Mixer.MusicApi
+- uid: SharpSDL3.Mixer.MusicInterface
+  commentId: T:SharpSDL3.Mixer.MusicInterface
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface
+  nameWithType: MusicInterface
+  fullName: SharpSDL3.Mixer.MusicInterface
+- uid: SharpSDL3.Mixer.MusicInterface.LoadDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.LoadDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.LoadDelegate
+  nameWithType: MusicInterface.LoadDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.LoadDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoadDelegate
+    name: LoadDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoadDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoadDelegate
+    name: LoadDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoadDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.OpenDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.OpenDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.OpenDelegate
+  nameWithType: MusicInterface.OpenDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.OpenDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.OpenDelegate
+    name: OpenDelegate
+    href: SharpSDL3.Mixer.MusicInterface.OpenDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.OpenDelegate
+    name: OpenDelegate
+    href: SharpSDL3.Mixer.MusicInterface.OpenDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.CreateFromIODelegate
+  nameWithType: MusicInterface.CreateFromIODelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+    name: CreateFromIODelegate
+    href: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+    name: CreateFromIODelegate
+    href: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.CreateFromFileDelegate
+  nameWithType: MusicInterface.CreateFromFileDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+    name: CreateFromFileDelegate
+    href: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+    name: CreateFromFileDelegate
+    href: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.SetVolumeDelegate
+  nameWithType: MusicInterface.SetVolumeDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+    name: SetVolumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+    name: SetVolumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.GetVolumeDelegate
+  nameWithType: MusicInterface.GetVolumeDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+    name: GetVolumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+    name: GetVolumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.PlayDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.PlayDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.PlayDelegate
+  nameWithType: MusicInterface.PlayDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.PlayDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.PlayDelegate
+    name: PlayDelegate
+    href: SharpSDL3.Mixer.MusicInterface.PlayDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.PlayDelegate
+    name: PlayDelegate
+    href: SharpSDL3.Mixer.MusicInterface.PlayDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.IsPlayingDelegate
+  nameWithType: MusicInterface.IsPlayingDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+    name: IsPlayingDelegate
+    href: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+    name: IsPlayingDelegate
+    href: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.GetAudioDelegate
+  nameWithType: MusicInterface.GetAudioDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+    name: GetAudioDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+    name: GetAudioDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.JumpDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.JumpDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.JumpDelegate
+  nameWithType: MusicInterface.JumpDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.JumpDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.JumpDelegate
+    name: JumpDelegate
+    href: SharpSDL3.Mixer.MusicInterface.JumpDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.JumpDelegate
+    name: JumpDelegate
+    href: SharpSDL3.Mixer.MusicInterface.JumpDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.SeekDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.SeekDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.SeekDelegate
+  nameWithType: MusicInterface.SeekDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.SeekDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.SeekDelegate
+    name: SeekDelegate
+    href: SharpSDL3.Mixer.MusicInterface.SeekDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.SeekDelegate
+    name: SeekDelegate
+    href: SharpSDL3.Mixer.MusicInterface.SeekDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.TellDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.TellDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.TellDelegate
+  nameWithType: MusicInterface.TellDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.TellDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.TellDelegate
+    name: TellDelegate
+    href: SharpSDL3.Mixer.MusicInterface.TellDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.TellDelegate
+    name: TellDelegate
+    href: SharpSDL3.Mixer.MusicInterface.TellDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.DurationDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.DurationDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.DurationDelegate
+  nameWithType: MusicInterface.DurationDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.DurationDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.DurationDelegate
+    name: DurationDelegate
+    href: SharpSDL3.Mixer.MusicInterface.DurationDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.DurationDelegate
+    name: DurationDelegate
+    href: SharpSDL3.Mixer.MusicInterface.DurationDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.LoopStartDelegate
+  nameWithType: MusicInterface.LoopStartDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+    name: LoopStartDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+    name: LoopStartDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.LoopEndDelegate
+  nameWithType: MusicInterface.LoopEndDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+    name: LoopEndDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+    name: LoopEndDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.LoopLengthDelegate
+  nameWithType: MusicInterface.LoopLengthDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+    name: LoopLengthDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+    name: LoopLengthDelegate
+    href: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.GetMetaTagDelegate
+  nameWithType: MusicInterface.GetMetaTagDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+    name: GetMetaTagDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+    name: GetMetaTagDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.GetNumTracksDelegate
+  nameWithType: MusicInterface.GetNumTracksDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+    name: GetNumTracksDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+    name: GetNumTracksDelegate
+    href: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.StartTrackDelegate
+  nameWithType: MusicInterface.StartTrackDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+    name: StartTrackDelegate
+    href: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+    name: StartTrackDelegate
+    href: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.PauseDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.PauseDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.PauseDelegate
+  nameWithType: MusicInterface.PauseDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.PauseDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.PauseDelegate
+    name: PauseDelegate
+    href: SharpSDL3.Mixer.MusicInterface.PauseDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.PauseDelegate
+    name: PauseDelegate
+    href: SharpSDL3.Mixer.MusicInterface.PauseDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.ResumeDelegate
+  nameWithType: MusicInterface.ResumeDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+    name: ResumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.ResumeDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+    name: ResumeDelegate
+    href: SharpSDL3.Mixer.MusicInterface.ResumeDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.StopDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.StopDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.StopDelegate
+  nameWithType: MusicInterface.StopDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.StopDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.StopDelegate
+    name: StopDelegate
+    href: SharpSDL3.Mixer.MusicInterface.StopDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.StopDelegate
+    name: StopDelegate
+    href: SharpSDL3.Mixer.MusicInterface.StopDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.DeleteDelegate
+  nameWithType: MusicInterface.DeleteDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+    name: DeleteDelegate
+    href: SharpSDL3.Mixer.MusicInterface.DeleteDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+    name: DeleteDelegate
+    href: SharpSDL3.Mixer.MusicInterface.DeleteDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.CloseDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.CloseDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.CloseDelegate
+  nameWithType: MusicInterface.CloseDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.CloseDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CloseDelegate
+    name: CloseDelegate
+    href: SharpSDL3.Mixer.MusicInterface.CloseDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.CloseDelegate
+    name: CloseDelegate
+    href: SharpSDL3.Mixer.MusicInterface.CloseDelegate.html
+- uid: SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicInterface.html
+  name: MusicInterface.UnloadDelegate
+  nameWithType: MusicInterface.UnloadDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+  spec.csharp:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+    name: UnloadDelegate
+    href: SharpSDL3.Mixer.MusicInterface.UnloadDelegate.html
+  spec.vb:
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    href: SharpSDL3.Mixer.MusicInterface.html
+  - name: .
+  - uid: SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+    name: UnloadDelegate
+    href: SharpSDL3.Mixer.MusicInterface.UnloadDelegate.html
+- uid: SharpSDL3.Mixer.MusicMetaTag
+  commentId: T:SharpSDL3.Mixer.MusicMetaTag
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicMetaTag.html
+  name: MusicMetaTag
+  nameWithType: MusicMetaTag
+  fullName: SharpSDL3.Mixer.MusicMetaTag
+- uid: SharpSDL3.Mixer.MusicType
+  commentId: T:SharpSDL3.Mixer.MusicType
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.MusicType.html
+  name: MusicType
+  nameWithType: MusicType
+  fullName: SharpSDL3.Mixer.MusicType
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html

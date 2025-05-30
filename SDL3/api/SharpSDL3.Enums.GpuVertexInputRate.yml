@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuVertexInputRate
+  commentId: T:SharpSDL3.Enums.GpuVertexInputRate
+  id: GpuVertexInputRate
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuVertexInputRate.Instance
+  - SharpSDL3.Enums.GpuVertexInputRate.Vertex
+  langs:
+  - csharp
+  - vb
+  name: GpuVertexInputRate
+  nameWithType: GpuVertexInputRate
+  fullName: SharpSDL3.Enums.GpuVertexInputRate
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexInputRate.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuVertexInputRate
+    path: Enums/GpuVertexInputRate.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuVertexInputRate
+    content.vb: Public Enum GpuVertexInputRate
+- uid: SharpSDL3.Enums.GpuVertexInputRate.Vertex
+  commentId: F:SharpSDL3.Enums.GpuVertexInputRate.Vertex
+  id: Vertex
+  parent: SharpSDL3.Enums.GpuVertexInputRate
+  langs:
+  - csharp
+  - vb
+  name: Vertex
+  nameWithType: GpuVertexInputRate.Vertex
+  fullName: SharpSDL3.Enums.GpuVertexInputRate.Vertex
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexInputRate.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Vertex
+    path: Enums/GpuVertexInputRate.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Vertex = 0
+    return:
+      type: SharpSDL3.Enums.GpuVertexInputRate
+- uid: SharpSDL3.Enums.GpuVertexInputRate.Instance
+  commentId: F:SharpSDL3.Enums.GpuVertexInputRate.Instance
+  id: Instance
+  parent: SharpSDL3.Enums.GpuVertexInputRate
+  langs:
+  - csharp
+  - vb
+  name: Instance
+  nameWithType: GpuVertexInputRate.Instance
+  fullName: SharpSDL3.Enums.GpuVertexInputRate.Instance
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexInputRate.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Instance
+    path: Enums/GpuVertexInputRate.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Instance = 1
+    return:
+      type: SharpSDL3.Enums.GpuVertexInputRate
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuVertexInputRate
+  commentId: T:SharpSDL3.Enums.GpuVertexInputRate
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuVertexInputRate.html
+  name: GpuVertexInputRate
+  nameWithType: GpuVertexInputRate
+  fullName: SharpSDL3.Enums.GpuVertexInputRate

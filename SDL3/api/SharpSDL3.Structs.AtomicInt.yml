@@ -1,0 +1,1429 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.AtomicInt
+  commentId: T:SharpSDL3.Structs.AtomicInt
+  id: AtomicInt
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.AtomicInt.Equals(System.Object)
+  - SharpSDL3.Structs.AtomicInt.GetHashCode
+  - SharpSDL3.Structs.AtomicInt.Value
+  - SharpSDL3.Structs.AtomicInt.op_Addition(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_BitwiseAnd(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_BitwiseOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Decrement(SharpSDL3.Structs.AtomicInt)
+  - SharpSDL3.Structs.AtomicInt.op_Division(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Equality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_ExclusiveOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_GreaterThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Implicit(SharpSDL3.Structs.AtomicInt)~System.Int32
+  - SharpSDL3.Structs.AtomicInt.op_Implicit(System.Int32)~SharpSDL3.Structs.AtomicInt
+  - SharpSDL3.Structs.AtomicInt.op_Increment(SharpSDL3.Structs.AtomicInt)
+  - SharpSDL3.Structs.AtomicInt.op_Inequality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_LeftShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_LessThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Modulus(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Multiply(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_RightShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  - SharpSDL3.Structs.AtomicInt.op_Subtraction(SharpSDL3.Structs.AtomicInt,System.Int32)
+  langs:
+  - csharp
+  - vb
+  name: AtomicInt
+  nameWithType: AtomicInt
+  fullName: SharpSDL3.Structs.AtomicInt
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AtomicInt
+    path: Structs/AtomicInt.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct AtomicInt
+    content.vb: Public Structure AtomicInt
+  inheritedMembers:
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.AtomicInt.Value
+  commentId: F:SharpSDL3.Structs.AtomicInt.Value
+  id: Value
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: AtomicInt.Value
+  fullName: SharpSDL3.Structs.AtomicInt.Value
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Value
+    path: Structs/AtomicInt.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int Value
+    return:
+      type: System.Int32
+    content.vb: Public Value As Integer
+- uid: SharpSDL3.Structs.AtomicInt.op_Implicit(SharpSDL3.Structs.AtomicInt)~System.Int32
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Implicit(SharpSDL3.Structs.AtomicInt)~System.Int32
+  id: op_Implicit(SharpSDL3.Structs.AtomicInt)~System.Int32
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: implicit operator int(AtomicInt)
+  nameWithType: AtomicInt.implicit operator int(AtomicInt)
+  fullName: SharpSDL3.Structs.AtomicInt.implicit operator int(SharpSDL3.Structs.AtomicInt)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Implicit
+    path: Structs/AtomicInt.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static implicit operator int(AtomicInt atomicInt)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    return:
+      type: System.Int32
+    content.vb: Public Shared Widening Operator CType(atomicInt As AtomicInt) As Integer
+  overload: SharpSDL3.Structs.AtomicInt.op_Implicit*
+  nameWithType.vb: AtomicInt.CType(AtomicInt)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.CType(SharpSDL3.Structs.AtomicInt)
+  name.vb: CType(AtomicInt)
+- uid: SharpSDL3.Structs.AtomicInt.op_Implicit(System.Int32)~SharpSDL3.Structs.AtomicInt
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Implicit(System.Int32)~SharpSDL3.Structs.AtomicInt
+  id: op_Implicit(System.Int32)~SharpSDL3.Structs.AtomicInt
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: implicit operator AtomicInt(int)
+  nameWithType: AtomicInt.implicit operator AtomicInt(int)
+  fullName: SharpSDL3.Structs.AtomicInt.implicit operator SharpSDL3.Structs.AtomicInt(int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Implicit
+    path: Structs/AtomicInt.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static implicit operator AtomicInt(int value)
+    parameters:
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Widening Operator CType(value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Implicit*
+  nameWithType.vb: AtomicInt.CType(Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.CType(Integer)
+  name.vb: CType(Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_Increment(SharpSDL3.Structs.AtomicInt)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Increment(SharpSDL3.Structs.AtomicInt)
+  id: op_Increment(SharpSDL3.Structs.AtomicInt)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator ++(AtomicInt)
+  nameWithType: AtomicInt.operator ++(AtomicInt)
+  fullName: SharpSDL3.Structs.AtomicInt.operator ++(SharpSDL3.Structs.AtomicInt)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Increment
+    path: Structs/AtomicInt.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator ++(AtomicInt atomicInt)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Function op_Increment(atomicInt As AtomicInt) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Increment*
+  nameWithType.vb: AtomicInt.op_Increment(AtomicInt)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.op_Increment(SharpSDL3.Structs.AtomicInt)
+  name.vb: op_Increment(AtomicInt)
+- uid: SharpSDL3.Structs.AtomicInt.op_Decrement(SharpSDL3.Structs.AtomicInt)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Decrement(SharpSDL3.Structs.AtomicInt)
+  id: op_Decrement(SharpSDL3.Structs.AtomicInt)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator --(AtomicInt)
+  nameWithType: AtomicInt.operator --(AtomicInt)
+  fullName: SharpSDL3.Structs.AtomicInt.operator --(SharpSDL3.Structs.AtomicInt)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Decrement
+    path: Structs/AtomicInt.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator --(AtomicInt atomicInt)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Function op_Decrement(atomicInt As AtomicInt) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Decrement*
+  nameWithType.vb: AtomicInt.op_Decrement(AtomicInt)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.op_Decrement(SharpSDL3.Structs.AtomicInt)
+  name.vb: op_Decrement(AtomicInt)
+- uid: SharpSDL3.Structs.AtomicInt.op_Addition(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Addition(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Addition(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator +(AtomicInt, int)
+  nameWithType: AtomicInt.operator +(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator +(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Addition
+    path: Structs/AtomicInt.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator +(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator +(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Addition*
+  nameWithType.vb: AtomicInt.+(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.+(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: +(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_Subtraction(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Subtraction(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Subtraction(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator -(AtomicInt, int)
+  nameWithType: AtomicInt.operator -(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator -(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Subtraction
+    path: Structs/AtomicInt.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator -(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator -(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Subtraction*
+  nameWithType.vb: AtomicInt.-(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.-(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: -(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_Multiply(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Multiply(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Multiply(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator *(AtomicInt, int)
+  nameWithType: AtomicInt.operator *(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator *(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Multiply
+    path: Structs/AtomicInt.cs
+    startLine: 36
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator *(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator *(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Multiply*
+  nameWithType.vb: AtomicInt.*(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.*(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: '*(AtomicInt, Integer)'
+- uid: SharpSDL3.Structs.AtomicInt.op_Division(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Division(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Division(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator /(AtomicInt, int)
+  nameWithType: AtomicInt.operator /(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator /(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Division
+    path: Structs/AtomicInt.cs
+    startLine: 41
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator /(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator /(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Division*
+  nameWithType.vb: AtomicInt./(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt./(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: /(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_Modulus(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Modulus(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Modulus(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator %(AtomicInt, int)
+  nameWithType: AtomicInt.operator %(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator %(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Modulus
+    path: Structs/AtomicInt.cs
+    startLine: 46
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator %(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator Mod(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_Modulus*
+  nameWithType.vb: AtomicInt.Mod(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Mod(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: Mod(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_BitwiseAnd(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_BitwiseAnd(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_BitwiseAnd(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator &(AtomicInt, int)
+  nameWithType: AtomicInt.operator &(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator &(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_BitwiseAnd
+    path: Structs/AtomicInt.cs
+    startLine: 51
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator &(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator And(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_BitwiseAnd*
+  nameWithType.vb: AtomicInt.And(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.And(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: And(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_BitwiseOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_BitwiseOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_BitwiseOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator |(AtomicInt, int)
+  nameWithType: AtomicInt.operator |(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator |(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_BitwiseOr
+    path: Structs/AtomicInt.cs
+    startLine: 56
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator |(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator Or(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_BitwiseOr*
+  nameWithType.vb: AtomicInt.Or(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Or(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: Or(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_ExclusiveOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_ExclusiveOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_ExclusiveOr(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator ^(AtomicInt, int)
+  nameWithType: AtomicInt.operator ^(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator ^(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_ExclusiveOr
+    path: Structs/AtomicInt.cs
+    startLine: 61
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator ^(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator Xor(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_ExclusiveOr*
+  nameWithType.vb: AtomicInt.Xor(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Xor(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: Xor(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_LeftShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_LeftShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_LeftShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator <<(AtomicInt, int)
+  nameWithType: AtomicInt.operator <<(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator <<(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_LeftShift
+    path: Structs/AtomicInt.cs
+    startLine: 66
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator <<(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator <<(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_LeftShift*
+  nameWithType.vb: AtomicInt.<<(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<<(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: <<(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_RightShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_RightShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_RightShift(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator >>(AtomicInt, int)
+  nameWithType: AtomicInt.operator >>(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator >>(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_RightShift
+    path: Structs/AtomicInt.cs
+    startLine: 71
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static AtomicInt operator >>(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: SharpSDL3.Structs.AtomicInt
+    content.vb: Public Shared Operator >>(atomicInt As AtomicInt, value As Integer) As AtomicInt
+  overload: SharpSDL3.Structs.AtomicInt.op_RightShift*
+  nameWithType.vb: AtomicInt.>>(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>>(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: '>>(AtomicInt, Integer)'
+- uid: SharpSDL3.Structs.AtomicInt.op_Equality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Equality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Equality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator ==(AtomicInt, int)
+  nameWithType: AtomicInt.operator ==(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator ==(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Equality
+    path: Structs/AtomicInt.cs
+    startLine: 76
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator ==(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_Equality*
+  nameWithType.vb: AtomicInt.=(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.=(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: =(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_Inequality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_Inequality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_Inequality(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator !=(AtomicInt, int)
+  nameWithType: AtomicInt.operator !=(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator !=(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Inequality
+    path: Structs/AtomicInt.cs
+    startLine: 80
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator !=(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_Inequality*
+  nameWithType.vb: AtomicInt.<>(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<>(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: <>(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_GreaterThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_GreaterThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_GreaterThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator >(AtomicInt, int)
+  nameWithType: AtomicInt.operator >(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator >(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_GreaterThan
+    path: Structs/AtomicInt.cs
+    startLine: 84
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator >(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator >(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_GreaterThan*
+  nameWithType.vb: AtomicInt.>(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: '>(AtomicInt, Integer)'
+- uid: SharpSDL3.Structs.AtomicInt.op_LessThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_LessThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_LessThan(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator <(AtomicInt, int)
+  nameWithType: AtomicInt.operator <(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator <(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_LessThan
+    path: Structs/AtomicInt.cs
+    startLine: 88
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator <(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_LessThan*
+  nameWithType.vb: AtomicInt.<(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: <(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_GreaterThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator >=(AtomicInt, int)
+  nameWithType: AtomicInt.operator >=(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator >=(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_GreaterThanOrEqual
+    path: Structs/AtomicInt.cs
+    startLine: 92
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator >=(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator >=(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual*
+  nameWithType.vb: AtomicInt.>=(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>=(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: '>=(AtomicInt, Integer)'
+- uid: SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  commentId: M:SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  id: op_LessThanOrEqual(SharpSDL3.Structs.AtomicInt,System.Int32)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: operator <=(AtomicInt, int)
+  nameWithType: AtomicInt.operator <=(AtomicInt, int)
+  fullName: SharpSDL3.Structs.AtomicInt.operator <=(SharpSDL3.Structs.AtomicInt, int)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_LessThanOrEqual
+    path: Structs/AtomicInt.cs
+    startLine: 96
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator <=(AtomicInt atomicInt, int value)
+    parameters:
+    - id: atomicInt
+      type: SharpSDL3.Structs.AtomicInt
+    - id: value
+      type: System.Int32
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <=(atomicInt As AtomicInt, value As Integer) As Boolean
+  overload: SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual*
+  nameWithType.vb: AtomicInt.<=(AtomicInt, Integer)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<=(SharpSDL3.Structs.AtomicInt, Integer)
+  name.vb: <=(AtomicInt, Integer)
+- uid: SharpSDL3.Structs.AtomicInt.Equals(System.Object)
+  commentId: M:SharpSDL3.Structs.AtomicInt.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: AtomicInt.Equals(object?)
+  fullName: SharpSDL3.Structs.AtomicInt.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Equals
+    path: Structs/AtomicInt.cs
+    startLine: 100
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override readonly bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: SharpSDL3.Structs.AtomicInt.Equals*
+  nameWithType.vb: AtomicInt.Equals(Object)
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Equals(Object)
+  name.vb: Equals(Object)
+- uid: SharpSDL3.Structs.AtomicInt.GetHashCode
+  commentId: M:SharpSDL3.Structs.AtomicInt.GetHashCode
+  id: GetHashCode
+  parent: SharpSDL3.Structs.AtomicInt
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: AtomicInt.GetHashCode()
+  fullName: SharpSDL3.Structs.AtomicInt.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/AtomicInt.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetHashCode
+    path: Structs/AtomicInt.cs
+    startLine: 107
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override readonly int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: SharpSDL3.Structs.AtomicInt.GetHashCode*
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SharpSDL3.Structs.AtomicInt.op_Implicit*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Implicit
+  name: implicit operator
+  nameWithType: AtomicInt.implicit operator
+  fullName: SharpSDL3.Structs.AtomicInt.implicit operator
+  nameWithType.vb: AtomicInt.CType
+  fullName.vb: SharpSDL3.Structs.AtomicInt.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: SharpSDL3.Structs.AtomicInt
+  commentId: T:SharpSDL3.Structs.AtomicInt
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.AtomicInt.html
+  name: AtomicInt
+  nameWithType: AtomicInt
+  fullName: SharpSDL3.Structs.AtomicInt
+- uid: SharpSDL3.Structs.AtomicInt.op_Increment*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Increment
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Increment_SharpSDL3_Structs_AtomicInt_
+  name: operator ++
+  nameWithType: AtomicInt.operator ++
+  fullName: SharpSDL3.Structs.AtomicInt.operator ++
+  nameWithType.vb: AtomicInt.op_Increment
+  fullName.vb: SharpSDL3.Structs.AtomicInt.op_Increment
+  name.vb: op_Increment
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Increment*
+    name: ++
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Increment_SharpSDL3_Structs_AtomicInt_
+- uid: SharpSDL3.Structs.AtomicInt.op_Decrement*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Decrement
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Decrement_SharpSDL3_Structs_AtomicInt_
+  name: operator --
+  nameWithType: AtomicInt.operator --
+  fullName: SharpSDL3.Structs.AtomicInt.operator --
+  nameWithType.vb: AtomicInt.op_Decrement
+  fullName.vb: SharpSDL3.Structs.AtomicInt.op_Decrement
+  name.vb: op_Decrement
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Decrement*
+    name: --
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Decrement_SharpSDL3_Structs_AtomicInt_
+- uid: SharpSDL3.Structs.AtomicInt.op_Addition*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Addition
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Addition_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator +
+  nameWithType: AtomicInt.operator +
+  fullName: SharpSDL3.Structs.AtomicInt.operator +
+  nameWithType.vb: AtomicInt.+
+  fullName.vb: SharpSDL3.Structs.AtomicInt.+
+  name.vb: +
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Addition*
+    name: +
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Addition_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_Subtraction*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Subtraction
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Subtraction_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator -
+  nameWithType: AtomicInt.operator -
+  fullName: SharpSDL3.Structs.AtomicInt.operator -
+  nameWithType.vb: AtomicInt.-
+  fullName.vb: SharpSDL3.Structs.AtomicInt.-
+  name.vb: '-'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Subtraction*
+    name: '-'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Subtraction_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_Multiply*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Multiply
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Multiply_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator *
+  nameWithType: AtomicInt.operator *
+  fullName: SharpSDL3.Structs.AtomicInt.operator *
+  nameWithType.vb: AtomicInt.*
+  fullName.vb: SharpSDL3.Structs.AtomicInt.*
+  name.vb: '*'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Multiply*
+    name: '*'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Multiply_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_Division*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Division
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Division_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator /
+  nameWithType: AtomicInt.operator /
+  fullName: SharpSDL3.Structs.AtomicInt.operator /
+  nameWithType.vb: AtomicInt./
+  fullName.vb: SharpSDL3.Structs.AtomicInt./
+  name.vb: /
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Division*
+    name: /
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Division_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_Modulus*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Modulus
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Modulus_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator %
+  nameWithType: AtomicInt.operator %
+  fullName: SharpSDL3.Structs.AtomicInt.operator %
+  nameWithType.vb: AtomicInt.Mod
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Mod
+  name.vb: Mod
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Modulus*
+    name: '%'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Modulus_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_BitwiseAnd*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_BitwiseAnd
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_BitwiseAnd_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator &
+  nameWithType: AtomicInt.operator &
+  fullName: SharpSDL3.Structs.AtomicInt.operator &
+  nameWithType.vb: AtomicInt.And
+  fullName.vb: SharpSDL3.Structs.AtomicInt.And
+  name.vb: And
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_BitwiseAnd*
+    name: '&'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_BitwiseAnd_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_BitwiseOr*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_BitwiseOr
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_BitwiseOr_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator |
+  nameWithType: AtomicInt.operator |
+  fullName: SharpSDL3.Structs.AtomicInt.operator |
+  nameWithType.vb: AtomicInt.Or
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Or
+  name.vb: Or
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_BitwiseOr*
+    name: '|'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_BitwiseOr_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_ExclusiveOr*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_ExclusiveOr
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_ExclusiveOr_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator ^
+  nameWithType: AtomicInt.operator ^
+  fullName: SharpSDL3.Structs.AtomicInt.operator ^
+  nameWithType.vb: AtomicInt.Xor
+  fullName.vb: SharpSDL3.Structs.AtomicInt.Xor
+  name.vb: Xor
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_ExclusiveOr*
+    name: ^
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_ExclusiveOr_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_LeftShift*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_LeftShift
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LeftShift_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator <<
+  nameWithType: AtomicInt.operator <<
+  fullName: SharpSDL3.Structs.AtomicInt.operator <<
+  nameWithType.vb: AtomicInt.<<
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<<
+  name.vb: <<
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_LeftShift*
+    name: <<
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LeftShift_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_RightShift*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_RightShift
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_RightShift_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator >>
+  nameWithType: AtomicInt.operator >>
+  fullName: SharpSDL3.Structs.AtomicInt.operator >>
+  nameWithType.vb: AtomicInt.>>
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>>
+  name.vb: '>>'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_RightShift*
+    name: '>>'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_RightShift_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_Equality*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Equality
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Equality_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator ==
+  nameWithType: AtomicInt.operator ==
+  fullName: SharpSDL3.Structs.AtomicInt.operator ==
+  nameWithType.vb: AtomicInt.=
+  fullName.vb: SharpSDL3.Structs.AtomicInt.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Equality*
+    name: ==
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Equality_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: SharpSDL3.Structs.AtomicInt.op_Inequality*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_Inequality
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Inequality_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator !=
+  nameWithType: AtomicInt.operator !=
+  fullName: SharpSDL3.Structs.AtomicInt.operator !=
+  nameWithType.vb: AtomicInt.<>
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_Inequality*
+    name: '!='
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_Inequality_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_GreaterThan*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_GreaterThan
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_GreaterThan_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator >
+  nameWithType: AtomicInt.operator >
+  fullName: SharpSDL3.Structs.AtomicInt.operator >
+  nameWithType.vb: AtomicInt.>
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>
+  name.vb: '>'
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_GreaterThan*
+    name: '>'
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_GreaterThan_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_LessThan*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_LessThan
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LessThan_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator <
+  nameWithType: AtomicInt.operator <
+  fullName: SharpSDL3.Structs.AtomicInt.operator <
+  nameWithType.vb: AtomicInt.<
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<
+  name.vb: <
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_LessThan*
+    name: <
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LessThan_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_GreaterThanOrEqual_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator >=
+  nameWithType: AtomicInt.operator >=
+  fullName: SharpSDL3.Structs.AtomicInt.operator >=
+  nameWithType.vb: AtomicInt.>=
+  fullName.vb: SharpSDL3.Structs.AtomicInt.>=
+  name.vb: '>='
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_GreaterThanOrEqual*
+    name: '>='
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_GreaterThanOrEqual_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LessThanOrEqual_SharpSDL3_Structs_AtomicInt_System_Int32_
+  name: operator <=
+  nameWithType: AtomicInt.operator <=
+  fullName: SharpSDL3.Structs.AtomicInt.operator <=
+  nameWithType.vb: AtomicInt.<=
+  fullName.vb: SharpSDL3.Structs.AtomicInt.<=
+  name.vb: <=
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.AtomicInt.op_LessThanOrEqual*
+    name: <=
+    href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_op_LessThanOrEqual_SharpSDL3_Structs_AtomicInt_System_Int32_
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: SharpSDL3.Structs.AtomicInt.Equals*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.Equals
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_Equals_System_Object_
+  name: Equals
+  nameWithType: AtomicInt.Equals
+  fullName: SharpSDL3.Structs.AtomicInt.Equals
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: SharpSDL3.Structs.AtomicInt.GetHashCode*
+  commentId: Overload:SharpSDL3.Structs.AtomicInt.GetHashCode
+  href: SharpSDL3.Structs.AtomicInt.html#SharpSDL3_Structs_AtomicInt_GetHashCode
+  name: GetHashCode
+  nameWithType: AtomicInt.GetHashCode
+  fullName: SharpSDL3.Structs.AtomicInt.GetHashCode

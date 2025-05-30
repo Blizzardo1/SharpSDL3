@@ -1,0 +1,274 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.PenAxis
+  commentId: T:SharpSDL3.Enums.PenAxis
+  id: PenAxis
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.PenAxis.Count
+  - SharpSDL3.Enums.PenAxis.Distance
+  - SharpSDL3.Enums.PenAxis.Pressure
+  - SharpSDL3.Enums.PenAxis.Rotation
+  - SharpSDL3.Enums.PenAxis.Slider
+  - SharpSDL3.Enums.PenAxis.TangentialPressure
+  - SharpSDL3.Enums.PenAxis.XTilt
+  - SharpSDL3.Enums.PenAxis.YTilt
+  langs:
+  - csharp
+  - vb
+  name: PenAxis
+  nameWithType: PenAxis
+  fullName: SharpSDL3.Enums.PenAxis
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenAxis
+    path: Enums/PenAxis.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum PenAxis
+    content.vb: Public Enum PenAxis
+- uid: SharpSDL3.Enums.PenAxis.Pressure
+  commentId: F:SharpSDL3.Enums.PenAxis.Pressure
+  id: Pressure
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: Pressure
+  nameWithType: PenAxis.Pressure
+  fullName: SharpSDL3.Enums.PenAxis.Pressure
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pressure
+    path: Enums/PenAxis.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pressure = 0
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.XTilt
+  commentId: F:SharpSDL3.Enums.PenAxis.XTilt
+  id: XTilt
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: XTilt
+  nameWithType: PenAxis.XTilt
+  fullName: SharpSDL3.Enums.PenAxis.XTilt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: XTilt
+    path: Enums/PenAxis.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: XTilt = 1
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.YTilt
+  commentId: F:SharpSDL3.Enums.PenAxis.YTilt
+  id: YTilt
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: YTilt
+  nameWithType: PenAxis.YTilt
+  fullName: SharpSDL3.Enums.PenAxis.YTilt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: YTilt
+    path: Enums/PenAxis.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: YTilt = 2
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.Distance
+  commentId: F:SharpSDL3.Enums.PenAxis.Distance
+  id: Distance
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: Distance
+  nameWithType: PenAxis.Distance
+  fullName: SharpSDL3.Enums.PenAxis.Distance
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Distance
+    path: Enums/PenAxis.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Distance = 3
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.Rotation
+  commentId: F:SharpSDL3.Enums.PenAxis.Rotation
+  id: Rotation
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: Rotation
+  nameWithType: PenAxis.Rotation
+  fullName: SharpSDL3.Enums.PenAxis.Rotation
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rotation
+    path: Enums/PenAxis.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Rotation = 4
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.Slider
+  commentId: F:SharpSDL3.Enums.PenAxis.Slider
+  id: Slider
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: Slider
+  nameWithType: PenAxis.Slider
+  fullName: SharpSDL3.Enums.PenAxis.Slider
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Slider
+    path: Enums/PenAxis.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Slider = 5
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.TangentialPressure
+  commentId: F:SharpSDL3.Enums.PenAxis.TangentialPressure
+  id: TangentialPressure
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: TangentialPressure
+  nameWithType: PenAxis.TangentialPressure
+  fullName: SharpSDL3.Enums.PenAxis.TangentialPressure
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TangentialPressure
+    path: Enums/PenAxis.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TangentialPressure = 6
+    return:
+      type: SharpSDL3.Enums.PenAxis
+- uid: SharpSDL3.Enums.PenAxis.Count
+  commentId: F:SharpSDL3.Enums.PenAxis.Count
+  id: Count
+  parent: SharpSDL3.Enums.PenAxis
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: PenAxis.Count
+  fullName: SharpSDL3.Enums.PenAxis.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PenAxis.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/PenAxis.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 7
+    return:
+      type: SharpSDL3.Enums.PenAxis
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.PenAxis
+  commentId: T:SharpSDL3.Enums.PenAxis
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.PenAxis.html
+  name: PenAxis
+  nameWithType: PenAxis
+  fullName: SharpSDL3.Enums.PenAxis

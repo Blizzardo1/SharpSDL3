@@ -1,0 +1,613 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  commentId: T:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  id: GpuGraphicsPipelineCreateInfo
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.DepthStencilState
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.FragmentShader
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.MultisampleState
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.PrimitiveType
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.Props
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.RasterizerState
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.TargetInfo
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexInputState
+  - SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexShader
+  langs:
+  - csharp
+  - vb
+  name: GpuGraphicsPipelineCreateInfo
+  nameWithType: GpuGraphicsPipelineCreateInfo
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuGraphicsPipelineCreateInfo
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct GpuGraphicsPipelineCreateInfo
+    content.vb: Public Structure GpuGraphicsPipelineCreateInfo
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexShader
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexShader
+  id: VertexShader
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: VertexShader
+  nameWithType: GpuGraphicsPipelineCreateInfo.VertexShader
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexShader
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VertexShader
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint VertexShader
+    return:
+      type: System.IntPtr
+    content.vb: Public VertexShader As IntPtr
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.FragmentShader
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.FragmentShader
+  id: FragmentShader
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: FragmentShader
+  nameWithType: GpuGraphicsPipelineCreateInfo.FragmentShader
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.FragmentShader
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FragmentShader
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint FragmentShader
+    return:
+      type: System.IntPtr
+    content.vb: Public FragmentShader As IntPtr
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexInputState
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexInputState
+  id: VertexInputState
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: VertexInputState
+  nameWithType: GpuGraphicsPipelineCreateInfo.VertexInputState
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.VertexInputState
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VertexInputState
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuVertexInputState VertexInputState
+    return:
+      type: SharpSDL3.Structs.GpuVertexInputState
+    content.vb: Public VertexInputState As GpuVertexInputState
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.PrimitiveType
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.PrimitiveType
+  id: PrimitiveType
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: PrimitiveType
+  nameWithType: GpuGraphicsPipelineCreateInfo.PrimitiveType
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.PrimitiveType
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PrimitiveType
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuPrimitiveType PrimitiveType
+    return:
+      type: SharpSDL3.Enums.GpuPrimitiveType
+    content.vb: Public PrimitiveType As GpuPrimitiveType
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.RasterizerState
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.RasterizerState
+  id: RasterizerState
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: RasterizerState
+  nameWithType: GpuGraphicsPipelineCreateInfo.RasterizerState
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.RasterizerState
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RasterizerState
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuRasterizerState RasterizerState
+    return:
+      type: SharpSDL3.Structs.GpuRasterizerState
+    content.vb: Public RasterizerState As GpuRasterizerState
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.MultisampleState
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.MultisampleState
+  id: MultisampleState
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: MultisampleState
+  nameWithType: GpuGraphicsPipelineCreateInfo.MultisampleState
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.MultisampleState
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MultisampleState
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuMultisampleState MultisampleState
+    return:
+      type: SharpSDL3.Structs.GpuMultisampleState
+    content.vb: Public MultisampleState As GpuMultisampleState
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.DepthStencilState
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.DepthStencilState
+  id: DepthStencilState
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: DepthStencilState
+  nameWithType: GpuGraphicsPipelineCreateInfo.DepthStencilState
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.DepthStencilState
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DepthStencilState
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuDepthStencilState DepthStencilState
+    return:
+      type: SharpSDL3.Structs.GpuDepthStencilState
+    content.vb: Public DepthStencilState As GpuDepthStencilState
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.TargetInfo
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.TargetInfo
+  id: TargetInfo
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: TargetInfo
+  nameWithType: GpuGraphicsPipelineCreateInfo.TargetInfo
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.TargetInfo
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TargetInfo
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuGraphicsPipelineTargetInfo TargetInfo
+    return:
+      type: SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo
+    content.vb: Public TargetInfo As GpuGraphicsPipelineTargetInfo
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.Props
+  commentId: F:SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.Props
+  id: Props
+  parent: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: Props
+  nameWithType: GpuGraphicsPipelineCreateInfo.Props
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.Props
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuGraphicsPipelineCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Props
+    path: Structs/GpuGraphicsPipelineCreateInfo.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Props
+    return:
+      type: System.UInt32
+    content.vb: Public Props As UInteger
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.Structs.GpuVertexInputState
+  commentId: T:SharpSDL3.Structs.GpuVertexInputState
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.GpuVertexInputState.html
+  name: GpuVertexInputState
+  nameWithType: GpuVertexInputState
+  fullName: SharpSDL3.Structs.GpuVertexInputState
+- uid: SharpSDL3.Enums.GpuPrimitiveType
+  commentId: T:SharpSDL3.Enums.GpuPrimitiveType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuPrimitiveType.html
+  name: GpuPrimitiveType
+  nameWithType: GpuPrimitiveType
+  fullName: SharpSDL3.Enums.GpuPrimitiveType
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Structs.GpuRasterizerState
+  commentId: T:SharpSDL3.Structs.GpuRasterizerState
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.GpuRasterizerState.html
+  name: GpuRasterizerState
+  nameWithType: GpuRasterizerState
+  fullName: SharpSDL3.Structs.GpuRasterizerState
+- uid: SharpSDL3.Structs.GpuMultisampleState
+  commentId: T:SharpSDL3.Structs.GpuMultisampleState
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.GpuMultisampleState.html
+  name: GpuMultisampleState
+  nameWithType: GpuMultisampleState
+  fullName: SharpSDL3.Structs.GpuMultisampleState
+- uid: SharpSDL3.Structs.GpuDepthStencilState
+  commentId: T:SharpSDL3.Structs.GpuDepthStencilState
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.GpuDepthStencilState.html
+  name: GpuDepthStencilState
+  nameWithType: GpuDepthStencilState
+  fullName: SharpSDL3.Structs.GpuDepthStencilState
+- uid: SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo
+  commentId: T:SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo.html
+  name: GpuGraphicsPipelineTargetInfo
+  nameWithType: GpuGraphicsPipelineTargetInfo
+  fullName: SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger

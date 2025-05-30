@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.AssertState
+  commentId: T:SharpSDL3.Enums.AssertState
+  id: AssertState
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.AssertState.Abort
+  - SharpSDL3.Enums.AssertState.AlwaysIgnore
+  - SharpSDL3.Enums.AssertState.Break
+  - SharpSDL3.Enums.AssertState.Ignore
+  - SharpSDL3.Enums.AssertState.Retry
+  langs:
+  - csharp
+  - vb
+  name: AssertState
+  nameWithType: AssertState
+  fullName: SharpSDL3.Enums.AssertState
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AssertState
+    path: Enums/AssertState.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum AssertState
+    content.vb: Public Enum AssertState
+- uid: SharpSDL3.Enums.AssertState.Retry
+  commentId: F:SharpSDL3.Enums.AssertState.Retry
+  id: Retry
+  parent: SharpSDL3.Enums.AssertState
+  langs:
+  - csharp
+  - vb
+  name: Retry
+  nameWithType: AssertState.Retry
+  fullName: SharpSDL3.Enums.AssertState.Retry
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Retry
+    path: Enums/AssertState.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Retry = 0
+    return:
+      type: SharpSDL3.Enums.AssertState
+- uid: SharpSDL3.Enums.AssertState.Break
+  commentId: F:SharpSDL3.Enums.AssertState.Break
+  id: Break
+  parent: SharpSDL3.Enums.AssertState
+  langs:
+  - csharp
+  - vb
+  name: Break
+  nameWithType: AssertState.Break
+  fullName: SharpSDL3.Enums.AssertState.Break
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Break
+    path: Enums/AssertState.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Break = 1
+    return:
+      type: SharpSDL3.Enums.AssertState
+- uid: SharpSDL3.Enums.AssertState.Abort
+  commentId: F:SharpSDL3.Enums.AssertState.Abort
+  id: Abort
+  parent: SharpSDL3.Enums.AssertState
+  langs:
+  - csharp
+  - vb
+  name: Abort
+  nameWithType: AssertState.Abort
+  fullName: SharpSDL3.Enums.AssertState.Abort
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Abort
+    path: Enums/AssertState.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Abort = 2
+    return:
+      type: SharpSDL3.Enums.AssertState
+- uid: SharpSDL3.Enums.AssertState.Ignore
+  commentId: F:SharpSDL3.Enums.AssertState.Ignore
+  id: Ignore
+  parent: SharpSDL3.Enums.AssertState
+  langs:
+  - csharp
+  - vb
+  name: Ignore
+  nameWithType: AssertState.Ignore
+  fullName: SharpSDL3.Enums.AssertState.Ignore
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ignore
+    path: Enums/AssertState.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ignore = 3
+    return:
+      type: SharpSDL3.Enums.AssertState
+- uid: SharpSDL3.Enums.AssertState.AlwaysIgnore
+  commentId: F:SharpSDL3.Enums.AssertState.AlwaysIgnore
+  id: AlwaysIgnore
+  parent: SharpSDL3.Enums.AssertState
+  langs:
+  - csharp
+  - vb
+  name: AlwaysIgnore
+  nameWithType: AssertState.AlwaysIgnore
+  fullName: SharpSDL3.Enums.AssertState.AlwaysIgnore
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AssertState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AlwaysIgnore
+    path: Enums/AssertState.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AlwaysIgnore = 4
+    return:
+      type: SharpSDL3.Enums.AssertState
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.AssertState
+  commentId: T:SharpSDL3.Enums.AssertState
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.AssertState.html
+  name: AssertState
+  nameWithType: AssertState
+  fullName: SharpSDL3.Enums.AssertState

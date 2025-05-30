@@ -1,0 +1,84 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlNsTimerCallback
+  commentId: T:SharpSDL3.Delegates.SdlNsTimerCallback
+  id: Delegates.SdlNsTimerCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlNsTimerCallback
+  nameWithType: Delegates.SdlNsTimerCallback
+  fullName: SharpSDL3.Delegates.SdlNsTimerCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlNsTimerCallback
+    path: Delegates.cs
+    startLine: 88
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate ulong Delegates.SdlNsTimerCallback(nint userdata, uint timerId, ulong interval)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: timerId
+      type: System.UInt32
+    - id: interval
+      type: System.UInt64
+    return:
+      type: System.UInt64
+    content.vb: Public Delegate Function Delegates.SdlNsTimerCallback(userdata As IntPtr, timerId As UInteger, interval As ULong) As ULong
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

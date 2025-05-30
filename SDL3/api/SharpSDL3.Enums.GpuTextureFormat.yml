@@ -1,0 +1,2893 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuTextureFormat
+  commentId: T:SharpSDL3.Enums.GpuTextureFormat
+  id: GpuTextureFormat
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuTextureFormat.A8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X10Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X5Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X6Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X8Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X10Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X12Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc4X4Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X4Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X5Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X5Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X6Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X5Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X6Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X8Float
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.B4G4R4A4UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.B5G5R5A1UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.B5G6R5UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.Bc4RuNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc5RgUNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbFloat
+  - SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbUFloat
+  - SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNorm
+  - SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.D16UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.D24UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.D24UNormS8Uint
+  - SharpSDL3.Enums.GpuTextureFormat.D32Float
+  - SharpSDL3.Enums.GpuTextureFormat.D32FloatS8Uint
+  - SharpSDL3.Enums.GpuTextureFormat.Invalid
+  - SharpSDL3.Enums.GpuTextureFormat.R10G10B10A2UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R11G11B10UFloat
+  - SharpSDL3.Enums.GpuTextureFormat.R16Float
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Float
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Int
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16Float
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16Int
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16G16Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R16Int
+  - SharpSDL3.Enums.GpuTextureFormat.R16Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R16Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R32Float
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Float
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Int
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32Float
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32Int
+  - SharpSDL3.Enums.GpuTextureFormat.R32G32Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R32Int
+  - SharpSDL3.Enums.GpuTextureFormat.R32Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Int
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNormSrgb
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8Int
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8G8Uint
+  - SharpSDL3.Enums.GpuTextureFormat.R8Int
+  - SharpSDL3.Enums.GpuTextureFormat.R8Snorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8UNorm
+  - SharpSDL3.Enums.GpuTextureFormat.R8Uint
+  langs:
+  - csharp
+  - vb
+  name: GpuTextureFormat
+  nameWithType: GpuTextureFormat
+  fullName: SharpSDL3.Enums.GpuTextureFormat
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuTextureFormat
+    path: Enums/GpuTextureFormat.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuTextureFormat
+    content.vb: Public Enum GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Invalid
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: GpuTextureFormat.Invalid
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/GpuTextureFormat.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.A8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.A8UNorm
+  id: A8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: A8UNorm
+  nameWithType: GpuTextureFormat.A8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.A8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: A8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: A8UNorm = 1
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8UNorm
+  id: R8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8UNorm
+  nameWithType: GpuTextureFormat.R8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8UNorm = 2
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8UNorm
+  id: R8G8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8UNorm
+  nameWithType: GpuTextureFormat.R8G8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8UNorm = 3
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNorm
+  id: R8G8B8A8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8B8A8UNorm
+  nameWithType: GpuTextureFormat.R8G8B8A8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8B8A8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8B8A8UNorm = 4
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16UNorm
+  id: R16UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16UNorm
+  nameWithType: GpuTextureFormat.R16UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16UNorm = 5
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16UNorm
+  id: R16G16UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16UNorm
+  nameWithType: GpuTextureFormat.R16G16UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16UNorm = 6
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16UNorm
+  id: R16G16B16A16UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16B16A16UNorm
+  nameWithType: GpuTextureFormat.R16G16B16A16UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16B16A16UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16B16A16UNorm = 7
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R10G10B10A2UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R10G10B10A2UNorm
+  id: R10G10B10A2UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R10G10B10A2UNorm
+  nameWithType: GpuTextureFormat.R10G10B10A2UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R10G10B10A2UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R10G10B10A2UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R10G10B10A2UNorm = 8
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.B5G6R5UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.B5G6R5UNorm
+  id: B5G6R5UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: B5G6R5UNorm
+  nameWithType: GpuTextureFormat.B5G6R5UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.B5G6R5UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B5G6R5UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B5G6R5UNorm = 9
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.B5G5R5A1UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.B5G5R5A1UNorm
+  id: B5G5R5A1UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: B5G5R5A1UNorm
+  nameWithType: GpuTextureFormat.B5G5R5A1UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.B5G5R5A1UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B5G5R5A1UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B5G5R5A1UNorm = 10
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.B4G4R4A4UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.B4G4R4A4UNorm
+  id: B4G4R4A4UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: B4G4R4A4UNorm
+  nameWithType: GpuTextureFormat.B4G4R4A4UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.B4G4R4A4UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B4G4R4A4UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B4G4R4A4UNorm = 11
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNorm
+  id: B8G8R8A8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: B8G8R8A8UNorm
+  nameWithType: GpuTextureFormat.B8G8R8A8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B8G8R8A8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B8G8R8A8UNorm = 12
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNorm
+  id: Bc1RgbaUNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc1RgbaUNorm
+  nameWithType: GpuTextureFormat.Bc1RgbaUNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc1RgbaUNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc1RgbaUNorm = 13
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNorm
+  id: Bc2RgbaUNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc2RgbaUNorm
+  nameWithType: GpuTextureFormat.Bc2RgbaUNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc2RgbaUNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc2RgbaUNorm = 14
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNorm
+  id: Bc3RgbaUNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc3RgbaUNorm
+  nameWithType: GpuTextureFormat.Bc3RgbaUNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc3RgbaUNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc3RgbaUNorm = 15
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc4RuNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc4RuNorm
+  id: Bc4RuNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc4RuNorm
+  nameWithType: GpuTextureFormat.Bc4RuNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc4RuNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc4RuNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc4RuNorm = 16
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc5RgUNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc5RgUNorm
+  id: Bc5RgUNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc5RgUNorm
+  nameWithType: GpuTextureFormat.Bc5RgUNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc5RgUNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc5RgUNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc5RgUNorm = 17
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNorm
+  id: Bc7RgbaUNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc7RgbaUNorm
+  nameWithType: GpuTextureFormat.Bc7RgbaUNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc7RgbaUNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc7RgbaUNorm = 18
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbFloat
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbFloat
+  id: Bc6HRgbFloat
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc6HRgbFloat
+  nameWithType: GpuTextureFormat.Bc6HRgbFloat
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbFloat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc6HRgbFloat
+    path: Enums/GpuTextureFormat.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc6HRgbFloat = 19
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbUFloat
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbUFloat
+  id: Bc6HRgbUFloat
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc6HRgbUFloat
+  nameWithType: GpuTextureFormat.Bc6HRgbUFloat
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc6HRgbUFloat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc6HRgbUFloat
+    path: Enums/GpuTextureFormat.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc6HRgbUFloat = 20
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8Snorm
+  id: R8Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8Snorm
+  nameWithType: GpuTextureFormat.R8Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8Snorm = 21
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8Snorm
+  id: R8G8Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8Snorm
+  nameWithType: GpuTextureFormat.R8G8Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8Snorm = 22
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Snorm
+  id: R8G8B8A8Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8B8A8Snorm
+  nameWithType: GpuTextureFormat.R8G8B8A8Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8B8A8Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8B8A8Snorm = 23
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16Snorm
+  id: R16Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16Snorm
+  nameWithType: GpuTextureFormat.R16Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16Snorm = 24
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16Snorm
+  id: R16G16Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16Snorm
+  nameWithType: GpuTextureFormat.R16G16Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16Snorm = 25
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Snorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Snorm
+  id: R16G16B16A16Snorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16B16A16Snorm
+  nameWithType: GpuTextureFormat.R16G16B16A16Snorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Snorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16B16A16Snorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16B16A16Snorm = 26
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16Float
+  id: R16Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16Float
+  nameWithType: GpuTextureFormat.R16Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16Float = 27
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16Float
+  id: R16G16Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16Float
+  nameWithType: GpuTextureFormat.R16G16Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16Float = 28
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Float
+  id: R16G16B16A16Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16B16A16Float
+  nameWithType: GpuTextureFormat.R16G16B16A16Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16B16A16Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 33
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16B16A16Float = 29
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32Float
+  id: R32Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32Float
+  nameWithType: GpuTextureFormat.R32Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 34
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32Float = 30
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32Float
+  id: R32G32Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32Float
+  nameWithType: GpuTextureFormat.R32G32Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 35
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32Float = 31
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Float
+  id: R32G32B32A32Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32B32A32Float
+  nameWithType: GpuTextureFormat.R32G32B32A32Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32B32A32Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 36
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32B32A32Float = 32
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R11G11B10UFloat
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R11G11B10UFloat
+  id: R11G11B10UFloat
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R11G11B10UFloat
+  nameWithType: GpuTextureFormat.R11G11B10UFloat
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R11G11B10UFloat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R11G11B10UFloat
+    path: Enums/GpuTextureFormat.cs
+    startLine: 37
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R11G11B10UFloat = 33
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8Uint
+  id: R8Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8Uint
+  nameWithType: GpuTextureFormat.R8Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 38
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8Uint = 34
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8Uint
+  id: R8G8Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8Uint
+  nameWithType: GpuTextureFormat.R8G8Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 39
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8Uint = 35
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Uint
+  id: R8G8B8A8Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8B8A8Uint
+  nameWithType: GpuTextureFormat.R8G8B8A8Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8B8A8Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 40
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8B8A8Uint = 36
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16Uint
+  id: R16Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16Uint
+  nameWithType: GpuTextureFormat.R16Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 41
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16Uint = 37
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16Uint
+  id: R16G16Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16Uint
+  nameWithType: GpuTextureFormat.R16G16Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 42
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16Uint = 38
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Uint
+  id: R16G16B16A16Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16B16A16Uint
+  nameWithType: GpuTextureFormat.R16G16B16A16Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16B16A16Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 43
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16B16A16Uint = 39
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32Uint
+  id: R32Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32Uint
+  nameWithType: GpuTextureFormat.R32Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 44
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32Uint = 40
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32Uint
+  id: R32G32Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32Uint
+  nameWithType: GpuTextureFormat.R32G32Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 45
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32Uint = 41
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Uint
+  id: R32G32B32A32Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32B32A32Uint
+  nameWithType: GpuTextureFormat.R32G32B32A32Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32B32A32Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 46
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32B32A32Uint = 42
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8Int
+  id: R8Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8Int
+  nameWithType: GpuTextureFormat.R8Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 47
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8Int = 43
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8Int
+  id: R8G8Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8Int
+  nameWithType: GpuTextureFormat.R8G8Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 48
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8Int = 44
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Int
+  id: R8G8B8A8Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8B8A8Int
+  nameWithType: GpuTextureFormat.R8G8B8A8Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8B8A8Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 49
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8B8A8Int = 45
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16Int
+  id: R16Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16Int
+  nameWithType: GpuTextureFormat.R16Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 50
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16Int = 46
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16Int
+  id: R16G16Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16Int
+  nameWithType: GpuTextureFormat.R16G16Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 51
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16Int = 47
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Int
+  id: R16G16B16A16Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R16G16B16A16Int
+  nameWithType: GpuTextureFormat.R16G16B16A16Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R16G16B16A16Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R16G16B16A16Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 52
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R16G16B16A16Int = 48
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32Int
+  id: R32Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32Int
+  nameWithType: GpuTextureFormat.R32Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 53
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32Int = 49
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32Int
+  id: R32G32Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32Int
+  nameWithType: GpuTextureFormat.R32G32Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 54
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32Int = 50
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Int
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Int
+  id: R32G32B32A32Int
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R32G32B32A32Int
+  nameWithType: GpuTextureFormat.R32G32B32A32Int
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R32G32B32A32Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R32G32B32A32Int
+    path: Enums/GpuTextureFormat.cs
+    startLine: 55
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R32G32B32A32Int = 51
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNormSrgb
+  id: R8G8B8A8UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: R8G8B8A8UNormSrgb
+  nameWithType: GpuTextureFormat.R8G8B8A8UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.R8G8B8A8UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R8G8B8A8UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 56
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R8G8B8A8UNormSrgb = 52
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNormSrgb
+  id: B8G8R8A8UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: B8G8R8A8UNormSrgb
+  nameWithType: GpuTextureFormat.B8G8R8A8UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.B8G8R8A8UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B8G8R8A8UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 57
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B8G8R8A8UNormSrgb = 53
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNormSrgb
+  id: Bc1RgbaUNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc1RgbaUNormSrgb
+  nameWithType: GpuTextureFormat.Bc1RgbaUNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc1RgbaUNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc1RgbaUNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 58
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc1RgbaUNormSrgb = 54
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNormSrgb
+  id: Bc2RgbaUNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc2RgbaUNormSrgb
+  nameWithType: GpuTextureFormat.Bc2RgbaUNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc2RgbaUNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc2RgbaUNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 59
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc2RgbaUNormSrgb = 55
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNormSrgb
+  id: Bc3RgbaUNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc3RgbaUNormSrgb
+  nameWithType: GpuTextureFormat.Bc3RgbaUNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc3RgbaUNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc3RgbaUNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 60
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc3RgbaUNormSrgb = 56
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNormSrgb
+  id: Bc7RgbaUNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Bc7RgbaUNormSrgb
+  nameWithType: GpuTextureFormat.Bc7RgbaUNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Bc7RgbaUNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bc7RgbaUNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 61
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bc7RgbaUNormSrgb = 57
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.D16UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.D16UNorm
+  id: D16UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: D16UNorm
+  nameWithType: GpuTextureFormat.D16UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.D16UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D16UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 62
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D16UNorm = 58
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.D24UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.D24UNorm
+  id: D24UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: D24UNorm
+  nameWithType: GpuTextureFormat.D24UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.D24UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D24UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 63
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D24UNorm = 59
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.D32Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.D32Float
+  id: D32Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: D32Float
+  nameWithType: GpuTextureFormat.D32Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.D32Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D32Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 64
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D32Float = 60
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.D24UNormS8Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.D24UNormS8Uint
+  id: D24UNormS8Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: D24UNormS8Uint
+  nameWithType: GpuTextureFormat.D24UNormS8Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.D24UNormS8Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D24UNormS8Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 65
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D24UNormS8Uint = 61
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.D32FloatS8Uint
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.D32FloatS8Uint
+  id: D32FloatS8Uint
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: D32FloatS8Uint
+  nameWithType: GpuTextureFormat.D32FloatS8Uint
+  fullName: SharpSDL3.Enums.GpuTextureFormat.D32FloatS8Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D32FloatS8Uint
+    path: Enums/GpuTextureFormat.cs
+    startLine: 66
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D32FloatS8Uint = 62
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNorm
+  id: Astc4X4UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc4X4UNorm
+  nameWithType: GpuTextureFormat.Astc4X4UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc4X4UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 67
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc4X4UNorm = 63
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNorm
+  id: Astc5X4UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X4UNorm
+  nameWithType: GpuTextureFormat.Astc5X4UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X4UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 68
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X4UNorm = 64
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNorm
+  id: Astc5X5UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X5UNorm
+  nameWithType: GpuTextureFormat.Astc5X5UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X5UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 69
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X5UNorm = 65
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNorm
+  id: Astc6X5UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X5UNorm
+  nameWithType: GpuTextureFormat.Astc6X5UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X5UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 70
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X5UNorm = 66
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNorm
+  id: Astc6X6UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X6UNorm
+  nameWithType: GpuTextureFormat.Astc6X6UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X6UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 71
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X6UNorm = 67
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNorm
+  id: Astc8X5UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X5UNorm
+  nameWithType: GpuTextureFormat.Astc8X5UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X5UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 72
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X5UNorm = 68
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNorm
+  id: Astc8X6UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X6UNorm
+  nameWithType: GpuTextureFormat.Astc8X6UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X6UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 73
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X6UNorm = 69
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNorm
+  id: Astc8X8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X8UNorm
+  nameWithType: GpuTextureFormat.Astc8X8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 74
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X8UNorm = 70
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNorm
+  id: Astc10X5UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X5UNorm
+  nameWithType: GpuTextureFormat.Astc10X5UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X5UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 75
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X5UNorm = 71
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNorm
+  id: Astc10X6UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X6UNorm
+  nameWithType: GpuTextureFormat.Astc10X6UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X6UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 76
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X6UNorm = 72
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNorm
+  id: Astc10X8UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X8UNorm
+  nameWithType: GpuTextureFormat.Astc10X8UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X8UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 77
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X8UNorm = 73
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNorm
+  id: Astc10X10UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X10UNorm
+  nameWithType: GpuTextureFormat.Astc10X10UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X10UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 78
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X10UNorm = 74
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNorm
+  id: Astc12X10UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X10UNorm
+  nameWithType: GpuTextureFormat.Astc12X10UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X10UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 79
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X10UNorm = 75
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNorm
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNorm
+  id: Astc12X12UNorm
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X12UNorm
+  nameWithType: GpuTextureFormat.Astc12X12UNorm
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNorm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X12UNorm
+    path: Enums/GpuTextureFormat.cs
+    startLine: 80
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X12UNorm = 76
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNormSrgb
+  id: Astc4X4UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc4X4UNormSrgb
+  nameWithType: GpuTextureFormat.Astc4X4UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc4X4UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc4X4UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 81
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc4X4UNormSrgb = 77
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNormSrgb
+  id: Astc5X4UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X4UNormSrgb
+  nameWithType: GpuTextureFormat.Astc5X4UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X4UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X4UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 82
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X4UNormSrgb = 78
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNormSrgb
+  id: Astc5X5UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X5UNormSrgb
+  nameWithType: GpuTextureFormat.Astc5X5UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X5UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X5UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 83
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X5UNormSrgb = 79
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNormSrgb
+  id: Astc6X5UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X5UNormSrgb
+  nameWithType: GpuTextureFormat.Astc6X5UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X5UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X5UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 84
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X5UNormSrgb = 80
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNormSrgb
+  id: Astc6X6UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X6UNormSrgb
+  nameWithType: GpuTextureFormat.Astc6X6UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X6UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X6UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 85
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X6UNormSrgb = 81
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNormSrgb
+  id: Astc8X5UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X5UNormSrgb
+  nameWithType: GpuTextureFormat.Astc8X5UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X5UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X5UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 86
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X5UNormSrgb = 82
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNormSrgb
+  id: Astc8X6UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X6UNormSrgb
+  nameWithType: GpuTextureFormat.Astc8X6UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X6UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X6UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 87
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X6UNormSrgb = 83
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNormSrgb
+  id: Astc8X8UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X8UNormSrgb
+  nameWithType: GpuTextureFormat.Astc8X8UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X8UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X8UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 88
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X8UNormSrgb = 84
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNormSrgb
+  id: Astc10X5UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X5UNormSrgb
+  nameWithType: GpuTextureFormat.Astc10X5UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X5UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X5UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 89
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X5UNormSrgb = 85
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNormSrgb
+  id: Astc10X6UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X6UNormSrgb
+  nameWithType: GpuTextureFormat.Astc10X6UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X6UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X6UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 90
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X6UNormSrgb = 86
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNormSrgb
+  id: Astc10X8UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X8UNormSrgb
+  nameWithType: GpuTextureFormat.Astc10X8UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X8UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X8UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 91
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X8UNormSrgb = 87
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNormSrgb
+  id: Astc10X10UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X10UNormSrgb
+  nameWithType: GpuTextureFormat.Astc10X10UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X10UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X10UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 92
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X10UNormSrgb = 88
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNormSrgb
+  id: Astc12X10UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X10UNormSrgb
+  nameWithType: GpuTextureFormat.Astc12X10UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X10UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X10UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 93
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X10UNormSrgb = 89
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNormSrgb
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNormSrgb
+  id: Astc12X12UNormSrgb
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X12UNormSrgb
+  nameWithType: GpuTextureFormat.Astc12X12UNormSrgb
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X12UNormSrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X12UNormSrgb
+    path: Enums/GpuTextureFormat.cs
+    startLine: 94
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X12UNormSrgb = 90
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc4X4Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc4X4Float
+  id: Astc4X4Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc4X4Float
+  nameWithType: GpuTextureFormat.Astc4X4Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc4X4Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc4X4Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 95
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc4X4Float = 91
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X4Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X4Float
+  id: Astc5X4Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X4Float
+  nameWithType: GpuTextureFormat.Astc5X4Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X4Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X4Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 96
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X4Float = 92
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc5X5Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc5X5Float
+  id: Astc5X5Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc5X5Float
+  nameWithType: GpuTextureFormat.Astc5X5Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc5X5Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc5X5Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 97
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc5X5Float = 93
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X5Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X5Float
+  id: Astc6X5Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X5Float
+  nameWithType: GpuTextureFormat.Astc6X5Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X5Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X5Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 98
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X5Float = 94
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc6X6Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc6X6Float
+  id: Astc6X6Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc6X6Float
+  nameWithType: GpuTextureFormat.Astc6X6Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc6X6Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc6X6Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 99
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc6X6Float = 95
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X5Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X5Float
+  id: Astc8X5Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X5Float
+  nameWithType: GpuTextureFormat.Astc8X5Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X5Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X5Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 100
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X5Float = 96
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X6Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X6Float
+  id: Astc8X6Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X6Float
+  nameWithType: GpuTextureFormat.Astc8X6Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X6Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X6Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 101
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X6Float = 97
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc8X8Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc8X8Float
+  id: Astc8X8Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc8X8Float
+  nameWithType: GpuTextureFormat.Astc8X8Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc8X8Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc8X8Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 102
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc8X8Float = 98
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X5Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X5Float
+  id: Astc10X5Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X5Float
+  nameWithType: GpuTextureFormat.Astc10X5Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X5Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X5Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 103
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X5Float = 99
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X6Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X6Float
+  id: Astc10X6Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X6Float
+  nameWithType: GpuTextureFormat.Astc10X6Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X6Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X6Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 104
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X6Float = 100
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X8Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X8Float
+  id: Astc10X8Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X8Float
+  nameWithType: GpuTextureFormat.Astc10X8Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X8Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X8Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 105
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X8Float = 101
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc10X10Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc10X10Float
+  id: Astc10X10Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc10X10Float
+  nameWithType: GpuTextureFormat.Astc10X10Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc10X10Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc10X10Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 106
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc10X10Float = 102
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X10Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X10Float
+  id: Astc12X10Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X10Float
+  nameWithType: GpuTextureFormat.Astc12X10Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X10Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X10Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 107
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X10Float = 103
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+- uid: SharpSDL3.Enums.GpuTextureFormat.Astc12X12Float
+  commentId: F:SharpSDL3.Enums.GpuTextureFormat.Astc12X12Float
+  id: Astc12X12Float
+  parent: SharpSDL3.Enums.GpuTextureFormat
+  langs:
+  - csharp
+  - vb
+  name: Astc12X12Float
+  nameWithType: GpuTextureFormat.Astc12X12Float
+  fullName: SharpSDL3.Enums.GpuTextureFormat.Astc12X12Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Astc12X12Float
+    path: Enums/GpuTextureFormat.cs
+    startLine: 108
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Astc12X12Float = 104
+    return:
+      type: SharpSDL3.Enums.GpuTextureFormat
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuTextureFormat
+  commentId: T:SharpSDL3.Enums.GpuTextureFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuTextureFormat.html
+  name: GpuTextureFormat
+  nameWithType: GpuTextureFormat
+  fullName: SharpSDL3.Enums.GpuTextureFormat

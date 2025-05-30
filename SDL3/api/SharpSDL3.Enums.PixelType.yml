@@ -1,0 +1,409 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.PixelType
+  commentId: T:SharpSDL3.Enums.PixelType
+  id: PixelType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.PixelType.ArrayF16
+  - SharpSDL3.Enums.PixelType.ArrayF32
+  - SharpSDL3.Enums.PixelType.ArrayU16
+  - SharpSDL3.Enums.PixelType.ArrayU32
+  - SharpSDL3.Enums.PixelType.ArrayU8
+  - SharpSDL3.Enums.PixelType.Index1
+  - SharpSDL3.Enums.PixelType.Index2
+  - SharpSDL3.Enums.PixelType.Index4
+  - SharpSDL3.Enums.PixelType.Index8
+  - SharpSDL3.Enums.PixelType.Packed16
+  - SharpSDL3.Enums.PixelType.Packed32
+  - SharpSDL3.Enums.PixelType.Packed8
+  - SharpSDL3.Enums.PixelType.Unknown
+  langs:
+  - csharp
+  - vb
+  name: PixelType
+  nameWithType: PixelType
+  fullName: SharpSDL3.Enums.PixelType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PixelType
+    path: Enums/PixelType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum PixelType
+    content.vb: Public Enum PixelType
+- uid: SharpSDL3.Enums.PixelType.Unknown
+  commentId: F:SharpSDL3.Enums.PixelType.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: PixelType.Unknown
+  fullName: SharpSDL3.Enums.PixelType.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/PixelType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Index1
+  commentId: F:SharpSDL3.Enums.PixelType.Index1
+  id: Index1
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Index1
+  nameWithType: PixelType.Index1
+  fullName: SharpSDL3.Enums.PixelType.Index1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index1
+    path: Enums/PixelType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Index1 = 1
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Index4
+  commentId: F:SharpSDL3.Enums.PixelType.Index4
+  id: Index4
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Index4
+  nameWithType: PixelType.Index4
+  fullName: SharpSDL3.Enums.PixelType.Index4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index4
+    path: Enums/PixelType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Index4 = 2
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Index8
+  commentId: F:SharpSDL3.Enums.PixelType.Index8
+  id: Index8
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Index8
+  nameWithType: PixelType.Index8
+  fullName: SharpSDL3.Enums.PixelType.Index8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index8
+    path: Enums/PixelType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Index8 = 3
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Packed8
+  commentId: F:SharpSDL3.Enums.PixelType.Packed8
+  id: Packed8
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Packed8
+  nameWithType: PixelType.Packed8
+  fullName: SharpSDL3.Enums.PixelType.Packed8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Packed8
+    path: Enums/PixelType.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Packed8 = 4
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Packed16
+  commentId: F:SharpSDL3.Enums.PixelType.Packed16
+  id: Packed16
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Packed16
+  nameWithType: PixelType.Packed16
+  fullName: SharpSDL3.Enums.PixelType.Packed16
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Packed16
+    path: Enums/PixelType.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Packed16 = 5
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Packed32
+  commentId: F:SharpSDL3.Enums.PixelType.Packed32
+  id: Packed32
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Packed32
+  nameWithType: PixelType.Packed32
+  fullName: SharpSDL3.Enums.PixelType.Packed32
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Packed32
+    path: Enums/PixelType.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Packed32 = 6
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.ArrayU8
+  commentId: F:SharpSDL3.Enums.PixelType.ArrayU8
+  id: ArrayU8
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: ArrayU8
+  nameWithType: PixelType.ArrayU8
+  fullName: SharpSDL3.Enums.PixelType.ArrayU8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayU8
+    path: Enums/PixelType.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ArrayU8 = 7
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.ArrayU16
+  commentId: F:SharpSDL3.Enums.PixelType.ArrayU16
+  id: ArrayU16
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: ArrayU16
+  nameWithType: PixelType.ArrayU16
+  fullName: SharpSDL3.Enums.PixelType.ArrayU16
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayU16
+    path: Enums/PixelType.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ArrayU16 = 8
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.ArrayU32
+  commentId: F:SharpSDL3.Enums.PixelType.ArrayU32
+  id: ArrayU32
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: ArrayU32
+  nameWithType: PixelType.ArrayU32
+  fullName: SharpSDL3.Enums.PixelType.ArrayU32
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayU32
+    path: Enums/PixelType.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ArrayU32 = 9
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.ArrayF16
+  commentId: F:SharpSDL3.Enums.PixelType.ArrayF16
+  id: ArrayF16
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: ArrayF16
+  nameWithType: PixelType.ArrayF16
+  fullName: SharpSDL3.Enums.PixelType.ArrayF16
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayF16
+    path: Enums/PixelType.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ArrayF16 = 10
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.ArrayF32
+  commentId: F:SharpSDL3.Enums.PixelType.ArrayF32
+  id: ArrayF32
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: ArrayF32
+  nameWithType: PixelType.ArrayF32
+  fullName: SharpSDL3.Enums.PixelType.ArrayF32
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayF32
+    path: Enums/PixelType.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ArrayF32 = 11
+    return:
+      type: SharpSDL3.Enums.PixelType
+- uid: SharpSDL3.Enums.PixelType.Index2
+  commentId: F:SharpSDL3.Enums.PixelType.Index2
+  id: Index2
+  parent: SharpSDL3.Enums.PixelType
+  langs:
+  - csharp
+  - vb
+  name: Index2
+  nameWithType: PixelType.Index2
+  fullName: SharpSDL3.Enums.PixelType.Index2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PixelType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index2
+    path: Enums/PixelType.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Index2 = 12
+    return:
+      type: SharpSDL3.Enums.PixelType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.PixelType
+  commentId: T:SharpSDL3.Enums.PixelType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.PixelType.html
+  name: PixelType
+  nameWithType: PixelType
+  fullName: SharpSDL3.Enums.PixelType

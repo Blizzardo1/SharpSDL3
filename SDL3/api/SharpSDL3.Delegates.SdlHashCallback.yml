@@ -1,0 +1,71 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlHashCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashCallback
+  id: Delegates.SdlHashCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlHashCallback
+  nameWithType: Delegates.SdlHashCallback
+  fullName: SharpSDL3.Delegates.SdlHashCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlHashCallback
+    path: Delegates.cs
+    startLine: 56
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate int Delegates.SdlHashCallback(nint userdata, nint key)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: key
+      type: System.IntPtr
+    return:
+      type: System.Int32
+    content.vb: Public Delegate Function Delegates.SdlHashCallback(userdata As IntPtr, key As IntPtr) As Integer
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

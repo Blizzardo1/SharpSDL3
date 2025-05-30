@@ -1,0 +1,382 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.AudioFormat
+  commentId: T:SharpSDL3.Enums.AudioFormat
+  id: AudioFormat
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.AudioFormat.F32
+  - SharpSDL3.Enums.AudioFormat.F32Be
+  - SharpSDL3.Enums.AudioFormat.F32Le
+  - SharpSDL3.Enums.AudioFormat.S16
+  - SharpSDL3.Enums.AudioFormat.S16Be
+  - SharpSDL3.Enums.AudioFormat.S16Le
+  - SharpSDL3.Enums.AudioFormat.S32
+  - SharpSDL3.Enums.AudioFormat.S32Be
+  - SharpSDL3.Enums.AudioFormat.S32Le
+  - SharpSDL3.Enums.AudioFormat.S8
+  - SharpSDL3.Enums.AudioFormat.U8
+  - SharpSDL3.Enums.AudioFormat.Unknown
+  langs:
+  - csharp
+  - vb
+  name: AudioFormat
+  nameWithType: AudioFormat
+  fullName: SharpSDL3.Enums.AudioFormat
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AudioFormat
+    path: Enums/AudioFormat.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum AudioFormat
+    content.vb: Public Enum AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.Unknown
+  commentId: F:SharpSDL3.Enums.AudioFormat.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: AudioFormat.Unknown
+  fullName: SharpSDL3.Enums.AudioFormat.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/AudioFormat.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.U8
+  commentId: F:SharpSDL3.Enums.AudioFormat.U8
+  id: U8
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: U8
+  nameWithType: AudioFormat.U8
+  fullName: SharpSDL3.Enums.AudioFormat.U8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: U8
+    path: Enums/AudioFormat.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: U8 = 8
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S8
+  commentId: F:SharpSDL3.Enums.AudioFormat.S8
+  id: S8
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S8
+  nameWithType: AudioFormat.S8
+  fullName: SharpSDL3.Enums.AudioFormat.S8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S8
+    path: Enums/AudioFormat.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S8 = 32776
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S16Le
+  commentId: F:SharpSDL3.Enums.AudioFormat.S16Le
+  id: S16Le
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S16Le
+  nameWithType: AudioFormat.S16Le
+  fullName: SharpSDL3.Enums.AudioFormat.S16Le
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S16Le
+    path: Enums/AudioFormat.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S16Le = 32784
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S16Be
+  commentId: F:SharpSDL3.Enums.AudioFormat.S16Be
+  id: S16Be
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S16Be
+  nameWithType: AudioFormat.S16Be
+  fullName: SharpSDL3.Enums.AudioFormat.S16Be
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S16Be
+    path: Enums/AudioFormat.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S16Be = 36880
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S32Le
+  commentId: F:SharpSDL3.Enums.AudioFormat.S32Le
+  id: S32Le
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S32Le
+  nameWithType: AudioFormat.S32Le
+  fullName: SharpSDL3.Enums.AudioFormat.S32Le
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S32Le
+    path: Enums/AudioFormat.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S32Le = 32800
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S32Be
+  commentId: F:SharpSDL3.Enums.AudioFormat.S32Be
+  id: S32Be
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S32Be
+  nameWithType: AudioFormat.S32Be
+  fullName: SharpSDL3.Enums.AudioFormat.S32Be
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S32Be
+    path: Enums/AudioFormat.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S32Be = 36896
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.F32Le
+  commentId: F:SharpSDL3.Enums.AudioFormat.F32Le
+  id: F32Le
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: F32Le
+  nameWithType: AudioFormat.F32Le
+  fullName: SharpSDL3.Enums.AudioFormat.F32Le
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F32Le
+    path: Enums/AudioFormat.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F32Le = 33056
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.F32Be
+  commentId: F:SharpSDL3.Enums.AudioFormat.F32Be
+  id: F32Be
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: F32Be
+  nameWithType: AudioFormat.F32Be
+  fullName: SharpSDL3.Enums.AudioFormat.F32Be
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F32Be
+    path: Enums/AudioFormat.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F32Be = 37152
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S16
+  commentId: F:SharpSDL3.Enums.AudioFormat.S16
+  id: S16
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S16
+  nameWithType: AudioFormat.S16
+  fullName: SharpSDL3.Enums.AudioFormat.S16
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S16
+    path: Enums/AudioFormat.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S16 = 32784
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.S32
+  commentId: F:SharpSDL3.Enums.AudioFormat.S32
+  id: S32
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: S32
+  nameWithType: AudioFormat.S32
+  fullName: SharpSDL3.Enums.AudioFormat.S32
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S32
+    path: Enums/AudioFormat.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S32 = 32800
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+- uid: SharpSDL3.Enums.AudioFormat.F32
+  commentId: F:SharpSDL3.Enums.AudioFormat.F32
+  id: F32
+  parent: SharpSDL3.Enums.AudioFormat
+  langs:
+  - csharp
+  - vb
+  name: F32
+  nameWithType: AudioFormat.F32
+  fullName: SharpSDL3.Enums.AudioFormat.F32
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AudioFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F32
+    path: Enums/AudioFormat.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F32 = 33056
+    return:
+      type: SharpSDL3.Enums.AudioFormat
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.AudioFormat
+  commentId: T:SharpSDL3.Enums.AudioFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.AudioFormat.html
+  name: AudioFormat
+  nameWithType: AudioFormat
+  fullName: SharpSDL3.Enums.AudioFormat

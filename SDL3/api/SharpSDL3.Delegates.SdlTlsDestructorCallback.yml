@@ -1,0 +1,56 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlTlsDestructorCallback
+  commentId: T:SharpSDL3.Delegates.SdlTlsDestructorCallback
+  id: Delegates.SdlTlsDestructorCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlTlsDestructorCallback
+  nameWithType: Delegates.SdlTlsDestructorCallback
+  fullName: SharpSDL3.Delegates.SdlTlsDestructorCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlTlsDestructorCallback
+    path: Delegates.cs
+    startLine: 97
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate void Delegates.SdlTlsDestructorCallback(nint value)
+    parameters:
+    - id: value
+      type: System.IntPtr
+    content.vb: Public Delegate Sub Delegates.SdlTlsDestructorCallback(value As IntPtr)
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

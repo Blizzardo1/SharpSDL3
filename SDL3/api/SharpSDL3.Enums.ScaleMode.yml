@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.ScaleMode
+  commentId: T:SharpSDL3.Enums.ScaleMode
+  id: ScaleMode
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.ScaleMode.Linear
+  - SharpSDL3.Enums.ScaleMode.Nearest
+  langs:
+  - csharp
+  - vb
+  name: ScaleMode
+  nameWithType: ScaleMode
+  fullName: SharpSDL3.Enums.ScaleMode
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/ScaleMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ScaleMode
+    path: Enums/ScaleMode.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum ScaleMode
+    content.vb: Public Enum ScaleMode
+- uid: SharpSDL3.Enums.ScaleMode.Nearest
+  commentId: F:SharpSDL3.Enums.ScaleMode.Nearest
+  id: Nearest
+  parent: SharpSDL3.Enums.ScaleMode
+  langs:
+  - csharp
+  - vb
+  name: Nearest
+  nameWithType: ScaleMode.Nearest
+  fullName: SharpSDL3.Enums.ScaleMode.Nearest
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ScaleMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Nearest
+    path: Enums/ScaleMode.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Nearest = 0
+    return:
+      type: SharpSDL3.Enums.ScaleMode
+- uid: SharpSDL3.Enums.ScaleMode.Linear
+  commentId: F:SharpSDL3.Enums.ScaleMode.Linear
+  id: Linear
+  parent: SharpSDL3.Enums.ScaleMode
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: ScaleMode.Linear
+  fullName: SharpSDL3.Enums.ScaleMode.Linear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ScaleMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Linear
+    path: Enums/ScaleMode.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Linear = 1
+    return:
+      type: SharpSDL3.Enums.ScaleMode
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.ScaleMode
+  commentId: T:SharpSDL3.Enums.ScaleMode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ScaleMode.html
+  name: ScaleMode
+  nameWithType: ScaleMode
+  fullName: SharpSDL3.Enums.ScaleMode

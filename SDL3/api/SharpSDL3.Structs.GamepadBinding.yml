@@ -1,0 +1,539 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.GamepadBinding
+  commentId: T:SharpSDL3.Structs.GamepadBinding
+  id: GamepadBinding
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.GamepadBinding.InputAxis
+  - SharpSDL3.Structs.GamepadBinding.InputButton
+  - SharpSDL3.Structs.GamepadBinding.InputHat
+  - SharpSDL3.Structs.GamepadBinding.InputType
+  - SharpSDL3.Structs.GamepadBinding.OutputAxis
+  - SharpSDL3.Structs.GamepadBinding.OutputButton
+  - SharpSDL3.Structs.GamepadBinding.OutputType
+  langs:
+  - csharp
+  - vb
+  name: GamepadBinding
+  nameWithType: GamepadBinding
+  fullName: SharpSDL3.Structs.GamepadBinding
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadBinding
+    path: Structs/GamepadBinding.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct GamepadBinding
+    content.vb: Public Structure GamepadBinding
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.GamepadBinding.InputType
+  commentId: F:SharpSDL3.Structs.GamepadBinding.InputType
+  id: InputType
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: InputType
+  nameWithType: GamepadBinding.InputType
+  fullName: SharpSDL3.Structs.GamepadBinding.InputType
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InputType
+    path: Structs/GamepadBinding.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GamepadBindingType InputType
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+    content.vb: Public InputType As GamepadBindingType
+- uid: SharpSDL3.Structs.GamepadBinding.InputButton
+  commentId: F:SharpSDL3.Structs.GamepadBinding.InputButton
+  id: InputButton
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: InputButton
+  nameWithType: GamepadBinding.InputButton
+  fullName: SharpSDL3.Structs.GamepadBinding.InputButton
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InputButton
+    path: Structs/GamepadBinding.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int InputButton
+    return:
+      type: System.Int32
+    content.vb: Public InputButton As Integer
+- uid: SharpSDL3.Structs.GamepadBinding.InputAxis
+  commentId: F:SharpSDL3.Structs.GamepadBinding.InputAxis
+  id: InputAxis
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: InputAxis
+  nameWithType: GamepadBinding.InputAxis
+  fullName: SharpSDL3.Structs.GamepadBinding.InputAxis
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InputAxis
+    path: Structs/GamepadBinding.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public InternalGamepadBindingInputAxis InputAxis
+    return:
+      type: SharpSDL3.Structs.InternalGamepadBindingInputAxis
+    content.vb: Public InputAxis As InternalGamepadBindingInputAxis
+- uid: SharpSDL3.Structs.GamepadBinding.InputHat
+  commentId: F:SharpSDL3.Structs.GamepadBinding.InputHat
+  id: InputHat
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: InputHat
+  nameWithType: GamepadBinding.InputHat
+  fullName: SharpSDL3.Structs.GamepadBinding.InputHat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InputHat
+    path: Structs/GamepadBinding.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public InternalGamepadBindingInputHat InputHat
+    return:
+      type: SharpSDL3.Structs.InternalGamepadBindingInputHat
+    content.vb: Public InputHat As InternalGamepadBindingInputHat
+- uid: SharpSDL3.Structs.GamepadBinding.OutputType
+  commentId: F:SharpSDL3.Structs.GamepadBinding.OutputType
+  id: OutputType
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: OutputType
+  nameWithType: GamepadBinding.OutputType
+  fullName: SharpSDL3.Structs.GamepadBinding.OutputType
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OutputType
+    path: Structs/GamepadBinding.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GamepadBindingType OutputType
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+    content.vb: Public OutputType As GamepadBindingType
+- uid: SharpSDL3.Structs.GamepadBinding.OutputButton
+  commentId: F:SharpSDL3.Structs.GamepadBinding.OutputButton
+  id: OutputButton
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: OutputButton
+  nameWithType: GamepadBinding.OutputButton
+  fullName: SharpSDL3.Structs.GamepadBinding.OutputButton
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OutputButton
+    path: Structs/GamepadBinding.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GamepadButton OutputButton
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+    content.vb: Public OutputButton As GamepadButton
+- uid: SharpSDL3.Structs.GamepadBinding.OutputAxis
+  commentId: F:SharpSDL3.Structs.GamepadBinding.OutputAxis
+  id: OutputAxis
+  parent: SharpSDL3.Structs.GamepadBinding
+  langs:
+  - csharp
+  - vb
+  name: OutputAxis
+  nameWithType: GamepadBinding.OutputAxis
+  fullName: SharpSDL3.Structs.GamepadBinding.OutputAxis
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GamepadBinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OutputAxis
+    path: Structs/GamepadBinding.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public InternalGamepadBindingOutputAxis OutputAxis
+    return:
+      type: SharpSDL3.Structs.InternalGamepadBindingOutputAxis
+    content.vb: Public OutputAxis As InternalGamepadBindingOutputAxis
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Enums.GamepadBindingType
+  commentId: T:SharpSDL3.Enums.GamepadBindingType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GamepadBindingType.html
+  name: GamepadBindingType
+  nameWithType: GamepadBindingType
+  fullName: SharpSDL3.Enums.GamepadBindingType
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SharpSDL3.Structs.InternalGamepadBindingInputAxis
+  commentId: T:SharpSDL3.Structs.InternalGamepadBindingInputAxis
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.InternalGamepadBindingInputAxis.html
+  name: InternalGamepadBindingInputAxis
+  nameWithType: InternalGamepadBindingInputAxis
+  fullName: SharpSDL3.Structs.InternalGamepadBindingInputAxis
+- uid: SharpSDL3.Structs.InternalGamepadBindingInputHat
+  commentId: T:SharpSDL3.Structs.InternalGamepadBindingInputHat
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.InternalGamepadBindingInputHat.html
+  name: InternalGamepadBindingInputHat
+  nameWithType: InternalGamepadBindingInputHat
+  fullName: SharpSDL3.Structs.InternalGamepadBindingInputHat
+- uid: SharpSDL3.Enums.GamepadButton
+  commentId: T:SharpSDL3.Enums.GamepadButton
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GamepadButton.html
+  name: GamepadButton
+  nameWithType: GamepadButton
+  fullName: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Structs.InternalGamepadBindingOutputAxis
+  commentId: T:SharpSDL3.Structs.InternalGamepadBindingOutputAxis
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.InternalGamepadBindingOutputAxis.html
+  name: InternalGamepadBindingOutputAxis
+  nameWithType: InternalGamepadBindingOutputAxis
+  fullName: SharpSDL3.Structs.InternalGamepadBindingOutputAxis

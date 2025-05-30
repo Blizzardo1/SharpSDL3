@@ -12,4 +12,10 @@
 	<ItemGroup>
 	  <Compile Remove="Surface.cs" />
 	</ItemGroup>
+
+	<ItemGroup>
+	  <PackageReference Include="Docfx.App" Version="2.78.3" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
+	  <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.14.0" />
+	</ItemGroup>
 </Project>

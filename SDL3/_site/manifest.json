@@ -1,0 +1,5072 @@
+{
+  "source_base_path": "D:/source/repos/SDL3-CS/SDL3",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      }
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.CallerOwnedStringMarshaller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.CallerOwnedStringMarshaller.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.CallerOwnedStringMarshaller",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.CallerOwnedStringMarshaller.yml\" sourcestartlinenumber=\"1\">Custom marshaller for caller-owned strings returned by SDL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Constants.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Constants.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Constants",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAppEventFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAppEventFunc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAppEventFunc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAppInitFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAppInitFunc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAppInitFunc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAppIterateFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAppIterateFunc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAppIterateFunc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAppQuitFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAppQuitFunc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAppQuitFunc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAssertionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAssertionHandler.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAssertionHandler",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAudioPostmixCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAudioPostmixCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAudioPostmixCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlAudioStreamCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlAudioStreamCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlAudioStreamCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlCleanupPropertyCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlCleanupPropertyCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlCleanupPropertyCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlClipboardCleanupCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlClipboardCleanupCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlClipboardCleanupCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlClipboardDataCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlClipboardDataCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlClipboardDataCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlDialogFileCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlDialogFileCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlDialogFileCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlEglAttribArrayCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlEglAttribArrayCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlEglAttribArrayCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlEglIntArrayCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlEglIntArrayCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlEglIntArrayCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlEnumerateDirectoryCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlEnumerateDirectoryCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlEnumerateDirectoryCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlEnumeratePropertiesCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlEnumeratePropertiesCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlEnumeratePropertiesCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlEventFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlEventFilter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlEventFilter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHashCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHashCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHashCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHashDestroyCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHashDestroyCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHashDestroyCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHashFreeCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHashFreeCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHashFreeCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHashKeyMatchCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHashKeyMatchCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHashKeyMatchCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHintCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHintCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHintCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlHitTest.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlHitTest.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlHitTest",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlLogOutputFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlLogOutputFunction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlLogOutputFunction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlMainFunc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlMainFunc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlMainFunc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlMainThreadCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlMainThreadCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlMainThreadCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlNsTimerCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlNsTimerCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlNsTimerCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlThreadFunction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlThreadFunction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlThreadFunction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlTimerCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlTimerCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlTimerCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlTlsDestructorCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlTlsDestructorCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlTlsDestructorCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.SdlTrayCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.SdlTrayCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates.SdlTrayCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Delegates.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Delegates.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Delegates",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.AppResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.AppResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.AppResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ArrayOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ArrayOrder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ArrayOrder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.AssertState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.AssertState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.AssertState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.AsyncIoResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.AsyncIoResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.AsyncIoResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.AsyncIoTaskType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.AsyncIoTaskType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.AsyncIoTaskType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.AudioFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.AudioFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.AudioFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.BitmapOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.BitmapOrder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.BitmapOrder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.BlendFactor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.BlendFactor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.BlendFactor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.BlendMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.BlendMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.BlendMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.BlendOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.BlendOperation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.BlendOperation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.CameraPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.CameraPosition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.CameraPosition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.Capitalization.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.Capitalization.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.Capitalization",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ChromaLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ChromaLocation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ChromaLocation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ColorPrimaries.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ColorPrimaries.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ColorPrimaries",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ColorRange.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ColorRange.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ColorRange",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ColorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ColorType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ColorType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.Colorspace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.Colorspace.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.Colorspace",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.DateFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.DateFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.DateFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.DisplayOrientation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.DisplayOrientation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.DisplayOrientation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.EnumerationResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.EnumerationResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.EnumerationResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.EventAction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.EventAction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.EventAction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.EventType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.EventType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.EventType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.FileDialogType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.FileDialogType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.FileDialogType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.FlashOperation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.FlashOperation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.FlashOperation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.FlipMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.FlipMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.FlipMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.Folder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.Folder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.Folder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GamepadAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GamepadAxis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GamepadAxis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GamepadBindingType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GamepadBindingType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GamepadBindingType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GamepadButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GamepadButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GamepadButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GamepadButtonLabel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GamepadButtonLabel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GamepadButtonLabel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GamepadType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GamepadType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GamepadType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GlAttr.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GlAttr.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GlAttr",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GlobFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GlobFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GlobFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuBlendFactor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuBlendFactor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuBlendFactor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuBlendOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuBlendOp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuBlendOp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuBufferUsageFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuBufferUsageFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuBufferUsageFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuColorComponentFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuColorComponentFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuColorComponentFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuCompareOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuCompareOp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuCompareOp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuCubeMapFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuCubeMapFace.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuCubeMapFace",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuCullMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuCullMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuCullMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuFillMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuFillMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuFillMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuFilter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuFilter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuFrontFace.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuFrontFace.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuFrontFace",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuIndexElementSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuIndexElementSize.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuIndexElementSize",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuLoadOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuLoadOp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuLoadOp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuPresentMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuPresentMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuPresentMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuPrimitiveType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuPrimitiveType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuPrimitiveType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuSampleCount.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuSampleCount.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuSampleCount",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuSamplerAddressMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuSamplerAddressMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuSamplerAddressMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuSamplerMipmapMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuSamplerMipmapMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuSamplerMipmapMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuShaderFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuShaderFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuShaderFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuShaderStage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuShaderStage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuShaderStage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuStencilOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuStencilOp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuStencilOp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuStoreOp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuStoreOp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuStoreOp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuSwapchainComposition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuSwapchainComposition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuSwapchainComposition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuTextureFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuTextureFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuTextureFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuTextureType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuTextureType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuTextureType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuTextureUsageFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuTextureUsageFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuTextureUsageFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuTransferBufferUsage.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuTransferBufferUsage.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuTransferBufferUsage",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuVertexElementFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuVertexElementFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuVertexElementFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.GpuVertexInputRate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.GpuVertexInputRate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.GpuVertexInputRate",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.HidBusType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.HidBusType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.HidBusType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.HintPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.HintPriority.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.HintPriority",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.HitTestResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.HitTestResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.HitTestResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.InitFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.InitFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.InitFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.InitStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.InitStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.InitStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.IoStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.IoStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.IoStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.IoWhence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.IoWhence.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.IoWhence",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.JoystickConnectionState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.JoystickConnectionState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.JoystickConnectionState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.JoystickType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.JoystickType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.JoystickType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.KeyMod.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.KeyMod.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.KeyMod",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.Keycode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.Keycode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.Keycode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.LogCategory.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.LogCategory.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.LogCategory",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.LogPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.LogPriority.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.LogPriority",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MatrixCoefficients.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MatrixCoefficients.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MatrixCoefficients",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MessageBoxButtons.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MessageBoxButtons.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MessageBoxButtons",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MessageBoxColorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MessageBoxColorType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MessageBoxColorType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MessageBoxDefaultButton.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MessageBoxDefaultButton.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MessageBoxDefaultButton",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MessageBoxFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MessageBoxFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MessageBoxFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MessageBoxResult.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MessageBoxResult.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MessageBoxResult",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MouseButtonFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MouseButtonFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MouseButtonFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.MouseWheelDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.MouseWheelDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.MouseWheelDirection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PackedLayout.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PackedLayout.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PackedLayout",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PackedOrder.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PackedOrder.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PackedOrder",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PathType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PathType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PathType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PenAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PenAxis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PenAxis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PenInputFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PenInputFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PenInputFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PixelFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PixelFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PixelFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PixelType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PixelType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PixelType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PowerState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PowerState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PowerState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ProcessIo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ProcessIo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ProcessIo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.PropertyType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.PropertyType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.PropertyType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.RendererLogicalPresentation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.RendererLogicalPresentation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.RendererLogicalPresentation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.Sandbox.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.Sandbox.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.Sandbox",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ScaleMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ScaleMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ScaleMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ScanCode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ScanCode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ScanCode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.SensorType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.SensorType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.SensorType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.SurfaceDataFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.SurfaceDataFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.SurfaceDataFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.SurfaceFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.SurfaceFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.SurfaceFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.SystemCursor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.SystemCursor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.SystemCursor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.SystemTheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.SystemTheme.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.SystemTheme",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TextInputType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TextInputType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TextInputType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TextureAccess.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TextureAccess.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TextureAccess",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ThreadPriority.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ThreadPriority.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ThreadPriority",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.ThreadState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.ThreadState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.ThreadState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TimeFormat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TimeFormat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TimeFormat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TouchDeviceType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TouchDeviceType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TouchDeviceType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TransferCharacteristics.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TransferCharacteristics.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TransferCharacteristics",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.TrayEntryFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.TrayEntryFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.TrayEntryFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.WindowFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.WindowFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums.WindowFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Enums.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Enums.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Enums",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Image.Animation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Image.Animation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Image.Animation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Image.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Image",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.AudioDeviceId.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.AudioDeviceId.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.AudioDeviceId",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Chunk.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Chunk.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Chunk",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.Chunk.yml\" sourcestartlinenumber=\"1\">The internal format for an audio chunk</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Fading.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Fading.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Fading",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.Fading.yml\" sourcestartlinenumber=\"1\">The different fading types supported</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.MixInit.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.MixInit.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.MixInit",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.Mixer.MixInit.yml\" sourcestartlinenumber=\"1\">The internal format for a music chunk interpreted via codecs</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.Mix_EffectDone_t",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.yml\" sourcestartlinenumber=\"1\">This is a callback that signifies that a channel has finished all its loops\nand has completed playback.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.yml\" sourcestartlinenumber=\"1\">This is the format of a special effect callback:</p>\n<p sourcefile=\"api/SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.yml\" sourcestartlinenumber=\"3\">myeffect(int chan, void *stream, int len, void *udata);</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_MixCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.Mix_MixCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.Mix_MixCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.MusicFinishedCallback.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.MusicFinishedCallback.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer.MusicFinishedCallback",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Mixer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Mixer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Mixer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.Music.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.Music.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.Music",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicApi.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicApi.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicApi",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.CloseDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.CloseDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.CloseDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.CloseDelegate.yml\" sourcestartlinenumber=\"1\">Closes the backend and cleans up resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.yml\" sourcestartlinenumber=\"1\">Creates a music object from a file, used when SDL_IOStream is not supported.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.yml\" sourcestartlinenumber=\"1\">Creates a music object from an SDL_IOStream.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.DeleteDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.DeleteDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.DeleteDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.DeleteDelegate.yml\" sourcestartlinenumber=\"1\">Deletes a music object, freeing its resources.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.DurationDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.DurationDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.DurationDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.DurationDelegate.yml\" sourcestartlinenumber=\"1\">Gets the total duration of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.GetAudioDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.yml\" sourcestartlinenumber=\"1\">Retrieves audio data from a music object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.yml\" sourcestartlinenumber=\"1\">Retrieves a metadata tag from the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.yml\" sourcestartlinenumber=\"1\">Gets the number of tracks in the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.yml\" sourcestartlinenumber=\"1\">Gets the volume for a music object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.yml\" sourcestartlinenumber=\"1\">Checks if a music object is currently playing.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.JumpDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.JumpDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.JumpDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.JumpDelegate.yml\" sourcestartlinenumber=\"1\">Jumps to a specific order in MOD music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoadDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoadDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.LoadDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.LoadDelegate.yml\" sourcestartlinenumber=\"1\">Loads the backend library.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.LoopEndDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.yml\" sourcestartlinenumber=\"1\">Gets the loop end position of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.yml\" sourcestartlinenumber=\"1\">Gets the loop length of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.LoopStartDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.yml\" sourcestartlinenumber=\"1\">Gets the loop start position of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.OpenDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.OpenDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.OpenDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.OpenDelegate.yml\" sourcestartlinenumber=\"1\">Initializes the backend for audio output with the specified audio specification.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.PauseDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.PauseDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.PauseDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.PauseDelegate.yml\" sourcestartlinenumber=\"1\">Pauses playback of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.PlayDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.PlayDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.PlayDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.PlayDelegate.yml\" sourcestartlinenumber=\"1\">Starts playing a music object from the beginning.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.ResumeDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.ResumeDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.ResumeDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.ResumeDelegate.yml\" sourcestartlinenumber=\"1\">Resumes playback of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.SeekDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.SeekDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.SeekDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.SeekDelegate.yml\" sourcestartlinenumber=\"1\">Seeks to a specific position in the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.yml\" sourcestartlinenumber=\"1\">Sets the volume for a music object.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.StartTrackDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.yml\" sourcestartlinenumber=\"1\">Starts playback from a specific track.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.StopDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.StopDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.StopDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.StopDelegate.yml\" sourcestartlinenumber=\"1\">Stops playback of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.TellDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.TellDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.TellDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.TellDelegate.yml\" sourcestartlinenumber=\"1\">Gets the current playback position of the music.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.UnloadDelegate.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.UnloadDelegate.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface.UnloadDelegate",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.UnloadDelegate.yml\" sourcestartlinenumber=\"1\">Unloads the backend library.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicInterface",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicInterface.yml\" sourcestartlinenumber=\"1\">Defines an interface for a music backend in SDL3_mixer, specifying how to load, play, and manage music data.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicMetaTag.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicMetaTag.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicMetaTag",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.MusicType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.MusicType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer.MusicType",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Mixer.MusicType.yml\" sourcestartlinenumber=\"1\">These are types of music files (not libraries used to load them)</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Mixer.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Mixer.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Mixer",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.OwnedFontMarshaller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.OwnedFontMarshaller.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.OwnedFontMarshaller",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.OwnedStringMarshaller.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.OwnedStringMarshaller.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.OwnedStringMarshaller",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.OwnedStringMarshaller.yml\" sourcestartlinenumber=\"1\">Custom marshaller for SDL-owned strings returned by SDL.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Sdl.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Sdl.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Sdl",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.SdlException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.SdlException.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.SdlException",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.SdlException.yml\" sourcestartlinenumber=\"1\">Represents an SDL3_mixer-related exception.</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AssertData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AssertData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AssertData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AsyncIoOutcome.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AsyncIoOutcome.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AsyncIoOutcome",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AtomicInt.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AtomicInt.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AtomicInt",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AtomicU32.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AtomicU32.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AtomicU32",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AudioDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AudioDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AudioDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.AudioSpec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.AudioSpec.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.AudioSpec",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.CameraDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.CameraDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.CameraDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.CameraSpec.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.CameraSpec.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.CameraSpec",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.ClipboardEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.ClipboardEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.ClipboardEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Color.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Color.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Color",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.CommonEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.CommonEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.CommonEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.DateTime.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.DateTime.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.DateTime",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.DialogFileFilter.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.DialogFileFilter.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.DialogFileFilter",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.DisplayEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.DisplayEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.DisplayEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.DisplayMode.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.DisplayMode.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.DisplayMode",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.DropEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.DropEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.DropEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Event.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Event.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Event",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.FColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.FColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.FColor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.FPoint.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.FPoint.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.FPoint",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.FRect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.FRect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.FRect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.FSize.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.FSize.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.FSize",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Finger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Finger.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Finger",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadAxisEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadAxisEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadAxisEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadBinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadBinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadButtonEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadButtonEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadButtonEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadSensorEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadSensorEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadSensorEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GamepadTouchpadEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GamepadTouchpadEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GamepadTouchpadEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBlitInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBlitInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBlitInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBlitRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBlitRegion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBlitRegion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBufferBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBufferBinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBufferBinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBufferCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBufferCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBufferCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBufferLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBufferLocation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBufferLocation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuBufferRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuBufferRegion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuBufferRegion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuColorTargetBlendState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuColorTargetBlendState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuColorTargetBlendState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuColorTargetDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuColorTargetDescription.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuColorTargetDescription",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuColorTargetInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuColorTargetInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuColorTargetInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuComputePipelineCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuComputePipelineCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuComputePipelineCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuDepthStencilState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuDepthStencilState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuDepthStencilState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuDepthStencilTargetInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuDepthStencilTargetInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuDepthStencilTargetInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuIndexedIndirectDrawCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuIndexedIndirectDrawCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuIndexedIndirectDrawCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuIndirectDispatchCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuIndirectDispatchCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuIndirectDispatchCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuIndirectDrawCommand.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuIndirectDrawCommand.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuIndirectDrawCommand",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuMultisampleState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuMultisampleState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuMultisampleState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuRasterizerState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuRasterizerState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuRasterizerState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuSamplerCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuSamplerCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuSamplerCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuShaderCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuShaderCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuShaderCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuStencilOpState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuStencilOpState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuStencilOpState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuStorageBufferReadWriteBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuStorageBufferReadWriteBinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuStorageBufferReadWriteBinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuStorageTextureReadWriteBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuStorageTextureReadWriteBinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuStorageTextureReadWriteBinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTextureCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTextureCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTextureCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTextureLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTextureLocation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTextureLocation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTextureRegion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTextureRegion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTextureRegion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTextureSamplerBinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTextureSamplerBinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTextureSamplerBinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTextureTransferInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTextureTransferInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTextureTransferInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTransferBufferCreateInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTransferBufferCreateInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTransferBufferCreateInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuTransferBufferLocation.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuTransferBufferLocation.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuTransferBufferLocation",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuVertexAttribute.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuVertexAttribute.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuVertexAttribute",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuVertexBufferDescription.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuVertexBufferDescription.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuVertexBufferDescription",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuVertexInputState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuVertexInputState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuVertexInputState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.GpuViewport.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.GpuViewport.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.GpuViewport",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticCondition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticCondition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticCondition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticConstant.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticConstant.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticConstant",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticCustom.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticCustom.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticCustom",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticDirection.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticDirection.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticDirection",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticEffect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticEffect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticEffect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticLeftRight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticLeftRight.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticLeftRight",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticPeriodic.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticPeriodic.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticPeriodic",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HapticRamp.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HapticRamp.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HapticRamp",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.HidDeviceInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.HidDeviceInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.HidDeviceInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStatus.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStatus.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStatus",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStream.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStream.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStream",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Close.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Close.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Close",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Flush.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Flush.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Flush",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Read.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Read.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Read",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Seek.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Seek.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Seek",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Size.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Size.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Size",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Write.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface.Write.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface.Write",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOStreamInterface_1.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOStreamInterface_1.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOStreamInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IOWhence.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IOWhence.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IOWhence",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.InitState.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.InitState.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.InitState",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingInputAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingInputAxis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.InternalGamepadBindingInputAxis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingInputHat.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingInputHat.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.InternalGamepadBindingInputHat",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingOutputAxis.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.InternalGamepadBindingOutputAxis.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.InternalGamepadBindingOutputAxis",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.IoStreamInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.IoStreamInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.IoStreamInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyAxisEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyAxisEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyAxisEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyBallEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyBallEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyBallEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyBatteryEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyBatteryEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyBatteryEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyButtonEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyButtonEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyButtonEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.JoyHatEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.JoyHatEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.JoyHatEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.KeyboardDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.KeyboardDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.KeyboardDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.KeyboardEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.KeyboardEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.KeyboardEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Locale.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Locale.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Locale",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MessageBoxButtonData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MessageBoxButtonData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MessageBoxButtonData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MessageBoxColor.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MessageBoxColor.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MessageBoxColor",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MessageBoxColorScheme.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MessageBoxColorScheme.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MessageBoxColorScheme",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MessageBoxData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MessageBoxData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MessageBoxData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MouseButtonEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MouseButtonEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MouseButtonEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MouseDeviceEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MouseDeviceEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MouseDeviceEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MouseMotionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MouseMotionEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MouseMotionEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.MouseWheelEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.MouseWheelEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.MouseWheelEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Palette.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Palette.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Palette",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PathInfo.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PathInfo.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PathInfo",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PenAxisEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PenAxisEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PenAxisEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PenButtonEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PenButtonEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PenButtonEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PenMotionEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PenMotionEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PenMotionEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PenProximityEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PenProximityEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PenProximityEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PenTouchEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PenTouchEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PenTouchEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.PixelFormatDetails.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.PixelFormatDetails.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.PixelFormatDetails",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Point.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Point.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Point",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.QuitEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.QuitEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.QuitEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Rect.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Rect.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Rect",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.RenderEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.RenderEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.RenderEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.SdlBool.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.SdlBool.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.SdlBool",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.Structs.SdlBool.yml\" sourcestartlinenumber=\"1\">Taken from <a href=\"https://github.com/ppy/SDL3-CS\" sourcefile=\"api/SharpSDL3.Structs.SdlBool.yml\" sourcestartlinenumber=\"1\">https://github.com/ppy/SDL3-CS</a>\nC# bools are not blittable, so we need this workaround</p>\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.SdlGuid.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.SdlGuid.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.SdlGuid",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.SensorEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.SensorEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.SensorEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Size.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Size.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Size",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.StorageInterface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.StorageInterface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.StorageInterface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Surface.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Surface.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Surface",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.TextEditingCandidatesEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.TextEditingCandidatesEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.TextEditingCandidatesEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.TextEditingEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.TextEditingEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.TextEditingEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.TextInputEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.TextInputEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.TextInputEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Texture.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Texture.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Texture",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.TouchFingerEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.TouchFingerEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.TouchFingerEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.UserEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.UserEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.UserEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Vector2.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Vector2.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Vector2",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Vector3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Vector3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Vector3",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.Vertex.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.Vertex.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.Vertex",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.VirtualJoystickDesc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.VirtualJoystickDesc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.VirtualJoystickDesc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.VirtualJoystickSensorDesc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.VirtualJoystickSensorDesc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.VirtualJoystickSensorDesc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.VirtualJoystickTouchpadDesc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.VirtualJoystickTouchpadDesc.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.VirtualJoystickTouchpadDesc",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.WindowEvent.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.WindowEvent.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs.WindowEvent",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.Structs.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.Structs.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.Structs",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.CachedGlyphPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.CachedGlyphPositions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.CachedGlyphPositions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Direction.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Direction.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Direction",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Font.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Font.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Font",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.FontList.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.FontList.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.FontList",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.FontStyle.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.FontStyle.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.FontStyle",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.FontWeight.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.FontWeight.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.FontWeight",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GPUTextEngineWinding.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GPUTextEngineWinding.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GPUTextEngineWinding",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Glyph.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Glyph.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Glyph",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GlyphKerningSmart.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GlyphKerningSmart.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GlyphKerningSmart",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GlyphPosition.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GlyphPosition.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GlyphPosition",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GlyphPositions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GlyphPositions.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GlyphPositions",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GlyphSubpixel.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GlyphSubpixel.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GlyphSubpixel",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.GlyphUnion.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.GlyphUnion.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.GlyphUnion",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Hinting.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Hinting.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Hinting",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.HorizontalAlignment.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.HorizontalAlignment.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.HorizontalAlignment",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Image.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Image.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Image",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.ImageType.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.ImageType.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.ImageType",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Line.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Line.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Line",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.SubString.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.SubString.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.SubString",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.SubStringFlags.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.SubStringFlags.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.SubStringFlags",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Text.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Text.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Text",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.TextData.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.TextData.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.TextData",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.TextEngine.CreateText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.TextEngine.CreateText.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.TextEngine.CreateText",
+      "Summary": "<p sourcefile=\"api/SharpSDL3.TTF.TextEngine.CreateText.yml\" sourcestartlinenumber=\"1\">Create a text representation from draw instructions.</p>\n<p>\nAll fields of <code>text</code> except <code>internal-&gt;engine_text</code> will already be filled out.\n</p>\n<p>\nThis function should set the <code>internal-&gt;engine_text</code> field to a non-NULL value.\n</p>\n<param name=\"userdata\">The userdata pointer in this interface.\n<param name=\"text\">The text object being created.\n"
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.TextEngine.DestroyText.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.TextEngine.DestroyText.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.TextEngine.DestroyText",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.TextEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.TextEngine.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.TextEngine",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.Ttf.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.Ttf.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF.Ttf",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.TTF.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.TTF.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3.TTF",
+      "Summary": null
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/SharpSDL3.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/SharpSDL3.html"
+        }
+      },
+      "version": "",
+      "Uid": null,
+      "IsMRef": true,
+      "Title": "SharpSDL3",
+      "Summary": null
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html"
+        },
+        ".json": {
+          "relative_path": "api/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/getting-started.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/getting-started.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "docs/introduction.md",
+      "output": {
+        ".html": {
+          "relative_path": "docs/introduction.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "docs/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "docs/toc.html"
+        },
+        ".json": {
+          "relative_path": "docs/toc.json"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html"
+        }
+      },
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html"
+        },
+        ".json": {
+          "relative_path": "toc.json"
+        }
+      },
+      "version": ""
+    }
+  ],
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

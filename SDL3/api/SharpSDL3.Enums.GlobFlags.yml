@@ -1,0 +1,95 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GlobFlags
+  commentId: T:SharpSDL3.Enums.GlobFlags
+  id: GlobFlags
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GlobFlags.CaseInsensitive
+  langs:
+  - csharp
+  - vb
+  name: GlobFlags
+  nameWithType: GlobFlags
+  fullName: SharpSDL3.Enums.GlobFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GlobFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GlobFlags
+    path: Enums/GlobFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum GlobFlags : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum GlobFlags As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.GlobFlags.CaseInsensitive
+  commentId: F:SharpSDL3.Enums.GlobFlags.CaseInsensitive
+  id: CaseInsensitive
+  parent: SharpSDL3.Enums.GlobFlags
+  langs:
+  - csharp
+  - vb
+  name: CaseInsensitive
+  nameWithType: GlobFlags.CaseInsensitive
+  fullName: SharpSDL3.Enums.GlobFlags.CaseInsensitive
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlobFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CaseInsensitive
+    path: Enums/GlobFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CaseInsensitive = 1
+    return:
+      type: SharpSDL3.Enums.GlobFlags
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GlobFlags
+  commentId: T:SharpSDL3.Enums.GlobFlags
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GlobFlags.html
+  name: GlobFlags
+  nameWithType: GlobFlags
+  fullName: SharpSDL3.Enums.GlobFlags

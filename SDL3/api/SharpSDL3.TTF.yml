@@ -1,0 +1,270 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  id: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.CachedGlyphPositions
+  - SharpSDL3.TTF.Direction
+  - SharpSDL3.TTF.Font
+  - SharpSDL3.TTF.FontList
+  - SharpSDL3.TTF.FontStyle
+  - SharpSDL3.TTF.FontWeight
+  - SharpSDL3.TTF.GPUTextEngineWinding
+  - SharpSDL3.TTF.Glyph
+  - SharpSDL3.TTF.GlyphKerningSmart
+  - SharpSDL3.TTF.GlyphPosition
+  - SharpSDL3.TTF.GlyphPositions
+  - SharpSDL3.TTF.GlyphSubpixel
+  - SharpSDL3.TTF.GlyphUnion
+  - SharpSDL3.TTF.Hinting
+  - SharpSDL3.TTF.HorizontalAlignment
+  - SharpSDL3.TTF.Image
+  - SharpSDL3.TTF.ImageType
+  - SharpSDL3.TTF.Line
+  - SharpSDL3.TTF.SubString
+  - SharpSDL3.TTF.SubStringFlags
+  - SharpSDL3.TTF.Text
+  - SharpSDL3.TTF.TextData
+  - SharpSDL3.TTF.TextEngine
+  - SharpSDL3.TTF.TextEngine.CreateText
+  - SharpSDL3.TTF.TextEngine.DestroyText
+  - SharpSDL3.TTF.Ttf
+  langs:
+  - csharp
+  - vb
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  type: Namespace
+  assemblies:
+  - SharpSDL3
+references:
+- uid: SharpSDL3.TTF.CachedGlyphPositions
+  commentId: T:SharpSDL3.TTF.CachedGlyphPositions
+  href: SharpSDL3.TTF.CachedGlyphPositions.html
+  name: CachedGlyphPositions
+  nameWithType: CachedGlyphPositions
+  fullName: SharpSDL3.TTF.CachedGlyphPositions
+- uid: SharpSDL3.TTF.Direction
+  commentId: T:SharpSDL3.TTF.Direction
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Direction.html
+  name: Direction
+  nameWithType: Direction
+  fullName: SharpSDL3.TTF.Direction
+- uid: SharpSDL3.TTF.Font
+  commentId: T:SharpSDL3.TTF.Font
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Font.html
+  name: Font
+  nameWithType: Font
+  fullName: SharpSDL3.TTF.Font
+- uid: SharpSDL3.TTF.FontList
+  commentId: T:SharpSDL3.TTF.FontList
+  href: SharpSDL3.TTF.FontList.html
+  name: FontList
+  nameWithType: FontList
+  fullName: SharpSDL3.TTF.FontList
+- uid: SharpSDL3.TTF.FontStyle
+  commentId: T:SharpSDL3.TTF.FontStyle
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.FontStyle.html
+  name: FontStyle
+  nameWithType: FontStyle
+  fullName: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.FontWeight
+  commentId: T:SharpSDL3.TTF.FontWeight
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.FontWeight.html
+  name: FontWeight
+  nameWithType: FontWeight
+  fullName: SharpSDL3.TTF.FontWeight
+- uid: SharpSDL3.TTF.Glyph
+  commentId: T:SharpSDL3.TTF.Glyph
+  href: SharpSDL3.TTF.Glyph.html
+  name: Glyph
+  nameWithType: Glyph
+  fullName: SharpSDL3.TTF.Glyph
+- uid: SharpSDL3.TTF.GlyphKerningSmart
+  commentId: T:SharpSDL3.TTF.GlyphKerningSmart
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GlyphKerningSmart.html
+  name: GlyphKerningSmart
+  nameWithType: GlyphKerningSmart
+  fullName: SharpSDL3.TTF.GlyphKerningSmart
+- uid: SharpSDL3.TTF.GlyphPosition
+  commentId: T:SharpSDL3.TTF.GlyphPosition
+  href: SharpSDL3.TTF.GlyphPosition.html
+  name: GlyphPosition
+  nameWithType: GlyphPosition
+  fullName: SharpSDL3.TTF.GlyphPosition
+- uid: SharpSDL3.TTF.GlyphPositions
+  commentId: T:SharpSDL3.TTF.GlyphPositions
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GlyphPositions.html
+  name: GlyphPositions
+  nameWithType: GlyphPositions
+  fullName: SharpSDL3.TTF.GlyphPositions
+- uid: SharpSDL3.TTF.GlyphSubpixel
+  commentId: T:SharpSDL3.TTF.GlyphSubpixel
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GlyphSubpixel.html
+  name: GlyphSubpixel
+  nameWithType: GlyphSubpixel
+  fullName: SharpSDL3.TTF.GlyphSubpixel
+- uid: SharpSDL3.TTF.GlyphUnion
+  commentId: T:SharpSDL3.TTF.GlyphUnion
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GlyphUnion.html
+  name: GlyphUnion
+  nameWithType: GlyphUnion
+  fullName: SharpSDL3.TTF.GlyphUnion
+- uid: SharpSDL3.TTF.GPUTextEngineWinding
+  commentId: T:SharpSDL3.TTF.GPUTextEngineWinding
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GPUTextEngineWinding.html
+  name: GPUTextEngineWinding
+  nameWithType: GPUTextEngineWinding
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding
+- uid: SharpSDL3.TTF.Hinting
+  commentId: T:SharpSDL3.TTF.Hinting
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Hinting.html
+  name: Hinting
+  nameWithType: Hinting
+  fullName: SharpSDL3.TTF.Hinting
+- uid: SharpSDL3.TTF.HorizontalAlignment
+  commentId: T:SharpSDL3.TTF.HorizontalAlignment
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.HorizontalAlignment.html
+  name: HorizontalAlignment
+  nameWithType: HorizontalAlignment
+  fullName: SharpSDL3.TTF.HorizontalAlignment
+- uid: SharpSDL3.TTF.Image
+  commentId: T:SharpSDL3.TTF.Image
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Image.html
+  name: Image
+  nameWithType: Image
+  fullName: SharpSDL3.TTF.Image
+- uid: SharpSDL3.TTF.ImageType
+  commentId: T:SharpSDL3.TTF.ImageType
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.ImageType.html
+  name: ImageType
+  nameWithType: ImageType
+  fullName: SharpSDL3.TTF.ImageType
+- uid: SharpSDL3.TTF.Line
+  commentId: T:SharpSDL3.TTF.Line
+  href: SharpSDL3.TTF.Line.html
+  name: Line
+  nameWithType: Line
+  fullName: SharpSDL3.TTF.Line
+- uid: SharpSDL3.TTF.SubString
+  commentId: T:SharpSDL3.TTF.SubString
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.SubString.html
+  name: SubString
+  nameWithType: SubString
+  fullName: SharpSDL3.TTF.SubString
+- uid: SharpSDL3.TTF.SubStringFlags
+  commentId: T:SharpSDL3.TTF.SubStringFlags
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.SubStringFlags.html
+  name: SubStringFlags
+  nameWithType: SubStringFlags
+  fullName: SharpSDL3.TTF.SubStringFlags
+- uid: SharpSDL3.TTF.Text
+  commentId: T:SharpSDL3.TTF.Text
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Text.html
+  name: Text
+  nameWithType: Text
+  fullName: SharpSDL3.TTF.Text
+- uid: SharpSDL3.TTF.TextData
+  commentId: T:SharpSDL3.TTF.TextData
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.TextData.html
+  name: TextData
+  nameWithType: TextData
+  fullName: SharpSDL3.TTF.TextData
+- uid: SharpSDL3.TTF.TextEngine
+  commentId: T:SharpSDL3.TTF.TextEngine
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.TextEngine.html
+  name: TextEngine
+  nameWithType: TextEngine
+  fullName: SharpSDL3.TTF.TextEngine
+- uid: SharpSDL3.TTF.TextEngine.CreateText
+  commentId: T:SharpSDL3.TTF.TextEngine.CreateText
+  href: SharpSDL3.TTF.TextEngine.html
+  name: TextEngine.CreateText
+  nameWithType: TextEngine.CreateText
+  fullName: SharpSDL3.TTF.TextEngine.CreateText
+  spec.csharp:
+  - uid: SharpSDL3.TTF.TextEngine
+    name: TextEngine
+    href: SharpSDL3.TTF.TextEngine.html
+  - name: .
+  - uid: SharpSDL3.TTF.TextEngine.CreateText
+    name: CreateText
+    href: SharpSDL3.TTF.TextEngine.CreateText.html
+  spec.vb:
+  - uid: SharpSDL3.TTF.TextEngine
+    name: TextEngine
+    href: SharpSDL3.TTF.TextEngine.html
+  - name: .
+  - uid: SharpSDL3.TTF.TextEngine.CreateText
+    name: CreateText
+    href: SharpSDL3.TTF.TextEngine.CreateText.html
+- uid: SharpSDL3.TTF.TextEngine.DestroyText
+  commentId: T:SharpSDL3.TTF.TextEngine.DestroyText
+  href: SharpSDL3.TTF.TextEngine.html
+  name: TextEngine.DestroyText
+  nameWithType: TextEngine.DestroyText
+  fullName: SharpSDL3.TTF.TextEngine.DestroyText
+  spec.csharp:
+  - uid: SharpSDL3.TTF.TextEngine
+    name: TextEngine
+    href: SharpSDL3.TTF.TextEngine.html
+  - name: .
+  - uid: SharpSDL3.TTF.TextEngine.DestroyText
+    name: DestroyText
+    href: SharpSDL3.TTF.TextEngine.DestroyText.html
+  spec.vb:
+  - uid: SharpSDL3.TTF.TextEngine
+    name: TextEngine
+    href: SharpSDL3.TTF.TextEngine.html
+  - name: .
+  - uid: SharpSDL3.TTF.TextEngine.DestroyText
+    name: DestroyText
+    href: SharpSDL3.TTF.TextEngine.DestroyText.html
+- uid: SharpSDL3.TTF.Ttf
+  commentId: T:SharpSDL3.TTF.Ttf
+  href: SharpSDL3.TTF.Ttf.html
+  name: Ttf
+  nameWithType: Ttf
+  fullName: SharpSDL3.TTF.Ttf
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html

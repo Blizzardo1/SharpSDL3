@@ -1,0 +1,88 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.IOStreamInterface.Write
+  commentId: T:SharpSDL3.Structs.IOStreamInterface.Write
+  id: IOStreamInterface.Write
+  parent: SharpSDL3.Structs
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: IOStreamInterface.Write
+  nameWithType: IOStreamInterface.Write
+  fullName: SharpSDL3.Structs.IOStreamInterface.Write
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Structs/IOStreamInterface1.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Write
+    path: Structs/IOStreamInterface1.cs
+    startLine: 49
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  example: []
+  syntax:
+    content: public delegate Size IOStreamInterface.Write(nint userdata, nint ptr, Size size, nint status)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: ptr
+      type: System.IntPtr
+    - id: size
+      type: SharpSDL3.Structs.Size
+    - id: status
+      type: System.IntPtr
+    return:
+      type: SharpSDL3.Structs.Size
+    content.vb: Public Delegate Function IOStreamInterface.Write(userdata As IntPtr, ptr As IntPtr, size As Size, status As IntPtr) As Size
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.Structs.Size
+  commentId: T:SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.Size.html
+  name: Size
+  nameWithType: Size
+  fullName: SharpSDL3.Structs.Size
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,98 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  id: MusicInterface.CreateFromFileDelegate
+  parent: SharpSDL3.Mixer
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: MusicInterface.CreateFromFileDelegate
+  nameWithType: MusicInterface.CreateFromFileDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Mixer/MusicInterface.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CreateFromFileDelegate
+    path: Mixer/MusicInterface.cs
+    startLine: 75
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  summary: Creates a music object from a file, used when SDL_IOStream is not supported.
+  example: []
+  syntax:
+    content: public delegate nint MusicInterface.CreateFromFileDelegate(string file)
+    parameters:
+    - id: file
+      type: System.String
+      description: The path to the music file.
+    return:
+      type: System.IntPtr
+      description: An opaque pointer to the music object, or <xref href="System.IntPtr.Zero" data-throw-if-not-resolved="false"></xref> on failure.
+    content.vb: Public Delegate Function MusicInterface.CreateFromFileDelegate(file As String) As IntPtr
+references:
+- uid: System.IntPtr.Zero
+  commentId: F:System.IntPtr.Zero
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr.zero
+  name: Zero
+  nameWithType: nint.Zero
+  fullName: nint.Zero
+  nameWithType.vb: IntPtr.Zero
+  fullName.vb: System.IntPtr.Zero
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

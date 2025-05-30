@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.BitmapOrder
+  commentId: T:SharpSDL3.Enums.BitmapOrder
+  id: BitmapOrder
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.BitmapOrder.None
+  - SharpSDL3.Enums.BitmapOrder.Order1234
+  - SharpSDL3.Enums.BitmapOrder.Order4321
+  langs:
+  - csharp
+  - vb
+  name: BitmapOrder
+  nameWithType: BitmapOrder
+  fullName: SharpSDL3.Enums.BitmapOrder
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/BitmapOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BitmapOrder
+    path: Enums/BitmapOrder.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum BitmapOrder
+    content.vb: Public Enum BitmapOrder
+- uid: SharpSDL3.Enums.BitmapOrder.None
+  commentId: F:SharpSDL3.Enums.BitmapOrder.None
+  id: None
+  parent: SharpSDL3.Enums.BitmapOrder
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: BitmapOrder.None
+  fullName: SharpSDL3.Enums.BitmapOrder.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BitmapOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/BitmapOrder.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.BitmapOrder
+- uid: SharpSDL3.Enums.BitmapOrder.Order4321
+  commentId: F:SharpSDL3.Enums.BitmapOrder.Order4321
+  id: Order4321
+  parent: SharpSDL3.Enums.BitmapOrder
+  langs:
+  - csharp
+  - vb
+  name: Order4321
+  nameWithType: BitmapOrder.Order4321
+  fullName: SharpSDL3.Enums.BitmapOrder.Order4321
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BitmapOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Order4321
+    path: Enums/BitmapOrder.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Order4321 = 1
+    return:
+      type: SharpSDL3.Enums.BitmapOrder
+- uid: SharpSDL3.Enums.BitmapOrder.Order1234
+  commentId: F:SharpSDL3.Enums.BitmapOrder.Order1234
+  id: Order1234
+  parent: SharpSDL3.Enums.BitmapOrder
+  langs:
+  - csharp
+  - vb
+  name: Order1234
+  nameWithType: BitmapOrder.Order1234
+  fullName: SharpSDL3.Enums.BitmapOrder.Order1234
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BitmapOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Order1234
+    path: Enums/BitmapOrder.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Order1234 = 2
+    return:
+      type: SharpSDL3.Enums.BitmapOrder
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.BitmapOrder
+  commentId: T:SharpSDL3.Enums.BitmapOrder
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.BitmapOrder.html
+  name: BitmapOrder
+  nameWithType: BitmapOrder
+  fullName: SharpSDL3.Enums.BitmapOrder

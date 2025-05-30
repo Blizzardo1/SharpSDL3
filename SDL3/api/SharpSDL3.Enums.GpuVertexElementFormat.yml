@@ -1,0 +1,895 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuVertexElementFormat
+  commentId: T:SharpSDL3.Enums.GpuVertexElementFormat
+  id: GpuVertexElementFormat
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuVertexElementFormat.Byte2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Byte2Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.Byte4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Byte4Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.Float
+  - SharpSDL3.Enums.GpuVertexElementFormat.Float2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Float3
+  - SharpSDL3.Enums.GpuVertexElementFormat.Float4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Half2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Half4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Int
+  - SharpSDL3.Enums.GpuVertexElementFormat.Int2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Int3
+  - SharpSDL3.Enums.GpuVertexElementFormat.Int4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Invalid
+  - SharpSDL3.Enums.GpuVertexElementFormat.Short2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Short2Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.Short4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Short4Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.UByte2
+  - SharpSDL3.Enums.GpuVertexElementFormat.UByte2Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.UByte4
+  - SharpSDL3.Enums.GpuVertexElementFormat.UByte4Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.Uint
+  - SharpSDL3.Enums.GpuVertexElementFormat.Uint2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Uint3
+  - SharpSDL3.Enums.GpuVertexElementFormat.Uint4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Ushort2
+  - SharpSDL3.Enums.GpuVertexElementFormat.Ushort2Norm
+  - SharpSDL3.Enums.GpuVertexElementFormat.Ushort4
+  - SharpSDL3.Enums.GpuVertexElementFormat.Ushort4Norm
+  langs:
+  - csharp
+  - vb
+  name: GpuVertexElementFormat
+  nameWithType: GpuVertexElementFormat
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuVertexElementFormat
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuVertexElementFormat
+    content.vb: Public Enum GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Invalid
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: GpuVertexElementFormat.Invalid
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Int
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Int
+  id: Int
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Int
+  nameWithType: GpuVertexElementFormat.Int
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Int
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Int
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Int = 1
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Int2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Int2
+  id: Int2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Int2
+  nameWithType: GpuVertexElementFormat.Int2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Int2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Int2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Int2 = 2
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Int3
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Int3
+  id: Int3
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Int3
+  nameWithType: GpuVertexElementFormat.Int3
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Int3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Int3
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Int3 = 3
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Int4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Int4
+  id: Int4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Int4
+  nameWithType: GpuVertexElementFormat.Int4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Int4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Int4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Int4 = 4
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Uint
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Uint
+  id: Uint
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Uint
+  nameWithType: GpuVertexElementFormat.Uint
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Uint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uint
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uint = 5
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Uint2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Uint2
+  id: Uint2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Uint2
+  nameWithType: GpuVertexElementFormat.Uint2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Uint2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uint2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uint2 = 6
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Uint3
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Uint3
+  id: Uint3
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Uint3
+  nameWithType: GpuVertexElementFormat.Uint3
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Uint3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uint3
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uint3 = 7
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Uint4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Uint4
+  id: Uint4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Uint4
+  nameWithType: GpuVertexElementFormat.Uint4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Uint4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uint4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uint4 = 8
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Float
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Float
+  id: Float
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Float
+  nameWithType: GpuVertexElementFormat.Float
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Float
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Float
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Float = 9
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Float2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Float2
+  id: Float2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Float2
+  nameWithType: GpuVertexElementFormat.Float2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Float2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Float2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Float2 = 10
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Float3
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Float3
+  id: Float3
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Float3
+  nameWithType: GpuVertexElementFormat.Float3
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Float3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Float3
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Float3 = 11
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Float4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Float4
+  id: Float4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Float4
+  nameWithType: GpuVertexElementFormat.Float4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Float4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Float4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Float4 = 12
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Byte2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Byte2
+  id: Byte2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Byte2
+  nameWithType: GpuVertexElementFormat.Byte2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Byte2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Byte2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Byte2 = 13
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Byte4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Byte4
+  id: Byte4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Byte4
+  nameWithType: GpuVertexElementFormat.Byte4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Byte4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Byte4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Byte4 = 14
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.UByte2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.UByte2
+  id: UByte2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: UByte2
+  nameWithType: GpuVertexElementFormat.UByte2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.UByte2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UByte2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: UByte2 = 15
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.UByte4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.UByte4
+  id: UByte4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: UByte4
+  nameWithType: GpuVertexElementFormat.UByte4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.UByte4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UByte4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: UByte4 = 16
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Byte2Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Byte2Norm
+  id: Byte2Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Byte2Norm
+  nameWithType: GpuVertexElementFormat.Byte2Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Byte2Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Byte2Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Byte2Norm = 17
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Byte4Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Byte4Norm
+  id: Byte4Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Byte4Norm
+  nameWithType: GpuVertexElementFormat.Byte4Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Byte4Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Byte4Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Byte4Norm = 18
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.UByte2Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.UByte2Norm
+  id: UByte2Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: UByte2Norm
+  nameWithType: GpuVertexElementFormat.UByte2Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.UByte2Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UByte2Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: UByte2Norm = 19
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.UByte4Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.UByte4Norm
+  id: UByte4Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: UByte4Norm
+  nameWithType: GpuVertexElementFormat.UByte4Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.UByte4Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UByte4Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: UByte4Norm = 20
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Short2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Short2
+  id: Short2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Short2
+  nameWithType: GpuVertexElementFormat.Short2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Short2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Short2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Short2 = 21
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Short4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Short4
+  id: Short4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Short4
+  nameWithType: GpuVertexElementFormat.Short4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Short4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Short4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Short4 = 22
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Ushort2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Ushort2
+  id: Ushort2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Ushort2
+  nameWithType: GpuVertexElementFormat.Ushort2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Ushort2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ushort2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ushort2 = 23
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Ushort4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Ushort4
+  id: Ushort4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Ushort4
+  nameWithType: GpuVertexElementFormat.Ushort4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Ushort4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ushort4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ushort4 = 24
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Short2Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Short2Norm
+  id: Short2Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Short2Norm
+  nameWithType: GpuVertexElementFormat.Short2Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Short2Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Short2Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Short2Norm = 25
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Short4Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Short4Norm
+  id: Short4Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Short4Norm
+  nameWithType: GpuVertexElementFormat.Short4Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Short4Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Short4Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Short4Norm = 26
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Ushort2Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Ushort2Norm
+  id: Ushort2Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Ushort2Norm
+  nameWithType: GpuVertexElementFormat.Ushort2Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Ushort2Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ushort2Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ushort2Norm = 27
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Ushort4Norm
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Ushort4Norm
+  id: Ushort4Norm
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Ushort4Norm
+  nameWithType: GpuVertexElementFormat.Ushort4Norm
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Ushort4Norm
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ushort4Norm
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ushort4Norm = 28
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Half2
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Half2
+  id: Half2
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Half2
+  nameWithType: GpuVertexElementFormat.Half2
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Half2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Half2
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 33
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Half2 = 29
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+- uid: SharpSDL3.Enums.GpuVertexElementFormat.Half4
+  commentId: F:SharpSDL3.Enums.GpuVertexElementFormat.Half4
+  id: Half4
+  parent: SharpSDL3.Enums.GpuVertexElementFormat
+  langs:
+  - csharp
+  - vb
+  name: Half4
+  nameWithType: GpuVertexElementFormat.Half4
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat.Half4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuVertexElementFormat.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Half4
+    path: Enums/GpuVertexElementFormat.cs
+    startLine: 34
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Half4 = 30
+    return:
+      type: SharpSDL3.Enums.GpuVertexElementFormat
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuVertexElementFormat
+  commentId: T:SharpSDL3.Enums.GpuVertexElementFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuVertexElementFormat.html
+  name: GpuVertexElementFormat
+  nameWithType: GpuVertexElementFormat
+  fullName: SharpSDL3.Enums.GpuVertexElementFormat

@@ -1,0 +1,490 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.CameraSpec
+  commentId: T:SharpSDL3.Structs.CameraSpec
+  id: CameraSpec
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.CameraSpec.ColorSpace
+  - SharpSDL3.Structs.CameraSpec.Format
+  - SharpSDL3.Structs.CameraSpec.FramerateDenominator
+  - SharpSDL3.Structs.CameraSpec.FramerateNumerator
+  - SharpSDL3.Structs.CameraSpec.Height
+  - SharpSDL3.Structs.CameraSpec.Width
+  langs:
+  - csharp
+  - vb
+  name: CameraSpec
+  nameWithType: CameraSpec
+  fullName: SharpSDL3.Structs.CameraSpec
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CameraSpec
+    path: Structs/CameraSpec.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct CameraSpec
+    content.vb: Public Structure CameraSpec
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.CameraSpec.Format
+  commentId: F:SharpSDL3.Structs.CameraSpec.Format
+  id: Format
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: Format
+  nameWithType: CameraSpec.Format
+  fullName: SharpSDL3.Structs.CameraSpec.Format
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Format
+    path: Structs/CameraSpec.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public PixelFormat Format
+    return:
+      type: SharpSDL3.Enums.PixelFormat
+    content.vb: Public Format As PixelFormat
+- uid: SharpSDL3.Structs.CameraSpec.ColorSpace
+  commentId: F:SharpSDL3.Structs.CameraSpec.ColorSpace
+  id: ColorSpace
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: ColorSpace
+  nameWithType: CameraSpec.ColorSpace
+  fullName: SharpSDL3.Structs.CameraSpec.ColorSpace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ColorSpace
+    path: Structs/CameraSpec.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public Colorspace ColorSpace
+    return:
+      type: SharpSDL3.Enums.Colorspace
+    content.vb: Public ColorSpace As Colorspace
+- uid: SharpSDL3.Structs.CameraSpec.Width
+  commentId: F:SharpSDL3.Structs.CameraSpec.Width
+  id: Width
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: CameraSpec.Width
+  fullName: SharpSDL3.Structs.CameraSpec.Width
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Width
+    path: Structs/CameraSpec.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int Width
+    return:
+      type: System.Int32
+    content.vb: Public Width As Integer
+- uid: SharpSDL3.Structs.CameraSpec.Height
+  commentId: F:SharpSDL3.Structs.CameraSpec.Height
+  id: Height
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: CameraSpec.Height
+  fullName: SharpSDL3.Structs.CameraSpec.Height
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Height
+    path: Structs/CameraSpec.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int Height
+    return:
+      type: System.Int32
+    content.vb: Public Height As Integer
+- uid: SharpSDL3.Structs.CameraSpec.FramerateNumerator
+  commentId: F:SharpSDL3.Structs.CameraSpec.FramerateNumerator
+  id: FramerateNumerator
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: FramerateNumerator
+  nameWithType: CameraSpec.FramerateNumerator
+  fullName: SharpSDL3.Structs.CameraSpec.FramerateNumerator
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FramerateNumerator
+    path: Structs/CameraSpec.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int FramerateNumerator
+    return:
+      type: System.Int32
+    content.vb: Public FramerateNumerator As Integer
+- uid: SharpSDL3.Structs.CameraSpec.FramerateDenominator
+  commentId: F:SharpSDL3.Structs.CameraSpec.FramerateDenominator
+  id: FramerateDenominator
+  parent: SharpSDL3.Structs.CameraSpec
+  langs:
+  - csharp
+  - vb
+  name: FramerateDenominator
+  nameWithType: CameraSpec.FramerateDenominator
+  fullName: SharpSDL3.Structs.CameraSpec.FramerateDenominator
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/CameraSpec.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FramerateDenominator
+    path: Structs/CameraSpec.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int FramerateDenominator
+    return:
+      type: System.Int32
+    content.vb: Public FramerateDenominator As Integer
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Enums.PixelFormat
+  commentId: T:SharpSDL3.Enums.PixelFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.PixelFormat.html
+  name: PixelFormat
+  nameWithType: PixelFormat
+  fullName: SharpSDL3.Enums.PixelFormat
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.Colorspace
+  commentId: T:SharpSDL3.Enums.Colorspace
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.Colorspace.html
+  name: Colorspace
+  nameWithType: Colorspace
+  fullName: SharpSDL3.Enums.Colorspace
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer

@@ -1,0 +1,339 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.InitFlags
+  commentId: T:SharpSDL3.Enums.InitFlags
+  id: InitFlags
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.InitFlags.Audio
+  - SharpSDL3.Enums.InitFlags.Camera
+  - SharpSDL3.Enums.InitFlags.Events
+  - SharpSDL3.Enums.InitFlags.Everything
+  - SharpSDL3.Enums.InitFlags.Gamepad
+  - SharpSDL3.Enums.InitFlags.Haptic
+  - SharpSDL3.Enums.InitFlags.Joystick
+  - SharpSDL3.Enums.InitFlags.Sensor
+  - SharpSDL3.Enums.InitFlags.Timer
+  - SharpSDL3.Enums.InitFlags.Video
+  langs:
+  - csharp
+  - vb
+  name: InitFlags
+  nameWithType: InitFlags
+  fullName: SharpSDL3.Enums.InitFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InitFlags
+    path: Enums/InitFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum InitFlags : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum InitFlags As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.InitFlags.Timer
+  commentId: F:SharpSDL3.Enums.InitFlags.Timer
+  id: Timer
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Timer
+  nameWithType: InitFlags.Timer
+  fullName: SharpSDL3.Enums.InitFlags.Timer
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Timer
+    path: Enums/InitFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Timer = 1
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Audio
+  commentId: F:SharpSDL3.Enums.InitFlags.Audio
+  id: Audio
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Audio
+  nameWithType: InitFlags.Audio
+  fullName: SharpSDL3.Enums.InitFlags.Audio
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Audio
+    path: Enums/InitFlags.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Audio = 16
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Video
+  commentId: F:SharpSDL3.Enums.InitFlags.Video
+  id: Video
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Video
+  nameWithType: InitFlags.Video
+  fullName: SharpSDL3.Enums.InitFlags.Video
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Video
+    path: Enums/InitFlags.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Video = 32
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Joystick
+  commentId: F:SharpSDL3.Enums.InitFlags.Joystick
+  id: Joystick
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Joystick
+  nameWithType: InitFlags.Joystick
+  fullName: SharpSDL3.Enums.InitFlags.Joystick
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Joystick
+    path: Enums/InitFlags.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Joystick = 512
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Haptic
+  commentId: F:SharpSDL3.Enums.InitFlags.Haptic
+  id: Haptic
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Haptic
+  nameWithType: InitFlags.Haptic
+  fullName: SharpSDL3.Enums.InitFlags.Haptic
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Haptic
+    path: Enums/InitFlags.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Haptic = 4096
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Gamepad
+  commentId: F:SharpSDL3.Enums.InitFlags.Gamepad
+  id: Gamepad
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Gamepad
+  nameWithType: InitFlags.Gamepad
+  fullName: SharpSDL3.Enums.InitFlags.Gamepad
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Gamepad
+    path: Enums/InitFlags.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Gamepad = 8192
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Events
+  commentId: F:SharpSDL3.Enums.InitFlags.Events
+  id: Events
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Events
+  nameWithType: InitFlags.Events
+  fullName: SharpSDL3.Enums.InitFlags.Events
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Events
+    path: Enums/InitFlags.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Events = 16384
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Sensor
+  commentId: F:SharpSDL3.Enums.InitFlags.Sensor
+  id: Sensor
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Sensor
+  nameWithType: InitFlags.Sensor
+  fullName: SharpSDL3.Enums.InitFlags.Sensor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Sensor
+    path: Enums/InitFlags.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Sensor = 32768
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Camera
+  commentId: F:SharpSDL3.Enums.InitFlags.Camera
+  id: Camera
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Camera
+  nameWithType: InitFlags.Camera
+  fullName: SharpSDL3.Enums.InitFlags.Camera
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Camera
+    path: Enums/InitFlags.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Camera = 65536
+    return:
+      type: SharpSDL3.Enums.InitFlags
+- uid: SharpSDL3.Enums.InitFlags.Everything
+  commentId: F:SharpSDL3.Enums.InitFlags.Everything
+  id: Everything
+  parent: SharpSDL3.Enums.InitFlags
+  langs:
+  - csharp
+  - vb
+  name: Everything
+  nameWithType: InitFlags.Everything
+  fullName: SharpSDL3.Enums.InitFlags.Everything
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Everything
+    path: Enums/InitFlags.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Everything = Timer | Audio | Video | Joystick | Haptic | Gamepad | Events | Sensor | Camera
+    return:
+      type: SharpSDL3.Enums.InitFlags
+    content.vb: Everything = Timer Or Audio Or Video Or Joystick Or Haptic Or Gamepad Or Events Or Sensor Or Camera
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.InitFlags
+  commentId: T:SharpSDL3.Enums.InitFlags
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.InitFlags.html
+  name: InitFlags
+  nameWithType: InitFlags
+  fullName: SharpSDL3.Enums.InitFlags

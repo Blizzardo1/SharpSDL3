@@ -1,0 +1,6997 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.Keycode
+  commentId: T:SharpSDL3.Enums.Keycode
+  id: Keycode
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.Keycode.A
+  - SharpSDL3.Enums.Keycode.AcBack
+  - SharpSDL3.Enums.Keycode.AcBookmarks
+  - SharpSDL3.Enums.Keycode.AcClose
+  - SharpSDL3.Enums.Keycode.AcExit
+  - SharpSDL3.Enums.Keycode.AcForward
+  - SharpSDL3.Enums.Keycode.AcHome
+  - SharpSDL3.Enums.Keycode.AcNew
+  - SharpSDL3.Enums.Keycode.AcOpen
+  - SharpSDL3.Enums.Keycode.AcPrint
+  - SharpSDL3.Enums.Keycode.AcProperties
+  - SharpSDL3.Enums.Keycode.AcRefresh
+  - SharpSDL3.Enums.Keycode.AcSave
+  - SharpSDL3.Enums.Keycode.AcSearch
+  - SharpSDL3.Enums.Keycode.AcStop
+  - SharpSDL3.Enums.Keycode.Again
+  - SharpSDL3.Enums.Keycode.AltErase
+  - SharpSDL3.Enums.Keycode.Ampersand
+  - SharpSDL3.Enums.Keycode.Apostrophe
+  - SharpSDL3.Enums.Keycode.Application
+  - SharpSDL3.Enums.Keycode.Asterisk
+  - SharpSDL3.Enums.Keycode.At
+  - SharpSDL3.Enums.Keycode.B
+  - SharpSDL3.Enums.Keycode.Backslash
+  - SharpSDL3.Enums.Keycode.Backspace
+  - SharpSDL3.Enums.Keycode.C
+  - SharpSDL3.Enums.Keycode.Call
+  - SharpSDL3.Enums.Keycode.Cancel
+  - SharpSDL3.Enums.Keycode.Capslock
+  - SharpSDL3.Enums.Keycode.Caret
+  - SharpSDL3.Enums.Keycode.ChannelDecrement
+  - SharpSDL3.Enums.Keycode.ChannelIncrement
+  - SharpSDL3.Enums.Keycode.Clear
+  - SharpSDL3.Enums.Keycode.ClearAgain
+  - SharpSDL3.Enums.Keycode.Colon
+  - SharpSDL3.Enums.Keycode.Comma
+  - SharpSDL3.Enums.Keycode.Copy
+  - SharpSDL3.Enums.Keycode.CrSel
+  - SharpSDL3.Enums.Keycode.CurrencySubunit
+  - SharpSDL3.Enums.Keycode.CurrencyUnit
+  - SharpSDL3.Enums.Keycode.Cut
+  - SharpSDL3.Enums.Keycode.D
+  - SharpSDL3.Enums.Keycode.DblApostrophe
+  - SharpSDL3.Enums.Keycode.DecimalSeparator
+  - SharpSDL3.Enums.Keycode.Delete
+  - SharpSDL3.Enums.Keycode.Dollar
+  - SharpSDL3.Enums.Keycode.Down
+  - SharpSDL3.Enums.Keycode.E
+  - SharpSDL3.Enums.Keycode.End
+  - SharpSDL3.Enums.Keycode.EndCall
+  - SharpSDL3.Enums.Keycode.Equals
+  - SharpSDL3.Enums.Keycode.Escape
+  - SharpSDL3.Enums.Keycode.ExSel
+  - SharpSDL3.Enums.Keycode.Exclaim
+  - SharpSDL3.Enums.Keycode.Execute
+  - SharpSDL3.Enums.Keycode.F
+  - SharpSDL3.Enums.Keycode.F1
+  - SharpSDL3.Enums.Keycode.F10
+  - SharpSDL3.Enums.Keycode.F11
+  - SharpSDL3.Enums.Keycode.F12
+  - SharpSDL3.Enums.Keycode.F13
+  - SharpSDL3.Enums.Keycode.F14
+  - SharpSDL3.Enums.Keycode.F15
+  - SharpSDL3.Enums.Keycode.F16
+  - SharpSDL3.Enums.Keycode.F17
+  - SharpSDL3.Enums.Keycode.F18
+  - SharpSDL3.Enums.Keycode.F19
+  - SharpSDL3.Enums.Keycode.F2
+  - SharpSDL3.Enums.Keycode.F20
+  - SharpSDL3.Enums.Keycode.F21
+  - SharpSDL3.Enums.Keycode.F22
+  - SharpSDL3.Enums.Keycode.F23
+  - SharpSDL3.Enums.Keycode.F24
+  - SharpSDL3.Enums.Keycode.F3
+  - SharpSDL3.Enums.Keycode.F4
+  - SharpSDL3.Enums.Keycode.F5
+  - SharpSDL3.Enums.Keycode.F6
+  - SharpSDL3.Enums.Keycode.F7
+  - SharpSDL3.Enums.Keycode.F8
+  - SharpSDL3.Enums.Keycode.F9
+  - SharpSDL3.Enums.Keycode.Find
+  - SharpSDL3.Enums.Keycode.G
+  - SharpSDL3.Enums.Keycode.Grave
+  - SharpSDL3.Enums.Keycode.Greater
+  - SharpSDL3.Enums.Keycode.H
+  - SharpSDL3.Enums.Keycode.Hash
+  - SharpSDL3.Enums.Keycode.Help
+  - SharpSDL3.Enums.Keycode.Home
+  - SharpSDL3.Enums.Keycode.I
+  - SharpSDL3.Enums.Keycode.Insert
+  - SharpSDL3.Enums.Keycode.J
+  - SharpSDL3.Enums.Keycode.K
+  - SharpSDL3.Enums.Keycode.Kp0
+  - SharpSDL3.Enums.Keycode.Kp00
+  - SharpSDL3.Enums.Keycode.Kp000
+  - SharpSDL3.Enums.Keycode.Kp1
+  - SharpSDL3.Enums.Keycode.Kp2
+  - SharpSDL3.Enums.Keycode.Kp3
+  - SharpSDL3.Enums.Keycode.Kp4
+  - SharpSDL3.Enums.Keycode.Kp5
+  - SharpSDL3.Enums.Keycode.Kp6
+  - SharpSDL3.Enums.Keycode.Kp7
+  - SharpSDL3.Enums.Keycode.Kp8
+  - SharpSDL3.Enums.Keycode.Kp9
+  - SharpSDL3.Enums.Keycode.KpA
+  - SharpSDL3.Enums.Keycode.KpAmpersand
+  - SharpSDL3.Enums.Keycode.KpAt
+  - SharpSDL3.Enums.Keycode.KpB
+  - SharpSDL3.Enums.Keycode.KpBackspace
+  - SharpSDL3.Enums.Keycode.KpBinary
+  - SharpSDL3.Enums.Keycode.KpC
+  - SharpSDL3.Enums.Keycode.KpClear
+  - SharpSDL3.Enums.Keycode.KpClearEntry
+  - SharpSDL3.Enums.Keycode.KpColon
+  - SharpSDL3.Enums.Keycode.KpComma
+  - SharpSDL3.Enums.Keycode.KpD
+  - SharpSDL3.Enums.Keycode.KpDblAmpersand
+  - SharpSDL3.Enums.Keycode.KpDblVerticalBar
+  - SharpSDL3.Enums.Keycode.KpDecimal
+  - SharpSDL3.Enums.Keycode.KpDivide
+  - SharpSDL3.Enums.Keycode.KpE
+  - SharpSDL3.Enums.Keycode.KpEnter
+  - SharpSDL3.Enums.Keycode.KpEquals
+  - SharpSDL3.Enums.Keycode.KpEqualsAs400
+  - SharpSDL3.Enums.Keycode.KpExclamation
+  - SharpSDL3.Enums.Keycode.KpF
+  - SharpSDL3.Enums.Keycode.KpGreater
+  - SharpSDL3.Enums.Keycode.KpHash
+  - SharpSDL3.Enums.Keycode.KpHexadecimal
+  - SharpSDL3.Enums.Keycode.KpLeftBrace
+  - SharpSDL3.Enums.Keycode.KpLeftParen
+  - SharpSDL3.Enums.Keycode.KpLess
+  - SharpSDL3.Enums.Keycode.KpMemAdd
+  - SharpSDL3.Enums.Keycode.KpMemClear
+  - SharpSDL3.Enums.Keycode.KpMemDivide
+  - SharpSDL3.Enums.Keycode.KpMemMultiply
+  - SharpSDL3.Enums.Keycode.KpMemRecall
+  - SharpSDL3.Enums.Keycode.KpMemStore
+  - SharpSDL3.Enums.Keycode.KpMemSubtract
+  - SharpSDL3.Enums.Keycode.KpMinus
+  - SharpSDL3.Enums.Keycode.KpMultiply
+  - SharpSDL3.Enums.Keycode.KpOctal
+  - SharpSDL3.Enums.Keycode.KpPercent
+  - SharpSDL3.Enums.Keycode.KpPeriod
+  - SharpSDL3.Enums.Keycode.KpPlus
+  - SharpSDL3.Enums.Keycode.KpPlusMinus
+  - SharpSDL3.Enums.Keycode.KpPower
+  - SharpSDL3.Enums.Keycode.KpRightBrace
+  - SharpSDL3.Enums.Keycode.KpRightParen
+  - SharpSDL3.Enums.Keycode.KpSpace
+  - SharpSDL3.Enums.Keycode.KpTab
+  - SharpSDL3.Enums.Keycode.KpVerticalBar
+  - SharpSDL3.Enums.Keycode.KpXor
+  - SharpSDL3.Enums.Keycode.L
+  - SharpSDL3.Enums.Keycode.LAlt
+  - SharpSDL3.Enums.Keycode.LCtrl
+  - SharpSDL3.Enums.Keycode.LGui
+  - SharpSDL3.Enums.Keycode.LHyper
+  - SharpSDL3.Enums.Keycode.LMeta
+  - SharpSDL3.Enums.Keycode.LShift
+  - SharpSDL3.Enums.Keycode.Left
+  - SharpSDL3.Enums.Keycode.LeftBrace
+  - SharpSDL3.Enums.Keycode.LeftBracket
+  - SharpSDL3.Enums.Keycode.LeftParen
+  - SharpSDL3.Enums.Keycode.LeftTab
+  - SharpSDL3.Enums.Keycode.Less
+  - SharpSDL3.Enums.Keycode.Level5Shift
+  - SharpSDL3.Enums.Keycode.M
+  - SharpSDL3.Enums.Keycode.MediaEject
+  - SharpSDL3.Enums.Keycode.MediaFastForward
+  - SharpSDL3.Enums.Keycode.MediaNextTrack
+  - SharpSDL3.Enums.Keycode.MediaPause
+  - SharpSDL3.Enums.Keycode.MediaPlay
+  - SharpSDL3.Enums.Keycode.MediaPlayPause
+  - SharpSDL3.Enums.Keycode.MediaPreviousTrack
+  - SharpSDL3.Enums.Keycode.MediaRecord
+  - SharpSDL3.Enums.Keycode.MediaRewind
+  - SharpSDL3.Enums.Keycode.MediaSelect
+  - SharpSDL3.Enums.Keycode.MediaStop
+  - SharpSDL3.Enums.Keycode.Menu
+  - SharpSDL3.Enums.Keycode.Minus
+  - SharpSDL3.Enums.Keycode.Mode
+  - SharpSDL3.Enums.Keycode.MultiKeyCompose
+  - SharpSDL3.Enums.Keycode.Mute
+  - SharpSDL3.Enums.Keycode.N
+  - SharpSDL3.Enums.Keycode.Num0
+  - SharpSDL3.Enums.Keycode.Num1
+  - SharpSDL3.Enums.Keycode.Num2
+  - SharpSDL3.Enums.Keycode.Num3
+  - SharpSDL3.Enums.Keycode.Num4
+  - SharpSDL3.Enums.Keycode.Num5
+  - SharpSDL3.Enums.Keycode.Num6
+  - SharpSDL3.Enums.Keycode.Num7
+  - SharpSDL3.Enums.Keycode.Num8
+  - SharpSDL3.Enums.Keycode.Num9
+  - SharpSDL3.Enums.Keycode.NumlockClear
+  - SharpSDL3.Enums.Keycode.O
+  - SharpSDL3.Enums.Keycode.Oper
+  - SharpSDL3.Enums.Keycode.Out
+  - SharpSDL3.Enums.Keycode.P
+  - SharpSDL3.Enums.Keycode.Pagedown
+  - SharpSDL3.Enums.Keycode.Pageup
+  - SharpSDL3.Enums.Keycode.Paste
+  - SharpSDL3.Enums.Keycode.Pause
+  - SharpSDL3.Enums.Keycode.Percent
+  - SharpSDL3.Enums.Keycode.Period
+  - SharpSDL3.Enums.Keycode.Pipe
+  - SharpSDL3.Enums.Keycode.Plus
+  - SharpSDL3.Enums.Keycode.PlusMinus
+  - SharpSDL3.Enums.Keycode.Power
+  - SharpSDL3.Enums.Keycode.PrintScreen
+  - SharpSDL3.Enums.Keycode.Prior
+  - SharpSDL3.Enums.Keycode.Q
+  - SharpSDL3.Enums.Keycode.Question
+  - SharpSDL3.Enums.Keycode.R
+  - SharpSDL3.Enums.Keycode.RAlt
+  - SharpSDL3.Enums.Keycode.RCtrl
+  - SharpSDL3.Enums.Keycode.RGui
+  - SharpSDL3.Enums.Keycode.RHyper
+  - SharpSDL3.Enums.Keycode.RMeta
+  - SharpSDL3.Enums.Keycode.RShift
+  - SharpSDL3.Enums.Keycode.Return
+  - SharpSDL3.Enums.Keycode.Return2
+  - SharpSDL3.Enums.Keycode.Right
+  - SharpSDL3.Enums.Keycode.RightBrace
+  - SharpSDL3.Enums.Keycode.RightBracket
+  - SharpSDL3.Enums.Keycode.RightParen
+  - SharpSDL3.Enums.Keycode.S
+  - SharpSDL3.Enums.Keycode.ScancodeMask
+  - SharpSDL3.Enums.Keycode.ScrollLock
+  - SharpSDL3.Enums.Keycode.Select
+  - SharpSDL3.Enums.Keycode.Semicolon
+  - SharpSDL3.Enums.Keycode.Separator
+  - SharpSDL3.Enums.Keycode.Slash
+  - SharpSDL3.Enums.Keycode.Sleep
+  - SharpSDL3.Enums.Keycode.SoftLeft
+  - SharpSDL3.Enums.Keycode.SoftRight
+  - SharpSDL3.Enums.Keycode.Space
+  - SharpSDL3.Enums.Keycode.Stop
+  - SharpSDL3.Enums.Keycode.SysReq
+  - SharpSDL3.Enums.Keycode.T
+  - SharpSDL3.Enums.Keycode.Tab
+  - SharpSDL3.Enums.Keycode.ThousandsSeparator
+  - SharpSDL3.Enums.Keycode.Tilde
+  - SharpSDL3.Enums.Keycode.U
+  - SharpSDL3.Enums.Keycode.Underscore
+  - SharpSDL3.Enums.Keycode.Undo
+  - SharpSDL3.Enums.Keycode.Unknown
+  - SharpSDL3.Enums.Keycode.Up
+  - SharpSDL3.Enums.Keycode.V
+  - SharpSDL3.Enums.Keycode.VolumeDown
+  - SharpSDL3.Enums.Keycode.VolumeUp
+  - SharpSDL3.Enums.Keycode.W
+  - SharpSDL3.Enums.Keycode.Wake
+  - SharpSDL3.Enums.Keycode.X
+  - SharpSDL3.Enums.Keycode.Y
+  - SharpSDL3.Enums.Keycode.Z
+  langs:
+  - csharp
+  - vb
+  name: Keycode
+  nameWithType: Keycode
+  fullName: SharpSDL3.Enums.Keycode
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Keycode
+    path: Enums/SdlKeycode.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: 'public enum Keycode : uint'
+    content.vb: Public Enum Keycode As UInteger
+- uid: SharpSDL3.Enums.Keycode.ScancodeMask
+  commentId: F:SharpSDL3.Enums.Keycode.ScancodeMask
+  id: ScancodeMask
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ScancodeMask
+  nameWithType: Keycode.ScancodeMask
+  fullName: SharpSDL3.Enums.Keycode.ScancodeMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ScancodeMask
+    path: Enums/SdlKeycode.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ScancodeMask = 1073741824
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Unknown
+  commentId: F:SharpSDL3.Enums.Keycode.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: Keycode.Unknown
+  fullName: SharpSDL3.Enums.Keycode.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/SdlKeycode.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Return
+  commentId: F:SharpSDL3.Enums.Keycode.Return
+  id: Return
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Return
+  nameWithType: Keycode.Return
+  fullName: SharpSDL3.Enums.Keycode.Return
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Return
+    path: Enums/SdlKeycode.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Return = 13
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Escape
+  commentId: F:SharpSDL3.Enums.Keycode.Escape
+  id: Escape
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Escape
+  nameWithType: Keycode.Escape
+  fullName: SharpSDL3.Enums.Keycode.Escape
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Escape
+    path: Enums/SdlKeycode.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Escape = 27
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Backspace
+  commentId: F:SharpSDL3.Enums.Keycode.Backspace
+  id: Backspace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Backspace
+  nameWithType: Keycode.Backspace
+  fullName: SharpSDL3.Enums.Keycode.Backspace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Backspace
+    path: Enums/SdlKeycode.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Backspace = 8
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Tab
+  commentId: F:SharpSDL3.Enums.Keycode.Tab
+  id: Tab
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Tab
+  nameWithType: Keycode.Tab
+  fullName: SharpSDL3.Enums.Keycode.Tab
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Tab
+    path: Enums/SdlKeycode.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Tab = 9
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Space
+  commentId: F:SharpSDL3.Enums.Keycode.Space
+  id: Space
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Space
+  nameWithType: Keycode.Space
+  fullName: SharpSDL3.Enums.Keycode.Space
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Space
+    path: Enums/SdlKeycode.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Space = 32
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Exclaim
+  commentId: F:SharpSDL3.Enums.Keycode.Exclaim
+  id: Exclaim
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Exclaim
+  nameWithType: Keycode.Exclaim
+  fullName: SharpSDL3.Enums.Keycode.Exclaim
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Exclaim
+    path: Enums/SdlKeycode.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Exclaim = 33
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.DblApostrophe
+  commentId: F:SharpSDL3.Enums.Keycode.DblApostrophe
+  id: DblApostrophe
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: DblApostrophe
+  nameWithType: Keycode.DblApostrophe
+  fullName: SharpSDL3.Enums.Keycode.DblApostrophe
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DblApostrophe
+    path: Enums/SdlKeycode.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DblApostrophe = 34
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Hash
+  commentId: F:SharpSDL3.Enums.Keycode.Hash
+  id: Hash
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Hash
+  nameWithType: Keycode.Hash
+  fullName: SharpSDL3.Enums.Keycode.Hash
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hash
+    path: Enums/SdlKeycode.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Hash = 35
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Dollar
+  commentId: F:SharpSDL3.Enums.Keycode.Dollar
+  id: Dollar
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Dollar
+  nameWithType: Keycode.Dollar
+  fullName: SharpSDL3.Enums.Keycode.Dollar
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Dollar
+    path: Enums/SdlKeycode.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Dollar = 36
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Percent
+  commentId: F:SharpSDL3.Enums.Keycode.Percent
+  id: Percent
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Percent
+  nameWithType: Keycode.Percent
+  fullName: SharpSDL3.Enums.Keycode.Percent
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Percent
+    path: Enums/SdlKeycode.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Percent = 37
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Ampersand
+  commentId: F:SharpSDL3.Enums.Keycode.Ampersand
+  id: Ampersand
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Ampersand
+  nameWithType: Keycode.Ampersand
+  fullName: SharpSDL3.Enums.Keycode.Ampersand
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ampersand
+    path: Enums/SdlKeycode.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ampersand = 38
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Apostrophe
+  commentId: F:SharpSDL3.Enums.Keycode.Apostrophe
+  id: Apostrophe
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Apostrophe
+  nameWithType: Keycode.Apostrophe
+  fullName: SharpSDL3.Enums.Keycode.Apostrophe
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Apostrophe
+    path: Enums/SdlKeycode.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Apostrophe = 39
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LeftParen
+  commentId: F:SharpSDL3.Enums.Keycode.LeftParen
+  id: LeftParen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LeftParen
+  nameWithType: Keycode.LeftParen
+  fullName: SharpSDL3.Enums.Keycode.LeftParen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftParen
+    path: Enums/SdlKeycode.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftParen = 40
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RightParen
+  commentId: F:SharpSDL3.Enums.Keycode.RightParen
+  id: RightParen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RightParen
+  nameWithType: Keycode.RightParen
+  fullName: SharpSDL3.Enums.Keycode.RightParen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightParen
+    path: Enums/SdlKeycode.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightParen = 41
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Asterisk
+  commentId: F:SharpSDL3.Enums.Keycode.Asterisk
+  id: Asterisk
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Asterisk
+  nameWithType: Keycode.Asterisk
+  fullName: SharpSDL3.Enums.Keycode.Asterisk
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Asterisk
+    path: Enums/SdlKeycode.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Asterisk = 42
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Plus
+  commentId: F:SharpSDL3.Enums.Keycode.Plus
+  id: Plus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Plus
+  nameWithType: Keycode.Plus
+  fullName: SharpSDL3.Enums.Keycode.Plus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Plus
+    path: Enums/SdlKeycode.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Plus = 43
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Comma
+  commentId: F:SharpSDL3.Enums.Keycode.Comma
+  id: Comma
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Comma
+  nameWithType: Keycode.Comma
+  fullName: SharpSDL3.Enums.Keycode.Comma
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Comma
+    path: Enums/SdlKeycode.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Comma = 44
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Minus
+  commentId: F:SharpSDL3.Enums.Keycode.Minus
+  id: Minus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Minus
+  nameWithType: Keycode.Minus
+  fullName: SharpSDL3.Enums.Keycode.Minus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Minus
+    path: Enums/SdlKeycode.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Minus = 45
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Period
+  commentId: F:SharpSDL3.Enums.Keycode.Period
+  id: Period
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Period
+  nameWithType: Keycode.Period
+  fullName: SharpSDL3.Enums.Keycode.Period
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Period
+    path: Enums/SdlKeycode.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Period = 46
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Slash
+  commentId: F:SharpSDL3.Enums.Keycode.Slash
+  id: Slash
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Slash
+  nameWithType: Keycode.Slash
+  fullName: SharpSDL3.Enums.Keycode.Slash
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Slash
+    path: Enums/SdlKeycode.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Slash = 47
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num0
+  commentId: F:SharpSDL3.Enums.Keycode.Num0
+  id: Num0
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num0
+  nameWithType: Keycode.Num0
+  fullName: SharpSDL3.Enums.Keycode.Num0
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num0
+    path: Enums/SdlKeycode.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num0 = 48
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num1
+  commentId: F:SharpSDL3.Enums.Keycode.Num1
+  id: Num1
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num1
+  nameWithType: Keycode.Num1
+  fullName: SharpSDL3.Enums.Keycode.Num1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num1
+    path: Enums/SdlKeycode.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num1 = 49
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num2
+  commentId: F:SharpSDL3.Enums.Keycode.Num2
+  id: Num2
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num2
+  nameWithType: Keycode.Num2
+  fullName: SharpSDL3.Enums.Keycode.Num2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num2
+    path: Enums/SdlKeycode.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num2 = 50
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num3
+  commentId: F:SharpSDL3.Enums.Keycode.Num3
+  id: Num3
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num3
+  nameWithType: Keycode.Num3
+  fullName: SharpSDL3.Enums.Keycode.Num3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num3
+    path: Enums/SdlKeycode.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num3 = 51
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num4
+  commentId: F:SharpSDL3.Enums.Keycode.Num4
+  id: Num4
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num4
+  nameWithType: Keycode.Num4
+  fullName: SharpSDL3.Enums.Keycode.Num4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num4
+    path: Enums/SdlKeycode.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num4 = 52
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num5
+  commentId: F:SharpSDL3.Enums.Keycode.Num5
+  id: Num5
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num5
+  nameWithType: Keycode.Num5
+  fullName: SharpSDL3.Enums.Keycode.Num5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num5
+    path: Enums/SdlKeycode.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num5 = 53
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num6
+  commentId: F:SharpSDL3.Enums.Keycode.Num6
+  id: Num6
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num6
+  nameWithType: Keycode.Num6
+  fullName: SharpSDL3.Enums.Keycode.Num6
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num6
+    path: Enums/SdlKeycode.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num6 = 54
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num7
+  commentId: F:SharpSDL3.Enums.Keycode.Num7
+  id: Num7
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num7
+  nameWithType: Keycode.Num7
+  fullName: SharpSDL3.Enums.Keycode.Num7
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num7
+    path: Enums/SdlKeycode.cs
+    startLine: 33
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num7 = 55
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num8
+  commentId: F:SharpSDL3.Enums.Keycode.Num8
+  id: Num8
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num8
+  nameWithType: Keycode.Num8
+  fullName: SharpSDL3.Enums.Keycode.Num8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num8
+    path: Enums/SdlKeycode.cs
+    startLine: 34
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num8 = 56
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Num9
+  commentId: F:SharpSDL3.Enums.Keycode.Num9
+  id: Num9
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Num9
+  nameWithType: Keycode.Num9
+  fullName: SharpSDL3.Enums.Keycode.Num9
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Num9
+    path: Enums/SdlKeycode.cs
+    startLine: 35
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Num9 = 57
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Colon
+  commentId: F:SharpSDL3.Enums.Keycode.Colon
+  id: Colon
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Colon
+  nameWithType: Keycode.Colon
+  fullName: SharpSDL3.Enums.Keycode.Colon
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Colon
+    path: Enums/SdlKeycode.cs
+    startLine: 36
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Colon = 58
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Semicolon
+  commentId: F:SharpSDL3.Enums.Keycode.Semicolon
+  id: Semicolon
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Semicolon
+  nameWithType: Keycode.Semicolon
+  fullName: SharpSDL3.Enums.Keycode.Semicolon
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Semicolon
+    path: Enums/SdlKeycode.cs
+    startLine: 37
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Semicolon = 59
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Less
+  commentId: F:SharpSDL3.Enums.Keycode.Less
+  id: Less
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Less
+  nameWithType: Keycode.Less
+  fullName: SharpSDL3.Enums.Keycode.Less
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Less
+    path: Enums/SdlKeycode.cs
+    startLine: 38
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Less = 60
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Equals
+  commentId: F:SharpSDL3.Enums.Keycode.Equals
+  id: Equals
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Equals
+  nameWithType: Keycode.Equals
+  fullName: SharpSDL3.Enums.Keycode.Equals
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Equals
+    path: Enums/SdlKeycode.cs
+    startLine: 39
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Equals = 61
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Greater
+  commentId: F:SharpSDL3.Enums.Keycode.Greater
+  id: Greater
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Greater
+  nameWithType: Keycode.Greater
+  fullName: SharpSDL3.Enums.Keycode.Greater
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Greater
+    path: Enums/SdlKeycode.cs
+    startLine: 40
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Greater = 62
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Question
+  commentId: F:SharpSDL3.Enums.Keycode.Question
+  id: Question
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Question
+  nameWithType: Keycode.Question
+  fullName: SharpSDL3.Enums.Keycode.Question
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Question
+    path: Enums/SdlKeycode.cs
+    startLine: 41
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Question = 63
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.At
+  commentId: F:SharpSDL3.Enums.Keycode.At
+  id: At
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: At
+  nameWithType: Keycode.At
+  fullName: SharpSDL3.Enums.Keycode.At
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: At
+    path: Enums/SdlKeycode.cs
+    startLine: 42
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: At = 64
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LeftBracket
+  commentId: F:SharpSDL3.Enums.Keycode.LeftBracket
+  id: LeftBracket
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LeftBracket
+  nameWithType: Keycode.LeftBracket
+  fullName: SharpSDL3.Enums.Keycode.LeftBracket
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftBracket
+    path: Enums/SdlKeycode.cs
+    startLine: 43
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftBracket = 91
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Backslash
+  commentId: F:SharpSDL3.Enums.Keycode.Backslash
+  id: Backslash
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Backslash
+  nameWithType: Keycode.Backslash
+  fullName: SharpSDL3.Enums.Keycode.Backslash
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Backslash
+    path: Enums/SdlKeycode.cs
+    startLine: 44
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Backslash = 92
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RightBracket
+  commentId: F:SharpSDL3.Enums.Keycode.RightBracket
+  id: RightBracket
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RightBracket
+  nameWithType: Keycode.RightBracket
+  fullName: SharpSDL3.Enums.Keycode.RightBracket
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightBracket
+    path: Enums/SdlKeycode.cs
+    startLine: 45
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightBracket = 93
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Caret
+  commentId: F:SharpSDL3.Enums.Keycode.Caret
+  id: Caret
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Caret
+  nameWithType: Keycode.Caret
+  fullName: SharpSDL3.Enums.Keycode.Caret
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Caret
+    path: Enums/SdlKeycode.cs
+    startLine: 46
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Caret = 94
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Underscore
+  commentId: F:SharpSDL3.Enums.Keycode.Underscore
+  id: Underscore
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Underscore
+  nameWithType: Keycode.Underscore
+  fullName: SharpSDL3.Enums.Keycode.Underscore
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Underscore
+    path: Enums/SdlKeycode.cs
+    startLine: 47
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Underscore = 95
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Grave
+  commentId: F:SharpSDL3.Enums.Keycode.Grave
+  id: Grave
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Grave
+  nameWithType: Keycode.Grave
+  fullName: SharpSDL3.Enums.Keycode.Grave
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Grave
+    path: Enums/SdlKeycode.cs
+    startLine: 48
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Grave = 96
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.A
+  commentId: F:SharpSDL3.Enums.Keycode.A
+  id: A
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: A
+  nameWithType: Keycode.A
+  fullName: SharpSDL3.Enums.Keycode.A
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: A
+    path: Enums/SdlKeycode.cs
+    startLine: 49
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: A = 97
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.B
+  commentId: F:SharpSDL3.Enums.Keycode.B
+  id: B
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: B
+  nameWithType: Keycode.B
+  fullName: SharpSDL3.Enums.Keycode.B
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: B
+    path: Enums/SdlKeycode.cs
+    startLine: 50
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: B = 98
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.C
+  commentId: F:SharpSDL3.Enums.Keycode.C
+  id: C
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: C
+  nameWithType: Keycode.C
+  fullName: SharpSDL3.Enums.Keycode.C
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: C
+    path: Enums/SdlKeycode.cs
+    startLine: 51
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: C = 99
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.D
+  commentId: F:SharpSDL3.Enums.Keycode.D
+  id: D
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: D
+  nameWithType: Keycode.D
+  fullName: SharpSDL3.Enums.Keycode.D
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: D
+    path: Enums/SdlKeycode.cs
+    startLine: 52
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: D = 100
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.E
+  commentId: F:SharpSDL3.Enums.Keycode.E
+  id: E
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: E
+  nameWithType: Keycode.E
+  fullName: SharpSDL3.Enums.Keycode.E
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: E
+    path: Enums/SdlKeycode.cs
+    startLine: 53
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: E = 101
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F
+  commentId: F:SharpSDL3.Enums.Keycode.F
+  id: F
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F
+  nameWithType: Keycode.F
+  fullName: SharpSDL3.Enums.Keycode.F
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F
+    path: Enums/SdlKeycode.cs
+    startLine: 54
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F = 102
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.G
+  commentId: F:SharpSDL3.Enums.Keycode.G
+  id: G
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: G
+  nameWithType: Keycode.G
+  fullName: SharpSDL3.Enums.Keycode.G
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: G
+    path: Enums/SdlKeycode.cs
+    startLine: 55
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: G = 103
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.H
+  commentId: F:SharpSDL3.Enums.Keycode.H
+  id: H
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: H
+  nameWithType: Keycode.H
+  fullName: SharpSDL3.Enums.Keycode.H
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: H
+    path: Enums/SdlKeycode.cs
+    startLine: 56
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: H = 104
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.I
+  commentId: F:SharpSDL3.Enums.Keycode.I
+  id: I
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: I
+  nameWithType: Keycode.I
+  fullName: SharpSDL3.Enums.Keycode.I
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: I
+    path: Enums/SdlKeycode.cs
+    startLine: 57
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: I = 105
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.J
+  commentId: F:SharpSDL3.Enums.Keycode.J
+  id: J
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: J
+  nameWithType: Keycode.J
+  fullName: SharpSDL3.Enums.Keycode.J
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: J
+    path: Enums/SdlKeycode.cs
+    startLine: 58
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: J = 106
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.K
+  commentId: F:SharpSDL3.Enums.Keycode.K
+  id: K
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: K
+  nameWithType: Keycode.K
+  fullName: SharpSDL3.Enums.Keycode.K
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: K
+    path: Enums/SdlKeycode.cs
+    startLine: 59
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: K = 107
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.L
+  commentId: F:SharpSDL3.Enums.Keycode.L
+  id: L
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: L
+  nameWithType: Keycode.L
+  fullName: SharpSDL3.Enums.Keycode.L
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: L
+    path: Enums/SdlKeycode.cs
+    startLine: 60
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: L = 108
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.M
+  commentId: F:SharpSDL3.Enums.Keycode.M
+  id: M
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: M
+  nameWithType: Keycode.M
+  fullName: SharpSDL3.Enums.Keycode.M
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: M
+    path: Enums/SdlKeycode.cs
+    startLine: 61
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: M = 109
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.N
+  commentId: F:SharpSDL3.Enums.Keycode.N
+  id: N
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: N
+  nameWithType: Keycode.N
+  fullName: SharpSDL3.Enums.Keycode.N
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: N
+    path: Enums/SdlKeycode.cs
+    startLine: 62
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: N = 110
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.O
+  commentId: F:SharpSDL3.Enums.Keycode.O
+  id: O
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: O
+  nameWithType: Keycode.O
+  fullName: SharpSDL3.Enums.Keycode.O
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: O
+    path: Enums/SdlKeycode.cs
+    startLine: 63
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: O = 111
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.P
+  commentId: F:SharpSDL3.Enums.Keycode.P
+  id: P
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: P
+  nameWithType: Keycode.P
+  fullName: SharpSDL3.Enums.Keycode.P
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: P
+    path: Enums/SdlKeycode.cs
+    startLine: 64
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: P = 112
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Q
+  commentId: F:SharpSDL3.Enums.Keycode.Q
+  id: Q
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Q
+  nameWithType: Keycode.Q
+  fullName: SharpSDL3.Enums.Keycode.Q
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Q
+    path: Enums/SdlKeycode.cs
+    startLine: 65
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Q = 113
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.R
+  commentId: F:SharpSDL3.Enums.Keycode.R
+  id: R
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: R
+  nameWithType: Keycode.R
+  fullName: SharpSDL3.Enums.Keycode.R
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: R
+    path: Enums/SdlKeycode.cs
+    startLine: 66
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: R = 114
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.S
+  commentId: F:SharpSDL3.Enums.Keycode.S
+  id: S
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: S
+  nameWithType: Keycode.S
+  fullName: SharpSDL3.Enums.Keycode.S
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: S
+    path: Enums/SdlKeycode.cs
+    startLine: 67
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: S = 115
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.T
+  commentId: F:SharpSDL3.Enums.Keycode.T
+  id: T
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: T
+  nameWithType: Keycode.T
+  fullName: SharpSDL3.Enums.Keycode.T
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: T
+    path: Enums/SdlKeycode.cs
+    startLine: 68
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: T = 116
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.U
+  commentId: F:SharpSDL3.Enums.Keycode.U
+  id: U
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: U
+  nameWithType: Keycode.U
+  fullName: SharpSDL3.Enums.Keycode.U
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: U
+    path: Enums/SdlKeycode.cs
+    startLine: 69
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: U = 117
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.V
+  commentId: F:SharpSDL3.Enums.Keycode.V
+  id: V
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: V
+  nameWithType: Keycode.V
+  fullName: SharpSDL3.Enums.Keycode.V
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: V
+    path: Enums/SdlKeycode.cs
+    startLine: 70
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: V = 118
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.W
+  commentId: F:SharpSDL3.Enums.Keycode.W
+  id: W
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: W
+  nameWithType: Keycode.W
+  fullName: SharpSDL3.Enums.Keycode.W
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: W
+    path: Enums/SdlKeycode.cs
+    startLine: 71
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: W = 119
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.X
+  commentId: F:SharpSDL3.Enums.Keycode.X
+  id: X
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: Keycode.X
+  fullName: SharpSDL3.Enums.Keycode.X
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: X
+    path: Enums/SdlKeycode.cs
+    startLine: 72
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: X = 120
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Y
+  commentId: F:SharpSDL3.Enums.Keycode.Y
+  id: Y
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: Keycode.Y
+  fullName: SharpSDL3.Enums.Keycode.Y
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Y
+    path: Enums/SdlKeycode.cs
+    startLine: 73
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Y = 121
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Z
+  commentId: F:SharpSDL3.Enums.Keycode.Z
+  id: Z
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: Keycode.Z
+  fullName: SharpSDL3.Enums.Keycode.Z
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Z
+    path: Enums/SdlKeycode.cs
+    startLine: 74
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Z = 122
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LeftBrace
+  commentId: F:SharpSDL3.Enums.Keycode.LeftBrace
+  id: LeftBrace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LeftBrace
+  nameWithType: Keycode.LeftBrace
+  fullName: SharpSDL3.Enums.Keycode.LeftBrace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftBrace
+    path: Enums/SdlKeycode.cs
+    startLine: 75
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftBrace = 123
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Pipe
+  commentId: F:SharpSDL3.Enums.Keycode.Pipe
+  id: Pipe
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Pipe
+  nameWithType: Keycode.Pipe
+  fullName: SharpSDL3.Enums.Keycode.Pipe
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pipe
+    path: Enums/SdlKeycode.cs
+    startLine: 76
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pipe = 124
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RightBrace
+  commentId: F:SharpSDL3.Enums.Keycode.RightBrace
+  id: RightBrace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RightBrace
+  nameWithType: Keycode.RightBrace
+  fullName: SharpSDL3.Enums.Keycode.RightBrace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightBrace
+    path: Enums/SdlKeycode.cs
+    startLine: 77
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightBrace = 125
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Tilde
+  commentId: F:SharpSDL3.Enums.Keycode.Tilde
+  id: Tilde
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Tilde
+  nameWithType: Keycode.Tilde
+  fullName: SharpSDL3.Enums.Keycode.Tilde
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Tilde
+    path: Enums/SdlKeycode.cs
+    startLine: 78
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Tilde = 126
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Delete
+  commentId: F:SharpSDL3.Enums.Keycode.Delete
+  id: Delete
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Delete
+  nameWithType: Keycode.Delete
+  fullName: SharpSDL3.Enums.Keycode.Delete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Delete
+    path: Enums/SdlKeycode.cs
+    startLine: 79
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Delete = 127
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.PlusMinus
+  commentId: F:SharpSDL3.Enums.Keycode.PlusMinus
+  id: PlusMinus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: PlusMinus
+  nameWithType: Keycode.PlusMinus
+  fullName: SharpSDL3.Enums.Keycode.PlusMinus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PlusMinus
+    path: Enums/SdlKeycode.cs
+    startLine: 80
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PlusMinus = 177
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Capslock
+  commentId: F:SharpSDL3.Enums.Keycode.Capslock
+  id: Capslock
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Capslock
+  nameWithType: Keycode.Capslock
+  fullName: SharpSDL3.Enums.Keycode.Capslock
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Capslock
+    path: Enums/SdlKeycode.cs
+    startLine: 81
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Capslock = 1073741881
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F1
+  commentId: F:SharpSDL3.Enums.Keycode.F1
+  id: F1
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F1
+  nameWithType: Keycode.F1
+  fullName: SharpSDL3.Enums.Keycode.F1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F1
+    path: Enums/SdlKeycode.cs
+    startLine: 82
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F1 = 1073741882
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F2
+  commentId: F:SharpSDL3.Enums.Keycode.F2
+  id: F2
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F2
+  nameWithType: Keycode.F2
+  fullName: SharpSDL3.Enums.Keycode.F2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F2
+    path: Enums/SdlKeycode.cs
+    startLine: 83
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F2 = 1073741883
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F3
+  commentId: F:SharpSDL3.Enums.Keycode.F3
+  id: F3
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F3
+  nameWithType: Keycode.F3
+  fullName: SharpSDL3.Enums.Keycode.F3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F3
+    path: Enums/SdlKeycode.cs
+    startLine: 84
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F3 = 1073741884
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F4
+  commentId: F:SharpSDL3.Enums.Keycode.F4
+  id: F4
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F4
+  nameWithType: Keycode.F4
+  fullName: SharpSDL3.Enums.Keycode.F4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F4
+    path: Enums/SdlKeycode.cs
+    startLine: 85
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F4 = 1073741885
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F5
+  commentId: F:SharpSDL3.Enums.Keycode.F5
+  id: F5
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F5
+  nameWithType: Keycode.F5
+  fullName: SharpSDL3.Enums.Keycode.F5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F5
+    path: Enums/SdlKeycode.cs
+    startLine: 86
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F5 = 1073741886
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F6
+  commentId: F:SharpSDL3.Enums.Keycode.F6
+  id: F6
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F6
+  nameWithType: Keycode.F6
+  fullName: SharpSDL3.Enums.Keycode.F6
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F6
+    path: Enums/SdlKeycode.cs
+    startLine: 87
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F6 = 1073741887
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F7
+  commentId: F:SharpSDL3.Enums.Keycode.F7
+  id: F7
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F7
+  nameWithType: Keycode.F7
+  fullName: SharpSDL3.Enums.Keycode.F7
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F7
+    path: Enums/SdlKeycode.cs
+    startLine: 88
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F7 = 1073741888
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F8
+  commentId: F:SharpSDL3.Enums.Keycode.F8
+  id: F8
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F8
+  nameWithType: Keycode.F8
+  fullName: SharpSDL3.Enums.Keycode.F8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F8
+    path: Enums/SdlKeycode.cs
+    startLine: 89
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F8 = 1073741889
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F9
+  commentId: F:SharpSDL3.Enums.Keycode.F9
+  id: F9
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F9
+  nameWithType: Keycode.F9
+  fullName: SharpSDL3.Enums.Keycode.F9
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F9
+    path: Enums/SdlKeycode.cs
+    startLine: 90
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F9 = 1073741890
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F10
+  commentId: F:SharpSDL3.Enums.Keycode.F10
+  id: F10
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F10
+  nameWithType: Keycode.F10
+  fullName: SharpSDL3.Enums.Keycode.F10
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F10
+    path: Enums/SdlKeycode.cs
+    startLine: 91
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F10 = 1073741891
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F11
+  commentId: F:SharpSDL3.Enums.Keycode.F11
+  id: F11
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F11
+  nameWithType: Keycode.F11
+  fullName: SharpSDL3.Enums.Keycode.F11
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F11
+    path: Enums/SdlKeycode.cs
+    startLine: 92
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F11 = 1073741892
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F12
+  commentId: F:SharpSDL3.Enums.Keycode.F12
+  id: F12
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F12
+  nameWithType: Keycode.F12
+  fullName: SharpSDL3.Enums.Keycode.F12
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F12
+    path: Enums/SdlKeycode.cs
+    startLine: 93
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F12 = 1073741893
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.PrintScreen
+  commentId: F:SharpSDL3.Enums.Keycode.PrintScreen
+  id: PrintScreen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: PrintScreen
+  nameWithType: Keycode.PrintScreen
+  fullName: SharpSDL3.Enums.Keycode.PrintScreen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PrintScreen
+    path: Enums/SdlKeycode.cs
+    startLine: 94
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PrintScreen = 1073741894
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ScrollLock
+  commentId: F:SharpSDL3.Enums.Keycode.ScrollLock
+  id: ScrollLock
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ScrollLock
+  nameWithType: Keycode.ScrollLock
+  fullName: SharpSDL3.Enums.Keycode.ScrollLock
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ScrollLock
+    path: Enums/SdlKeycode.cs
+    startLine: 95
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ScrollLock = 1073741895
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Pause
+  commentId: F:SharpSDL3.Enums.Keycode.Pause
+  id: Pause
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Pause
+  nameWithType: Keycode.Pause
+  fullName: SharpSDL3.Enums.Keycode.Pause
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pause
+    path: Enums/SdlKeycode.cs
+    startLine: 96
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pause = 1073741896
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Insert
+  commentId: F:SharpSDL3.Enums.Keycode.Insert
+  id: Insert
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Insert
+  nameWithType: Keycode.Insert
+  fullName: SharpSDL3.Enums.Keycode.Insert
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Insert
+    path: Enums/SdlKeycode.cs
+    startLine: 97
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Insert = 1073741897
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Home
+  commentId: F:SharpSDL3.Enums.Keycode.Home
+  id: Home
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Home
+  nameWithType: Keycode.Home
+  fullName: SharpSDL3.Enums.Keycode.Home
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Home
+    path: Enums/SdlKeycode.cs
+    startLine: 98
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Home = 1073741898
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Pageup
+  commentId: F:SharpSDL3.Enums.Keycode.Pageup
+  id: Pageup
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Pageup
+  nameWithType: Keycode.Pageup
+  fullName: SharpSDL3.Enums.Keycode.Pageup
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pageup
+    path: Enums/SdlKeycode.cs
+    startLine: 99
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pageup = 1073741899
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.End
+  commentId: F:SharpSDL3.Enums.Keycode.End
+  id: End
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: End
+  nameWithType: Keycode.End
+  fullName: SharpSDL3.Enums.Keycode.End
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: End
+    path: Enums/SdlKeycode.cs
+    startLine: 100
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: End = 1073741901
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Pagedown
+  commentId: F:SharpSDL3.Enums.Keycode.Pagedown
+  id: Pagedown
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Pagedown
+  nameWithType: Keycode.Pagedown
+  fullName: SharpSDL3.Enums.Keycode.Pagedown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pagedown
+    path: Enums/SdlKeycode.cs
+    startLine: 101
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pagedown = 1073741902
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Right
+  commentId: F:SharpSDL3.Enums.Keycode.Right
+  id: Right
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Right
+  nameWithType: Keycode.Right
+  fullName: SharpSDL3.Enums.Keycode.Right
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Right
+    path: Enums/SdlKeycode.cs
+    startLine: 102
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Right = 1073741903
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Left
+  commentId: F:SharpSDL3.Enums.Keycode.Left
+  id: Left
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Left
+  nameWithType: Keycode.Left
+  fullName: SharpSDL3.Enums.Keycode.Left
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Left
+    path: Enums/SdlKeycode.cs
+    startLine: 103
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Left = 1073741904
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Down
+  commentId: F:SharpSDL3.Enums.Keycode.Down
+  id: Down
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Down
+  nameWithType: Keycode.Down
+  fullName: SharpSDL3.Enums.Keycode.Down
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Down
+    path: Enums/SdlKeycode.cs
+    startLine: 104
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Down = 1073741905
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Up
+  commentId: F:SharpSDL3.Enums.Keycode.Up
+  id: Up
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Up
+  nameWithType: Keycode.Up
+  fullName: SharpSDL3.Enums.Keycode.Up
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Up
+    path: Enums/SdlKeycode.cs
+    startLine: 105
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Up = 1073741906
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.NumlockClear
+  commentId: F:SharpSDL3.Enums.Keycode.NumlockClear
+  id: NumlockClear
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: NumlockClear
+  nameWithType: Keycode.NumlockClear
+  fullName: SharpSDL3.Enums.Keycode.NumlockClear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumlockClear
+    path: Enums/SdlKeycode.cs
+    startLine: 106
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NumlockClear = 1073741907
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpDivide
+  commentId: F:SharpSDL3.Enums.Keycode.KpDivide
+  id: KpDivide
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpDivide
+  nameWithType: Keycode.KpDivide
+  fullName: SharpSDL3.Enums.Keycode.KpDivide
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpDivide
+    path: Enums/SdlKeycode.cs
+    startLine: 107
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpDivide = 1073741908
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMultiply
+  commentId: F:SharpSDL3.Enums.Keycode.KpMultiply
+  id: KpMultiply
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMultiply
+  nameWithType: Keycode.KpMultiply
+  fullName: SharpSDL3.Enums.Keycode.KpMultiply
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMultiply
+    path: Enums/SdlKeycode.cs
+    startLine: 108
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMultiply = 1073741909
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMinus
+  commentId: F:SharpSDL3.Enums.Keycode.KpMinus
+  id: KpMinus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMinus
+  nameWithType: Keycode.KpMinus
+  fullName: SharpSDL3.Enums.Keycode.KpMinus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMinus
+    path: Enums/SdlKeycode.cs
+    startLine: 109
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMinus = 1073741910
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpPlus
+  commentId: F:SharpSDL3.Enums.Keycode.KpPlus
+  id: KpPlus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpPlus
+  nameWithType: Keycode.KpPlus
+  fullName: SharpSDL3.Enums.Keycode.KpPlus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpPlus
+    path: Enums/SdlKeycode.cs
+    startLine: 110
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpPlus = 1073741911
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpEnter
+  commentId: F:SharpSDL3.Enums.Keycode.KpEnter
+  id: KpEnter
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpEnter
+  nameWithType: Keycode.KpEnter
+  fullName: SharpSDL3.Enums.Keycode.KpEnter
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpEnter
+    path: Enums/SdlKeycode.cs
+    startLine: 111
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpEnter = 1073741912
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp1
+  commentId: F:SharpSDL3.Enums.Keycode.Kp1
+  id: Kp1
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp1
+  nameWithType: Keycode.Kp1
+  fullName: SharpSDL3.Enums.Keycode.Kp1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp1
+    path: Enums/SdlKeycode.cs
+    startLine: 112
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp1 = 1073741913
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp2
+  commentId: F:SharpSDL3.Enums.Keycode.Kp2
+  id: Kp2
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp2
+  nameWithType: Keycode.Kp2
+  fullName: SharpSDL3.Enums.Keycode.Kp2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp2
+    path: Enums/SdlKeycode.cs
+    startLine: 113
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp2 = 1073741914
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp3
+  commentId: F:SharpSDL3.Enums.Keycode.Kp3
+  id: Kp3
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp3
+  nameWithType: Keycode.Kp3
+  fullName: SharpSDL3.Enums.Keycode.Kp3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp3
+    path: Enums/SdlKeycode.cs
+    startLine: 114
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp3 = 1073741915
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp4
+  commentId: F:SharpSDL3.Enums.Keycode.Kp4
+  id: Kp4
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp4
+  nameWithType: Keycode.Kp4
+  fullName: SharpSDL3.Enums.Keycode.Kp4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp4
+    path: Enums/SdlKeycode.cs
+    startLine: 115
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp4 = 1073741916
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp5
+  commentId: F:SharpSDL3.Enums.Keycode.Kp5
+  id: Kp5
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp5
+  nameWithType: Keycode.Kp5
+  fullName: SharpSDL3.Enums.Keycode.Kp5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp5
+    path: Enums/SdlKeycode.cs
+    startLine: 116
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp5 = 1073741917
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp6
+  commentId: F:SharpSDL3.Enums.Keycode.Kp6
+  id: Kp6
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp6
+  nameWithType: Keycode.Kp6
+  fullName: SharpSDL3.Enums.Keycode.Kp6
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp6
+    path: Enums/SdlKeycode.cs
+    startLine: 117
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp6 = 1073741918
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp7
+  commentId: F:SharpSDL3.Enums.Keycode.Kp7
+  id: Kp7
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp7
+  nameWithType: Keycode.Kp7
+  fullName: SharpSDL3.Enums.Keycode.Kp7
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp7
+    path: Enums/SdlKeycode.cs
+    startLine: 118
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp7 = 1073741919
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp8
+  commentId: F:SharpSDL3.Enums.Keycode.Kp8
+  id: Kp8
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp8
+  nameWithType: Keycode.Kp8
+  fullName: SharpSDL3.Enums.Keycode.Kp8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp8
+    path: Enums/SdlKeycode.cs
+    startLine: 119
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp8 = 1073741920
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp9
+  commentId: F:SharpSDL3.Enums.Keycode.Kp9
+  id: Kp9
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp9
+  nameWithType: Keycode.Kp9
+  fullName: SharpSDL3.Enums.Keycode.Kp9
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp9
+    path: Enums/SdlKeycode.cs
+    startLine: 120
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp9 = 1073741921
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp0
+  commentId: F:SharpSDL3.Enums.Keycode.Kp0
+  id: Kp0
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp0
+  nameWithType: Keycode.Kp0
+  fullName: SharpSDL3.Enums.Keycode.Kp0
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp0
+    path: Enums/SdlKeycode.cs
+    startLine: 121
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp0 = 1073741922
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpPeriod
+  commentId: F:SharpSDL3.Enums.Keycode.KpPeriod
+  id: KpPeriod
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpPeriod
+  nameWithType: Keycode.KpPeriod
+  fullName: SharpSDL3.Enums.Keycode.KpPeriod
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpPeriod
+    path: Enums/SdlKeycode.cs
+    startLine: 122
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpPeriod = 1073741923
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Application
+  commentId: F:SharpSDL3.Enums.Keycode.Application
+  id: Application
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Application
+  nameWithType: Keycode.Application
+  fullName: SharpSDL3.Enums.Keycode.Application
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Application
+    path: Enums/SdlKeycode.cs
+    startLine: 123
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Application = 1073741925
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Power
+  commentId: F:SharpSDL3.Enums.Keycode.Power
+  id: Power
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Power
+  nameWithType: Keycode.Power
+  fullName: SharpSDL3.Enums.Keycode.Power
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Power
+    path: Enums/SdlKeycode.cs
+    startLine: 124
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Power = 1073741926
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpEquals
+  commentId: F:SharpSDL3.Enums.Keycode.KpEquals
+  id: KpEquals
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpEquals
+  nameWithType: Keycode.KpEquals
+  fullName: SharpSDL3.Enums.Keycode.KpEquals
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpEquals
+    path: Enums/SdlKeycode.cs
+    startLine: 125
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpEquals = 1073741927
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F13
+  commentId: F:SharpSDL3.Enums.Keycode.F13
+  id: F13
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F13
+  nameWithType: Keycode.F13
+  fullName: SharpSDL3.Enums.Keycode.F13
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F13
+    path: Enums/SdlKeycode.cs
+    startLine: 126
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F13 = 1073741928
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F14
+  commentId: F:SharpSDL3.Enums.Keycode.F14
+  id: F14
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F14
+  nameWithType: Keycode.F14
+  fullName: SharpSDL3.Enums.Keycode.F14
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F14
+    path: Enums/SdlKeycode.cs
+    startLine: 127
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F14 = 1073741929
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F15
+  commentId: F:SharpSDL3.Enums.Keycode.F15
+  id: F15
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F15
+  nameWithType: Keycode.F15
+  fullName: SharpSDL3.Enums.Keycode.F15
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F15
+    path: Enums/SdlKeycode.cs
+    startLine: 128
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F15 = 1073741930
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F16
+  commentId: F:SharpSDL3.Enums.Keycode.F16
+  id: F16
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F16
+  nameWithType: Keycode.F16
+  fullName: SharpSDL3.Enums.Keycode.F16
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F16
+    path: Enums/SdlKeycode.cs
+    startLine: 129
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F16 = 1073741931
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F17
+  commentId: F:SharpSDL3.Enums.Keycode.F17
+  id: F17
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F17
+  nameWithType: Keycode.F17
+  fullName: SharpSDL3.Enums.Keycode.F17
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F17
+    path: Enums/SdlKeycode.cs
+    startLine: 130
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F17 = 1073741932
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F18
+  commentId: F:SharpSDL3.Enums.Keycode.F18
+  id: F18
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F18
+  nameWithType: Keycode.F18
+  fullName: SharpSDL3.Enums.Keycode.F18
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F18
+    path: Enums/SdlKeycode.cs
+    startLine: 131
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F18 = 1073741933
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F19
+  commentId: F:SharpSDL3.Enums.Keycode.F19
+  id: F19
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F19
+  nameWithType: Keycode.F19
+  fullName: SharpSDL3.Enums.Keycode.F19
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F19
+    path: Enums/SdlKeycode.cs
+    startLine: 132
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F19 = 1073741934
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F20
+  commentId: F:SharpSDL3.Enums.Keycode.F20
+  id: F20
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F20
+  nameWithType: Keycode.F20
+  fullName: SharpSDL3.Enums.Keycode.F20
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F20
+    path: Enums/SdlKeycode.cs
+    startLine: 133
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F20 = 1073741935
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F21
+  commentId: F:SharpSDL3.Enums.Keycode.F21
+  id: F21
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F21
+  nameWithType: Keycode.F21
+  fullName: SharpSDL3.Enums.Keycode.F21
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F21
+    path: Enums/SdlKeycode.cs
+    startLine: 134
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F21 = 1073741936
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F22
+  commentId: F:SharpSDL3.Enums.Keycode.F22
+  id: F22
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F22
+  nameWithType: Keycode.F22
+  fullName: SharpSDL3.Enums.Keycode.F22
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F22
+    path: Enums/SdlKeycode.cs
+    startLine: 135
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F22 = 1073741937
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F23
+  commentId: F:SharpSDL3.Enums.Keycode.F23
+  id: F23
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F23
+  nameWithType: Keycode.F23
+  fullName: SharpSDL3.Enums.Keycode.F23
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F23
+    path: Enums/SdlKeycode.cs
+    startLine: 136
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F23 = 1073741938
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.F24
+  commentId: F:SharpSDL3.Enums.Keycode.F24
+  id: F24
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: F24
+  nameWithType: Keycode.F24
+  fullName: SharpSDL3.Enums.Keycode.F24
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: F24
+    path: Enums/SdlKeycode.cs
+    startLine: 137
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: F24 = 1073741939
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Execute
+  commentId: F:SharpSDL3.Enums.Keycode.Execute
+  id: Execute
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Execute
+  nameWithType: Keycode.Execute
+  fullName: SharpSDL3.Enums.Keycode.Execute
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Execute
+    path: Enums/SdlKeycode.cs
+    startLine: 138
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Execute = 1073741940
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Help
+  commentId: F:SharpSDL3.Enums.Keycode.Help
+  id: Help
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Help
+  nameWithType: Keycode.Help
+  fullName: SharpSDL3.Enums.Keycode.Help
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Help
+    path: Enums/SdlKeycode.cs
+    startLine: 139
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Help = 1073741941
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Menu
+  commentId: F:SharpSDL3.Enums.Keycode.Menu
+  id: Menu
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Menu
+  nameWithType: Keycode.Menu
+  fullName: SharpSDL3.Enums.Keycode.Menu
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Menu
+    path: Enums/SdlKeycode.cs
+    startLine: 140
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Menu = 1073741942
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Select
+  commentId: F:SharpSDL3.Enums.Keycode.Select
+  id: Select
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Select
+  nameWithType: Keycode.Select
+  fullName: SharpSDL3.Enums.Keycode.Select
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Select
+    path: Enums/SdlKeycode.cs
+    startLine: 141
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Select = 1073741943
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Stop
+  commentId: F:SharpSDL3.Enums.Keycode.Stop
+  id: Stop
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Stop
+  nameWithType: Keycode.Stop
+  fullName: SharpSDL3.Enums.Keycode.Stop
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Stop
+    path: Enums/SdlKeycode.cs
+    startLine: 142
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Stop = 1073741944
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Again
+  commentId: F:SharpSDL3.Enums.Keycode.Again
+  id: Again
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Again
+  nameWithType: Keycode.Again
+  fullName: SharpSDL3.Enums.Keycode.Again
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Again
+    path: Enums/SdlKeycode.cs
+    startLine: 143
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Again = 1073741945
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Undo
+  commentId: F:SharpSDL3.Enums.Keycode.Undo
+  id: Undo
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Undo
+  nameWithType: Keycode.Undo
+  fullName: SharpSDL3.Enums.Keycode.Undo
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Undo
+    path: Enums/SdlKeycode.cs
+    startLine: 144
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Undo = 1073741946
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Cut
+  commentId: F:SharpSDL3.Enums.Keycode.Cut
+  id: Cut
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Cut
+  nameWithType: Keycode.Cut
+  fullName: SharpSDL3.Enums.Keycode.Cut
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Cut
+    path: Enums/SdlKeycode.cs
+    startLine: 145
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Cut = 1073741947
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Copy
+  commentId: F:SharpSDL3.Enums.Keycode.Copy
+  id: Copy
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Copy
+  nameWithType: Keycode.Copy
+  fullName: SharpSDL3.Enums.Keycode.Copy
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Copy
+    path: Enums/SdlKeycode.cs
+    startLine: 146
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Copy = 1073741948
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Paste
+  commentId: F:SharpSDL3.Enums.Keycode.Paste
+  id: Paste
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Paste
+  nameWithType: Keycode.Paste
+  fullName: SharpSDL3.Enums.Keycode.Paste
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Paste
+    path: Enums/SdlKeycode.cs
+    startLine: 147
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Paste = 1073741949
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Find
+  commentId: F:SharpSDL3.Enums.Keycode.Find
+  id: Find
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Find
+  nameWithType: Keycode.Find
+  fullName: SharpSDL3.Enums.Keycode.Find
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Find
+    path: Enums/SdlKeycode.cs
+    startLine: 148
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Find = 1073741950
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Mute
+  commentId: F:SharpSDL3.Enums.Keycode.Mute
+  id: Mute
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Mute
+  nameWithType: Keycode.Mute
+  fullName: SharpSDL3.Enums.Keycode.Mute
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mute
+    path: Enums/SdlKeycode.cs
+    startLine: 149
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mute = 1073741951
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.VolumeUp
+  commentId: F:SharpSDL3.Enums.Keycode.VolumeUp
+  id: VolumeUp
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: VolumeUp
+  nameWithType: Keycode.VolumeUp
+  fullName: SharpSDL3.Enums.Keycode.VolumeUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VolumeUp
+    path: Enums/SdlKeycode.cs
+    startLine: 150
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: VolumeUp = 1073741952
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.VolumeDown
+  commentId: F:SharpSDL3.Enums.Keycode.VolumeDown
+  id: VolumeDown
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: VolumeDown
+  nameWithType: Keycode.VolumeDown
+  fullName: SharpSDL3.Enums.Keycode.VolumeDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VolumeDown
+    path: Enums/SdlKeycode.cs
+    startLine: 151
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: VolumeDown = 1073741953
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpComma
+  commentId: F:SharpSDL3.Enums.Keycode.KpComma
+  id: KpComma
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpComma
+  nameWithType: Keycode.KpComma
+  fullName: SharpSDL3.Enums.Keycode.KpComma
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpComma
+    path: Enums/SdlKeycode.cs
+    startLine: 152
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpComma = 1073741957
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpEqualsAs400
+  commentId: F:SharpSDL3.Enums.Keycode.KpEqualsAs400
+  id: KpEqualsAs400
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpEqualsAs400
+  nameWithType: Keycode.KpEqualsAs400
+  fullName: SharpSDL3.Enums.Keycode.KpEqualsAs400
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpEqualsAs400
+    path: Enums/SdlKeycode.cs
+    startLine: 153
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpEqualsAs400 = 1073741958
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AltErase
+  commentId: F:SharpSDL3.Enums.Keycode.AltErase
+  id: AltErase
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AltErase
+  nameWithType: Keycode.AltErase
+  fullName: SharpSDL3.Enums.Keycode.AltErase
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AltErase
+    path: Enums/SdlKeycode.cs
+    startLine: 154
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AltErase = 1073741977
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.SysReq
+  commentId: F:SharpSDL3.Enums.Keycode.SysReq
+  id: SysReq
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: SysReq
+  nameWithType: Keycode.SysReq
+  fullName: SharpSDL3.Enums.Keycode.SysReq
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SysReq
+    path: Enums/SdlKeycode.cs
+    startLine: 155
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SysReq = 1073741978
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Cancel
+  commentId: F:SharpSDL3.Enums.Keycode.Cancel
+  id: Cancel
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Cancel
+  nameWithType: Keycode.Cancel
+  fullName: SharpSDL3.Enums.Keycode.Cancel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Cancel
+    path: Enums/SdlKeycode.cs
+    startLine: 156
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Cancel = 1073741979
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Clear
+  commentId: F:SharpSDL3.Enums.Keycode.Clear
+  id: Clear
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Clear
+  nameWithType: Keycode.Clear
+  fullName: SharpSDL3.Enums.Keycode.Clear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Clear
+    path: Enums/SdlKeycode.cs
+    startLine: 157
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Clear = 1073741980
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Prior
+  commentId: F:SharpSDL3.Enums.Keycode.Prior
+  id: Prior
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Prior
+  nameWithType: Keycode.Prior
+  fullName: SharpSDL3.Enums.Keycode.Prior
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Prior
+    path: Enums/SdlKeycode.cs
+    startLine: 158
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Prior = 1073741981
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Return2
+  commentId: F:SharpSDL3.Enums.Keycode.Return2
+  id: Return2
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Return2
+  nameWithType: Keycode.Return2
+  fullName: SharpSDL3.Enums.Keycode.Return2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Return2
+    path: Enums/SdlKeycode.cs
+    startLine: 159
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Return2 = 1073741982
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Separator
+  commentId: F:SharpSDL3.Enums.Keycode.Separator
+  id: Separator
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Separator
+  nameWithType: Keycode.Separator
+  fullName: SharpSDL3.Enums.Keycode.Separator
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Separator
+    path: Enums/SdlKeycode.cs
+    startLine: 160
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Separator = 1073741983
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Out
+  commentId: F:SharpSDL3.Enums.Keycode.Out
+  id: Out
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Out
+  nameWithType: Keycode.Out
+  fullName: SharpSDL3.Enums.Keycode.Out
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Out
+    path: Enums/SdlKeycode.cs
+    startLine: 161
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Out = 1073741984
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Oper
+  commentId: F:SharpSDL3.Enums.Keycode.Oper
+  id: Oper
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Oper
+  nameWithType: Keycode.Oper
+  fullName: SharpSDL3.Enums.Keycode.Oper
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Oper
+    path: Enums/SdlKeycode.cs
+    startLine: 162
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Oper = 1073741985
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ClearAgain
+  commentId: F:SharpSDL3.Enums.Keycode.ClearAgain
+  id: ClearAgain
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ClearAgain
+  nameWithType: Keycode.ClearAgain
+  fullName: SharpSDL3.Enums.Keycode.ClearAgain
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ClearAgain
+    path: Enums/SdlKeycode.cs
+    startLine: 163
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ClearAgain = 1073741986
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.CrSel
+  commentId: F:SharpSDL3.Enums.Keycode.CrSel
+  id: CrSel
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: CrSel
+  nameWithType: Keycode.CrSel
+  fullName: SharpSDL3.Enums.Keycode.CrSel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CrSel
+    path: Enums/SdlKeycode.cs
+    startLine: 164
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CrSel = 1073741987
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ExSel
+  commentId: F:SharpSDL3.Enums.Keycode.ExSel
+  id: ExSel
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ExSel
+  nameWithType: Keycode.ExSel
+  fullName: SharpSDL3.Enums.Keycode.ExSel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ExSel
+    path: Enums/SdlKeycode.cs
+    startLine: 165
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ExSel = 1073741988
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp00
+  commentId: F:SharpSDL3.Enums.Keycode.Kp00
+  id: Kp00
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp00
+  nameWithType: Keycode.Kp00
+  fullName: SharpSDL3.Enums.Keycode.Kp00
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp00
+    path: Enums/SdlKeycode.cs
+    startLine: 166
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp00 = 1073742000
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Kp000
+  commentId: F:SharpSDL3.Enums.Keycode.Kp000
+  id: Kp000
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Kp000
+  nameWithType: Keycode.Kp000
+  fullName: SharpSDL3.Enums.Keycode.Kp000
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Kp000
+    path: Enums/SdlKeycode.cs
+    startLine: 167
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Kp000 = 1073742001
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ThousandsSeparator
+  commentId: F:SharpSDL3.Enums.Keycode.ThousandsSeparator
+  id: ThousandsSeparator
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ThousandsSeparator
+  nameWithType: Keycode.ThousandsSeparator
+  fullName: SharpSDL3.Enums.Keycode.ThousandsSeparator
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ThousandsSeparator
+    path: Enums/SdlKeycode.cs
+    startLine: 168
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ThousandsSeparator = 1073742002
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.DecimalSeparator
+  commentId: F:SharpSDL3.Enums.Keycode.DecimalSeparator
+  id: DecimalSeparator
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: DecimalSeparator
+  nameWithType: Keycode.DecimalSeparator
+  fullName: SharpSDL3.Enums.Keycode.DecimalSeparator
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DecimalSeparator
+    path: Enums/SdlKeycode.cs
+    startLine: 169
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DecimalSeparator = 1073742003
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.CurrencyUnit
+  commentId: F:SharpSDL3.Enums.Keycode.CurrencyUnit
+  id: CurrencyUnit
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: CurrencyUnit
+  nameWithType: Keycode.CurrencyUnit
+  fullName: SharpSDL3.Enums.Keycode.CurrencyUnit
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CurrencyUnit
+    path: Enums/SdlKeycode.cs
+    startLine: 170
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CurrencyUnit = 1073742004
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.CurrencySubunit
+  commentId: F:SharpSDL3.Enums.Keycode.CurrencySubunit
+  id: CurrencySubunit
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: CurrencySubunit
+  nameWithType: Keycode.CurrencySubunit
+  fullName: SharpSDL3.Enums.Keycode.CurrencySubunit
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CurrencySubunit
+    path: Enums/SdlKeycode.cs
+    startLine: 171
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CurrencySubunit = 1073742005
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpLeftParen
+  commentId: F:SharpSDL3.Enums.Keycode.KpLeftParen
+  id: KpLeftParen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpLeftParen
+  nameWithType: Keycode.KpLeftParen
+  fullName: SharpSDL3.Enums.Keycode.KpLeftParen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpLeftParen
+    path: Enums/SdlKeycode.cs
+    startLine: 172
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpLeftParen = 1073742006
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpRightParen
+  commentId: F:SharpSDL3.Enums.Keycode.KpRightParen
+  id: KpRightParen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpRightParen
+  nameWithType: Keycode.KpRightParen
+  fullName: SharpSDL3.Enums.Keycode.KpRightParen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpRightParen
+    path: Enums/SdlKeycode.cs
+    startLine: 173
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpRightParen = 1073742007
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpLeftBrace
+  commentId: F:SharpSDL3.Enums.Keycode.KpLeftBrace
+  id: KpLeftBrace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpLeftBrace
+  nameWithType: Keycode.KpLeftBrace
+  fullName: SharpSDL3.Enums.Keycode.KpLeftBrace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpLeftBrace
+    path: Enums/SdlKeycode.cs
+    startLine: 174
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpLeftBrace = 1073742008
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpRightBrace
+  commentId: F:SharpSDL3.Enums.Keycode.KpRightBrace
+  id: KpRightBrace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpRightBrace
+  nameWithType: Keycode.KpRightBrace
+  fullName: SharpSDL3.Enums.Keycode.KpRightBrace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpRightBrace
+    path: Enums/SdlKeycode.cs
+    startLine: 175
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpRightBrace = 1073742009
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpTab
+  commentId: F:SharpSDL3.Enums.Keycode.KpTab
+  id: KpTab
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpTab
+  nameWithType: Keycode.KpTab
+  fullName: SharpSDL3.Enums.Keycode.KpTab
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpTab
+    path: Enums/SdlKeycode.cs
+    startLine: 176
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpTab = 1073742010
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpBackspace
+  commentId: F:SharpSDL3.Enums.Keycode.KpBackspace
+  id: KpBackspace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpBackspace
+  nameWithType: Keycode.KpBackspace
+  fullName: SharpSDL3.Enums.Keycode.KpBackspace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpBackspace
+    path: Enums/SdlKeycode.cs
+    startLine: 177
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpBackspace = 1073742011
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpA
+  commentId: F:SharpSDL3.Enums.Keycode.KpA
+  id: KpA
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpA
+  nameWithType: Keycode.KpA
+  fullName: SharpSDL3.Enums.Keycode.KpA
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpA
+    path: Enums/SdlKeycode.cs
+    startLine: 178
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpA = 1073742012
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpB
+  commentId: F:SharpSDL3.Enums.Keycode.KpB
+  id: KpB
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpB
+  nameWithType: Keycode.KpB
+  fullName: SharpSDL3.Enums.Keycode.KpB
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpB
+    path: Enums/SdlKeycode.cs
+    startLine: 179
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpB = 1073742013
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpC
+  commentId: F:SharpSDL3.Enums.Keycode.KpC
+  id: KpC
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpC
+  nameWithType: Keycode.KpC
+  fullName: SharpSDL3.Enums.Keycode.KpC
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpC
+    path: Enums/SdlKeycode.cs
+    startLine: 180
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpC = 1073742014
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpD
+  commentId: F:SharpSDL3.Enums.Keycode.KpD
+  id: KpD
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpD
+  nameWithType: Keycode.KpD
+  fullName: SharpSDL3.Enums.Keycode.KpD
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpD
+    path: Enums/SdlKeycode.cs
+    startLine: 181
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpD = 1073742015
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpE
+  commentId: F:SharpSDL3.Enums.Keycode.KpE
+  id: KpE
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpE
+  nameWithType: Keycode.KpE
+  fullName: SharpSDL3.Enums.Keycode.KpE
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpE
+    path: Enums/SdlKeycode.cs
+    startLine: 182
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpE = 1073742016
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpF
+  commentId: F:SharpSDL3.Enums.Keycode.KpF
+  id: KpF
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpF
+  nameWithType: Keycode.KpF
+  fullName: SharpSDL3.Enums.Keycode.KpF
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpF
+    path: Enums/SdlKeycode.cs
+    startLine: 183
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpF = 1073742017
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpXor
+  commentId: F:SharpSDL3.Enums.Keycode.KpXor
+  id: KpXor
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpXor
+  nameWithType: Keycode.KpXor
+  fullName: SharpSDL3.Enums.Keycode.KpXor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpXor
+    path: Enums/SdlKeycode.cs
+    startLine: 184
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpXor = 1073742018
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpPower
+  commentId: F:SharpSDL3.Enums.Keycode.KpPower
+  id: KpPower
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpPower
+  nameWithType: Keycode.KpPower
+  fullName: SharpSDL3.Enums.Keycode.KpPower
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpPower
+    path: Enums/SdlKeycode.cs
+    startLine: 185
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpPower = 1073742019
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpPercent
+  commentId: F:SharpSDL3.Enums.Keycode.KpPercent
+  id: KpPercent
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpPercent
+  nameWithType: Keycode.KpPercent
+  fullName: SharpSDL3.Enums.Keycode.KpPercent
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpPercent
+    path: Enums/SdlKeycode.cs
+    startLine: 186
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpPercent = 1073742020
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpLess
+  commentId: F:SharpSDL3.Enums.Keycode.KpLess
+  id: KpLess
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpLess
+  nameWithType: Keycode.KpLess
+  fullName: SharpSDL3.Enums.Keycode.KpLess
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpLess
+    path: Enums/SdlKeycode.cs
+    startLine: 187
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpLess = 1073742021
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpGreater
+  commentId: F:SharpSDL3.Enums.Keycode.KpGreater
+  id: KpGreater
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpGreater
+  nameWithType: Keycode.KpGreater
+  fullName: SharpSDL3.Enums.Keycode.KpGreater
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpGreater
+    path: Enums/SdlKeycode.cs
+    startLine: 188
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpGreater = 1073742022
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpAmpersand
+  commentId: F:SharpSDL3.Enums.Keycode.KpAmpersand
+  id: KpAmpersand
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpAmpersand
+  nameWithType: Keycode.KpAmpersand
+  fullName: SharpSDL3.Enums.Keycode.KpAmpersand
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpAmpersand
+    path: Enums/SdlKeycode.cs
+    startLine: 189
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpAmpersand = 1073742023
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpDblAmpersand
+  commentId: F:SharpSDL3.Enums.Keycode.KpDblAmpersand
+  id: KpDblAmpersand
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpDblAmpersand
+  nameWithType: Keycode.KpDblAmpersand
+  fullName: SharpSDL3.Enums.Keycode.KpDblAmpersand
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpDblAmpersand
+    path: Enums/SdlKeycode.cs
+    startLine: 190
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpDblAmpersand = 1073742024
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpVerticalBar
+  commentId: F:SharpSDL3.Enums.Keycode.KpVerticalBar
+  id: KpVerticalBar
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpVerticalBar
+  nameWithType: Keycode.KpVerticalBar
+  fullName: SharpSDL3.Enums.Keycode.KpVerticalBar
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpVerticalBar
+    path: Enums/SdlKeycode.cs
+    startLine: 191
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpVerticalBar = 1073742025
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpDblVerticalBar
+  commentId: F:SharpSDL3.Enums.Keycode.KpDblVerticalBar
+  id: KpDblVerticalBar
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpDblVerticalBar
+  nameWithType: Keycode.KpDblVerticalBar
+  fullName: SharpSDL3.Enums.Keycode.KpDblVerticalBar
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpDblVerticalBar
+    path: Enums/SdlKeycode.cs
+    startLine: 192
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpDblVerticalBar = 1073742026
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpColon
+  commentId: F:SharpSDL3.Enums.Keycode.KpColon
+  id: KpColon
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpColon
+  nameWithType: Keycode.KpColon
+  fullName: SharpSDL3.Enums.Keycode.KpColon
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpColon
+    path: Enums/SdlKeycode.cs
+    startLine: 193
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpColon = 1073742027
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpHash
+  commentId: F:SharpSDL3.Enums.Keycode.KpHash
+  id: KpHash
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpHash
+  nameWithType: Keycode.KpHash
+  fullName: SharpSDL3.Enums.Keycode.KpHash
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpHash
+    path: Enums/SdlKeycode.cs
+    startLine: 194
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpHash = 1073742028
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpSpace
+  commentId: F:SharpSDL3.Enums.Keycode.KpSpace
+  id: KpSpace
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpSpace
+  nameWithType: Keycode.KpSpace
+  fullName: SharpSDL3.Enums.Keycode.KpSpace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpSpace
+    path: Enums/SdlKeycode.cs
+    startLine: 195
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpSpace = 1073742029
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpAt
+  commentId: F:SharpSDL3.Enums.Keycode.KpAt
+  id: KpAt
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpAt
+  nameWithType: Keycode.KpAt
+  fullName: SharpSDL3.Enums.Keycode.KpAt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpAt
+    path: Enums/SdlKeycode.cs
+    startLine: 196
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpAt = 1073742030
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpExclamation
+  commentId: F:SharpSDL3.Enums.Keycode.KpExclamation
+  id: KpExclamation
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpExclamation
+  nameWithType: Keycode.KpExclamation
+  fullName: SharpSDL3.Enums.Keycode.KpExclamation
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpExclamation
+    path: Enums/SdlKeycode.cs
+    startLine: 197
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpExclamation = 1073742031
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemStore
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemStore
+  id: KpMemStore
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemStore
+  nameWithType: Keycode.KpMemStore
+  fullName: SharpSDL3.Enums.Keycode.KpMemStore
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemStore
+    path: Enums/SdlKeycode.cs
+    startLine: 198
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemStore = 1073742032
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemRecall
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemRecall
+  id: KpMemRecall
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemRecall
+  nameWithType: Keycode.KpMemRecall
+  fullName: SharpSDL3.Enums.Keycode.KpMemRecall
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemRecall
+    path: Enums/SdlKeycode.cs
+    startLine: 199
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemRecall = 1073742033
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemClear
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemClear
+  id: KpMemClear
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemClear
+  nameWithType: Keycode.KpMemClear
+  fullName: SharpSDL3.Enums.Keycode.KpMemClear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemClear
+    path: Enums/SdlKeycode.cs
+    startLine: 200
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemClear = 1073742034
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemAdd
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemAdd
+  id: KpMemAdd
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemAdd
+  nameWithType: Keycode.KpMemAdd
+  fullName: SharpSDL3.Enums.Keycode.KpMemAdd
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemAdd
+    path: Enums/SdlKeycode.cs
+    startLine: 201
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemAdd = 1073742035
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemSubtract
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemSubtract
+  id: KpMemSubtract
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemSubtract
+  nameWithType: Keycode.KpMemSubtract
+  fullName: SharpSDL3.Enums.Keycode.KpMemSubtract
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemSubtract
+    path: Enums/SdlKeycode.cs
+    startLine: 202
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemSubtract = 1073742036
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemMultiply
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemMultiply
+  id: KpMemMultiply
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemMultiply
+  nameWithType: Keycode.KpMemMultiply
+  fullName: SharpSDL3.Enums.Keycode.KpMemMultiply
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemMultiply
+    path: Enums/SdlKeycode.cs
+    startLine: 203
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemMultiply = 1073742037
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpMemDivide
+  commentId: F:SharpSDL3.Enums.Keycode.KpMemDivide
+  id: KpMemDivide
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpMemDivide
+  nameWithType: Keycode.KpMemDivide
+  fullName: SharpSDL3.Enums.Keycode.KpMemDivide
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpMemDivide
+    path: Enums/SdlKeycode.cs
+    startLine: 204
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpMemDivide = 1073742038
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpPlusMinus
+  commentId: F:SharpSDL3.Enums.Keycode.KpPlusMinus
+  id: KpPlusMinus
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpPlusMinus
+  nameWithType: Keycode.KpPlusMinus
+  fullName: SharpSDL3.Enums.Keycode.KpPlusMinus
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpPlusMinus
+    path: Enums/SdlKeycode.cs
+    startLine: 205
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpPlusMinus = 1073742039
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpClear
+  commentId: F:SharpSDL3.Enums.Keycode.KpClear
+  id: KpClear
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpClear
+  nameWithType: Keycode.KpClear
+  fullName: SharpSDL3.Enums.Keycode.KpClear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpClear
+    path: Enums/SdlKeycode.cs
+    startLine: 206
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpClear = 1073742040
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpClearEntry
+  commentId: F:SharpSDL3.Enums.Keycode.KpClearEntry
+  id: KpClearEntry
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpClearEntry
+  nameWithType: Keycode.KpClearEntry
+  fullName: SharpSDL3.Enums.Keycode.KpClearEntry
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpClearEntry
+    path: Enums/SdlKeycode.cs
+    startLine: 207
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpClearEntry = 1073742041
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpBinary
+  commentId: F:SharpSDL3.Enums.Keycode.KpBinary
+  id: KpBinary
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpBinary
+  nameWithType: Keycode.KpBinary
+  fullName: SharpSDL3.Enums.Keycode.KpBinary
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpBinary
+    path: Enums/SdlKeycode.cs
+    startLine: 208
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpBinary = 1073742042
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpOctal
+  commentId: F:SharpSDL3.Enums.Keycode.KpOctal
+  id: KpOctal
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpOctal
+  nameWithType: Keycode.KpOctal
+  fullName: SharpSDL3.Enums.Keycode.KpOctal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpOctal
+    path: Enums/SdlKeycode.cs
+    startLine: 209
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpOctal = 1073742043
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpDecimal
+  commentId: F:SharpSDL3.Enums.Keycode.KpDecimal
+  id: KpDecimal
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpDecimal
+  nameWithType: Keycode.KpDecimal
+  fullName: SharpSDL3.Enums.Keycode.KpDecimal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpDecimal
+    path: Enums/SdlKeycode.cs
+    startLine: 210
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpDecimal = 1073742044
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.KpHexadecimal
+  commentId: F:SharpSDL3.Enums.Keycode.KpHexadecimal
+  id: KpHexadecimal
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: KpHexadecimal
+  nameWithType: Keycode.KpHexadecimal
+  fullName: SharpSDL3.Enums.Keycode.KpHexadecimal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KpHexadecimal
+    path: Enums/SdlKeycode.cs
+    startLine: 211
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KpHexadecimal = 1073742045
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LCtrl
+  commentId: F:SharpSDL3.Enums.Keycode.LCtrl
+  id: LCtrl
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LCtrl
+  nameWithType: Keycode.LCtrl
+  fullName: SharpSDL3.Enums.Keycode.LCtrl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LCtrl
+    path: Enums/SdlKeycode.cs
+    startLine: 212
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LCtrl = 1073742048
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LShift
+  commentId: F:SharpSDL3.Enums.Keycode.LShift
+  id: LShift
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LShift
+  nameWithType: Keycode.LShift
+  fullName: SharpSDL3.Enums.Keycode.LShift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LShift
+    path: Enums/SdlKeycode.cs
+    startLine: 213
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LShift = 1073742049
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LAlt
+  commentId: F:SharpSDL3.Enums.Keycode.LAlt
+  id: LAlt
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LAlt
+  nameWithType: Keycode.LAlt
+  fullName: SharpSDL3.Enums.Keycode.LAlt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LAlt
+    path: Enums/SdlKeycode.cs
+    startLine: 214
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LAlt = 1073742050
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LGui
+  commentId: F:SharpSDL3.Enums.Keycode.LGui
+  id: LGui
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LGui
+  nameWithType: Keycode.LGui
+  fullName: SharpSDL3.Enums.Keycode.LGui
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LGui
+    path: Enums/SdlKeycode.cs
+    startLine: 215
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LGui = 1073742051
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RCtrl
+  commentId: F:SharpSDL3.Enums.Keycode.RCtrl
+  id: RCtrl
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RCtrl
+  nameWithType: Keycode.RCtrl
+  fullName: SharpSDL3.Enums.Keycode.RCtrl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RCtrl
+    path: Enums/SdlKeycode.cs
+    startLine: 216
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RCtrl = 1073742052
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RShift
+  commentId: F:SharpSDL3.Enums.Keycode.RShift
+  id: RShift
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RShift
+  nameWithType: Keycode.RShift
+  fullName: SharpSDL3.Enums.Keycode.RShift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RShift
+    path: Enums/SdlKeycode.cs
+    startLine: 217
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RShift = 1073742053
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RAlt
+  commentId: F:SharpSDL3.Enums.Keycode.RAlt
+  id: RAlt
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RAlt
+  nameWithType: Keycode.RAlt
+  fullName: SharpSDL3.Enums.Keycode.RAlt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RAlt
+    path: Enums/SdlKeycode.cs
+    startLine: 218
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RAlt = 1073742054
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RGui
+  commentId: F:SharpSDL3.Enums.Keycode.RGui
+  id: RGui
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RGui
+  nameWithType: Keycode.RGui
+  fullName: SharpSDL3.Enums.Keycode.RGui
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RGui
+    path: Enums/SdlKeycode.cs
+    startLine: 219
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RGui = 1073742055
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Mode
+  commentId: F:SharpSDL3.Enums.Keycode.Mode
+  id: Mode
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Mode
+  nameWithType: Keycode.Mode
+  fullName: SharpSDL3.Enums.Keycode.Mode
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mode
+    path: Enums/SdlKeycode.cs
+    startLine: 220
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mode = 1073742081
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Sleep
+  commentId: F:SharpSDL3.Enums.Keycode.Sleep
+  id: Sleep
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Sleep
+  nameWithType: Keycode.Sleep
+  fullName: SharpSDL3.Enums.Keycode.Sleep
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Sleep
+    path: Enums/SdlKeycode.cs
+    startLine: 221
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Sleep = 1073742082
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Wake
+  commentId: F:SharpSDL3.Enums.Keycode.Wake
+  id: Wake
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Wake
+  nameWithType: Keycode.Wake
+  fullName: SharpSDL3.Enums.Keycode.Wake
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Wake
+    path: Enums/SdlKeycode.cs
+    startLine: 222
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Wake = 1073742083
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ChannelIncrement
+  commentId: F:SharpSDL3.Enums.Keycode.ChannelIncrement
+  id: ChannelIncrement
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ChannelIncrement
+  nameWithType: Keycode.ChannelIncrement
+  fullName: SharpSDL3.Enums.Keycode.ChannelIncrement
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ChannelIncrement
+    path: Enums/SdlKeycode.cs
+    startLine: 223
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ChannelIncrement = 1073742084
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.ChannelDecrement
+  commentId: F:SharpSDL3.Enums.Keycode.ChannelDecrement
+  id: ChannelDecrement
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: ChannelDecrement
+  nameWithType: Keycode.ChannelDecrement
+  fullName: SharpSDL3.Enums.Keycode.ChannelDecrement
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ChannelDecrement
+    path: Enums/SdlKeycode.cs
+    startLine: 224
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ChannelDecrement = 1073742085
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaPlay
+  commentId: F:SharpSDL3.Enums.Keycode.MediaPlay
+  id: MediaPlay
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaPlay
+  nameWithType: Keycode.MediaPlay
+  fullName: SharpSDL3.Enums.Keycode.MediaPlay
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaPlay
+    path: Enums/SdlKeycode.cs
+    startLine: 225
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaPlay = 1073742086
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaPause
+  commentId: F:SharpSDL3.Enums.Keycode.MediaPause
+  id: MediaPause
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaPause
+  nameWithType: Keycode.MediaPause
+  fullName: SharpSDL3.Enums.Keycode.MediaPause
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaPause
+    path: Enums/SdlKeycode.cs
+    startLine: 226
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaPause = 1073742087
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaRecord
+  commentId: F:SharpSDL3.Enums.Keycode.MediaRecord
+  id: MediaRecord
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaRecord
+  nameWithType: Keycode.MediaRecord
+  fullName: SharpSDL3.Enums.Keycode.MediaRecord
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaRecord
+    path: Enums/SdlKeycode.cs
+    startLine: 227
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaRecord = 1073742088
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaFastForward
+  commentId: F:SharpSDL3.Enums.Keycode.MediaFastForward
+  id: MediaFastForward
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaFastForward
+  nameWithType: Keycode.MediaFastForward
+  fullName: SharpSDL3.Enums.Keycode.MediaFastForward
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaFastForward
+    path: Enums/SdlKeycode.cs
+    startLine: 228
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaFastForward = 1073742089
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaRewind
+  commentId: F:SharpSDL3.Enums.Keycode.MediaRewind
+  id: MediaRewind
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaRewind
+  nameWithType: Keycode.MediaRewind
+  fullName: SharpSDL3.Enums.Keycode.MediaRewind
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaRewind
+    path: Enums/SdlKeycode.cs
+    startLine: 229
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaRewind = 1073742090
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaNextTrack
+  commentId: F:SharpSDL3.Enums.Keycode.MediaNextTrack
+  id: MediaNextTrack
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaNextTrack
+  nameWithType: Keycode.MediaNextTrack
+  fullName: SharpSDL3.Enums.Keycode.MediaNextTrack
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaNextTrack
+    path: Enums/SdlKeycode.cs
+    startLine: 230
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaNextTrack = 1073742091
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaPreviousTrack
+  commentId: F:SharpSDL3.Enums.Keycode.MediaPreviousTrack
+  id: MediaPreviousTrack
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaPreviousTrack
+  nameWithType: Keycode.MediaPreviousTrack
+  fullName: SharpSDL3.Enums.Keycode.MediaPreviousTrack
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaPreviousTrack
+    path: Enums/SdlKeycode.cs
+    startLine: 231
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaPreviousTrack = 1073742092
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaStop
+  commentId: F:SharpSDL3.Enums.Keycode.MediaStop
+  id: MediaStop
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaStop
+  nameWithType: Keycode.MediaStop
+  fullName: SharpSDL3.Enums.Keycode.MediaStop
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaStop
+    path: Enums/SdlKeycode.cs
+    startLine: 232
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaStop = 1073742093
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaEject
+  commentId: F:SharpSDL3.Enums.Keycode.MediaEject
+  id: MediaEject
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaEject
+  nameWithType: Keycode.MediaEject
+  fullName: SharpSDL3.Enums.Keycode.MediaEject
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaEject
+    path: Enums/SdlKeycode.cs
+    startLine: 233
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaEject = 1073742094
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaPlayPause
+  commentId: F:SharpSDL3.Enums.Keycode.MediaPlayPause
+  id: MediaPlayPause
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaPlayPause
+  nameWithType: Keycode.MediaPlayPause
+  fullName: SharpSDL3.Enums.Keycode.MediaPlayPause
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaPlayPause
+    path: Enums/SdlKeycode.cs
+    startLine: 234
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaPlayPause = 1073742095
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MediaSelect
+  commentId: F:SharpSDL3.Enums.Keycode.MediaSelect
+  id: MediaSelect
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MediaSelect
+  nameWithType: Keycode.MediaSelect
+  fullName: SharpSDL3.Enums.Keycode.MediaSelect
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MediaSelect
+    path: Enums/SdlKeycode.cs
+    startLine: 235
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MediaSelect = 1073742096
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcNew
+  commentId: F:SharpSDL3.Enums.Keycode.AcNew
+  id: AcNew
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcNew
+  nameWithType: Keycode.AcNew
+  fullName: SharpSDL3.Enums.Keycode.AcNew
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcNew
+    path: Enums/SdlKeycode.cs
+    startLine: 236
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcNew = 1073742097
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcOpen
+  commentId: F:SharpSDL3.Enums.Keycode.AcOpen
+  id: AcOpen
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcOpen
+  nameWithType: Keycode.AcOpen
+  fullName: SharpSDL3.Enums.Keycode.AcOpen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcOpen
+    path: Enums/SdlKeycode.cs
+    startLine: 237
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcOpen = 1073742098
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcClose
+  commentId: F:SharpSDL3.Enums.Keycode.AcClose
+  id: AcClose
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcClose
+  nameWithType: Keycode.AcClose
+  fullName: SharpSDL3.Enums.Keycode.AcClose
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcClose
+    path: Enums/SdlKeycode.cs
+    startLine: 238
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcClose = 1073742099
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcExit
+  commentId: F:SharpSDL3.Enums.Keycode.AcExit
+  id: AcExit
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcExit
+  nameWithType: Keycode.AcExit
+  fullName: SharpSDL3.Enums.Keycode.AcExit
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcExit
+    path: Enums/SdlKeycode.cs
+    startLine: 239
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcExit = 1073742100
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcSave
+  commentId: F:SharpSDL3.Enums.Keycode.AcSave
+  id: AcSave
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcSave
+  nameWithType: Keycode.AcSave
+  fullName: SharpSDL3.Enums.Keycode.AcSave
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcSave
+    path: Enums/SdlKeycode.cs
+    startLine: 240
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcSave = 1073742101
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcPrint
+  commentId: F:SharpSDL3.Enums.Keycode.AcPrint
+  id: AcPrint
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcPrint
+  nameWithType: Keycode.AcPrint
+  fullName: SharpSDL3.Enums.Keycode.AcPrint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcPrint
+    path: Enums/SdlKeycode.cs
+    startLine: 241
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcPrint = 1073742102
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcProperties
+  commentId: F:SharpSDL3.Enums.Keycode.AcProperties
+  id: AcProperties
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcProperties
+  nameWithType: Keycode.AcProperties
+  fullName: SharpSDL3.Enums.Keycode.AcProperties
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcProperties
+    path: Enums/SdlKeycode.cs
+    startLine: 242
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcProperties = 1073742103
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcSearch
+  commentId: F:SharpSDL3.Enums.Keycode.AcSearch
+  id: AcSearch
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcSearch
+  nameWithType: Keycode.AcSearch
+  fullName: SharpSDL3.Enums.Keycode.AcSearch
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcSearch
+    path: Enums/SdlKeycode.cs
+    startLine: 243
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcSearch = 1073742104
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcHome
+  commentId: F:SharpSDL3.Enums.Keycode.AcHome
+  id: AcHome
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcHome
+  nameWithType: Keycode.AcHome
+  fullName: SharpSDL3.Enums.Keycode.AcHome
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcHome
+    path: Enums/SdlKeycode.cs
+    startLine: 244
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcHome = 1073742105
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcBack
+  commentId: F:SharpSDL3.Enums.Keycode.AcBack
+  id: AcBack
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcBack
+  nameWithType: Keycode.AcBack
+  fullName: SharpSDL3.Enums.Keycode.AcBack
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcBack
+    path: Enums/SdlKeycode.cs
+    startLine: 245
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcBack = 1073742106
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcForward
+  commentId: F:SharpSDL3.Enums.Keycode.AcForward
+  id: AcForward
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcForward
+  nameWithType: Keycode.AcForward
+  fullName: SharpSDL3.Enums.Keycode.AcForward
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcForward
+    path: Enums/SdlKeycode.cs
+    startLine: 246
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcForward = 1073742107
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcStop
+  commentId: F:SharpSDL3.Enums.Keycode.AcStop
+  id: AcStop
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcStop
+  nameWithType: Keycode.AcStop
+  fullName: SharpSDL3.Enums.Keycode.AcStop
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcStop
+    path: Enums/SdlKeycode.cs
+    startLine: 247
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcStop = 1073742108
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcRefresh
+  commentId: F:SharpSDL3.Enums.Keycode.AcRefresh
+  id: AcRefresh
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcRefresh
+  nameWithType: Keycode.AcRefresh
+  fullName: SharpSDL3.Enums.Keycode.AcRefresh
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcRefresh
+    path: Enums/SdlKeycode.cs
+    startLine: 248
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcRefresh = 1073742109
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.AcBookmarks
+  commentId: F:SharpSDL3.Enums.Keycode.AcBookmarks
+  id: AcBookmarks
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: AcBookmarks
+  nameWithType: Keycode.AcBookmarks
+  fullName: SharpSDL3.Enums.Keycode.AcBookmarks
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcBookmarks
+    path: Enums/SdlKeycode.cs
+    startLine: 249
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcBookmarks = 1073742110
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.SoftLeft
+  commentId: F:SharpSDL3.Enums.Keycode.SoftLeft
+  id: SoftLeft
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: SoftLeft
+  nameWithType: Keycode.SoftLeft
+  fullName: SharpSDL3.Enums.Keycode.SoftLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SoftLeft
+    path: Enums/SdlKeycode.cs
+    startLine: 250
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SoftLeft = 1073742111
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.SoftRight
+  commentId: F:SharpSDL3.Enums.Keycode.SoftRight
+  id: SoftRight
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: SoftRight
+  nameWithType: Keycode.SoftRight
+  fullName: SharpSDL3.Enums.Keycode.SoftRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SoftRight
+    path: Enums/SdlKeycode.cs
+    startLine: 251
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SoftRight = 1073742112
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Call
+  commentId: F:SharpSDL3.Enums.Keycode.Call
+  id: Call
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Call
+  nameWithType: Keycode.Call
+  fullName: SharpSDL3.Enums.Keycode.Call
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Call
+    path: Enums/SdlKeycode.cs
+    startLine: 252
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Call = 1073742113
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.EndCall
+  commentId: F:SharpSDL3.Enums.Keycode.EndCall
+  id: EndCall
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: EndCall
+  nameWithType: Keycode.EndCall
+  fullName: SharpSDL3.Enums.Keycode.EndCall
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EndCall
+    path: Enums/SdlKeycode.cs
+    startLine: 253
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: EndCall = 1073742114
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LeftTab
+  commentId: F:SharpSDL3.Enums.Keycode.LeftTab
+  id: LeftTab
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LeftTab
+  nameWithType: Keycode.LeftTab
+  fullName: SharpSDL3.Enums.Keycode.LeftTab
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftTab
+    path: Enums/SdlKeycode.cs
+    startLine: 254
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftTab = 536870913
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.Level5Shift
+  commentId: F:SharpSDL3.Enums.Keycode.Level5Shift
+  id: Level5Shift
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: Level5Shift
+  nameWithType: Keycode.Level5Shift
+  fullName: SharpSDL3.Enums.Keycode.Level5Shift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Level5Shift
+    path: Enums/SdlKeycode.cs
+    startLine: 255
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Level5Shift = 536870914
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.MultiKeyCompose
+  commentId: F:SharpSDL3.Enums.Keycode.MultiKeyCompose
+  id: MultiKeyCompose
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: MultiKeyCompose
+  nameWithType: Keycode.MultiKeyCompose
+  fullName: SharpSDL3.Enums.Keycode.MultiKeyCompose
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MultiKeyCompose
+    path: Enums/SdlKeycode.cs
+    startLine: 256
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MultiKeyCompose = 536870915
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LMeta
+  commentId: F:SharpSDL3.Enums.Keycode.LMeta
+  id: LMeta
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LMeta
+  nameWithType: Keycode.LMeta
+  fullName: SharpSDL3.Enums.Keycode.LMeta
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LMeta
+    path: Enums/SdlKeycode.cs
+    startLine: 257
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LMeta = 536870916
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RMeta
+  commentId: F:SharpSDL3.Enums.Keycode.RMeta
+  id: RMeta
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RMeta
+  nameWithType: Keycode.RMeta
+  fullName: SharpSDL3.Enums.Keycode.RMeta
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RMeta
+    path: Enums/SdlKeycode.cs
+    startLine: 258
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RMeta = 536870917
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.LHyper
+  commentId: F:SharpSDL3.Enums.Keycode.LHyper
+  id: LHyper
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: LHyper
+  nameWithType: Keycode.LHyper
+  fullName: SharpSDL3.Enums.Keycode.LHyper
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LHyper
+    path: Enums/SdlKeycode.cs
+    startLine: 259
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LHyper = 536870918
+    return:
+      type: SharpSDL3.Enums.Keycode
+- uid: SharpSDL3.Enums.Keycode.RHyper
+  commentId: F:SharpSDL3.Enums.Keycode.RHyper
+  id: RHyper
+  parent: SharpSDL3.Enums.Keycode
+  langs:
+  - csharp
+  - vb
+  name: RHyper
+  nameWithType: Keycode.RHyper
+  fullName: SharpSDL3.Enums.Keycode.RHyper
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeycode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RHyper
+    path: Enums/SdlKeycode.cs
+    startLine: 260
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RHyper = 536870919
+    return:
+      type: SharpSDL3.Enums.Keycode
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.Keycode
+  commentId: T:SharpSDL3.Enums.Keycode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.Keycode.html
+  name: Keycode
+  nameWithType: Keycode
+  fullName: SharpSDL3.Enums.Keycode

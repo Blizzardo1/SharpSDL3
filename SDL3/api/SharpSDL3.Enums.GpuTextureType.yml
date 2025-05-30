@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuTextureType
+  commentId: T:SharpSDL3.Enums.GpuTextureType
+  id: GpuTextureType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuTextureType.Type2D
+  - SharpSDL3.Enums.GpuTextureType.Type2DArray
+  - SharpSDL3.Enums.GpuTextureType.Type3D
+  - SharpSDL3.Enums.GpuTextureType.TypeCube
+  - SharpSDL3.Enums.GpuTextureType.TypeCubeArray
+  langs:
+  - csharp
+  - vb
+  name: GpuTextureType
+  nameWithType: GpuTextureType
+  fullName: SharpSDL3.Enums.GpuTextureType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuTextureType
+    path: Enums/GpuTextureType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuTextureType
+    content.vb: Public Enum GpuTextureType
+- uid: SharpSDL3.Enums.GpuTextureType.Type2D
+  commentId: F:SharpSDL3.Enums.GpuTextureType.Type2D
+  id: Type2D
+  parent: SharpSDL3.Enums.GpuTextureType
+  langs:
+  - csharp
+  - vb
+  name: Type2D
+  nameWithType: GpuTextureType.Type2D
+  fullName: SharpSDL3.Enums.GpuTextureType.Type2D
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type2D
+    path: Enums/GpuTextureType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Type2D = 0
+    return:
+      type: SharpSDL3.Enums.GpuTextureType
+- uid: SharpSDL3.Enums.GpuTextureType.Type2DArray
+  commentId: F:SharpSDL3.Enums.GpuTextureType.Type2DArray
+  id: Type2DArray
+  parent: SharpSDL3.Enums.GpuTextureType
+  langs:
+  - csharp
+  - vb
+  name: Type2DArray
+  nameWithType: GpuTextureType.Type2DArray
+  fullName: SharpSDL3.Enums.GpuTextureType.Type2DArray
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type2DArray
+    path: Enums/GpuTextureType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Type2DArray = 1
+    return:
+      type: SharpSDL3.Enums.GpuTextureType
+- uid: SharpSDL3.Enums.GpuTextureType.Type3D
+  commentId: F:SharpSDL3.Enums.GpuTextureType.Type3D
+  id: Type3D
+  parent: SharpSDL3.Enums.GpuTextureType
+  langs:
+  - csharp
+  - vb
+  name: Type3D
+  nameWithType: GpuTextureType.Type3D
+  fullName: SharpSDL3.Enums.GpuTextureType.Type3D
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type3D
+    path: Enums/GpuTextureType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Type3D = 2
+    return:
+      type: SharpSDL3.Enums.GpuTextureType
+- uid: SharpSDL3.Enums.GpuTextureType.TypeCube
+  commentId: F:SharpSDL3.Enums.GpuTextureType.TypeCube
+  id: TypeCube
+  parent: SharpSDL3.Enums.GpuTextureType
+  langs:
+  - csharp
+  - vb
+  name: TypeCube
+  nameWithType: GpuTextureType.TypeCube
+  fullName: SharpSDL3.Enums.GpuTextureType.TypeCube
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TypeCube
+    path: Enums/GpuTextureType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TypeCube = 3
+    return:
+      type: SharpSDL3.Enums.GpuTextureType
+- uid: SharpSDL3.Enums.GpuTextureType.TypeCubeArray
+  commentId: F:SharpSDL3.Enums.GpuTextureType.TypeCubeArray
+  id: TypeCubeArray
+  parent: SharpSDL3.Enums.GpuTextureType
+  langs:
+  - csharp
+  - vb
+  name: TypeCubeArray
+  nameWithType: GpuTextureType.TypeCubeArray
+  fullName: SharpSDL3.Enums.GpuTextureType.TypeCubeArray
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuTextureType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TypeCubeArray
+    path: Enums/GpuTextureType.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TypeCubeArray = 4
+    return:
+      type: SharpSDL3.Enums.GpuTextureType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuTextureType
+  commentId: T:SharpSDL3.Enums.GpuTextureType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuTextureType.html
+  name: GpuTextureType
+  nameWithType: GpuTextureType
+  fullName: SharpSDL3.Enums.GpuTextureType

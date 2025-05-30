@@ -1,0 +1,81 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.TextEngine.DestroyText
+  commentId: T:SharpSDL3.TTF.TextEngine.DestroyText
+  id: TextEngine.DestroyText
+  parent: SharpSDL3.TTF
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: TextEngine.DestroyText
+  nameWithType: TextEngine.DestroyText
+  fullName: SharpSDL3.TTF.TextEngine.DestroyText
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/TTF/TextEngine.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DestroyText
+    path: TTF/TextEngine.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public delegate void TextEngine.DestroyText(nint userdata, Text text)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: text
+      type: SharpSDL3.TTF.Text
+    content.vb: Public Delegate Sub TextEngine.DestroyText(userdata As IntPtr, text As Text)
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.TTF.Text
+  commentId: T:SharpSDL3.TTF.Text
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Text.html
+  name: Text
+  nameWithType: Text
+  fullName: SharpSDL3.TTF.Text
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.SubStringFlags
+  commentId: T:SharpSDL3.TTF.SubStringFlags
+  id: SubStringFlags
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.SubStringFlags.DirectionMask
+  - SharpSDL3.TTF.SubStringFlags.LineEnd
+  - SharpSDL3.TTF.SubStringFlags.LineStart
+  - SharpSDL3.TTF.SubStringFlags.TextEnd
+  - SharpSDL3.TTF.SubStringFlags.TextStart
+  langs:
+  - csharp
+  - vb
+  name: SubStringFlags
+  nameWithType: SubStringFlags
+  fullName: SharpSDL3.TTF.SubStringFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SubStringFlags
+    path: TTF/SubStringFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum SubStringFlags
+    content.vb: >-
+      <Flags>
+
+      Public Enum SubStringFlags
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.TTF.SubStringFlags.DirectionMask
+  commentId: F:SharpSDL3.TTF.SubStringFlags.DirectionMask
+  id: DirectionMask
+  parent: SharpSDL3.TTF.SubStringFlags
+  langs:
+  - csharp
+  - vb
+  name: DirectionMask
+  nameWithType: SubStringFlags.DirectionMask
+  fullName: SharpSDL3.TTF.SubStringFlags.DirectionMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DirectionMask
+    path: TTF/SubStringFlags.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: DirectionMask = 255
+    return:
+      type: SharpSDL3.TTF.SubStringFlags
+- uid: SharpSDL3.TTF.SubStringFlags.TextStart
+  commentId: F:SharpSDL3.TTF.SubStringFlags.TextStart
+  id: TextStart
+  parent: SharpSDL3.TTF.SubStringFlags
+  langs:
+  - csharp
+  - vb
+  name: TextStart
+  nameWithType: SubStringFlags.TextStart
+  fullName: SharpSDL3.TTF.SubStringFlags.TextStart
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextStart
+    path: TTF/SubStringFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: TextStart = 256
+    return:
+      type: SharpSDL3.TTF.SubStringFlags
+- uid: SharpSDL3.TTF.SubStringFlags.LineStart
+  commentId: F:SharpSDL3.TTF.SubStringFlags.LineStart
+  id: LineStart
+  parent: SharpSDL3.TTF.SubStringFlags
+  langs:
+  - csharp
+  - vb
+  name: LineStart
+  nameWithType: SubStringFlags.LineStart
+  fullName: SharpSDL3.TTF.SubStringFlags.LineStart
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LineStart
+    path: TTF/SubStringFlags.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: LineStart = 512
+    return:
+      type: SharpSDL3.TTF.SubStringFlags
+- uid: SharpSDL3.TTF.SubStringFlags.LineEnd
+  commentId: F:SharpSDL3.TTF.SubStringFlags.LineEnd
+  id: LineEnd
+  parent: SharpSDL3.TTF.SubStringFlags
+  langs:
+  - csharp
+  - vb
+  name: LineEnd
+  nameWithType: SubStringFlags.LineEnd
+  fullName: SharpSDL3.TTF.SubStringFlags.LineEnd
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LineEnd
+    path: TTF/SubStringFlags.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: LineEnd = 1024
+    return:
+      type: SharpSDL3.TTF.SubStringFlags
+- uid: SharpSDL3.TTF.SubStringFlags.TextEnd
+  commentId: F:SharpSDL3.TTF.SubStringFlags.TextEnd
+  id: TextEnd
+  parent: SharpSDL3.TTF.SubStringFlags
+  langs:
+  - csharp
+  - vb
+  name: TextEnd
+  nameWithType: SubStringFlags.TextEnd
+  fullName: SharpSDL3.TTF.SubStringFlags.TextEnd
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/SubStringFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextEnd
+    path: TTF/SubStringFlags.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: TextEnd = 2048
+    return:
+      type: SharpSDL3.TTF.SubStringFlags
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: SharpSDL3.TTF.SubStringFlags
+  commentId: T:SharpSDL3.TTF.SubStringFlags
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.SubStringFlags.html
+  name: SubStringFlags
+  nameWithType: SubStringFlags
+  fullName: SharpSDL3.TTF.SubStringFlags

@@ -1,0 +1,328 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.HitTestResult
+  commentId: T:SharpSDL3.Enums.HitTestResult
+  id: HitTestResult
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.HitTestResult.Draggable
+  - SharpSDL3.Enums.HitTestResult.Normal
+  - SharpSDL3.Enums.HitTestResult.ResizeBottom
+  - SharpSDL3.Enums.HitTestResult.ResizeBottomLeft
+  - SharpSDL3.Enums.HitTestResult.ResizeBottomRight
+  - SharpSDL3.Enums.HitTestResult.ResizeLeft
+  - SharpSDL3.Enums.HitTestResult.ResizeRight
+  - SharpSDL3.Enums.HitTestResult.ResizeTop
+  - SharpSDL3.Enums.HitTestResult.ResizeTopLeft
+  - SharpSDL3.Enums.HitTestResult.ResizeTopRight
+  langs:
+  - csharp
+  - vb
+  name: HitTestResult
+  nameWithType: HitTestResult
+  fullName: SharpSDL3.Enums.HitTestResult
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: HitTestResult
+    path: Enums/HitTestResult.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum HitTestResult
+    content.vb: Public Enum HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.Normal
+  commentId: F:SharpSDL3.Enums.HitTestResult.Normal
+  id: Normal
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: HitTestResult.Normal
+  fullName: SharpSDL3.Enums.HitTestResult.Normal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Normal
+    path: Enums/HitTestResult.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Normal = 0
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.Draggable
+  commentId: F:SharpSDL3.Enums.HitTestResult.Draggable
+  id: Draggable
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: Draggable
+  nameWithType: HitTestResult.Draggable
+  fullName: SharpSDL3.Enums.HitTestResult.Draggable
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Draggable
+    path: Enums/HitTestResult.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Draggable = 1
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeTopLeft
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeTopLeft
+  id: ResizeTopLeft
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeTopLeft
+  nameWithType: HitTestResult.ResizeTopLeft
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeTopLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeTopLeft
+    path: Enums/HitTestResult.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeTopLeft = 2
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeTop
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeTop
+  id: ResizeTop
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeTop
+  nameWithType: HitTestResult.ResizeTop
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeTop
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeTop
+    path: Enums/HitTestResult.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeTop = 3
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeTopRight
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeTopRight
+  id: ResizeTopRight
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeTopRight
+  nameWithType: HitTestResult.ResizeTopRight
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeTopRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeTopRight
+    path: Enums/HitTestResult.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeTopRight = 4
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeRight
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeRight
+  id: ResizeRight
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeRight
+  nameWithType: HitTestResult.ResizeRight
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeRight
+    path: Enums/HitTestResult.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeRight = 5
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeBottomRight
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeBottomRight
+  id: ResizeBottomRight
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeBottomRight
+  nameWithType: HitTestResult.ResizeBottomRight
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeBottomRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeBottomRight
+    path: Enums/HitTestResult.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeBottomRight = 6
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeBottom
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeBottom
+  id: ResizeBottom
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeBottom
+  nameWithType: HitTestResult.ResizeBottom
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeBottom
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeBottom
+    path: Enums/HitTestResult.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeBottom = 7
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeBottomLeft
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeBottomLeft
+  id: ResizeBottomLeft
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeBottomLeft
+  nameWithType: HitTestResult.ResizeBottomLeft
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeBottomLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeBottomLeft
+    path: Enums/HitTestResult.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeBottomLeft = 8
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+- uid: SharpSDL3.Enums.HitTestResult.ResizeLeft
+  commentId: F:SharpSDL3.Enums.HitTestResult.ResizeLeft
+  id: ResizeLeft
+  parent: SharpSDL3.Enums.HitTestResult
+  langs:
+  - csharp
+  - vb
+  name: ResizeLeft
+  nameWithType: HitTestResult.ResizeLeft
+  fullName: SharpSDL3.Enums.HitTestResult.ResizeLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/HitTestResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ResizeLeft
+    path: Enums/HitTestResult.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ResizeLeft = 9
+    return:
+      type: SharpSDL3.Enums.HitTestResult
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.HitTestResult
+  commentId: T:SharpSDL3.Enums.HitTestResult
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.HitTestResult.html
+  name: HitTestResult
+  nameWithType: HitTestResult
+  fullName: SharpSDL3.Enums.HitTestResult

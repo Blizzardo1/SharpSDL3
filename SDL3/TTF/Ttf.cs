@@ -34,6 +34,21 @@ public static unsafe partial class Ttf {
     private const int MaxUnicodeCodePoint = 0x10FFFF;
     private const string NativeLibName = "SDL3_ttf";
 
+    /// <summary>
+    /// Add a fallback font
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to modify.</param>
+    /// <param name="fallback">The <see cref="Font"/> to add as a fallback</param>
+    /// <remarks>
+    /// <para>Add a font that will be used for glyphs that are not in the current font. The fallback font should have the same size and style as the current font.</para>
+    /// <para>If there are multiple fallback fonts, they are used in the order added.</para>
+    /// <para>This updates any <see cref="Font"/> objects using this <see cref="Font"/>.</para>
+    /// <para>This function should be called on the thread that created both fonts.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <seealso cref="ClearFallbackFonts(Font)"/>
+    /// <seealso cref="RemoveFallbackFont(Font, Font)"/>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
     public static bool AddFallbackFont(Font font, Font fallback) {
         bool result = TTF_AddFallbackFont(font.Handle, fallback.Handle);
         if (!result) {
@@ -42,6 +57,22 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Append UTF-8 text to a text object.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to modify.</param>
+    /// <param name="str">The UTF-8 text to insert.</param>
+    /// <param name="length">The length of the text, in bytes, or 0 for null terminated text.</param>
+    /// <remarks>
+    /// <para>This function may cause the internal text representation to be rebuilt.</para>
+    /// <para>This function should be called on the thread that created both fonts.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="DeleteTextString(Text, int, int)"/>
+    /// <seealso cref="InsertTextString(Text, int, string)"/>
+    /// <seealso cref="SetTextString(Text, string, ulong)"/>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="Text"/> handle is null or 0x0.</exception>
     public static bool AppendTextString(Text text, string str, ulong length) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
@@ -52,37 +83,108 @@ public static unsafe partial class Ttf {
         return TTF_AppendTextString(text.Handle, str, length);
     }
 
+    /// <summary>
+    /// Append UTF-8 text to a text object.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to modify.</param>
+    /// <param name="str">The UTF-8 text to insert.</param>
+    /// <remarks>
+    /// <para>This function may cause the internal text representation to be rebuilt.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="DeleteTextString(Text, int, int)"/>
+    /// <seealso cref="InsertTextString(Text, int, string)"/>
+    /// <seealso cref="SetTextString(Text, string, ulong)"/>
     public static bool AppendTextString(Text text, string str) {
         return AppendTextString(text, str, (ulong)str.Length);
     }
 
+    /// <summary>
+    /// Remove all fallback fonts.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to modify.</param>
+    /// <remarks>
+    /// <para>This updates any <see cref="Font"/> objects using this <see cref="Font"/>.</para>
+    /// <para>This function shold be called on the thread that created the <see cref="Font"/></para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <seealso cref="AddFallbackFont(Font, Font)"/>
+    /// <seealso cref="RemoveFallbackFont(Font, Font)"/>
     public static void ClearFallbackFonts(Font font) {
         TTF_ClearFallbackFonts(font.Handle);
     }
 
+    /// <summary>
+    /// Dispose of a previously-created <see cref="Font"/>
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to dispose of.</param>
+    /// <remarks>
+    /// <para>Call this when done with a <see cref="Font"/>. This function will free any resources associated with it. It is safe to call this function on <see langword="null"/>, for example on the result of a failed call to <see cref="OpenFont(string, float)"/>.</para>
+    /// <para>The <see cref="Font"/> is not valid after being passed to this function. String pointers from functions that return information on this font, such as <see cref="GetFontFamilyName(Font)"/> and <see cref="GetFontStyleName(Font)"/> are no longer valid after this call, as well.</para>
+    /// <para>This function should not be called while any other thread is using the <see cref="Font"/>.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <seealso cref="OpenFont(string, float)"/>
+    /// <seealso cref="OpenFontIO(IOStream, bool, float)"/>
     public static void CloseFont(Font font) {
-        if (font.Name.IsEmpty()) {
-            throw new ArgumentException("Font is invalid or already closed.", nameof(font));
-        }
-
-        Sdl.LogInfo(LogCategory.System, $"Closing font: {font.Name}");
-
         TTF_CloseFont(font.Handle);
     }
 
+    /// <summary>
+    /// Create a copy of an existing <see cref="Font"/>
+    /// </summary>
+    /// <param name="existingFont">The <see cref="Font"/> to copy.</param>
+    /// <remarks>
+    /// <para>The copy will be distinct from the original, but will share the font file and have the same size and style as the original.</para>
+    /// <para>When done with the returned <see cref="Font"/>, use <see cref="CloseFont(Font)"/> to dispose of it.</para>
+    /// <para>This function should be called on the thread that created the original <see cref="Font"/>.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0</para>
+    /// </remarks>
+    /// <returns>Returns a valid <see cref="Font"/>, or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="CloseFont(Font)"/>
     public static Font CopyFont(Font existingFont) {
         Font font = TTF_CopyFont(existingFont.Handle);
         return font;
     }
 
+    /// <summary>
+    /// Create a text engine for drawing text with the SDL GPU API.
+    /// </summary>
+    /// <param name="device">The SDL_GPUDevice to use for creating textures and drawing text.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the device.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="TextEngine"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws on a <see langword="null"/> <paramref name="device"/></exception>
+    /// <exception cref="InvalidOperationException">Throws when failed to create a <see cref="TextEngine"/>.</exception>
+    /// <seealso cref="CreateGPUTextEngineWithProperties(int)"/>
+    /// <seealso cref="DestroyGPUTextEngine(nint)"/>
+    /// <seealso cref="GetGPUTextDrawData(nint)"/>
     // nint refers to a GPUDevice, which is a pointer type.
-    public static nint CreateGPUTextEngine(nint device) {
+    public static TextEngine CreateGPUTextEngine(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
-        return TTF_CreateGPUTextEngine(device);
+        nint tePtr = TTF_CreateGPUTextEngine(device);
+        if (tePtr == nint.Zero) {
+            throw new InvalidOperationException($"Failed to create renderer text engine. SDL Error: {Sdl.GetError()}");
+        }
+        TextEngine engine = *(TextEngine*)tePtr;
+        engine.Handle = tePtr;
+        return engine;
     }
 
+    /// <summary>
+    /// Create a GPU text engine with custom properties.
+    /// </summary>
+    /// <param name="props">A pointer to a set of properties for the text engine.</param>
+    /// <remarks>
+    /// <para>This function creates a text engine for drawing text with the SDL GPU API, using the specified properties.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a pointer to the created GPU text engine, or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
     public static nint CreateGPUTextEngineWithProperties(int props) {
         if (props == 0) {
             throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
@@ -90,6 +192,17 @@ public static unsafe partial class Ttf {
         return TTF_CreateGPUTextEngineWithProperties(props);
     }
 
+    /// <summary>
+    /// Create a text engine for drawing text with the SDL renderer API.
+    /// </summary>
+    /// <param name="renderer">The SDL_Renderer to use for creating textures and drawing text.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the renderer.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="TextEngine"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws on a <see langword="null"/> <paramref name="renderer"/></exception>
+    /// <exception cref="InvalidOperationException">Throws when failed to create a <see cref="TextEngine"/>.</exception>
     public static unsafe TextEngine CreateRendererTextEngine(nint renderer) {
         if (renderer == IntPtr.Zero) {
             throw new ArgumentNullException(nameof(renderer), "Renderer cannot be null.");
@@ -103,6 +216,17 @@ public static unsafe partial class Ttf {
         return engine;
     }
 
+    /// <summary>
+    /// Create a renderer text engine with custom properties.
+    /// </summary>
+    /// <param name="props">A pointer to a set of properties for the text engine.</param>
+    /// <remarks>
+    /// <para>This function creates a text engine for drawing text with the SDL renderer API, using the specified properties.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="TextEngine"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws on a <see langword="null"/> <paramref name="props"/></exception>
+    /// <exception cref="InvalidOperationException">Throws when failed to create a <see cref="TextEngine"/>.</exception>
     public static unsafe TextEngine CreateRendererTextEngineWithProperties(int props) {
         if (props == 0) {
             throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
@@ -118,6 +242,15 @@ public static unsafe partial class Ttf {
         return engine;
     }
 
+    /// <summary>
+    /// Create a text engine for drawing text to an SDL surface.
+    /// </summary>
+    /// <remarks>
+    /// <para>This function creates a text engine for drawing text to an SDL surface.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="TextEngine"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="InvalidOperationException">Throws when failed to create a <see cref="TextEngine"/>.</exception>
     public static unsafe TextEngine CreateSurfaceTextEngine() {
         nint tePtr = TTF_CreateSurfaceTextEngine();
         if (tePtr == nint.Zero) {

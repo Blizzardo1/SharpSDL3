@@ -1,0 +1,112 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuFilter
+  commentId: T:SharpSDL3.Enums.GpuFilter
+  id: GpuFilter
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuFilter.Linear
+  - SharpSDL3.Enums.GpuFilter.Nearest
+  langs:
+  - csharp
+  - vb
+  name: GpuFilter
+  nameWithType: GpuFilter
+  fullName: SharpSDL3.Enums.GpuFilter
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuFilter.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuFilter
+    path: Enums/GpuFilter.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuFilter
+    content.vb: Public Enum GpuFilter
+- uid: SharpSDL3.Enums.GpuFilter.Nearest
+  commentId: F:SharpSDL3.Enums.GpuFilter.Nearest
+  id: Nearest
+  parent: SharpSDL3.Enums.GpuFilter
+  langs:
+  - csharp
+  - vb
+  name: Nearest
+  nameWithType: GpuFilter.Nearest
+  fullName: SharpSDL3.Enums.GpuFilter.Nearest
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuFilter.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Nearest
+    path: Enums/GpuFilter.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Nearest = 0
+    return:
+      type: SharpSDL3.Enums.GpuFilter
+- uid: SharpSDL3.Enums.GpuFilter.Linear
+  commentId: F:SharpSDL3.Enums.GpuFilter.Linear
+  id: Linear
+  parent: SharpSDL3.Enums.GpuFilter
+  langs:
+  - csharp
+  - vb
+  name: Linear
+  nameWithType: GpuFilter.Linear
+  fullName: SharpSDL3.Enums.GpuFilter.Linear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuFilter.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Linear
+    path: Enums/GpuFilter.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Linear = 1
+    return:
+      type: SharpSDL3.Enums.GpuFilter
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuFilter
+  commentId: T:SharpSDL3.Enums.GpuFilter
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuFilter.html
+  name: GpuFilter
+  nameWithType: GpuFilter
+  fullName: SharpSDL3.Enums.GpuFilter

@@ -1,0 +1,844 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.FSize
+  commentId: T:SharpSDL3.Structs.FSize
+  id: FSize
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.FSize.#ctor(System.Single,System.Single)
+  - SharpSDL3.Structs.FSize.Equals(System.Object)
+  - SharpSDL3.Structs.FSize.GetHashCode
+  - SharpSDL3.Structs.FSize.Height
+  - SharpSDL3.Structs.FSize.ToString
+  - SharpSDL3.Structs.FSize.Width
+  - SharpSDL3.Structs.FSize.op_Equality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  - SharpSDL3.Structs.FSize.op_Explicit(SharpSDL3.Structs.Size)~SharpSDL3.Structs.FSize
+  - SharpSDL3.Structs.FSize.op_Implicit(System.ValueTuple{System.Single,System.Single})~SharpSDL3.Structs.FSize
+  - SharpSDL3.Structs.FSize.op_Inequality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  langs:
+  - csharp
+  - vb
+  name: FSize
+  nameWithType: FSize
+  fullName: SharpSDL3.Structs.FSize
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FSize
+    path: Structs/FSize.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct FSize
+    content.vb: Public Structure FSize
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.FSize.#ctor(System.Single,System.Single)
+  commentId: M:SharpSDL3.Structs.FSize.#ctor(System.Single,System.Single)
+  id: '#ctor(System.Single,System.Single)'
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: FSize(float, float)
+  nameWithType: FSize.FSize(float, float)
+  fullName: SharpSDL3.Structs.FSize.FSize(float, float)
+  type: Constructor
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: .ctor
+    path: Structs/FSize.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public FSize(float width, float height)
+    parameters:
+    - id: width
+      type: System.Single
+    - id: height
+      type: System.Single
+    content.vb: Public Sub New(width As Single, height As Single)
+  overload: SharpSDL3.Structs.FSize.#ctor*
+  nameWithType.vb: FSize.New(Single, Single)
+  fullName.vb: SharpSDL3.Structs.FSize.New(Single, Single)
+  name.vb: New(Single, Single)
+- uid: SharpSDL3.Structs.FSize.Width
+  commentId: P:SharpSDL3.Structs.FSize.Width
+  id: Width
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: FSize.Width
+  fullName: SharpSDL3.Structs.FSize.Width
+  type: Property
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Width
+    path: Structs/FSize.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public float Width { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Width As Single
+  overload: SharpSDL3.Structs.FSize.Width*
+- uid: SharpSDL3.Structs.FSize.Height
+  commentId: P:SharpSDL3.Structs.FSize.Height
+  id: Height
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: FSize.Height
+  fullName: SharpSDL3.Structs.FSize.Height
+  type: Property
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Height
+    path: Structs/FSize.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public float Height { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Height As Single
+  overload: SharpSDL3.Structs.FSize.Height*
+- uid: SharpSDL3.Structs.FSize.Equals(System.Object)
+  commentId: M:SharpSDL3.Structs.FSize.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: FSize.Equals(object?)
+  fullName: SharpSDL3.Structs.FSize.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Equals
+    path: Structs/FSize.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override readonly bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: SharpSDL3.Structs.FSize.Equals*
+  nameWithType.vb: FSize.Equals(Object)
+  fullName.vb: SharpSDL3.Structs.FSize.Equals(Object)
+  name.vb: Equals(Object)
+- uid: SharpSDL3.Structs.FSize.op_Equality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  commentId: M:SharpSDL3.Structs.FSize.op_Equality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  id: op_Equality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: operator ==(FSize, FSize)
+  nameWithType: FSize.operator ==(FSize, FSize)
+  fullName: SharpSDL3.Structs.FSize.operator ==(SharpSDL3.Structs.FSize, SharpSDL3.Structs.FSize)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Equality
+    path: Structs/FSize.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator ==(FSize left, FSize right)
+    parameters:
+    - id: left
+      type: SharpSDL3.Structs.FSize
+    - id: right
+      type: SharpSDL3.Structs.FSize
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As FSize, right As FSize) As Boolean
+  overload: SharpSDL3.Structs.FSize.op_Equality*
+  nameWithType.vb: FSize.=(FSize, FSize)
+  fullName.vb: SharpSDL3.Structs.FSize.=(SharpSDL3.Structs.FSize, SharpSDL3.Structs.FSize)
+  name.vb: =(FSize, FSize)
+- uid: SharpSDL3.Structs.FSize.op_Inequality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  commentId: M:SharpSDL3.Structs.FSize.op_Inequality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  id: op_Inequality(SharpSDL3.Structs.FSize,SharpSDL3.Structs.FSize)
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: operator !=(FSize, FSize)
+  nameWithType: FSize.operator !=(FSize, FSize)
+  fullName: SharpSDL3.Structs.FSize.operator !=(SharpSDL3.Structs.FSize, SharpSDL3.Structs.FSize)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Inequality
+    path: Structs/FSize.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator !=(FSize left, FSize right)
+    parameters:
+    - id: left
+      type: SharpSDL3.Structs.FSize
+    - id: right
+      type: SharpSDL3.Structs.FSize
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As FSize, right As FSize) As Boolean
+  overload: SharpSDL3.Structs.FSize.op_Inequality*
+  nameWithType.vb: FSize.<>(FSize, FSize)
+  fullName.vb: SharpSDL3.Structs.FSize.<>(SharpSDL3.Structs.FSize, SharpSDL3.Structs.FSize)
+  name.vb: <>(FSize, FSize)
+- uid: SharpSDL3.Structs.FSize.GetHashCode
+  commentId: M:SharpSDL3.Structs.FSize.GetHashCode
+  id: GetHashCode
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: FSize.GetHashCode()
+  fullName: SharpSDL3.Structs.FSize.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetHashCode
+    path: Structs/FSize.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override readonly int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: SharpSDL3.Structs.FSize.GetHashCode*
+- uid: SharpSDL3.Structs.FSize.ToString
+  commentId: M:SharpSDL3.Structs.FSize.ToString
+  id: ToString
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: FSize.ToString()
+  fullName: SharpSDL3.Structs.FSize.ToString()
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ToString
+    path: Structs/FSize.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Returns the fully qualified type name of this instance.
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+      description: The fully qualified type name.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: SharpSDL3.Structs.FSize.ToString*
+- uid: SharpSDL3.Structs.FSize.op_Implicit(System.ValueTuple{System.Single,System.Single})~SharpSDL3.Structs.FSize
+  commentId: M:SharpSDL3.Structs.FSize.op_Implicit(System.ValueTuple{System.Single,System.Single})~SharpSDL3.Structs.FSize
+  id: op_Implicit(System.ValueTuple{System.Single,System.Single})~SharpSDL3.Structs.FSize
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: implicit operator FSize((float width, float height))
+  nameWithType: FSize.implicit operator FSize((float width, float height))
+  fullName: SharpSDL3.Structs.FSize.implicit operator SharpSDL3.Structs.FSize((float width, float height))
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Implicit
+    path: Structs/FSize.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static implicit operator FSize((float width, float height) tuple)
+    parameters:
+    - id: tuple
+      type: System.ValueTuple{System.Single,System.Single}
+    return:
+      type: SharpSDL3.Structs.FSize
+    content.vb: Public Shared Widening Operator CType(tuple As (width As Single, height As Single)) As FSize
+  overload: SharpSDL3.Structs.FSize.op_Implicit*
+  nameWithType.vb: FSize.CType((width As Single, height As Single))
+  fullName.vb: SharpSDL3.Structs.FSize.CType((width As Single, height As Single))
+  name.vb: CType((width As Single, height As Single))
+- uid: SharpSDL3.Structs.FSize.op_Explicit(SharpSDL3.Structs.Size)~SharpSDL3.Structs.FSize
+  commentId: M:SharpSDL3.Structs.FSize.op_Explicit(SharpSDL3.Structs.Size)~SharpSDL3.Structs.FSize
+  id: op_Explicit(SharpSDL3.Structs.Size)~SharpSDL3.Structs.FSize
+  parent: SharpSDL3.Structs.FSize
+  langs:
+  - csharp
+  - vb
+  name: explicit operator FSize(Size)
+  nameWithType: FSize.explicit operator FSize(Size)
+  fullName: SharpSDL3.Structs.FSize.explicit operator SharpSDL3.Structs.FSize(SharpSDL3.Structs.Size)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/FSize.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Explicit
+    path: Structs/FSize.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static explicit operator FSize(Size size)
+    parameters:
+    - id: size
+      type: SharpSDL3.Structs.Size
+    return:
+      type: SharpSDL3.Structs.FSize
+    content.vb: Public Shared Narrowing Operator CType(size As Size) As FSize
+  overload: SharpSDL3.Structs.FSize.op_Explicit*
+  nameWithType.vb: FSize.CType(Size)
+  fullName.vb: SharpSDL3.Structs.FSize.CType(SharpSDL3.Structs.Size)
+  name.vb: CType(Size)
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Structs.FSize.#ctor*
+  commentId: Overload:SharpSDL3.Structs.FSize.#ctor
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize__ctor_System_Single_System_Single_
+  name: FSize
+  nameWithType: FSize.FSize
+  fullName: SharpSDL3.Structs.FSize.FSize
+  nameWithType.vb: FSize.New
+  fullName.vb: SharpSDL3.Structs.FSize.New
+  name.vb: New
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: SharpSDL3.Structs.FSize.Width*
+  commentId: Overload:SharpSDL3.Structs.FSize.Width
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_Width
+  name: Width
+  nameWithType: FSize.Width
+  fullName: SharpSDL3.Structs.FSize.Width
+- uid: SharpSDL3.Structs.FSize.Height*
+  commentId: Overload:SharpSDL3.Structs.FSize.Height
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_Height
+  name: Height
+  nameWithType: FSize.Height
+  fullName: SharpSDL3.Structs.FSize.Height
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: SharpSDL3.Structs.FSize.Equals*
+  commentId: Overload:SharpSDL3.Structs.FSize.Equals
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_Equals_System_Object_
+  name: Equals
+  nameWithType: FSize.Equals
+  fullName: SharpSDL3.Structs.FSize.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: SharpSDL3.Structs.FSize.op_Equality*
+  commentId: Overload:SharpSDL3.Structs.FSize.op_Equality
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_op_Equality_SharpSDL3_Structs_FSize_SharpSDL3_Structs_FSize_
+  name: operator ==
+  nameWithType: FSize.operator ==
+  fullName: SharpSDL3.Structs.FSize.operator ==
+  nameWithType.vb: FSize.=
+  fullName.vb: SharpSDL3.Structs.FSize.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.FSize.op_Equality*
+    name: ==
+    href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_op_Equality_SharpSDL3_Structs_FSize_SharpSDL3_Structs_FSize_
+- uid: SharpSDL3.Structs.FSize
+  commentId: T:SharpSDL3.Structs.FSize
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.FSize.html
+  name: FSize
+  nameWithType: FSize
+  fullName: SharpSDL3.Structs.FSize
+- uid: SharpSDL3.Structs.FSize.op_Inequality*
+  commentId: Overload:SharpSDL3.Structs.FSize.op_Inequality
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_op_Inequality_SharpSDL3_Structs_FSize_SharpSDL3_Structs_FSize_
+  name: operator !=
+  nameWithType: FSize.operator !=
+  fullName: SharpSDL3.Structs.FSize.operator !=
+  nameWithType.vb: FSize.<>
+  fullName.vb: SharpSDL3.Structs.FSize.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.FSize.op_Inequality*
+    name: '!='
+    href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_op_Inequality_SharpSDL3_Structs_FSize_SharpSDL3_Structs_FSize_
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: SharpSDL3.Structs.FSize.GetHashCode*
+  commentId: Overload:SharpSDL3.Structs.FSize.GetHashCode
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_GetHashCode
+  name: GetHashCode
+  nameWithType: FSize.GetHashCode
+  fullName: SharpSDL3.Structs.FSize.GetHashCode
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: SharpSDL3.Structs.FSize.ToString*
+  commentId: Overload:SharpSDL3.Structs.FSize.ToString
+  href: SharpSDL3.Structs.FSize.html#SharpSDL3_Structs_FSize_ToString
+  name: ToString
+  nameWithType: FSize.ToString
+  fullName: SharpSDL3.Structs.FSize.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SharpSDL3.Structs.FSize.op_Implicit*
+  commentId: Overload:SharpSDL3.Structs.FSize.op_Implicit
+  name: implicit operator
+  nameWithType: FSize.implicit operator
+  fullName: SharpSDL3.Structs.FSize.implicit operator
+  nameWithType.vb: FSize.CType
+  fullName.vb: SharpSDL3.Structs.FSize.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: System.ValueTuple{System.Single,System.Single}
+  commentId: T:System.ValueTuple{System.Single,System.Single}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: (float width, float height)
+  nameWithType: (float width, float height)
+  fullName: (float width, float height)
+  nameWithType.vb: (width As Single, height As Single)
+  fullName.vb: (width As Single, height As Single)
+  name.vb: (width As Single, height As Single)
+  spec.csharp:
+  - name: (
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single}.width
+    name: width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.width
+  - name: ','
+  - name: " "
+  - uid: System.Single
+    name: float
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single}.height
+    name: height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.height
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Single,System.Single}.width
+    name: width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.width
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Single,System.Single}.height
+    name: height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.single,system.single-.height
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Single
+    name: Single
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.single
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: SharpSDL3.Structs.FSize.op_Explicit*
+  commentId: Overload:SharpSDL3.Structs.FSize.op_Explicit
+  name: explicit operator
+  nameWithType: FSize.explicit operator
+  fullName: SharpSDL3.Structs.FSize.explicit operator
+  nameWithType.vb: FSize.CType
+  fullName.vb: SharpSDL3.Structs.FSize.CType
+  name.vb: CType
+  spec.csharp:
+  - name: explicit
+  - name: " "
+  - name: operator
+- uid: SharpSDL3.Structs.Size
+  commentId: T:SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.Size.html
+  name: Size
+  nameWithType: Size
+  fullName: SharpSDL3.Structs.Size

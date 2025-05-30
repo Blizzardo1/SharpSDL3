@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.AsyncIoResult
+  commentId: T:SharpSDL3.Enums.AsyncIoResult
+  id: AsyncIoResult
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.AsyncIoResult.Canceled
+  - SharpSDL3.Enums.AsyncIoResult.Complete
+  - SharpSDL3.Enums.AsyncIoResult.Failure
+  langs:
+  - csharp
+  - vb
+  name: AsyncIoResult
+  nameWithType: AsyncIoResult
+  fullName: SharpSDL3.Enums.AsyncIoResult
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/AsyncIoResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AsyncIoResult
+    path: Enums/AsyncIoResult.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum AsyncIoResult
+    content.vb: Public Enum AsyncIoResult
+- uid: SharpSDL3.Enums.AsyncIoResult.Complete
+  commentId: F:SharpSDL3.Enums.AsyncIoResult.Complete
+  id: Complete
+  parent: SharpSDL3.Enums.AsyncIoResult
+  langs:
+  - csharp
+  - vb
+  name: Complete
+  nameWithType: AsyncIoResult.Complete
+  fullName: SharpSDL3.Enums.AsyncIoResult.Complete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AsyncIoResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Complete
+    path: Enums/AsyncIoResult.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Complete = 0
+    return:
+      type: SharpSDL3.Enums.AsyncIoResult
+- uid: SharpSDL3.Enums.AsyncIoResult.Failure
+  commentId: F:SharpSDL3.Enums.AsyncIoResult.Failure
+  id: Failure
+  parent: SharpSDL3.Enums.AsyncIoResult
+  langs:
+  - csharp
+  - vb
+  name: Failure
+  nameWithType: AsyncIoResult.Failure
+  fullName: SharpSDL3.Enums.AsyncIoResult.Failure
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AsyncIoResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Failure
+    path: Enums/AsyncIoResult.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Failure = 1
+    return:
+      type: SharpSDL3.Enums.AsyncIoResult
+- uid: SharpSDL3.Enums.AsyncIoResult.Canceled
+  commentId: F:SharpSDL3.Enums.AsyncIoResult.Canceled
+  id: Canceled
+  parent: SharpSDL3.Enums.AsyncIoResult
+  langs:
+  - csharp
+  - vb
+  name: Canceled
+  nameWithType: AsyncIoResult.Canceled
+  fullName: SharpSDL3.Enums.AsyncIoResult.Canceled
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/AsyncIoResult.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Canceled
+    path: Enums/AsyncIoResult.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Canceled = 2
+    return:
+      type: SharpSDL3.Enums.AsyncIoResult
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.AsyncIoResult
+  commentId: T:SharpSDL3.Enums.AsyncIoResult
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.AsyncIoResult.html
+  name: AsyncIoResult
+  nameWithType: AsyncIoResult
+  fullName: SharpSDL3.Enums.AsyncIoResult

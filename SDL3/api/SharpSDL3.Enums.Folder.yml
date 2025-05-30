@@ -1,0 +1,382 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.Folder
+  commentId: T:SharpSDL3.Enums.Folder
+  id: Folder
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.Folder.Count
+  - SharpSDL3.Enums.Folder.Desktop
+  - SharpSDL3.Enums.Folder.Documents
+  - SharpSDL3.Enums.Folder.Downloads
+  - SharpSDL3.Enums.Folder.Home
+  - SharpSDL3.Enums.Folder.Music
+  - SharpSDL3.Enums.Folder.Pictures
+  - SharpSDL3.Enums.Folder.Publicshare
+  - SharpSDL3.Enums.Folder.Savedgames
+  - SharpSDL3.Enums.Folder.Screenshots
+  - SharpSDL3.Enums.Folder.Templates
+  - SharpSDL3.Enums.Folder.Videos
+  langs:
+  - csharp
+  - vb
+  name: Folder
+  nameWithType: Folder
+  fullName: SharpSDL3.Enums.Folder
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Folder
+    path: Enums/Folder.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum Folder
+    content.vb: Public Enum Folder
+- uid: SharpSDL3.Enums.Folder.Home
+  commentId: F:SharpSDL3.Enums.Folder.Home
+  id: Home
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Home
+  nameWithType: Folder.Home
+  fullName: SharpSDL3.Enums.Folder.Home
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Home
+    path: Enums/Folder.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Home = 0
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Desktop
+  commentId: F:SharpSDL3.Enums.Folder.Desktop
+  id: Desktop
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Desktop
+  nameWithType: Folder.Desktop
+  fullName: SharpSDL3.Enums.Folder.Desktop
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Desktop
+    path: Enums/Folder.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Desktop = 1
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Documents
+  commentId: F:SharpSDL3.Enums.Folder.Documents
+  id: Documents
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Documents
+  nameWithType: Folder.Documents
+  fullName: SharpSDL3.Enums.Folder.Documents
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Documents
+    path: Enums/Folder.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Documents = 2
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Downloads
+  commentId: F:SharpSDL3.Enums.Folder.Downloads
+  id: Downloads
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Downloads
+  nameWithType: Folder.Downloads
+  fullName: SharpSDL3.Enums.Folder.Downloads
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Downloads
+    path: Enums/Folder.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Downloads = 3
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Music
+  commentId: F:SharpSDL3.Enums.Folder.Music
+  id: Music
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Music
+  nameWithType: Folder.Music
+  fullName: SharpSDL3.Enums.Folder.Music
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Music
+    path: Enums/Folder.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Music = 4
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Pictures
+  commentId: F:SharpSDL3.Enums.Folder.Pictures
+  id: Pictures
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Pictures
+  nameWithType: Folder.Pictures
+  fullName: SharpSDL3.Enums.Folder.Pictures
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pictures
+    path: Enums/Folder.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pictures = 5
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Publicshare
+  commentId: F:SharpSDL3.Enums.Folder.Publicshare
+  id: Publicshare
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Publicshare
+  nameWithType: Folder.Publicshare
+  fullName: SharpSDL3.Enums.Folder.Publicshare
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Publicshare
+    path: Enums/Folder.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Publicshare = 6
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Savedgames
+  commentId: F:SharpSDL3.Enums.Folder.Savedgames
+  id: Savedgames
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Savedgames
+  nameWithType: Folder.Savedgames
+  fullName: SharpSDL3.Enums.Folder.Savedgames
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Savedgames
+    path: Enums/Folder.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Savedgames = 7
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Screenshots
+  commentId: F:SharpSDL3.Enums.Folder.Screenshots
+  id: Screenshots
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Screenshots
+  nameWithType: Folder.Screenshots
+  fullName: SharpSDL3.Enums.Folder.Screenshots
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Screenshots
+    path: Enums/Folder.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Screenshots = 8
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Templates
+  commentId: F:SharpSDL3.Enums.Folder.Templates
+  id: Templates
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Templates
+  nameWithType: Folder.Templates
+  fullName: SharpSDL3.Enums.Folder.Templates
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Templates
+    path: Enums/Folder.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Templates = 9
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Videos
+  commentId: F:SharpSDL3.Enums.Folder.Videos
+  id: Videos
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Videos
+  nameWithType: Folder.Videos
+  fullName: SharpSDL3.Enums.Folder.Videos
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Videos
+    path: Enums/Folder.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Videos = 10
+    return:
+      type: SharpSDL3.Enums.Folder
+- uid: SharpSDL3.Enums.Folder.Count
+  commentId: F:SharpSDL3.Enums.Folder.Count
+  id: Count
+  parent: SharpSDL3.Enums.Folder
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: Folder.Count
+  fullName: SharpSDL3.Enums.Folder.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Folder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/Folder.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 11
+    return:
+      type: SharpSDL3.Enums.Folder
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.Folder
+  commentId: T:SharpSDL3.Enums.Folder
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.Folder.html
+  name: Folder
+  nameWithType: Folder
+  fullName: SharpSDL3.Enums.Folder

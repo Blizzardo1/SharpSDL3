@@ -1,0 +1,230 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags
+  commentId: T:SharpSDL3.Enums.GpuBufferUsageFlags
+  id: GpuBufferUsageFlags
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageRead
+  - SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageWrite
+  - SharpSDL3.Enums.GpuBufferUsageFlags.GraphicsStorageRead
+  - SharpSDL3.Enums.GpuBufferUsageFlags.Index
+  - SharpSDL3.Enums.GpuBufferUsageFlags.Indirect
+  - SharpSDL3.Enums.GpuBufferUsageFlags.Vertex
+  langs:
+  - csharp
+  - vb
+  name: GpuBufferUsageFlags
+  nameWithType: GpuBufferUsageFlags
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuBufferUsageFlags
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum GpuBufferUsageFlags : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum GpuBufferUsageFlags As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.Vertex
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.Vertex
+  id: Vertex
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: Vertex
+  nameWithType: GpuBufferUsageFlags.Vertex
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.Vertex
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Vertex
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Vertex = 1
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.Index
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.Index
+  id: Index
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: Index
+  nameWithType: GpuBufferUsageFlags.Index
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.Index
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Index
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Index = 2
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.Indirect
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.Indirect
+  id: Indirect
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: Indirect
+  nameWithType: GpuBufferUsageFlags.Indirect
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.Indirect
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Indirect
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Indirect = 4
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.GraphicsStorageRead
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.GraphicsStorageRead
+  id: GraphicsStorageRead
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: GraphicsStorageRead
+  nameWithType: GpuBufferUsageFlags.GraphicsStorageRead
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.GraphicsStorageRead
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GraphicsStorageRead
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GraphicsStorageRead = 8
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageRead
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageRead
+  id: ComputeStorageRead
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: ComputeStorageRead
+  nameWithType: GpuBufferUsageFlags.ComputeStorageRead
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageRead
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ComputeStorageRead
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ComputeStorageRead = 16
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageWrite
+  commentId: F:SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageWrite
+  id: ComputeStorageWrite
+  parent: SharpSDL3.Enums.GpuBufferUsageFlags
+  langs:
+  - csharp
+  - vb
+  name: ComputeStorageWrite
+  nameWithType: GpuBufferUsageFlags.ComputeStorageWrite
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags.ComputeStorageWrite
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBufferUsageFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ComputeStorageWrite
+    path: Enums/GpuBufferUsageFlags.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ComputeStorageWrite = 32
+    return:
+      type: SharpSDL3.Enums.GpuBufferUsageFlags
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuBufferUsageFlags
+  commentId: T:SharpSDL3.Enums.GpuBufferUsageFlags
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuBufferUsageFlags.html
+  name: GpuBufferUsageFlags
+  nameWithType: GpuBufferUsageFlags
+  fullName: SharpSDL3.Enums.GpuBufferUsageFlags

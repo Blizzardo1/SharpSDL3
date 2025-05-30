@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.FileDialogType
+  commentId: T:SharpSDL3.Enums.FileDialogType
+  id: FileDialogType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.FileDialogType.OpenFile
+  - SharpSDL3.Enums.FileDialogType.OpenFolder
+  - SharpSDL3.Enums.FileDialogType.SaveFile
+  langs:
+  - csharp
+  - vb
+  name: FileDialogType
+  nameWithType: FileDialogType
+  fullName: SharpSDL3.Enums.FileDialogType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/FileDialogType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FileDialogType
+    path: Enums/FileDialogType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum FileDialogType
+    content.vb: Public Enum FileDialogType
+- uid: SharpSDL3.Enums.FileDialogType.OpenFile
+  commentId: F:SharpSDL3.Enums.FileDialogType.OpenFile
+  id: OpenFile
+  parent: SharpSDL3.Enums.FileDialogType
+  langs:
+  - csharp
+  - vb
+  name: OpenFile
+  nameWithType: FileDialogType.OpenFile
+  fullName: SharpSDL3.Enums.FileDialogType.OpenFile
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FileDialogType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OpenFile
+    path: Enums/FileDialogType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OpenFile = 0
+    return:
+      type: SharpSDL3.Enums.FileDialogType
+- uid: SharpSDL3.Enums.FileDialogType.SaveFile
+  commentId: F:SharpSDL3.Enums.FileDialogType.SaveFile
+  id: SaveFile
+  parent: SharpSDL3.Enums.FileDialogType
+  langs:
+  - csharp
+  - vb
+  name: SaveFile
+  nameWithType: FileDialogType.SaveFile
+  fullName: SharpSDL3.Enums.FileDialogType.SaveFile
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FileDialogType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SaveFile
+    path: Enums/FileDialogType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SaveFile = 1
+    return:
+      type: SharpSDL3.Enums.FileDialogType
+- uid: SharpSDL3.Enums.FileDialogType.OpenFolder
+  commentId: F:SharpSDL3.Enums.FileDialogType.OpenFolder
+  id: OpenFolder
+  parent: SharpSDL3.Enums.FileDialogType
+  langs:
+  - csharp
+  - vb
+  name: OpenFolder
+  nameWithType: FileDialogType.OpenFolder
+  fullName: SharpSDL3.Enums.FileDialogType.OpenFolder
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FileDialogType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OpenFolder
+    path: Enums/FileDialogType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OpenFolder = 2
+    return:
+      type: SharpSDL3.Enums.FileDialogType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.FileDialogType
+  commentId: T:SharpSDL3.Enums.FileDialogType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.FileDialogType.html
+  name: FileDialogType
+  nameWithType: FileDialogType
+  fullName: SharpSDL3.Enums.FileDialogType

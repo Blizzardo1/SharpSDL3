@@ -1,0 +1,561 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.JoyHatEvent
+  commentId: T:SharpSDL3.Structs.JoyHatEvent
+  id: JoyHatEvent
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.JoyHatEvent.Hat
+  - SharpSDL3.Structs.JoyHatEvent.Padding1
+  - SharpSDL3.Structs.JoyHatEvent.Padding2
+  - SharpSDL3.Structs.JoyHatEvent.Reserved
+  - SharpSDL3.Structs.JoyHatEvent.Timestamp
+  - SharpSDL3.Structs.JoyHatEvent.Type
+  - SharpSDL3.Structs.JoyHatEvent.Value
+  - SharpSDL3.Structs.JoyHatEvent.Which
+  langs:
+  - csharp
+  - vb
+  name: JoyHatEvent
+  nameWithType: JoyHatEvent
+  fullName: SharpSDL3.Structs.JoyHatEvent
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoyHatEvent
+    path: Structs/JoyHatEvent.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct JoyHatEvent
+    content.vb: Public Structure JoyHatEvent
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.JoyHatEvent.Type
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Type
+  id: Type
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: JoyHatEvent.Type
+  fullName: SharpSDL3.Structs.JoyHatEvent.Type
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type
+    path: Structs/JoyHatEvent.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public EventType Type
+    return:
+      type: SharpSDL3.Enums.EventType
+    content.vb: Public Type As EventType
+- uid: SharpSDL3.Structs.JoyHatEvent.Reserved
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Reserved
+  id: Reserved
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Reserved
+  nameWithType: JoyHatEvent.Reserved
+  fullName: SharpSDL3.Structs.JoyHatEvent.Reserved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved
+    path: Structs/JoyHatEvent.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Reserved
+    return:
+      type: System.UInt32
+    content.vb: Public Reserved As UInteger
+- uid: SharpSDL3.Structs.JoyHatEvent.Timestamp
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Timestamp
+  id: Timestamp
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Timestamp
+  nameWithType: JoyHatEvent.Timestamp
+  fullName: SharpSDL3.Structs.JoyHatEvent.Timestamp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Timestamp
+    path: Structs/JoyHatEvent.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ulong Timestamp
+    return:
+      type: System.UInt64
+    content.vb: Public Timestamp As ULong
+- uid: SharpSDL3.Structs.JoyHatEvent.Which
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Which
+  id: Which
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Which
+  nameWithType: JoyHatEvent.Which
+  fullName: SharpSDL3.Structs.JoyHatEvent.Which
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Which
+    path: Structs/JoyHatEvent.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Which
+    return:
+      type: System.UInt32
+    content.vb: Public Which As UInteger
+- uid: SharpSDL3.Structs.JoyHatEvent.Hat
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Hat
+  id: Hat
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Hat
+  nameWithType: JoyHatEvent.Hat
+  fullName: SharpSDL3.Structs.JoyHatEvent.Hat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hat
+    path: Structs/JoyHatEvent.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public byte Hat
+    return:
+      type: System.Byte
+    content.vb: Public Hat As Byte
+- uid: SharpSDL3.Structs.JoyHatEvent.Value
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Value
+  id: Value
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Value
+  nameWithType: JoyHatEvent.Value
+  fullName: SharpSDL3.Structs.JoyHatEvent.Value
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Value
+    path: Structs/JoyHatEvent.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public byte Value
+    return:
+      type: System.Byte
+    content.vb: Public Value As Byte
+- uid: SharpSDL3.Structs.JoyHatEvent.Padding1
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Padding1
+  id: Padding1
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Padding1
+  nameWithType: JoyHatEvent.Padding1
+  fullName: SharpSDL3.Structs.JoyHatEvent.Padding1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Padding1
+    path: Structs/JoyHatEvent.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public byte Padding1
+    return:
+      type: System.Byte
+    content.vb: Public Padding1 As Byte
+- uid: SharpSDL3.Structs.JoyHatEvent.Padding2
+  commentId: F:SharpSDL3.Structs.JoyHatEvent.Padding2
+  id: Padding2
+  parent: SharpSDL3.Structs.JoyHatEvent
+  langs:
+  - csharp
+  - vb
+  name: Padding2
+  nameWithType: JoyHatEvent.Padding2
+  fullName: SharpSDL3.Structs.JoyHatEvent.Padding2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/JoyHatEvent.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Padding2
+    path: Structs/JoyHatEvent.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public byte Padding2
+    return:
+      type: System.Byte
+    content.vb: Public Padding2 As Byte
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Enums.EventType
+  commentId: T:SharpSDL3.Enums.EventType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.EventType.html
+  name: EventType
+  nameWithType: EventType
+  fullName: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.UInt64
+  commentId: T:System.UInt64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint64
+  name: ulong
+  nameWithType: ulong
+  fullName: ulong
+  nameWithType.vb: ULong
+  fullName.vb: ULong
+  name.vb: ULong
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte
+  nameWithType: byte
+  fullName: byte
+  nameWithType.vb: Byte
+  fullName.vb: Byte
+  name.vb: Byte

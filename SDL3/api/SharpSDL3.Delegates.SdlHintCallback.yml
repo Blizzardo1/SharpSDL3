@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlHintCallback
+  commentId: T:SharpSDL3.Delegates.SdlHintCallback
+  id: Delegates.SdlHintCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlHintCallback
+  nameWithType: Delegates.SdlHintCallback
+  fullName: SharpSDL3.Delegates.SdlHintCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlHintCallback
+    path: Delegates.cs
+    startLine: 68
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate void Delegates.SdlHintCallback(nint userdata, nint name, nint oldValue, nint newValue)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: name
+      type: System.IntPtr
+    - id: oldValue
+      type: System.IntPtr
+    - id: newValue
+      type: System.IntPtr
+    content.vb: Public Delegate Sub Delegates.SdlHintCallback(userdata As IntPtr, name As IntPtr, oldValue As IntPtr, newValue As IntPtr)
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

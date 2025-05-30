@@ -1,0 +1,707 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.HapticPeriodic
+  commentId: T:SharpSDL3.Structs.HapticPeriodic
+  id: HapticPeriodic
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.HapticPeriodic.AttackLength
+  - SharpSDL3.Structs.HapticPeriodic.AttackLevel
+  - SharpSDL3.Structs.HapticPeriodic.Button
+  - SharpSDL3.Structs.HapticPeriodic.Delay
+  - SharpSDL3.Structs.HapticPeriodic.Direction
+  - SharpSDL3.Structs.HapticPeriodic.FadeLength
+  - SharpSDL3.Structs.HapticPeriodic.FadeLevel
+  - SharpSDL3.Structs.HapticPeriodic.Interval
+  - SharpSDL3.Structs.HapticPeriodic.Length
+  - SharpSDL3.Structs.HapticPeriodic.Magnitude
+  - SharpSDL3.Structs.HapticPeriodic.Offset
+  - SharpSDL3.Structs.HapticPeriodic.Period
+  - SharpSDL3.Structs.HapticPeriodic.Phase
+  - SharpSDL3.Structs.HapticPeriodic.Type
+  langs:
+  - csharp
+  - vb
+  name: HapticPeriodic
+  nameWithType: HapticPeriodic
+  fullName: SharpSDL3.Structs.HapticPeriodic
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: HapticPeriodic
+    path: Structs/HapticPeriodic.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct HapticPeriodic
+    content.vb: Public Structure HapticPeriodic
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.HapticPeriodic.Type
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Type
+  id: Type
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: HapticPeriodic.Type
+  fullName: SharpSDL3.Structs.HapticPeriodic.Type
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type
+    path: Structs/HapticPeriodic.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Type
+    return:
+      type: System.UInt16
+    content.vb: Public Type As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.Direction
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Direction
+  id: Direction
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: HapticPeriodic.Direction
+  fullName: SharpSDL3.Structs.HapticPeriodic.Direction
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Direction
+    path: Structs/HapticPeriodic.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public HapticDirection Direction
+    return:
+      type: SharpSDL3.Structs.HapticDirection
+    content.vb: Public Direction As HapticDirection
+- uid: SharpSDL3.Structs.HapticPeriodic.Length
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Length
+  id: Length
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: HapticPeriodic.Length
+  fullName: SharpSDL3.Structs.HapticPeriodic.Length
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Length
+    path: Structs/HapticPeriodic.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Length
+    return:
+      type: System.UInt32
+    content.vb: Public Length As UInteger
+- uid: SharpSDL3.Structs.HapticPeriodic.Delay
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Delay
+  id: Delay
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Delay
+  nameWithType: HapticPeriodic.Delay
+  fullName: SharpSDL3.Structs.HapticPeriodic.Delay
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Delay
+    path: Structs/HapticPeriodic.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Delay
+    return:
+      type: System.UInt16
+    content.vb: Public Delay As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.Button
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Button
+  id: Button
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Button
+  nameWithType: HapticPeriodic.Button
+  fullName: SharpSDL3.Structs.HapticPeriodic.Button
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Button
+    path: Structs/HapticPeriodic.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Button
+    return:
+      type: System.UInt16
+    content.vb: Public Button As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.Interval
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Interval
+  id: Interval
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Interval
+  nameWithType: HapticPeriodic.Interval
+  fullName: SharpSDL3.Structs.HapticPeriodic.Interval
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Interval
+    path: Structs/HapticPeriodic.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Interval
+    return:
+      type: System.UInt16
+    content.vb: Public Interval As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.Period
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Period
+  id: Period
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Period
+  nameWithType: HapticPeriodic.Period
+  fullName: SharpSDL3.Structs.HapticPeriodic.Period
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Period
+    path: Structs/HapticPeriodic.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Period
+    return:
+      type: System.UInt16
+    content.vb: Public Period As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.Magnitude
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Magnitude
+  id: Magnitude
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Magnitude
+  nameWithType: HapticPeriodic.Magnitude
+  fullName: SharpSDL3.Structs.HapticPeriodic.Magnitude
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Magnitude
+    path: Structs/HapticPeriodic.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public short Magnitude
+    return:
+      type: System.Int16
+    content.vb: Public Magnitude As Short
+- uid: SharpSDL3.Structs.HapticPeriodic.Offset
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Offset
+  id: Offset
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Offset
+  nameWithType: HapticPeriodic.Offset
+  fullName: SharpSDL3.Structs.HapticPeriodic.Offset
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Offset
+    path: Structs/HapticPeriodic.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public short Offset
+    return:
+      type: System.Int16
+    content.vb: Public Offset As Short
+- uid: SharpSDL3.Structs.HapticPeriodic.Phase
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.Phase
+  id: Phase
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: Phase
+  nameWithType: HapticPeriodic.Phase
+  fullName: SharpSDL3.Structs.HapticPeriodic.Phase
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Phase
+    path: Structs/HapticPeriodic.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Phase
+    return:
+      type: System.UInt16
+    content.vb: Public Phase As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.AttackLength
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.AttackLength
+  id: AttackLength
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: AttackLength
+  nameWithType: HapticPeriodic.AttackLength
+  fullName: SharpSDL3.Structs.HapticPeriodic.AttackLength
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AttackLength
+    path: Structs/HapticPeriodic.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort AttackLength
+    return:
+      type: System.UInt16
+    content.vb: Public AttackLength As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.AttackLevel
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.AttackLevel
+  id: AttackLevel
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: AttackLevel
+  nameWithType: HapticPeriodic.AttackLevel
+  fullName: SharpSDL3.Structs.HapticPeriodic.AttackLevel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AttackLevel
+    path: Structs/HapticPeriodic.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort AttackLevel
+    return:
+      type: System.UInt16
+    content.vb: Public AttackLevel As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.FadeLength
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.FadeLength
+  id: FadeLength
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: FadeLength
+  nameWithType: HapticPeriodic.FadeLength
+  fullName: SharpSDL3.Structs.HapticPeriodic.FadeLength
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeLength
+    path: Structs/HapticPeriodic.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort FadeLength
+    return:
+      type: System.UInt16
+    content.vb: Public FadeLength As UShort
+- uid: SharpSDL3.Structs.HapticPeriodic.FadeLevel
+  commentId: F:SharpSDL3.Structs.HapticPeriodic.FadeLevel
+  id: FadeLevel
+  parent: SharpSDL3.Structs.HapticPeriodic
+  langs:
+  - csharp
+  - vb
+  name: FadeLevel
+  nameWithType: HapticPeriodic.FadeLevel
+  fullName: SharpSDL3.Structs.HapticPeriodic.FadeLevel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticPeriodic.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeLevel
+    path: Structs/HapticPeriodic.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort FadeLevel
+    return:
+      type: System.UInt16
+    content.vb: Public FadeLevel As UShort
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt16
+  commentId: T:System.UInt16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort
+  nameWithType: ushort
+  fullName: ushort
+  nameWithType.vb: UShort
+  fullName.vb: UShort
+  name.vb: UShort
+- uid: SharpSDL3.Structs.HapticDirection
+  commentId: T:SharpSDL3.Structs.HapticDirection
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.HapticDirection.html
+  name: HapticDirection
+  nameWithType: HapticDirection
+  fullName: SharpSDL3.Structs.HapticDirection
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.Int16
+  commentId: T:System.Int16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int16
+  name: short
+  nameWithType: short
+  fullName: short
+  nameWithType.vb: Short
+  fullName.vb: Short
+  name.vb: Short

@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.FlipMode
+  commentId: T:SharpSDL3.Enums.FlipMode
+  id: FlipMode
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.FlipMode.Horizontal
+  - SharpSDL3.Enums.FlipMode.None
+  - SharpSDL3.Enums.FlipMode.Vertical
+  langs:
+  - csharp
+  - vb
+  name: FlipMode
+  nameWithType: FlipMode
+  fullName: SharpSDL3.Enums.FlipMode
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/FlipMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FlipMode
+    path: Enums/FlipMode.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum FlipMode
+    content.vb: Public Enum FlipMode
+- uid: SharpSDL3.Enums.FlipMode.None
+  commentId: F:SharpSDL3.Enums.FlipMode.None
+  id: None
+  parent: SharpSDL3.Enums.FlipMode
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: FlipMode.None
+  fullName: SharpSDL3.Enums.FlipMode.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FlipMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/FlipMode.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.FlipMode
+- uid: SharpSDL3.Enums.FlipMode.Horizontal
+  commentId: F:SharpSDL3.Enums.FlipMode.Horizontal
+  id: Horizontal
+  parent: SharpSDL3.Enums.FlipMode
+  langs:
+  - csharp
+  - vb
+  name: Horizontal
+  nameWithType: FlipMode.Horizontal
+  fullName: SharpSDL3.Enums.FlipMode.Horizontal
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FlipMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Horizontal
+    path: Enums/FlipMode.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Horizontal = 1
+    return:
+      type: SharpSDL3.Enums.FlipMode
+- uid: SharpSDL3.Enums.FlipMode.Vertical
+  commentId: F:SharpSDL3.Enums.FlipMode.Vertical
+  id: Vertical
+  parent: SharpSDL3.Enums.FlipMode
+  langs:
+  - csharp
+  - vb
+  name: Vertical
+  nameWithType: FlipMode.Vertical
+  fullName: SharpSDL3.Enums.FlipMode.Vertical
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/FlipMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Vertical
+    path: Enums/FlipMode.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Vertical = 2
+    return:
+      type: SharpSDL3.Enums.FlipMode
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.FlipMode
+  commentId: T:SharpSDL3.Enums.FlipMode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.FlipMode.html
+  name: FlipMode
+  nameWithType: FlipMode
+  fullName: SharpSDL3.Enums.FlipMode

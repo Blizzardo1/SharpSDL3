@@ -1,0 +1,23 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Image
+  commentId: N:SharpSDL3.Image
+  id: SharpSDL3.Image
+  children:
+  - SharpSDL3.Image.Animation
+  langs:
+  - csharp
+  - vb
+  name: SharpSDL3.Image
+  nameWithType: SharpSDL3.Image
+  fullName: SharpSDL3.Image
+  type: Namespace
+  assemblies:
+  - SharpSDL3
+references:
+- uid: SharpSDL3.Image.Animation
+  commentId: T:SharpSDL3.Image.Animation
+  href: SharpSDL3.Image.Animation.html
+  name: Animation
+  nameWithType: Animation
+  fullName: SharpSDL3.Image.Animation

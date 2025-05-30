@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.ImageType
+  commentId: T:SharpSDL3.TTF.ImageType
+  id: ImageType
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.ImageType.Alpha
+  - SharpSDL3.TTF.ImageType.Color
+  - SharpSDL3.TTF.ImageType.Invalid
+  - SharpSDL3.TTF.ImageType.SignedDistanceField
+  langs:
+  - csharp
+  - vb
+  name: ImageType
+  nameWithType: ImageType
+  fullName: SharpSDL3.TTF.ImageType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/TTF/ImageType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ImageType
+    path: TTF/ImageType.cs
+    startLine: 1
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public enum ImageType
+    content.vb: Public Enum ImageType
+- uid: SharpSDL3.TTF.ImageType.Invalid
+  commentId: F:SharpSDL3.TTF.ImageType.Invalid
+  id: Invalid
+  parent: SharpSDL3.TTF.ImageType
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: ImageType.Invalid
+  fullName: SharpSDL3.TTF.ImageType.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/ImageType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: TTF/ImageType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.TTF.ImageType
+- uid: SharpSDL3.TTF.ImageType.Alpha
+  commentId: F:SharpSDL3.TTF.ImageType.Alpha
+  id: Alpha
+  parent: SharpSDL3.TTF.ImageType
+  langs:
+  - csharp
+  - vb
+  name: Alpha
+  nameWithType: ImageType.Alpha
+  fullName: SharpSDL3.TTF.ImageType.Alpha
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/ImageType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Alpha
+    path: TTF/ImageType.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Alpha = 1
+    return:
+      type: SharpSDL3.TTF.ImageType
+- uid: SharpSDL3.TTF.ImageType.Color
+  commentId: F:SharpSDL3.TTF.ImageType.Color
+  id: Color
+  parent: SharpSDL3.TTF.ImageType
+  langs:
+  - csharp
+  - vb
+  name: Color
+  nameWithType: ImageType.Color
+  fullName: SharpSDL3.TTF.ImageType.Color
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/ImageType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Color
+    path: TTF/ImageType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Color = 2
+    return:
+      type: SharpSDL3.TTF.ImageType
+- uid: SharpSDL3.TTF.ImageType.SignedDistanceField
+  commentId: F:SharpSDL3.TTF.ImageType.SignedDistanceField
+  id: SignedDistanceField
+  parent: SharpSDL3.TTF.ImageType
+  langs:
+  - csharp
+  - vb
+  name: SignedDistanceField
+  nameWithType: ImageType.SignedDistanceField
+  fullName: SharpSDL3.TTF.ImageType.SignedDistanceField
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/ImageType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SignedDistanceField
+    path: TTF/ImageType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: SignedDistanceField = 3
+    return:
+      type: SharpSDL3.TTF.ImageType
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: SharpSDL3.TTF.ImageType
+  commentId: T:SharpSDL3.TTF.ImageType
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.ImageType.html
+  name: ImageType
+  nameWithType: ImageType
+  fullName: SharpSDL3.TTF.ImageType

@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.FontStyle
+  commentId: T:SharpSDL3.TTF.FontStyle
+  id: FontStyle
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.FontStyle.Bold
+  - SharpSDL3.TTF.FontStyle.Italic
+  - SharpSDL3.TTF.FontStyle.Normal
+  - SharpSDL3.TTF.FontStyle.Strikethrough
+  - SharpSDL3.TTF.FontStyle.Underline
+  langs:
+  - csharp
+  - vb
+  name: FontStyle
+  nameWithType: FontStyle
+  fullName: SharpSDL3.TTF.FontStyle
+  type: Enum
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FontStyle
+    path: TTF/FontStyle.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum FontStyle
+    content.vb: >-
+      <Flags>
+
+      Public Enum FontStyle
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.TTF.FontStyle.Normal
+  commentId: F:SharpSDL3.TTF.FontStyle.Normal
+  id: Normal
+  parent: SharpSDL3.TTF.FontStyle
+  langs:
+  - csharp
+  - vb
+  name: Normal
+  nameWithType: FontStyle.Normal
+  fullName: SharpSDL3.TTF.FontStyle.Normal
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Normal
+    path: TTF/FontStyle.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Normal = 0
+    return:
+      type: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.FontStyle.Bold
+  commentId: F:SharpSDL3.TTF.FontStyle.Bold
+  id: Bold
+  parent: SharpSDL3.TTF.FontStyle
+  langs:
+  - csharp
+  - vb
+  name: Bold
+  nameWithType: FontStyle.Bold
+  fullName: SharpSDL3.TTF.FontStyle.Bold
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bold
+    path: TTF/FontStyle.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Bold = 1
+    return:
+      type: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.FontStyle.Italic
+  commentId: F:SharpSDL3.TTF.FontStyle.Italic
+  id: Italic
+  parent: SharpSDL3.TTF.FontStyle
+  langs:
+  - csharp
+  - vb
+  name: Italic
+  nameWithType: FontStyle.Italic
+  fullName: SharpSDL3.TTF.FontStyle.Italic
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Italic
+    path: TTF/FontStyle.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Italic = 2
+    return:
+      type: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.FontStyle.Underline
+  commentId: F:SharpSDL3.TTF.FontStyle.Underline
+  id: Underline
+  parent: SharpSDL3.TTF.FontStyle
+  langs:
+  - csharp
+  - vb
+  name: Underline
+  nameWithType: FontStyle.Underline
+  fullName: SharpSDL3.TTF.FontStyle.Underline
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Underline
+    path: TTF/FontStyle.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Underline = 4
+    return:
+      type: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.FontStyle.Strikethrough
+  commentId: F:SharpSDL3.TTF.FontStyle.Strikethrough
+  id: Strikethrough
+  parent: SharpSDL3.TTF.FontStyle
+  langs:
+  - csharp
+  - vb
+  name: Strikethrough
+  nameWithType: FontStyle.Strikethrough
+  fullName: SharpSDL3.TTF.FontStyle.Strikethrough
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/FontStyle.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Strikethrough
+    path: TTF/FontStyle.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Strikethrough = 8
+    return:
+      type: SharpSDL3.TTF.FontStyle
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: SharpSDL3.TTF.FontStyle
+  commentId: T:SharpSDL3.TTF.FontStyle
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.FontStyle.html
+  name: FontStyle
+  nameWithType: FontStyle
+  fullName: SharpSDL3.TTF.FontStyle

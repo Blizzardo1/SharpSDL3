@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.Capitalization
+  commentId: T:SharpSDL3.Enums.Capitalization
+  id: Capitalization
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.Capitalization.Letters
+  - SharpSDL3.Enums.Capitalization.None
+  - SharpSDL3.Enums.Capitalization.Sentences
+  - SharpSDL3.Enums.Capitalization.Words
+  langs:
+  - csharp
+  - vb
+  name: Capitalization
+  nameWithType: Capitalization
+  fullName: SharpSDL3.Enums.Capitalization
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/Capitalization.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Capitalization
+    path: Enums/Capitalization.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum Capitalization
+    content.vb: Public Enum Capitalization
+- uid: SharpSDL3.Enums.Capitalization.None
+  commentId: F:SharpSDL3.Enums.Capitalization.None
+  id: None
+  parent: SharpSDL3.Enums.Capitalization
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: Capitalization.None
+  fullName: SharpSDL3.Enums.Capitalization.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Capitalization.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/Capitalization.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.Capitalization
+- uid: SharpSDL3.Enums.Capitalization.Sentences
+  commentId: F:SharpSDL3.Enums.Capitalization.Sentences
+  id: Sentences
+  parent: SharpSDL3.Enums.Capitalization
+  langs:
+  - csharp
+  - vb
+  name: Sentences
+  nameWithType: Capitalization.Sentences
+  fullName: SharpSDL3.Enums.Capitalization.Sentences
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Capitalization.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Sentences
+    path: Enums/Capitalization.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Sentences = 1
+    return:
+      type: SharpSDL3.Enums.Capitalization
+- uid: SharpSDL3.Enums.Capitalization.Words
+  commentId: F:SharpSDL3.Enums.Capitalization.Words
+  id: Words
+  parent: SharpSDL3.Enums.Capitalization
+  langs:
+  - csharp
+  - vb
+  name: Words
+  nameWithType: Capitalization.Words
+  fullName: SharpSDL3.Enums.Capitalization.Words
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Capitalization.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Words
+    path: Enums/Capitalization.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Words = 2
+    return:
+      type: SharpSDL3.Enums.Capitalization
+- uid: SharpSDL3.Enums.Capitalization.Letters
+  commentId: F:SharpSDL3.Enums.Capitalization.Letters
+  id: Letters
+  parent: SharpSDL3.Enums.Capitalization
+  langs:
+  - csharp
+  - vb
+  name: Letters
+  nameWithType: Capitalization.Letters
+  fullName: SharpSDL3.Enums.Capitalization.Letters
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Capitalization.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Letters
+    path: Enums/Capitalization.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Letters = 3
+    return:
+      type: SharpSDL3.Enums.Capitalization
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.Capitalization
+  commentId: T:SharpSDL3.Enums.Capitalization
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.Capitalization.html
+  name: Capitalization
+  nameWithType: Capitalization
+  fullName: SharpSDL3.Enums.Capitalization

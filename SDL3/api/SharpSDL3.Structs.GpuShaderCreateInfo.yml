@@ -1,0 +1,624 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo
+  commentId: T:SharpSDL3.Structs.GpuShaderCreateInfo
+  id: GpuShaderCreateInfo
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.GpuShaderCreateInfo.Code
+  - SharpSDL3.Structs.GpuShaderCreateInfo.CodeSize
+  - SharpSDL3.Structs.GpuShaderCreateInfo.EntryPoint
+  - SharpSDL3.Structs.GpuShaderCreateInfo.Format
+  - SharpSDL3.Structs.GpuShaderCreateInfo.NumSamplers
+  - SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageBuffers
+  - SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageTextures
+  - SharpSDL3.Structs.GpuShaderCreateInfo.NumUniformBuffers
+  - SharpSDL3.Structs.GpuShaderCreateInfo.Props
+  - SharpSDL3.Structs.GpuShaderCreateInfo.Stage
+  langs:
+  - csharp
+  - vb
+  name: GpuShaderCreateInfo
+  nameWithType: GpuShaderCreateInfo
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuShaderCreateInfo
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct GpuShaderCreateInfo
+    content.vb: Public Structure GpuShaderCreateInfo
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.CodeSize
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.CodeSize
+  id: CodeSize
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: CodeSize
+  nameWithType: GpuShaderCreateInfo.CodeSize
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.CodeSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CodeSize
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nuint CodeSize
+    return:
+      type: System.UIntPtr
+    content.vb: Public CodeSize As UIntPtr
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.Code
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.Code
+  id: Code
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: Code
+  nameWithType: GpuShaderCreateInfo.Code
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.Code
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Code
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Code
+    return:
+      type: System.IntPtr
+    content.vb: Public Code As IntPtr
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.EntryPoint
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.EntryPoint
+  id: EntryPoint
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: EntryPoint
+  nameWithType: GpuShaderCreateInfo.EntryPoint
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.EntryPoint
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EntryPoint
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint EntryPoint
+    return:
+      type: System.IntPtr
+    content.vb: Public EntryPoint As IntPtr
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.Format
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.Format
+  id: Format
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: Format
+  nameWithType: GpuShaderCreateInfo.Format
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.Format
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Format
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuShaderFormat Format
+    return:
+      type: SharpSDL3.Enums.GpuShaderFormat
+    content.vb: Public Format As GpuShaderFormat
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.Stage
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.Stage
+  id: Stage
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: Stage
+  nameWithType: GpuShaderCreateInfo.Stage
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.Stage
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Stage
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public GpuShaderStage Stage
+    return:
+      type: SharpSDL3.Enums.GpuShaderStage
+    content.vb: Public Stage As GpuShaderStage
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.NumSamplers
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.NumSamplers
+  id: NumSamplers
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: NumSamplers
+  nameWithType: GpuShaderCreateInfo.NumSamplers
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.NumSamplers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumSamplers
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint NumSamplers
+    return:
+      type: System.UInt32
+    content.vb: Public NumSamplers As UInteger
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageTextures
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageTextures
+  id: NumStorageTextures
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: NumStorageTextures
+  nameWithType: GpuShaderCreateInfo.NumStorageTextures
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageTextures
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumStorageTextures
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint NumStorageTextures
+    return:
+      type: System.UInt32
+    content.vb: Public NumStorageTextures As UInteger
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageBuffers
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageBuffers
+  id: NumStorageBuffers
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: NumStorageBuffers
+  nameWithType: GpuShaderCreateInfo.NumStorageBuffers
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.NumStorageBuffers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumStorageBuffers
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint NumStorageBuffers
+    return:
+      type: System.UInt32
+    content.vb: Public NumStorageBuffers As UInteger
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.NumUniformBuffers
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.NumUniformBuffers
+  id: NumUniformBuffers
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: NumUniformBuffers
+  nameWithType: GpuShaderCreateInfo.NumUniformBuffers
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.NumUniformBuffers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumUniformBuffers
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint NumUniformBuffers
+    return:
+      type: System.UInt32
+    content.vb: Public NumUniformBuffers As UInteger
+- uid: SharpSDL3.Structs.GpuShaderCreateInfo.Props
+  commentId: F:SharpSDL3.Structs.GpuShaderCreateInfo.Props
+  id: Props
+  parent: SharpSDL3.Structs.GpuShaderCreateInfo
+  langs:
+  - csharp
+  - vb
+  name: Props
+  nameWithType: GpuShaderCreateInfo.Props
+  fullName: SharpSDL3.Structs.GpuShaderCreateInfo.Props
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuShaderCreateInfo.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Props
+    path: Structs/GpuShaderCreateInfo.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Props
+    return:
+      type: System.UInt32
+    content.vb: Public Props As UInteger
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UIntPtr
+  commentId: T:System.UIntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uintptr
+  name: nuint
+  nameWithType: nuint
+  fullName: nuint
+  nameWithType.vb: UIntPtr
+  fullName.vb: System.UIntPtr
+  name.vb: UIntPtr
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.Enums.GpuShaderFormat
+  commentId: T:SharpSDL3.Enums.GpuShaderFormat
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuShaderFormat.html
+  name: GpuShaderFormat
+  nameWithType: GpuShaderFormat
+  fullName: SharpSDL3.Enums.GpuShaderFormat
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuShaderStage
+  commentId: T:SharpSDL3.Enums.GpuShaderStage
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuShaderStage.html
+  name: GpuShaderStage
+  nameWithType: GpuShaderStage
+  fullName: SharpSDL3.Enums.GpuShaderStage
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger

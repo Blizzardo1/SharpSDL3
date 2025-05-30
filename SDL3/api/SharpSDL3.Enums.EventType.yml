@@ -1,0 +1,3245 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.EventType
+  commentId: T:SharpSDL3.Enums.EventType
+  id: EventType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.EventType.AudioDeviceAdded
+  - SharpSDL3.Enums.EventType.AudioDeviceFormatChanged
+  - SharpSDL3.Enums.EventType.AudioDeviceRemoved
+  - SharpSDL3.Enums.EventType.CameraDeviceAdded
+  - SharpSDL3.Enums.EventType.CameraDeviceApproved
+  - SharpSDL3.Enums.EventType.CameraDeviceDenied
+  - SharpSDL3.Enums.EventType.CameraDeviceRemoved
+  - SharpSDL3.Enums.EventType.ClipboardUpdate
+  - SharpSDL3.Enums.EventType.DidEnterBackground
+  - SharpSDL3.Enums.EventType.DidEnterForeground
+  - SharpSDL3.Enums.EventType.DisplayAdded
+  - SharpSDL3.Enums.EventType.DisplayContentScaleChanged
+  - SharpSDL3.Enums.EventType.DisplayCurrentModeChanged
+  - SharpSDL3.Enums.EventType.DisplayDesktopModeChanged
+  - SharpSDL3.Enums.EventType.DisplayFirst
+  - SharpSDL3.Enums.EventType.DisplayLast
+  - SharpSDL3.Enums.EventType.DisplayMoved
+  - SharpSDL3.Enums.EventType.DisplayOrientation
+  - SharpSDL3.Enums.EventType.DisplayRemoved
+  - SharpSDL3.Enums.EventType.DropBegin
+  - SharpSDL3.Enums.EventType.DropComplete
+  - SharpSDL3.Enums.EventType.DropFile
+  - SharpSDL3.Enums.EventType.DropPosition
+  - SharpSDL3.Enums.EventType.DropText
+  - SharpSDL3.Enums.EventType.EnumPadding
+  - SharpSDL3.Enums.EventType.FingerCanceled
+  - SharpSDL3.Enums.EventType.FingerDown
+  - SharpSDL3.Enums.EventType.FingerMotion
+  - SharpSDL3.Enums.EventType.FingerUp
+  - SharpSDL3.Enums.EventType.First
+  - SharpSDL3.Enums.EventType.GamepadAdded
+  - SharpSDL3.Enums.EventType.GamepadAxisMotion
+  - SharpSDL3.Enums.EventType.GamepadButtonDown
+  - SharpSDL3.Enums.EventType.GamepadButtonUp
+  - SharpSDL3.Enums.EventType.GamepadRemapped
+  - SharpSDL3.Enums.EventType.GamepadRemoved
+  - SharpSDL3.Enums.EventType.GamepadSensorUpdate
+  - SharpSDL3.Enums.EventType.GamepadSteamHandleUpdated
+  - SharpSDL3.Enums.EventType.GamepadTouchpadDown
+  - SharpSDL3.Enums.EventType.GamepadTouchpadMotion
+  - SharpSDL3.Enums.EventType.GamepadTouchpadUp
+  - SharpSDL3.Enums.EventType.GamepadUpdateComplete
+  - SharpSDL3.Enums.EventType.JoystickAdded
+  - SharpSDL3.Enums.EventType.JoystickAxisMotion
+  - SharpSDL3.Enums.EventType.JoystickBallMotion
+  - SharpSDL3.Enums.EventType.JoystickBatteryUpdated
+  - SharpSDL3.Enums.EventType.JoystickButtonDown
+  - SharpSDL3.Enums.EventType.JoystickButtonUp
+  - SharpSDL3.Enums.EventType.JoystickHatMotion
+  - SharpSDL3.Enums.EventType.JoystickRemoved
+  - SharpSDL3.Enums.EventType.JoystickUpdateComplete
+  - SharpSDL3.Enums.EventType.KeyDown
+  - SharpSDL3.Enums.EventType.KeyUp
+  - SharpSDL3.Enums.EventType.KeyboardAdded
+  - SharpSDL3.Enums.EventType.KeyboardRemoved
+  - SharpSDL3.Enums.EventType.KeymapChanged
+  - SharpSDL3.Enums.EventType.Last
+  - SharpSDL3.Enums.EventType.LocaleChanged
+  - SharpSDL3.Enums.EventType.LowMemory
+  - SharpSDL3.Enums.EventType.MouseAdded
+  - SharpSDL3.Enums.EventType.MouseButtonDown
+  - SharpSDL3.Enums.EventType.MouseButtonUp
+  - SharpSDL3.Enums.EventType.MouseMotion
+  - SharpSDL3.Enums.EventType.MouseRemoved
+  - SharpSDL3.Enums.EventType.MouseWheel
+  - SharpSDL3.Enums.EventType.PenAxis
+  - SharpSDL3.Enums.EventType.PenButtonDown
+  - SharpSDL3.Enums.EventType.PenButtonUp
+  - SharpSDL3.Enums.EventType.PenDown
+  - SharpSDL3.Enums.EventType.PenMotion
+  - SharpSDL3.Enums.EventType.PenProximityIn
+  - SharpSDL3.Enums.EventType.PenProximityOut
+  - SharpSDL3.Enums.EventType.PenUp
+  - SharpSDL3.Enums.EventType.PollSentinel
+  - SharpSDL3.Enums.EventType.Private0
+  - SharpSDL3.Enums.EventType.Private1
+  - SharpSDL3.Enums.EventType.Private2
+  - SharpSDL3.Enums.EventType.Private3
+  - SharpSDL3.Enums.EventType.Quit
+  - SharpSDL3.Enums.EventType.RenderDeviceLost
+  - SharpSDL3.Enums.EventType.RenderDeviceReset
+  - SharpSDL3.Enums.EventType.RenderTargetsReset
+  - SharpSDL3.Enums.EventType.SensorUpdate
+  - SharpSDL3.Enums.EventType.SystemThemeChanged
+  - SharpSDL3.Enums.EventType.Terminating
+  - SharpSDL3.Enums.EventType.TextEditing
+  - SharpSDL3.Enums.EventType.TextEditingCandidates
+  - SharpSDL3.Enums.EventType.TextInput
+  - SharpSDL3.Enums.EventType.User
+  - SharpSDL3.Enums.EventType.WillEnterBackground
+  - SharpSDL3.Enums.EventType.WillEnterForeground
+  - SharpSDL3.Enums.EventType.WindowCloseRequested
+  - SharpSDL3.Enums.EventType.WindowDestroyed
+  - SharpSDL3.Enums.EventType.WindowDisplayChanged
+  - SharpSDL3.Enums.EventType.WindowDisplayScaleChanged
+  - SharpSDL3.Enums.EventType.WindowEnterFullscreen
+  - SharpSDL3.Enums.EventType.WindowExposed
+  - SharpSDL3.Enums.EventType.WindowFirst
+  - SharpSDL3.Enums.EventType.WindowFocusGained
+  - SharpSDL3.Enums.EventType.WindowFocusLost
+  - SharpSDL3.Enums.EventType.WindowHdrStateChanged
+  - SharpSDL3.Enums.EventType.WindowHidden
+  - SharpSDL3.Enums.EventType.WindowHitTest
+  - SharpSDL3.Enums.EventType.WindowIccprofChanged
+  - SharpSDL3.Enums.EventType.WindowLast
+  - SharpSDL3.Enums.EventType.WindowLeaveFullscreen
+  - SharpSDL3.Enums.EventType.WindowMaximized
+  - SharpSDL3.Enums.EventType.WindowMetalViewResized
+  - SharpSDL3.Enums.EventType.WindowMinimized
+  - SharpSDL3.Enums.EventType.WindowMouseEnter
+  - SharpSDL3.Enums.EventType.WindowMouseLeave
+  - SharpSDL3.Enums.EventType.WindowMoved
+  - SharpSDL3.Enums.EventType.WindowOccluded
+  - SharpSDL3.Enums.EventType.WindowPixelSizeChanged
+  - SharpSDL3.Enums.EventType.WindowResized
+  - SharpSDL3.Enums.EventType.WindowRestored
+  - SharpSDL3.Enums.EventType.WindowSafeAreaChanged
+  - SharpSDL3.Enums.EventType.WindowShown
+  langs:
+  - csharp
+  - vb
+  name: EventType
+  nameWithType: EventType
+  fullName: SharpSDL3.Enums.EventType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EventType
+    path: Enums/EventType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: 'public enum EventType : uint'
+    content.vb: Public Enum EventType As UInteger
+- uid: SharpSDL3.Enums.EventType.First
+  commentId: F:SharpSDL3.Enums.EventType.First
+  id: First
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: First
+  nameWithType: EventType.First
+  fullName: SharpSDL3.Enums.EventType.First
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: First
+    path: Enums/EventType.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: First = 0
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Quit
+  commentId: F:SharpSDL3.Enums.EventType.Quit
+  id: Quit
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Quit
+  nameWithType: EventType.Quit
+  fullName: SharpSDL3.Enums.EventType.Quit
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Quit
+    path: Enums/EventType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Quit = 256
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Terminating
+  commentId: F:SharpSDL3.Enums.EventType.Terminating
+  id: Terminating
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Terminating
+  nameWithType: EventType.Terminating
+  fullName: SharpSDL3.Enums.EventType.Terminating
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Terminating
+    path: Enums/EventType.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Terminating = 257
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.LowMemory
+  commentId: F:SharpSDL3.Enums.EventType.LowMemory
+  id: LowMemory
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: LowMemory
+  nameWithType: EventType.LowMemory
+  fullName: SharpSDL3.Enums.EventType.LowMemory
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LowMemory
+    path: Enums/EventType.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LowMemory = 258
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WillEnterBackground
+  commentId: F:SharpSDL3.Enums.EventType.WillEnterBackground
+  id: WillEnterBackground
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WillEnterBackground
+  nameWithType: EventType.WillEnterBackground
+  fullName: SharpSDL3.Enums.EventType.WillEnterBackground
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WillEnterBackground
+    path: Enums/EventType.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WillEnterBackground = 259
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DidEnterBackground
+  commentId: F:SharpSDL3.Enums.EventType.DidEnterBackground
+  id: DidEnterBackground
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DidEnterBackground
+  nameWithType: EventType.DidEnterBackground
+  fullName: SharpSDL3.Enums.EventType.DidEnterBackground
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DidEnterBackground
+    path: Enums/EventType.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DidEnterBackground = 260
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WillEnterForeground
+  commentId: F:SharpSDL3.Enums.EventType.WillEnterForeground
+  id: WillEnterForeground
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WillEnterForeground
+  nameWithType: EventType.WillEnterForeground
+  fullName: SharpSDL3.Enums.EventType.WillEnterForeground
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WillEnterForeground
+    path: Enums/EventType.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WillEnterForeground = 261
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DidEnterForeground
+  commentId: F:SharpSDL3.Enums.EventType.DidEnterForeground
+  id: DidEnterForeground
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DidEnterForeground
+  nameWithType: EventType.DidEnterForeground
+  fullName: SharpSDL3.Enums.EventType.DidEnterForeground
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DidEnterForeground
+    path: Enums/EventType.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DidEnterForeground = 262
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.LocaleChanged
+  commentId: F:SharpSDL3.Enums.EventType.LocaleChanged
+  id: LocaleChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: LocaleChanged
+  nameWithType: EventType.LocaleChanged
+  fullName: SharpSDL3.Enums.EventType.LocaleChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LocaleChanged
+    path: Enums/EventType.cs
+    startLine: 34
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LocaleChanged = 263
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.SystemThemeChanged
+  commentId: F:SharpSDL3.Enums.EventType.SystemThemeChanged
+  id: SystemThemeChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: SystemThemeChanged
+  nameWithType: EventType.SystemThemeChanged
+  fullName: SharpSDL3.Enums.EventType.SystemThemeChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SystemThemeChanged
+    path: Enums/EventType.cs
+    startLine: 36
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SystemThemeChanged = 264
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayOrientation
+  commentId: F:SharpSDL3.Enums.EventType.DisplayOrientation
+  id: DisplayOrientation
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayOrientation
+  nameWithType: EventType.DisplayOrientation
+  fullName: SharpSDL3.Enums.EventType.DisplayOrientation
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayOrientation
+    path: Enums/EventType.cs
+    startLine: 40
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayOrientation = 337
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayAdded
+  commentId: F:SharpSDL3.Enums.EventType.DisplayAdded
+  id: DisplayAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayAdded
+  nameWithType: EventType.DisplayAdded
+  fullName: SharpSDL3.Enums.EventType.DisplayAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayAdded
+    path: Enums/EventType.cs
+    startLine: 41
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayAdded = 338
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayRemoved
+  commentId: F:SharpSDL3.Enums.EventType.DisplayRemoved
+  id: DisplayRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayRemoved
+  nameWithType: EventType.DisplayRemoved
+  fullName: SharpSDL3.Enums.EventType.DisplayRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayRemoved
+    path: Enums/EventType.cs
+    startLine: 42
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayRemoved = 339
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayMoved
+  commentId: F:SharpSDL3.Enums.EventType.DisplayMoved
+  id: DisplayMoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayMoved
+  nameWithType: EventType.DisplayMoved
+  fullName: SharpSDL3.Enums.EventType.DisplayMoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayMoved
+    path: Enums/EventType.cs
+    startLine: 43
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayMoved = 340
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayDesktopModeChanged
+  commentId: F:SharpSDL3.Enums.EventType.DisplayDesktopModeChanged
+  id: DisplayDesktopModeChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayDesktopModeChanged
+  nameWithType: EventType.DisplayDesktopModeChanged
+  fullName: SharpSDL3.Enums.EventType.DisplayDesktopModeChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayDesktopModeChanged
+    path: Enums/EventType.cs
+    startLine: 44
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayDesktopModeChanged = 341
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayCurrentModeChanged
+  commentId: F:SharpSDL3.Enums.EventType.DisplayCurrentModeChanged
+  id: DisplayCurrentModeChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayCurrentModeChanged
+  nameWithType: EventType.DisplayCurrentModeChanged
+  fullName: SharpSDL3.Enums.EventType.DisplayCurrentModeChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayCurrentModeChanged
+    path: Enums/EventType.cs
+    startLine: 45
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayCurrentModeChanged = 342
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayContentScaleChanged
+  commentId: F:SharpSDL3.Enums.EventType.DisplayContentScaleChanged
+  id: DisplayContentScaleChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayContentScaleChanged
+  nameWithType: EventType.DisplayContentScaleChanged
+  fullName: SharpSDL3.Enums.EventType.DisplayContentScaleChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayContentScaleChanged
+    path: Enums/EventType.cs
+    startLine: 46
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayContentScaleChanged = 343
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayFirst
+  commentId: F:SharpSDL3.Enums.EventType.DisplayFirst
+  id: DisplayFirst
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayFirst
+  nameWithType: EventType.DisplayFirst
+  fullName: SharpSDL3.Enums.EventType.DisplayFirst
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayFirst
+    path: Enums/EventType.cs
+    startLine: 47
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayFirst = 337
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DisplayLast
+  commentId: F:SharpSDL3.Enums.EventType.DisplayLast
+  id: DisplayLast
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DisplayLast
+  nameWithType: EventType.DisplayLast
+  fullName: SharpSDL3.Enums.EventType.DisplayLast
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayLast
+    path: Enums/EventType.cs
+    startLine: 48
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DisplayLast = 343
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowShown
+  commentId: F:SharpSDL3.Enums.EventType.WindowShown
+  id: WindowShown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowShown
+  nameWithType: EventType.WindowShown
+  fullName: SharpSDL3.Enums.EventType.WindowShown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowShown
+    path: Enums/EventType.cs
+    startLine: 53
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowShown = 514
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowHidden
+  commentId: F:SharpSDL3.Enums.EventType.WindowHidden
+  id: WindowHidden
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowHidden
+  nameWithType: EventType.WindowHidden
+  fullName: SharpSDL3.Enums.EventType.WindowHidden
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowHidden
+    path: Enums/EventType.cs
+    startLine: 54
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowHidden = 515
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowExposed
+  commentId: F:SharpSDL3.Enums.EventType.WindowExposed
+  id: WindowExposed
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowExposed
+  nameWithType: EventType.WindowExposed
+  fullName: SharpSDL3.Enums.EventType.WindowExposed
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowExposed
+    path: Enums/EventType.cs
+    startLine: 55
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowExposed = 516
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMoved
+  commentId: F:SharpSDL3.Enums.EventType.WindowMoved
+  id: WindowMoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMoved
+  nameWithType: EventType.WindowMoved
+  fullName: SharpSDL3.Enums.EventType.WindowMoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMoved
+    path: Enums/EventType.cs
+    startLine: 56
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMoved = 517
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowResized
+  commentId: F:SharpSDL3.Enums.EventType.WindowResized
+  id: WindowResized
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowResized
+  nameWithType: EventType.WindowResized
+  fullName: SharpSDL3.Enums.EventType.WindowResized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowResized
+    path: Enums/EventType.cs
+    startLine: 57
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowResized = 518
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowPixelSizeChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowPixelSizeChanged
+  id: WindowPixelSizeChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowPixelSizeChanged
+  nameWithType: EventType.WindowPixelSizeChanged
+  fullName: SharpSDL3.Enums.EventType.WindowPixelSizeChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowPixelSizeChanged
+    path: Enums/EventType.cs
+    startLine: 58
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowPixelSizeChanged = 519
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMetalViewResized
+  commentId: F:SharpSDL3.Enums.EventType.WindowMetalViewResized
+  id: WindowMetalViewResized
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMetalViewResized
+  nameWithType: EventType.WindowMetalViewResized
+  fullName: SharpSDL3.Enums.EventType.WindowMetalViewResized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMetalViewResized
+    path: Enums/EventType.cs
+    startLine: 59
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMetalViewResized = 520
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMinimized
+  commentId: F:SharpSDL3.Enums.EventType.WindowMinimized
+  id: WindowMinimized
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMinimized
+  nameWithType: EventType.WindowMinimized
+  fullName: SharpSDL3.Enums.EventType.WindowMinimized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMinimized
+    path: Enums/EventType.cs
+    startLine: 60
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMinimized = 521
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMaximized
+  commentId: F:SharpSDL3.Enums.EventType.WindowMaximized
+  id: WindowMaximized
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMaximized
+  nameWithType: EventType.WindowMaximized
+  fullName: SharpSDL3.Enums.EventType.WindowMaximized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMaximized
+    path: Enums/EventType.cs
+    startLine: 61
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMaximized = 522
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowRestored
+  commentId: F:SharpSDL3.Enums.EventType.WindowRestored
+  id: WindowRestored
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowRestored
+  nameWithType: EventType.WindowRestored
+  fullName: SharpSDL3.Enums.EventType.WindowRestored
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowRestored
+    path: Enums/EventType.cs
+    startLine: 62
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowRestored = 523
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMouseEnter
+  commentId: F:SharpSDL3.Enums.EventType.WindowMouseEnter
+  id: WindowMouseEnter
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMouseEnter
+  nameWithType: EventType.WindowMouseEnter
+  fullName: SharpSDL3.Enums.EventType.WindowMouseEnter
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMouseEnter
+    path: Enums/EventType.cs
+    startLine: 63
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMouseEnter = 524
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowMouseLeave
+  commentId: F:SharpSDL3.Enums.EventType.WindowMouseLeave
+  id: WindowMouseLeave
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowMouseLeave
+  nameWithType: EventType.WindowMouseLeave
+  fullName: SharpSDL3.Enums.EventType.WindowMouseLeave
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowMouseLeave
+    path: Enums/EventType.cs
+    startLine: 64
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowMouseLeave = 525
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowFocusGained
+  commentId: F:SharpSDL3.Enums.EventType.WindowFocusGained
+  id: WindowFocusGained
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowFocusGained
+  nameWithType: EventType.WindowFocusGained
+  fullName: SharpSDL3.Enums.EventType.WindowFocusGained
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowFocusGained
+    path: Enums/EventType.cs
+    startLine: 65
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowFocusGained = 526
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowFocusLost
+  commentId: F:SharpSDL3.Enums.EventType.WindowFocusLost
+  id: WindowFocusLost
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowFocusLost
+  nameWithType: EventType.WindowFocusLost
+  fullName: SharpSDL3.Enums.EventType.WindowFocusLost
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowFocusLost
+    path: Enums/EventType.cs
+    startLine: 66
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowFocusLost = 527
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowCloseRequested
+  commentId: F:SharpSDL3.Enums.EventType.WindowCloseRequested
+  id: WindowCloseRequested
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowCloseRequested
+  nameWithType: EventType.WindowCloseRequested
+  fullName: SharpSDL3.Enums.EventType.WindowCloseRequested
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowCloseRequested
+    path: Enums/EventType.cs
+    startLine: 67
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowCloseRequested = 528
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowHitTest
+  commentId: F:SharpSDL3.Enums.EventType.WindowHitTest
+  id: WindowHitTest
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowHitTest
+  nameWithType: EventType.WindowHitTest
+  fullName: SharpSDL3.Enums.EventType.WindowHitTest
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowHitTest
+    path: Enums/EventType.cs
+    startLine: 68
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowHitTest = 529
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowIccprofChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowIccprofChanged
+  id: WindowIccprofChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowIccprofChanged
+  nameWithType: EventType.WindowIccprofChanged
+  fullName: SharpSDL3.Enums.EventType.WindowIccprofChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowIccprofChanged
+    path: Enums/EventType.cs
+    startLine: 69
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowIccprofChanged = 530
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowDisplayChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowDisplayChanged
+  id: WindowDisplayChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowDisplayChanged
+  nameWithType: EventType.WindowDisplayChanged
+  fullName: SharpSDL3.Enums.EventType.WindowDisplayChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowDisplayChanged
+    path: Enums/EventType.cs
+    startLine: 70
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowDisplayChanged = 531
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowDisplayScaleChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowDisplayScaleChanged
+  id: WindowDisplayScaleChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowDisplayScaleChanged
+  nameWithType: EventType.WindowDisplayScaleChanged
+  fullName: SharpSDL3.Enums.EventType.WindowDisplayScaleChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowDisplayScaleChanged
+    path: Enums/EventType.cs
+    startLine: 71
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowDisplayScaleChanged = 532
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowSafeAreaChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowSafeAreaChanged
+  id: WindowSafeAreaChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowSafeAreaChanged
+  nameWithType: EventType.WindowSafeAreaChanged
+  fullName: SharpSDL3.Enums.EventType.WindowSafeAreaChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowSafeAreaChanged
+    path: Enums/EventType.cs
+    startLine: 72
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowSafeAreaChanged = 533
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowOccluded
+  commentId: F:SharpSDL3.Enums.EventType.WindowOccluded
+  id: WindowOccluded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowOccluded
+  nameWithType: EventType.WindowOccluded
+  fullName: SharpSDL3.Enums.EventType.WindowOccluded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowOccluded
+    path: Enums/EventType.cs
+    startLine: 73
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowOccluded = 534
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowEnterFullscreen
+  commentId: F:SharpSDL3.Enums.EventType.WindowEnterFullscreen
+  id: WindowEnterFullscreen
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowEnterFullscreen
+  nameWithType: EventType.WindowEnterFullscreen
+  fullName: SharpSDL3.Enums.EventType.WindowEnterFullscreen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowEnterFullscreen
+    path: Enums/EventType.cs
+    startLine: 74
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowEnterFullscreen = 535
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowLeaveFullscreen
+  commentId: F:SharpSDL3.Enums.EventType.WindowLeaveFullscreen
+  id: WindowLeaveFullscreen
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowLeaveFullscreen
+  nameWithType: EventType.WindowLeaveFullscreen
+  fullName: SharpSDL3.Enums.EventType.WindowLeaveFullscreen
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowLeaveFullscreen
+    path: Enums/EventType.cs
+    startLine: 75
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowLeaveFullscreen = 536
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowDestroyed
+  commentId: F:SharpSDL3.Enums.EventType.WindowDestroyed
+  id: WindowDestroyed
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowDestroyed
+  nameWithType: EventType.WindowDestroyed
+  fullName: SharpSDL3.Enums.EventType.WindowDestroyed
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowDestroyed
+    path: Enums/EventType.cs
+    startLine: 76
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowDestroyed = 537
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowHdrStateChanged
+  commentId: F:SharpSDL3.Enums.EventType.WindowHdrStateChanged
+  id: WindowHdrStateChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowHdrStateChanged
+  nameWithType: EventType.WindowHdrStateChanged
+  fullName: SharpSDL3.Enums.EventType.WindowHdrStateChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowHdrStateChanged
+    path: Enums/EventType.cs
+    startLine: 80
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowHdrStateChanged = 538
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowFirst
+  commentId: F:SharpSDL3.Enums.EventType.WindowFirst
+  id: WindowFirst
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowFirst
+  nameWithType: EventType.WindowFirst
+  fullName: SharpSDL3.Enums.EventType.WindowFirst
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowFirst
+    path: Enums/EventType.cs
+    startLine: 81
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowFirst = 514
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.WindowLast
+  commentId: F:SharpSDL3.Enums.EventType.WindowLast
+  id: WindowLast
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: WindowLast
+  nameWithType: EventType.WindowLast
+  fullName: SharpSDL3.Enums.EventType.WindowLast
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WindowLast
+    path: Enums/EventType.cs
+    startLine: 82
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WindowLast = 538
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.KeyDown
+  commentId: F:SharpSDL3.Enums.EventType.KeyDown
+  id: KeyDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: KeyDown
+  nameWithType: EventType.KeyDown
+  fullName: SharpSDL3.Enums.EventType.KeyDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyDown
+    path: Enums/EventType.cs
+    startLine: 85
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KeyDown = 768
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.KeyUp
+  commentId: F:SharpSDL3.Enums.EventType.KeyUp
+  id: KeyUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: KeyUp
+  nameWithType: EventType.KeyUp
+  fullName: SharpSDL3.Enums.EventType.KeyUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyUp
+    path: Enums/EventType.cs
+    startLine: 86
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KeyUp = 769
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.TextEditing
+  commentId: F:SharpSDL3.Enums.EventType.TextEditing
+  id: TextEditing
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: TextEditing
+  nameWithType: EventType.TextEditing
+  fullName: SharpSDL3.Enums.EventType.TextEditing
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextEditing
+    path: Enums/EventType.cs
+    startLine: 87
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextEditing = 770
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.TextInput
+  commentId: F:SharpSDL3.Enums.EventType.TextInput
+  id: TextInput
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: TextInput
+  nameWithType: EventType.TextInput
+  fullName: SharpSDL3.Enums.EventType.TextInput
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextInput
+    path: Enums/EventType.cs
+    startLine: 88
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextInput = 771
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.KeymapChanged
+  commentId: F:SharpSDL3.Enums.EventType.KeymapChanged
+  id: KeymapChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: KeymapChanged
+  nameWithType: EventType.KeymapChanged
+  fullName: SharpSDL3.Enums.EventType.KeymapChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeymapChanged
+    path: Enums/EventType.cs
+    startLine: 89
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KeymapChanged = 772
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.KeyboardAdded
+  commentId: F:SharpSDL3.Enums.EventType.KeyboardAdded
+  id: KeyboardAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: KeyboardAdded
+  nameWithType: EventType.KeyboardAdded
+  fullName: SharpSDL3.Enums.EventType.KeyboardAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyboardAdded
+    path: Enums/EventType.cs
+    startLine: 91
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KeyboardAdded = 773
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.KeyboardRemoved
+  commentId: F:SharpSDL3.Enums.EventType.KeyboardRemoved
+  id: KeyboardRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: KeyboardRemoved
+  nameWithType: EventType.KeyboardRemoved
+  fullName: SharpSDL3.Enums.EventType.KeyboardRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyboardRemoved
+    path: Enums/EventType.cs
+    startLine: 92
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KeyboardRemoved = 774
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.TextEditingCandidates
+  commentId: F:SharpSDL3.Enums.EventType.TextEditingCandidates
+  id: TextEditingCandidates
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: TextEditingCandidates
+  nameWithType: EventType.TextEditingCandidates
+  fullName: SharpSDL3.Enums.EventType.TextEditingCandidates
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextEditingCandidates
+    path: Enums/EventType.cs
+    startLine: 93
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextEditingCandidates = 775
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseMotion
+  commentId: F:SharpSDL3.Enums.EventType.MouseMotion
+  id: MouseMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseMotion
+  nameWithType: EventType.MouseMotion
+  fullName: SharpSDL3.Enums.EventType.MouseMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseMotion
+    path: Enums/EventType.cs
+    startLine: 96
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseMotion = 1024
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseButtonDown
+  commentId: F:SharpSDL3.Enums.EventType.MouseButtonDown
+  id: MouseButtonDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseButtonDown
+  nameWithType: EventType.MouseButtonDown
+  fullName: SharpSDL3.Enums.EventType.MouseButtonDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseButtonDown
+    path: Enums/EventType.cs
+    startLine: 97
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseButtonDown = 1025
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseButtonUp
+  commentId: F:SharpSDL3.Enums.EventType.MouseButtonUp
+  id: MouseButtonUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseButtonUp
+  nameWithType: EventType.MouseButtonUp
+  fullName: SharpSDL3.Enums.EventType.MouseButtonUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseButtonUp
+    path: Enums/EventType.cs
+    startLine: 98
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseButtonUp = 1026
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseWheel
+  commentId: F:SharpSDL3.Enums.EventType.MouseWheel
+  id: MouseWheel
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseWheel
+  nameWithType: EventType.MouseWheel
+  fullName: SharpSDL3.Enums.EventType.MouseWheel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseWheel
+    path: Enums/EventType.cs
+    startLine: 99
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseWheel = 1027
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseAdded
+  commentId: F:SharpSDL3.Enums.EventType.MouseAdded
+  id: MouseAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseAdded
+  nameWithType: EventType.MouseAdded
+  fullName: SharpSDL3.Enums.EventType.MouseAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseAdded
+    path: Enums/EventType.cs
+    startLine: 100
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseAdded = 1028
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.MouseRemoved
+  commentId: F:SharpSDL3.Enums.EventType.MouseRemoved
+  id: MouseRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: MouseRemoved
+  nameWithType: EventType.MouseRemoved
+  fullName: SharpSDL3.Enums.EventType.MouseRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MouseRemoved
+    path: Enums/EventType.cs
+    startLine: 101
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: MouseRemoved = 1029
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickAxisMotion
+  commentId: F:SharpSDL3.Enums.EventType.JoystickAxisMotion
+  id: JoystickAxisMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickAxisMotion
+  nameWithType: EventType.JoystickAxisMotion
+  fullName: SharpSDL3.Enums.EventType.JoystickAxisMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickAxisMotion
+    path: Enums/EventType.cs
+    startLine: 104
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickAxisMotion = 1536
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickBallMotion
+  commentId: F:SharpSDL3.Enums.EventType.JoystickBallMotion
+  id: JoystickBallMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickBallMotion
+  nameWithType: EventType.JoystickBallMotion
+  fullName: SharpSDL3.Enums.EventType.JoystickBallMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickBallMotion
+    path: Enums/EventType.cs
+    startLine: 105
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickBallMotion = 1537
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickHatMotion
+  commentId: F:SharpSDL3.Enums.EventType.JoystickHatMotion
+  id: JoystickHatMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickHatMotion
+  nameWithType: EventType.JoystickHatMotion
+  fullName: SharpSDL3.Enums.EventType.JoystickHatMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickHatMotion
+    path: Enums/EventType.cs
+    startLine: 106
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickHatMotion = 1538
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickButtonDown
+  commentId: F:SharpSDL3.Enums.EventType.JoystickButtonDown
+  id: JoystickButtonDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickButtonDown
+  nameWithType: EventType.JoystickButtonDown
+  fullName: SharpSDL3.Enums.EventType.JoystickButtonDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickButtonDown
+    path: Enums/EventType.cs
+    startLine: 107
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickButtonDown = 1539
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickButtonUp
+  commentId: F:SharpSDL3.Enums.EventType.JoystickButtonUp
+  id: JoystickButtonUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickButtonUp
+  nameWithType: EventType.JoystickButtonUp
+  fullName: SharpSDL3.Enums.EventType.JoystickButtonUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickButtonUp
+    path: Enums/EventType.cs
+    startLine: 108
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickButtonUp = 1540
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickAdded
+  commentId: F:SharpSDL3.Enums.EventType.JoystickAdded
+  id: JoystickAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickAdded
+  nameWithType: EventType.JoystickAdded
+  fullName: SharpSDL3.Enums.EventType.JoystickAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickAdded
+    path: Enums/EventType.cs
+    startLine: 109
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickAdded = 1541
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickRemoved
+  commentId: F:SharpSDL3.Enums.EventType.JoystickRemoved
+  id: JoystickRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickRemoved
+  nameWithType: EventType.JoystickRemoved
+  fullName: SharpSDL3.Enums.EventType.JoystickRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickRemoved
+    path: Enums/EventType.cs
+    startLine: 110
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickRemoved = 1542
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickBatteryUpdated
+  commentId: F:SharpSDL3.Enums.EventType.JoystickBatteryUpdated
+  id: JoystickBatteryUpdated
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickBatteryUpdated
+  nameWithType: EventType.JoystickBatteryUpdated
+  fullName: SharpSDL3.Enums.EventType.JoystickBatteryUpdated
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickBatteryUpdated
+    path: Enums/EventType.cs
+    startLine: 111
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickBatteryUpdated = 1543
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.JoystickUpdateComplete
+  commentId: F:SharpSDL3.Enums.EventType.JoystickUpdateComplete
+  id: JoystickUpdateComplete
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: JoystickUpdateComplete
+  nameWithType: EventType.JoystickUpdateComplete
+  fullName: SharpSDL3.Enums.EventType.JoystickUpdateComplete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickUpdateComplete
+    path: Enums/EventType.cs
+    startLine: 112
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: JoystickUpdateComplete = 1544
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadAxisMotion
+  commentId: F:SharpSDL3.Enums.EventType.GamepadAxisMotion
+  id: GamepadAxisMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadAxisMotion
+  nameWithType: EventType.GamepadAxisMotion
+  fullName: SharpSDL3.Enums.EventType.GamepadAxisMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadAxisMotion
+    path: Enums/EventType.cs
+    startLine: 115
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadAxisMotion = 1616
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadButtonDown
+  commentId: F:SharpSDL3.Enums.EventType.GamepadButtonDown
+  id: GamepadButtonDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadButtonDown
+  nameWithType: EventType.GamepadButtonDown
+  fullName: SharpSDL3.Enums.EventType.GamepadButtonDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadButtonDown
+    path: Enums/EventType.cs
+    startLine: 116
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadButtonDown = 1617
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadButtonUp
+  commentId: F:SharpSDL3.Enums.EventType.GamepadButtonUp
+  id: GamepadButtonUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadButtonUp
+  nameWithType: EventType.GamepadButtonUp
+  fullName: SharpSDL3.Enums.EventType.GamepadButtonUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadButtonUp
+    path: Enums/EventType.cs
+    startLine: 117
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadButtonUp = 1618
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadAdded
+  commentId: F:SharpSDL3.Enums.EventType.GamepadAdded
+  id: GamepadAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadAdded
+  nameWithType: EventType.GamepadAdded
+  fullName: SharpSDL3.Enums.EventType.GamepadAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadAdded
+    path: Enums/EventType.cs
+    startLine: 118
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadAdded = 1619
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadRemoved
+  commentId: F:SharpSDL3.Enums.EventType.GamepadRemoved
+  id: GamepadRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadRemoved
+  nameWithType: EventType.GamepadRemoved
+  fullName: SharpSDL3.Enums.EventType.GamepadRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadRemoved
+    path: Enums/EventType.cs
+    startLine: 119
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadRemoved = 1620
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadRemapped
+  commentId: F:SharpSDL3.Enums.EventType.GamepadRemapped
+  id: GamepadRemapped
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadRemapped
+  nameWithType: EventType.GamepadRemapped
+  fullName: SharpSDL3.Enums.EventType.GamepadRemapped
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadRemapped
+    path: Enums/EventType.cs
+    startLine: 120
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadRemapped = 1621
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadTouchpadDown
+  commentId: F:SharpSDL3.Enums.EventType.GamepadTouchpadDown
+  id: GamepadTouchpadDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadTouchpadDown
+  nameWithType: EventType.GamepadTouchpadDown
+  fullName: SharpSDL3.Enums.EventType.GamepadTouchpadDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadTouchpadDown
+    path: Enums/EventType.cs
+    startLine: 121
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadTouchpadDown = 1622
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadTouchpadMotion
+  commentId: F:SharpSDL3.Enums.EventType.GamepadTouchpadMotion
+  id: GamepadTouchpadMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadTouchpadMotion
+  nameWithType: EventType.GamepadTouchpadMotion
+  fullName: SharpSDL3.Enums.EventType.GamepadTouchpadMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadTouchpadMotion
+    path: Enums/EventType.cs
+    startLine: 122
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadTouchpadMotion = 1623
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadTouchpadUp
+  commentId: F:SharpSDL3.Enums.EventType.GamepadTouchpadUp
+  id: GamepadTouchpadUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadTouchpadUp
+  nameWithType: EventType.GamepadTouchpadUp
+  fullName: SharpSDL3.Enums.EventType.GamepadTouchpadUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadTouchpadUp
+    path: Enums/EventType.cs
+    startLine: 123
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadTouchpadUp = 1624
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadSensorUpdate
+  commentId: F:SharpSDL3.Enums.EventType.GamepadSensorUpdate
+  id: GamepadSensorUpdate
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadSensorUpdate
+  nameWithType: EventType.GamepadSensorUpdate
+  fullName: SharpSDL3.Enums.EventType.GamepadSensorUpdate
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadSensorUpdate
+    path: Enums/EventType.cs
+    startLine: 124
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadSensorUpdate = 1625
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadUpdateComplete
+  commentId: F:SharpSDL3.Enums.EventType.GamepadUpdateComplete
+  id: GamepadUpdateComplete
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadUpdateComplete
+  nameWithType: EventType.GamepadUpdateComplete
+  fullName: SharpSDL3.Enums.EventType.GamepadUpdateComplete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadUpdateComplete
+    path: Enums/EventType.cs
+    startLine: 125
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadUpdateComplete = 1626
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.GamepadSteamHandleUpdated
+  commentId: F:SharpSDL3.Enums.EventType.GamepadSteamHandleUpdated
+  id: GamepadSteamHandleUpdated
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: GamepadSteamHandleUpdated
+  nameWithType: EventType.GamepadSteamHandleUpdated
+  fullName: SharpSDL3.Enums.EventType.GamepadSteamHandleUpdated
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadSteamHandleUpdated
+    path: Enums/EventType.cs
+    startLine: 126
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GamepadSteamHandleUpdated = 1627
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.FingerDown
+  commentId: F:SharpSDL3.Enums.EventType.FingerDown
+  id: FingerDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: FingerDown
+  nameWithType: EventType.FingerDown
+  fullName: SharpSDL3.Enums.EventType.FingerDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FingerDown
+    path: Enums/EventType.cs
+    startLine: 129
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: FingerDown = 1792
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.FingerUp
+  commentId: F:SharpSDL3.Enums.EventType.FingerUp
+  id: FingerUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: FingerUp
+  nameWithType: EventType.FingerUp
+  fullName: SharpSDL3.Enums.EventType.FingerUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FingerUp
+    path: Enums/EventType.cs
+    startLine: 130
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: FingerUp = 1793
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.FingerMotion
+  commentId: F:SharpSDL3.Enums.EventType.FingerMotion
+  id: FingerMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: FingerMotion
+  nameWithType: EventType.FingerMotion
+  fullName: SharpSDL3.Enums.EventType.FingerMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FingerMotion
+    path: Enums/EventType.cs
+    startLine: 131
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: FingerMotion = 1794
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.FingerCanceled
+  commentId: F:SharpSDL3.Enums.EventType.FingerCanceled
+  id: FingerCanceled
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: FingerCanceled
+  nameWithType: EventType.FingerCanceled
+  fullName: SharpSDL3.Enums.EventType.FingerCanceled
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FingerCanceled
+    path: Enums/EventType.cs
+    startLine: 132
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: FingerCanceled = 1795
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.ClipboardUpdate
+  commentId: F:SharpSDL3.Enums.EventType.ClipboardUpdate
+  id: ClipboardUpdate
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: ClipboardUpdate
+  nameWithType: EventType.ClipboardUpdate
+  fullName: SharpSDL3.Enums.EventType.ClipboardUpdate
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ClipboardUpdate
+    path: Enums/EventType.cs
+    startLine: 137
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ClipboardUpdate = 2304
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DropFile
+  commentId: F:SharpSDL3.Enums.EventType.DropFile
+  id: DropFile
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DropFile
+  nameWithType: EventType.DropFile
+  fullName: SharpSDL3.Enums.EventType.DropFile
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DropFile
+    path: Enums/EventType.cs
+    startLine: 140
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DropFile = 4096
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DropText
+  commentId: F:SharpSDL3.Enums.EventType.DropText
+  id: DropText
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DropText
+  nameWithType: EventType.DropText
+  fullName: SharpSDL3.Enums.EventType.DropText
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DropText
+    path: Enums/EventType.cs
+    startLine: 141
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DropText = 4097
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DropBegin
+  commentId: F:SharpSDL3.Enums.EventType.DropBegin
+  id: DropBegin
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DropBegin
+  nameWithType: EventType.DropBegin
+  fullName: SharpSDL3.Enums.EventType.DropBegin
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DropBegin
+    path: Enums/EventType.cs
+    startLine: 142
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DropBegin = 4098
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DropComplete
+  commentId: F:SharpSDL3.Enums.EventType.DropComplete
+  id: DropComplete
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DropComplete
+  nameWithType: EventType.DropComplete
+  fullName: SharpSDL3.Enums.EventType.DropComplete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DropComplete
+    path: Enums/EventType.cs
+    startLine: 143
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DropComplete = 4099
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.DropPosition
+  commentId: F:SharpSDL3.Enums.EventType.DropPosition
+  id: DropPosition
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: DropPosition
+  nameWithType: EventType.DropPosition
+  fullName: SharpSDL3.Enums.EventType.DropPosition
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DropPosition
+    path: Enums/EventType.cs
+    startLine: 144
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DropPosition = 4100
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.AudioDeviceAdded
+  commentId: F:SharpSDL3.Enums.EventType.AudioDeviceAdded
+  id: AudioDeviceAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: AudioDeviceAdded
+  nameWithType: EventType.AudioDeviceAdded
+  fullName: SharpSDL3.Enums.EventType.AudioDeviceAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AudioDeviceAdded
+    path: Enums/EventType.cs
+    startLine: 147
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AudioDeviceAdded = 4352
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.AudioDeviceRemoved
+  commentId: F:SharpSDL3.Enums.EventType.AudioDeviceRemoved
+  id: AudioDeviceRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: AudioDeviceRemoved
+  nameWithType: EventType.AudioDeviceRemoved
+  fullName: SharpSDL3.Enums.EventType.AudioDeviceRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AudioDeviceRemoved
+    path: Enums/EventType.cs
+    startLine: 148
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AudioDeviceRemoved = 4353
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.AudioDeviceFormatChanged
+  commentId: F:SharpSDL3.Enums.EventType.AudioDeviceFormatChanged
+  id: AudioDeviceFormatChanged
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: AudioDeviceFormatChanged
+  nameWithType: EventType.AudioDeviceFormatChanged
+  fullName: SharpSDL3.Enums.EventType.AudioDeviceFormatChanged
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AudioDeviceFormatChanged
+    path: Enums/EventType.cs
+    startLine: 149
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AudioDeviceFormatChanged = 4354
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.SensorUpdate
+  commentId: F:SharpSDL3.Enums.EventType.SensorUpdate
+  id: SensorUpdate
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: SensorUpdate
+  nameWithType: EventType.SensorUpdate
+  fullName: SharpSDL3.Enums.EventType.SensorUpdate
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SensorUpdate
+    path: Enums/EventType.cs
+    startLine: 152
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SensorUpdate = 4608
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenProximityIn
+  commentId: F:SharpSDL3.Enums.EventType.PenProximityIn
+  id: PenProximityIn
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenProximityIn
+  nameWithType: EventType.PenProximityIn
+  fullName: SharpSDL3.Enums.EventType.PenProximityIn
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenProximityIn
+    path: Enums/EventType.cs
+    startLine: 155
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenProximityIn = 4864
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenProximityOut
+  commentId: F:SharpSDL3.Enums.EventType.PenProximityOut
+  id: PenProximityOut
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenProximityOut
+  nameWithType: EventType.PenProximityOut
+  fullName: SharpSDL3.Enums.EventType.PenProximityOut
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenProximityOut
+    path: Enums/EventType.cs
+    startLine: 156
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenProximityOut = 4865
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenDown
+  commentId: F:SharpSDL3.Enums.EventType.PenDown
+  id: PenDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenDown
+  nameWithType: EventType.PenDown
+  fullName: SharpSDL3.Enums.EventType.PenDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenDown
+    path: Enums/EventType.cs
+    startLine: 157
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenDown = 4866
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenUp
+  commentId: F:SharpSDL3.Enums.EventType.PenUp
+  id: PenUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenUp
+  nameWithType: EventType.PenUp
+  fullName: SharpSDL3.Enums.EventType.PenUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenUp
+    path: Enums/EventType.cs
+    startLine: 158
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenUp = 4867
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenButtonDown
+  commentId: F:SharpSDL3.Enums.EventType.PenButtonDown
+  id: PenButtonDown
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenButtonDown
+  nameWithType: EventType.PenButtonDown
+  fullName: SharpSDL3.Enums.EventType.PenButtonDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenButtonDown
+    path: Enums/EventType.cs
+    startLine: 159
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenButtonDown = 4868
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenButtonUp
+  commentId: F:SharpSDL3.Enums.EventType.PenButtonUp
+  id: PenButtonUp
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenButtonUp
+  nameWithType: EventType.PenButtonUp
+  fullName: SharpSDL3.Enums.EventType.PenButtonUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenButtonUp
+    path: Enums/EventType.cs
+    startLine: 160
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenButtonUp = 4869
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenMotion
+  commentId: F:SharpSDL3.Enums.EventType.PenMotion
+  id: PenMotion
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenMotion
+  nameWithType: EventType.PenMotion
+  fullName: SharpSDL3.Enums.EventType.PenMotion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenMotion
+    path: Enums/EventType.cs
+    startLine: 161
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenMotion = 4870
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PenAxis
+  commentId: F:SharpSDL3.Enums.EventType.PenAxis
+  id: PenAxis
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PenAxis
+  nameWithType: EventType.PenAxis
+  fullName: SharpSDL3.Enums.EventType.PenAxis
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PenAxis
+    path: Enums/EventType.cs
+    startLine: 162
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PenAxis = 4871
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.CameraDeviceAdded
+  commentId: F:SharpSDL3.Enums.EventType.CameraDeviceAdded
+  id: CameraDeviceAdded
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: CameraDeviceAdded
+  nameWithType: EventType.CameraDeviceAdded
+  fullName: SharpSDL3.Enums.EventType.CameraDeviceAdded
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CameraDeviceAdded
+    path: Enums/EventType.cs
+    startLine: 165
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CameraDeviceAdded = 5120
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.CameraDeviceRemoved
+  commentId: F:SharpSDL3.Enums.EventType.CameraDeviceRemoved
+  id: CameraDeviceRemoved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: CameraDeviceRemoved
+  nameWithType: EventType.CameraDeviceRemoved
+  fullName: SharpSDL3.Enums.EventType.CameraDeviceRemoved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CameraDeviceRemoved
+    path: Enums/EventType.cs
+    startLine: 166
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CameraDeviceRemoved = 5121
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.CameraDeviceApproved
+  commentId: F:SharpSDL3.Enums.EventType.CameraDeviceApproved
+  id: CameraDeviceApproved
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: CameraDeviceApproved
+  nameWithType: EventType.CameraDeviceApproved
+  fullName: SharpSDL3.Enums.EventType.CameraDeviceApproved
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CameraDeviceApproved
+    path: Enums/EventType.cs
+    startLine: 167
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CameraDeviceApproved = 5122
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.CameraDeviceDenied
+  commentId: F:SharpSDL3.Enums.EventType.CameraDeviceDenied
+  id: CameraDeviceDenied
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: CameraDeviceDenied
+  nameWithType: EventType.CameraDeviceDenied
+  fullName: SharpSDL3.Enums.EventType.CameraDeviceDenied
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CameraDeviceDenied
+    path: Enums/EventType.cs
+    startLine: 168
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: CameraDeviceDenied = 5123
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.RenderTargetsReset
+  commentId: F:SharpSDL3.Enums.EventType.RenderTargetsReset
+  id: RenderTargetsReset
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: RenderTargetsReset
+  nameWithType: EventType.RenderTargetsReset
+  fullName: SharpSDL3.Enums.EventType.RenderTargetsReset
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderTargetsReset
+    path: Enums/EventType.cs
+    startLine: 171
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RenderTargetsReset = 8192
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.RenderDeviceReset
+  commentId: F:SharpSDL3.Enums.EventType.RenderDeviceReset
+  id: RenderDeviceReset
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: RenderDeviceReset
+  nameWithType: EventType.RenderDeviceReset
+  fullName: SharpSDL3.Enums.EventType.RenderDeviceReset
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderDeviceReset
+    path: Enums/EventType.cs
+    startLine: 172
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RenderDeviceReset = 8193
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.RenderDeviceLost
+  commentId: F:SharpSDL3.Enums.EventType.RenderDeviceLost
+  id: RenderDeviceLost
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: RenderDeviceLost
+  nameWithType: EventType.RenderDeviceLost
+  fullName: SharpSDL3.Enums.EventType.RenderDeviceLost
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderDeviceLost
+    path: Enums/EventType.cs
+    startLine: 173
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RenderDeviceLost = 8194
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Private0
+  commentId: F:SharpSDL3.Enums.EventType.Private0
+  id: Private0
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Private0
+  nameWithType: EventType.Private0
+  fullName: SharpSDL3.Enums.EventType.Private0
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Private0
+    path: Enums/EventType.cs
+    startLine: 176
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Private0 = 16384
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Private1
+  commentId: F:SharpSDL3.Enums.EventType.Private1
+  id: Private1
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Private1
+  nameWithType: EventType.Private1
+  fullName: SharpSDL3.Enums.EventType.Private1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Private1
+    path: Enums/EventType.cs
+    startLine: 177
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Private1 = 16385
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Private2
+  commentId: F:SharpSDL3.Enums.EventType.Private2
+  id: Private2
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Private2
+  nameWithType: EventType.Private2
+  fullName: SharpSDL3.Enums.EventType.Private2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Private2
+    path: Enums/EventType.cs
+    startLine: 178
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Private2 = 16386
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Private3
+  commentId: F:SharpSDL3.Enums.EventType.Private3
+  id: Private3
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Private3
+  nameWithType: EventType.Private3
+  fullName: SharpSDL3.Enums.EventType.Private3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Private3
+    path: Enums/EventType.cs
+    startLine: 179
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Private3 = 16387
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.PollSentinel
+  commentId: F:SharpSDL3.Enums.EventType.PollSentinel
+  id: PollSentinel
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: PollSentinel
+  nameWithType: EventType.PollSentinel
+  fullName: SharpSDL3.Enums.EventType.PollSentinel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PollSentinel
+    path: Enums/EventType.cs
+    startLine: 182
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PollSentinel = 32512
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.User
+  commentId: F:SharpSDL3.Enums.EventType.User
+  id: User
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: User
+  nameWithType: EventType.User
+  fullName: SharpSDL3.Enums.EventType.User
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: User
+    path: Enums/EventType.cs
+    startLine: 187
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: User = 32768
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.Last
+  commentId: F:SharpSDL3.Enums.EventType.Last
+  id: Last
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: Last
+  nameWithType: EventType.Last
+  fullName: SharpSDL3.Enums.EventType.Last
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Last
+    path: Enums/EventType.cs
+    startLine: 192
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  example: []
+  syntax:
+    content: Last = 65535
+    return:
+      type: SharpSDL3.Enums.EventType
+- uid: SharpSDL3.Enums.EventType.EnumPadding
+  commentId: F:SharpSDL3.Enums.EventType.EnumPadding
+  id: EnumPadding
+  parent: SharpSDL3.Enums.EventType
+  langs:
+  - csharp
+  - vb
+  name: EnumPadding
+  nameWithType: EventType.EnumPadding
+  fullName: SharpSDL3.Enums.EventType.EnumPadding
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/EventType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EnumPadding
+    path: Enums/EventType.cs
+    startLine: 195
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: EnumPadding = 2147483647
+    return:
+      type: SharpSDL3.Enums.EventType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.EventType
+  commentId: T:SharpSDL3.Enums.EventType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.EventType.html
+  name: EventType
+  nameWithType: EventType
+  fullName: SharpSDL3.Enums.EventType

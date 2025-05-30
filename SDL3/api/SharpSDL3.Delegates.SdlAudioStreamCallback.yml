@@ -1,0 +1,73 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlAudioStreamCallback
+  commentId: T:SharpSDL3.Delegates.SdlAudioStreamCallback
+  id: Delegates.SdlAudioStreamCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlAudioStreamCallback
+  nameWithType: Delegates.SdlAudioStreamCallback
+  fullName: SharpSDL3.Delegates.SdlAudioStreamCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlAudioStreamCallback
+    path: Delegates.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate void Delegates.SdlAudioStreamCallback(nint userdata, nint stream, int additionalAmount, int totalAmount)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: stream
+      type: System.IntPtr
+    - id: additionalAmount
+      type: System.Int32
+    - id: totalAmount
+      type: System.Int32
+    content.vb: Public Delegate Sub Delegates.SdlAudioStreamCallback(userdata As IntPtr, stream As IntPtr, additionalAmount As Integer, totalAmount As Integer)
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

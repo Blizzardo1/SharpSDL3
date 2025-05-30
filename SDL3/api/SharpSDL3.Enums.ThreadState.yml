@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.ThreadState
+  commentId: T:SharpSDL3.Enums.ThreadState
+  id: ThreadState
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.ThreadState.Alive
+  - SharpSDL3.Enums.ThreadState.Complete
+  - SharpSDL3.Enums.ThreadState.Detached
+  - SharpSDL3.Enums.ThreadState.Unknown
+  langs:
+  - csharp
+  - vb
+  name: ThreadState
+  nameWithType: ThreadState
+  fullName: SharpSDL3.Enums.ThreadState
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/ThreadState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ThreadState
+    path: Enums/ThreadState.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum ThreadState
+    content.vb: Public Enum ThreadState
+- uid: SharpSDL3.Enums.ThreadState.Unknown
+  commentId: F:SharpSDL3.Enums.ThreadState.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.ThreadState
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: ThreadState.Unknown
+  fullName: SharpSDL3.Enums.ThreadState.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/ThreadState.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.ThreadState
+- uid: SharpSDL3.Enums.ThreadState.Alive
+  commentId: F:SharpSDL3.Enums.ThreadState.Alive
+  id: Alive
+  parent: SharpSDL3.Enums.ThreadState
+  langs:
+  - csharp
+  - vb
+  name: Alive
+  nameWithType: ThreadState.Alive
+  fullName: SharpSDL3.Enums.ThreadState.Alive
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Alive
+    path: Enums/ThreadState.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Alive = 1
+    return:
+      type: SharpSDL3.Enums.ThreadState
+- uid: SharpSDL3.Enums.ThreadState.Detached
+  commentId: F:SharpSDL3.Enums.ThreadState.Detached
+  id: Detached
+  parent: SharpSDL3.Enums.ThreadState
+  langs:
+  - csharp
+  - vb
+  name: Detached
+  nameWithType: ThreadState.Detached
+  fullName: SharpSDL3.Enums.ThreadState.Detached
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Detached
+    path: Enums/ThreadState.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Detached = 2
+    return:
+      type: SharpSDL3.Enums.ThreadState
+- uid: SharpSDL3.Enums.ThreadState.Complete
+  commentId: F:SharpSDL3.Enums.ThreadState.Complete
+  id: Complete
+  parent: SharpSDL3.Enums.ThreadState
+  langs:
+  - csharp
+  - vb
+  name: Complete
+  nameWithType: ThreadState.Complete
+  fullName: SharpSDL3.Enums.ThreadState.Complete
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ThreadState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Complete
+    path: Enums/ThreadState.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Complete = 3
+    return:
+      type: SharpSDL3.Enums.ThreadState
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.ThreadState
+  commentId: T:SharpSDL3.Enums.ThreadState
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ThreadState.html
+  name: ThreadState
+  nameWithType: ThreadState
+  fullName: SharpSDL3.Enums.ThreadState

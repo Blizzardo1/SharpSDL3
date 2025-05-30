@@ -1,0 +1,2074 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.Font
+  commentId: T:SharpSDL3.TTF.Font
+  id: Font
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.Font.Args
+  - SharpSDL3.TTF.Font.Ascent
+  - SharpSDL3.TTF.Font.CachedPositions
+  - SharpSDL3.TTF.Font.Close
+  - SharpSDL3.TTF.Font.CloseIo
+  - SharpSDL3.TTF.Font.Descent
+  - SharpSDL3.TTF.Font.Direction
+  - SharpSDL3.TTF.Font.EnableKerning
+  - SharpSDL3.TTF.Font.Face
+  - SharpSDL3.TTF.Font.FaceIndex
+  - SharpSDL3.TTF.Font.FallbackFor
+  - SharpSDL3.TTF.Font.Fallbacks
+  - SharpSDL3.TTF.Font.FtLoadTarget
+  - SharpSDL3.TTF.Font.Generation
+  - SharpSDL3.TTF.Font.GetFontKerningSize
+  - SharpSDL3.TTF.Font.GetTextSize(System.String)
+  - SharpSDL3.TTF.Font.GlyphIndices
+  - SharpSDL3.TTF.Font.GlyphOverhang
+  - SharpSDL3.TTF.Font.Glyphs
+  - SharpSDL3.TTF.Font.Handle
+  - SharpSDL3.TTF.Font.Hdpi
+  - SharpSDL3.TTF.Font.Height
+  - SharpSDL3.TTF.Font.HorizontalAlign
+  - SharpSDL3.TTF.Font.LineThickness
+  - SharpSDL3.TTF.Font.Lineskip
+  - SharpSDL3.TTF.Font.Name
+  - SharpSDL3.TTF.Font.NextCachedPositions
+  - SharpSDL3.TTF.Font.Outline
+  - SharpSDL3.TTF.Font.Positions
+  - SharpSDL3.TTF.Font.Props
+  - SharpSDL3.TTF.Font.RenderGlyphBlended(System.Char,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.RenderGlyphShaded(System.Char,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.RenderGlyphSolid(System.Char,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.RenderSdf
+  - SharpSDL3.TTF.Font.RenderSubpixel
+  - SharpSDL3.TTF.Font.RenderTextBlended(System.String,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.RenderTextBlendedWrapped(System.String,SharpSDL3.Structs.Color,System.Int32)
+  - SharpSDL3.TTF.Font.RenderTextShaded(System.String,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.RenderTextSolid(System.String,SharpSDL3.Structs.Color)
+  - SharpSDL3.TTF.Font.Script
+  - SharpSDL3.TTF.Font.Size
+  - SharpSDL3.TTF.Font.Src
+  - SharpSDL3.TTF.Font.SrcOffset
+  - SharpSDL3.TTF.Font.StrikethroughTopRow
+  - SharpSDL3.TTF.Font.Stroker
+  - SharpSDL3.TTF.Font.Style
+  - SharpSDL3.TTF.Font.Text
+  - SharpSDL3.TTF.Font.UnderlineTopRow
+  - SharpSDL3.TTF.Font.UseKerning
+  - SharpSDL3.TTF.Font.Vdpi
+  - SharpSDL3.TTF.Font.Weight
+  langs:
+  - csharp
+  - vb
+  name: Font
+  nameWithType: Font
+  fullName: SharpSDL3.TTF.Font
+  type: Struct
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Font
+    path: TTF/Font.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public struct Font
+    content.vb: Public Structure Font
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.TTF.Font.Name
+  commentId: F:SharpSDL3.TTF.Font.Name
+  id: Name
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: Font.Name
+  fullName: SharpSDL3.TTF.Font.Name
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Name
+    path: TTF/Font.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public string Name
+    return:
+      type: System.String
+    content.vb: Public Name As String
+- uid: SharpSDL3.TTF.Font.Face
+  commentId: F:SharpSDL3.TTF.Font.Face
+  id: Face
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Face
+  nameWithType: Font.Face
+  fullName: SharpSDL3.TTF.Font.Face
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Face
+    path: TTF/Font.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Face
+    return:
+      type: System.IntPtr
+    content.vb: Public Face As IntPtr
+- uid: SharpSDL3.TTF.Font.FaceIndex
+  commentId: F:SharpSDL3.TTF.Font.FaceIndex
+  id: FaceIndex
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: FaceIndex
+  nameWithType: Font.FaceIndex
+  fullName: SharpSDL3.TTF.Font.FaceIndex
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FaceIndex
+    path: TTF/Font.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public long FaceIndex
+    return:
+      type: System.Int64
+    content.vb: Public FaceIndex As Long
+- uid: SharpSDL3.TTF.Font.Props
+  commentId: F:SharpSDL3.TTF.Font.Props
+  id: Props
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Props
+  nameWithType: Font.Props
+  fullName: SharpSDL3.TTF.Font.Props
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Props
+    path: TTF/Font.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Props
+    return:
+      type: System.IntPtr
+    content.vb: Public Props As IntPtr
+- uid: SharpSDL3.TTF.Font.Generation
+  commentId: P:SharpSDL3.TTF.Font.Generation
+  id: Generation
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Generation
+  nameWithType: Font.Generation
+  fullName: SharpSDL3.TTF.Font.Generation
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Generation
+    path: TTF/Font.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly uint Generation { get; }
+    parameters: []
+    return:
+      type: System.UInt32
+    content.vb: Public ReadOnly Property Generation As UInteger
+  overload: SharpSDL3.TTF.Font.Generation*
+- uid: SharpSDL3.TTF.Font.Text
+  commentId: F:SharpSDL3.TTF.Font.Text
+  id: Text
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: Font.Text
+  fullName: SharpSDL3.TTF.Font.Text
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Text
+    path: TTF/Font.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Text
+    return:
+      type: System.IntPtr
+    content.vb: Public Text As IntPtr
+- uid: SharpSDL3.TTF.Font.Size
+  commentId: P:SharpSDL3.TTF.Font.Size
+  id: Size
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: Font.Size
+  fullName: SharpSDL3.TTF.Font.Size
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Size
+    path: TTF/Font.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly float Size { get; set; }
+    parameters: []
+    return:
+      type: System.Single
+    content.vb: Public Property Size As Single
+  overload: SharpSDL3.TTF.Font.Size*
+- uid: SharpSDL3.TTF.Font.Hdpi
+  commentId: F:SharpSDL3.TTF.Font.Hdpi
+  id: Hdpi
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Hdpi
+  nameWithType: Font.Hdpi
+  fullName: SharpSDL3.TTF.Font.Hdpi
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hdpi
+    path: TTF/Font.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Hdpi
+    return:
+      type: System.Int32
+    content.vb: Public Hdpi As Integer
+- uid: SharpSDL3.TTF.Font.Vdpi
+  commentId: F:SharpSDL3.TTF.Font.Vdpi
+  id: Vdpi
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Vdpi
+  nameWithType: Font.Vdpi
+  fullName: SharpSDL3.TTF.Font.Vdpi
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Vdpi
+    path: TTF/Font.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Vdpi
+    return:
+      type: System.Int32
+    content.vb: Public Vdpi As Integer
+- uid: SharpSDL3.TTF.Font.Height
+  commentId: P:SharpSDL3.TTF.Font.Height
+  id: Height
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Font.Height
+  fullName: SharpSDL3.TTF.Font.Height
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Height
+    path: TTF/Font.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly int Height { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Height As Integer
+  overload: SharpSDL3.TTF.Font.Height*
+- uid: SharpSDL3.TTF.Font.Ascent
+  commentId: P:SharpSDL3.TTF.Font.Ascent
+  id: Ascent
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Ascent
+  nameWithType: Font.Ascent
+  fullName: SharpSDL3.TTF.Font.Ascent
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ascent
+    path: TTF/Font.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly int Ascent { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Ascent As Integer
+  overload: SharpSDL3.TTF.Font.Ascent*
+- uid: SharpSDL3.TTF.Font.Descent
+  commentId: P:SharpSDL3.TTF.Font.Descent
+  id: Descent
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Descent
+  nameWithType: Font.Descent
+  fullName: SharpSDL3.TTF.Font.Descent
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Descent
+    path: TTF/Font.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly int Descent { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Descent As Integer
+  overload: SharpSDL3.TTF.Font.Descent*
+- uid: SharpSDL3.TTF.Font.Lineskip
+  commentId: P:SharpSDL3.TTF.Font.Lineskip
+  id: Lineskip
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Lineskip
+  nameWithType: Font.Lineskip
+  fullName: SharpSDL3.TTF.Font.Lineskip
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Lineskip
+    path: TTF/Font.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly int Lineskip { get; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public ReadOnly Property Lineskip As Integer
+  overload: SharpSDL3.TTF.Font.Lineskip*
+- uid: SharpSDL3.TTF.Font.Style
+  commentId: P:SharpSDL3.TTF.Font.Style
+  id: Style
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Style
+  nameWithType: Font.Style
+  fullName: SharpSDL3.TTF.Font.Style
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Style
+    path: TTF/Font.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly FontStyle Style { get; set; }
+    parameters: []
+    return:
+      type: SharpSDL3.TTF.FontStyle
+    content.vb: Public Property Style As FontStyle
+  overload: SharpSDL3.TTF.Font.Style*
+- uid: SharpSDL3.TTF.Font.Weight
+  commentId: P:SharpSDL3.TTF.Font.Weight
+  id: Weight
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Weight
+  nameWithType: Font.Weight
+  fullName: SharpSDL3.TTF.Font.Weight
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Weight
+    path: TTF/Font.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly FontWeight Weight { get; }
+    parameters: []
+    return:
+      type: SharpSDL3.TTF.FontWeight
+    content.vb: Public ReadOnly Property Weight As FontWeight
+  overload: SharpSDL3.TTF.Font.Weight*
+- uid: SharpSDL3.TTF.Font.Outline
+  commentId: F:SharpSDL3.TTF.Font.Outline
+  id: Outline
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Outline
+  nameWithType: Font.Outline
+  fullName: SharpSDL3.TTF.Font.Outline
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Outline
+    path: TTF/Font.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Outline
+    return:
+      type: System.Int32
+    content.vb: Public Outline As Integer
+- uid: SharpSDL3.TTF.Font.Stroker
+  commentId: F:SharpSDL3.TTF.Font.Stroker
+  id: Stroker
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Stroker
+  nameWithType: Font.Stroker
+  fullName: SharpSDL3.TTF.Font.Stroker
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Stroker
+    path: TTF/Font.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Stroker
+    return:
+      type: System.IntPtr
+    content.vb: Public Stroker As IntPtr
+- uid: SharpSDL3.TTF.Font.EnableKerning
+  commentId: P:SharpSDL3.TTF.Font.EnableKerning
+  id: EnableKerning
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: EnableKerning
+  nameWithType: Font.EnableKerning
+  fullName: SharpSDL3.TTF.Font.EnableKerning
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EnableKerning
+    path: TTF/Font.cs
+    startLine: 33
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly SdlBool EnableKerning { get; set; }
+    parameters: []
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public Property EnableKerning As SdlBool
+  overload: SharpSDL3.TTF.Font.EnableKerning*
+- uid: SharpSDL3.TTF.Font.UseKerning
+  commentId: F:SharpSDL3.TTF.Font.UseKerning
+  id: UseKerning
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: UseKerning
+  nameWithType: Font.UseKerning
+  fullName: SharpSDL3.TTF.Font.UseKerning
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UseKerning
+    path: TTF/Font.cs
+    startLine: 38
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public SdlBool UseKerning
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public UseKerning As SdlBool
+- uid: SharpSDL3.TTF.Font.GlyphOverhang
+  commentId: F:SharpSDL3.TTF.Font.GlyphOverhang
+  id: GlyphOverhang
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: GlyphOverhang
+  nameWithType: Font.GlyphOverhang
+  fullName: SharpSDL3.TTF.Font.GlyphOverhang
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GlyphOverhang
+    path: TTF/Font.cs
+    startLine: 40
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int GlyphOverhang
+    return:
+      type: System.Int32
+    content.vb: Public GlyphOverhang As Integer
+- uid: SharpSDL3.TTF.Font.LineThickness
+  commentId: F:SharpSDL3.TTF.Font.LineThickness
+  id: LineThickness
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: LineThickness
+  nameWithType: Font.LineThickness
+  fullName: SharpSDL3.TTF.Font.LineThickness
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LineThickness
+    path: TTF/Font.cs
+    startLine: 41
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int LineThickness
+    return:
+      type: System.Int32
+    content.vb: Public LineThickness As Integer
+- uid: SharpSDL3.TTF.Font.UnderlineTopRow
+  commentId: F:SharpSDL3.TTF.Font.UnderlineTopRow
+  id: UnderlineTopRow
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: UnderlineTopRow
+  nameWithType: Font.UnderlineTopRow
+  fullName: SharpSDL3.TTF.Font.UnderlineTopRow
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: UnderlineTopRow
+    path: TTF/Font.cs
+    startLine: 42
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int UnderlineTopRow
+    return:
+      type: System.Int32
+    content.vb: Public UnderlineTopRow As Integer
+- uid: SharpSDL3.TTF.Font.StrikethroughTopRow
+  commentId: F:SharpSDL3.TTF.Font.StrikethroughTopRow
+  id: StrikethroughTopRow
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: StrikethroughTopRow
+  nameWithType: Font.StrikethroughTopRow
+  fullName: SharpSDL3.TTF.Font.StrikethroughTopRow
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: StrikethroughTopRow
+    path: TTF/Font.cs
+    startLine: 43
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int StrikethroughTopRow
+    return:
+      type: System.Int32
+    content.vb: Public StrikethroughTopRow As Integer
+- uid: SharpSDL3.TTF.Font.Glyphs
+  commentId: F:SharpSDL3.TTF.Font.Glyphs
+  id: Glyphs
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Glyphs
+  nameWithType: Font.Glyphs
+  fullName: SharpSDL3.TTF.Font.Glyphs
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Glyphs
+    path: TTF/Font.cs
+    startLine: 44
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Glyphs
+    return:
+      type: System.IntPtr
+    content.vb: Public Glyphs As IntPtr
+- uid: SharpSDL3.TTF.Font.GlyphIndices
+  commentId: F:SharpSDL3.TTF.Font.GlyphIndices
+  id: GlyphIndices
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: GlyphIndices
+  nameWithType: Font.GlyphIndices
+  fullName: SharpSDL3.TTF.Font.GlyphIndices
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GlyphIndices
+    path: TTF/Font.cs
+    startLine: 45
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint GlyphIndices
+    return:
+      type: System.IntPtr
+    content.vb: Public GlyphIndices As IntPtr
+- uid: SharpSDL3.TTF.Font.Src
+  commentId: F:SharpSDL3.TTF.Font.Src
+  id: Src
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Src
+  nameWithType: Font.Src
+  fullName: SharpSDL3.TTF.Font.Src
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Src
+    path: TTF/Font.cs
+    startLine: 46
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Src
+    return:
+      type: System.IntPtr
+    content.vb: Public Src As IntPtr
+- uid: SharpSDL3.TTF.Font.SrcOffset
+  commentId: F:SharpSDL3.TTF.Font.SrcOffset
+  id: SrcOffset
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: SrcOffset
+  nameWithType: Font.SrcOffset
+  fullName: SharpSDL3.TTF.Font.SrcOffset
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SrcOffset
+    path: TTF/Font.cs
+    startLine: 47
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public long SrcOffset
+    return:
+      type: System.Int64
+    content.vb: Public SrcOffset As Long
+- uid: SharpSDL3.TTF.Font.CloseIo
+  commentId: F:SharpSDL3.TTF.Font.CloseIo
+  id: CloseIo
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: CloseIo
+  nameWithType: Font.CloseIo
+  fullName: SharpSDL3.TTF.Font.CloseIo
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CloseIo
+    path: TTF/Font.cs
+    startLine: 48
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public SdlBool CloseIo
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public CloseIo As SdlBool
+- uid: SharpSDL3.TTF.Font.Args
+  commentId: F:SharpSDL3.TTF.Font.Args
+  id: Args
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Args
+  nameWithType: Font.Args
+  fullName: SharpSDL3.TTF.Font.Args
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Args
+    path: TTF/Font.cs
+    startLine: 49
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Args
+    return:
+      type: System.IntPtr
+    content.vb: Public Args As IntPtr
+- uid: SharpSDL3.TTF.Font.NextCachedPositions
+  commentId: F:SharpSDL3.TTF.Font.NextCachedPositions
+  id: NextCachedPositions
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: NextCachedPositions
+  nameWithType: Font.NextCachedPositions
+  fullName: SharpSDL3.TTF.Font.NextCachedPositions
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NextCachedPositions
+    path: TTF/Font.cs
+    startLine: 50
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int NextCachedPositions
+    return:
+      type: System.Int32
+    content.vb: Public NextCachedPositions As Integer
+- uid: SharpSDL3.TTF.Font.CachedPositions
+  commentId: F:SharpSDL3.TTF.Font.CachedPositions
+  id: CachedPositions
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: CachedPositions
+  nameWithType: Font.CachedPositions
+  fullName: SharpSDL3.TTF.Font.CachedPositions
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CachedPositions
+    path: TTF/Font.cs
+    startLine: 51
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public byte* CachedPositions
+    return:
+      type: System.Byte*
+    content.vb: Public CachedPositions As Byte*
+- uid: SharpSDL3.TTF.Font.Positions
+  commentId: F:SharpSDL3.TTF.Font.Positions
+  id: Positions
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Positions
+  nameWithType: Font.Positions
+  fullName: SharpSDL3.TTF.Font.Positions
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Positions
+    path: TTF/Font.cs
+    startLine: 52
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Positions
+    return:
+      type: System.IntPtr
+    content.vb: Public Positions As IntPtr
+- uid: SharpSDL3.TTF.Font.FtLoadTarget
+  commentId: F:SharpSDL3.TTF.Font.FtLoadTarget
+  id: FtLoadTarget
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: FtLoadTarget
+  nameWithType: Font.FtLoadTarget
+  fullName: SharpSDL3.TTF.Font.FtLoadTarget
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FtLoadTarget
+    path: TTF/Font.cs
+    startLine: 53
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int FtLoadTarget
+    return:
+      type: System.Int32
+    content.vb: Public FtLoadTarget As Integer
+- uid: SharpSDL3.TTF.Font.RenderSubpixel
+  commentId: F:SharpSDL3.TTF.Font.RenderSubpixel
+  id: RenderSubpixel
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderSubpixel
+  nameWithType: Font.RenderSubpixel
+  fullName: SharpSDL3.TTF.Font.RenderSubpixel
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderSubpixel
+    path: TTF/Font.cs
+    startLine: 54
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int RenderSubpixel
+    return:
+      type: System.Int32
+    content.vb: Public RenderSubpixel As Integer
+- uid: SharpSDL3.TTF.Font.Script
+  commentId: F:SharpSDL3.TTF.Font.Script
+  id: Script
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Script
+  nameWithType: Font.Script
+  fullName: SharpSDL3.TTF.Font.Script
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Script
+    path: TTF/Font.cs
+    startLine: 59
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public uint Script
+    return:
+      type: System.UInt32
+    content.vb: Public Script As UInteger
+- uid: SharpSDL3.TTF.Font.Direction
+  commentId: F:SharpSDL3.TTF.Font.Direction
+  id: Direction
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: Font.Direction
+  fullName: SharpSDL3.TTF.Font.Direction
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Direction
+    path: TTF/Font.cs
+    startLine: 60
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int Direction
+    return:
+      type: System.Int32
+    content.vb: Public Direction As Integer
+- uid: SharpSDL3.TTF.Font.RenderSdf
+  commentId: F:SharpSDL3.TTF.Font.RenderSdf
+  id: RenderSdf
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderSdf
+  nameWithType: Font.RenderSdf
+  fullName: SharpSDL3.TTF.Font.RenderSdf
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderSdf
+    path: TTF/Font.cs
+    startLine: 61
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public SdlBool RenderSdf
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public RenderSdf As SdlBool
+- uid: SharpSDL3.TTF.Font.HorizontalAlign
+  commentId: F:SharpSDL3.TTF.Font.HorizontalAlign
+  id: HorizontalAlign
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: HorizontalAlign
+  nameWithType: Font.HorizontalAlign
+  fullName: SharpSDL3.TTF.Font.HorizontalAlign
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: HorizontalAlign
+    path: TTF/Font.cs
+    startLine: 62
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public int HorizontalAlign
+    return:
+      type: System.Int32
+    content.vb: Public HorizontalAlign As Integer
+- uid: SharpSDL3.TTF.Font.Fallbacks
+  commentId: F:SharpSDL3.TTF.Font.Fallbacks
+  id: Fallbacks
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Fallbacks
+  nameWithType: Font.Fallbacks
+  fullName: SharpSDL3.TTF.Font.Fallbacks
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Fallbacks
+    path: TTF/Font.cs
+    startLine: 63
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint Fallbacks
+    return:
+      type: System.IntPtr
+    content.vb: Public Fallbacks As IntPtr
+- uid: SharpSDL3.TTF.Font.FallbackFor
+  commentId: F:SharpSDL3.TTF.Font.FallbackFor
+  id: FallbackFor
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: FallbackFor
+  nameWithType: Font.FallbackFor
+  fullName: SharpSDL3.TTF.Font.FallbackFor
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FallbackFor
+    path: TTF/Font.cs
+    startLine: 64
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public nint FallbackFor
+    return:
+      type: System.IntPtr
+    content.vb: Public FallbackFor As IntPtr
+- uid: SharpSDL3.TTF.Font.Handle
+  commentId: P:SharpSDL3.TTF.Font.Handle
+  id: Handle
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Handle
+  nameWithType: Font.Handle
+  fullName: SharpSDL3.TTF.Font.Handle
+  type: Property
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Handle
+    path: TTF/Font.cs
+    startLine: 66
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint Handle { get; }
+    parameters: []
+    return:
+      type: System.IntPtr
+    content.vb: Public Property Handle As IntPtr
+  overload: SharpSDL3.TTF.Font.Handle*
+- uid: SharpSDL3.TTF.Font.GetTextSize(System.String)
+  commentId: M:SharpSDL3.TTF.Font.GetTextSize(System.String)
+  id: GetTextSize(System.String)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: GetTextSize(string)
+  nameWithType: Font.GetTextSize(string)
+  fullName: SharpSDL3.TTF.Font.GetTextSize(string)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetTextSize
+    path: TTF/Font.cs
+    startLine: 71
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly Size GetTextSize(string text)
+    parameters:
+    - id: text
+      type: System.String
+    return:
+      type: SharpSDL3.Structs.Size
+    content.vb: Public Function GetTextSize(text As String) As Size
+  overload: SharpSDL3.TTF.Font.GetTextSize*
+  nameWithType.vb: Font.GetTextSize(String)
+  fullName.vb: SharpSDL3.TTF.Font.GetTextSize(String)
+  name.vb: GetTextSize(String)
+- uid: SharpSDL3.TTF.Font.RenderTextSolid(System.String,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderTextSolid(System.String,SharpSDL3.Structs.Color)
+  id: RenderTextSolid(System.String,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderTextSolid(string, Color)
+  nameWithType: Font.RenderTextSolid(string, Color)
+  fullName: SharpSDL3.TTF.Font.RenderTextSolid(string, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderTextSolid
+    path: TTF/Font.cs
+    startLine: 72
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderTextSolid(string text, Color foregroundColor)
+    parameters:
+    - id: text
+      type: System.String
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderTextSolid(text As String, foregroundColor As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderTextSolid*
+  nameWithType.vb: Font.RenderTextSolid(String, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderTextSolid(String, SharpSDL3.Structs.Color)
+  name.vb: RenderTextSolid(String, Color)
+- uid: SharpSDL3.TTF.Font.RenderGlyphSolid(System.Char,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderGlyphSolid(System.Char,SharpSDL3.Structs.Color)
+  id: RenderGlyphSolid(System.Char,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderGlyphSolid(char, Color)
+  nameWithType: Font.RenderGlyphSolid(char, Color)
+  fullName: SharpSDL3.TTF.Font.RenderGlyphSolid(char, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderGlyphSolid
+    path: TTF/Font.cs
+    startLine: 73
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderGlyphSolid(char c, Color foregroundColor)
+    parameters:
+    - id: c
+      type: System.Char
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderGlyphSolid(c As Char, foregroundColor As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderGlyphSolid*
+  nameWithType.vb: Font.RenderGlyphSolid(Char, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderGlyphSolid(Char, SharpSDL3.Structs.Color)
+  name.vb: RenderGlyphSolid(Char, Color)
+- uid: SharpSDL3.TTF.Font.RenderTextShaded(System.String,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderTextShaded(System.String,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  id: RenderTextShaded(System.String,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderTextShaded(string, Color, Color)
+  nameWithType: Font.RenderTextShaded(string, Color, Color)
+  fullName: SharpSDL3.TTF.Font.RenderTextShaded(string, SharpSDL3.Structs.Color, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderTextShaded
+    path: TTF/Font.cs
+    startLine: 74
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderTextShaded(string text, Color foregroundColor, Color bg)
+    parameters:
+    - id: text
+      type: System.String
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    - id: bg
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderTextShaded(text As String, foregroundColor As Color, bg As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderTextShaded*
+  nameWithType.vb: Font.RenderTextShaded(String, Color, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderTextShaded(String, SharpSDL3.Structs.Color, SharpSDL3.Structs.Color)
+  name.vb: RenderTextShaded(String, Color, Color)
+- uid: SharpSDL3.TTF.Font.RenderGlyphShaded(System.Char,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderGlyphShaded(System.Char,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  id: RenderGlyphShaded(System.Char,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderGlyphShaded(char, Color, Color)
+  nameWithType: Font.RenderGlyphShaded(char, Color, Color)
+  fullName: SharpSDL3.TTF.Font.RenderGlyphShaded(char, SharpSDL3.Structs.Color, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderGlyphShaded
+    path: TTF/Font.cs
+    startLine: 75
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderGlyphShaded(char c, Color foregroundColor, Color bg)
+    parameters:
+    - id: c
+      type: System.Char
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    - id: bg
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderGlyphShaded(c As Char, foregroundColor As Color, bg As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderGlyphShaded*
+  nameWithType.vb: Font.RenderGlyphShaded(Char, Color, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderGlyphShaded(Char, SharpSDL3.Structs.Color, SharpSDL3.Structs.Color)
+  name.vb: RenderGlyphShaded(Char, Color, Color)
+- uid: SharpSDL3.TTF.Font.RenderTextBlended(System.String,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderTextBlended(System.String,SharpSDL3.Structs.Color)
+  id: RenderTextBlended(System.String,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderTextBlended(string, Color)
+  nameWithType: Font.RenderTextBlended(string, Color)
+  fullName: SharpSDL3.TTF.Font.RenderTextBlended(string, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderTextBlended
+    path: TTF/Font.cs
+    startLine: 76
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderTextBlended(string text, Color foregroundColor)
+    parameters:
+    - id: text
+      type: System.String
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderTextBlended(text As String, foregroundColor As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderTextBlended*
+  nameWithType.vb: Font.RenderTextBlended(String, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderTextBlended(String, SharpSDL3.Structs.Color)
+  name.vb: RenderTextBlended(String, Color)
+- uid: SharpSDL3.TTF.Font.RenderGlyphBlended(System.Char,SharpSDL3.Structs.Color)
+  commentId: M:SharpSDL3.TTF.Font.RenderGlyphBlended(System.Char,SharpSDL3.Structs.Color)
+  id: RenderGlyphBlended(System.Char,SharpSDL3.Structs.Color)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderGlyphBlended(char, Color)
+  nameWithType: Font.RenderGlyphBlended(char, Color)
+  fullName: SharpSDL3.TTF.Font.RenderGlyphBlended(char, SharpSDL3.Structs.Color)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderGlyphBlended
+    path: TTF/Font.cs
+    startLine: 77
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderGlyphBlended(char c, Color foregroundColor)
+    parameters:
+    - id: c
+      type: System.Char
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderGlyphBlended(c As Char, foregroundColor As Color) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderGlyphBlended*
+  nameWithType.vb: Font.RenderGlyphBlended(Char, Color)
+  fullName.vb: SharpSDL3.TTF.Font.RenderGlyphBlended(Char, SharpSDL3.Structs.Color)
+  name.vb: RenderGlyphBlended(Char, Color)
+- uid: SharpSDL3.TTF.Font.RenderTextBlendedWrapped(System.String,SharpSDL3.Structs.Color,System.Int32)
+  commentId: M:SharpSDL3.TTF.Font.RenderTextBlendedWrapped(System.String,SharpSDL3.Structs.Color,System.Int32)
+  id: RenderTextBlendedWrapped(System.String,SharpSDL3.Structs.Color,System.Int32)
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: RenderTextBlendedWrapped(string, Color, int)
+  nameWithType: Font.RenderTextBlendedWrapped(string, Color, int)
+  fullName: SharpSDL3.TTF.Font.RenderTextBlendedWrapped(string, SharpSDL3.Structs.Color, int)
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RenderTextBlendedWrapped
+    path: TTF/Font.cs
+    startLine: 78
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly nint RenderTextBlendedWrapped(string text, Color foregroundColor, int wrapped)
+    parameters:
+    - id: text
+      type: System.String
+    - id: foregroundColor
+      type: SharpSDL3.Structs.Color
+    - id: wrapped
+      type: System.Int32
+    return:
+      type: System.IntPtr
+    content.vb: Public Function RenderTextBlendedWrapped(text As String, foregroundColor As Color, wrapped As Integer) As IntPtr
+  overload: SharpSDL3.TTF.Font.RenderTextBlendedWrapped*
+  nameWithType.vb: Font.RenderTextBlendedWrapped(String, Color, Integer)
+  fullName.vb: SharpSDL3.TTF.Font.RenderTextBlendedWrapped(String, SharpSDL3.Structs.Color, Integer)
+  name.vb: RenderTextBlendedWrapped(String, Color, Integer)
+- uid: SharpSDL3.TTF.Font.GetFontKerningSize
+  commentId: M:SharpSDL3.TTF.Font.GetFontKerningSize
+  id: GetFontKerningSize
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: GetFontKerningSize()
+  nameWithType: Font.GetFontKerningSize()
+  fullName: SharpSDL3.TTF.Font.GetFontKerningSize()
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetFontKerningSize
+    path: TTF/Font.cs
+    startLine: 80
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly SdlBool GetFontKerningSize()
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public Function GetFontKerningSize() As SdlBool
+  overload: SharpSDL3.TTF.Font.GetFontKerningSize*
+- uid: SharpSDL3.TTF.Font.Close
+  commentId: M:SharpSDL3.TTF.Font.Close
+  id: Close
+  parent: SharpSDL3.TTF.Font
+  langs:
+  - csharp
+  - vb
+  name: Close()
+  nameWithType: Font.Close()
+  fullName: SharpSDL3.TTF.Font.Close()
+  type: Method
+  source:
+    remote:
+      path: SDL3/TTF/Font.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Close
+    path: TTF/Font.cs
+    startLine: 82
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public readonly void Close()
+    content.vb: Public Sub Close()
+  overload: SharpSDL3.TTF.Font.Close*
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Int64
+  commentId: T:System.Int64
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int64
+  name: long
+  nameWithType: long
+  fullName: long
+  nameWithType.vb: Long
+  fullName.vb: Long
+  name.vb: Long
+- uid: SharpSDL3.TTF.Font.Generation*
+  commentId: Overload:SharpSDL3.TTF.Font.Generation
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Generation
+  name: Generation
+  nameWithType: Font.Generation
+  fullName: SharpSDL3.TTF.Font.Generation
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: SharpSDL3.TTF.Font.Size*
+  commentId: Overload:SharpSDL3.TTF.Font.Size
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Size
+  name: Size
+  nameWithType: Font.Size
+  fullName: SharpSDL3.TTF.Font.Size
+- uid: System.Single
+  commentId: T:System.Single
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.single
+  name: float
+  nameWithType: float
+  fullName: float
+  nameWithType.vb: Single
+  fullName.vb: Single
+  name.vb: Single
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SharpSDL3.TTF.Font.Height*
+  commentId: Overload:SharpSDL3.TTF.Font.Height
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Height
+  name: Height
+  nameWithType: Font.Height
+  fullName: SharpSDL3.TTF.Font.Height
+- uid: SharpSDL3.TTF.Font.Ascent*
+  commentId: Overload:SharpSDL3.TTF.Font.Ascent
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Ascent
+  name: Ascent
+  nameWithType: Font.Ascent
+  fullName: SharpSDL3.TTF.Font.Ascent
+- uid: SharpSDL3.TTF.Font.Descent*
+  commentId: Overload:SharpSDL3.TTF.Font.Descent
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Descent
+  name: Descent
+  nameWithType: Font.Descent
+  fullName: SharpSDL3.TTF.Font.Descent
+- uid: SharpSDL3.TTF.Font.Lineskip*
+  commentId: Overload:SharpSDL3.TTF.Font.Lineskip
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Lineskip
+  name: Lineskip
+  nameWithType: Font.Lineskip
+  fullName: SharpSDL3.TTF.Font.Lineskip
+- uid: SharpSDL3.TTF.Font.Style*
+  commentId: Overload:SharpSDL3.TTF.Font.Style
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Style
+  name: Style
+  nameWithType: Font.Style
+  fullName: SharpSDL3.TTF.Font.Style
+- uid: SharpSDL3.TTF.FontStyle
+  commentId: T:SharpSDL3.TTF.FontStyle
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.FontStyle.html
+  name: FontStyle
+  nameWithType: FontStyle
+  fullName: SharpSDL3.TTF.FontStyle
+- uid: SharpSDL3.TTF.Font.Weight*
+  commentId: Overload:SharpSDL3.TTF.Font.Weight
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Weight
+  name: Weight
+  nameWithType: Font.Weight
+  fullName: SharpSDL3.TTF.Font.Weight
+- uid: SharpSDL3.TTF.FontWeight
+  commentId: T:SharpSDL3.TTF.FontWeight
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.FontWeight.html
+  name: FontWeight
+  nameWithType: FontWeight
+  fullName: SharpSDL3.TTF.FontWeight
+- uid: SharpSDL3.TTF.Font.EnableKerning*
+  commentId: Overload:SharpSDL3.TTF.Font.EnableKerning
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_EnableKerning
+  name: EnableKerning
+  nameWithType: Font.EnableKerning
+  fullName: SharpSDL3.TTF.Font.EnableKerning
+- uid: SharpSDL3.Structs.SdlBool
+  commentId: T:SharpSDL3.Structs.SdlBool
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.SdlBool.html
+  name: SdlBool
+  nameWithType: SdlBool
+  fullName: SharpSDL3.Structs.SdlBool
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.Byte*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte*
+  nameWithType: byte*
+  fullName: byte*
+  nameWithType.vb: Byte*
+  fullName.vb: Byte*
+  name.vb: Byte*
+  spec.csharp:
+  - uid: System.Byte
+    name: byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '*'
+  spec.vb:
+  - uid: System.Byte
+    name: Byte
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.byte
+  - name: '*'
+- uid: SharpSDL3.TTF.Font.Handle*
+  commentId: Overload:SharpSDL3.TTF.Font.Handle
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Handle
+  name: Handle
+  nameWithType: Font.Handle
+  fullName: SharpSDL3.TTF.Font.Handle
+- uid: SharpSDL3.TTF.Font.GetTextSize*
+  commentId: Overload:SharpSDL3.TTF.Font.GetTextSize
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_GetTextSize_System_String_
+  name: GetTextSize
+  nameWithType: Font.GetTextSize
+  fullName: SharpSDL3.TTF.Font.GetTextSize
+- uid: SharpSDL3.Structs.Size
+  commentId: T:SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.Size.html
+  name: Size
+  nameWithType: Size
+  fullName: SharpSDL3.Structs.Size
+- uid: SharpSDL3.TTF.Font.RenderTextSolid*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderTextSolid
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderTextSolid_System_String_SharpSDL3_Structs_Color_
+  name: RenderTextSolid
+  nameWithType: Font.RenderTextSolid
+  fullName: SharpSDL3.TTF.Font.RenderTextSolid
+- uid: SharpSDL3.Structs.Color
+  commentId: T:SharpSDL3.Structs.Color
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.Color.html
+  name: Color
+  nameWithType: Color
+  fullName: SharpSDL3.Structs.Color
+- uid: SharpSDL3.TTF.Font.RenderGlyphSolid*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderGlyphSolid
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderGlyphSolid_System_Char_SharpSDL3_Structs_Color_
+  name: RenderGlyphSolid
+  nameWithType: Font.RenderGlyphSolid
+  fullName: SharpSDL3.TTF.Font.RenderGlyphSolid
+- uid: System.Char
+  commentId: T:System.Char
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.char
+  name: char
+  nameWithType: char
+  fullName: char
+  nameWithType.vb: Char
+  fullName.vb: Char
+  name.vb: Char
+- uid: SharpSDL3.TTF.Font.RenderTextShaded*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderTextShaded
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderTextShaded_System_String_SharpSDL3_Structs_Color_SharpSDL3_Structs_Color_
+  name: RenderTextShaded
+  nameWithType: Font.RenderTextShaded
+  fullName: SharpSDL3.TTF.Font.RenderTextShaded
+- uid: SharpSDL3.TTF.Font.RenderGlyphShaded*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderGlyphShaded
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderGlyphShaded_System_Char_SharpSDL3_Structs_Color_SharpSDL3_Structs_Color_
+  name: RenderGlyphShaded
+  nameWithType: Font.RenderGlyphShaded
+  fullName: SharpSDL3.TTF.Font.RenderGlyphShaded
+- uid: SharpSDL3.TTF.Font.RenderTextBlended*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderTextBlended
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderTextBlended_System_String_SharpSDL3_Structs_Color_
+  name: RenderTextBlended
+  nameWithType: Font.RenderTextBlended
+  fullName: SharpSDL3.TTF.Font.RenderTextBlended
+- uid: SharpSDL3.TTF.Font.RenderGlyphBlended*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderGlyphBlended
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderGlyphBlended_System_Char_SharpSDL3_Structs_Color_
+  name: RenderGlyphBlended
+  nameWithType: Font.RenderGlyphBlended
+  fullName: SharpSDL3.TTF.Font.RenderGlyphBlended
+- uid: SharpSDL3.TTF.Font.RenderTextBlendedWrapped*
+  commentId: Overload:SharpSDL3.TTF.Font.RenderTextBlendedWrapped
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_RenderTextBlendedWrapped_System_String_SharpSDL3_Structs_Color_System_Int32_
+  name: RenderTextBlendedWrapped
+  nameWithType: Font.RenderTextBlendedWrapped
+  fullName: SharpSDL3.TTF.Font.RenderTextBlendedWrapped
+- uid: SharpSDL3.TTF.Font.GetFontKerningSize*
+  commentId: Overload:SharpSDL3.TTF.Font.GetFontKerningSize
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_GetFontKerningSize
+  name: GetFontKerningSize
+  nameWithType: Font.GetFontKerningSize
+  fullName: SharpSDL3.TTF.Font.GetFontKerningSize
+- uid: SharpSDL3.TTF.Font.Close*
+  commentId: Overload:SharpSDL3.TTF.Font.Close
+  href: SharpSDL3.TTF.Font.html#SharpSDL3_TTF_Font_Close
+  name: Close
+  nameWithType: Font.Close
+  fullName: SharpSDL3.TTF.Font.Close

@@ -1,0 +1,62 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlClipboardDataCallback
+  commentId: T:SharpSDL3.Delegates.SdlClipboardDataCallback
+  id: Delegates.SdlClipboardDataCallback
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlClipboardDataCallback
+  nameWithType: Delegates.SdlClipboardDataCallback
+  fullName: SharpSDL3.Delegates.SdlClipboardDataCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlClipboardDataCallback
+    path: Delegates.cs
+    startLine: 35
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate nint Delegates.SdlClipboardDataCallback(nint userdata, nint mimeType, nint size)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: mimeType
+      type: System.IntPtr
+    - id: size
+      type: System.IntPtr
+    return:
+      type: System.IntPtr
+    content.vb: Public Delegate Function Delegates.SdlClipboardDataCallback(userdata As IntPtr, mimeType As IntPtr, size As IntPtr) As IntPtr
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.LogPriority
+  commentId: T:SharpSDL3.Enums.LogPriority
+  id: LogPriority
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.LogPriority.Count
+  - SharpSDL3.Enums.LogPriority.Critical
+  - SharpSDL3.Enums.LogPriority.Debug
+  - SharpSDL3.Enums.LogPriority.Error
+  - SharpSDL3.Enums.LogPriority.Info
+  - SharpSDL3.Enums.LogPriority.Invalid
+  - SharpSDL3.Enums.LogPriority.Trace
+  - SharpSDL3.Enums.LogPriority.Verbose
+  - SharpSDL3.Enums.LogPriority.Warn
+  langs:
+  - csharp
+  - vb
+  name: LogPriority
+  nameWithType: LogPriority
+  fullName: SharpSDL3.Enums.LogPriority
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LogPriority
+    path: Enums/LogPriority.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum LogPriority
+    content.vb: Public Enum LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Invalid
+  commentId: F:SharpSDL3.Enums.LogPriority.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: LogPriority.Invalid
+  fullName: SharpSDL3.Enums.LogPriority.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/LogPriority.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Trace
+  commentId: F:SharpSDL3.Enums.LogPriority.Trace
+  id: Trace
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Trace
+  nameWithType: LogPriority.Trace
+  fullName: SharpSDL3.Enums.LogPriority.Trace
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Trace
+    path: Enums/LogPriority.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Trace = 1
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Verbose
+  commentId: F:SharpSDL3.Enums.LogPriority.Verbose
+  id: Verbose
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Verbose
+  nameWithType: LogPriority.Verbose
+  fullName: SharpSDL3.Enums.LogPriority.Verbose
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Verbose
+    path: Enums/LogPriority.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Verbose = 2
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Debug
+  commentId: F:SharpSDL3.Enums.LogPriority.Debug
+  id: Debug
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Debug
+  nameWithType: LogPriority.Debug
+  fullName: SharpSDL3.Enums.LogPriority.Debug
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Debug
+    path: Enums/LogPriority.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Debug = 3
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Info
+  commentId: F:SharpSDL3.Enums.LogPriority.Info
+  id: Info
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Info
+  nameWithType: LogPriority.Info
+  fullName: SharpSDL3.Enums.LogPriority.Info
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Info
+    path: Enums/LogPriority.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Info = 4
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Warn
+  commentId: F:SharpSDL3.Enums.LogPriority.Warn
+  id: Warn
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Warn
+  nameWithType: LogPriority.Warn
+  fullName: SharpSDL3.Enums.LogPriority.Warn
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Warn
+    path: Enums/LogPriority.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Warn = 5
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Error
+  commentId: F:SharpSDL3.Enums.LogPriority.Error
+  id: Error
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: LogPriority.Error
+  fullName: SharpSDL3.Enums.LogPriority.Error
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Error
+    path: Enums/LogPriority.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Error = 6
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Critical
+  commentId: F:SharpSDL3.Enums.LogPriority.Critical
+  id: Critical
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Critical
+  nameWithType: LogPriority.Critical
+  fullName: SharpSDL3.Enums.LogPriority.Critical
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Critical
+    path: Enums/LogPriority.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Critical = 7
+    return:
+      type: SharpSDL3.Enums.LogPriority
+- uid: SharpSDL3.Enums.LogPriority.Count
+  commentId: F:SharpSDL3.Enums.LogPriority.Count
+  id: Count
+  parent: SharpSDL3.Enums.LogPriority
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: LogPriority.Count
+  fullName: SharpSDL3.Enums.LogPriority.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogPriority.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/LogPriority.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 8
+    return:
+      type: SharpSDL3.Enums.LogPriority
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.LogPriority
+  commentId: T:SharpSDL3.Enums.LogPriority
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.LogPriority.html
+  name: LogPriority
+  nameWithType: LogPriority
+  fullName: SharpSDL3.Enums.LogPriority

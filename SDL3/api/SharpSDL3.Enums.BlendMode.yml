@@ -1,0 +1,274 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.BlendMode
+  commentId: T:SharpSDL3.Enums.BlendMode
+  id: BlendMode
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.BlendMode.Add
+  - SharpSDL3.Enums.BlendMode.AddPremultiplied
+  - SharpSDL3.Enums.BlendMode.Blend
+  - SharpSDL3.Enums.BlendMode.BlendPremultiplied
+  - SharpSDL3.Enums.BlendMode.Invalid
+  - SharpSDL3.Enums.BlendMode.Mod
+  - SharpSDL3.Enums.BlendMode.Mul
+  - SharpSDL3.Enums.BlendMode.None
+  langs:
+  - csharp
+  - vb
+  name: BlendMode
+  nameWithType: BlendMode
+  fullName: SharpSDL3.Enums.BlendMode
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BlendMode
+    path: Enums/BlendMode.cs
+    startLine: 1
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: 'public enum BlendMode : uint'
+    content.vb: Public Enum BlendMode As UInteger
+- uid: SharpSDL3.Enums.BlendMode.None
+  commentId: F:SharpSDL3.Enums.BlendMode.None
+  id: None
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: BlendMode.None
+  fullName: SharpSDL3.Enums.BlendMode.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/BlendMode.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.Blend
+  commentId: F:SharpSDL3.Enums.BlendMode.Blend
+  id: Blend
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: Blend
+  nameWithType: BlendMode.Blend
+  fullName: SharpSDL3.Enums.BlendMode.Blend
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Blend
+    path: Enums/BlendMode.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Blend = 1
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.BlendPremultiplied
+  commentId: F:SharpSDL3.Enums.BlendMode.BlendPremultiplied
+  id: BlendPremultiplied
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: BlendPremultiplied
+  nameWithType: BlendMode.BlendPremultiplied
+  fullName: SharpSDL3.Enums.BlendMode.BlendPremultiplied
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BlendPremultiplied
+    path: Enums/BlendMode.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: BlendPremultiplied = 16
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.Add
+  commentId: F:SharpSDL3.Enums.BlendMode.Add
+  id: Add
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: Add
+  nameWithType: BlendMode.Add
+  fullName: SharpSDL3.Enums.BlendMode.Add
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Add
+    path: Enums/BlendMode.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Add = 2
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.AddPremultiplied
+  commentId: F:SharpSDL3.Enums.BlendMode.AddPremultiplied
+  id: AddPremultiplied
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: AddPremultiplied
+  nameWithType: BlendMode.AddPremultiplied
+  fullName: SharpSDL3.Enums.BlendMode.AddPremultiplied
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AddPremultiplied
+    path: Enums/BlendMode.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AddPremultiplied = 32
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.Mod
+  commentId: F:SharpSDL3.Enums.BlendMode.Mod
+  id: Mod
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: Mod
+  nameWithType: BlendMode.Mod
+  fullName: SharpSDL3.Enums.BlendMode.Mod
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mod
+    path: Enums/BlendMode.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mod = 4
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.Mul
+  commentId: F:SharpSDL3.Enums.BlendMode.Mul
+  id: Mul
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: Mul
+  nameWithType: BlendMode.Mul
+  fullName: SharpSDL3.Enums.BlendMode.Mul
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mul
+    path: Enums/BlendMode.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mul = 8
+    return:
+      type: SharpSDL3.Enums.BlendMode
+- uid: SharpSDL3.Enums.BlendMode.Invalid
+  commentId: F:SharpSDL3.Enums.BlendMode.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.BlendMode
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: BlendMode.Invalid
+  fullName: SharpSDL3.Enums.BlendMode.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/BlendMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/BlendMode.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = 2147483647
+    return:
+      type: SharpSDL3.Enums.BlendMode
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.BlendMode
+  commentId: T:SharpSDL3.Enums.BlendMode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.BlendMode.html
+  name: BlendMode
+  nameWithType: BlendMode
+  fullName: SharpSDL3.Enums.BlendMode

@@ -1,0 +1,989 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.Size
+  commentId: T:SharpSDL3.Structs.Size
+  id: Size
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.Size.#ctor(System.Int32,System.Int32)
+  - SharpSDL3.Structs.Size.Equals(SharpSDL3.Structs.Size)
+  - SharpSDL3.Structs.Size.Equals(System.Object)
+  - SharpSDL3.Structs.Size.GetHashCode
+  - SharpSDL3.Structs.Size.Height
+  - SharpSDL3.Structs.Size.ToString
+  - SharpSDL3.Structs.Size.Width
+  - SharpSDL3.Structs.Size.op_Equality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  - SharpSDL3.Structs.Size.op_Explicit(SharpSDL3.Structs.FSize)~SharpSDL3.Structs.Size
+  - SharpSDL3.Structs.Size.op_Implicit(System.ValueTuple{System.Int32,System.Int32})~SharpSDL3.Structs.Size
+  - SharpSDL3.Structs.Size.op_Inequality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  langs:
+  - csharp
+  - vb
+  name: Size
+  nameWithType: Size
+  fullName: SharpSDL3.Structs.Size
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Size
+    path: Structs/Size.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: 'public struct Size : IEquatable<Size>'
+    content.vb: Public Structure Size Implements IEquatable(Of Size)
+  implements:
+  - System.IEquatable{SharpSDL3.Structs.Size}
+  inheritedMembers:
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.Size.#ctor(System.Int32,System.Int32)
+  commentId: M:SharpSDL3.Structs.Size.#ctor(System.Int32,System.Int32)
+  id: '#ctor(System.Int32,System.Int32)'
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: Size(int, int)
+  nameWithType: Size.Size(int, int)
+  fullName: SharpSDL3.Structs.Size.Size(int, int)
+  type: Constructor
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: .ctor
+    path: Structs/Size.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public Size(int width, int height)
+    parameters:
+    - id: width
+      type: System.Int32
+    - id: height
+      type: System.Int32
+    content.vb: Public Sub New(width As Integer, height As Integer)
+  overload: SharpSDL3.Structs.Size.#ctor*
+  nameWithType.vb: Size.New(Integer, Integer)
+  fullName.vb: SharpSDL3.Structs.Size.New(Integer, Integer)
+  name.vb: New(Integer, Integer)
+- uid: SharpSDL3.Structs.Size.Width
+  commentId: P:SharpSDL3.Structs.Size.Width
+  id: Width
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: Width
+  nameWithType: Size.Width
+  fullName: SharpSDL3.Structs.Size.Width
+  type: Property
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Width
+    path: Structs/Size.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int Width { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Width As Integer
+  overload: SharpSDL3.Structs.Size.Width*
+- uid: SharpSDL3.Structs.Size.Height
+  commentId: P:SharpSDL3.Structs.Size.Height
+  id: Height
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: Height
+  nameWithType: Size.Height
+  fullName: SharpSDL3.Structs.Size.Height
+  type: Property
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Height
+    path: Structs/Size.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public int Height { readonly get; set; }
+    parameters: []
+    return:
+      type: System.Int32
+    content.vb: Public Property Height As Integer
+  overload: SharpSDL3.Structs.Size.Height*
+- uid: SharpSDL3.Structs.Size.Equals(System.Object)
+  commentId: M:SharpSDL3.Structs.Size.Equals(System.Object)
+  id: Equals(System.Object)
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: Equals(object?)
+  nameWithType: Size.Equals(object?)
+  fullName: SharpSDL3.Structs.Size.Equals(object?)
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Equals
+    path: Structs/Size.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Indicates whether this instance and a specified object are equal.
+  example: []
+  syntax:
+    content: public override readonly bool Equals(object? obj)
+    parameters:
+    - id: obj
+      type: System.Object
+      description: The object to compare with the current instance.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if <code class="paramref">obj</code> and this instance are the same type and represent the same value; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Overrides Function Equals(obj As Object) As Boolean
+  overridden: System.ValueType.Equals(System.Object)
+  overload: SharpSDL3.Structs.Size.Equals*
+  nameWithType.vb: Size.Equals(Object)
+  fullName.vb: SharpSDL3.Structs.Size.Equals(Object)
+  name.vb: Equals(Object)
+- uid: SharpSDL3.Structs.Size.Equals(SharpSDL3.Structs.Size)
+  commentId: M:SharpSDL3.Structs.Size.Equals(SharpSDL3.Structs.Size)
+  id: Equals(SharpSDL3.Structs.Size)
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: Equals(Size)
+  nameWithType: Size.Equals(Size)
+  fullName: SharpSDL3.Structs.Size.Equals(SharpSDL3.Structs.Size)
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Equals
+    path: Structs/Size.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Indicates whether the current object is equal to another object of the same type.
+  example: []
+  syntax:
+    content: public readonly bool Equals(Size other)
+    parameters:
+    - id: other
+      type: SharpSDL3.Structs.Size
+      description: An object to compare with this object.
+    return:
+      type: System.Boolean
+      description: <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">true</a> if the current object is equal to the <code class="paramref">other</code> parameter; otherwise, <a href="https://learn.microsoft.com/dotnet/csharp/language-reference/builtin-types/bool">false</a>.
+    content.vb: Public Function Equals(other As Size) As Boolean
+  overload: SharpSDL3.Structs.Size.Equals*
+  implements:
+  - System.IEquatable{SharpSDL3.Structs.Size}.Equals(SharpSDL3.Structs.Size)
+- uid: SharpSDL3.Structs.Size.GetHashCode
+  commentId: M:SharpSDL3.Structs.Size.GetHashCode
+  id: GetHashCode
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: GetHashCode()
+  nameWithType: Size.GetHashCode()
+  fullName: SharpSDL3.Structs.Size.GetHashCode()
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetHashCode
+    path: Structs/Size.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Returns the hash code for this instance.
+  example: []
+  syntax:
+    content: public override readonly int GetHashCode()
+    return:
+      type: System.Int32
+      description: A 32-bit signed integer that is the hash code for this instance.
+    content.vb: Public Overrides Function GetHashCode() As Integer
+  overridden: System.ValueType.GetHashCode
+  overload: SharpSDL3.Structs.Size.GetHashCode*
+- uid: SharpSDL3.Structs.Size.ToString
+  commentId: M:SharpSDL3.Structs.Size.ToString
+  id: ToString
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: ToString()
+  nameWithType: Size.ToString()
+  fullName: SharpSDL3.Structs.Size.ToString()
+  type: Method
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ToString
+    path: Structs/Size.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  summary: Returns the fully qualified type name of this instance.
+  example: []
+  syntax:
+    content: public override readonly string ToString()
+    return:
+      type: System.String
+      description: The fully qualified type name.
+    content.vb: Public Overrides Function ToString() As String
+  overridden: System.ValueType.ToString
+  overload: SharpSDL3.Structs.Size.ToString*
+- uid: SharpSDL3.Structs.Size.op_Equality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  commentId: M:SharpSDL3.Structs.Size.op_Equality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  id: op_Equality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: operator ==(Size, Size)
+  nameWithType: Size.operator ==(Size, Size)
+  fullName: SharpSDL3.Structs.Size.operator ==(SharpSDL3.Structs.Size, SharpSDL3.Structs.Size)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Equality
+    path: Structs/Size.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator ==(Size left, Size right)
+    parameters:
+    - id: left
+      type: SharpSDL3.Structs.Size
+    - id: right
+      type: SharpSDL3.Structs.Size
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator =(left As Size, right As Size) As Boolean
+  overload: SharpSDL3.Structs.Size.op_Equality*
+  nameWithType.vb: Size.=(Size, Size)
+  fullName.vb: SharpSDL3.Structs.Size.=(SharpSDL3.Structs.Size, SharpSDL3.Structs.Size)
+  name.vb: =(Size, Size)
+- uid: SharpSDL3.Structs.Size.op_Inequality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  commentId: M:SharpSDL3.Structs.Size.op_Inequality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  id: op_Inequality(SharpSDL3.Structs.Size,SharpSDL3.Structs.Size)
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: operator !=(Size, Size)
+  nameWithType: Size.operator !=(Size, Size)
+  fullName: SharpSDL3.Structs.Size.operator !=(SharpSDL3.Structs.Size, SharpSDL3.Structs.Size)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Inequality
+    path: Structs/Size.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static bool operator !=(Size left, Size right)
+    parameters:
+    - id: left
+      type: SharpSDL3.Structs.Size
+    - id: right
+      type: SharpSDL3.Structs.Size
+    return:
+      type: System.Boolean
+    content.vb: Public Shared Operator <>(left As Size, right As Size) As Boolean
+  overload: SharpSDL3.Structs.Size.op_Inequality*
+  nameWithType.vb: Size.<>(Size, Size)
+  fullName.vb: SharpSDL3.Structs.Size.<>(SharpSDL3.Structs.Size, SharpSDL3.Structs.Size)
+  name.vb: <>(Size, Size)
+- uid: SharpSDL3.Structs.Size.op_Implicit(System.ValueTuple{System.Int32,System.Int32})~SharpSDL3.Structs.Size
+  commentId: M:SharpSDL3.Structs.Size.op_Implicit(System.ValueTuple{System.Int32,System.Int32})~SharpSDL3.Structs.Size
+  id: op_Implicit(System.ValueTuple{System.Int32,System.Int32})~SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: implicit operator Size((int width, int height))
+  nameWithType: Size.implicit operator Size((int width, int height))
+  fullName: SharpSDL3.Structs.Size.implicit operator SharpSDL3.Structs.Size((int width, int height))
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Implicit
+    path: Structs/Size.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static implicit operator Size((int width, int height) tuple)
+    parameters:
+    - id: tuple
+      type: System.ValueTuple{System.Int32,System.Int32}
+    return:
+      type: SharpSDL3.Structs.Size
+    content.vb: Public Shared Widening Operator CType(tuple As (width As Integer, height As Integer)) As Size
+  overload: SharpSDL3.Structs.Size.op_Implicit*
+  nameWithType.vb: Size.CType((width As Integer, height As Integer))
+  fullName.vb: SharpSDL3.Structs.Size.CType((width As Integer, height As Integer))
+  name.vb: CType((width As Integer, height As Integer))
+- uid: SharpSDL3.Structs.Size.op_Explicit(SharpSDL3.Structs.FSize)~SharpSDL3.Structs.Size
+  commentId: M:SharpSDL3.Structs.Size.op_Explicit(SharpSDL3.Structs.FSize)~SharpSDL3.Structs.Size
+  id: op_Explicit(SharpSDL3.Structs.FSize)~SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs.Size
+  langs:
+  - csharp
+  - vb
+  name: explicit operator Size(FSize)
+  nameWithType: Size.explicit operator Size(FSize)
+  fullName: SharpSDL3.Structs.Size.explicit operator SharpSDL3.Structs.Size(SharpSDL3.Structs.FSize)
+  type: Operator
+  source:
+    remote:
+      path: SDL3/Structs/Size.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: op_Explicit
+    path: Structs/Size.cs
+    startLine: 35
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public static explicit operator Size(FSize sizeF)
+    parameters:
+    - id: sizeF
+      type: SharpSDL3.Structs.FSize
+    return:
+      type: SharpSDL3.Structs.Size
+    content.vb: Public Shared Narrowing Operator CType(sizeF As FSize) As Size
+  overload: SharpSDL3.Structs.Size.op_Explicit*
+  nameWithType.vb: Size.CType(FSize)
+  fullName.vb: SharpSDL3.Structs.Size.CType(SharpSDL3.Structs.FSize)
+  name.vb: CType(FSize)
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.IEquatable{SharpSDL3.Structs.Size}
+  commentId: T:System.IEquatable{SharpSDL3.Structs.Size}
+  parent: System
+  definition: System.IEquatable`1
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<Size>
+  nameWithType: IEquatable<Size>
+  fullName: System.IEquatable<SharpSDL3.Structs.Size>
+  nameWithType.vb: IEquatable(Of Size)
+  fullName.vb: System.IEquatable(Of SharpSDL3.Structs.Size)
+  name.vb: IEquatable(Of Size)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - uid: SharpSDL3.Structs.Size
+    name: Size
+    href: SharpSDL3.Structs.Size.html
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - uid: SharpSDL3.Structs.Size
+    name: Size
+    href: SharpSDL3.Structs.Size.html
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.IEquatable`1
+  commentId: T:System.IEquatable`1
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  name: IEquatable<T>
+  nameWithType: IEquatable<T>
+  fullName: System.IEquatable<T>
+  nameWithType.vb: IEquatable(Of T)
+  fullName.vb: System.IEquatable(Of T)
+  name.vb: IEquatable(Of T)
+  spec.csharp:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: <
+  - name: T
+  - name: '>'
+  spec.vb:
+  - uid: System.IEquatable`1
+    name: IEquatable
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1
+  - name: (
+  - name: Of
+  - name: " "
+  - name: T
+  - name: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: SharpSDL3.Structs.Size.#ctor*
+  commentId: Overload:SharpSDL3.Structs.Size.#ctor
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size__ctor_System_Int32_System_Int32_
+  name: Size
+  nameWithType: Size.Size
+  fullName: SharpSDL3.Structs.Size.Size
+  nameWithType.vb: Size.New
+  fullName.vb: SharpSDL3.Structs.Size.New
+  name.vb: New
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SharpSDL3.Structs.Size.Width*
+  commentId: Overload:SharpSDL3.Structs.Size.Width
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_Width
+  name: Width
+  nameWithType: Size.Width
+  fullName: SharpSDL3.Structs.Size.Width
+- uid: SharpSDL3.Structs.Size.Height*
+  commentId: Overload:SharpSDL3.Structs.Size.Height
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_Height
+  name: Height
+  nameWithType: Size.Height
+  fullName: SharpSDL3.Structs.Size.Height
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: SharpSDL3.Structs.Size.Equals*
+  commentId: Overload:SharpSDL3.Structs.Size.Equals
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_Equals_System_Object_
+  name: Equals
+  nameWithType: Size.Equals
+  fullName: SharpSDL3.Structs.Size.Equals
+- uid: System.Boolean
+  commentId: T:System.Boolean
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.boolean
+  name: bool
+  nameWithType: bool
+  fullName: bool
+  nameWithType.vb: Boolean
+  fullName.vb: Boolean
+  name.vb: Boolean
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.IEquatable{SharpSDL3.Structs.Size}.Equals(SharpSDL3.Structs.Size)
+  commentId: M:System.IEquatable{SharpSDL3.Structs.Size}.Equals(SharpSDL3.Structs.Size)
+  parent: System.IEquatable{SharpSDL3.Structs.Size}
+  definition: System.IEquatable`1.Equals(`0)
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(Size)
+  nameWithType: IEquatable<Size>.Equals(Size)
+  fullName: System.IEquatable<SharpSDL3.Structs.Size>.Equals(SharpSDL3.Structs.Size)
+  nameWithType.vb: IEquatable(Of Size).Equals(Size)
+  fullName.vb: System.IEquatable(Of SharpSDL3.Structs.Size).Equals(SharpSDL3.Structs.Size)
+  spec.csharp:
+  - uid: System.IEquatable{SharpSDL3.Structs.Size}.Equals(SharpSDL3.Structs.Size)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: SharpSDL3.Structs.Size
+    name: Size
+    href: SharpSDL3.Structs.Size.html
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable{SharpSDL3.Structs.Size}.Equals(SharpSDL3.Structs.Size)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - uid: SharpSDL3.Structs.Size
+    name: Size
+    href: SharpSDL3.Structs.Size.html
+  - name: )
+- uid: SharpSDL3.Structs.Size
+  commentId: T:SharpSDL3.Structs.Size
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.Size.html
+  name: Size
+  nameWithType: Size
+  fullName: SharpSDL3.Structs.Size
+- uid: System.IEquatable`1.Equals(`0)
+  commentId: M:System.IEquatable`1.Equals(`0)
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  name: Equals(T)
+  nameWithType: IEquatable<T>.Equals(T)
+  fullName: System.IEquatable<T>.Equals(T)
+  nameWithType.vb: IEquatable(Of T).Equals(T)
+  fullName.vb: System.IEquatable(Of T).Equals(T)
+  spec.csharp:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+  spec.vb:
+  - uid: System.IEquatable`1.Equals(`0)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.iequatable-1.equals
+  - name: (
+  - name: T
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: SharpSDL3.Structs.Size.GetHashCode*
+  commentId: Overload:SharpSDL3.Structs.Size.GetHashCode
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_GetHashCode
+  name: GetHashCode
+  nameWithType: Size.GetHashCode
+  fullName: SharpSDL3.Structs.Size.GetHashCode
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: SharpSDL3.Structs.Size.ToString*
+  commentId: Overload:SharpSDL3.Structs.Size.ToString
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_ToString
+  name: ToString
+  nameWithType: Size.ToString
+  fullName: SharpSDL3.Structs.Size.ToString
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: SharpSDL3.Structs.Size.op_Equality*
+  commentId: Overload:SharpSDL3.Structs.Size.op_Equality
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_op_Equality_SharpSDL3_Structs_Size_SharpSDL3_Structs_Size_
+  name: operator ==
+  nameWithType: Size.operator ==
+  fullName: SharpSDL3.Structs.Size.operator ==
+  nameWithType.vb: Size.=
+  fullName.vb: SharpSDL3.Structs.Size.=
+  name.vb: =
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.Size.op_Equality*
+    name: ==
+    href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_op_Equality_SharpSDL3_Structs_Size_SharpSDL3_Structs_Size_
+- uid: SharpSDL3.Structs.Size.op_Inequality*
+  commentId: Overload:SharpSDL3.Structs.Size.op_Inequality
+  href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_op_Inequality_SharpSDL3_Structs_Size_SharpSDL3_Structs_Size_
+  name: operator !=
+  nameWithType: Size.operator !=
+  fullName: SharpSDL3.Structs.Size.operator !=
+  nameWithType.vb: Size.<>
+  fullName.vb: SharpSDL3.Structs.Size.<>
+  name.vb: <>
+  spec.csharp:
+  - name: operator
+  - name: " "
+  - uid: SharpSDL3.Structs.Size.op_Inequality*
+    name: '!='
+    href: SharpSDL3.Structs.Size.html#SharpSDL3_Structs_Size_op_Inequality_SharpSDL3_Structs_Size_SharpSDL3_Structs_Size_
+- uid: SharpSDL3.Structs.Size.op_Implicit*
+  commentId: Overload:SharpSDL3.Structs.Size.op_Implicit
+  name: implicit operator
+  nameWithType: Size.implicit operator
+  fullName: SharpSDL3.Structs.Size.implicit operator
+  nameWithType.vb: Size.CType
+  fullName.vb: SharpSDL3.Structs.Size.CType
+  name.vb: CType
+  spec.csharp:
+  - name: implicit
+  - name: " "
+  - name: operator
+- uid: System.ValueTuple{System.Int32,System.Int32}
+  commentId: T:System.ValueTuple{System.Int32,System.Int32}
+  parent: System
+  definition: System.ValueTuple`2
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: (int width, int height)
+  nameWithType: (int width, int height)
+  fullName: (int width, int height)
+  nameWithType.vb: (width As Integer, height As Integer)
+  fullName.vb: (width As Integer, height As Integer)
+  name.vb: (width As Integer, height As Integer)
+  spec.csharp:
+  - name: (
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.width
+    name: width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width
+  - name: ','
+  - name: " "
+  - uid: System.Int32
+    name: int
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.height
+    name: height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height
+  - name: )
+  spec.vb:
+  - name: (
+  - uid: System.ValueTuple{System.Int32,System.Int32}.width
+    name: width
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.width
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: ','
+  - name: " "
+  - uid: System.ValueTuple{System.Int32,System.Int32}.height
+    name: height
+    href: https://learn.microsoft.com/dotnet/api/system.valuetuple-system.int32,system.int32-.height
+  - name: " "
+  - name: As
+  - name: " "
+  - uid: System.Int32
+    name: Integer
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.int32
+  - name: )
+- uid: System.ValueTuple`2
+  commentId: T:System.ValueTuple`2
+  name: (T1, T2)
+  nameWithType: (T1, T2)
+  fullName: (T1, T2)
+  spec.csharp:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+  spec.vb:
+  - name: (
+  - name: T1
+  - name: ','
+  - name: " "
+  - name: T2
+  - name: )
+- uid: SharpSDL3.Structs.Size.op_Explicit*
+  commentId: Overload:SharpSDL3.Structs.Size.op_Explicit
+  name: explicit operator
+  nameWithType: Size.explicit operator
+  fullName: SharpSDL3.Structs.Size.explicit operator
+  nameWithType.vb: Size.CType
+  fullName.vb: SharpSDL3.Structs.Size.CType
+  name.vb: CType
+  spec.csharp:
+  - name: explicit
+  - name: " "
+  - name: operator
+- uid: SharpSDL3.Structs.FSize
+  commentId: T:SharpSDL3.Structs.FSize
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.FSize.html
+  name: FSize
+  nameWithType: FSize
+  fullName: SharpSDL3.Structs.FSize

@@ -1,0 +1,203 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.TrayEntryFlags
+  commentId: T:SharpSDL3.Enums.TrayEntryFlags
+  id: TrayEntryFlags
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.TrayEntryFlags.Button
+  - SharpSDL3.Enums.TrayEntryFlags.Checkbox
+  - SharpSDL3.Enums.TrayEntryFlags.Checked
+  - SharpSDL3.Enums.TrayEntryFlags.Disabled
+  - SharpSDL3.Enums.TrayEntryFlags.Submenu
+  langs:
+  - csharp
+  - vb
+  name: TrayEntryFlags
+  nameWithType: TrayEntryFlags
+  fullName: SharpSDL3.Enums.TrayEntryFlags
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TrayEntryFlags
+    path: Enums/TrayEntryFlags.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum TrayEntryFlags : uint
+    content.vb: >-
+      <Flags>
+
+      Public Enum TrayEntryFlags As UInteger
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.TrayEntryFlags.Button
+  commentId: F:SharpSDL3.Enums.TrayEntryFlags.Button
+  id: Button
+  parent: SharpSDL3.Enums.TrayEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Button
+  nameWithType: TrayEntryFlags.Button
+  fullName: SharpSDL3.Enums.TrayEntryFlags.Button
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Button
+    path: Enums/TrayEntryFlags.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Button = 1
+    return:
+      type: SharpSDL3.Enums.TrayEntryFlags
+- uid: SharpSDL3.Enums.TrayEntryFlags.Checkbox
+  commentId: F:SharpSDL3.Enums.TrayEntryFlags.Checkbox
+  id: Checkbox
+  parent: SharpSDL3.Enums.TrayEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Checkbox
+  nameWithType: TrayEntryFlags.Checkbox
+  fullName: SharpSDL3.Enums.TrayEntryFlags.Checkbox
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Checkbox
+    path: Enums/TrayEntryFlags.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Checkbox = 2
+    return:
+      type: SharpSDL3.Enums.TrayEntryFlags
+- uid: SharpSDL3.Enums.TrayEntryFlags.Submenu
+  commentId: F:SharpSDL3.Enums.TrayEntryFlags.Submenu
+  id: Submenu
+  parent: SharpSDL3.Enums.TrayEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Submenu
+  nameWithType: TrayEntryFlags.Submenu
+  fullName: SharpSDL3.Enums.TrayEntryFlags.Submenu
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Submenu
+    path: Enums/TrayEntryFlags.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Submenu = 4
+    return:
+      type: SharpSDL3.Enums.TrayEntryFlags
+- uid: SharpSDL3.Enums.TrayEntryFlags.Disabled
+  commentId: F:SharpSDL3.Enums.TrayEntryFlags.Disabled
+  id: Disabled
+  parent: SharpSDL3.Enums.TrayEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Disabled
+  nameWithType: TrayEntryFlags.Disabled
+  fullName: SharpSDL3.Enums.TrayEntryFlags.Disabled
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Disabled
+    path: Enums/TrayEntryFlags.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Disabled = 2147483648
+    return:
+      type: SharpSDL3.Enums.TrayEntryFlags
+- uid: SharpSDL3.Enums.TrayEntryFlags.Checked
+  commentId: F:SharpSDL3.Enums.TrayEntryFlags.Checked
+  id: Checked
+  parent: SharpSDL3.Enums.TrayEntryFlags
+  langs:
+  - csharp
+  - vb
+  name: Checked
+  nameWithType: TrayEntryFlags.Checked
+  fullName: SharpSDL3.Enums.TrayEntryFlags.Checked
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TrayEntryFlags.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Checked
+    path: Enums/TrayEntryFlags.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Checked = 1073741824
+    return:
+      type: SharpSDL3.Enums.TrayEntryFlags
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.TrayEntryFlags
+  commentId: T:SharpSDL3.Enums.TrayEntryFlags
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.TrayEntryFlags.html
+  name: TrayEntryFlags
+  nameWithType: TrayEntryFlags
+  fullName: SharpSDL3.Enums.TrayEntryFlags

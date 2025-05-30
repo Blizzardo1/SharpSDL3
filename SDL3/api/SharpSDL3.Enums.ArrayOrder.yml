@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.ArrayOrder
+  commentId: T:SharpSDL3.Enums.ArrayOrder
+  id: ArrayOrder
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.ArrayOrder.Abgr
+  - SharpSDL3.Enums.ArrayOrder.Argb
+  - SharpSDL3.Enums.ArrayOrder.Bgr
+  - SharpSDL3.Enums.ArrayOrder.Bgra
+  - SharpSDL3.Enums.ArrayOrder.None
+  - SharpSDL3.Enums.ArrayOrder.Rgb
+  - SharpSDL3.Enums.ArrayOrder.Rgba
+  langs:
+  - csharp
+  - vb
+  name: ArrayOrder
+  nameWithType: ArrayOrder
+  fullName: SharpSDL3.Enums.ArrayOrder
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ArrayOrder
+    path: Enums/ArrayOrder.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum ArrayOrder
+    content.vb: Public Enum ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.None
+  commentId: F:SharpSDL3.Enums.ArrayOrder.None
+  id: None
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: ArrayOrder.None
+  fullName: SharpSDL3.Enums.ArrayOrder.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/ArrayOrder.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Rgb
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Rgb
+  id: Rgb
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Rgb
+  nameWithType: ArrayOrder.Rgb
+  fullName: SharpSDL3.Enums.ArrayOrder.Rgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rgb
+    path: Enums/ArrayOrder.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Rgb = 1
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Rgba
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Rgba
+  id: Rgba
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Rgba
+  nameWithType: ArrayOrder.Rgba
+  fullName: SharpSDL3.Enums.ArrayOrder.Rgba
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rgba
+    path: Enums/ArrayOrder.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Rgba = 2
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Argb
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Argb
+  id: Argb
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Argb
+  nameWithType: ArrayOrder.Argb
+  fullName: SharpSDL3.Enums.ArrayOrder.Argb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Argb
+    path: Enums/ArrayOrder.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Argb = 3
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Bgr
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Bgr
+  id: Bgr
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Bgr
+  nameWithType: ArrayOrder.Bgr
+  fullName: SharpSDL3.Enums.ArrayOrder.Bgr
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bgr
+    path: Enums/ArrayOrder.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bgr = 4
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Bgra
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Bgra
+  id: Bgra
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Bgra
+  nameWithType: ArrayOrder.Bgra
+  fullName: SharpSDL3.Enums.ArrayOrder.Bgra
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bgra
+    path: Enums/ArrayOrder.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bgra = 5
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+- uid: SharpSDL3.Enums.ArrayOrder.Abgr
+  commentId: F:SharpSDL3.Enums.ArrayOrder.Abgr
+  id: Abgr
+  parent: SharpSDL3.Enums.ArrayOrder
+  langs:
+  - csharp
+  - vb
+  name: Abgr
+  nameWithType: ArrayOrder.Abgr
+  fullName: SharpSDL3.Enums.ArrayOrder.Abgr
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ArrayOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Abgr
+    path: Enums/ArrayOrder.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Abgr = 6
+    return:
+      type: SharpSDL3.Enums.ArrayOrder
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.ArrayOrder
+  commentId: T:SharpSDL3.Enums.ArrayOrder
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ArrayOrder.html
+  name: ArrayOrder
+  nameWithType: ArrayOrder
+  fullName: SharpSDL3.Enums.ArrayOrder

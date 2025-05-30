@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.ColorRange
+  commentId: T:SharpSDL3.Enums.ColorRange
+  id: ColorRange
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.ColorRange.Full
+  - SharpSDL3.Enums.ColorRange.Limited
+  - SharpSDL3.Enums.ColorRange.Unknown
+  langs:
+  - csharp
+  - vb
+  name: ColorRange
+  nameWithType: ColorRange
+  fullName: SharpSDL3.Enums.ColorRange
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/ColorRange.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ColorRange
+    path: Enums/ColorRange.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum ColorRange
+    content.vb: Public Enum ColorRange
+- uid: SharpSDL3.Enums.ColorRange.Unknown
+  commentId: F:SharpSDL3.Enums.ColorRange.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.ColorRange
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: ColorRange.Unknown
+  fullName: SharpSDL3.Enums.ColorRange.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ColorRange.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/ColorRange.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.ColorRange
+- uid: SharpSDL3.Enums.ColorRange.Limited
+  commentId: F:SharpSDL3.Enums.ColorRange.Limited
+  id: Limited
+  parent: SharpSDL3.Enums.ColorRange
+  langs:
+  - csharp
+  - vb
+  name: Limited
+  nameWithType: ColorRange.Limited
+  fullName: SharpSDL3.Enums.ColorRange.Limited
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ColorRange.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Limited
+    path: Enums/ColorRange.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Limited = 1
+    return:
+      type: SharpSDL3.Enums.ColorRange
+- uid: SharpSDL3.Enums.ColorRange.Full
+  commentId: F:SharpSDL3.Enums.ColorRange.Full
+  id: Full
+  parent: SharpSDL3.Enums.ColorRange
+  langs:
+  - csharp
+  - vb
+  name: Full
+  nameWithType: ColorRange.Full
+  fullName: SharpSDL3.Enums.ColorRange.Full
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/ColorRange.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Full
+    path: Enums/ColorRange.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Full = 2
+    return:
+      type: SharpSDL3.Enums.ColorRange
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.ColorRange
+  commentId: T:SharpSDL3.Enums.ColorRange
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.ColorRange.html
+  name: ColorRange
+  nameWithType: ColorRange
+  fullName: SharpSDL3.Enums.ColorRange

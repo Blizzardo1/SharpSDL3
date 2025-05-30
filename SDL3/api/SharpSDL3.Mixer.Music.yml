@@ -1,0 +1,540 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer.Music
+  commentId: T:SharpSDL3.Mixer.Music
+  id: Music
+  parent: SharpSDL3.Mixer
+  children:
+  - SharpSDL3.Mixer.Music.Context
+  - SharpSDL3.Mixer.Music.FadeStep
+  - SharpSDL3.Mixer.Music.FadeSteps
+  - SharpSDL3.Mixer.Music.Fading
+  - SharpSDL3.Mixer.Music.Filename
+  - SharpSDL3.Mixer.Music.Interface
+  - SharpSDL3.Mixer.Music.Playing
+  langs:
+  - csharp
+  - vb
+  name: Music
+  nameWithType: Music
+  fullName: SharpSDL3.Mixer.Music
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Music
+    path: Mixer/Music.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public struct Music
+    content.vb: Public Structure Music
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Mixer.Music.Interface
+  commentId: F:SharpSDL3.Mixer.Music.Interface
+  id: Interface
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: Interface
+  nameWithType: Music.Interface
+  fullName: SharpSDL3.Mixer.Music.Interface
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Interface
+    path: Mixer/Music.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public nint Interface
+    return:
+      type: System.IntPtr
+    content.vb: Public [Interface] As IntPtr
+- uid: SharpSDL3.Mixer.Music.Context
+  commentId: F:SharpSDL3.Mixer.Music.Context
+  id: Context
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: Context
+  nameWithType: Music.Context
+  fullName: SharpSDL3.Mixer.Music.Context
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Context
+    path: Mixer/Music.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public nint Context
+    return:
+      type: System.IntPtr
+    content.vb: Public Context As IntPtr
+- uid: SharpSDL3.Mixer.Music.Playing
+  commentId: F:SharpSDL3.Mixer.Music.Playing
+  id: Playing
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: Playing
+  nameWithType: Music.Playing
+  fullName: SharpSDL3.Mixer.Music.Playing
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Playing
+    path: Mixer/Music.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public SdlBool Playing
+    return:
+      type: SharpSDL3.Structs.SdlBool
+    content.vb: Public Playing As SdlBool
+- uid: SharpSDL3.Mixer.Music.Fading
+  commentId: F:SharpSDL3.Mixer.Music.Fading
+  id: Fading
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: Fading
+  nameWithType: Music.Fading
+  fullName: SharpSDL3.Mixer.Music.Fading
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Fading
+    path: Mixer/Music.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public Fading Fading
+    return:
+      type: SharpSDL3.Mixer.Fading
+    content.vb: Public Fading As Fading
+- uid: SharpSDL3.Mixer.Music.FadeStep
+  commentId: F:SharpSDL3.Mixer.Music.FadeStep
+  id: FadeStep
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: FadeStep
+  nameWithType: Music.FadeStep
+  fullName: SharpSDL3.Mixer.Music.FadeStep
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeStep
+    path: Mixer/Music.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public int FadeStep
+    return:
+      type: System.Int32
+    content.vb: Public FadeStep As Integer
+- uid: SharpSDL3.Mixer.Music.FadeSteps
+  commentId: F:SharpSDL3.Mixer.Music.FadeSteps
+  id: FadeSteps
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: FadeSteps
+  nameWithType: Music.FadeSteps
+  fullName: SharpSDL3.Mixer.Music.FadeSteps
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeSteps
+    path: Mixer/Music.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public int FadeSteps
+    return:
+      type: System.Int32
+    content.vb: Public FadeSteps As Integer
+- uid: SharpSDL3.Mixer.Music.Filename
+  commentId: F:SharpSDL3.Mixer.Music.Filename
+  id: Filename
+  parent: SharpSDL3.Mixer.Music
+  langs:
+  - csharp
+  - vb
+  name: Filename
+  nameWithType: Music.Filename
+  fullName: SharpSDL3.Mixer.Music.Filename
+  type: Field
+  source:
+    remote:
+      path: SDL3/Mixer/Music.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Filename
+    path: Mixer/Music.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public string Filename
+    return:
+      type: System.String
+    content.vb: Public Filename As String
+references:
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.Structs.SdlBool
+  commentId: T:SharpSDL3.Structs.SdlBool
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.SdlBool.html
+  name: SdlBool
+  nameWithType: SdlBool
+  fullName: SharpSDL3.Structs.SdlBool
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: SharpSDL3.Mixer.Fading
+  commentId: T:SharpSDL3.Mixer.Fading
+  parent: SharpSDL3.Mixer
+  href: SharpSDL3.Mixer.Fading.html
+  name: Fading
+  nameWithType: Fading
+  fullName: SharpSDL3.Mixer.Fading
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String

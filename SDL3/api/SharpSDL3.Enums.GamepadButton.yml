@@ -1,0 +1,814 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GamepadButton
+  commentId: T:SharpSDL3.Enums.GamepadButton
+  id: GamepadButton
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GamepadButton.Back
+  - SharpSDL3.Enums.GamepadButton.Count
+  - SharpSDL3.Enums.GamepadButton.DpadDown
+  - SharpSDL3.Enums.GamepadButton.DpadLeft
+  - SharpSDL3.Enums.GamepadButton.DpadRight
+  - SharpSDL3.Enums.GamepadButton.DpadUp
+  - SharpSDL3.Enums.GamepadButton.East
+  - SharpSDL3.Enums.GamepadButton.Guide
+  - SharpSDL3.Enums.GamepadButton.Invalid
+  - SharpSDL3.Enums.GamepadButton.LeftPaddle1
+  - SharpSDL3.Enums.GamepadButton.LeftPaddle2
+  - SharpSDL3.Enums.GamepadButton.LeftShoulder
+  - SharpSDL3.Enums.GamepadButton.LeftStick
+  - SharpSDL3.Enums.GamepadButton.Misc1
+  - SharpSDL3.Enums.GamepadButton.Misc2
+  - SharpSDL3.Enums.GamepadButton.Misc3
+  - SharpSDL3.Enums.GamepadButton.Misc4
+  - SharpSDL3.Enums.GamepadButton.Misc5
+  - SharpSDL3.Enums.GamepadButton.Misc6
+  - SharpSDL3.Enums.GamepadButton.North
+  - SharpSDL3.Enums.GamepadButton.RightPaddle1
+  - SharpSDL3.Enums.GamepadButton.RightPaddle2
+  - SharpSDL3.Enums.GamepadButton.RightShoulder
+  - SharpSDL3.Enums.GamepadButton.RightStick
+  - SharpSDL3.Enums.GamepadButton.South
+  - SharpSDL3.Enums.GamepadButton.Start
+  - SharpSDL3.Enums.GamepadButton.Touchpad
+  - SharpSDL3.Enums.GamepadButton.West
+  langs:
+  - csharp
+  - vb
+  name: GamepadButton
+  nameWithType: GamepadButton
+  fullName: SharpSDL3.Enums.GamepadButton
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadButton
+    path: Enums/GamepadButton.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GamepadButton
+    content.vb: Public Enum GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Invalid
+  commentId: F:SharpSDL3.Enums.GamepadButton.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: GamepadButton.Invalid
+  fullName: SharpSDL3.Enums.GamepadButton.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/GamepadButton.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = -1
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.South
+  commentId: F:SharpSDL3.Enums.GamepadButton.South
+  id: South
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: South
+  nameWithType: GamepadButton.South
+  fullName: SharpSDL3.Enums.GamepadButton.South
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: South
+    path: Enums/GamepadButton.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: South = 0
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.East
+  commentId: F:SharpSDL3.Enums.GamepadButton.East
+  id: East
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: East
+  nameWithType: GamepadButton.East
+  fullName: SharpSDL3.Enums.GamepadButton.East
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: East
+    path: Enums/GamepadButton.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: East = 1
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.West
+  commentId: F:SharpSDL3.Enums.GamepadButton.West
+  id: West
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: West
+  nameWithType: GamepadButton.West
+  fullName: SharpSDL3.Enums.GamepadButton.West
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: West
+    path: Enums/GamepadButton.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: West = 2
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.North
+  commentId: F:SharpSDL3.Enums.GamepadButton.North
+  id: North
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: North
+  nameWithType: GamepadButton.North
+  fullName: SharpSDL3.Enums.GamepadButton.North
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: North
+    path: Enums/GamepadButton.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: North = 3
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Back
+  commentId: F:SharpSDL3.Enums.GamepadButton.Back
+  id: Back
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Back
+  nameWithType: GamepadButton.Back
+  fullName: SharpSDL3.Enums.GamepadButton.Back
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Back
+    path: Enums/GamepadButton.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Back = 4
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Guide
+  commentId: F:SharpSDL3.Enums.GamepadButton.Guide
+  id: Guide
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Guide
+  nameWithType: GamepadButton.Guide
+  fullName: SharpSDL3.Enums.GamepadButton.Guide
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Guide
+    path: Enums/GamepadButton.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Guide = 5
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Start
+  commentId: F:SharpSDL3.Enums.GamepadButton.Start
+  id: Start
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Start
+  nameWithType: GamepadButton.Start
+  fullName: SharpSDL3.Enums.GamepadButton.Start
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Start
+    path: Enums/GamepadButton.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Start = 6
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.LeftStick
+  commentId: F:SharpSDL3.Enums.GamepadButton.LeftStick
+  id: LeftStick
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: LeftStick
+  nameWithType: GamepadButton.LeftStick
+  fullName: SharpSDL3.Enums.GamepadButton.LeftStick
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftStick
+    path: Enums/GamepadButton.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftStick = 7
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.RightStick
+  commentId: F:SharpSDL3.Enums.GamepadButton.RightStick
+  id: RightStick
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: RightStick
+  nameWithType: GamepadButton.RightStick
+  fullName: SharpSDL3.Enums.GamepadButton.RightStick
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightStick
+    path: Enums/GamepadButton.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightStick = 8
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.LeftShoulder
+  commentId: F:SharpSDL3.Enums.GamepadButton.LeftShoulder
+  id: LeftShoulder
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: LeftShoulder
+  nameWithType: GamepadButton.LeftShoulder
+  fullName: SharpSDL3.Enums.GamepadButton.LeftShoulder
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftShoulder
+    path: Enums/GamepadButton.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftShoulder = 9
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.RightShoulder
+  commentId: F:SharpSDL3.Enums.GamepadButton.RightShoulder
+  id: RightShoulder
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: RightShoulder
+  nameWithType: GamepadButton.RightShoulder
+  fullName: SharpSDL3.Enums.GamepadButton.RightShoulder
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightShoulder
+    path: Enums/GamepadButton.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightShoulder = 10
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.DpadUp
+  commentId: F:SharpSDL3.Enums.GamepadButton.DpadUp
+  id: DpadUp
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: DpadUp
+  nameWithType: GamepadButton.DpadUp
+  fullName: SharpSDL3.Enums.GamepadButton.DpadUp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DpadUp
+    path: Enums/GamepadButton.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DpadUp = 11
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.DpadDown
+  commentId: F:SharpSDL3.Enums.GamepadButton.DpadDown
+  id: DpadDown
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: DpadDown
+  nameWithType: GamepadButton.DpadDown
+  fullName: SharpSDL3.Enums.GamepadButton.DpadDown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DpadDown
+    path: Enums/GamepadButton.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DpadDown = 12
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.DpadLeft
+  commentId: F:SharpSDL3.Enums.GamepadButton.DpadLeft
+  id: DpadLeft
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: DpadLeft
+  nameWithType: GamepadButton.DpadLeft
+  fullName: SharpSDL3.Enums.GamepadButton.DpadLeft
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DpadLeft
+    path: Enums/GamepadButton.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DpadLeft = 13
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.DpadRight
+  commentId: F:SharpSDL3.Enums.GamepadButton.DpadRight
+  id: DpadRight
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: DpadRight
+  nameWithType: GamepadButton.DpadRight
+  fullName: SharpSDL3.Enums.GamepadButton.DpadRight
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DpadRight
+    path: Enums/GamepadButton.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DpadRight = 14
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc1
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc1
+  id: Misc1
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc1
+  nameWithType: GamepadButton.Misc1
+  fullName: SharpSDL3.Enums.GamepadButton.Misc1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc1
+    path: Enums/GamepadButton.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc1 = 15
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.RightPaddle1
+  commentId: F:SharpSDL3.Enums.GamepadButton.RightPaddle1
+  id: RightPaddle1
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: RightPaddle1
+  nameWithType: GamepadButton.RightPaddle1
+  fullName: SharpSDL3.Enums.GamepadButton.RightPaddle1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightPaddle1
+    path: Enums/GamepadButton.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightPaddle1 = 16
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.LeftPaddle1
+  commentId: F:SharpSDL3.Enums.GamepadButton.LeftPaddle1
+  id: LeftPaddle1
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: LeftPaddle1
+  nameWithType: GamepadButton.LeftPaddle1
+  fullName: SharpSDL3.Enums.GamepadButton.LeftPaddle1
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftPaddle1
+    path: Enums/GamepadButton.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftPaddle1 = 17
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.RightPaddle2
+  commentId: F:SharpSDL3.Enums.GamepadButton.RightPaddle2
+  id: RightPaddle2
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: RightPaddle2
+  nameWithType: GamepadButton.RightPaddle2
+  fullName: SharpSDL3.Enums.GamepadButton.RightPaddle2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RightPaddle2
+    path: Enums/GamepadButton.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RightPaddle2 = 18
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.LeftPaddle2
+  commentId: F:SharpSDL3.Enums.GamepadButton.LeftPaddle2
+  id: LeftPaddle2
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: LeftPaddle2
+  nameWithType: GamepadButton.LeftPaddle2
+  fullName: SharpSDL3.Enums.GamepadButton.LeftPaddle2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LeftPaddle2
+    path: Enums/GamepadButton.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LeftPaddle2 = 19
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Touchpad
+  commentId: F:SharpSDL3.Enums.GamepadButton.Touchpad
+  id: Touchpad
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Touchpad
+  nameWithType: GamepadButton.Touchpad
+  fullName: SharpSDL3.Enums.GamepadButton.Touchpad
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Touchpad
+    path: Enums/GamepadButton.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Touchpad = 20
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc2
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc2
+  id: Misc2
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc2
+  nameWithType: GamepadButton.Misc2
+  fullName: SharpSDL3.Enums.GamepadButton.Misc2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc2
+    path: Enums/GamepadButton.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc2 = 21
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc3
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc3
+  id: Misc3
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc3
+  nameWithType: GamepadButton.Misc3
+  fullName: SharpSDL3.Enums.GamepadButton.Misc3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc3
+    path: Enums/GamepadButton.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc3 = 22
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc4
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc4
+  id: Misc4
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc4
+  nameWithType: GamepadButton.Misc4
+  fullName: SharpSDL3.Enums.GamepadButton.Misc4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc4
+    path: Enums/GamepadButton.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc4 = 23
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc5
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc5
+  id: Misc5
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc5
+  nameWithType: GamepadButton.Misc5
+  fullName: SharpSDL3.Enums.GamepadButton.Misc5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc5
+    path: Enums/GamepadButton.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc5 = 24
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Misc6
+  commentId: F:SharpSDL3.Enums.GamepadButton.Misc6
+  id: Misc6
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Misc6
+  nameWithType: GamepadButton.Misc6
+  fullName: SharpSDL3.Enums.GamepadButton.Misc6
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Misc6
+    path: Enums/GamepadButton.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Misc6 = 25
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+- uid: SharpSDL3.Enums.GamepadButton.Count
+  commentId: F:SharpSDL3.Enums.GamepadButton.Count
+  id: Count
+  parent: SharpSDL3.Enums.GamepadButton
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: GamepadButton.Count
+  fullName: SharpSDL3.Enums.GamepadButton.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadButton.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/GamepadButton.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 26
+    return:
+      type: SharpSDL3.Enums.GamepadButton
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GamepadButton
+  commentId: T:SharpSDL3.Enums.GamepadButton
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GamepadButton.html
+  name: GamepadButton
+  nameWithType: GamepadButton
+  fullName: SharpSDL3.Enums.GamepadButton

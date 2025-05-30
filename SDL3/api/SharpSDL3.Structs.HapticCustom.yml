@@ -1,0 +1,718 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.HapticCustom
+  commentId: T:SharpSDL3.Structs.HapticCustom
+  id: HapticCustom
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.HapticCustom.AttackLength
+  - SharpSDL3.Structs.HapticCustom.AttackLevel
+  - SharpSDL3.Structs.HapticCustom.Button
+  - SharpSDL3.Structs.HapticCustom.Channels
+  - SharpSDL3.Structs.HapticCustom.Data
+  - SharpSDL3.Structs.HapticCustom.Delay
+  - SharpSDL3.Structs.HapticCustom.Direction
+  - SharpSDL3.Structs.HapticCustom.FadeLength
+  - SharpSDL3.Structs.HapticCustom.FadeLevel
+  - SharpSDL3.Structs.HapticCustom.Interval
+  - SharpSDL3.Structs.HapticCustom.Length
+  - SharpSDL3.Structs.HapticCustom.Period
+  - SharpSDL3.Structs.HapticCustom.Samples
+  - SharpSDL3.Structs.HapticCustom.Type
+  langs:
+  - csharp
+  - vb
+  name: HapticCustom
+  nameWithType: HapticCustom
+  fullName: SharpSDL3.Structs.HapticCustom
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: HapticCustom
+    path: Structs/HapticCustom.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct HapticCustom
+    content.vb: Public Structure HapticCustom
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.HapticCustom.Type
+  commentId: F:SharpSDL3.Structs.HapticCustom.Type
+  id: Type
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: HapticCustom.Type
+  fullName: SharpSDL3.Structs.HapticCustom.Type
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type
+    path: Structs/HapticCustom.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Type
+    return:
+      type: System.UInt16
+    content.vb: Public Type As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Direction
+  commentId: F:SharpSDL3.Structs.HapticCustom.Direction
+  id: Direction
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Direction
+  nameWithType: HapticCustom.Direction
+  fullName: SharpSDL3.Structs.HapticCustom.Direction
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Direction
+    path: Structs/HapticCustom.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public HapticDirection Direction
+    return:
+      type: SharpSDL3.Structs.HapticDirection
+    content.vb: Public Direction As HapticDirection
+- uid: SharpSDL3.Structs.HapticCustom.Length
+  commentId: F:SharpSDL3.Structs.HapticCustom.Length
+  id: Length
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Length
+  nameWithType: HapticCustom.Length
+  fullName: SharpSDL3.Structs.HapticCustom.Length
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Length
+    path: Structs/HapticCustom.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Length
+    return:
+      type: System.UInt32
+    content.vb: Public Length As UInteger
+- uid: SharpSDL3.Structs.HapticCustom.Delay
+  commentId: F:SharpSDL3.Structs.HapticCustom.Delay
+  id: Delay
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Delay
+  nameWithType: HapticCustom.Delay
+  fullName: SharpSDL3.Structs.HapticCustom.Delay
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Delay
+    path: Structs/HapticCustom.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Delay
+    return:
+      type: System.UInt16
+    content.vb: Public Delay As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Button
+  commentId: F:SharpSDL3.Structs.HapticCustom.Button
+  id: Button
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Button
+  nameWithType: HapticCustom.Button
+  fullName: SharpSDL3.Structs.HapticCustom.Button
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Button
+    path: Structs/HapticCustom.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Button
+    return:
+      type: System.UInt16
+    content.vb: Public Button As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Interval
+  commentId: F:SharpSDL3.Structs.HapticCustom.Interval
+  id: Interval
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Interval
+  nameWithType: HapticCustom.Interval
+  fullName: SharpSDL3.Structs.HapticCustom.Interval
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Interval
+    path: Structs/HapticCustom.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Interval
+    return:
+      type: System.UInt16
+    content.vb: Public Interval As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Channels
+  commentId: F:SharpSDL3.Structs.HapticCustom.Channels
+  id: Channels
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Channels
+  nameWithType: HapticCustom.Channels
+  fullName: SharpSDL3.Structs.HapticCustom.Channels
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Channels
+    path: Structs/HapticCustom.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public byte Channels
+    return:
+      type: System.Byte
+    content.vb: Public Channels As Byte
+- uid: SharpSDL3.Structs.HapticCustom.Period
+  commentId: F:SharpSDL3.Structs.HapticCustom.Period
+  id: Period
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Period
+  nameWithType: HapticCustom.Period
+  fullName: SharpSDL3.Structs.HapticCustom.Period
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Period
+    path: Structs/HapticCustom.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Period
+    return:
+      type: System.UInt16
+    content.vb: Public Period As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Samples
+  commentId: F:SharpSDL3.Structs.HapticCustom.Samples
+  id: Samples
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Samples
+  nameWithType: HapticCustom.Samples
+  fullName: SharpSDL3.Structs.HapticCustom.Samples
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Samples
+    path: Structs/HapticCustom.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Samples
+    return:
+      type: System.UInt16
+    content.vb: Public Samples As UShort
+- uid: SharpSDL3.Structs.HapticCustom.Data
+  commentId: F:SharpSDL3.Structs.HapticCustom.Data
+  id: Data
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: Data
+  nameWithType: HapticCustom.Data
+  fullName: SharpSDL3.Structs.HapticCustom.Data
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Data
+    path: Structs/HapticCustom.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Data
+    return:
+      type: System.IntPtr
+    content.vb: Public Data As IntPtr
+- uid: SharpSDL3.Structs.HapticCustom.AttackLength
+  commentId: F:SharpSDL3.Structs.HapticCustom.AttackLength
+  id: AttackLength
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: AttackLength
+  nameWithType: HapticCustom.AttackLength
+  fullName: SharpSDL3.Structs.HapticCustom.AttackLength
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AttackLength
+    path: Structs/HapticCustom.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort AttackLength
+    return:
+      type: System.UInt16
+    content.vb: Public AttackLength As UShort
+- uid: SharpSDL3.Structs.HapticCustom.AttackLevel
+  commentId: F:SharpSDL3.Structs.HapticCustom.AttackLevel
+  id: AttackLevel
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: AttackLevel
+  nameWithType: HapticCustom.AttackLevel
+  fullName: SharpSDL3.Structs.HapticCustom.AttackLevel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AttackLevel
+    path: Structs/HapticCustom.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort AttackLevel
+    return:
+      type: System.UInt16
+    content.vb: Public AttackLevel As UShort
+- uid: SharpSDL3.Structs.HapticCustom.FadeLength
+  commentId: F:SharpSDL3.Structs.HapticCustom.FadeLength
+  id: FadeLength
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: FadeLength
+  nameWithType: HapticCustom.FadeLength
+  fullName: SharpSDL3.Structs.HapticCustom.FadeLength
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeLength
+    path: Structs/HapticCustom.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort FadeLength
+    return:
+      type: System.UInt16
+    content.vb: Public FadeLength As UShort
+- uid: SharpSDL3.Structs.HapticCustom.FadeLevel
+  commentId: F:SharpSDL3.Structs.HapticCustom.FadeLevel
+  id: FadeLevel
+  parent: SharpSDL3.Structs.HapticCustom
+  langs:
+  - csharp
+  - vb
+  name: FadeLevel
+  nameWithType: HapticCustom.FadeLevel
+  fullName: SharpSDL3.Structs.HapticCustom.FadeLevel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/HapticCustom.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FadeLevel
+    path: Structs/HapticCustom.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort FadeLevel
+    return:
+      type: System.UInt16
+    content.vb: Public FadeLevel As UShort
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt16
+  commentId: T:System.UInt16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort
+  nameWithType: ushort
+  fullName: ushort
+  nameWithType.vb: UShort
+  fullName.vb: UShort
+  name.vb: UShort
+- uid: SharpSDL3.Structs.HapticDirection
+  commentId: T:SharpSDL3.Structs.HapticDirection
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.HapticDirection.html
+  name: HapticDirection
+  nameWithType: HapticDirection
+  fullName: SharpSDL3.Structs.HapticDirection
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.Byte
+  commentId: T:System.Byte
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.byte
+  name: byte
+  nameWithType: byte
+  fullName: byte
+  nameWithType.vb: Byte
+  fullName.vb: Byte
+  name.vb: Byte
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr

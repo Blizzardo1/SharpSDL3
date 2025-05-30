@@ -1,0 +1,531 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.KeyMod
+  commentId: T:SharpSDL3.Enums.KeyMod
+  id: KeyMod
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.KeyMod.KModAlt
+  - SharpSDL3.Enums.KeyMod.KModCaps
+  - SharpSDL3.Enums.KeyMod.KModCtrl
+  - SharpSDL3.Enums.KeyMod.KModGui
+  - SharpSDL3.Enums.KeyMod.KModLAlt
+  - SharpSDL3.Enums.KeyMod.KModLCtrl
+  - SharpSDL3.Enums.KeyMod.KModLGui
+  - SharpSDL3.Enums.KeyMod.KModLShift
+  - SharpSDL3.Enums.KeyMod.KModMode
+  - SharpSDL3.Enums.KeyMod.KModNone
+  - SharpSDL3.Enums.KeyMod.KModNum
+  - SharpSDL3.Enums.KeyMod.KModRAlt
+  - SharpSDL3.Enums.KeyMod.KModRCtrl
+  - SharpSDL3.Enums.KeyMod.KModRGui
+  - SharpSDL3.Enums.KeyMod.KModRShift
+  - SharpSDL3.Enums.KeyMod.KModScroll
+  - SharpSDL3.Enums.KeyMod.KModShift
+  langs:
+  - csharp
+  - vb
+  name: KeyMod
+  nameWithType: KeyMod
+  fullName: SharpSDL3.Enums.KeyMod
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KeyMod
+    path: Enums/SdlKeymod.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum KeyMod : ushort
+    content.vb: >-
+      <Flags>
+
+      Public Enum KeyMod As UShort
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+- uid: SharpSDL3.Enums.KeyMod.KModNone
+  commentId: F:SharpSDL3.Enums.KeyMod.KModNone
+  id: KModNone
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModNone
+  nameWithType: KeyMod.KModNone
+  fullName: SharpSDL3.Enums.KeyMod.KModNone
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModNone
+    path: Enums/SdlKeymod.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModNone = 0
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModLShift
+  commentId: F:SharpSDL3.Enums.KeyMod.KModLShift
+  id: KModLShift
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModLShift
+  nameWithType: KeyMod.KModLShift
+  fullName: SharpSDL3.Enums.KeyMod.KModLShift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModLShift
+    path: Enums/SdlKeymod.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModLShift = 1
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModRShift
+  commentId: F:SharpSDL3.Enums.KeyMod.KModRShift
+  id: KModRShift
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModRShift
+  nameWithType: KeyMod.KModRShift
+  fullName: SharpSDL3.Enums.KeyMod.KModRShift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModRShift
+    path: Enums/SdlKeymod.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModRShift = 2
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModLCtrl
+  commentId: F:SharpSDL3.Enums.KeyMod.KModLCtrl
+  id: KModLCtrl
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModLCtrl
+  nameWithType: KeyMod.KModLCtrl
+  fullName: SharpSDL3.Enums.KeyMod.KModLCtrl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModLCtrl
+    path: Enums/SdlKeymod.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModLCtrl = 64
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModRCtrl
+  commentId: F:SharpSDL3.Enums.KeyMod.KModRCtrl
+  id: KModRCtrl
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModRCtrl
+  nameWithType: KeyMod.KModRCtrl
+  fullName: SharpSDL3.Enums.KeyMod.KModRCtrl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModRCtrl
+    path: Enums/SdlKeymod.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModRCtrl = 128
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModLAlt
+  commentId: F:SharpSDL3.Enums.KeyMod.KModLAlt
+  id: KModLAlt
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModLAlt
+  nameWithType: KeyMod.KModLAlt
+  fullName: SharpSDL3.Enums.KeyMod.KModLAlt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModLAlt
+    path: Enums/SdlKeymod.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModLAlt = 256
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModRAlt
+  commentId: F:SharpSDL3.Enums.KeyMod.KModRAlt
+  id: KModRAlt
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModRAlt
+  nameWithType: KeyMod.KModRAlt
+  fullName: SharpSDL3.Enums.KeyMod.KModRAlt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModRAlt
+    path: Enums/SdlKeymod.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModRAlt = 512
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModLGui
+  commentId: F:SharpSDL3.Enums.KeyMod.KModLGui
+  id: KModLGui
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModLGui
+  nameWithType: KeyMod.KModLGui
+  fullName: SharpSDL3.Enums.KeyMod.KModLGui
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModLGui
+    path: Enums/SdlKeymod.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModLGui = 1024
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModRGui
+  commentId: F:SharpSDL3.Enums.KeyMod.KModRGui
+  id: KModRGui
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModRGui
+  nameWithType: KeyMod.KModRGui
+  fullName: SharpSDL3.Enums.KeyMod.KModRGui
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModRGui
+    path: Enums/SdlKeymod.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModRGui = 2048
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModNum
+  commentId: F:SharpSDL3.Enums.KeyMod.KModNum
+  id: KModNum
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModNum
+  nameWithType: KeyMod.KModNum
+  fullName: SharpSDL3.Enums.KeyMod.KModNum
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModNum
+    path: Enums/SdlKeymod.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModNum = 4096
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModCaps
+  commentId: F:SharpSDL3.Enums.KeyMod.KModCaps
+  id: KModCaps
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModCaps
+  nameWithType: KeyMod.KModCaps
+  fullName: SharpSDL3.Enums.KeyMod.KModCaps
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModCaps
+    path: Enums/SdlKeymod.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModCaps = 8192
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModMode
+  commentId: F:SharpSDL3.Enums.KeyMod.KModMode
+  id: KModMode
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModMode
+  nameWithType: KeyMod.KModMode
+  fullName: SharpSDL3.Enums.KeyMod.KModMode
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModMode
+    path: Enums/SdlKeymod.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModMode = 16384
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModScroll
+  commentId: F:SharpSDL3.Enums.KeyMod.KModScroll
+  id: KModScroll
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModScroll
+  nameWithType: KeyMod.KModScroll
+  fullName: SharpSDL3.Enums.KeyMod.KModScroll
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModScroll
+    path: Enums/SdlKeymod.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModScroll = 32768
+    return:
+      type: SharpSDL3.Enums.KeyMod
+- uid: SharpSDL3.Enums.KeyMod.KModCtrl
+  commentId: F:SharpSDL3.Enums.KeyMod.KModCtrl
+  id: KModCtrl
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModCtrl
+  nameWithType: KeyMod.KModCtrl
+  fullName: SharpSDL3.Enums.KeyMod.KModCtrl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModCtrl
+    path: Enums/SdlKeymod.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModCtrl = KModLCtrl | KModRCtrl
+    return:
+      type: SharpSDL3.Enums.KeyMod
+    content.vb: KModCtrl = KModLCtrl Or KModRCtrl
+- uid: SharpSDL3.Enums.KeyMod.KModShift
+  commentId: F:SharpSDL3.Enums.KeyMod.KModShift
+  id: KModShift
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModShift
+  nameWithType: KeyMod.KModShift
+  fullName: SharpSDL3.Enums.KeyMod.KModShift
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModShift
+    path: Enums/SdlKeymod.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModShift = KModLShift | KModRShift
+    return:
+      type: SharpSDL3.Enums.KeyMod
+    content.vb: KModShift = KModLShift Or KModRShift
+- uid: SharpSDL3.Enums.KeyMod.KModAlt
+  commentId: F:SharpSDL3.Enums.KeyMod.KModAlt
+  id: KModAlt
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModAlt
+  nameWithType: KeyMod.KModAlt
+  fullName: SharpSDL3.Enums.KeyMod.KModAlt
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModAlt
+    path: Enums/SdlKeymod.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModAlt = KModLAlt | KModRAlt
+    return:
+      type: SharpSDL3.Enums.KeyMod
+    content.vb: KModAlt = KModLAlt Or KModRAlt
+- uid: SharpSDL3.Enums.KeyMod.KModGui
+  commentId: F:SharpSDL3.Enums.KeyMod.KModGui
+  id: KModGui
+  parent: SharpSDL3.Enums.KeyMod
+  langs:
+  - csharp
+  - vb
+  name: KModGui
+  nameWithType: KeyMod.KModGui
+  fullName: SharpSDL3.Enums.KeyMod.KModGui
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SdlKeymod.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: KModGui
+    path: Enums/SdlKeymod.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: KModGui = KModLGui | KModRGui
+    return:
+      type: SharpSDL3.Enums.KeyMod
+    content.vb: KModGui = KModLGui Or KModRGui
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.KeyMod
+  commentId: T:SharpSDL3.Enums.KeyMod
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.KeyMod.html
+  name: KeyMod
+  nameWithType: KeyMod
+  fullName: SharpSDL3.Enums.KeyMod

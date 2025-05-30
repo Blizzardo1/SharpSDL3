@@ -1,0 +1,409 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.Colorspace
+  commentId: T:SharpSDL3.Enums.Colorspace
+  id: Colorspace
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.Colorspace.Bt2020Full
+  - SharpSDL3.Enums.Colorspace.Bt2020Limited
+  - SharpSDL3.Enums.Colorspace.Bt601Full
+  - SharpSDL3.Enums.Colorspace.Bt601Limited
+  - SharpSDL3.Enums.Colorspace.Bt709Full
+  - SharpSDL3.Enums.Colorspace.Bt709Limited
+  - SharpSDL3.Enums.Colorspace.Hdr10
+  - SharpSDL3.Enums.Colorspace.Jpeg
+  - SharpSDL3.Enums.Colorspace.RgbDefault
+  - SharpSDL3.Enums.Colorspace.Srgb
+  - SharpSDL3.Enums.Colorspace.SrgbLinear
+  - SharpSDL3.Enums.Colorspace.Unknown
+  - SharpSDL3.Enums.Colorspace.YuvDefault
+  langs:
+  - csharp
+  - vb
+  name: Colorspace
+  nameWithType: Colorspace
+  fullName: SharpSDL3.Enums.Colorspace
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Colorspace
+    path: Enums/Colorspace.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum Colorspace
+    content.vb: Public Enum Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Unknown
+  commentId: F:SharpSDL3.Enums.Colorspace.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: Colorspace.Unknown
+  fullName: SharpSDL3.Enums.Colorspace.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/Colorspace.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Srgb
+  commentId: F:SharpSDL3.Enums.Colorspace.Srgb
+  id: Srgb
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Srgb
+  nameWithType: Colorspace.Srgb
+  fullName: SharpSDL3.Enums.Colorspace.Srgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Srgb
+    path: Enums/Colorspace.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Srgb = 301991328
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.SrgbLinear
+  commentId: F:SharpSDL3.Enums.Colorspace.SrgbLinear
+  id: SrgbLinear
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: SrgbLinear
+  nameWithType: Colorspace.SrgbLinear
+  fullName: SharpSDL3.Enums.Colorspace.SrgbLinear
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SrgbLinear
+    path: Enums/Colorspace.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SrgbLinear = 301991168
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Hdr10
+  commentId: F:SharpSDL3.Enums.Colorspace.Hdr10
+  id: Hdr10
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Hdr10
+  nameWithType: Colorspace.Hdr10
+  fullName: SharpSDL3.Enums.Colorspace.Hdr10
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hdr10
+    path: Enums/Colorspace.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Hdr10 = 301999616
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Jpeg
+  commentId: F:SharpSDL3.Enums.Colorspace.Jpeg
+  id: Jpeg
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Jpeg
+  nameWithType: Colorspace.Jpeg
+  fullName: SharpSDL3.Enums.Colorspace.Jpeg
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Jpeg
+    path: Enums/Colorspace.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Jpeg = 570426566
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt601Limited
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt601Limited
+  id: Bt601Limited
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt601Limited
+  nameWithType: Colorspace.Bt601Limited
+  fullName: SharpSDL3.Enums.Colorspace.Bt601Limited
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt601Limited
+    path: Enums/Colorspace.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt601Limited = 554703046
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt601Full
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt601Full
+  id: Bt601Full
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt601Full
+  nameWithType: Colorspace.Bt601Full
+  fullName: SharpSDL3.Enums.Colorspace.Bt601Full
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt601Full
+    path: Enums/Colorspace.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt601Full = 571480262
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt709Limited
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt709Limited
+  id: Bt709Limited
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt709Limited
+  nameWithType: Colorspace.Bt709Limited
+  fullName: SharpSDL3.Enums.Colorspace.Bt709Limited
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt709Limited
+    path: Enums/Colorspace.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt709Limited = 554697761
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt709Full
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt709Full
+  id: Bt709Full
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt709Full
+  nameWithType: Colorspace.Bt709Full
+  fullName: SharpSDL3.Enums.Colorspace.Bt709Full
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt709Full
+    path: Enums/Colorspace.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt709Full = 571474977
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt2020Limited
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt2020Limited
+  id: Bt2020Limited
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt2020Limited
+  nameWithType: Colorspace.Bt2020Limited
+  fullName: SharpSDL3.Enums.Colorspace.Bt2020Limited
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt2020Limited
+    path: Enums/Colorspace.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt2020Limited = 554706441
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.Bt2020Full
+  commentId: F:SharpSDL3.Enums.Colorspace.Bt2020Full
+  id: Bt2020Full
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: Bt2020Full
+  nameWithType: Colorspace.Bt2020Full
+  fullName: SharpSDL3.Enums.Colorspace.Bt2020Full
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt2020Full
+    path: Enums/Colorspace.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt2020Full = 571483657
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.RgbDefault
+  commentId: F:SharpSDL3.Enums.Colorspace.RgbDefault
+  id: RgbDefault
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: RgbDefault
+  nameWithType: Colorspace.RgbDefault
+  fullName: SharpSDL3.Enums.Colorspace.RgbDefault
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RgbDefault
+    path: Enums/Colorspace.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RgbDefault = 301991328
+    return:
+      type: SharpSDL3.Enums.Colorspace
+- uid: SharpSDL3.Enums.Colorspace.YuvDefault
+  commentId: F:SharpSDL3.Enums.Colorspace.YuvDefault
+  id: YuvDefault
+  parent: SharpSDL3.Enums.Colorspace
+  langs:
+  - csharp
+  - vb
+  name: YuvDefault
+  nameWithType: Colorspace.YuvDefault
+  fullName: SharpSDL3.Enums.Colorspace.YuvDefault
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/Colorspace.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: YuvDefault
+    path: Enums/Colorspace.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: YuvDefault = 570426566
+    return:
+      type: SharpSDL3.Enums.Colorspace
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.Colorspace
+  commentId: T:SharpSDL3.Enums.Colorspace
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.Colorspace.html
+  name: Colorspace
+  nameWithType: Colorspace
+  fullName: SharpSDL3.Enums.Colorspace

@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.PackedOrder
+  commentId: T:SharpSDL3.Enums.PackedOrder
+  id: PackedOrder
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.PackedOrder.Abgr
+  - SharpSDL3.Enums.PackedOrder.Argb
+  - SharpSDL3.Enums.PackedOrder.Bgra
+  - SharpSDL3.Enums.PackedOrder.Bgrx
+  - SharpSDL3.Enums.PackedOrder.None
+  - SharpSDL3.Enums.PackedOrder.Rgba
+  - SharpSDL3.Enums.PackedOrder.Rgbx
+  - SharpSDL3.Enums.PackedOrder.Xbgr
+  - SharpSDL3.Enums.PackedOrder.Xrgb
+  langs:
+  - csharp
+  - vb
+  name: PackedOrder
+  nameWithType: PackedOrder
+  fullName: SharpSDL3.Enums.PackedOrder
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PackedOrder
+    path: Enums/PackedOrder.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum PackedOrder
+    content.vb: Public Enum PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.None
+  commentId: F:SharpSDL3.Enums.PackedOrder.None
+  id: None
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: PackedOrder.None
+  fullName: SharpSDL3.Enums.PackedOrder.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/PackedOrder.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Xrgb
+  commentId: F:SharpSDL3.Enums.PackedOrder.Xrgb
+  id: Xrgb
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Xrgb
+  nameWithType: PackedOrder.Xrgb
+  fullName: SharpSDL3.Enums.PackedOrder.Xrgb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Xrgb
+    path: Enums/PackedOrder.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Xrgb = 1
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Rgbx
+  commentId: F:SharpSDL3.Enums.PackedOrder.Rgbx
+  id: Rgbx
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Rgbx
+  nameWithType: PackedOrder.Rgbx
+  fullName: SharpSDL3.Enums.PackedOrder.Rgbx
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rgbx
+    path: Enums/PackedOrder.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Rgbx = 2
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Argb
+  commentId: F:SharpSDL3.Enums.PackedOrder.Argb
+  id: Argb
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Argb
+  nameWithType: PackedOrder.Argb
+  fullName: SharpSDL3.Enums.PackedOrder.Argb
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Argb
+    path: Enums/PackedOrder.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Argb = 3
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Rgba
+  commentId: F:SharpSDL3.Enums.PackedOrder.Rgba
+  id: Rgba
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Rgba
+  nameWithType: PackedOrder.Rgba
+  fullName: SharpSDL3.Enums.PackedOrder.Rgba
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rgba
+    path: Enums/PackedOrder.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Rgba = 4
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Xbgr
+  commentId: F:SharpSDL3.Enums.PackedOrder.Xbgr
+  id: Xbgr
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Xbgr
+  nameWithType: PackedOrder.Xbgr
+  fullName: SharpSDL3.Enums.PackedOrder.Xbgr
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Xbgr
+    path: Enums/PackedOrder.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Xbgr = 5
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Bgrx
+  commentId: F:SharpSDL3.Enums.PackedOrder.Bgrx
+  id: Bgrx
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Bgrx
+  nameWithType: PackedOrder.Bgrx
+  fullName: SharpSDL3.Enums.PackedOrder.Bgrx
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bgrx
+    path: Enums/PackedOrder.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bgrx = 6
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Abgr
+  commentId: F:SharpSDL3.Enums.PackedOrder.Abgr
+  id: Abgr
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Abgr
+  nameWithType: PackedOrder.Abgr
+  fullName: SharpSDL3.Enums.PackedOrder.Abgr
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Abgr
+    path: Enums/PackedOrder.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Abgr = 7
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+- uid: SharpSDL3.Enums.PackedOrder.Bgra
+  commentId: F:SharpSDL3.Enums.PackedOrder.Bgra
+  id: Bgra
+  parent: SharpSDL3.Enums.PackedOrder
+  langs:
+  - csharp
+  - vb
+  name: Bgra
+  nameWithType: PackedOrder.Bgra
+  fullName: SharpSDL3.Enums.PackedOrder.Bgra
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/PackedOrder.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bgra
+    path: Enums/PackedOrder.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bgra = 8
+    return:
+      type: SharpSDL3.Enums.PackedOrder
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.PackedOrder
+  commentId: T:SharpSDL3.Enums.PackedOrder
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.PackedOrder.html
+  name: PackedOrder
+  nameWithType: PackedOrder
+  fullName: SharpSDL3.Enums.PackedOrder

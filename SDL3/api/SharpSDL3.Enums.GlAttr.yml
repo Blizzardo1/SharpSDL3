@@ -1,0 +1,814 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GlAttr
+  commentId: T:SharpSDL3.Enums.GlAttr
+  id: GlAttr
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GlAttr.AcceleratedVisual
+  - SharpSDL3.Enums.GlAttr.AccumAlphaSize
+  - SharpSDL3.Enums.GlAttr.AccumBlueSize
+  - SharpSDL3.Enums.GlAttr.AccumGreenSize
+  - SharpSDL3.Enums.GlAttr.AccumRedSize
+  - SharpSDL3.Enums.GlAttr.AlphaSize
+  - SharpSDL3.Enums.GlAttr.BlueSize
+  - SharpSDL3.Enums.GlAttr.BufferSize
+  - SharpSDL3.Enums.GlAttr.ContextFlags
+  - SharpSDL3.Enums.GlAttr.ContextMajorVersion
+  - SharpSDL3.Enums.GlAttr.ContextMinorVersion
+  - SharpSDL3.Enums.GlAttr.ContextNoError
+  - SharpSDL3.Enums.GlAttr.ContextProfileMask
+  - SharpSDL3.Enums.GlAttr.ContextReleaseBehavior
+  - SharpSDL3.Enums.GlAttr.ContextResetNotification
+  - SharpSDL3.Enums.GlAttr.DepthSize
+  - SharpSDL3.Enums.GlAttr.Doublebuffer
+  - SharpSDL3.Enums.GlAttr.EglPlatform
+  - SharpSDL3.Enums.GlAttr.Floatbuffers
+  - SharpSDL3.Enums.GlAttr.FramebufferSrgbCapable
+  - SharpSDL3.Enums.GlAttr.GreenSize
+  - SharpSDL3.Enums.GlAttr.Multisamplebuffers
+  - SharpSDL3.Enums.GlAttr.Multisamplesamples
+  - SharpSDL3.Enums.GlAttr.RedSize
+  - SharpSDL3.Enums.GlAttr.RetainedBacking
+  - SharpSDL3.Enums.GlAttr.ShareWithCurrentContext
+  - SharpSDL3.Enums.GlAttr.StencilSize
+  - SharpSDL3.Enums.GlAttr.Stereo
+  langs:
+  - csharp
+  - vb
+  name: GlAttr
+  nameWithType: GlAttr
+  fullName: SharpSDL3.Enums.GlAttr
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GlAttr
+    path: Enums/GlAttr.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GlAttr
+    content.vb: Public Enum GlAttr
+- uid: SharpSDL3.Enums.GlAttr.RedSize
+  commentId: F:SharpSDL3.Enums.GlAttr.RedSize
+  id: RedSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: RedSize
+  nameWithType: GlAttr.RedSize
+  fullName: SharpSDL3.Enums.GlAttr.RedSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RedSize
+    path: Enums/GlAttr.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RedSize = 0
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.GreenSize
+  commentId: F:SharpSDL3.Enums.GlAttr.GreenSize
+  id: GreenSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: GreenSize
+  nameWithType: GlAttr.GreenSize
+  fullName: SharpSDL3.Enums.GlAttr.GreenSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GreenSize
+    path: Enums/GlAttr.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: GreenSize = 1
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.BlueSize
+  commentId: F:SharpSDL3.Enums.GlAttr.BlueSize
+  id: BlueSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: BlueSize
+  nameWithType: GlAttr.BlueSize
+  fullName: SharpSDL3.Enums.GlAttr.BlueSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BlueSize
+    path: Enums/GlAttr.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: BlueSize = 2
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AlphaSize
+  commentId: F:SharpSDL3.Enums.GlAttr.AlphaSize
+  id: AlphaSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AlphaSize
+  nameWithType: GlAttr.AlphaSize
+  fullName: SharpSDL3.Enums.GlAttr.AlphaSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AlphaSize
+    path: Enums/GlAttr.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AlphaSize = 3
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.BufferSize
+  commentId: F:SharpSDL3.Enums.GlAttr.BufferSize
+  id: BufferSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: BufferSize
+  nameWithType: GlAttr.BufferSize
+  fullName: SharpSDL3.Enums.GlAttr.BufferSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: BufferSize
+    path: Enums/GlAttr.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: BufferSize = 4
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.Doublebuffer
+  commentId: F:SharpSDL3.Enums.GlAttr.Doublebuffer
+  id: Doublebuffer
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: Doublebuffer
+  nameWithType: GlAttr.Doublebuffer
+  fullName: SharpSDL3.Enums.GlAttr.Doublebuffer
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Doublebuffer
+    path: Enums/GlAttr.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Doublebuffer = 5
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.DepthSize
+  commentId: F:SharpSDL3.Enums.GlAttr.DepthSize
+  id: DepthSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: DepthSize
+  nameWithType: GlAttr.DepthSize
+  fullName: SharpSDL3.Enums.GlAttr.DepthSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DepthSize
+    path: Enums/GlAttr.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DepthSize = 6
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.StencilSize
+  commentId: F:SharpSDL3.Enums.GlAttr.StencilSize
+  id: StencilSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: StencilSize
+  nameWithType: GlAttr.StencilSize
+  fullName: SharpSDL3.Enums.GlAttr.StencilSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: StencilSize
+    path: Enums/GlAttr.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: StencilSize = 7
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AccumRedSize
+  commentId: F:SharpSDL3.Enums.GlAttr.AccumRedSize
+  id: AccumRedSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AccumRedSize
+  nameWithType: GlAttr.AccumRedSize
+  fullName: SharpSDL3.Enums.GlAttr.AccumRedSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AccumRedSize
+    path: Enums/GlAttr.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AccumRedSize = 8
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AccumGreenSize
+  commentId: F:SharpSDL3.Enums.GlAttr.AccumGreenSize
+  id: AccumGreenSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AccumGreenSize
+  nameWithType: GlAttr.AccumGreenSize
+  fullName: SharpSDL3.Enums.GlAttr.AccumGreenSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AccumGreenSize
+    path: Enums/GlAttr.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AccumGreenSize = 9
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AccumBlueSize
+  commentId: F:SharpSDL3.Enums.GlAttr.AccumBlueSize
+  id: AccumBlueSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AccumBlueSize
+  nameWithType: GlAttr.AccumBlueSize
+  fullName: SharpSDL3.Enums.GlAttr.AccumBlueSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AccumBlueSize
+    path: Enums/GlAttr.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AccumBlueSize = 10
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AccumAlphaSize
+  commentId: F:SharpSDL3.Enums.GlAttr.AccumAlphaSize
+  id: AccumAlphaSize
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AccumAlphaSize
+  nameWithType: GlAttr.AccumAlphaSize
+  fullName: SharpSDL3.Enums.GlAttr.AccumAlphaSize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AccumAlphaSize
+    path: Enums/GlAttr.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AccumAlphaSize = 11
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.Stereo
+  commentId: F:SharpSDL3.Enums.GlAttr.Stereo
+  id: Stereo
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: Stereo
+  nameWithType: GlAttr.Stereo
+  fullName: SharpSDL3.Enums.GlAttr.Stereo
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Stereo
+    path: Enums/GlAttr.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Stereo = 12
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.Multisamplebuffers
+  commentId: F:SharpSDL3.Enums.GlAttr.Multisamplebuffers
+  id: Multisamplebuffers
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: Multisamplebuffers
+  nameWithType: GlAttr.Multisamplebuffers
+  fullName: SharpSDL3.Enums.GlAttr.Multisamplebuffers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Multisamplebuffers
+    path: Enums/GlAttr.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Multisamplebuffers = 13
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.Multisamplesamples
+  commentId: F:SharpSDL3.Enums.GlAttr.Multisamplesamples
+  id: Multisamplesamples
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: Multisamplesamples
+  nameWithType: GlAttr.Multisamplesamples
+  fullName: SharpSDL3.Enums.GlAttr.Multisamplesamples
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Multisamplesamples
+    path: Enums/GlAttr.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Multisamplesamples = 14
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.AcceleratedVisual
+  commentId: F:SharpSDL3.Enums.GlAttr.AcceleratedVisual
+  id: AcceleratedVisual
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: AcceleratedVisual
+  nameWithType: GlAttr.AcceleratedVisual
+  fullName: SharpSDL3.Enums.GlAttr.AcceleratedVisual
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AcceleratedVisual
+    path: Enums/GlAttr.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: AcceleratedVisual = 15
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.RetainedBacking
+  commentId: F:SharpSDL3.Enums.GlAttr.RetainedBacking
+  id: RetainedBacking
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: RetainedBacking
+  nameWithType: GlAttr.RetainedBacking
+  fullName: SharpSDL3.Enums.GlAttr.RetainedBacking
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RetainedBacking
+    path: Enums/GlAttr.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: RetainedBacking = 16
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextMajorVersion
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextMajorVersion
+  id: ContextMajorVersion
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextMajorVersion
+  nameWithType: GlAttr.ContextMajorVersion
+  fullName: SharpSDL3.Enums.GlAttr.ContextMajorVersion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextMajorVersion
+    path: Enums/GlAttr.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextMajorVersion = 17
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextMinorVersion
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextMinorVersion
+  id: ContextMinorVersion
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextMinorVersion
+  nameWithType: GlAttr.ContextMinorVersion
+  fullName: SharpSDL3.Enums.GlAttr.ContextMinorVersion
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextMinorVersion
+    path: Enums/GlAttr.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextMinorVersion = 18
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextFlags
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextFlags
+  id: ContextFlags
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextFlags
+  nameWithType: GlAttr.ContextFlags
+  fullName: SharpSDL3.Enums.GlAttr.ContextFlags
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextFlags
+    path: Enums/GlAttr.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextFlags = 19
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextProfileMask
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextProfileMask
+  id: ContextProfileMask
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextProfileMask
+  nameWithType: GlAttr.ContextProfileMask
+  fullName: SharpSDL3.Enums.GlAttr.ContextProfileMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextProfileMask
+    path: Enums/GlAttr.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextProfileMask = 20
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ShareWithCurrentContext
+  commentId: F:SharpSDL3.Enums.GlAttr.ShareWithCurrentContext
+  id: ShareWithCurrentContext
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ShareWithCurrentContext
+  nameWithType: GlAttr.ShareWithCurrentContext
+  fullName: SharpSDL3.Enums.GlAttr.ShareWithCurrentContext
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ShareWithCurrentContext
+    path: Enums/GlAttr.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ShareWithCurrentContext = 21
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.FramebufferSrgbCapable
+  commentId: F:SharpSDL3.Enums.GlAttr.FramebufferSrgbCapable
+  id: FramebufferSrgbCapable
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: FramebufferSrgbCapable
+  nameWithType: GlAttr.FramebufferSrgbCapable
+  fullName: SharpSDL3.Enums.GlAttr.FramebufferSrgbCapable
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: FramebufferSrgbCapable
+    path: Enums/GlAttr.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: FramebufferSrgbCapable = 22
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextReleaseBehavior
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextReleaseBehavior
+  id: ContextReleaseBehavior
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextReleaseBehavior
+  nameWithType: GlAttr.ContextReleaseBehavior
+  fullName: SharpSDL3.Enums.GlAttr.ContextReleaseBehavior
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextReleaseBehavior
+    path: Enums/GlAttr.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextReleaseBehavior = 23
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextResetNotification
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextResetNotification
+  id: ContextResetNotification
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextResetNotification
+  nameWithType: GlAttr.ContextResetNotification
+  fullName: SharpSDL3.Enums.GlAttr.ContextResetNotification
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextResetNotification
+    path: Enums/GlAttr.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextResetNotification = 24
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.ContextNoError
+  commentId: F:SharpSDL3.Enums.GlAttr.ContextNoError
+  id: ContextNoError
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: ContextNoError
+  nameWithType: GlAttr.ContextNoError
+  fullName: SharpSDL3.Enums.GlAttr.ContextNoError
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ContextNoError
+    path: Enums/GlAttr.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ContextNoError = 25
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.Floatbuffers
+  commentId: F:SharpSDL3.Enums.GlAttr.Floatbuffers
+  id: Floatbuffers
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: Floatbuffers
+  nameWithType: GlAttr.Floatbuffers
+  fullName: SharpSDL3.Enums.GlAttr.Floatbuffers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Floatbuffers
+    path: Enums/GlAttr.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Floatbuffers = 26
+    return:
+      type: SharpSDL3.Enums.GlAttr
+- uid: SharpSDL3.Enums.GlAttr.EglPlatform
+  commentId: F:SharpSDL3.Enums.GlAttr.EglPlatform
+  id: EglPlatform
+  parent: SharpSDL3.Enums.GlAttr
+  langs:
+  - csharp
+  - vb
+  name: EglPlatform
+  nameWithType: GlAttr.EglPlatform
+  fullName: SharpSDL3.Enums.GlAttr.EglPlatform
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GlAttr.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EglPlatform
+    path: Enums/GlAttr.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: EglPlatform = 27
+    return:
+      type: SharpSDL3.Enums.GlAttr
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GlAttr
+  commentId: T:SharpSDL3.Enums.GlAttr
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GlAttr.html
+  name: GlAttr
+  nameWithType: GlAttr
+  fullName: SharpSDL3.Enums.GlAttr

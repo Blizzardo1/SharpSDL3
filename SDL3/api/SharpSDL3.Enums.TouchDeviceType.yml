@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.TouchDeviceType
+  commentId: T:SharpSDL3.Enums.TouchDeviceType
+  id: TouchDeviceType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.TouchDeviceType.Direct
+  - SharpSDL3.Enums.TouchDeviceType.IndirectAbsolute
+  - SharpSDL3.Enums.TouchDeviceType.IndirectRelative
+  - SharpSDL3.Enums.TouchDeviceType.Invalid
+  langs:
+  - csharp
+  - vb
+  name: TouchDeviceType
+  nameWithType: TouchDeviceType
+  fullName: SharpSDL3.Enums.TouchDeviceType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/TouchDeviceType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TouchDeviceType
+    path: Enums/TouchDeviceType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum TouchDeviceType
+    content.vb: Public Enum TouchDeviceType
+- uid: SharpSDL3.Enums.TouchDeviceType.Invalid
+  commentId: F:SharpSDL3.Enums.TouchDeviceType.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.TouchDeviceType
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: TouchDeviceType.Invalid
+  fullName: SharpSDL3.Enums.TouchDeviceType.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TouchDeviceType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/TouchDeviceType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = -1
+    return:
+      type: SharpSDL3.Enums.TouchDeviceType
+- uid: SharpSDL3.Enums.TouchDeviceType.Direct
+  commentId: F:SharpSDL3.Enums.TouchDeviceType.Direct
+  id: Direct
+  parent: SharpSDL3.Enums.TouchDeviceType
+  langs:
+  - csharp
+  - vb
+  name: Direct
+  nameWithType: TouchDeviceType.Direct
+  fullName: SharpSDL3.Enums.TouchDeviceType.Direct
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TouchDeviceType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Direct
+    path: Enums/TouchDeviceType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Direct = 0
+    return:
+      type: SharpSDL3.Enums.TouchDeviceType
+- uid: SharpSDL3.Enums.TouchDeviceType.IndirectAbsolute
+  commentId: F:SharpSDL3.Enums.TouchDeviceType.IndirectAbsolute
+  id: IndirectAbsolute
+  parent: SharpSDL3.Enums.TouchDeviceType
+  langs:
+  - csharp
+  - vb
+  name: IndirectAbsolute
+  nameWithType: TouchDeviceType.IndirectAbsolute
+  fullName: SharpSDL3.Enums.TouchDeviceType.IndirectAbsolute
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TouchDeviceType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: IndirectAbsolute
+    path: Enums/TouchDeviceType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: IndirectAbsolute = 1
+    return:
+      type: SharpSDL3.Enums.TouchDeviceType
+- uid: SharpSDL3.Enums.TouchDeviceType.IndirectRelative
+  commentId: F:SharpSDL3.Enums.TouchDeviceType.IndirectRelative
+  id: IndirectRelative
+  parent: SharpSDL3.Enums.TouchDeviceType
+  langs:
+  - csharp
+  - vb
+  name: IndirectRelative
+  nameWithType: TouchDeviceType.IndirectRelative
+  fullName: SharpSDL3.Enums.TouchDeviceType.IndirectRelative
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TouchDeviceType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: IndirectRelative
+    path: Enums/TouchDeviceType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: IndirectRelative = 2
+    return:
+      type: SharpSDL3.Enums.TouchDeviceType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.TouchDeviceType
+  commentId: T:SharpSDL3.Enums.TouchDeviceType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.TouchDeviceType.html
+  name: TouchDeviceType
+  nameWithType: TouchDeviceType
+  fullName: SharpSDL3.Enums.TouchDeviceType

@@ -1,0 +1,220 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.IOStatus
+  commentId: T:SharpSDL3.Structs.IOStatus
+  id: IOStatus
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.IOStatus.Eof
+  - SharpSDL3.Structs.IOStatus.Error
+  - SharpSDL3.Structs.IOStatus.NotReady
+  - SharpSDL3.Structs.IOStatus.ReadOnly
+  - SharpSDL3.Structs.IOStatus.Ready
+  - SharpSDL3.Structs.IOStatus.WriteOnly
+  langs:
+  - csharp
+  - vb
+  name: IOStatus
+  nameWithType: IOStatus
+  fullName: SharpSDL3.Structs.IOStatus
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: IOStatus
+    path: Structs/IOStatus.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public enum IOStatus
+    content.vb: Public Enum IOStatus
+- uid: SharpSDL3.Structs.IOStatus.Ready
+  commentId: F:SharpSDL3.Structs.IOStatus.Ready
+  id: Ready
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: Ready
+  nameWithType: IOStatus.Ready
+  fullName: SharpSDL3.Structs.IOStatus.Ready
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ready
+    path: Structs/IOStatus.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: Ready = 0
+    return:
+      type: SharpSDL3.Structs.IOStatus
+- uid: SharpSDL3.Structs.IOStatus.Error
+  commentId: F:SharpSDL3.Structs.IOStatus.Error
+  id: Error
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: IOStatus.Error
+  fullName: SharpSDL3.Structs.IOStatus.Error
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Error
+    path: Structs/IOStatus.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: Error = 1
+    return:
+      type: SharpSDL3.Structs.IOStatus
+- uid: SharpSDL3.Structs.IOStatus.Eof
+  commentId: F:SharpSDL3.Structs.IOStatus.Eof
+  id: Eof
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: Eof
+  nameWithType: IOStatus.Eof
+  fullName: SharpSDL3.Structs.IOStatus.Eof
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Eof
+    path: Structs/IOStatus.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: Eof = 2
+    return:
+      type: SharpSDL3.Structs.IOStatus
+- uid: SharpSDL3.Structs.IOStatus.NotReady
+  commentId: F:SharpSDL3.Structs.IOStatus.NotReady
+  id: NotReady
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: NotReady
+  nameWithType: IOStatus.NotReady
+  fullName: SharpSDL3.Structs.IOStatus.NotReady
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NotReady
+    path: Structs/IOStatus.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: NotReady = 3
+    return:
+      type: SharpSDL3.Structs.IOStatus
+- uid: SharpSDL3.Structs.IOStatus.ReadOnly
+  commentId: F:SharpSDL3.Structs.IOStatus.ReadOnly
+  id: ReadOnly
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: ReadOnly
+  nameWithType: IOStatus.ReadOnly
+  fullName: SharpSDL3.Structs.IOStatus.ReadOnly
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ReadOnly
+    path: Structs/IOStatus.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: ReadOnly = 4
+    return:
+      type: SharpSDL3.Structs.IOStatus
+- uid: SharpSDL3.Structs.IOStatus.WriteOnly
+  commentId: F:SharpSDL3.Structs.IOStatus.WriteOnly
+  id: WriteOnly
+  parent: SharpSDL3.Structs.IOStatus
+  langs:
+  - csharp
+  - vb
+  name: WriteOnly
+  nameWithType: IOStatus.WriteOnly
+  fullName: SharpSDL3.Structs.IOStatus.WriteOnly
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/IOStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WriteOnly
+    path: Structs/IOStatus.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: WriteOnly = 5
+    return:
+      type: SharpSDL3.Structs.IOStatus
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: SharpSDL3.Structs.IOStatus
+  commentId: T:SharpSDL3.Structs.IOStatus
+  parent: SharpSDL3.Structs
+  href: SharpSDL3.Structs.IOStatus.html
+  name: IOStatus
+  nameWithType: IOStatus
+  fullName: SharpSDL3.Structs.IOStatus

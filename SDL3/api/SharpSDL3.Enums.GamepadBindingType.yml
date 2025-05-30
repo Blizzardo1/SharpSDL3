@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GamepadBindingType
+  commentId: T:SharpSDL3.Enums.GamepadBindingType
+  id: GamepadBindingType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GamepadBindingType.Axis
+  - SharpSDL3.Enums.GamepadBindingType.Button
+  - SharpSDL3.Enums.GamepadBindingType.Hat
+  - SharpSDL3.Enums.GamepadBindingType.None
+  langs:
+  - csharp
+  - vb
+  name: GamepadBindingType
+  nameWithType: GamepadBindingType
+  fullName: SharpSDL3.Enums.GamepadBindingType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GamepadBindingType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GamepadBindingType
+    path: Enums/GamepadBindingType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GamepadBindingType
+    content.vb: Public Enum GamepadBindingType
+- uid: SharpSDL3.Enums.GamepadBindingType.None
+  commentId: F:SharpSDL3.Enums.GamepadBindingType.None
+  id: None
+  parent: SharpSDL3.Enums.GamepadBindingType
+  langs:
+  - csharp
+  - vb
+  name: None
+  nameWithType: GamepadBindingType.None
+  fullName: SharpSDL3.Enums.GamepadBindingType.None
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadBindingType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: None
+    path: Enums/GamepadBindingType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: None = 0
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+- uid: SharpSDL3.Enums.GamepadBindingType.Button
+  commentId: F:SharpSDL3.Enums.GamepadBindingType.Button
+  id: Button
+  parent: SharpSDL3.Enums.GamepadBindingType
+  langs:
+  - csharp
+  - vb
+  name: Button
+  nameWithType: GamepadBindingType.Button
+  fullName: SharpSDL3.Enums.GamepadBindingType.Button
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadBindingType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Button
+    path: Enums/GamepadBindingType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Button = 1
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+- uid: SharpSDL3.Enums.GamepadBindingType.Axis
+  commentId: F:SharpSDL3.Enums.GamepadBindingType.Axis
+  id: Axis
+  parent: SharpSDL3.Enums.GamepadBindingType
+  langs:
+  - csharp
+  - vb
+  name: Axis
+  nameWithType: GamepadBindingType.Axis
+  fullName: SharpSDL3.Enums.GamepadBindingType.Axis
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadBindingType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Axis
+    path: Enums/GamepadBindingType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Axis = 2
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+- uid: SharpSDL3.Enums.GamepadBindingType.Hat
+  commentId: F:SharpSDL3.Enums.GamepadBindingType.Hat
+  id: Hat
+  parent: SharpSDL3.Enums.GamepadBindingType
+  langs:
+  - csharp
+  - vb
+  name: Hat
+  nameWithType: GamepadBindingType.Hat
+  fullName: SharpSDL3.Enums.GamepadBindingType.Hat
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GamepadBindingType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Hat
+    path: Enums/GamepadBindingType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Hat = 3
+    return:
+      type: SharpSDL3.Enums.GamepadBindingType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GamepadBindingType
+  commentId: T:SharpSDL3.Enums.GamepadBindingType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GamepadBindingType.html
+  name: GamepadBindingType
+  nameWithType: GamepadBindingType
+  fullName: SharpSDL3.Enums.GamepadBindingType

@@ -1,0 +1,301 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.TextInputType
+  commentId: T:SharpSDL3.Enums.TextInputType
+  id: TextInputType
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.TextInputType.Number
+  - SharpSDL3.Enums.TextInputType.NumberPasswordHidden
+  - SharpSDL3.Enums.TextInputType.NumberPasswordVisible
+  - SharpSDL3.Enums.TextInputType.Text
+  - SharpSDL3.Enums.TextInputType.TextEmail
+  - SharpSDL3.Enums.TextInputType.TextName
+  - SharpSDL3.Enums.TextInputType.TextPasswordHidden
+  - SharpSDL3.Enums.TextInputType.TextPasswordVisible
+  - SharpSDL3.Enums.TextInputType.TextUsername
+  langs:
+  - csharp
+  - vb
+  name: TextInputType
+  nameWithType: TextInputType
+  fullName: SharpSDL3.Enums.TextInputType
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextInputType
+    path: Enums/TextInputType.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum TextInputType
+    content.vb: Public Enum TextInputType
+- uid: SharpSDL3.Enums.TextInputType.Text
+  commentId: F:SharpSDL3.Enums.TextInputType.Text
+  id: Text
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: TextInputType.Text
+  fullName: SharpSDL3.Enums.TextInputType.Text
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Text
+    path: Enums/TextInputType.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Text = 0
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.TextName
+  commentId: F:SharpSDL3.Enums.TextInputType.TextName
+  id: TextName
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: TextName
+  nameWithType: TextInputType.TextName
+  fullName: SharpSDL3.Enums.TextInputType.TextName
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextName
+    path: Enums/TextInputType.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextName = 1
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.TextEmail
+  commentId: F:SharpSDL3.Enums.TextInputType.TextEmail
+  id: TextEmail
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: TextEmail
+  nameWithType: TextInputType.TextEmail
+  fullName: SharpSDL3.Enums.TextInputType.TextEmail
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextEmail
+    path: Enums/TextInputType.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextEmail = 2
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.TextUsername
+  commentId: F:SharpSDL3.Enums.TextInputType.TextUsername
+  id: TextUsername
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: TextUsername
+  nameWithType: TextInputType.TextUsername
+  fullName: SharpSDL3.Enums.TextInputType.TextUsername
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextUsername
+    path: Enums/TextInputType.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextUsername = 3
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.TextPasswordHidden
+  commentId: F:SharpSDL3.Enums.TextInputType.TextPasswordHidden
+  id: TextPasswordHidden
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: TextPasswordHidden
+  nameWithType: TextInputType.TextPasswordHidden
+  fullName: SharpSDL3.Enums.TextInputType.TextPasswordHidden
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextPasswordHidden
+    path: Enums/TextInputType.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextPasswordHidden = 4
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.TextPasswordVisible
+  commentId: F:SharpSDL3.Enums.TextInputType.TextPasswordVisible
+  id: TextPasswordVisible
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: TextPasswordVisible
+  nameWithType: TextInputType.TextPasswordVisible
+  fullName: SharpSDL3.Enums.TextInputType.TextPasswordVisible
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextPasswordVisible
+    path: Enums/TextInputType.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: TextPasswordVisible = 5
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.Number
+  commentId: F:SharpSDL3.Enums.TextInputType.Number
+  id: Number
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: Number
+  nameWithType: TextInputType.Number
+  fullName: SharpSDL3.Enums.TextInputType.Number
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Number
+    path: Enums/TextInputType.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Number = 6
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.NumberPasswordHidden
+  commentId: F:SharpSDL3.Enums.TextInputType.NumberPasswordHidden
+  id: NumberPasswordHidden
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: NumberPasswordHidden
+  nameWithType: TextInputType.NumberPasswordHidden
+  fullName: SharpSDL3.Enums.TextInputType.NumberPasswordHidden
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumberPasswordHidden
+    path: Enums/TextInputType.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NumberPasswordHidden = 7
+    return:
+      type: SharpSDL3.Enums.TextInputType
+- uid: SharpSDL3.Enums.TextInputType.NumberPasswordVisible
+  commentId: F:SharpSDL3.Enums.TextInputType.NumberPasswordVisible
+  id: NumberPasswordVisible
+  parent: SharpSDL3.Enums.TextInputType
+  langs:
+  - csharp
+  - vb
+  name: NumberPasswordVisible
+  nameWithType: TextInputType.NumberPasswordVisible
+  fullName: SharpSDL3.Enums.TextInputType.NumberPasswordVisible
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/TextInputType.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumberPasswordVisible
+    path: Enums/TextInputType.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NumberPasswordVisible = 8
+    return:
+      type: SharpSDL3.Enums.TextInputType
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.TextInputType
+  commentId: T:SharpSDL3.Enums.TextInputType
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.TextInputType.html
+  name: TextInputType
+  nameWithType: TextInputType
+  fullName: SharpSDL3.Enums.TextInputType

@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.InitStatus
+  commentId: T:SharpSDL3.Enums.InitStatus
+  id: InitStatus
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.InitStatus.Initialized
+  - SharpSDL3.Enums.InitStatus.Initializing
+  - SharpSDL3.Enums.InitStatus.Uninitialized
+  - SharpSDL3.Enums.InitStatus.Uninitializing
+  langs:
+  - csharp
+  - vb
+  name: InitStatus
+  nameWithType: InitStatus
+  fullName: SharpSDL3.Enums.InitStatus
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/InitStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: InitStatus
+    path: Enums/InitStatus.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum InitStatus
+    content.vb: Public Enum InitStatus
+- uid: SharpSDL3.Enums.InitStatus.Uninitialized
+  commentId: F:SharpSDL3.Enums.InitStatus.Uninitialized
+  id: Uninitialized
+  parent: SharpSDL3.Enums.InitStatus
+  langs:
+  - csharp
+  - vb
+  name: Uninitialized
+  nameWithType: InitStatus.Uninitialized
+  fullName: SharpSDL3.Enums.InitStatus.Uninitialized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uninitialized
+    path: Enums/InitStatus.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uninitialized = 0
+    return:
+      type: SharpSDL3.Enums.InitStatus
+- uid: SharpSDL3.Enums.InitStatus.Initializing
+  commentId: F:SharpSDL3.Enums.InitStatus.Initializing
+  id: Initializing
+  parent: SharpSDL3.Enums.InitStatus
+  langs:
+  - csharp
+  - vb
+  name: Initializing
+  nameWithType: InitStatus.Initializing
+  fullName: SharpSDL3.Enums.InitStatus.Initializing
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Initializing
+    path: Enums/InitStatus.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Initializing = 1
+    return:
+      type: SharpSDL3.Enums.InitStatus
+- uid: SharpSDL3.Enums.InitStatus.Initialized
+  commentId: F:SharpSDL3.Enums.InitStatus.Initialized
+  id: Initialized
+  parent: SharpSDL3.Enums.InitStatus
+  langs:
+  - csharp
+  - vb
+  name: Initialized
+  nameWithType: InitStatus.Initialized
+  fullName: SharpSDL3.Enums.InitStatus.Initialized
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Initialized
+    path: Enums/InitStatus.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Initialized = 2
+    return:
+      type: SharpSDL3.Enums.InitStatus
+- uid: SharpSDL3.Enums.InitStatus.Uninitializing
+  commentId: F:SharpSDL3.Enums.InitStatus.Uninitializing
+  id: Uninitializing
+  parent: SharpSDL3.Enums.InitStatus
+  langs:
+  - csharp
+  - vb
+  name: Uninitializing
+  nameWithType: InitStatus.Uninitializing
+  fullName: SharpSDL3.Enums.InitStatus.Uninitializing
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/InitStatus.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Uninitializing
+    path: Enums/InitStatus.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Uninitializing = 3
+    return:
+      type: SharpSDL3.Enums.InitStatus
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.InitStatus
+  commentId: T:SharpSDL3.Enums.InitStatus
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.InitStatus.html
+  name: InitStatus
+  nameWithType: InitStatus
+  fullName: SharpSDL3.Enums.InitStatus

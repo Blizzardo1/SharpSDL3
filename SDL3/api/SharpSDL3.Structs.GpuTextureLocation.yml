@@ -1,0 +1,465 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.GpuTextureLocation
+  commentId: T:SharpSDL3.Structs.GpuTextureLocation
+  id: GpuTextureLocation
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.GpuTextureLocation.Layer
+  - SharpSDL3.Structs.GpuTextureLocation.MipLevel
+  - SharpSDL3.Structs.GpuTextureLocation.Texture
+  - SharpSDL3.Structs.GpuTextureLocation.X
+  - SharpSDL3.Structs.GpuTextureLocation.Y
+  - SharpSDL3.Structs.GpuTextureLocation.Z
+  langs:
+  - csharp
+  - vb
+  name: GpuTextureLocation
+  nameWithType: GpuTextureLocation
+  fullName: SharpSDL3.Structs.GpuTextureLocation
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuTextureLocation
+    path: Structs/GpuTextureLocation.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct GpuTextureLocation
+    content.vb: Public Structure GpuTextureLocation
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.GpuTextureLocation.Texture
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.Texture
+  id: Texture
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: Texture
+  nameWithType: GpuTextureLocation.Texture
+  fullName: SharpSDL3.Structs.GpuTextureLocation.Texture
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Texture
+    path: Structs/GpuTextureLocation.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Texture
+    return:
+      type: System.IntPtr
+    content.vb: Public Texture As IntPtr
+- uid: SharpSDL3.Structs.GpuTextureLocation.MipLevel
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.MipLevel
+  id: MipLevel
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: MipLevel
+  nameWithType: GpuTextureLocation.MipLevel
+  fullName: SharpSDL3.Structs.GpuTextureLocation.MipLevel
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MipLevel
+    path: Structs/GpuTextureLocation.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint MipLevel
+    return:
+      type: System.UInt32
+    content.vb: Public MipLevel As UInteger
+- uid: SharpSDL3.Structs.GpuTextureLocation.Layer
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.Layer
+  id: Layer
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: Layer
+  nameWithType: GpuTextureLocation.Layer
+  fullName: SharpSDL3.Structs.GpuTextureLocation.Layer
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Layer
+    path: Structs/GpuTextureLocation.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Layer
+    return:
+      type: System.UInt32
+    content.vb: Public Layer As UInteger
+- uid: SharpSDL3.Structs.GpuTextureLocation.X
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.X
+  id: X
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: X
+  nameWithType: GpuTextureLocation.X
+  fullName: SharpSDL3.Structs.GpuTextureLocation.X
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: X
+    path: Structs/GpuTextureLocation.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint X
+    return:
+      type: System.UInt32
+    content.vb: Public X As UInteger
+- uid: SharpSDL3.Structs.GpuTextureLocation.Y
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.Y
+  id: Y
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: Y
+  nameWithType: GpuTextureLocation.Y
+  fullName: SharpSDL3.Structs.GpuTextureLocation.Y
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Y
+    path: Structs/GpuTextureLocation.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Y
+    return:
+      type: System.UInt32
+    content.vb: Public Y As UInteger
+- uid: SharpSDL3.Structs.GpuTextureLocation.Z
+  commentId: F:SharpSDL3.Structs.GpuTextureLocation.Z
+  id: Z
+  parent: SharpSDL3.Structs.GpuTextureLocation
+  langs:
+  - csharp
+  - vb
+  name: Z
+  nameWithType: GpuTextureLocation.Z
+  fullName: SharpSDL3.Structs.GpuTextureLocation.Z
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/GpuTextureLocation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Z
+    path: Structs/GpuTextureLocation.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Z
+    return:
+      type: System.UInt32
+    content.vb: Public Z As UInteger
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger

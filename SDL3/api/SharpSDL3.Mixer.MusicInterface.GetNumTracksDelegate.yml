@@ -1,0 +1,89 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  commentId: T:SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  id: MusicInterface.GetNumTracksDelegate
+  parent: SharpSDL3.Mixer
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: MusicInterface.GetNumTracksDelegate
+  nameWithType: MusicInterface.GetNumTracksDelegate
+  fullName: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Mixer/MusicInterface.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GetNumTracksDelegate
+    path: Mixer/MusicInterface.cs
+    startLine: 195
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  summary: Gets the number of tracks in the music.
+  example: []
+  syntax:
+    content: public delegate int MusicInterface.GetNumTracksDelegate(nint music)
+    parameters:
+    - id: music
+      type: System.IntPtr
+      description: An opaque pointer to the music object.
+    return:
+      type: System.Int32
+      description: The number of tracks, or -1 if not applicable.
+    content.vb: Public Delegate Function MusicInterface.GetNumTracksDelegate(music As IntPtr) As Integer
+references:
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

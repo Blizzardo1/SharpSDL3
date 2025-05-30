@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.GPUTextEngineWinding
+  commentId: T:SharpSDL3.TTF.GPUTextEngineWinding
+  id: GPUTextEngineWinding
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.GPUTextEngineWinding.Clockwise
+  - SharpSDL3.TTF.GPUTextEngineWinding.CounterClockwise
+  - SharpSDL3.TTF.GPUTextEngineWinding.Invalid
+  langs:
+  - csharp
+  - vb
+  name: GPUTextEngineWinding
+  nameWithType: GPUTextEngineWinding
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding
+  type: Enum
+  source:
+    remote:
+      path: SDL3/TTF/GPUTextEngineWinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GPUTextEngineWinding
+    path: TTF/GPUTextEngineWinding.cs
+    startLine: 1
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public enum GPUTextEngineWinding
+    content.vb: Public Enum GPUTextEngineWinding
+- uid: SharpSDL3.TTF.GPUTextEngineWinding.Invalid
+  commentId: F:SharpSDL3.TTF.GPUTextEngineWinding.Invalid
+  id: Invalid
+  parent: SharpSDL3.TTF.GPUTextEngineWinding
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: GPUTextEngineWinding.Invalid
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/GPUTextEngineWinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: TTF/GPUTextEngineWinding.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Invalid = -1
+    return:
+      type: SharpSDL3.TTF.GPUTextEngineWinding
+- uid: SharpSDL3.TTF.GPUTextEngineWinding.Clockwise
+  commentId: F:SharpSDL3.TTF.GPUTextEngineWinding.Clockwise
+  id: Clockwise
+  parent: SharpSDL3.TTF.GPUTextEngineWinding
+  langs:
+  - csharp
+  - vb
+  name: Clockwise
+  nameWithType: GPUTextEngineWinding.Clockwise
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding.Clockwise
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/GPUTextEngineWinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Clockwise
+    path: TTF/GPUTextEngineWinding.cs
+    startLine: 3
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: Clockwise = 0
+    return:
+      type: SharpSDL3.TTF.GPUTextEngineWinding
+- uid: SharpSDL3.TTF.GPUTextEngineWinding.CounterClockwise
+  commentId: F:SharpSDL3.TTF.GPUTextEngineWinding.CounterClockwise
+  id: CounterClockwise
+  parent: SharpSDL3.TTF.GPUTextEngineWinding
+  langs:
+  - csharp
+  - vb
+  name: CounterClockwise
+  nameWithType: GPUTextEngineWinding.CounterClockwise
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding.CounterClockwise
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/GPUTextEngineWinding.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: CounterClockwise
+    path: TTF/GPUTextEngineWinding.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: CounterClockwise = 1
+    return:
+      type: SharpSDL3.TTF.GPUTextEngineWinding
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: SharpSDL3.TTF.GPUTextEngineWinding
+  commentId: T:SharpSDL3.TTF.GPUTextEngineWinding
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.GPUTextEngineWinding.html
+  name: GPUTextEngineWinding
+  nameWithType: GPUTextEngineWinding
+  fullName: SharpSDL3.TTF.GPUTextEngineWinding

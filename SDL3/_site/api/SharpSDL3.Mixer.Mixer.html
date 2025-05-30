@@ -1,0 +1,3727 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Class Mixer | SharpSDL3 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Class Mixer | SharpSDL3 ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SharpSDL3">
+            SharpSDL3
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SharpSDL3.Mixer.Mixer">
+
+
+
+  <h1 id="SharpSDL3_Mixer_Mixer" data-uid="SharpSDL3.Mixer.Mixer" class="text-break">
+Class Mixer  
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SharpSDL3.html">SharpSDL3</a>.<a class="xref" href="SharpSDL3.Mixer.html">Mixer</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SharpSDL3.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static class Mixer</code></pre>
+  </div>
+
+
+
+
+  <dl class="typelist inheritance">
+    <dt>Inheritance</dt>
+    <dd>
+      <div><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object">object</a></div>
+      <div><span class="xref">Mixer</span></div>
+    </dd>
+  </dl>
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object)">object.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gethashcode">object.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.memberwiseclone">object.MemberwiseClone()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.tostring">object.ToString()</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Channels" data-uid="SharpSDL3.Mixer.Mixer.Channels">
+  Channels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L622"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default number of mixing channels.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int Channels = 8</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_DefaultChannels" data-uid="SharpSDL3.Mixer.Mixer.DefaultChannels">
+  DefaultChannels
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L627"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default number of audio channels (stereo).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DefaultChannels = 2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_DefaultFormat" data-uid="SharpSDL3.Mixer.Mixer.DefaultFormat">
+  DefaultFormat
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L632"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default audio format (16-bit signed).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const AudioFormat DefaultFormat = S16</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Enums.AudioFormat.html">AudioFormat</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_DefaultFrequency" data-uid="SharpSDL3.Mixer.Mixer.DefaultFrequency">
+  DefaultFrequency
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L637"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The default audio frequency (44100 Hz).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int DefaultFrequency = 44100</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_EffectMaxSpeed" data-uid="SharpSDL3.Mixer.Mixer.EffectMaxSpeed">
+  EffectMaxSpeed
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const string EffectMaxSpeed = &quot;MIX_EFFECTSMAXSPEED&quot;</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MIX_CHANNEL_POST" data-uid="SharpSDL3.Mixer.Mixer.MIX_CHANNEL_POST">
+  MIX_CHANNEL_POST
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L647"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Special channel value for applying effects to the final mixed stream.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MIX_CHANNEL_POST = -2</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MIX_MAX_VOLUME" data-uid="SharpSDL3.Mixer.Mixer.MIX_MAX_VOLUME">
+  MIX_MAX_VOLUME
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L652"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Alias for <a class="xref" href="SharpSDL3.Mixer.Mixer.html#SharpSDL3_Mixer_Mixer_MaxVolume">MaxVolume</a>.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MIX_MAX_VOLUME = 128</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Major" data-uid="SharpSDL3.Mixer.Mixer.Major">
+  Major
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L16"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Printable format: &quot;%d.%d.%d&quot;, MAJOR, MINOR, MICRO</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int Major = 3</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MaxVolume" data-uid="SharpSDL3.Mixer.Mixer.MaxVolume">
+  MaxVolume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L642"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The maximum volume for a chunk or channel (128).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int MaxVolume = 128</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Micro" data-uid="SharpSDL3.Mixer.Mixer.Micro">
+  Micro
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L17"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int Micro = 0</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Minor" data-uid="SharpSDL3.Mixer.Mixer.Minor">
+  Minor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L18"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public const int Minor = 0</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ChannelFinished_" data-uid="SharpSDL3.Mixer.Mixer.ChannelFinished*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ChannelFinished_SharpSDL3_Mixer_Mixer_Mix_ChannelFinishedCallback_" data-uid="SharpSDL3.Mixer.Mixer.ChannelFinished(SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback)">
+  ChannelFinished(Mix_ChannelFinishedCallback)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets a callback that runs when a channel has finished playing.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ChannelFinished(Mixer.Mix_ChannelFinishedCallback channelFinishedCallback)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channelFinishedCallback</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback.html">Mix_ChannelFinishedCallback</a></dt>
+    <dd><p>The callback function to be invoked when a channel finishes playing.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_ChannelFinished_SharpSDL3_Mixer_Mixer_Mix_ChannelFinishedCallback__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This method ensures that the callback is properly registered and provides a layer of abstraction
+over the native method to make it less trivial.</p>
+</div>
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_CloseAudio_" data-uid="SharpSDL3.Mixer.Mixer.CloseAudio*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_CloseAudio" data-uid="SharpSDL3.Mixer.Mixer.CloseAudio">
+  CloseAudio()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L372"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Closes the currently open audio device, halting all playback.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void CloseAudio()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_CloseAudio_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This triggers any registered channel and music finished callbacks.
+Ensure all <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a> and <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a> objects are disposed before calling.</p>
+</div>
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_EffectDone_" data-uid="SharpSDL3.Mixer.Mixer.EffectDone*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_EffectDone_System_Int32_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.EffectDone(System.Int32,System.IntPtr)">
+  EffectDone(int, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L87"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void EffectDone(int channel, nint udata)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>udata</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ExpireChannel_" data-uid="SharpSDL3.Mixer.Mixer.ExpireChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ExpireChannel_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.ExpireChannel(System.Int32,System.Int32)">
+  ExpireChannel(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L96"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ExpireChannel(int channel, int ticks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ticks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeInChannel_" data-uid="SharpSDL3.Mixer.Mixer.FadeInChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeInChannel_System_Int32_SharpSDL3_Mixer_Chunk_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeInChannel(System.Int32,SharpSDL3.Mixer.Chunk,System.Int32,System.Int32)">
+  FadeInChannel(int, Chunk, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L102"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FadeInChannel(int channel, Chunk chunk, int loops, int ms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeInChannelTimed_" data-uid="SharpSDL3.Mixer.Mixer.FadeInChannelTimed*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeInChannelTimed_System_Int32_SharpSDL3_Mixer_Chunk_System_Int32_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeInChannelTimed(System.Int32,SharpSDL3.Mixer.Chunk,System.Int32,System.Int32,System.Int32)">
+  FadeInChannelTimed(int, Chunk, int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L120"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FadeInChannelTimed(int channel, Chunk chunk, int loops, int ms, int ticks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ticks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeInMusic_" data-uid="SharpSDL3.Mixer.Mixer.FadeInMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeInMusic_SharpSDL3_Mixer_Music_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeInMusic(SharpSDL3.Mixer.Music,System.Int32,System.Int32)">
+  FadeInMusic(Music, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L135"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FadeInMusic(Music music, int loops, int ms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeInMusicPos_" data-uid="SharpSDL3.Mixer.Mixer.FadeInMusicPos*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeInMusicPos_SharpSDL3_Mixer_Music_System_Int32_System_Int32_System_Double_" data-uid="SharpSDL3.Mixer.Mixer.FadeInMusicPos(SharpSDL3.Mixer.Music,System.Int32,System.Int32,System.Double)">
+  FadeInMusicPos(Music, int, int, double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L144"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FadeInMusicPos(Music music, int loops, int ms, double position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeOutChannel_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeOutChannel_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutChannel(System.Int32,System.Int32)">
+  FadeOutChannel(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L152"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FadeOutChannel(int which, int ms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>which</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeOutGroup_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutGroup*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeOutGroup_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutGroup(System.Int32,System.Int32)">
+  FadeOutGroup(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L158"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int FadeOutGroup(int tag, int ms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadeOutMusic_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadeOutMusic_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadeOutMusic(System.Int32)">
+  FadeOutMusic(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L164"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool FadeOutMusic(int ms)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>ms</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadingChannel_" data-uid="SharpSDL3.Mixer.Mixer.FadingChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadingChannel_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.FadingChannel(System.Int32)">
+  FadingChannel(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L170"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Fading FadingChannel(int which)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>which</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.Fading.html">Fading</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FadingMusic_" data-uid="SharpSDL3.Mixer.Mixer.FadingMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FadingMusic" data-uid="SharpSDL3.Mixer.Mixer.FadingMusic">
+  FadingMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L176"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Fading FadingMusic()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.Fading.html">Fading</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FreeChunk_" data-uid="SharpSDL3.Mixer.Mixer.FreeChunk*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FreeChunk_SharpSDL3_Mixer_Chunk_" data-uid="SharpSDL3.Mixer.Mixer.FreeChunk(SharpSDL3.Mixer.Chunk)">
+  FreeChunk(Chunk)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L435"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FreeChunk(Chunk chunk)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FreeChunk_" data-uid="SharpSDL3.Mixer.Mixer.FreeChunk*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FreeChunk_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.FreeChunk(System.IntPtr)">
+  FreeChunk(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L443"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FreeChunk(nint chunk)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FreeMusic_" data-uid="SharpSDL3.Mixer.Mixer.FreeMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FreeMusic_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.FreeMusic(SharpSDL3.Mixer.Music)">
+  FreeMusic(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L452"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FreeMusic(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_FreeMusic_" data-uid="SharpSDL3.Mixer.Mixer.FreeMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_FreeMusic_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.FreeMusic(System.IntPtr)">
+  FreeMusic(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L461"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void FreeMusic(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetChunk_" data-uid="SharpSDL3.Mixer.Mixer.GetChunk*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetChunk_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GetChunk(System.Int32)">
+  GetChunk(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L178"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetChunk(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicHookData_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicHookData*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicHookData" data-uid="SharpSDL3.Mixer.Mixer.GetMusicHookData">
+  GetMusicHookData()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L184"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static nint GetMusicHookData()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopEndTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopEndTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopEndTime_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopEndTime(SharpSDL3.Mixer.Music)">
+  GetMusicLoopEndTime(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L186"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopEndTime(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopEndTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopEndTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopEndTime_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopEndTime(System.IntPtr)">
+  GetMusicLoopEndTime(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L192"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopEndTime(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopLengthTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopLengthTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopLengthTime_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopLengthTime(SharpSDL3.Mixer.Music)">
+  GetMusicLoopLengthTime(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L198"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopLengthTime(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopLengthTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopLengthTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopLengthTime_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopLengthTime(System.IntPtr)">
+  GetMusicLoopLengthTime(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L204"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopLengthTime(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopStartTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopStartTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopStartTime_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopStartTime(SharpSDL3.Mixer.Music)">
+  GetMusicLoopStartTime(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L210"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopStartTime(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicLoopStartTime_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopStartTime*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicLoopStartTime_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicLoopStartTime(System.IntPtr)">
+  GetMusicLoopStartTime(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L216"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicLoopStartTime(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicPosition_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicPosition*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicPosition_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicPosition(SharpSDL3.Mixer.Music)">
+  GetMusicPosition(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L222"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicPosition(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicPosition_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicPosition*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicPosition_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicPosition(System.IntPtr)">
+  GetMusicPosition(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L228"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double GetMusicPosition(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicVolume_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicVolume*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicVolume_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicVolume(SharpSDL3.Mixer.Music)">
+  GetMusicVolume(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L234"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetMusicVolume(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetMusicVolume_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicVolume*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetMusicVolume_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetMusicVolume(System.IntPtr)">
+  GetMusicVolume(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L240"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetMusicVolume(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetNumTracks_" data-uid="SharpSDL3.Mixer.Mixer.GetNumTracks*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetNumTracks_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.GetNumTracks(SharpSDL3.Mixer.Music)">
+  GetNumTracks(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L246"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetNumTracks(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetNumTracks_" data-uid="SharpSDL3.Mixer.Mixer.GetNumTracks*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetNumTracks_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.GetNumTracks(System.IntPtr)">
+  GetNumTracks(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GetNumTracks(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetSoundFonts_" data-uid="SharpSDL3.Mixer.Mixer.GetSoundFonts*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetSoundFonts" data-uid="SharpSDL3.Mixer.Mixer.GetSoundFonts">
+  GetSoundFonts()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetSoundFonts()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GetTimidityCfg_" data-uid="SharpSDL3.Mixer.Mixer.GetTimidityCfg*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GetTimidityCfg" data-uid="SharpSDL3.Mixer.Mixer.GetTimidityCfg">
+  GetTimidityCfg()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string GetTimidityCfg()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupAvailable_" data-uid="SharpSDL3.Mixer.Mixer.GroupAvailable*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupAvailable_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupAvailable(System.Int32)">
+  GroupAvailable(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GroupAvailable(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupChannel_" data-uid="SharpSDL3.Mixer.Mixer.GroupChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupChannel_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupChannel(System.Int32,System.Int32)">
+  GroupChannel(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L278"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool GroupChannel(int which, int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>which</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupChannels_" data-uid="SharpSDL3.Mixer.Mixer.GroupChannels*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupChannels_System_Int32_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupChannels(System.Int32,System.Int32,System.Int32)">
+  GroupChannels(int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L286"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool GroupChannels(int from, int to, int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>from</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>to</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupCount_" data-uid="SharpSDL3.Mixer.Mixer.GroupCount*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupCount_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupCount(System.Int32)">
+  GroupCount(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L296"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GroupCount(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupNewer_" data-uid="SharpSDL3.Mixer.Mixer.GroupNewer*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupNewer_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupNewer(System.Int32)">
+  GroupNewer(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L302"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GroupNewer(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_GroupOldest_" data-uid="SharpSDL3.Mixer.Mixer.GroupOldest*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_GroupOldest_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.GroupOldest(System.Int32)">
+  GroupOldest(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L308"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int GroupOldest(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_HaltChannel_" data-uid="SharpSDL3.Mixer.Mixer.HaltChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_HaltChannel_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.HaltChannel(System.Int32)">
+  HaltChannel(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L314"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HaltChannel(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_HaltGroup_" data-uid="SharpSDL3.Mixer.Mixer.HaltGroup*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_HaltGroup_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.HaltGroup(System.Int32)">
+  HaltGroup(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L320"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HaltGroup(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_HaltMusic_" data-uid="SharpSDL3.Mixer.Mixer.HaltMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_HaltMusic" data-uid="SharpSDL3.Mixer.Mixer.HaltMusic">
+  HaltMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L326"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HaltMusic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_HookMusic_" data-uid="SharpSDL3.Mixer.Mixer.HookMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_HookMusic_SharpSDL3_Mixer_Mixer_Mix_MixCallback_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.HookMusic(SharpSDL3.Mixer.Mixer.Mix_MixCallback,System.IntPtr)">
+  HookMusic(Mix_MixCallback, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L328"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HookMusic(Mixer.Mix_MixCallback mix_func, nint arg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mix_func</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_MixCallback.html">Mix_MixCallback</a></dt>
+    <dd></dd>
+    <dt><code>arg</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_HookMusicFinished_" data-uid="SharpSDL3.Mixer.Mixer.HookMusicFinished*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_HookMusicFinished_SharpSDL3_Mixer_Mixer_MusicFinishedCallback_" data-uid="SharpSDL3.Mixer.Mixer.HookMusicFinished(SharpSDL3.Mixer.Mixer.MusicFinishedCallback)">
+  HookMusicFinished(MusicFinishedCallback)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L334"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void HookMusicFinished(Mixer.MusicFinishedCallback music_finished)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music_finished</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.MusicFinishedCallback.html">MusicFinishedCallback</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Initialize_" data-uid="SharpSDL3.Mixer.Mixer.Initialize*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Initialize_SharpSDL3_Mixer_Mixer_MixInit_" data-uid="SharpSDL3.Mixer.Mixer.Initialize(SharpSDL3.Mixer.Mixer.MixInit)">
+  Initialize(MixInit)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L385"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Initializes SDL3_mixer with the specified audio format support.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Mixer.MixInit Initialize(Mixer.MixInit flags)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>flags</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.MixInit.html">MixInit</a></dt>
+    <dd><p>Flags indicating which audio formats to initialize (e.g., MixInit.MIX_INIT_WAV).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.MixInit.html">MixInit</a></dt>
+    <dd><p>The flags that were successfully initialized.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_Initialize_SharpSDL3_Mixer_Mixer_MixInit__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call this before opening an audio device to ensure support for specific audio formats.
+You can call this multiple times to initialize additional formats.
+Use <a class="xref" href="SharpSDL3.Mixer.Mixer.html#SharpSDL3_Mixer_Mixer_Quit">Quit()</a> to deinitialize when done.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if initialization fails for any requested flags.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_LoadMusic_" data-uid="SharpSDL3.Mixer.Mixer.LoadMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_LoadMusic_System_String_" data-uid="SharpSDL3.Mixer.Mixer.LoadMusic(System.String)">
+  LoadMusic(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L479"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads a music object from a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Music LoadMusic(string filePath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path to the music file (e.g., MP3, OGG).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd><p>A <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a> object representing the loaded music.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_LoadMusic_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Dispose of the returned <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a> when no longer needed.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if the file cannot be loaded.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_LoadWav_" data-uid="SharpSDL3.Mixer.Mixer.LoadWav*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_LoadWav_System_String_" data-uid="SharpSDL3.Mixer.Mixer.LoadWav(System.String)">
+  LoadWav(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L509"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Loads an audio chunk from a file.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static Chunk LoadWav(string filePath)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>filePath</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd><p>The path to the audio file (e.g., WAV).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd><p>A <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a> object representing the loaded audio.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_LoadWav_System_String__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Dispose of the returned <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a> when no longer needed.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if the file path is null or empty.</p>
+</dd>
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if the file cannot be loaded.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_MasterVolume_" data-uid="SharpSDL3.Mixer.Mixer.MasterVolume*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MasterVolume_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.MasterVolume(System.Int32)">
+  MasterVolume(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L340"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int MasterVolume(int volume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_MixerVersion_" data-uid="SharpSDL3.Mixer.Mixer.MixerVersion*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MixerVersion" data-uid="SharpSDL3.Mixer.Mixer.MixerVersion">
+  MixerVersion()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L349"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>This is the version number macro for the current SDL_mixer version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static string MixerVersion()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_MixerVersionAtLeast_" data-uid="SharpSDL3.Mixer.Mixer.MixerVersionAtLeast*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MixerVersionAtLeast_System_Int32_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.MixerVersionAtLeast(System.Int32,System.Int32,System.Int32)">
+  MixerVersionAtLeast(int, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L358"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Checks if the compiled SDL3_mixer version is at least the specified version.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool MixerVersionAtLeast(int major, int minor, int micro)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>major</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The major version to check.</p>
+</dd>
+    <dt><code>minor</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The minor version to check.</p>
+</dd>
+    <dt><code>micro</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The micro version to check.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd><p>True if the compiled version is at least the specified version; otherwise, false.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ModMusicJumpToOrder_" data-uid="SharpSDL3.Mixer.Mixer.ModMusicJumpToOrder*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ModMusicJumpToOrder_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.ModMusicJumpToOrder(System.Int32)">
+  ModMusicJumpToOrder(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L693"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool ModMusicJumpToOrder(int order)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>order</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_MusicDuration_" data-uid="SharpSDL3.Mixer.Mixer.MusicDuration*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MusicDuration_SharpSDL3_Mixer_Music_" data-uid="SharpSDL3.Mixer.Mixer.MusicDuration(SharpSDL3.Mixer.Music)">
+  MusicDuration(Music)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L699"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MusicDuration(Music music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_MusicDuration_" data-uid="SharpSDL3.Mixer.Mixer.MusicDuration*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_MusicDuration_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.MusicDuration(System.IntPtr)">
+  MusicDuration(nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L705"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static double MusicDuration(nint music)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_OpenAudio_" data-uid="SharpSDL3.Mixer.Mixer.OpenAudio*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_OpenAudio_SharpSDL3_Mixer_AudioDeviceId_System_Nullable_SharpSDL3_Structs_AudioSpec__" data-uid="SharpSDL3.Mixer.Mixer.OpenAudio(SharpSDL3.Mixer.AudioDeviceId,System.Nullable{SharpSDL3.Structs.AudioSpec})">
+  OpenAudio(AudioDeviceId, AudioSpec?)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L402"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Opens an audio device for playback with the specified settings.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void OpenAudio(AudioDeviceId deviceId, AudioSpec? spec = null)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>deviceId</code> <a class="xref" href="SharpSDL3.Mixer.AudioDeviceId.html">AudioDeviceId</a></dt>
+    <dd><p>The ID of the audio device to open, or 0 for the default device.</p>
+</dd>
+    <dt><code>spec</code> <a class="xref" href="SharpSDL3.Structs.AudioSpec.html">AudioSpec</a>?</dt>
+    <dd><p>The desired audio specification, or null for default settings.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_OpenAudio_SharpSDL3_Mixer_AudioDeviceId_System_Nullable_SharpSDL3_Structs_AudioSpec___remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call <a class="xref" href="SharpSDL3.Mixer.Mixer.html#SharpSDL3_Mixer_Mixer_CloseAudio">CloseAudio()</a> when done to close the device.
+If <code class="paramref">spec</code> is null, SDL3_mixer uses reasonable defaults.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if the audio device cannot be opened.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Pause_" data-uid="SharpSDL3.Mixer.Mixer.Pause*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Pause_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.Pause(System.Int32)">
+  Pause(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L711"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Pause(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PauseGroup_" data-uid="SharpSDL3.Mixer.Mixer.PauseGroup*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PauseGroup_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PauseGroup(System.Int32)">
+  PauseGroup(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L725"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void PauseGroup(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PauseMusic_" data-uid="SharpSDL3.Mixer.Mixer.PauseMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PauseMusic" data-uid="SharpSDL3.Mixer.Mixer.PauseMusic">
+  PauseMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L731"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void PauseMusic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Paused_" data-uid="SharpSDL3.Mixer.Mixer.Paused*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Paused_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.Paused(System.Int32)">
+  Paused(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L717"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Paused(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PausedMusic_" data-uid="SharpSDL3.Mixer.Mixer.PausedMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PausedMusic" data-uid="SharpSDL3.Mixer.Mixer.PausedMusic">
+  PausedMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L723"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PausedMusic()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayChannel_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayChannel_SharpSDL3_Mixer_Chunk_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannel(SharpSDL3.Mixer.Chunk,System.Int32,System.Int32)">
+  PlayChannel(Chunk, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L535"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Plays an audio chunk on a specific channel or the first available channel.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int PlayChannel(Chunk chunk, int loops, int channel = -1)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd><p>The <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a> to play.</p>
+</dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of times to loop the sound (-1 for infinite, 0 for once).</p>
+</dd>
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The channel to play on, or -1 for the first available channel.</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The channel used for playback, or -1 if no channel was available.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if playback fails.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayChannel_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannel*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayChannel_System_Int32_SharpSDL3_Mixer_Chunk_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannel(System.Int32,SharpSDL3.Mixer.Chunk,System.Int32)">
+  PlayChannel(int, Chunk, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L549"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int PlayChannel(int channel, Chunk chunk, int loops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayChannelTimed_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannelTimed*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayChannelTimed_System_Int32_SharpSDL3_Mixer_Chunk_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PlayChannelTimed(System.Int32,SharpSDL3.Mixer.Chunk,System.Int32,System.Int32)">
+  PlayChannelTimed(int, Chunk, int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L553"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int PlayChannelTimed(int channel, Chunk chunk, int loops, int ticks)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>ticks</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayMusic_" data-uid="SharpSDL3.Mixer.Mixer.PlayMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayMusic_SharpSDL3_Mixer_Music_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PlayMusic(SharpSDL3.Mixer.Music,System.Int32)">
+  PlayMusic(Music, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L751"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Plays a music object.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PlayMusic(Music music, int loops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd><p>The <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a> to play.</p>
+</dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The number of times to loop the music (0 for once, -1 for infinite).</p>
+</dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_PlayMusic_SharpSDL3_Mixer_Music_System_Int32__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Only one music object can play at a time. This halts any currently playing music.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.argumentnullexception">ArgumentNullException</a></dt>
+    <dd><p>Thrown if <code class="paramref">music</code> is null.</p>
+</dd>
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if playback fails.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayMusic_" data-uid="SharpSDL3.Mixer.Mixer.PlayMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayMusic_System_IntPtr_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.PlayMusic(System.IntPtr,System.Int32)">
+  PlayMusic(nint, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L755"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PlayMusic(nint music, int loops)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>loops</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Playing_" data-uid="SharpSDL3.Mixer.Mixer.Playing*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Playing_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.Playing(System.Int32)">
+  Playing(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L733"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Playing(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_PlayingMusic_" data-uid="SharpSDL3.Mixer.Mixer.PlayingMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_PlayingMusic" data-uid="SharpSDL3.Mixer.Mixer.PlayingMusic">
+  PlayingMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L739"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool PlayingMusic()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Quit_" data-uid="SharpSDL3.Mixer.Mixer.Quit*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Quit" data-uid="SharpSDL3.Mixer.Mixer.Quit">
+  Quit()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L416"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Deinitializes SDL3_mixer, unloading all audio format support.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Quit()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_Quit_remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>Call this after closing all audio devices and freeing resources.
+This method is safe to call multiple times.</p>
+</div>
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_RegisterEffect_" data-uid="SharpSDL3.Mixer.Mixer.RegisterEffect*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_RegisterEffect_System_Int32_SharpSDL3_Mixer_Mixer_Mix_EffectFunc_t_SharpSDL3_Mixer_Mixer_Mix_EffectDone_t_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.RegisterEffect(System.Int32,SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t,SharpSDL3.Mixer.Mixer.Mix_EffectDone_t,System.IntPtr)">
+  RegisterEffect(int, Mix_EffectFunc_t, Mix_EffectDone_t, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L595"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Registers a custom audio effect for a channel or the final mix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RegisterEffect(int channel, Mixer.Mix_EffectFunc_t effect, Mixer.Mix_EffectDone_t done, nint userData)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The channel to apply the effect to, or <a class="xref" href="SharpSDL3.Mixer.Mixer.html#SharpSDL3_Mixer_Mixer_MIX_CHANNEL_POST">MIX_CHANNEL_POST</a> for the final mix.</p>
+</dd>
+    <dt><code>effect</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.html">Mix_EffectFunc_t</a></dt>
+    <dd><p>The effect callback that processes audio data.</p>
+</dd>
+    <dt><code>done</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_EffectDone_t.html">Mix_EffectDone_t</a></dt>
+    <dd><p>The callback invoked when the effect is unregistered (optional).</p>
+</dd>
+    <dt><code>userData</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd><p>User-defined data passed to the callbacks.</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_RegisterEffect_System_Int32_SharpSDL3_Mixer_Mixer_Mix_EffectFunc_t_SharpSDL3_Mixer_Mixer_Mix_EffectDone_t_System_IntPtr__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>The effect callback must be kept alive for the duration of its use.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if the effect cannot be registered.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ReserveChannels_" data-uid="SharpSDL3.Mixer.Mixer.ReserveChannels*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ReserveChannels_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.ReserveChannels(System.Int32)">
+  ReserveChannels(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L770"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int ReserveChannels(int num)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>num</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Resume_" data-uid="SharpSDL3.Mixer.Mixer.Resume*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Resume_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.Resume(System.Int32)">
+  Resume(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L776"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void Resume(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ResumeGroup_" data-uid="SharpSDL3.Mixer.Mixer.ResumeGroup*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ResumeGroup_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.ResumeGroup(System.Int32)">
+  ResumeGroup(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L782"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResumeGroup(int tag)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>tag</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_ResumeMusic_" data-uid="SharpSDL3.Mixer.Mixer.ResumeMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_ResumeMusic" data-uid="SharpSDL3.Mixer.Mixer.ResumeMusic">
+  ResumeMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L788"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void ResumeMusic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_RewindMusic_" data-uid="SharpSDL3.Mixer.Mixer.RewindMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_RewindMusic" data-uid="SharpSDL3.Mixer.Mixer.RewindMusic">
+  RewindMusic()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L790"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void RewindMusic()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetDistance_" data-uid="SharpSDL3.Mixer.Mixer.SetDistance*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetDistance_System_Int32_System_Byte_" data-uid="SharpSDL3.Mixer.Mixer.SetDistance(System.Int32,System.Byte)">
+  SetDistance(int, byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L792"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetDistance(int channel, byte distance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetMusicPosition_" data-uid="SharpSDL3.Mixer.Mixer.SetMusicPosition*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetMusicPosition_System_Double_" data-uid="SharpSDL3.Mixer.Mixer.SetMusicPosition(System.Double)">
+  SetMusicPosition(double)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L800"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetMusicPosition(double position)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>position</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.double">double</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetPanning_" data-uid="SharpSDL3.Mixer.Mixer.SetPanning*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetPanning_System_Int32_System_Byte_System_Byte_" data-uid="SharpSDL3.Mixer.Mixer.SetPanning(System.Int32,System.Byte,System.Byte)">
+  SetPanning(int, byte, byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L610"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Sets the stereo panning for a specific channel or the final mix.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetPanning(int channel, byte left, byte right)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd><p>The channel to apply panning to, or <a class="xref" href="SharpSDL3.Mixer.Mixer.html#SharpSDL3_Mixer_Mixer_MIX_CHANNEL_POST">MIX_CHANNEL_POST</a> for the final mix.</p>
+</dd>
+    <dt><code>left</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>The volume of the left channel (0 to 255, where 0 is silent and 255 is full volume).</p>
+</dd>
+    <dt><code>right</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd><p>The volume of the right channel (0 to 255, where 0 is silent and 255 is full volume).</p>
+</dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h4 class="section" id="SharpSDL3_Mixer_Mixer_SetPanning_System_Int32_System_Byte_System_Byte__remarks">Remarks</h4>
+  <div class="markdown level1 remarks"><p>This has no effect if the audio device is not in stereo mode.</p>
+</div>
+
+  <h4 class="section">Exceptions</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.SdlException.html">SdlException</a></dt>
+    <dd><p>Thrown if panning cannot be set.</p>
+</dd>
+  </dl>
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetPosition_" data-uid="SharpSDL3.Mixer.Mixer.SetPosition*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetPosition_System_Int32_System_Int16_System_Byte_" data-uid="SharpSDL3.Mixer.Mixer.SetPosition(System.Int32,System.Int16,System.Byte)">
+  SetPosition(int, short, byte)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L806"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetPosition(int channel, short angle, byte distance)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>angle</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int16">short</a></dt>
+    <dd></dd>
+    <dt><code>distance</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetPostMix_" data-uid="SharpSDL3.Mixer.Mixer.SetPostMix*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetPostMix_SharpSDL3_Mixer_Mixer_Mix_MixCallback_System_IntPtr_" data-uid="SharpSDL3.Mixer.Mixer.SetPostMix(SharpSDL3.Mixer.Mixer.Mix_MixCallback,System.IntPtr)">
+  SetPostMix(Mix_MixCallback, nint)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L816"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static void SetPostMix(Mixer.Mix_MixCallback mix_func, nint arg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>mix_func</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_MixCallback.html">Mix_MixCallback</a></dt>
+    <dd></dd>
+    <dt><code>arg</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetReverseStereo_" data-uid="SharpSDL3.Mixer.Mixer.SetReverseStereo*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetReverseStereo_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.SetReverseStereo(System.Int32,System.Int32)">
+  SetReverseStereo(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L822"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetReverseStereo(int channel, int flip)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>flip</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetSoundFonts_" data-uid="SharpSDL3.Mixer.Mixer.SetSoundFonts*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetSoundFonts_System_String_" data-uid="SharpSDL3.Mixer.Mixer.SetSoundFonts(System.String)">
+  SetSoundFonts(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L830"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetSoundFonts(string paths)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>paths</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_SetTimidityCfg_" data-uid="SharpSDL3.Mixer.Mixer.SetTimidityCfg*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_SetTimidityCfg_System_String_" data-uid="SharpSDL3.Mixer.Mixer.SetTimidityCfg(System.String)">
+  SetTimidityCfg(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L836"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool SetTimidityCfg(string path)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>path</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_StartTrack_" data-uid="SharpSDL3.Mixer.Mixer.StartTrack*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_StartTrack_SharpSDL3_Mixer_Music_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.StartTrack(SharpSDL3.Mixer.Music,System.Int32)">
+  StartTrack(Music, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L842"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool StartTrack(Music music, int track)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>music</code> <a class="xref" href="SharpSDL3.Mixer.Music.html">Music</a></dt>
+    <dd></dd>
+    <dt><code>track</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_UnregisterAllEffects_" data-uid="SharpSDL3.Mixer.Mixer.UnregisterAllEffects*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_UnregisterAllEffects_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.UnregisterAllEffects(System.Int32)">
+  UnregisterAllEffects(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L850"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool UnregisterAllEffects(int channel)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_UnregisterEffect_" data-uid="SharpSDL3.Mixer.Mixer.UnregisterEffect*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_UnregisterEffect_System_Int32_SharpSDL3_Mixer_Mixer_Mix_EffectFunc_t_" data-uid="SharpSDL3.Mixer.Mixer.UnregisterEffect(System.Int32,SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t)">
+  UnregisterEffect(int, Mix_EffectFunc_t)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L856"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static bool UnregisterEffect(int channel, Mixer.Mix_EffectFunc_t f)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>f</code> <a class="xref" href="SharpSDL3.Mixer.Mixer.html">Mixer</a>.<a class="xref" href="SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t.html">Mix_EffectFunc_t</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_Volume_" data-uid="SharpSDL3.Mixer.Mixer.Volume*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_Volume_System_Int32_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.Volume(System.Int32,System.Int32)">
+  Volume(int, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L864"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int Volume(int channel, int volume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>channel</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_VolumeChunk_" data-uid="SharpSDL3.Mixer.Mixer.VolumeChunk*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_VolumeChunk_SharpSDL3_Mixer_Chunk_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.VolumeChunk(SharpSDL3.Mixer.Chunk,System.Int32)">
+  VolumeChunk(Chunk, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L872"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int VolumeChunk(Chunk chunk, int volume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> <a class="xref" href="SharpSDL3.Mixer.Chunk.html">Chunk</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_VolumeChunk_" data-uid="SharpSDL3.Mixer.Mixer.VolumeChunk*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_VolumeChunk_System_IntPtr_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.VolumeChunk(System.IntPtr,System.Int32)">
+  VolumeChunk(nint, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L876"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int VolumeChunk(nint chunk, int volume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>chunk</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_Mixer_Mixer_VolumeMusic_" data-uid="SharpSDL3.Mixer.Mixer.VolumeMusic*"></a>
+
+  <h3 id="SharpSDL3_Mixer_Mixer_VolumeMusic_System_Int32_" data-uid="SharpSDL3.Mixer.Mixer.VolumeMusic(System.Int32)">
+  VolumeMusic(int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/Mixer.cs/#L884"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public static int VolumeMusic(int volume)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>volume</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

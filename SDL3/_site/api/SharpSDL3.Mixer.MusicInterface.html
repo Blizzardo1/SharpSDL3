@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct MusicInterface | SharpSDL3 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct MusicInterface | SharpSDL3 ">
+      
+      <meta name="description" content="Defines an interface for a music backend in SDL3_mixer, specifying how to load, play, and manage music data.">
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Blizzardo1/SharpSDL3/new/main/apiSpec/new?filename=SharpSDL3_Mixer_MusicInterface.md&amp;value=---%0Auid%3A%20SharpSDL3.Mixer.MusicInterface%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SharpSDL3">
+            SharpSDL3
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SharpSDL3.Mixer.MusicInterface">
+
+
+
+  <h1 id="SharpSDL3_Mixer_MusicInterface" data-uid="SharpSDL3.Mixer.MusicInterface" class="text-break">
+Struct MusicInterface  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SharpSDL3.html">SharpSDL3</a>.<a class="xref" href="SharpSDL3.Mixer.html">Mixer</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SharpSDL3.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"><p>Defines an interface for a music backend in SDL3_mixer, specifying how to load, play, and manage music data.</p>
+</div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct MusicInterface</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+  <h2 id="SharpSDL3_Mixer_MusicInterface_remarks">Remarks</h2>
+  <div class="markdown level0 remarks"><p>This struct is used internally by SDL3_mixer to interact with different music backends (e.g., MP3, OGG, MIDI).
+Each field is either a property or a delegate corresponding to a function in the music backend.</p>
+</div>
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Api" data-uid="SharpSDL3.Mixer.MusicInterface.Api">
+  Api
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The API type of the music backend.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicApi Api</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicApi.html">MusicApi</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Close" data-uid="SharpSDL3.Mixer.MusicInterface.Close">
+  Close
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L273"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.CloseDelegate Close</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.CloseDelegate.html">CloseDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_CreateFromFile" data-uid="SharpSDL3.Mixer.MusicInterface.CreateFromFile">
+  CreateFromFile
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L253"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.CreateFromFileDelegate CreateFromFile</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate.html">CreateFromFileDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_CreateFromIO" data-uid="SharpSDL3.Mixer.MusicInterface.CreateFromIO">
+  CreateFromIO
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L252"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.CreateFromIODelegate CreateFromIO</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate.html">CreateFromIODelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Delete" data-uid="SharpSDL3.Mixer.MusicInterface.Delete">
+  Delete
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L272"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.DeleteDelegate Delete</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.DeleteDelegate.html">DeleteDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Duration" data-uid="SharpSDL3.Mixer.MusicInterface.Duration">
+  Duration
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L262"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.DurationDelegate Duration</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.DurationDelegate.html">DurationDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_GetAudio" data-uid="SharpSDL3.Mixer.MusicInterface.GetAudio">
+  GetAudio
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L258"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.GetAudioDelegate GetAudio</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.GetAudioDelegate.html">GetAudioDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_GetMetaTag" data-uid="SharpSDL3.Mixer.MusicInterface.GetMetaTag">
+  GetMetaTag
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L266"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.GetMetaTagDelegate GetMetaTag</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate.html">GetMetaTagDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_GetNumTracks" data-uid="SharpSDL3.Mixer.MusicInterface.GetNumTracks">
+  GetNumTracks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L267"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.GetNumTracksDelegate GetNumTracks</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate.html">GetNumTracksDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_GetVolume" data-uid="SharpSDL3.Mixer.MusicInterface.GetVolume">
+  GetVolume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L255"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.GetVolumeDelegate GetVolume</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate.html">GetVolumeDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_IsPlaying" data-uid="SharpSDL3.Mixer.MusicInterface.IsPlaying">
+  IsPlaying
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L257"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.IsPlayingDelegate IsPlaying</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate.html">IsPlayingDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Jump" data-uid="SharpSDL3.Mixer.MusicInterface.Jump">
+  Jump
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L259"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.JumpDelegate Jump</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.JumpDelegate.html">JumpDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Load" data-uid="SharpSDL3.Mixer.MusicInterface.Load">
+  Load
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L249"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.LoadDelegate Load</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.LoadDelegate.html">LoadDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Loaded" data-uid="SharpSDL3.Mixer.MusicInterface.Loaded">
+  Loaded
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L36"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the backend library is loaded.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Loaded</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_LoopEnd" data-uid="SharpSDL3.Mixer.MusicInterface.LoopEnd">
+  LoopEnd
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L264"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.LoopEndDelegate LoopEnd</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.LoopEndDelegate.html">LoopEndDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_LoopLength" data-uid="SharpSDL3.Mixer.MusicInterface.LoopLength">
+  LoopLength
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L265"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.LoopLengthDelegate LoopLength</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate.html">LoopLengthDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_LoopStart" data-uid="SharpSDL3.Mixer.MusicInterface.LoopStart">
+  LoopStart
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L263"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.LoopStartDelegate LoopStart</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.LoopStartDelegate.html">LoopStartDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Open" data-uid="SharpSDL3.Mixer.MusicInterface.Open">
+  Open
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L251"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.OpenDelegate Open</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.OpenDelegate.html">OpenDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Opened" data-uid="SharpSDL3.Mixer.MusicInterface.Opened">
+  Opened
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>Indicates whether the backend is initialized for audio output.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public bool Opened</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.boolean">bool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Pause" data-uid="SharpSDL3.Mixer.MusicInterface.Pause">
+  Pause
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L269"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.PauseDelegate Pause</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.PauseDelegate.html">PauseDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Play" data-uid="SharpSDL3.Mixer.MusicInterface.Play">
+  Play
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L256"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.PlayDelegate Play</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.PlayDelegate.html">PlayDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Resume" data-uid="SharpSDL3.Mixer.MusicInterface.Resume">
+  Resume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L270"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.ResumeDelegate Resume</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.ResumeDelegate.html">ResumeDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Seek" data-uid="SharpSDL3.Mixer.MusicInterface.Seek">
+  Seek
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L260"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.SeekDelegate Seek</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.SeekDelegate.html">SeekDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_SetVolume" data-uid="SharpSDL3.Mixer.MusicInterface.SetVolume">
+  SetVolume
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L254"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.SetVolumeDelegate SetVolume</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate.html">SetVolumeDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_StartTrack" data-uid="SharpSDL3.Mixer.MusicInterface.StartTrack">
+  StartTrack
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L268"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.StartTrackDelegate StartTrack</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.StartTrackDelegate.html">StartTrackDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Stop" data-uid="SharpSDL3.Mixer.MusicInterface.Stop">
+  Stop
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L271"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.StopDelegate Stop</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.StopDelegate.html">StopDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Tag" data-uid="SharpSDL3.Mixer.MusicInterface.Tag">
+  Tag
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>A tag identifying the music backend (e.g., &quot;mp3&quot;, &quot;ogg&quot;).</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Tag</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Tell" data-uid="SharpSDL3.Mixer.MusicInterface.Tell">
+  Tell
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L261"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.TellDelegate Tell</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.TellDelegate.html">TellDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Type" data-uid="SharpSDL3.Mixer.MusicInterface.Type">
+  Type
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L30"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"><p>The type of music supported by this backend.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicType Type</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicType.html">MusicType</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_Mixer_MusicInterface_Unload" data-uid="SharpSDL3.Mixer.MusicInterface.Unload">
+  Unload
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L274"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public MusicInterface.UnloadDelegate Unload</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Mixer.MusicInterface.html">MusicInterface</a>.<a class="xref" href="SharpSDL3.Mixer.MusicInterface.UnloadDelegate.html">UnloadDelegate</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/Mixer/MusicInterface.cs/#L13" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

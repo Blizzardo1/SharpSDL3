@@ -1,0 +1,1783 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title>Struct Font | SharpSDL3 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content="Struct Font | SharpSDL3 ">
+      
+      
+      <link rel="icon" href="../favicon.ico">
+      <link rel="stylesheet" href="../public/docfx.min.css">
+      <link rel="stylesheet" href="../public/main.css">
+      <meta name="docfx:navrel" content="../toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="../">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Blizzardo1/SharpSDL3/new/main/apiSpec/new?filename=SharpSDL3_TTF_Font.md&amp;value=---%0Auid%3A%20SharpSDL3.TTF.Font%0Asummary%3A%20&#39;*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax&#39;%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./../public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="ManagedReference">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="../index.html">
+            <img id="logo" class="svg" src="../logo.svg" alt="SharpSDL3">
+            SharpSDL3
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+      <div class="toc-offcanvas">
+        <div class="offcanvas-md offcanvas-start" tabindex="-1" id="tocOffcanvas" aria-labelledby="tocOffcanvasLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="tocOffcanvasLabel">Table of Contents</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#tocOffcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <nav class="toc" id="toc"></nav>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="actionbar">
+          <button class="btn btn-lg border-0 d-md-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#tocOffcanvas" aria-controls="tocOffcanvas" aria-expanded="false" aria-label="Show table of contents">
+            <i class="bi bi-list"></i>
+          </button>
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="SharpSDL3.TTF.Font">
+
+
+
+  <h1 id="SharpSDL3_TTF_Font" data-uid="SharpSDL3.TTF.Font" class="text-break">
+Struct Font  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L6"><i class="bi bi-code-slash"></i></a>
+  </h1>
+
+  <div class="facts text-secondary">
+    <dl><dt>Namespace</dt><dd><a class="xref" href="SharpSDL3.html">SharpSDL3</a>.<a class="xref" href="SharpSDL3.TTF.html">TTF</a></dd></dl>
+  <dl><dt>Assembly</dt><dd>SharpSDL3.dll</dd></dl>
+  </div>
+
+  <div class="markdown summary"></div>
+  <div class="markdown conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public struct Font</code></pre>
+  </div>
+
+
+
+
+
+
+
+  <dl class="typelist inheritedMembers">
+    <dt>Inherited Members</dt>
+    <dd>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.equals">ValueType.Equals(object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode">ValueType.GetHashCode()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.valuetype.tostring">ValueType.ToString()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)">object.Equals(object, object)</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.gettype">object.GetType()</a>
+    </div>
+    <div>
+      <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.object.referenceequals">object.ReferenceEquals(object, object)</a>
+    </div>
+  </dd></dl>
+
+
+
+
+
+
+  <h2 class="section" id="fields">Fields
+</h2>
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Args" data-uid="SharpSDL3.TTF.Font.Args">
+  Args
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L50"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Args</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_CachedPositions" data-uid="SharpSDL3.TTF.Font.CachedPositions">
+  CachedPositions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L52"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public byte* CachedPositions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.byte">byte</a>*</dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_CloseIo" data-uid="SharpSDL3.TTF.Font.CloseIo">
+  CloseIo
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L49"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SdlBool CloseIo</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.SdlBool.html">SdlBool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Direction" data-uid="SharpSDL3.TTF.Font.Direction">
+  Direction
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L61"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Direction</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Face" data-uid="SharpSDL3.TTF.Font.Face">
+  Face
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L10"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Face</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_FaceIndex" data-uid="SharpSDL3.TTF.Font.FaceIndex">
+  FaceIndex
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L11"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long FaceIndex</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_FallbackFor" data-uid="SharpSDL3.TTF.Font.FallbackFor">
+  FallbackFor
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L65"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint FallbackFor</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Fallbacks" data-uid="SharpSDL3.TTF.Font.Fallbacks">
+  Fallbacks
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L64"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Fallbacks</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_FtLoadTarget" data-uid="SharpSDL3.TTF.Font.FtLoadTarget">
+  FtLoadTarget
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L54"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int FtLoadTarget</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_GlyphIndices" data-uid="SharpSDL3.TTF.Font.GlyphIndices">
+  GlyphIndices
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L46"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint GlyphIndices</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_GlyphOverhang" data-uid="SharpSDL3.TTF.Font.GlyphOverhang">
+  GlyphOverhang
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L41"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int GlyphOverhang</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Glyphs" data-uid="SharpSDL3.TTF.Font.Glyphs">
+  Glyphs
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L45"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Glyphs</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Hdpi" data-uid="SharpSDL3.TTF.Font.Hdpi">
+  Hdpi
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L20"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Hdpi</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_HorizontalAlign" data-uid="SharpSDL3.TTF.Font.HorizontalAlign">
+  HorizontalAlign
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L63"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int HorizontalAlign</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_LineThickness" data-uid="SharpSDL3.TTF.Font.LineThickness">
+  LineThickness
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L42"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int LineThickness</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Name" data-uid="SharpSDL3.TTF.Font.Name">
+  Name
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L9"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public string Name</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_NextCachedPositions" data-uid="SharpSDL3.TTF.Font.NextCachedPositions">
+  NextCachedPositions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L51"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int NextCachedPositions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Outline" data-uid="SharpSDL3.TTF.Font.Outline">
+  Outline
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L32"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Outline</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Positions" data-uid="SharpSDL3.TTF.Font.Positions">
+  Positions
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L53"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Positions</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Props" data-uid="SharpSDL3.TTF.Font.Props">
+  Props
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L12"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Props</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_RenderSdf" data-uid="SharpSDL3.TTF.Font.RenderSdf">
+  RenderSdf
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L62"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SdlBool RenderSdf</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.SdlBool.html">SdlBool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_RenderSubpixel" data-uid="SharpSDL3.TTF.Font.RenderSubpixel">
+  RenderSubpixel
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L55"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int RenderSubpixel</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Script" data-uid="SharpSDL3.TTF.Font.Script">
+  Script
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L60"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public uint Script</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Src" data-uid="SharpSDL3.TTF.Font.Src">
+  Src
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L47"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Src</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_SrcOffset" data-uid="SharpSDL3.TTF.Font.SrcOffset">
+  SrcOffset
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L48"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public long SrcOffset</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int64">long</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_StrikethroughTopRow" data-uid="SharpSDL3.TTF.Font.StrikethroughTopRow">
+  StrikethroughTopRow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L44"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int StrikethroughTopRow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Stroker" data-uid="SharpSDL3.TTF.Font.Stroker">
+  Stroker
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L33"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Stroker</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Text" data-uid="SharpSDL3.TTF.Font.Text">
+  Text
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L14"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public nint Text</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_UnderlineTopRow" data-uid="SharpSDL3.TTF.Font.UnderlineTopRow">
+  UnderlineTopRow
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L43"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int UnderlineTopRow</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_UseKerning" data-uid="SharpSDL3.TTF.Font.UseKerning">
+  UseKerning
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L39"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public SdlBool UseKerning</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.SdlBool.html">SdlBool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+  <h3 id="SharpSDL3_TTF_Font_Vdpi" data-uid="SharpSDL3.TTF.Font.Vdpi">
+  Vdpi
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L21"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public int Vdpi</code></pre>
+  </div>
+
+
+
+
+  <h4 class="section">Field Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+  <h2 class="section" id="properties">Properties
+</h2>
+
+
+  <a id="SharpSDL3_TTF_Font_Ascent_" data-uid="SharpSDL3.TTF.Font.Ascent*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Ascent" data-uid="SharpSDL3.TTF.Font.Ascent">
+  Ascent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L23"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Ascent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Descent_" data-uid="SharpSDL3.TTF.Font.Descent*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Descent" data-uid="SharpSDL3.TTF.Font.Descent">
+  Descent
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L24"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Descent { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_EnableKerning_" data-uid="SharpSDL3.TTF.Font.EnableKerning*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_EnableKerning" data-uid="SharpSDL3.TTF.Font.EnableKerning">
+  EnableKerning
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L34"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly SdlBool EnableKerning { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.SdlBool.html">SdlBool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Generation_" data-uid="SharpSDL3.TTF.Font.Generation*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Generation" data-uid="SharpSDL3.TTF.Font.Generation">
+  Generation
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L13"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly uint Generation { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.uint32">uint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Handle_" data-uid="SharpSDL3.TTF.Font.Handle*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Handle" data-uid="SharpSDL3.TTF.Font.Handle">
+  Handle
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L67"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint Handle { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Height_" data-uid="SharpSDL3.TTF.Font.Height*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Height" data-uid="SharpSDL3.TTF.Font.Height">
+  Height
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L22"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Height { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Lineskip_" data-uid="SharpSDL3.TTF.Font.Lineskip*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Lineskip" data-uid="SharpSDL3.TTF.Font.Lineskip">
+  Lineskip
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L25"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly int Lineskip { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Size_" data-uid="SharpSDL3.TTF.Font.Size*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Size" data-uid="SharpSDL3.TTF.Font.Size">
+  Size
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L15"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly float Size { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.single">float</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Style_" data-uid="SharpSDL3.TTF.Font.Style*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Style" data-uid="SharpSDL3.TTF.Font.Style">
+  Style
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L26"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly FontStyle Style { get; set; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.TTF.FontStyle.html">FontStyle</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_Weight_" data-uid="SharpSDL3.TTF.Font.Weight*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Weight" data-uid="SharpSDL3.TTF.Font.Weight">
+  Weight
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L31"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly FontWeight Weight { get; }</code></pre>
+  </div>
+
+
+
+
+
+  <h4 class="section">Property Value</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.TTF.FontWeight.html">FontWeight</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+  <h2 class="section" id="methods">Methods
+</h2>
+
+
+  <a id="SharpSDL3_TTF_Font_Close_" data-uid="SharpSDL3.TTF.Font.Close*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_Close" data-uid="SharpSDL3.TTF.Font.Close">
+  Close()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L83"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly void Close()</code></pre>
+  </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_GetFontKerningSize_" data-uid="SharpSDL3.TTF.Font.GetFontKerningSize*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_GetFontKerningSize" data-uid="SharpSDL3.TTF.Font.GetFontKerningSize">
+  GetFontKerningSize()
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L81"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly SdlBool GetFontKerningSize()</code></pre>
+  </div>
+
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.SdlBool.html">SdlBool</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_GetTextSize_" data-uid="SharpSDL3.TTF.Font.GetTextSize*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_GetTextSize_System_String_" data-uid="SharpSDL3.TTF.Font.GetTextSize(System.String)">
+  GetTextSize(string)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L72"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly Size GetTextSize(string text)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="SharpSDL3.Structs.Size.html">Size</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderGlyphBlended_" data-uid="SharpSDL3.TTF.Font.RenderGlyphBlended*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderGlyphBlended_System_Char_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderGlyphBlended(System.Char,SharpSDL3.Structs.Color)">
+  RenderGlyphBlended(char, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L78"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderGlyphBlended(char c, Color foregroundColor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderGlyphShaded_" data-uid="SharpSDL3.TTF.Font.RenderGlyphShaded*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderGlyphShaded_System_Char_SharpSDL3_Structs_Color_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderGlyphShaded(System.Char,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)">
+  RenderGlyphShaded(char, Color, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L76"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderGlyphShaded(char c, Color foregroundColor, Color bg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+    <dt><code>bg</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderGlyphSolid_" data-uid="SharpSDL3.TTF.Font.RenderGlyphSolid*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderGlyphSolid_System_Char_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderGlyphSolid(System.Char,SharpSDL3.Structs.Color)">
+  RenderGlyphSolid(char, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L74"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderGlyphSolid(char c, Color foregroundColor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>c</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.char">char</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderTextBlended_" data-uid="SharpSDL3.TTF.Font.RenderTextBlended*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderTextBlended_System_String_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderTextBlended(System.String,SharpSDL3.Structs.Color)">
+  RenderTextBlended(string, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L77"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderTextBlended(string text, Color foregroundColor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderTextBlendedWrapped_" data-uid="SharpSDL3.TTF.Font.RenderTextBlendedWrapped*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderTextBlendedWrapped_System_String_SharpSDL3_Structs_Color_System_Int32_" data-uid="SharpSDL3.TTF.Font.RenderTextBlendedWrapped(System.String,SharpSDL3.Structs.Color,System.Int32)">
+  RenderTextBlendedWrapped(string, Color, int)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L79"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderTextBlendedWrapped(string text, Color foregroundColor, int wrapped)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+    <dt><code>wrapped</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.int32">int</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderTextShaded_" data-uid="SharpSDL3.TTF.Font.RenderTextShaded*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderTextShaded_System_String_SharpSDL3_Structs_Color_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderTextShaded(System.String,SharpSDL3.Structs.Color,SharpSDL3.Structs.Color)">
+  RenderTextShaded(string, Color, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L75"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderTextShaded(string text, Color foregroundColor, Color bg)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+    <dt><code>bg</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+  <a id="SharpSDL3_TTF_Font_RenderTextSolid_" data-uid="SharpSDL3.TTF.Font.RenderTextSolid*"></a>
+
+  <h3 id="SharpSDL3_TTF_Font_RenderTextSolid_System_String_SharpSDL3_Structs_Color_" data-uid="SharpSDL3.TTF.Font.RenderTextSolid(System.String,SharpSDL3.Structs.Color)">
+  RenderTextSolid(string, Color)
+  <a class="header-action link-secondary" title="View source" href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L73"><i class="bi bi-code-slash"></i></a>
+  </h3>
+
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public readonly nint RenderTextSolid(string text, Color foregroundColor)</code></pre>
+  </div>
+
+  <h4 class="section">Parameters</h4>
+  <dl class="parameters">
+    <dt><code>text</code> <a class="xref" href="https://learn.microsoft.com/dotnet/api/system.string">string</a></dt>
+    <dd></dd>
+    <dt><code>foregroundColor</code> <a class="xref" href="SharpSDL3.Structs.Color.html">Color</a></dt>
+    <dd></dd>
+  </dl>
+
+  <h4 class="section">Returns</h4>
+  <dl class="parameters">
+    <dt><a class="xref" href="https://learn.microsoft.com/dotnet/api/system.intptr">nint</a></dt>
+    <dd></dd>
+  </dl>
+
+
+
+
+
+
+
+
+
+
+
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Blizzardo1/SharpSDL3/blob/main/SDL3/TTF/Font.cs/#L6" class="edit-link">Edit this page</a>
+        </div>
+
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.DisplayOrientation
+  commentId: T:SharpSDL3.Enums.DisplayOrientation
+  id: DisplayOrientation
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.DisplayOrientation.Landscape
+  - SharpSDL3.Enums.DisplayOrientation.LandscapeFlipped
+  - SharpSDL3.Enums.DisplayOrientation.Portrait
+  - SharpSDL3.Enums.DisplayOrientation.PortraitFlipped
+  - SharpSDL3.Enums.DisplayOrientation.Unknown
+  langs:
+  - csharp
+  - vb
+  name: DisplayOrientation
+  nameWithType: DisplayOrientation
+  fullName: SharpSDL3.Enums.DisplayOrientation
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DisplayOrientation
+    path: Enums/DisplayOrientation.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum DisplayOrientation
+    content.vb: Public Enum DisplayOrientation
+- uid: SharpSDL3.Enums.DisplayOrientation.Unknown
+  commentId: F:SharpSDL3.Enums.DisplayOrientation.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.DisplayOrientation
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: DisplayOrientation.Unknown
+  fullName: SharpSDL3.Enums.DisplayOrientation.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/DisplayOrientation.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.DisplayOrientation
+- uid: SharpSDL3.Enums.DisplayOrientation.Landscape
+  commentId: F:SharpSDL3.Enums.DisplayOrientation.Landscape
+  id: Landscape
+  parent: SharpSDL3.Enums.DisplayOrientation
+  langs:
+  - csharp
+  - vb
+  name: Landscape
+  nameWithType: DisplayOrientation.Landscape
+  fullName: SharpSDL3.Enums.DisplayOrientation.Landscape
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Landscape
+    path: Enums/DisplayOrientation.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Landscape = 1
+    return:
+      type: SharpSDL3.Enums.DisplayOrientation
+- uid: SharpSDL3.Enums.DisplayOrientation.LandscapeFlipped
+  commentId: F:SharpSDL3.Enums.DisplayOrientation.LandscapeFlipped
+  id: LandscapeFlipped
+  parent: SharpSDL3.Enums.DisplayOrientation
+  langs:
+  - csharp
+  - vb
+  name: LandscapeFlipped
+  nameWithType: DisplayOrientation.LandscapeFlipped
+  fullName: SharpSDL3.Enums.DisplayOrientation.LandscapeFlipped
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LandscapeFlipped
+    path: Enums/DisplayOrientation.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: LandscapeFlipped = 2
+    return:
+      type: SharpSDL3.Enums.DisplayOrientation
+- uid: SharpSDL3.Enums.DisplayOrientation.Portrait
+  commentId: F:SharpSDL3.Enums.DisplayOrientation.Portrait
+  id: Portrait
+  parent: SharpSDL3.Enums.DisplayOrientation
+  langs:
+  - csharp
+  - vb
+  name: Portrait
+  nameWithType: DisplayOrientation.Portrait
+  fullName: SharpSDL3.Enums.DisplayOrientation.Portrait
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Portrait
+    path: Enums/DisplayOrientation.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Portrait = 3
+    return:
+      type: SharpSDL3.Enums.DisplayOrientation
+- uid: SharpSDL3.Enums.DisplayOrientation.PortraitFlipped
+  commentId: F:SharpSDL3.Enums.DisplayOrientation.PortraitFlipped
+  id: PortraitFlipped
+  parent: SharpSDL3.Enums.DisplayOrientation
+  langs:
+  - csharp
+  - vb
+  name: PortraitFlipped
+  nameWithType: DisplayOrientation.PortraitFlipped
+  fullName: SharpSDL3.Enums.DisplayOrientation.PortraitFlipped
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/DisplayOrientation.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: PortraitFlipped
+    path: Enums/DisplayOrientation.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: PortraitFlipped = 4
+    return:
+      type: SharpSDL3.Enums.DisplayOrientation
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.DisplayOrientation
+  commentId: T:SharpSDL3.Enums.DisplayOrientation
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.DisplayOrientation.html
+  name: DisplayOrientation
+  nameWithType: DisplayOrientation
+  fullName: SharpSDL3.Enums.DisplayOrientation

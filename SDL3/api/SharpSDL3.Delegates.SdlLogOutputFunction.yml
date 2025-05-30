@@ -1,0 +1,109 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Delegates.SdlLogOutputFunction
+  commentId: T:SharpSDL3.Delegates.SdlLogOutputFunction
+  id: Delegates.SdlLogOutputFunction
+  parent: SharpSDL3
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Delegates.SdlLogOutputFunction
+  nameWithType: Delegates.SdlLogOutputFunction
+  fullName: SharpSDL3.Delegates.SdlLogOutputFunction
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Delegates.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SdlLogOutputFunction
+    path: Delegates.cs
+    startLine: 74
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3
+  syntax:
+    content: public delegate void Delegates.SdlLogOutputFunction(nint userdata, LogCategory category, LogPriority priority, string message)
+    parameters:
+    - id: userdata
+      type: System.IntPtr
+    - id: category
+      type: SharpSDL3.Enums.LogCategory
+    - id: priority
+      type: SharpSDL3.Enums.LogPriority
+    - id: message
+      type: System.String
+    content.vb: Public Delegate Sub Delegates.SdlLogOutputFunction(userdata As IntPtr, category As LogCategory, priority As LogPriority, message As String)
+references:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: SharpSDL3.Enums.LogCategory
+  commentId: T:SharpSDL3.Enums.LogCategory
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.LogCategory.html
+  name: LogCategory
+  nameWithType: LogCategory
+  fullName: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogPriority
+  commentId: T:SharpSDL3.Enums.LogPriority
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.LogPriority.html
+  name: LogPriority
+  nameWithType: LogPriority
+  fullName: SharpSDL3.Enums.LogPriority
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html

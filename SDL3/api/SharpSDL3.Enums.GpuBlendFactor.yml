@@ -1,0 +1,436 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuBlendFactor
+  commentId: T:SharpSDL3.Enums.GpuBlendFactor
+  id: GpuBlendFactor
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuBlendFactor.ConstantColor
+  - SharpSDL3.Enums.GpuBlendFactor.DstAlpha
+  - SharpSDL3.Enums.GpuBlendFactor.DstColor
+  - SharpSDL3.Enums.GpuBlendFactor.Invalid
+  - SharpSDL3.Enums.GpuBlendFactor.One
+  - SharpSDL3.Enums.GpuBlendFactor.OneMinusConstantColor
+  - SharpSDL3.Enums.GpuBlendFactor.OneMinusDstAlpha
+  - SharpSDL3.Enums.GpuBlendFactor.OneMinusDstColor
+  - SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcAlpha
+  - SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcColor
+  - SharpSDL3.Enums.GpuBlendFactor.SrcAlpha
+  - SharpSDL3.Enums.GpuBlendFactor.SrcAlphaSaturate
+  - SharpSDL3.Enums.GpuBlendFactor.SrcColor
+  - SharpSDL3.Enums.GpuBlendFactor.Zero
+  langs:
+  - csharp
+  - vb
+  name: GpuBlendFactor
+  nameWithType: GpuBlendFactor
+  fullName: SharpSDL3.Enums.GpuBlendFactor
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuBlendFactor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuBlendFactor
+    content.vb: Public Enum GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.Invalid
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: GpuBlendFactor.Invalid
+  fullName: SharpSDL3.Enums.GpuBlendFactor.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/GpuBlendFactor.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = 0
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.Zero
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.Zero
+  id: Zero
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: Zero
+  nameWithType: GpuBlendFactor.Zero
+  fullName: SharpSDL3.Enums.GpuBlendFactor.Zero
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Zero
+    path: Enums/GpuBlendFactor.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Zero = 1
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.One
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.One
+  id: One
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: One
+  nameWithType: GpuBlendFactor.One
+  fullName: SharpSDL3.Enums.GpuBlendFactor.One
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: One
+    path: Enums/GpuBlendFactor.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: One = 2
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.SrcColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.SrcColor
+  id: SrcColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: SrcColor
+  nameWithType: GpuBlendFactor.SrcColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.SrcColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SrcColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SrcColor = 3
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcColor
+  id: OneMinusSrcColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: OneMinusSrcColor
+  nameWithType: GpuBlendFactor.OneMinusSrcColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OneMinusSrcColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OneMinusSrcColor = 4
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.DstColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.DstColor
+  id: DstColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: DstColor
+  nameWithType: GpuBlendFactor.DstColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.DstColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DstColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DstColor = 5
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.OneMinusDstColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.OneMinusDstColor
+  id: OneMinusDstColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: OneMinusDstColor
+  nameWithType: GpuBlendFactor.OneMinusDstColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.OneMinusDstColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OneMinusDstColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OneMinusDstColor = 6
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.SrcAlpha
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.SrcAlpha
+  id: SrcAlpha
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: SrcAlpha
+  nameWithType: GpuBlendFactor.SrcAlpha
+  fullName: SharpSDL3.Enums.GpuBlendFactor.SrcAlpha
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SrcAlpha
+    path: Enums/GpuBlendFactor.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SrcAlpha = 7
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcAlpha
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcAlpha
+  id: OneMinusSrcAlpha
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: OneMinusSrcAlpha
+  nameWithType: GpuBlendFactor.OneMinusSrcAlpha
+  fullName: SharpSDL3.Enums.GpuBlendFactor.OneMinusSrcAlpha
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OneMinusSrcAlpha
+    path: Enums/GpuBlendFactor.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OneMinusSrcAlpha = 8
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.DstAlpha
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.DstAlpha
+  id: DstAlpha
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: DstAlpha
+  nameWithType: GpuBlendFactor.DstAlpha
+  fullName: SharpSDL3.Enums.GpuBlendFactor.DstAlpha
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: DstAlpha
+    path: Enums/GpuBlendFactor.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: DstAlpha = 9
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.OneMinusDstAlpha
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.OneMinusDstAlpha
+  id: OneMinusDstAlpha
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: OneMinusDstAlpha
+  nameWithType: GpuBlendFactor.OneMinusDstAlpha
+  fullName: SharpSDL3.Enums.GpuBlendFactor.OneMinusDstAlpha
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OneMinusDstAlpha
+    path: Enums/GpuBlendFactor.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OneMinusDstAlpha = 10
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.ConstantColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.ConstantColor
+  id: ConstantColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: ConstantColor
+  nameWithType: GpuBlendFactor.ConstantColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.ConstantColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ConstantColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ConstantColor = 11
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.OneMinusConstantColor
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.OneMinusConstantColor
+  id: OneMinusConstantColor
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: OneMinusConstantColor
+  nameWithType: GpuBlendFactor.OneMinusConstantColor
+  fullName: SharpSDL3.Enums.GpuBlendFactor.OneMinusConstantColor
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: OneMinusConstantColor
+    path: Enums/GpuBlendFactor.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: OneMinusConstantColor = 12
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+- uid: SharpSDL3.Enums.GpuBlendFactor.SrcAlphaSaturate
+  commentId: F:SharpSDL3.Enums.GpuBlendFactor.SrcAlphaSaturate
+  id: SrcAlphaSaturate
+  parent: SharpSDL3.Enums.GpuBlendFactor
+  langs:
+  - csharp
+  - vb
+  name: SrcAlphaSaturate
+  nameWithType: GpuBlendFactor.SrcAlphaSaturate
+  fullName: SharpSDL3.Enums.GpuBlendFactor.SrcAlphaSaturate
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuBlendFactor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SrcAlphaSaturate
+    path: Enums/GpuBlendFactor.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SrcAlphaSaturate = 13
+    return:
+      type: SharpSDL3.Enums.GpuBlendFactor
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuBlendFactor
+  commentId: T:SharpSDL3.Enums.GpuBlendFactor
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuBlendFactor.html
+  name: GpuBlendFactor
+  nameWithType: GpuBlendFactor
+  fullName: SharpSDL3.Enums.GpuBlendFactor

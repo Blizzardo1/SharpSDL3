@@ -1,0 +1,1077 @@
+### YamlMime:TableOfContent
+items:
+- uid: SharpSDL3
+  name: SharpSDL3
+  type: Namespace
+  items:
+  - uid: SharpSDL3.CallerOwnedStringMarshaller
+    name: CallerOwnedStringMarshaller
+    type: Class
+  - uid: SharpSDL3.Constants
+    name: Constants
+    type: Class
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    type: Class
+  - uid: SharpSDL3.Delegates.SdlAppEventFunc
+    name: Delegates.SdlAppEventFunc
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAppInitFunc
+    name: Delegates.SdlAppInitFunc
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAppIterateFunc
+    name: Delegates.SdlAppIterateFunc
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAppQuitFunc
+    name: Delegates.SdlAppQuitFunc
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAssertionHandler
+    name: Delegates.SdlAssertionHandler
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAudioPostmixCallback
+    name: Delegates.SdlAudioPostmixCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlAudioStreamCallback
+    name: Delegates.SdlAudioStreamCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlCleanupPropertyCallback
+    name: Delegates.SdlCleanupPropertyCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlClipboardCleanupCallback
+    name: Delegates.SdlClipboardCleanupCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlClipboardDataCallback
+    name: Delegates.SdlClipboardDataCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlDialogFileCallback
+    name: Delegates.SdlDialogFileCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlEglAttribArrayCallback
+    name: Delegates.SdlEglAttribArrayCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlEglIntArrayCallback
+    name: Delegates.SdlEglIntArrayCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+    name: Delegates.SdlEnumerateDirectoryCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+    name: Delegates.SdlEnumeratePropertiesCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlEventFilter
+    name: Delegates.SdlEventFilter
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHashCallback
+    name: Delegates.SdlHashCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHashDestroyCallback
+    name: Delegates.SdlHashDestroyCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHashFreeCallback
+    name: Delegates.SdlHashFreeCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+    name: Delegates.SdlHashKeyMatchCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHintCallback
+    name: Delegates.SdlHintCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlHitTest
+    name: Delegates.SdlHitTest
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlLogOutputFunction
+    name: Delegates.SdlLogOutputFunction
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlMainFunc
+    name: Delegates.SdlMainFunc
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlMainThreadCallback
+    name: Delegates.SdlMainThreadCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlNsTimerCallback
+    name: Delegates.SdlNsTimerCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlThreadFunction
+    name: Delegates.SdlThreadFunction
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlTimerCallback
+    name: Delegates.SdlTimerCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlTlsDestructorCallback
+    name: Delegates.SdlTlsDestructorCallback
+    type: Delegate
+  - uid: SharpSDL3.Delegates.SdlTrayCallback
+    name: Delegates.SdlTrayCallback
+    type: Delegate
+  - uid: SharpSDL3.OwnedFontMarshaller
+    name: OwnedFontMarshaller
+    type: Class
+  - uid: SharpSDL3.OwnedStringMarshaller
+    name: OwnedStringMarshaller
+    type: Class
+  - uid: SharpSDL3.Sdl
+    name: Sdl
+    type: Class
+  - uid: SharpSDL3.SdlException
+    name: SdlException
+    type: Class
+- uid: SharpSDL3.Enums
+  name: SharpSDL3.Enums
+  type: Namespace
+  items:
+  - uid: SharpSDL3.Enums.AppResult
+    name: AppResult
+    type: Enum
+  - uid: SharpSDL3.Enums.ArrayOrder
+    name: ArrayOrder
+    type: Enum
+  - uid: SharpSDL3.Enums.AssertState
+    name: AssertState
+    type: Enum
+  - uid: SharpSDL3.Enums.AsyncIoResult
+    name: AsyncIoResult
+    type: Enum
+  - uid: SharpSDL3.Enums.AsyncIoTaskType
+    name: AsyncIoTaskType
+    type: Enum
+  - uid: SharpSDL3.Enums.AudioFormat
+    name: AudioFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.BitmapOrder
+    name: BitmapOrder
+    type: Enum
+  - uid: SharpSDL3.Enums.BlendFactor
+    name: BlendFactor
+    type: Enum
+  - uid: SharpSDL3.Enums.BlendMode
+    name: BlendMode
+    type: Enum
+  - uid: SharpSDL3.Enums.BlendOperation
+    name: BlendOperation
+    type: Enum
+  - uid: SharpSDL3.Enums.CameraPosition
+    name: CameraPosition
+    type: Enum
+  - uid: SharpSDL3.Enums.Capitalization
+    name: Capitalization
+    type: Enum
+  - uid: SharpSDL3.Enums.ChromaLocation
+    name: ChromaLocation
+    type: Enum
+  - uid: SharpSDL3.Enums.ColorPrimaries
+    name: ColorPrimaries
+    type: Enum
+  - uid: SharpSDL3.Enums.ColorRange
+    name: ColorRange
+    type: Enum
+  - uid: SharpSDL3.Enums.ColorType
+    name: ColorType
+    type: Enum
+  - uid: SharpSDL3.Enums.Colorspace
+    name: Colorspace
+    type: Enum
+  - uid: SharpSDL3.Enums.DateFormat
+    name: DateFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.DisplayOrientation
+    name: DisplayOrientation
+    type: Enum
+  - uid: SharpSDL3.Enums.EnumerationResult
+    name: EnumerationResult
+    type: Enum
+  - uid: SharpSDL3.Enums.EventAction
+    name: EventAction
+    type: Enum
+  - uid: SharpSDL3.Enums.EventType
+    name: EventType
+    type: Enum
+  - uid: SharpSDL3.Enums.FileDialogType
+    name: FileDialogType
+    type: Enum
+  - uid: SharpSDL3.Enums.FlashOperation
+    name: FlashOperation
+    type: Enum
+  - uid: SharpSDL3.Enums.FlipMode
+    name: FlipMode
+    type: Enum
+  - uid: SharpSDL3.Enums.Folder
+    name: Folder
+    type: Enum
+  - uid: SharpSDL3.Enums.GamepadAxis
+    name: GamepadAxis
+    type: Enum
+  - uid: SharpSDL3.Enums.GamepadBindingType
+    name: GamepadBindingType
+    type: Enum
+  - uid: SharpSDL3.Enums.GamepadButton
+    name: GamepadButton
+    type: Enum
+  - uid: SharpSDL3.Enums.GamepadButtonLabel
+    name: GamepadButtonLabel
+    type: Enum
+  - uid: SharpSDL3.Enums.GamepadType
+    name: GamepadType
+    type: Enum
+  - uid: SharpSDL3.Enums.GlAttr
+    name: GlAttr
+    type: Enum
+  - uid: SharpSDL3.Enums.GlobFlags
+    name: GlobFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuBlendFactor
+    name: GpuBlendFactor
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuBlendOp
+    name: GpuBlendOp
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuBufferUsageFlags
+    name: GpuBufferUsageFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuColorComponentFlags
+    name: GpuColorComponentFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuCompareOp
+    name: GpuCompareOp
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuCubeMapFace
+    name: GpuCubeMapFace
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuCullMode
+    name: GpuCullMode
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuFillMode
+    name: GpuFillMode
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuFilter
+    name: GpuFilter
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuFrontFace
+    name: GpuFrontFace
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuIndexElementSize
+    name: GpuIndexElementSize
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuLoadOp
+    name: GpuLoadOp
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuPresentMode
+    name: GpuPresentMode
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuPrimitiveType
+    name: GpuPrimitiveType
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuSampleCount
+    name: GpuSampleCount
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuSamplerAddressMode
+    name: GpuSamplerAddressMode
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuSamplerMipmapMode
+    name: GpuSamplerMipmapMode
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuShaderFormat
+    name: GpuShaderFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuShaderStage
+    name: GpuShaderStage
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuStencilOp
+    name: GpuStencilOp
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuStoreOp
+    name: GpuStoreOp
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuSwapchainComposition
+    name: GpuSwapchainComposition
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuTextureFormat
+    name: GpuTextureFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuTextureType
+    name: GpuTextureType
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuTextureUsageFlags
+    name: GpuTextureUsageFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuTransferBufferUsage
+    name: GpuTransferBufferUsage
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuVertexElementFormat
+    name: GpuVertexElementFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.GpuVertexInputRate
+    name: GpuVertexInputRate
+    type: Enum
+  - uid: SharpSDL3.Enums.HidBusType
+    name: HidBusType
+    type: Enum
+  - uid: SharpSDL3.Enums.HintPriority
+    name: HintPriority
+    type: Enum
+  - uid: SharpSDL3.Enums.HitTestResult
+    name: HitTestResult
+    type: Enum
+  - uid: SharpSDL3.Enums.InitFlags
+    name: InitFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.InitStatus
+    name: InitStatus
+    type: Enum
+  - uid: SharpSDL3.Enums.IoStatus
+    name: IoStatus
+    type: Enum
+  - uid: SharpSDL3.Enums.IoWhence
+    name: IoWhence
+    type: Enum
+  - uid: SharpSDL3.Enums.JoystickConnectionState
+    name: JoystickConnectionState
+    type: Enum
+  - uid: SharpSDL3.Enums.JoystickType
+    name: JoystickType
+    type: Enum
+  - uid: SharpSDL3.Enums.KeyMod
+    name: KeyMod
+    type: Enum
+  - uid: SharpSDL3.Enums.Keycode
+    name: Keycode
+    type: Enum
+  - uid: SharpSDL3.Enums.LogCategory
+    name: LogCategory
+    type: Enum
+  - uid: SharpSDL3.Enums.LogPriority
+    name: LogPriority
+    type: Enum
+  - uid: SharpSDL3.Enums.MatrixCoefficients
+    name: MatrixCoefficients
+    type: Enum
+  - uid: SharpSDL3.Enums.MessageBoxButtons
+    name: MessageBoxButtons
+    type: Enum
+  - uid: SharpSDL3.Enums.MessageBoxColorType
+    name: MessageBoxColorType
+    type: Enum
+  - uid: SharpSDL3.Enums.MessageBoxDefaultButton
+    name: MessageBoxDefaultButton
+    type: Enum
+  - uid: SharpSDL3.Enums.MessageBoxFlags
+    name: MessageBoxFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.MessageBoxResult
+    name: MessageBoxResult
+    type: Enum
+  - uid: SharpSDL3.Enums.MouseButtonFlags
+    name: MouseButtonFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.MouseWheelDirection
+    name: MouseWheelDirection
+    type: Enum
+  - uid: SharpSDL3.Enums.PackedLayout
+    name: PackedLayout
+    type: Enum
+  - uid: SharpSDL3.Enums.PackedOrder
+    name: PackedOrder
+    type: Enum
+  - uid: SharpSDL3.Enums.PathType
+    name: PathType
+    type: Enum
+  - uid: SharpSDL3.Enums.PenAxis
+    name: PenAxis
+    type: Enum
+  - uid: SharpSDL3.Enums.PenInputFlags
+    name: PenInputFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.PixelFormat
+    name: PixelFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.PixelType
+    name: PixelType
+    type: Enum
+  - uid: SharpSDL3.Enums.PowerState
+    name: PowerState
+    type: Enum
+  - uid: SharpSDL3.Enums.ProcessIo
+    name: ProcessIo
+    type: Enum
+  - uid: SharpSDL3.Enums.PropertyType
+    name: PropertyType
+    type: Enum
+  - uid: SharpSDL3.Enums.RendererLogicalPresentation
+    name: RendererLogicalPresentation
+    type: Enum
+  - uid: SharpSDL3.Enums.Sandbox
+    name: Sandbox
+    type: Enum
+  - uid: SharpSDL3.Enums.ScaleMode
+    name: ScaleMode
+    type: Enum
+  - uid: SharpSDL3.Enums.ScanCode
+    name: ScanCode
+    type: Enum
+  - uid: SharpSDL3.Enums.SensorType
+    name: SensorType
+    type: Enum
+  - uid: SharpSDL3.Enums.SurfaceDataFlags
+    name: SurfaceDataFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.SurfaceFlags
+    name: SurfaceFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.SystemCursor
+    name: SystemCursor
+    type: Enum
+  - uid: SharpSDL3.Enums.SystemTheme
+    name: SystemTheme
+    type: Enum
+  - uid: SharpSDL3.Enums.TextInputType
+    name: TextInputType
+    type: Enum
+  - uid: SharpSDL3.Enums.TextureAccess
+    name: TextureAccess
+    type: Enum
+  - uid: SharpSDL3.Enums.ThreadPriority
+    name: ThreadPriority
+    type: Enum
+  - uid: SharpSDL3.Enums.ThreadState
+    name: ThreadState
+    type: Enum
+  - uid: SharpSDL3.Enums.TimeFormat
+    name: TimeFormat
+    type: Enum
+  - uid: SharpSDL3.Enums.TouchDeviceType
+    name: TouchDeviceType
+    type: Enum
+  - uid: SharpSDL3.Enums.TransferCharacteristics
+    name: TransferCharacteristics
+    type: Enum
+  - uid: SharpSDL3.Enums.TrayEntryFlags
+    name: TrayEntryFlags
+    type: Enum
+  - uid: SharpSDL3.Enums.WindowFlags
+    name: WindowFlags
+    type: Enum
+- uid: SharpSDL3.Image
+  name: SharpSDL3.Image
+  type: Namespace
+  items:
+  - uid: SharpSDL3.Image.Animation
+    name: Animation
+    type: Struct
+- uid: SharpSDL3.Mixer
+  name: SharpSDL3.Mixer
+  type: Namespace
+  items:
+  - uid: SharpSDL3.Mixer.AudioDeviceId
+    name: AudioDeviceId
+    type: Enum
+  - uid: SharpSDL3.Mixer.Chunk
+    name: Chunk
+    type: Struct
+  - uid: SharpSDL3.Mixer.Fading
+    name: Fading
+    type: Enum
+  - uid: SharpSDL3.Mixer.Mixer
+    name: Mixer
+    type: Class
+  - uid: SharpSDL3.Mixer.Mixer.MixInit
+    name: Mixer.MixInit
+    type: Enum
+  - uid: SharpSDL3.Mixer.Mixer.Mix_ChannelFinishedCallback
+    name: Mixer.Mix_ChannelFinishedCallback
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EachSoundFontCallback
+    name: Mixer.Mix_EachSoundFontCallback
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectDone_t
+    name: Mixer.Mix_EffectDone_t
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Mixer.Mix_EffectFunc_t
+    name: Mixer.Mix_EffectFunc_t
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+    name: Mixer.Mix_MixCallback
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Mixer.MusicFinishedCallback
+    name: Mixer.MusicFinishedCallback
+    type: Delegate
+  - uid: SharpSDL3.Mixer.Music
+    name: Music
+    type: Struct
+  - uid: SharpSDL3.Mixer.MusicApi
+    name: MusicApi
+    type: Enum
+  - uid: SharpSDL3.Mixer.MusicInterface
+    name: MusicInterface
+    type: Struct
+  - uid: SharpSDL3.Mixer.MusicInterface.CloseDelegate
+    name: MusicInterface.CloseDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromFileDelegate
+    name: MusicInterface.CreateFromFileDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.CreateFromIODelegate
+    name: MusicInterface.CreateFromIODelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.DeleteDelegate
+    name: MusicInterface.DeleteDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.DurationDelegate
+    name: MusicInterface.DurationDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.GetAudioDelegate
+    name: MusicInterface.GetAudioDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.GetMetaTagDelegate
+    name: MusicInterface.GetMetaTagDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.GetNumTracksDelegate
+    name: MusicInterface.GetNumTracksDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.GetVolumeDelegate
+    name: MusicInterface.GetVolumeDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.IsPlayingDelegate
+    name: MusicInterface.IsPlayingDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.JumpDelegate
+    name: MusicInterface.JumpDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.LoadDelegate
+    name: MusicInterface.LoadDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopEndDelegate
+    name: MusicInterface.LoopEndDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopLengthDelegate
+    name: MusicInterface.LoopLengthDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.LoopStartDelegate
+    name: MusicInterface.LoopStartDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.OpenDelegate
+    name: MusicInterface.OpenDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.PauseDelegate
+    name: MusicInterface.PauseDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.PlayDelegate
+    name: MusicInterface.PlayDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.ResumeDelegate
+    name: MusicInterface.ResumeDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.SeekDelegate
+    name: MusicInterface.SeekDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.SetVolumeDelegate
+    name: MusicInterface.SetVolumeDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.StartTrackDelegate
+    name: MusicInterface.StartTrackDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.StopDelegate
+    name: MusicInterface.StopDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.TellDelegate
+    name: MusicInterface.TellDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicInterface.UnloadDelegate
+    name: MusicInterface.UnloadDelegate
+    type: Delegate
+  - uid: SharpSDL3.Mixer.MusicMetaTag
+    name: MusicMetaTag
+    type: Enum
+  - uid: SharpSDL3.Mixer.MusicType
+    name: MusicType
+    type: Enum
+- uid: SharpSDL3.Structs
+  name: SharpSDL3.Structs
+  type: Namespace
+  items:
+  - uid: SharpSDL3.Structs.AssertData
+    name: AssertData
+    type: Struct
+  - uid: SharpSDL3.Structs.AsyncIoOutcome
+    name: AsyncIoOutcome
+    type: Struct
+  - uid: SharpSDL3.Structs.AtomicInt
+    name: AtomicInt
+    type: Struct
+  - uid: SharpSDL3.Structs.AtomicU32
+    name: AtomicU32
+    type: Struct
+  - uid: SharpSDL3.Structs.AudioDeviceEvent
+    name: AudioDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.AudioSpec
+    name: AudioSpec
+    type: Struct
+  - uid: SharpSDL3.Structs.CameraDeviceEvent
+    name: CameraDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.CameraSpec
+    name: CameraSpec
+    type: Struct
+  - uid: SharpSDL3.Structs.ClipboardEvent
+    name: ClipboardEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Color
+    name: Color
+    type: Struct
+  - uid: SharpSDL3.Structs.CommonEvent
+    name: CommonEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.DateTime
+    name: DateTime
+    type: Struct
+  - uid: SharpSDL3.Structs.DialogFileFilter
+    name: DialogFileFilter
+    type: Struct
+  - uid: SharpSDL3.Structs.DisplayEvent
+    name: DisplayEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.DisplayMode
+    name: DisplayMode
+    type: Struct
+  - uid: SharpSDL3.Structs.DropEvent
+    name: DropEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Event
+    name: Event
+    type: Struct
+  - uid: SharpSDL3.Structs.FColor
+    name: FColor
+    type: Struct
+  - uid: SharpSDL3.Structs.FPoint
+    name: FPoint
+    type: Struct
+  - uid: SharpSDL3.Structs.FRect
+    name: FRect
+    type: Struct
+  - uid: SharpSDL3.Structs.FSize
+    name: FSize
+    type: Struct
+  - uid: SharpSDL3.Structs.Finger
+    name: Finger
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadAxisEvent
+    name: GamepadAxisEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadBinding
+    name: GamepadBinding
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadButtonEvent
+    name: GamepadButtonEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadDeviceEvent
+    name: GamepadDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadSensorEvent
+    name: GamepadSensorEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.GamepadTouchpadEvent
+    name: GamepadTouchpadEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBlitInfo
+    name: GpuBlitInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBlitRegion
+    name: GpuBlitRegion
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBufferBinding
+    name: GpuBufferBinding
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBufferCreateInfo
+    name: GpuBufferCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBufferLocation
+    name: GpuBufferLocation
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuBufferRegion
+    name: GpuBufferRegion
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuColorTargetBlendState
+    name: GpuColorTargetBlendState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuColorTargetDescription
+    name: GpuColorTargetDescription
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuColorTargetInfo
+    name: GpuColorTargetInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuComputePipelineCreateInfo
+    name: GpuComputePipelineCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuDepthStencilState
+    name: GpuDepthStencilState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuDepthStencilTargetInfo
+    name: GpuDepthStencilTargetInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuGraphicsPipelineCreateInfo
+    name: GpuGraphicsPipelineCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuGraphicsPipelineTargetInfo
+    name: GpuGraphicsPipelineTargetInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuIndexedIndirectDrawCommand
+    name: GpuIndexedIndirectDrawCommand
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuIndirectDispatchCommand
+    name: GpuIndirectDispatchCommand
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuIndirectDrawCommand
+    name: GpuIndirectDrawCommand
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuMultisampleState
+    name: GpuMultisampleState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuRasterizerState
+    name: GpuRasterizerState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuSamplerCreateInfo
+    name: GpuSamplerCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuShaderCreateInfo
+    name: GpuShaderCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuStencilOpState
+    name: GpuStencilOpState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuStorageBufferReadWriteBinding
+    name: GpuStorageBufferReadWriteBinding
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuStorageTextureReadWriteBinding
+    name: GpuStorageTextureReadWriteBinding
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTextureCreateInfo
+    name: GpuTextureCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTextureLocation
+    name: GpuTextureLocation
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTextureRegion
+    name: GpuTextureRegion
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTextureSamplerBinding
+    name: GpuTextureSamplerBinding
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTextureTransferInfo
+    name: GpuTextureTransferInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTransferBufferCreateInfo
+    name: GpuTransferBufferCreateInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuTransferBufferLocation
+    name: GpuTransferBufferLocation
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuVertexAttribute
+    name: GpuVertexAttribute
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuVertexBufferDescription
+    name: GpuVertexBufferDescription
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuVertexInputState
+    name: GpuVertexInputState
+    type: Struct
+  - uid: SharpSDL3.Structs.GpuViewport
+    name: GpuViewport
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticCondition
+    name: HapticCondition
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticConstant
+    name: HapticConstant
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticCustom
+    name: HapticCustom
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticDirection
+    name: HapticDirection
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticEffect
+    name: HapticEffect
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticLeftRight
+    name: HapticLeftRight
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticPeriodic
+    name: HapticPeriodic
+    type: Struct
+  - uid: SharpSDL3.Structs.HapticRamp
+    name: HapticRamp
+    type: Struct
+  - uid: SharpSDL3.Structs.HidDeviceInfo
+    name: HidDeviceInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.IOStatus
+    name: IOStatus
+    type: Enum
+  - uid: SharpSDL3.Structs.IOStream
+    name: IOStream
+    type: Struct
+  - uid: SharpSDL3.Structs.IOStreamInterface
+    name: IOStreamInterface
+    type: Struct
+  - uid: SharpSDL3.Structs.IOStreamInterface.Close
+    name: IOStreamInterface.Close
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOStreamInterface.Flush
+    name: IOStreamInterface.Flush
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOStreamInterface.Read
+    name: IOStreamInterface.Read
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOStreamInterface.Seek
+    name: IOStreamInterface.Seek
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOStreamInterface.Size
+    name: IOStreamInterface.Size
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOStreamInterface.Write
+    name: IOStreamInterface.Write
+    type: Delegate
+  - uid: SharpSDL3.Structs.IOWhence
+    name: IOWhence
+    type: Enum
+  - uid: SharpSDL3.Structs.InitState
+    name: InitState
+    type: Struct
+  - uid: SharpSDL3.Structs.InternalGamepadBindingInputAxis
+    name: InternalGamepadBindingInputAxis
+    type: Struct
+  - uid: SharpSDL3.Structs.InternalGamepadBindingInputHat
+    name: InternalGamepadBindingInputHat
+    type: Struct
+  - uid: SharpSDL3.Structs.InternalGamepadBindingOutputAxis
+    name: InternalGamepadBindingOutputAxis
+    type: Struct
+  - uid: SharpSDL3.Structs.IoStreamInterface
+    name: IoStreamInterface
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyAxisEvent
+    name: JoyAxisEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyBallEvent
+    name: JoyBallEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyBatteryEvent
+    name: JoyBatteryEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyButtonEvent
+    name: JoyButtonEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyDeviceEvent
+    name: JoyDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.JoyHatEvent
+    name: JoyHatEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.KeyboardDeviceEvent
+    name: KeyboardDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.KeyboardEvent
+    name: KeyboardEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Locale
+    name: Locale
+    type: Struct
+  - uid: SharpSDL3.Structs.MessageBoxButtonData
+    name: MessageBoxButtonData
+    type: Struct
+  - uid: SharpSDL3.Structs.MessageBoxColor
+    name: MessageBoxColor
+    type: Struct
+  - uid: SharpSDL3.Structs.MessageBoxColorScheme
+    name: MessageBoxColorScheme
+    type: Struct
+  - uid: SharpSDL3.Structs.MessageBoxData
+    name: MessageBoxData
+    type: Struct
+  - uid: SharpSDL3.Structs.MouseButtonEvent
+    name: MouseButtonEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.MouseDeviceEvent
+    name: MouseDeviceEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.MouseMotionEvent
+    name: MouseMotionEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.MouseWheelEvent
+    name: MouseWheelEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Palette
+    name: Palette
+    type: Struct
+  - uid: SharpSDL3.Structs.PathInfo
+    name: PathInfo
+    type: Struct
+  - uid: SharpSDL3.Structs.PenAxisEvent
+    name: PenAxisEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.PenButtonEvent
+    name: PenButtonEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.PenMotionEvent
+    name: PenMotionEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.PenProximityEvent
+    name: PenProximityEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.PenTouchEvent
+    name: PenTouchEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.PixelFormatDetails
+    name: PixelFormatDetails
+    type: Struct
+  - uid: SharpSDL3.Structs.Point
+    name: Point
+    type: Struct
+  - uid: SharpSDL3.Structs.QuitEvent
+    name: QuitEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Rect
+    name: Rect
+    type: Struct
+  - uid: SharpSDL3.Structs.RenderEvent
+    name: RenderEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.SdlBool
+    name: SdlBool
+    type: Struct
+  - uid: SharpSDL3.Structs.SdlGuid
+    name: SdlGuid
+    type: Struct
+  - uid: SharpSDL3.Structs.SensorEvent
+    name: SensorEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Size
+    name: Size
+    type: Struct
+  - uid: SharpSDL3.Structs.StorageInterface
+    name: StorageInterface
+    type: Struct
+  - uid: SharpSDL3.Structs.Surface
+    name: Surface
+    type: Struct
+  - uid: SharpSDL3.Structs.TextEditingCandidatesEvent
+    name: TextEditingCandidatesEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.TextEditingEvent
+    name: TextEditingEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.TextInputEvent
+    name: TextInputEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Texture
+    name: Texture
+    type: Struct
+  - uid: SharpSDL3.Structs.TouchFingerEvent
+    name: TouchFingerEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.UserEvent
+    name: UserEvent
+    type: Struct
+  - uid: SharpSDL3.Structs.Vector2
+    name: Vector2
+    type: Struct
+  - uid: SharpSDL3.Structs.Vector3
+    name: Vector3
+    type: Struct
+  - uid: SharpSDL3.Structs.Vertex
+    name: Vertex
+    type: Struct
+  - uid: SharpSDL3.Structs.VirtualJoystickDesc
+    name: VirtualJoystickDesc
+    type: Struct
+  - uid: SharpSDL3.Structs.VirtualJoystickSensorDesc
+    name: VirtualJoystickSensorDesc
+    type: Struct
+  - uid: SharpSDL3.Structs.VirtualJoystickTouchpadDesc
+    name: VirtualJoystickTouchpadDesc
+    type: Struct
+  - uid: SharpSDL3.Structs.WindowEvent
+    name: WindowEvent
+    type: Struct
+- uid: SharpSDL3.TTF
+  name: SharpSDL3.TTF
+  type: Namespace
+  items:
+  - uid: SharpSDL3.TTF.CachedGlyphPositions
+    name: CachedGlyphPositions
+    type: Struct
+  - uid: SharpSDL3.TTF.Direction
+    name: Direction
+    type: Enum
+  - uid: SharpSDL3.TTF.Font
+    name: Font
+    type: Struct
+  - uid: SharpSDL3.TTF.FontList
+    name: FontList
+    type: Struct
+  - uid: SharpSDL3.TTF.FontStyle
+    name: FontStyle
+    type: Enum
+  - uid: SharpSDL3.TTF.FontWeight
+    name: FontWeight
+    type: Enum
+  - uid: SharpSDL3.TTF.GPUTextEngineWinding
+    name: GPUTextEngineWinding
+    type: Enum
+  - uid: SharpSDL3.TTF.Glyph
+    name: Glyph
+    type: Struct
+  - uid: SharpSDL3.TTF.GlyphKerningSmart
+    name: GlyphKerningSmart
+    type: Struct
+  - uid: SharpSDL3.TTF.GlyphPosition
+    name: GlyphPosition
+    type: Struct
+  - uid: SharpSDL3.TTF.GlyphPositions
+    name: GlyphPositions
+    type: Struct
+  - uid: SharpSDL3.TTF.GlyphSubpixel
+    name: GlyphSubpixel
+    type: Struct
+  - uid: SharpSDL3.TTF.GlyphUnion
+    name: GlyphUnion
+    type: Struct
+  - uid: SharpSDL3.TTF.Hinting
+    name: Hinting
+    type: Enum
+  - uid: SharpSDL3.TTF.HorizontalAlignment
+    name: HorizontalAlignment
+    type: Enum
+  - uid: SharpSDL3.TTF.Image
+    name: Image
+    type: Struct
+  - uid: SharpSDL3.TTF.ImageType
+    name: ImageType
+    type: Enum
+  - uid: SharpSDL3.TTF.Line
+    name: Line
+    type: Struct
+  - uid: SharpSDL3.TTF.SubString
+    name: SubString
+    type: Struct
+  - uid: SharpSDL3.TTF.SubStringFlags
+    name: SubStringFlags
+    type: Enum
+  - uid: SharpSDL3.TTF.Text
+    name: Text
+    type: Struct
+  - uid: SharpSDL3.TTF.TextData
+    name: TextData
+    type: Struct
+  - uid: SharpSDL3.TTF.TextEngine
+    name: TextEngine
+    type: Struct
+  - uid: SharpSDL3.TTF.TextEngine.CreateText
+    name: TextEngine.CreateText
+    type: Delegate
+  - uid: SharpSDL3.TTF.TextEngine.DestroyText
+    name: TextEngine.DestroyText
+    type: Delegate
+  - uid: SharpSDL3.TTF.Ttf
+    name: Ttf
+    type: Class
+memberLayout: SamePage

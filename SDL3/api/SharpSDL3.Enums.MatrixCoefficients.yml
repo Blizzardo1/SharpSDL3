@@ -1,0 +1,463 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.MatrixCoefficients
+  commentId: T:SharpSDL3.Enums.MatrixCoefficients
+  id: MatrixCoefficients
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.MatrixCoefficients.Bt2020Cl
+  - SharpSDL3.Enums.MatrixCoefficients.Bt2020Ncl
+  - SharpSDL3.Enums.MatrixCoefficients.Bt470Bg
+  - SharpSDL3.Enums.MatrixCoefficients.Bt601
+  - SharpSDL3.Enums.MatrixCoefficients.Bt709
+  - SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedCl
+  - SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedNcl
+  - SharpSDL3.Enums.MatrixCoefficients.Custom
+  - SharpSDL3.Enums.MatrixCoefficients.Fcc
+  - SharpSDL3.Enums.MatrixCoefficients.Ictcp
+  - SharpSDL3.Enums.MatrixCoefficients.Identity
+  - SharpSDL3.Enums.MatrixCoefficients.Smpte2085
+  - SharpSDL3.Enums.MatrixCoefficients.Smpte240
+  - SharpSDL3.Enums.MatrixCoefficients.Unspecified
+  - SharpSDL3.Enums.MatrixCoefficients.Ycgco
+  langs:
+  - csharp
+  - vb
+  name: MatrixCoefficients
+  nameWithType: MatrixCoefficients
+  fullName: SharpSDL3.Enums.MatrixCoefficients
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: MatrixCoefficients
+    path: Enums/MatrixCoefficients.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum MatrixCoefficients
+    content.vb: Public Enum MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Identity
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Identity
+  id: Identity
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Identity
+  nameWithType: MatrixCoefficients.Identity
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Identity
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Identity
+    path: Enums/MatrixCoefficients.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Identity = 0
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Bt709
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Bt709
+  id: Bt709
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Bt709
+  nameWithType: MatrixCoefficients.Bt709
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Bt709
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt709
+    path: Enums/MatrixCoefficients.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt709 = 1
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Unspecified
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Unspecified
+  id: Unspecified
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Unspecified
+  nameWithType: MatrixCoefficients.Unspecified
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Unspecified
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unspecified
+    path: Enums/MatrixCoefficients.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unspecified = 2
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Fcc
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Fcc
+  id: Fcc
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Fcc
+  nameWithType: MatrixCoefficients.Fcc
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Fcc
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Fcc
+    path: Enums/MatrixCoefficients.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Fcc = 4
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Bt470Bg
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Bt470Bg
+  id: Bt470Bg
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Bt470Bg
+  nameWithType: MatrixCoefficients.Bt470Bg
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Bt470Bg
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt470Bg
+    path: Enums/MatrixCoefficients.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt470Bg = 5
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Bt601
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Bt601
+  id: Bt601
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Bt601
+  nameWithType: MatrixCoefficients.Bt601
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Bt601
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt601
+    path: Enums/MatrixCoefficients.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt601 = 6
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Smpte240
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Smpte240
+  id: Smpte240
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Smpte240
+  nameWithType: MatrixCoefficients.Smpte240
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Smpte240
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Smpte240
+    path: Enums/MatrixCoefficients.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Smpte240 = 7
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Ycgco
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Ycgco
+  id: Ycgco
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Ycgco
+  nameWithType: MatrixCoefficients.Ycgco
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Ycgco
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ycgco
+    path: Enums/MatrixCoefficients.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ycgco = 8
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Bt2020Ncl
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Bt2020Ncl
+  id: Bt2020Ncl
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Bt2020Ncl
+  nameWithType: MatrixCoefficients.Bt2020Ncl
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Bt2020Ncl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt2020Ncl
+    path: Enums/MatrixCoefficients.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt2020Ncl = 9
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Bt2020Cl
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Bt2020Cl
+  id: Bt2020Cl
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Bt2020Cl
+  nameWithType: MatrixCoefficients.Bt2020Cl
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Bt2020Cl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Bt2020Cl
+    path: Enums/MatrixCoefficients.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Bt2020Cl = 10
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Smpte2085
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Smpte2085
+  id: Smpte2085
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Smpte2085
+  nameWithType: MatrixCoefficients.Smpte2085
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Smpte2085
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Smpte2085
+    path: Enums/MatrixCoefficients.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Smpte2085 = 11
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedNcl
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedNcl
+  id: ChromaDerivedNcl
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: ChromaDerivedNcl
+  nameWithType: MatrixCoefficients.ChromaDerivedNcl
+  fullName: SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedNcl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ChromaDerivedNcl
+    path: Enums/MatrixCoefficients.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ChromaDerivedNcl = 12
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedCl
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedCl
+  id: ChromaDerivedCl
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: ChromaDerivedCl
+  nameWithType: MatrixCoefficients.ChromaDerivedCl
+  fullName: SharpSDL3.Enums.MatrixCoefficients.ChromaDerivedCl
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ChromaDerivedCl
+    path: Enums/MatrixCoefficients.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: ChromaDerivedCl = 13
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Ictcp
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Ictcp
+  id: Ictcp
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Ictcp
+  nameWithType: MatrixCoefficients.Ictcp
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Ictcp
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Ictcp
+    path: Enums/MatrixCoefficients.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Ictcp = 14
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+- uid: SharpSDL3.Enums.MatrixCoefficients.Custom
+  commentId: F:SharpSDL3.Enums.MatrixCoefficients.Custom
+  id: Custom
+  parent: SharpSDL3.Enums.MatrixCoefficients
+  langs:
+  - csharp
+  - vb
+  name: Custom
+  nameWithType: MatrixCoefficients.Custom
+  fullName: SharpSDL3.Enums.MatrixCoefficients.Custom
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/MatrixCoefficients.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Custom
+    path: Enums/MatrixCoefficients.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Custom = 31
+    return:
+      type: SharpSDL3.Enums.MatrixCoefficients
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.MatrixCoefficients
+  commentId: T:SharpSDL3.Enums.MatrixCoefficients
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.MatrixCoefficients.html
+  name: MatrixCoefficients
+  nameWithType: MatrixCoefficients
+  fullName: SharpSDL3.Enums.MatrixCoefficients

@@ -1,0 +1,1057 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Structs.VirtualJoystickDesc
+  commentId: T:SharpSDL3.Structs.VirtualJoystickDesc
+  id: VirtualJoystickDesc
+  parent: SharpSDL3.Structs
+  children:
+  - SharpSDL3.Structs.VirtualJoystickDesc.AxisMask
+  - SharpSDL3.Structs.VirtualJoystickDesc.ButtonMask
+  - SharpSDL3.Structs.VirtualJoystickDesc.Cleanup
+  - SharpSDL3.Structs.VirtualJoystickDesc.NAxes
+  - SharpSDL3.Structs.VirtualJoystickDesc.NBalls
+  - SharpSDL3.Structs.VirtualJoystickDesc.NButtons
+  - SharpSDL3.Structs.VirtualJoystickDesc.NHats
+  - SharpSDL3.Structs.VirtualJoystickDesc.NSensors
+  - SharpSDL3.Structs.VirtualJoystickDesc.NTouchpads
+  - SharpSDL3.Structs.VirtualJoystickDesc.Name
+  - SharpSDL3.Structs.VirtualJoystickDesc.Padding
+  - SharpSDL3.Structs.VirtualJoystickDesc.Padding2
+  - SharpSDL3.Structs.VirtualJoystickDesc.ProductId
+  - SharpSDL3.Structs.VirtualJoystickDesc.Rumble
+  - SharpSDL3.Structs.VirtualJoystickDesc.RumbleTriggers
+  - SharpSDL3.Structs.VirtualJoystickDesc.SendEffect
+  - SharpSDL3.Structs.VirtualJoystickDesc.Sensors
+  - SharpSDL3.Structs.VirtualJoystickDesc.SetLED
+  - SharpSDL3.Structs.VirtualJoystickDesc.SetPlayerIndex
+  - SharpSDL3.Structs.VirtualJoystickDesc.SetSensorsEnabled
+  - SharpSDL3.Structs.VirtualJoystickDesc.Touchpads
+  - SharpSDL3.Structs.VirtualJoystickDesc.Type
+  - SharpSDL3.Structs.VirtualJoystickDesc.Update
+  - SharpSDL3.Structs.VirtualJoystickDesc.Userdata
+  - SharpSDL3.Structs.VirtualJoystickDesc.VendorId
+  - SharpSDL3.Structs.VirtualJoystickDesc.Version
+  langs:
+  - csharp
+  - vb
+  name: VirtualJoystickDesc
+  nameWithType: VirtualJoystickDesc
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc
+  type: Struct
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VirtualJoystickDesc
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public struct VirtualJoystickDesc
+    content.vb: Public Structure VirtualJoystickDesc
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Version
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Version
+  id: Version
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Version
+  nameWithType: VirtualJoystickDesc.Version
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Version
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Version
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint Version
+    return:
+      type: System.UInt32
+    content.vb: Public Version As UInteger
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Type
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Type
+  id: Type
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Type
+  nameWithType: VirtualJoystickDesc.Type
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Type
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Type
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Type
+    return:
+      type: System.UInt16
+    content.vb: Public Type As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Padding
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Padding
+  id: Padding
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Padding
+  nameWithType: VirtualJoystickDesc.Padding
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Padding
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Padding
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort Padding
+    return:
+      type: System.UInt16
+    content.vb: Public Padding As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.VendorId
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.VendorId
+  id: VendorId
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: VendorId
+  nameWithType: VirtualJoystickDesc.VendorId
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.VendorId
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: VendorId
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort VendorId
+    return:
+      type: System.UInt16
+    content.vb: Public VendorId As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.ProductId
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.ProductId
+  id: ProductId
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: ProductId
+  nameWithType: VirtualJoystickDesc.ProductId
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.ProductId
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ProductId
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort ProductId
+    return:
+      type: System.UInt16
+    content.vb: Public ProductId As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NAxes
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NAxes
+  id: NAxes
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NAxes
+  nameWithType: VirtualJoystickDesc.NAxes
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NAxes
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NAxes
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NAxes
+    return:
+      type: System.UInt16
+    content.vb: Public NAxes As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NButtons
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NButtons
+  id: NButtons
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NButtons
+  nameWithType: VirtualJoystickDesc.NButtons
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NButtons
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NButtons
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NButtons
+    return:
+      type: System.UInt16
+    content.vb: Public NButtons As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NBalls
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NBalls
+  id: NBalls
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NBalls
+  nameWithType: VirtualJoystickDesc.NBalls
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NBalls
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NBalls
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NBalls
+    return:
+      type: System.UInt16
+    content.vb: Public NBalls As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NHats
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NHats
+  id: NHats
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NHats
+  nameWithType: VirtualJoystickDesc.NHats
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NHats
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NHats
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NHats
+    return:
+      type: System.UInt16
+    content.vb: Public NHats As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NTouchpads
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NTouchpads
+  id: NTouchpads
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NTouchpads
+  nameWithType: VirtualJoystickDesc.NTouchpads
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NTouchpads
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NTouchpads
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NTouchpads
+    return:
+      type: System.UInt16
+    content.vb: Public NTouchpads As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.NSensors
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.NSensors
+  id: NSensors
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: NSensors
+  nameWithType: VirtualJoystickDesc.NSensors
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.NSensors
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NSensors
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort NSensors
+    return:
+      type: System.UInt16
+    content.vb: Public NSensors As UShort
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Padding2
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Padding2
+  id: Padding2
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Padding2
+  nameWithType: VirtualJoystickDesc.Padding2
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Padding2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Padding2
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public ushort* Padding2
+    return:
+      type: System.UInt16*
+    content.vb: Public Padding2 As UShort*
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.ButtonMask
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.ButtonMask
+  id: ButtonMask
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: ButtonMask
+  nameWithType: VirtualJoystickDesc.ButtonMask
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.ButtonMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: ButtonMask
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint ButtonMask
+    return:
+      type: System.UInt32
+    content.vb: Public ButtonMask As UInteger
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.AxisMask
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.AxisMask
+  id: AxisMask
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: AxisMask
+  nameWithType: VirtualJoystickDesc.AxisMask
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.AxisMask
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: AxisMask
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public uint AxisMask
+    return:
+      type: System.UInt32
+    content.vb: Public AxisMask As UInteger
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Name
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Name
+  id: Name
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Name
+  nameWithType: VirtualJoystickDesc.Name
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Name
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Name
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Name
+    return:
+      type: System.IntPtr
+    content.vb: Public Name As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Touchpads
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Touchpads
+  id: Touchpads
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Touchpads
+  nameWithType: VirtualJoystickDesc.Touchpads
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Touchpads
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Touchpads
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Touchpads
+    return:
+      type: System.IntPtr
+    content.vb: Public Touchpads As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Sensors
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Sensors
+  id: Sensors
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Sensors
+  nameWithType: VirtualJoystickDesc.Sensors
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Sensors
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Sensors
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Sensors
+    return:
+      type: System.IntPtr
+    content.vb: Public Sensors As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Userdata
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Userdata
+  id: Userdata
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Userdata
+  nameWithType: VirtualJoystickDesc.Userdata
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Userdata
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Userdata
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Userdata
+    return:
+      type: System.IntPtr
+    content.vb: Public Userdata As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Update
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Update
+  id: Update
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Update
+  nameWithType: VirtualJoystickDesc.Update
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Update
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Update
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Update
+    return:
+      type: System.IntPtr
+    content.vb: Public Update As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.SetPlayerIndex
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.SetPlayerIndex
+  id: SetPlayerIndex
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: SetPlayerIndex
+  nameWithType: VirtualJoystickDesc.SetPlayerIndex
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.SetPlayerIndex
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SetPlayerIndex
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 26
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint SetPlayerIndex
+    return:
+      type: System.IntPtr
+    content.vb: Public SetPlayerIndex As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Rumble
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Rumble
+  id: Rumble
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Rumble
+  nameWithType: VirtualJoystickDesc.Rumble
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Rumble
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Rumble
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 27
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Rumble
+    return:
+      type: System.IntPtr
+    content.vb: Public Rumble As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.RumbleTriggers
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.RumbleTriggers
+  id: RumbleTriggers
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: RumbleTriggers
+  nameWithType: VirtualJoystickDesc.RumbleTriggers
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.RumbleTriggers
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RumbleTriggers
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 28
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint RumbleTriggers
+    return:
+      type: System.IntPtr
+    content.vb: Public RumbleTriggers As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.SetLED
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.SetLED
+  id: SetLED
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: SetLED
+  nameWithType: VirtualJoystickDesc.SetLED
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.SetLED
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SetLED
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 29
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint SetLED
+    return:
+      type: System.IntPtr
+    content.vb: Public SetLED As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.SendEffect
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.SendEffect
+  id: SendEffect
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: SendEffect
+  nameWithType: VirtualJoystickDesc.SendEffect
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.SendEffect
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SendEffect
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint SendEffect
+    return:
+      type: System.IntPtr
+    content.vb: Public SendEffect As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.SetSensorsEnabled
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.SetSensorsEnabled
+  id: SetSensorsEnabled
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: SetSensorsEnabled
+  nameWithType: VirtualJoystickDesc.SetSensorsEnabled
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.SetSensorsEnabled
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SetSensorsEnabled
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 31
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint SetSensorsEnabled
+    return:
+      type: System.IntPtr
+    content.vb: Public SetSensorsEnabled As IntPtr
+- uid: SharpSDL3.Structs.VirtualJoystickDesc.Cleanup
+  commentId: F:SharpSDL3.Structs.VirtualJoystickDesc.Cleanup
+  id: Cleanup
+  parent: SharpSDL3.Structs.VirtualJoystickDesc
+  langs:
+  - csharp
+  - vb
+  name: Cleanup
+  nameWithType: VirtualJoystickDesc.Cleanup
+  fullName: SharpSDL3.Structs.VirtualJoystickDesc.Cleanup
+  type: Field
+  source:
+    remote:
+      path: SDL3/Structs/VirtualJoystickDesc.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Cleanup
+    path: Structs/VirtualJoystickDesc.cs
+    startLine: 32
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Structs
+  syntax:
+    content: public nint Cleanup
+    return:
+      type: System.IntPtr
+    content.vb: Public Cleanup As IntPtr
+references:
+- uid: SharpSDL3.Structs
+  commentId: N:SharpSDL3.Structs
+  href: SharpSDL3.html
+  name: SharpSDL3.Structs
+  nameWithType: SharpSDL3.Structs
+  fullName: SharpSDL3.Structs
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Structs
+    name: Structs
+    href: SharpSDL3.Structs.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.UInt32
+  commentId: T:System.UInt32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint32
+  name: uint
+  nameWithType: uint
+  fullName: uint
+  nameWithType.vb: UInteger
+  fullName.vb: UInteger
+  name.vb: UInteger
+- uid: System.UInt16
+  commentId: T:System.UInt16
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort
+  nameWithType: ushort
+  fullName: ushort
+  nameWithType.vb: UShort
+  fullName.vb: UShort
+  name.vb: UShort
+- uid: System.UInt16*
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.uint16
+  name: ushort*
+  nameWithType: ushort*
+  fullName: ushort*
+  nameWithType.vb: UShort*
+  fullName.vb: UShort*
+  name.vb: UShort*
+  spec.csharp:
+  - uid: System.UInt16
+    name: ushort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+  spec.vb:
+  - uid: System.UInt16
+    name: UShort
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.uint16
+  - name: '*'
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr

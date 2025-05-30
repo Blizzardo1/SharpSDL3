@@ -1,0 +1,598 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.LogCategory
+  commentId: T:SharpSDL3.Enums.LogCategory
+  id: LogCategory
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.LogCategory.Application
+  - SharpSDL3.Enums.LogCategory.Assert
+  - SharpSDL3.Enums.LogCategory.Audio
+  - SharpSDL3.Enums.LogCategory.Custom
+  - SharpSDL3.Enums.LogCategory.Error
+  - SharpSDL3.Enums.LogCategory.Gpu
+  - SharpSDL3.Enums.LogCategory.Input
+  - SharpSDL3.Enums.LogCategory.Render
+  - SharpSDL3.Enums.LogCategory.Reserved10
+  - SharpSDL3.Enums.LogCategory.Reserved2
+  - SharpSDL3.Enums.LogCategory.Reserved3
+  - SharpSDL3.Enums.LogCategory.Reserved4
+  - SharpSDL3.Enums.LogCategory.Reserved5
+  - SharpSDL3.Enums.LogCategory.Reserved6
+  - SharpSDL3.Enums.LogCategory.Reserved7
+  - SharpSDL3.Enums.LogCategory.Reserved8
+  - SharpSDL3.Enums.LogCategory.Reserved9
+  - SharpSDL3.Enums.LogCategory.System
+  - SharpSDL3.Enums.LogCategory.Test
+  - SharpSDL3.Enums.LogCategory.Video
+  langs:
+  - csharp
+  - vb
+  name: LogCategory
+  nameWithType: LogCategory
+  fullName: SharpSDL3.Enums.LogCategory
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: LogCategory
+    path: Enums/LogCategory.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum LogCategory
+    content.vb: Public Enum LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Application
+  commentId: F:SharpSDL3.Enums.LogCategory.Application
+  id: Application
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Application
+  nameWithType: LogCategory.Application
+  fullName: SharpSDL3.Enums.LogCategory.Application
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Application
+    path: Enums/LogCategory.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Application = 0
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Error
+  commentId: F:SharpSDL3.Enums.LogCategory.Error
+  id: Error
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Error
+  nameWithType: LogCategory.Error
+  fullName: SharpSDL3.Enums.LogCategory.Error
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Error
+    path: Enums/LogCategory.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Error = 1
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Assert
+  commentId: F:SharpSDL3.Enums.LogCategory.Assert
+  id: Assert
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Assert
+  nameWithType: LogCategory.Assert
+  fullName: SharpSDL3.Enums.LogCategory.Assert
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Assert
+    path: Enums/LogCategory.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Assert = 2
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.System
+  commentId: F:SharpSDL3.Enums.LogCategory.System
+  id: System
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: System
+  nameWithType: LogCategory.System
+  fullName: SharpSDL3.Enums.LogCategory.System
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: System
+    path: Enums/LogCategory.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: System = 3
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Audio
+  commentId: F:SharpSDL3.Enums.LogCategory.Audio
+  id: Audio
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Audio
+  nameWithType: LogCategory.Audio
+  fullName: SharpSDL3.Enums.LogCategory.Audio
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Audio
+    path: Enums/LogCategory.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Audio = 4
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Video
+  commentId: F:SharpSDL3.Enums.LogCategory.Video
+  id: Video
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Video
+  nameWithType: LogCategory.Video
+  fullName: SharpSDL3.Enums.LogCategory.Video
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Video
+    path: Enums/LogCategory.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Video = 5
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Render
+  commentId: F:SharpSDL3.Enums.LogCategory.Render
+  id: Render
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Render
+  nameWithType: LogCategory.Render
+  fullName: SharpSDL3.Enums.LogCategory.Render
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Render
+    path: Enums/LogCategory.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Render = 6
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Input
+  commentId: F:SharpSDL3.Enums.LogCategory.Input
+  id: Input
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Input
+  nameWithType: LogCategory.Input
+  fullName: SharpSDL3.Enums.LogCategory.Input
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Input
+    path: Enums/LogCategory.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Input = 7
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Test
+  commentId: F:SharpSDL3.Enums.LogCategory.Test
+  id: Test
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Test
+  nameWithType: LogCategory.Test
+  fullName: SharpSDL3.Enums.LogCategory.Test
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Test
+    path: Enums/LogCategory.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Test = 8
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Gpu
+  commentId: F:SharpSDL3.Enums.LogCategory.Gpu
+  id: Gpu
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Gpu
+  nameWithType: LogCategory.Gpu
+  fullName: SharpSDL3.Enums.LogCategory.Gpu
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Gpu
+    path: Enums/LogCategory.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Gpu = 9
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved2
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved2
+  id: Reserved2
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved2
+  nameWithType: LogCategory.Reserved2
+  fullName: SharpSDL3.Enums.LogCategory.Reserved2
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved2
+    path: Enums/LogCategory.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved2 = 10
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved3
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved3
+  id: Reserved3
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved3
+  nameWithType: LogCategory.Reserved3
+  fullName: SharpSDL3.Enums.LogCategory.Reserved3
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved3
+    path: Enums/LogCategory.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved3 = 11
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved4
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved4
+  id: Reserved4
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved4
+  nameWithType: LogCategory.Reserved4
+  fullName: SharpSDL3.Enums.LogCategory.Reserved4
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved4
+    path: Enums/LogCategory.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved4 = 12
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved5
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved5
+  id: Reserved5
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved5
+  nameWithType: LogCategory.Reserved5
+  fullName: SharpSDL3.Enums.LogCategory.Reserved5
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved5
+    path: Enums/LogCategory.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved5 = 13
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved6
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved6
+  id: Reserved6
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved6
+  nameWithType: LogCategory.Reserved6
+  fullName: SharpSDL3.Enums.LogCategory.Reserved6
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved6
+    path: Enums/LogCategory.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved6 = 14
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved7
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved7
+  id: Reserved7
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved7
+  nameWithType: LogCategory.Reserved7
+  fullName: SharpSDL3.Enums.LogCategory.Reserved7
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved7
+    path: Enums/LogCategory.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved7 = 15
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved8
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved8
+  id: Reserved8
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved8
+  nameWithType: LogCategory.Reserved8
+  fullName: SharpSDL3.Enums.LogCategory.Reserved8
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved8
+    path: Enums/LogCategory.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved8 = 16
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved9
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved9
+  id: Reserved9
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved9
+  nameWithType: LogCategory.Reserved9
+  fullName: SharpSDL3.Enums.LogCategory.Reserved9
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved9
+    path: Enums/LogCategory.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved9 = 17
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Reserved10
+  commentId: F:SharpSDL3.Enums.LogCategory.Reserved10
+  id: Reserved10
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Reserved10
+  nameWithType: LogCategory.Reserved10
+  fullName: SharpSDL3.Enums.LogCategory.Reserved10
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Reserved10
+    path: Enums/LogCategory.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Reserved10 = 18
+    return:
+      type: SharpSDL3.Enums.LogCategory
+- uid: SharpSDL3.Enums.LogCategory.Custom
+  commentId: F:SharpSDL3.Enums.LogCategory.Custom
+  id: Custom
+  parent: SharpSDL3.Enums.LogCategory
+  langs:
+  - csharp
+  - vb
+  name: Custom
+  nameWithType: LogCategory.Custom
+  fullName: SharpSDL3.Enums.LogCategory.Custom
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/LogCategory.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Custom
+    path: Enums/LogCategory.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Custom = 19
+    return:
+      type: SharpSDL3.Enums.LogCategory
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.LogCategory
+  commentId: T:SharpSDL3.Enums.LogCategory
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.LogCategory.html
+  name: LogCategory
+  nameWithType: LogCategory
+  fullName: SharpSDL3.Enums.LogCategory

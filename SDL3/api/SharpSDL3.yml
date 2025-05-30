@@ -1,0 +1,790 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  id: SharpSDL3
+  children:
+  - SharpSDL3.CallerOwnedStringMarshaller
+  - SharpSDL3.Constants
+  - SharpSDL3.Delegates
+  - SharpSDL3.Delegates.SdlAppEventFunc
+  - SharpSDL3.Delegates.SdlAppInitFunc
+  - SharpSDL3.Delegates.SdlAppIterateFunc
+  - SharpSDL3.Delegates.SdlAppQuitFunc
+  - SharpSDL3.Delegates.SdlAssertionHandler
+  - SharpSDL3.Delegates.SdlAudioPostmixCallback
+  - SharpSDL3.Delegates.SdlAudioStreamCallback
+  - SharpSDL3.Delegates.SdlCleanupPropertyCallback
+  - SharpSDL3.Delegates.SdlClipboardCleanupCallback
+  - SharpSDL3.Delegates.SdlClipboardDataCallback
+  - SharpSDL3.Delegates.SdlDialogFileCallback
+  - SharpSDL3.Delegates.SdlEglAttribArrayCallback
+  - SharpSDL3.Delegates.SdlEglIntArrayCallback
+  - SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+  - SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+  - SharpSDL3.Delegates.SdlEventFilter
+  - SharpSDL3.Delegates.SdlHashCallback
+  - SharpSDL3.Delegates.SdlHashDestroyCallback
+  - SharpSDL3.Delegates.SdlHashFreeCallback
+  - SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  - SharpSDL3.Delegates.SdlHintCallback
+  - SharpSDL3.Delegates.SdlHitTest
+  - SharpSDL3.Delegates.SdlLogOutputFunction
+  - SharpSDL3.Delegates.SdlMainFunc
+  - SharpSDL3.Delegates.SdlMainThreadCallback
+  - SharpSDL3.Delegates.SdlNsTimerCallback
+  - SharpSDL3.Delegates.SdlThreadFunction
+  - SharpSDL3.Delegates.SdlTimerCallback
+  - SharpSDL3.Delegates.SdlTlsDestructorCallback
+  - SharpSDL3.Delegates.SdlTrayCallback
+  - SharpSDL3.OwnedFontMarshaller
+  - SharpSDL3.OwnedStringMarshaller
+  - SharpSDL3.Sdl
+  - SharpSDL3.SdlException
+  langs:
+  - csharp
+  - vb
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3
+  type: Namespace
+  assemblies:
+  - SharpSDL3
+references:
+- uid: SharpSDL3.Sdl
+  commentId: T:SharpSDL3.Sdl
+  href: SharpSDL3.Sdl.html
+  name: Sdl
+  nameWithType: Sdl
+  fullName: SharpSDL3.Sdl
+- uid: SharpSDL3.CallerOwnedStringMarshaller
+  commentId: T:SharpSDL3.CallerOwnedStringMarshaller
+  parent: SharpSDL3
+  href: SharpSDL3.CallerOwnedStringMarshaller.html
+  name: CallerOwnedStringMarshaller
+  nameWithType: CallerOwnedStringMarshaller
+  fullName: SharpSDL3.CallerOwnedStringMarshaller
+- uid: SharpSDL3.Constants
+  commentId: T:SharpSDL3.Constants
+  href: SharpSDL3.Constants.html
+  name: Constants
+  nameWithType: Constants
+  fullName: SharpSDL3.Constants
+- uid: SharpSDL3.Delegates
+  commentId: T:SharpSDL3.Delegates
+  href: SharpSDL3.Delegates.html
+  name: Delegates
+  nameWithType: Delegates
+  fullName: SharpSDL3.Delegates
+- uid: SharpSDL3.Delegates.SdlAppEventFunc
+  commentId: T:SharpSDL3.Delegates.SdlAppEventFunc
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAppEventFunc
+  nameWithType: Delegates.SdlAppEventFunc
+  fullName: SharpSDL3.Delegates.SdlAppEventFunc
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppEventFunc
+    name: SdlAppEventFunc
+    href: SharpSDL3.Delegates.SdlAppEventFunc.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppEventFunc
+    name: SdlAppEventFunc
+    href: SharpSDL3.Delegates.SdlAppEventFunc.html
+- uid: SharpSDL3.Delegates.SdlAppInitFunc
+  commentId: T:SharpSDL3.Delegates.SdlAppInitFunc
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAppInitFunc
+  nameWithType: Delegates.SdlAppInitFunc
+  fullName: SharpSDL3.Delegates.SdlAppInitFunc
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppInitFunc
+    name: SdlAppInitFunc
+    href: SharpSDL3.Delegates.SdlAppInitFunc.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppInitFunc
+    name: SdlAppInitFunc
+    href: SharpSDL3.Delegates.SdlAppInitFunc.html
+- uid: SharpSDL3.Delegates.SdlAppIterateFunc
+  commentId: T:SharpSDL3.Delegates.SdlAppIterateFunc
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAppIterateFunc
+  nameWithType: Delegates.SdlAppIterateFunc
+  fullName: SharpSDL3.Delegates.SdlAppIterateFunc
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppIterateFunc
+    name: SdlAppIterateFunc
+    href: SharpSDL3.Delegates.SdlAppIterateFunc.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppIterateFunc
+    name: SdlAppIterateFunc
+    href: SharpSDL3.Delegates.SdlAppIterateFunc.html
+- uid: SharpSDL3.Delegates.SdlAppQuitFunc
+  commentId: T:SharpSDL3.Delegates.SdlAppQuitFunc
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAppQuitFunc
+  nameWithType: Delegates.SdlAppQuitFunc
+  fullName: SharpSDL3.Delegates.SdlAppQuitFunc
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppQuitFunc
+    name: SdlAppQuitFunc
+    href: SharpSDL3.Delegates.SdlAppQuitFunc.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAppQuitFunc
+    name: SdlAppQuitFunc
+    href: SharpSDL3.Delegates.SdlAppQuitFunc.html
+- uid: SharpSDL3.Delegates.SdlAssertionHandler
+  commentId: T:SharpSDL3.Delegates.SdlAssertionHandler
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAssertionHandler
+  nameWithType: Delegates.SdlAssertionHandler
+  fullName: SharpSDL3.Delegates.SdlAssertionHandler
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAssertionHandler
+    name: SdlAssertionHandler
+    href: SharpSDL3.Delegates.SdlAssertionHandler.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAssertionHandler
+    name: SdlAssertionHandler
+    href: SharpSDL3.Delegates.SdlAssertionHandler.html
+- uid: SharpSDL3.Delegates.SdlAudioPostmixCallback
+  commentId: T:SharpSDL3.Delegates.SdlAudioPostmixCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAudioPostmixCallback
+  nameWithType: Delegates.SdlAudioPostmixCallback
+  fullName: SharpSDL3.Delegates.SdlAudioPostmixCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAudioPostmixCallback
+    name: SdlAudioPostmixCallback
+    href: SharpSDL3.Delegates.SdlAudioPostmixCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAudioPostmixCallback
+    name: SdlAudioPostmixCallback
+    href: SharpSDL3.Delegates.SdlAudioPostmixCallback.html
+- uid: SharpSDL3.Delegates.SdlAudioStreamCallback
+  commentId: T:SharpSDL3.Delegates.SdlAudioStreamCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlAudioStreamCallback
+  nameWithType: Delegates.SdlAudioStreamCallback
+  fullName: SharpSDL3.Delegates.SdlAudioStreamCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAudioStreamCallback
+    name: SdlAudioStreamCallback
+    href: SharpSDL3.Delegates.SdlAudioStreamCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlAudioStreamCallback
+    name: SdlAudioStreamCallback
+    href: SharpSDL3.Delegates.SdlAudioStreamCallback.html
+- uid: SharpSDL3.Delegates.SdlCleanupPropertyCallback
+  commentId: T:SharpSDL3.Delegates.SdlCleanupPropertyCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlCleanupPropertyCallback
+  nameWithType: Delegates.SdlCleanupPropertyCallback
+  fullName: SharpSDL3.Delegates.SdlCleanupPropertyCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlCleanupPropertyCallback
+    name: SdlCleanupPropertyCallback
+    href: SharpSDL3.Delegates.SdlCleanupPropertyCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlCleanupPropertyCallback
+    name: SdlCleanupPropertyCallback
+    href: SharpSDL3.Delegates.SdlCleanupPropertyCallback.html
+- uid: SharpSDL3.Delegates.SdlClipboardCleanupCallback
+  commentId: T:SharpSDL3.Delegates.SdlClipboardCleanupCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlClipboardCleanupCallback
+  nameWithType: Delegates.SdlClipboardCleanupCallback
+  fullName: SharpSDL3.Delegates.SdlClipboardCleanupCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlClipboardCleanupCallback
+    name: SdlClipboardCleanupCallback
+    href: SharpSDL3.Delegates.SdlClipboardCleanupCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlClipboardCleanupCallback
+    name: SdlClipboardCleanupCallback
+    href: SharpSDL3.Delegates.SdlClipboardCleanupCallback.html
+- uid: SharpSDL3.Delegates.SdlClipboardDataCallback
+  commentId: T:SharpSDL3.Delegates.SdlClipboardDataCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlClipboardDataCallback
+  nameWithType: Delegates.SdlClipboardDataCallback
+  fullName: SharpSDL3.Delegates.SdlClipboardDataCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlClipboardDataCallback
+    name: SdlClipboardDataCallback
+    href: SharpSDL3.Delegates.SdlClipboardDataCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlClipboardDataCallback
+    name: SdlClipboardDataCallback
+    href: SharpSDL3.Delegates.SdlClipboardDataCallback.html
+- uid: SharpSDL3.Delegates.SdlDialogFileCallback
+  commentId: T:SharpSDL3.Delegates.SdlDialogFileCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlDialogFileCallback
+  nameWithType: Delegates.SdlDialogFileCallback
+  fullName: SharpSDL3.Delegates.SdlDialogFileCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlDialogFileCallback
+    name: SdlDialogFileCallback
+    href: SharpSDL3.Delegates.SdlDialogFileCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlDialogFileCallback
+    name: SdlDialogFileCallback
+    href: SharpSDL3.Delegates.SdlDialogFileCallback.html
+- uid: SharpSDL3.Delegates.SdlEglAttribArrayCallback
+  commentId: T:SharpSDL3.Delegates.SdlEglAttribArrayCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlEglAttribArrayCallback
+  nameWithType: Delegates.SdlEglAttribArrayCallback
+  fullName: SharpSDL3.Delegates.SdlEglAttribArrayCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEglAttribArrayCallback
+    name: SdlEglAttribArrayCallback
+    href: SharpSDL3.Delegates.SdlEglAttribArrayCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEglAttribArrayCallback
+    name: SdlEglAttribArrayCallback
+    href: SharpSDL3.Delegates.SdlEglAttribArrayCallback.html
+- uid: SharpSDL3.Delegates.SdlEglIntArrayCallback
+  commentId: T:SharpSDL3.Delegates.SdlEglIntArrayCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlEglIntArrayCallback
+  nameWithType: Delegates.SdlEglIntArrayCallback
+  fullName: SharpSDL3.Delegates.SdlEglIntArrayCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEglIntArrayCallback
+    name: SdlEglIntArrayCallback
+    href: SharpSDL3.Delegates.SdlEglIntArrayCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEglIntArrayCallback
+    name: SdlEglIntArrayCallback
+    href: SharpSDL3.Delegates.SdlEglIntArrayCallback.html
+- uid: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+  commentId: T:SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlEnumerateDirectoryCallback
+  nameWithType: Delegates.SdlEnumerateDirectoryCallback
+  fullName: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+    name: SdlEnumerateDirectoryCallback
+    href: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback
+    name: SdlEnumerateDirectoryCallback
+    href: SharpSDL3.Delegates.SdlEnumerateDirectoryCallback.html
+- uid: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+  commentId: T:SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlEnumeratePropertiesCallback
+  nameWithType: Delegates.SdlEnumeratePropertiesCallback
+  fullName: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+    name: SdlEnumeratePropertiesCallback
+    href: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback
+    name: SdlEnumeratePropertiesCallback
+    href: SharpSDL3.Delegates.SdlEnumeratePropertiesCallback.html
+- uid: SharpSDL3.Delegates.SdlEventFilter
+  commentId: T:SharpSDL3.Delegates.SdlEventFilter
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlEventFilter
+  nameWithType: Delegates.SdlEventFilter
+  fullName: SharpSDL3.Delegates.SdlEventFilter
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEventFilter
+    name: SdlEventFilter
+    href: SharpSDL3.Delegates.SdlEventFilter.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlEventFilter
+    name: SdlEventFilter
+    href: SharpSDL3.Delegates.SdlEventFilter.html
+- uid: SharpSDL3.Delegates.SdlHashCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashCallback
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHashCallback
+  nameWithType: Delegates.SdlHashCallback
+  fullName: SharpSDL3.Delegates.SdlHashCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashCallback
+    name: SdlHashCallback
+    href: SharpSDL3.Delegates.SdlHashCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashCallback
+    name: SdlHashCallback
+    href: SharpSDL3.Delegates.SdlHashCallback.html
+- uid: SharpSDL3.Delegates.SdlHashDestroyCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashDestroyCallback
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHashDestroyCallback
+  nameWithType: Delegates.SdlHashDestroyCallback
+  fullName: SharpSDL3.Delegates.SdlHashDestroyCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashDestroyCallback
+    name: SdlHashDestroyCallback
+    href: SharpSDL3.Delegates.SdlHashDestroyCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashDestroyCallback
+    name: SdlHashDestroyCallback
+    href: SharpSDL3.Delegates.SdlHashDestroyCallback.html
+- uid: SharpSDL3.Delegates.SdlHashFreeCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashFreeCallback
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHashFreeCallback
+  nameWithType: Delegates.SdlHashFreeCallback
+  fullName: SharpSDL3.Delegates.SdlHashFreeCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashFreeCallback
+    name: SdlHashFreeCallback
+    href: SharpSDL3.Delegates.SdlHashFreeCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashFreeCallback
+    name: SdlHashFreeCallback
+    href: SharpSDL3.Delegates.SdlHashFreeCallback.html
+- uid: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  commentId: T:SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHashKeyMatchCallback
+  nameWithType: Delegates.SdlHashKeyMatchCallback
+  fullName: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+    name: SdlHashKeyMatchCallback
+    href: SharpSDL3.Delegates.SdlHashKeyMatchCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHashKeyMatchCallback
+    name: SdlHashKeyMatchCallback
+    href: SharpSDL3.Delegates.SdlHashKeyMatchCallback.html
+- uid: SharpSDL3.Delegates.SdlHintCallback
+  commentId: T:SharpSDL3.Delegates.SdlHintCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHintCallback
+  nameWithType: Delegates.SdlHintCallback
+  fullName: SharpSDL3.Delegates.SdlHintCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHintCallback
+    name: SdlHintCallback
+    href: SharpSDL3.Delegates.SdlHintCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHintCallback
+    name: SdlHintCallback
+    href: SharpSDL3.Delegates.SdlHintCallback.html
+- uid: SharpSDL3.Delegates.SdlHitTest
+  commentId: T:SharpSDL3.Delegates.SdlHitTest
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlHitTest
+  nameWithType: Delegates.SdlHitTest
+  fullName: SharpSDL3.Delegates.SdlHitTest
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHitTest
+    name: SdlHitTest
+    href: SharpSDL3.Delegates.SdlHitTest.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlHitTest
+    name: SdlHitTest
+    href: SharpSDL3.Delegates.SdlHitTest.html
+- uid: SharpSDL3.Delegates.SdlLogOutputFunction
+  commentId: T:SharpSDL3.Delegates.SdlLogOutputFunction
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlLogOutputFunction
+  nameWithType: Delegates.SdlLogOutputFunction
+  fullName: SharpSDL3.Delegates.SdlLogOutputFunction
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlLogOutputFunction
+    name: SdlLogOutputFunction
+    href: SharpSDL3.Delegates.SdlLogOutputFunction.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlLogOutputFunction
+    name: SdlLogOutputFunction
+    href: SharpSDL3.Delegates.SdlLogOutputFunction.html
+- uid: SharpSDL3.Delegates.SdlMainFunc
+  commentId: T:SharpSDL3.Delegates.SdlMainFunc
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlMainFunc
+  nameWithType: Delegates.SdlMainFunc
+  fullName: SharpSDL3.Delegates.SdlMainFunc
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlMainFunc
+    name: SdlMainFunc
+    href: SharpSDL3.Delegates.SdlMainFunc.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlMainFunc
+    name: SdlMainFunc
+    href: SharpSDL3.Delegates.SdlMainFunc.html
+- uid: SharpSDL3.Delegates.SdlMainThreadCallback
+  commentId: T:SharpSDL3.Delegates.SdlMainThreadCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlMainThreadCallback
+  nameWithType: Delegates.SdlMainThreadCallback
+  fullName: SharpSDL3.Delegates.SdlMainThreadCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlMainThreadCallback
+    name: SdlMainThreadCallback
+    href: SharpSDL3.Delegates.SdlMainThreadCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlMainThreadCallback
+    name: SdlMainThreadCallback
+    href: SharpSDL3.Delegates.SdlMainThreadCallback.html
+- uid: SharpSDL3.Delegates.SdlNsTimerCallback
+  commentId: T:SharpSDL3.Delegates.SdlNsTimerCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlNsTimerCallback
+  nameWithType: Delegates.SdlNsTimerCallback
+  fullName: SharpSDL3.Delegates.SdlNsTimerCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlNsTimerCallback
+    name: SdlNsTimerCallback
+    href: SharpSDL3.Delegates.SdlNsTimerCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlNsTimerCallback
+    name: SdlNsTimerCallback
+    href: SharpSDL3.Delegates.SdlNsTimerCallback.html
+- uid: SharpSDL3.Delegates.SdlThreadFunction
+  commentId: T:SharpSDL3.Delegates.SdlThreadFunction
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlThreadFunction
+  nameWithType: Delegates.SdlThreadFunction
+  fullName: SharpSDL3.Delegates.SdlThreadFunction
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlThreadFunction
+    name: SdlThreadFunction
+    href: SharpSDL3.Delegates.SdlThreadFunction.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlThreadFunction
+    name: SdlThreadFunction
+    href: SharpSDL3.Delegates.SdlThreadFunction.html
+- uid: SharpSDL3.Delegates.SdlTimerCallback
+  commentId: T:SharpSDL3.Delegates.SdlTimerCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlTimerCallback
+  nameWithType: Delegates.SdlTimerCallback
+  fullName: SharpSDL3.Delegates.SdlTimerCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTimerCallback
+    name: SdlTimerCallback
+    href: SharpSDL3.Delegates.SdlTimerCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTimerCallback
+    name: SdlTimerCallback
+    href: SharpSDL3.Delegates.SdlTimerCallback.html
+- uid: SharpSDL3.Delegates.SdlTlsDestructorCallback
+  commentId: T:SharpSDL3.Delegates.SdlTlsDestructorCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlTlsDestructorCallback
+  nameWithType: Delegates.SdlTlsDestructorCallback
+  fullName: SharpSDL3.Delegates.SdlTlsDestructorCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTlsDestructorCallback
+    name: SdlTlsDestructorCallback
+    href: SharpSDL3.Delegates.SdlTlsDestructorCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTlsDestructorCallback
+    name: SdlTlsDestructorCallback
+    href: SharpSDL3.Delegates.SdlTlsDestructorCallback.html
+- uid: SharpSDL3.Delegates.SdlTrayCallback
+  commentId: T:SharpSDL3.Delegates.SdlTrayCallback
+  parent: SharpSDL3
+  href: SharpSDL3.Delegates.html
+  name: Delegates.SdlTrayCallback
+  nameWithType: Delegates.SdlTrayCallback
+  fullName: SharpSDL3.Delegates.SdlTrayCallback
+  spec.csharp:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTrayCallback
+    name: SdlTrayCallback
+    href: SharpSDL3.Delegates.SdlTrayCallback.html
+  spec.vb:
+  - uid: SharpSDL3.Delegates
+    name: Delegates
+    href: SharpSDL3.Delegates.html
+  - name: .
+  - uid: SharpSDL3.Delegates.SdlTrayCallback
+    name: SdlTrayCallback
+    href: SharpSDL3.Delegates.SdlTrayCallback.html
+- uid: SharpSDL3.OwnedFontMarshaller
+  commentId: T:SharpSDL3.OwnedFontMarshaller
+  parent: SharpSDL3
+  href: SharpSDL3.OwnedFontMarshaller.html
+  name: OwnedFontMarshaller
+  nameWithType: OwnedFontMarshaller
+  fullName: SharpSDL3.OwnedFontMarshaller
+- uid: SharpSDL3.OwnedStringMarshaller
+  commentId: T:SharpSDL3.OwnedStringMarshaller
+  parent: SharpSDL3
+  href: SharpSDL3.OwnedStringMarshaller.html
+  name: OwnedStringMarshaller
+  nameWithType: OwnedStringMarshaller
+  fullName: SharpSDL3.OwnedStringMarshaller
+- uid: SharpSDL3.SdlException
+  commentId: T:SharpSDL3.SdlException
+  href: SharpSDL3.SdlException.html
+  name: SdlException
+  nameWithType: SdlException
+  fullName: SharpSDL3.SdlException
+- uid: SharpSDL3
+  commentId: N:SharpSDL3
+  href: SharpSDL3.html
+  name: SharpSDL3
+  nameWithType: SharpSDL3
+  fullName: SharpSDL3

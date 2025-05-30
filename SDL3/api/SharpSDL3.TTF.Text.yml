@@ -1,0 +1,475 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.TTF.Text
+  commentId: T:SharpSDL3.TTF.Text
+  id: Text
+  parent: SharpSDL3.TTF
+  children:
+  - SharpSDL3.TTF.Text.Handle
+  - SharpSDL3.TTF.Text.Internal
+  - SharpSDL3.TTF.Text.NumLines
+  - SharpSDL3.TTF.Text.RefCount
+  - SharpSDL3.TTF.Text.TextStr
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: Text
+  fullName: SharpSDL3.TTF.Text
+  type: Struct
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Text
+    path: TTF/Text.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  syntax:
+    content: public struct Text
+    content.vb: Public Structure Text
+  inheritedMembers:
+  - System.ValueType.Equals(System.Object)
+  - System.ValueType.GetHashCode
+  - System.ValueType.ToString
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetType
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+- uid: SharpSDL3.TTF.Text.TextStr
+  commentId: F:SharpSDL3.TTF.Text.TextStr
+  id: TextStr
+  parent: SharpSDL3.TTF.Text
+  langs:
+  - csharp
+  - vb
+  name: TextStr
+  nameWithType: Text.TextStr
+  fullName: SharpSDL3.TTF.Text.TextStr
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: TextStr
+    path: TTF/Text.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  summary: >-
+    <p>A copy of the UTF-8 string that this text object represents, useful for layout, debugging and retrieving substring text.</p>
+
+    <p>This is updated when the text object is modified and will be freed automatically when the object is destroyed.</p>
+  example: []
+  syntax:
+    content: public string TextStr
+    return:
+      type: System.String
+    content.vb: Public TextStr As String
+- uid: SharpSDL3.TTF.Text.NumLines
+  commentId: F:SharpSDL3.TTF.Text.NumLines
+  id: NumLines
+  parent: SharpSDL3.TTF.Text
+  langs:
+  - csharp
+  - vb
+  name: NumLines
+  nameWithType: Text.NumLines
+  fullName: SharpSDL3.TTF.Text.NumLines
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NumLines
+    path: TTF/Text.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  summary: The number of lines in the text, 0 if it's empty
+  example: []
+  syntax:
+    content: public int NumLines
+    return:
+      type: System.Int32
+    content.vb: Public NumLines As Integer
+- uid: SharpSDL3.TTF.Text.RefCount
+  commentId: F:SharpSDL3.TTF.Text.RefCount
+  id: RefCount
+  parent: SharpSDL3.TTF.Text
+  langs:
+  - csharp
+  - vb
+  name: RefCount
+  nameWithType: Text.RefCount
+  fullName: SharpSDL3.TTF.Text.RefCount
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: RefCount
+    path: TTF/Text.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  summary: Application reference count, used when freeing surface
+  example: []
+  syntax:
+    content: public int RefCount
+    return:
+      type: System.Int32
+    content.vb: Public RefCount As Integer
+- uid: SharpSDL3.TTF.Text.Internal
+  commentId: F:SharpSDL3.TTF.Text.Internal
+  id: Internal
+  parent: SharpSDL3.TTF.Text
+  langs:
+  - csharp
+  - vb
+  name: Internal
+  nameWithType: Text.Internal
+  fullName: SharpSDL3.TTF.Text.Internal
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Internal
+    path: TTF/Text.cs
+    startLine: 25
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  summary: Private
+  example: []
+  syntax:
+    content: public TextData Internal
+    return:
+      type: SharpSDL3.TTF.TextData
+    content.vb: Public Internal As TextData
+- uid: SharpSDL3.TTF.Text.Handle
+  commentId: F:SharpSDL3.TTF.Text.Handle
+  id: Handle
+  parent: SharpSDL3.TTF.Text
+  langs:
+  - csharp
+  - vb
+  name: Handle
+  nameWithType: Text.Handle
+  fullName: SharpSDL3.TTF.Text.Handle
+  type: Field
+  source:
+    remote:
+      path: SDL3/TTF/Text.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Handle
+    path: TTF/Text.cs
+    startLine: 30
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.TTF
+  summary: The Handle of the <xref href="SharpSDL3.TTF.Text" data-throw-if-not-resolved="false"></xref> structure.
+  example: []
+  syntax:
+    content: public nint Handle
+    return:
+      type: System.IntPtr
+    content.vb: Public Handle As IntPtr
+references:
+- uid: SharpSDL3.TTF
+  commentId: N:SharpSDL3.TTF
+  href: SharpSDL3.html
+  name: SharpSDL3.TTF
+  nameWithType: SharpSDL3.TTF
+  fullName: SharpSDL3.TTF
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.TTF
+    name: TTF
+    href: SharpSDL3.TTF.html
+- uid: System.ValueType.Equals(System.Object)
+  commentId: M:System.ValueType.Equals(System.Object)
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  name: Equals(object)
+  nameWithType: ValueType.Equals(object)
+  fullName: System.ValueType.Equals(object)
+  nameWithType.vb: ValueType.Equals(Object)
+  fullName.vb: System.ValueType.Equals(Object)
+  name.vb: Equals(Object)
+  spec.csharp:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.Equals(System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.equals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType.GetHashCode
+  commentId: M:System.ValueType.GetHashCode
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  name: GetHashCode()
+  nameWithType: ValueType.GetHashCode()
+  fullName: System.ValueType.GetHashCode()
+  spec.csharp:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.GetHashCode
+    name: GetHashCode
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.gethashcode
+  - name: (
+  - name: )
+- uid: System.ValueType.ToString
+  commentId: M:System.ValueType.ToString
+  parent: System.ValueType
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  name: ToString()
+  nameWithType: ValueType.ToString()
+  fullName: System.ValueType.ToString()
+  spec.csharp:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.ValueType.ToString
+    name: ToString
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.valuetype.tostring
+  - name: (
+  - name: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  name: Equals(object, object)
+  nameWithType: object.Equals(object, object)
+  fullName: object.Equals(object, object)
+  nameWithType.vb: Object.Equals(Object, Object)
+  fullName.vb: Object.Equals(Object, Object)
+  name.vb: Equals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.equals#system-object-equals(system-object-system-object)
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  name: GetType()
+  nameWithType: object.GetType()
+  fullName: object.GetType()
+  nameWithType.vb: Object.GetType()
+  fullName.vb: Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.gettype
+  - name: (
+  - name: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  name: ReferenceEquals(object, object)
+  nameWithType: object.ReferenceEquals(object, object)
+  fullName: object.ReferenceEquals(object, object)
+  nameWithType.vb: Object.ReferenceEquals(Object, Object)
+  fullName.vb: Object.ReferenceEquals(Object, Object)
+  name.vb: ReferenceEquals(Object, Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object.referenceequals
+  - name: (
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: ','
+  - name: " "
+  - uid: System.Object
+    name: Object
+    isExternal: true
+    href: https://learn.microsoft.com/dotnet/api/system.object
+  - name: )
+- uid: System.ValueType
+  commentId: T:System.ValueType
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.valuetype
+  name: ValueType
+  nameWithType: ValueType
+  fullName: System.ValueType
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.object
+  name: object
+  nameWithType: object
+  fullName: object
+  nameWithType.vb: Object
+  fullName.vb: Object
+  name.vb: Object
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.string
+  name: string
+  nameWithType: string
+  fullName: string
+  nameWithType.vb: String
+  fullName.vb: String
+  name.vb: String
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: SharpSDL3.TTF.TextData
+  commentId: T:SharpSDL3.TTF.TextData
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.TextData.html
+  name: TextData
+  nameWithType: TextData
+  fullName: SharpSDL3.TTF.TextData
+- uid: SharpSDL3.TTF.Text
+  commentId: T:SharpSDL3.TTF.Text
+  parent: SharpSDL3.TTF
+  href: SharpSDL3.TTF.Text.html
+  name: Text
+  nameWithType: Text
+  fullName: SharpSDL3.TTF.Text
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr

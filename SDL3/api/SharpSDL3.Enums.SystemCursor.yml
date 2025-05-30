@@ -1,0 +1,625 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.SystemCursor
+  commentId: T:SharpSDL3.Enums.SystemCursor
+  id: SystemCursor
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.SystemCursor.Count
+  - SharpSDL3.Enums.SystemCursor.Crosshair
+  - SharpSDL3.Enums.SystemCursor.Default
+  - SharpSDL3.Enums.SystemCursor.EResize
+  - SharpSDL3.Enums.SystemCursor.EwResize
+  - SharpSDL3.Enums.SystemCursor.Move
+  - SharpSDL3.Enums.SystemCursor.NResize
+  - SharpSDL3.Enums.SystemCursor.NeResize
+  - SharpSDL3.Enums.SystemCursor.NeSwResize
+  - SharpSDL3.Enums.SystemCursor.NotAllowed
+  - SharpSDL3.Enums.SystemCursor.NsResize
+  - SharpSDL3.Enums.SystemCursor.NwResize
+  - SharpSDL3.Enums.SystemCursor.NwSeResize
+  - SharpSDL3.Enums.SystemCursor.Pointer
+  - SharpSDL3.Enums.SystemCursor.Progress
+  - SharpSDL3.Enums.SystemCursor.SResize
+  - SharpSDL3.Enums.SystemCursor.SeResize
+  - SharpSDL3.Enums.SystemCursor.SwResize
+  - SharpSDL3.Enums.SystemCursor.Text
+  - SharpSDL3.Enums.SystemCursor.WResize
+  - SharpSDL3.Enums.SystemCursor.Wait
+  langs:
+  - csharp
+  - vb
+  name: SystemCursor
+  nameWithType: SystemCursor
+  fullName: SharpSDL3.Enums.SystemCursor
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SystemCursor
+    path: Enums/SystemCursor.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum SystemCursor
+    content.vb: Public Enum SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Default
+  commentId: F:SharpSDL3.Enums.SystemCursor.Default
+  id: Default
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: SystemCursor.Default
+  fullName: SharpSDL3.Enums.SystemCursor.Default
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Default
+    path: Enums/SystemCursor.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Default = 0
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Text
+  commentId: F:SharpSDL3.Enums.SystemCursor.Text
+  id: Text
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Text
+  nameWithType: SystemCursor.Text
+  fullName: SharpSDL3.Enums.SystemCursor.Text
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Text
+    path: Enums/SystemCursor.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Text = 1
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Wait
+  commentId: F:SharpSDL3.Enums.SystemCursor.Wait
+  id: Wait
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Wait
+  nameWithType: SystemCursor.Wait
+  fullName: SharpSDL3.Enums.SystemCursor.Wait
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Wait
+    path: Enums/SystemCursor.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Wait = 2
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Crosshair
+  commentId: F:SharpSDL3.Enums.SystemCursor.Crosshair
+  id: Crosshair
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Crosshair
+  nameWithType: SystemCursor.Crosshair
+  fullName: SharpSDL3.Enums.SystemCursor.Crosshair
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Crosshair
+    path: Enums/SystemCursor.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Crosshair = 3
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Progress
+  commentId: F:SharpSDL3.Enums.SystemCursor.Progress
+  id: Progress
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Progress
+  nameWithType: SystemCursor.Progress
+  fullName: SharpSDL3.Enums.SystemCursor.Progress
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Progress
+    path: Enums/SystemCursor.cs
+    startLine: 8
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Progress = 4
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NwSeResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NwSeResize
+  id: NwSeResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NwSeResize
+  nameWithType: SystemCursor.NwSeResize
+  fullName: SharpSDL3.Enums.SystemCursor.NwSeResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NwSeResize
+    path: Enums/SystemCursor.cs
+    startLine: 9
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NwSeResize = 5
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NeSwResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NeSwResize
+  id: NeSwResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NeSwResize
+  nameWithType: SystemCursor.NeSwResize
+  fullName: SharpSDL3.Enums.SystemCursor.NeSwResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NeSwResize
+    path: Enums/SystemCursor.cs
+    startLine: 10
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NeSwResize = 6
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.EwResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.EwResize
+  id: EwResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: EwResize
+  nameWithType: SystemCursor.EwResize
+  fullName: SharpSDL3.Enums.SystemCursor.EwResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EwResize
+    path: Enums/SystemCursor.cs
+    startLine: 11
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: EwResize = 7
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NsResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NsResize
+  id: NsResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NsResize
+  nameWithType: SystemCursor.NsResize
+  fullName: SharpSDL3.Enums.SystemCursor.NsResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NsResize
+    path: Enums/SystemCursor.cs
+    startLine: 12
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NsResize = 8
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Move
+  commentId: F:SharpSDL3.Enums.SystemCursor.Move
+  id: Move
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Move
+  nameWithType: SystemCursor.Move
+  fullName: SharpSDL3.Enums.SystemCursor.Move
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Move
+    path: Enums/SystemCursor.cs
+    startLine: 13
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Move = 9
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NotAllowed
+  commentId: F:SharpSDL3.Enums.SystemCursor.NotAllowed
+  id: NotAllowed
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NotAllowed
+  nameWithType: SystemCursor.NotAllowed
+  fullName: SharpSDL3.Enums.SystemCursor.NotAllowed
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NotAllowed
+    path: Enums/SystemCursor.cs
+    startLine: 14
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NotAllowed = 10
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Pointer
+  commentId: F:SharpSDL3.Enums.SystemCursor.Pointer
+  id: Pointer
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Pointer
+  nameWithType: SystemCursor.Pointer
+  fullName: SharpSDL3.Enums.SystemCursor.Pointer
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Pointer
+    path: Enums/SystemCursor.cs
+    startLine: 15
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Pointer = 11
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NwResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NwResize
+  id: NwResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NwResize
+  nameWithType: SystemCursor.NwResize
+  fullName: SharpSDL3.Enums.SystemCursor.NwResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NwResize
+    path: Enums/SystemCursor.cs
+    startLine: 16
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NwResize = 12
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NResize
+  id: NResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NResize
+  nameWithType: SystemCursor.NResize
+  fullName: SharpSDL3.Enums.SystemCursor.NResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NResize
+    path: Enums/SystemCursor.cs
+    startLine: 17
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NResize = 13
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.NeResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.NeResize
+  id: NeResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: NeResize
+  nameWithType: SystemCursor.NeResize
+  fullName: SharpSDL3.Enums.SystemCursor.NeResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: NeResize
+    path: Enums/SystemCursor.cs
+    startLine: 18
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: NeResize = 14
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.EResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.EResize
+  id: EResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: EResize
+  nameWithType: SystemCursor.EResize
+  fullName: SharpSDL3.Enums.SystemCursor.EResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: EResize
+    path: Enums/SystemCursor.cs
+    startLine: 19
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: EResize = 15
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.SeResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.SeResize
+  id: SeResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: SeResize
+  nameWithType: SystemCursor.SeResize
+  fullName: SharpSDL3.Enums.SystemCursor.SeResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SeResize
+    path: Enums/SystemCursor.cs
+    startLine: 20
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SeResize = 16
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.SResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.SResize
+  id: SResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: SResize
+  nameWithType: SystemCursor.SResize
+  fullName: SharpSDL3.Enums.SystemCursor.SResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SResize
+    path: Enums/SystemCursor.cs
+    startLine: 21
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SResize = 17
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.SwResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.SwResize
+  id: SwResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: SwResize
+  nameWithType: SystemCursor.SwResize
+  fullName: SharpSDL3.Enums.SystemCursor.SwResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: SwResize
+    path: Enums/SystemCursor.cs
+    startLine: 22
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: SwResize = 18
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.WResize
+  commentId: F:SharpSDL3.Enums.SystemCursor.WResize
+  id: WResize
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: WResize
+  nameWithType: SystemCursor.WResize
+  fullName: SharpSDL3.Enums.SystemCursor.WResize
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: WResize
+    path: Enums/SystemCursor.cs
+    startLine: 23
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: WResize = 19
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+- uid: SharpSDL3.Enums.SystemCursor.Count
+  commentId: F:SharpSDL3.Enums.SystemCursor.Count
+  id: Count
+  parent: SharpSDL3.Enums.SystemCursor
+  langs:
+  - csharp
+  - vb
+  name: Count
+  nameWithType: SystemCursor.Count
+  fullName: SharpSDL3.Enums.SystemCursor.Count
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/SystemCursor.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Count
+    path: Enums/SystemCursor.cs
+    startLine: 24
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Count = 20
+    return:
+      type: SharpSDL3.Enums.SystemCursor
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.SystemCursor
+  commentId: T:SharpSDL3.Enums.SystemCursor
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.SystemCursor.html
+  name: SystemCursor
+  nameWithType: SystemCursor
+  fullName: SharpSDL3.Enums.SystemCursor

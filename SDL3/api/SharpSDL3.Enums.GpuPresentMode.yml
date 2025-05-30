@@ -1,0 +1,139 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.GpuPresentMode
+  commentId: T:SharpSDL3.Enums.GpuPresentMode
+  id: GpuPresentMode
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.GpuPresentMode.Immediate
+  - SharpSDL3.Enums.GpuPresentMode.Mailbox
+  - SharpSDL3.Enums.GpuPresentMode.Vsync
+  langs:
+  - csharp
+  - vb
+  name: GpuPresentMode
+  nameWithType: GpuPresentMode
+  fullName: SharpSDL3.Enums.GpuPresentMode
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/GpuPresentMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: GpuPresentMode
+    path: Enums/GpuPresentMode.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum GpuPresentMode
+    content.vb: Public Enum GpuPresentMode
+- uid: SharpSDL3.Enums.GpuPresentMode.Vsync
+  commentId: F:SharpSDL3.Enums.GpuPresentMode.Vsync
+  id: Vsync
+  parent: SharpSDL3.Enums.GpuPresentMode
+  langs:
+  - csharp
+  - vb
+  name: Vsync
+  nameWithType: GpuPresentMode.Vsync
+  fullName: SharpSDL3.Enums.GpuPresentMode.Vsync
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuPresentMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Vsync
+    path: Enums/GpuPresentMode.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Vsync = 0
+    return:
+      type: SharpSDL3.Enums.GpuPresentMode
+- uid: SharpSDL3.Enums.GpuPresentMode.Immediate
+  commentId: F:SharpSDL3.Enums.GpuPresentMode.Immediate
+  id: Immediate
+  parent: SharpSDL3.Enums.GpuPresentMode
+  langs:
+  - csharp
+  - vb
+  name: Immediate
+  nameWithType: GpuPresentMode.Immediate
+  fullName: SharpSDL3.Enums.GpuPresentMode.Immediate
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuPresentMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Immediate
+    path: Enums/GpuPresentMode.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Immediate = 1
+    return:
+      type: SharpSDL3.Enums.GpuPresentMode
+- uid: SharpSDL3.Enums.GpuPresentMode.Mailbox
+  commentId: F:SharpSDL3.Enums.GpuPresentMode.Mailbox
+  id: Mailbox
+  parent: SharpSDL3.Enums.GpuPresentMode
+  langs:
+  - csharp
+  - vb
+  name: Mailbox
+  nameWithType: GpuPresentMode.Mailbox
+  fullName: SharpSDL3.Enums.GpuPresentMode.Mailbox
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/GpuPresentMode.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mailbox
+    path: Enums/GpuPresentMode.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Mailbox = 2
+    return:
+      type: SharpSDL3.Enums.GpuPresentMode
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.GpuPresentMode
+  commentId: T:SharpSDL3.Enums.GpuPresentMode
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.GpuPresentMode.html
+  name: GpuPresentMode
+  nameWithType: GpuPresentMode
+  fullName: SharpSDL3.Enums.GpuPresentMode

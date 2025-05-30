@@ -1,0 +1,87 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  commentId: T:SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  id: Mixer.Mix_MixCallback
+  parent: SharpSDL3.Mixer
+  children: []
+  langs:
+  - csharp
+  - vb
+  name: Mixer.Mix_MixCallback
+  nameWithType: Mixer.Mix_MixCallback
+  fullName: SharpSDL3.Mixer.Mixer.Mix_MixCallback
+  type: Delegate
+  source:
+    remote:
+      path: SDL3/Mixer/Mixer.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Mix_MixCallback
+    path: Mixer/Mixer.cs
+    startLine: 64
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Mixer
+  syntax:
+    content: public delegate void Mixer.Mix_MixCallback(nint udata, nint stream, int len)
+    parameters:
+    - id: udata
+      type: System.IntPtr
+    - id: stream
+      type: System.IntPtr
+    - id: len
+      type: System.Int32
+    content.vb: Public Delegate Sub Mixer.Mix_MixCallback(udata As IntPtr, stream As IntPtr, len As Integer)
+references:
+- uid: SharpSDL3.Mixer
+  commentId: N:SharpSDL3.Mixer
+  href: SharpSDL3.html
+  name: SharpSDL3.Mixer
+  nameWithType: SharpSDL3.Mixer
+  fullName: SharpSDL3.Mixer
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Mixer
+    name: Mixer
+    href: SharpSDL3.Mixer.html
+- uid: System.IntPtr
+  commentId: T:System.IntPtr
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.intptr
+  name: nint
+  nameWithType: nint
+  fullName: nint
+  nameWithType.vb: IntPtr
+  fullName.vb: System.IntPtr
+  name.vb: IntPtr
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system.int32
+  name: int
+  nameWithType: int
+  fullName: int
+  nameWithType.vb: Integer
+  fullName.vb: Integer
+  name.vb: Integer
+- uid: System
+  commentId: N:System
+  isExternal: true
+  href: https://learn.microsoft.com/dotnet/api/system
+  name: System
+  nameWithType: System
+  fullName: System

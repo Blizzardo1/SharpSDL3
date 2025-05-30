@@ -1,0 +1,166 @@
+### YamlMime:ManagedReference
+items:
+- uid: SharpSDL3.Enums.JoystickConnectionState
+  commentId: T:SharpSDL3.Enums.JoystickConnectionState
+  id: JoystickConnectionState
+  parent: SharpSDL3.Enums
+  children:
+  - SharpSDL3.Enums.JoystickConnectionState.Invalid
+  - SharpSDL3.Enums.JoystickConnectionState.Unknown
+  - SharpSDL3.Enums.JoystickConnectionState.Wired
+  - SharpSDL3.Enums.JoystickConnectionState.Wireless
+  langs:
+  - csharp
+  - vb
+  name: JoystickConnectionState
+  nameWithType: JoystickConnectionState
+  fullName: SharpSDL3.Enums.JoystickConnectionState
+  type: Enum
+  source:
+    remote:
+      path: SDL3/Enums/JoystickConnectionState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: JoystickConnectionState
+    path: Enums/JoystickConnectionState.cs
+    startLine: 2
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: public enum JoystickConnectionState
+    content.vb: Public Enum JoystickConnectionState
+- uid: SharpSDL3.Enums.JoystickConnectionState.Invalid
+  commentId: F:SharpSDL3.Enums.JoystickConnectionState.Invalid
+  id: Invalid
+  parent: SharpSDL3.Enums.JoystickConnectionState
+  langs:
+  - csharp
+  - vb
+  name: Invalid
+  nameWithType: JoystickConnectionState.Invalid
+  fullName: SharpSDL3.Enums.JoystickConnectionState.Invalid
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/JoystickConnectionState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Invalid
+    path: Enums/JoystickConnectionState.cs
+    startLine: 4
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Invalid = -1
+    return:
+      type: SharpSDL3.Enums.JoystickConnectionState
+- uid: SharpSDL3.Enums.JoystickConnectionState.Unknown
+  commentId: F:SharpSDL3.Enums.JoystickConnectionState.Unknown
+  id: Unknown
+  parent: SharpSDL3.Enums.JoystickConnectionState
+  langs:
+  - csharp
+  - vb
+  name: Unknown
+  nameWithType: JoystickConnectionState.Unknown
+  fullName: SharpSDL3.Enums.JoystickConnectionState.Unknown
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/JoystickConnectionState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Unknown
+    path: Enums/JoystickConnectionState.cs
+    startLine: 5
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Unknown = 0
+    return:
+      type: SharpSDL3.Enums.JoystickConnectionState
+- uid: SharpSDL3.Enums.JoystickConnectionState.Wired
+  commentId: F:SharpSDL3.Enums.JoystickConnectionState.Wired
+  id: Wired
+  parent: SharpSDL3.Enums.JoystickConnectionState
+  langs:
+  - csharp
+  - vb
+  name: Wired
+  nameWithType: JoystickConnectionState.Wired
+  fullName: SharpSDL3.Enums.JoystickConnectionState.Wired
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/JoystickConnectionState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Wired
+    path: Enums/JoystickConnectionState.cs
+    startLine: 6
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Wired = 1
+    return:
+      type: SharpSDL3.Enums.JoystickConnectionState
+- uid: SharpSDL3.Enums.JoystickConnectionState.Wireless
+  commentId: F:SharpSDL3.Enums.JoystickConnectionState.Wireless
+  id: Wireless
+  parent: SharpSDL3.Enums.JoystickConnectionState
+  langs:
+  - csharp
+  - vb
+  name: Wireless
+  nameWithType: JoystickConnectionState.Wireless
+  fullName: SharpSDL3.Enums.JoystickConnectionState.Wireless
+  type: Field
+  source:
+    remote:
+      path: SDL3/Enums/JoystickConnectionState.cs
+      branch: main
+      repo: https://github.com/Blizzardo1/SharpSDL3
+    id: Wireless
+    path: Enums/JoystickConnectionState.cs
+    startLine: 7
+  assemblies:
+  - SharpSDL3
+  namespace: SharpSDL3.Enums
+  syntax:
+    content: Wireless = 2
+    return:
+      type: SharpSDL3.Enums.JoystickConnectionState
+references:
+- uid: SharpSDL3.Enums
+  commentId: N:SharpSDL3.Enums
+  href: SharpSDL3.html
+  name: SharpSDL3.Enums
+  nameWithType: SharpSDL3.Enums
+  fullName: SharpSDL3.Enums
+  spec.csharp:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+  spec.vb:
+  - uid: SharpSDL3
+    name: SharpSDL3
+    href: SharpSDL3.html
+  - name: .
+  - uid: SharpSDL3.Enums
+    name: Enums
+    href: SharpSDL3.Enums.html
+- uid: SharpSDL3.Enums.JoystickConnectionState
+  commentId: T:SharpSDL3.Enums.JoystickConnectionState
+  parent: SharpSDL3.Enums
+  href: SharpSDL3.Enums.JoystickConnectionState.html
+  name: JoystickConnectionState
+  nameWithType: JoystickConnectionState
+  fullName: SharpSDL3.Enums.JoystickConnectionState
