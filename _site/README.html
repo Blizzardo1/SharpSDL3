@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+      <title> | SharpSDL3 </title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="title" content=" | SharpSDL3 ">
+      
+      
+      <link rel="icon" href="favicon.ico">
+      <link rel="stylesheet" href="public/docfx.min.css">
+      <link rel="stylesheet" href="public/main.css">
+      <meta name="docfx:navrel" content="toc.html">
+      <meta name="docfx:tocrel" content="toc.html">
+      
+      <meta name="docfx:rel" content="">
+      
+      
+      <meta name="docfx:docurl" content="https://github.com/Blizzardo1/SharpSDL3/blob/main/README.md/#L1">
+      <meta name="loc:inThisArticle" content="In this article">
+      <meta name="loc:searchResultsCount" content="{count} results for &quot;{query}&quot;">
+      <meta name="loc:searchNoResults" content="No results for &quot;{query}&quot;">
+      <meta name="loc:tocFilter" content="Filter by title">
+      <meta name="loc:nextArticle" content="Next">
+      <meta name="loc:prevArticle" content="Previous">
+      <meta name="loc:themeLight" content="Light">
+      <meta name="loc:themeDark" content="Dark">
+      <meta name="loc:themeAuto" content="Auto">
+      <meta name="loc:changeTheme" content="Change theme">
+      <meta name="loc:copy" content="Copy">
+      <meta name="loc:downloadPdf" content="Download PDF">
+
+      <script type="module" src="./public/docfx.min.js"></script>
+
+      <script>
+        const theme = localStorage.getItem('theme') || 'auto'
+        document.documentElement.setAttribute('data-bs-theme', theme === 'auto' ? (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : theme)
+      </script>
+
+  </head>
+
+  <body class="tex2jax_ignore" data-layout="" data-yaml-mime="">
+    <header class="bg-body border-bottom">
+      <nav id="autocollapse" class="navbar navbar-expand-md" role="navigation">
+        <div class="container-xxl flex-nowrap">
+          <a class="navbar-brand" href="index.html">
+            <img id="logo" class="svg" src="logo.svg" alt="SharpSDL3">
+            SharpSDL3
+          </a>
+          <button class="btn btn-lg d-md-none border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navpanel" aria-controls="navpanel" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="bi bi-three-dots"></i>
+          </button>
+          <div class="collapse navbar-collapse" id="navpanel">
+            <div id="navbar">
+              <form class="search" role="search" id="search">
+                <i class="bi bi-search"></i>
+                <input class="form-control" id="search-query" type="search" disabled placeholder="Search" autocomplete="off" aria-label="Search">
+              </form>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main class="container-xxl">
+
+      <div class="content">
+        <div class="actionbar">
+
+          <nav id="breadcrumb"></nav>
+        </div>
+
+        <article data-uid="">
+
+<p>This is SDL3-CS, C# bindings for SDL3.  <a href="https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml"><img src="https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml/badge.svg" alt="CI"></a></p>
+<p>This is SharpSDL3, a C# wrapper for SDL3. Originally, this stems from <a href="https://github.com/flibitijibibo/SDL3-CS">flibitijibibo's work</a>, but since he dislikes adapting the APIs to a more C#-like style (dropping <code>SDL_</code> prefixes etc.), here's a fork that does adapt the style.</p>
+<p>This project is also inspired by <a href="https://github.com/GeorchW/SharpSDL2">GeorchW's SharpSDL2</a>.</p>
+<h2 id="license">License</h2>
+<p>SDL3 and SDL3-CS are released under the zlib license. See LICENSE for details.</p>
+<h2 id="about-sdl3">About SDL3</h2>
+<p>For more information about SDL3, visit the <a href="https://wiki.libsdl.org/SDL3/FrontPage">SDL Wiki</a>.</p>
+<h2 id="status">Status</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Progress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SDL3</td>
+<td>Works, needs updating</td>
+</tr>
+<tr>
+<td>SDL3_image</td>
+<td>Words, needs updating</td>
+</tr>
+<tr>
+<td>SDL3_mixer</td>
+<td>Works, needs updating</td>
+</tr>
+<tr>
+<td>SDL3_net</td>
+<td>Not Started</td>
+</tr>
+<tr>
+<td>SDL3_ttf</td>
+<td>Works, needs updating</td>
+</tr>
+</tbody>
+</table>
+<h2 id="documentation">Documentation</h2>
+<table>
+<thead>
+<tr>
+<th>Library</th>
+<th>Progress</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SDL3</td>
+<td>Not Started</td>
+</tr>
+<tr>
+<td>SDL3_image</td>
+<td>Not Started</td>
+</tr>
+<tr>
+<td>SDL3_mixer</td>
+<td>Not Started</td>
+</tr>
+<tr>
+<td>SDL3_net</td>
+<td>Not Started</td>
+</tr>
+<tr>
+<td>SDL3_ttf</td>
+<td>Not Started</td>
+</tr>
+</tbody>
+</table>
+<h2 id="about-the-c-bindings">About the C# bindings</h2>
+<p>The bindings are auto-generated from the GenerateBindings subproject.<br>
+The generator depends on JSON output from the c2ffi project: <a href="https://github.com/rpav/c2ffi">https://github.com/rpav/c2ffi</a></p>
+<p>~SDL3.Legacy.cs contains legacy bindings that will work with any .NET project that supports at least C# language version 4.~<br>
+Removed. If you would like to compile legacy, please pull from original Repo.</p>
+<p>~SDL3.Core.cs~ This project contains CoreCLR-specific bindings that will only work with .NET 9+. These bindings may provide improved performance if you are able to use them.</p>
+<p><a href="https://github.com/flibitijibibo/SDL3-CS">SDL3-CS</a> is pure function-by-function interop with the C headers.<br>
+SharpSDL3 aims to provide a full SDL framework.</p>
+<p>You are encouraged to write your own wrapper objects if you care about &quot;appropriate&quot; C# style. &lt;-- That's what this project is about. Making it C# Appropriate.</p>
+<p>The SDL headers themselves do not provide enough information to generate complete C# bindings.
+If you update the bindings, search &quot;WARN_&quot; in generated files for unhandled definitions or those that require manual intervention.</p>
+<p>All nint and nuint Pointer objects refer to managed Pointers. If you have problems deciphering between pointers, then please help provide overloads to their respective class, struct, or enum.</p>
+<h2 id="contributions">Contributions</h2>
+<p>I welcome all contributions to make this as great as possible to provide an excellent stomping ground for new developers to get their feet wet, or seasoned developers to crank out new games and/or software that fits their general purpose needs.</p>
+<p>The most important part is getting the functions setup without the SDL_ labeling for public functions, but I've left the original declarations private and alone.</p>
+
+</article>
+
+        <div class="contribution d-print-none">
+          <a href="https://github.com/Blizzardo1/SharpSDL3/blob/main/README.md/#L1" class="edit-link">Edit this page</a>
+        </div>
+
+        <div class="next-article d-print-none border-top" id="nextArticle"></div>
+
+      </div>
+
+      <div class="affix">
+        <nav id="affix"></nav>
+      </div>
+    </main>
+
+    <div class="container-xxl search-results" id="search-results"></div>
+
+    <footer class="border-top text-secondary">
+      <div class="container-xxl">
+        <div class="flex-fill">
+          <span>Made with <a href="https://dotnet.github.io/docfx">docfx</a></span>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
