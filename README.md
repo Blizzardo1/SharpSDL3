@@ -28,7 +28,7 @@ For more information about SDL3, visit the [SDL Wiki](https://wiki.libsdl.org/SD
 |SDL3_image | Not Started |
 |SDL3_mixer | Not Started |
 |SDL3_net | Not Started |
-|SDL3_ttf | Not Started |
+|SDL3_ttf | Started |
 
 
 
