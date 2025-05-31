@@ -61,10 +61,4 @@
 	  <Content Remove="C:\Users\Adonis Deliannis\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.14.0\contentFiles\any\any\BuildHost-netcore\zh-Hans\System.CommandLine.resources.dll" />
 	  <Content Remove="C:\Users\Adonis Deliannis\.nuget\packages\microsoft.codeanalysis.workspaces.msbuild\4.14.0\contentFiles\any\any\BuildHost-netcore\zh-Hant\System.CommandLine.resources.dll" />
 	</ItemGroup>
-
-	<ItemGroup>
-	  <PackageReference Include="Docfx.App" Version="2.78.3" />
-	  <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.14.0" />
-	  <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.14.0" />
-	</ItemGroup>
 </Project>

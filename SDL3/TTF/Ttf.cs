@@ -33,7 +33,6 @@ public static unsafe partial class Ttf {
     public const string TTF_PROP_RENDERER_TEXT_ENGINE_RENDERER = "SDL_ttf.renderer_text_engine.create.renderer";
     private const int MaxUnicodeCodePoint = 0x10FFFF;
     private const string NativeLibName = "SDL3_ttf";
-
     /// <summary>
     /// Add a fallback font
     /// </summary>
@@ -162,7 +161,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="CreateGPUTextEngineWithProperties(int)"/>
     /// <seealso cref="DestroyGPUTextEngine(nint)"/>
     /// <seealso cref="GetGPUTextDrawData(nint)"/>
-    // nint refers to a GPUDevice, which is a pointer type.
     public static TextEngine CreateGPUTextEngine(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -261,11 +259,23 @@ public static unsafe partial class Ttf {
         return engine;
     }
 
+    /// <summary>
+    /// Create a text object from UTF-8 text and a text engine.
+    /// </summary>
+    /// <param name="engine">The <see cref="TextEngine"/> to use when creating the text object, may be <see langword="null"/>.</param>
+    /// <param name="font">The <see cref="Font"/> to render with.</param>
+    /// <param name="text">The text to use, in UTF-8 encoding.</param>
+    /// <param name="length">The length of the text, in bytes, or 0 for null terminated text.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the font and text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="Text"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="InvalidOperationException">If the text failed to be created.</exception>
+    /// <exception cref="ArgumentException">If the <paramref name="text"/> is <see langword="null"/> or empty.</exception>
+    /// <seealso cref="DestroyText(Text)"/>
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        if (engine.Handle == nint.Zero) {
-            Sdl.LogError(LogCategory.Error, "Text engine cannot be null.");
-        }
         nint tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
         if (tPtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create text. SDL Error: {Sdl.GetError()}");
@@ -275,10 +285,38 @@ public static unsafe partial class Ttf {
         return textObj;
     }
 
+    /// <summary>
+    /// Create a text object from UTF-8 text and a text engine.
+    /// </summary>
+    /// <param name="engine">The <see cref="TextEngine"/> to use when creating the text object, may be <see langword="null"/>.</param>
+    /// <param name="font">The <see cref="Font"/> to render with.</param>
+    /// <param name="text">The text to use, in UTF-8 encoding.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the font and text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a <see cref="Text"/> object or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="DestroyText(Text)"/>
     public static Text CreateText(TextEngine engine, Font font, string text) {
         return CreateText(engine, font, text, text.Length);
     }
 
+    /// <summary>
+    /// Delete a range of UTF-8 text from a text object.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to modify.</param>
+    /// <param name="offset">The offset, in bytes, where the deletion starts.</param>
+    /// <param name="length">The length of the text to delete, in bytes.</param>
+    /// <remarks>
+    /// <para>This function may cause the internal text representation to be rebuilt.</para>
+    /// <para>This function should be called on the thread that created the text object.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="Text"/> handle is null or 0x0.</exception>
+    /// <seealso cref="AppendTextString(Text, string, ulong)"/>
+    /// <seealso cref="InsertTextString(Text, int, string)"/>
+    /// <seealso cref="SetTextString(Text, string, ulong)"/>
     public static bool DeleteTextString(Text text, int offset, int length) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -286,6 +324,17 @@ public static unsafe partial class Ttf {
         return TTF_DeleteTextString(text.Handle, offset, length);
     }
 
+    /// <summary>
+    /// Destroy a GPU text engine.
+    /// </summary>
+    /// <param name="engine">A pointer to the GPU text engine to destroy.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <exception cref="ArgumentNullException">Throws if the <paramref name="engine"/> is null or 0x0.</exception>
+    /// <seealso cref="CreateGPUTextEngine(nint)"/>
+    /// <seealso cref="CreateGPUTextEngineWithProperties(int)"/>
     public static void DestroyGPUTextEngine(nint engine) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
@@ -293,6 +342,17 @@ public static unsafe partial class Ttf {
         TTF_DestroyGPUTextEngine(engine);
     }
 
+    /// <summary>
+    /// Destroy a renderer text engine.
+    /// </summary>
+    /// <param name="engine">The <see cref="TextEngine"/> to destroy.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="TextEngine"/> handle is null or 0x0.</exception>
+    /// <seealso cref="CreateRendererTextEngine(nint)"/>
+    /// <seealso cref="CreateRendererTextEngineWithProperties(int)"/>
     public static void DestroyRendererTextEngine(TextEngine engine) {
         if (engine.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
@@ -300,6 +360,16 @@ public static unsafe partial class Ttf {
         TTF_DestroyRendererTextEngine(engine.Handle);
     }
 
+    /// <summary>
+    /// Destroy a surface text engine.
+    /// </summary>
+    /// <param name="engine">The <see cref="TextEngine"/> to destroy.</param>
+    /// <remarks>
+    /// <para>This function should be called on the thread that created the text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="TextEngine"/> handle is null or 0x0.</exception>
+    /// <seealso cref="CreateSurfaceTextEngine()"/>
     public static void DestroySurfaceTextEngine(TextEngine engine) {
         if (engine.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
@@ -307,6 +377,17 @@ public static unsafe partial class Ttf {
         TTF_DestroySurfaceTextEngine(engine.Handle);
     }
 
+    /// <summary>
+    /// Destroy a text object.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to destroy.</param>
+    /// <remarks>
+    /// <para>This function frees all resources associated with the text object.</para>
+    /// <para>This function should be called on the thread that created the text object.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="Text"/> handle is null or 0x0.</exception>
+    /// <seealso cref="CreateText(TextEngine, Font, string, int)"/>
     public static void DestroyText(Text text) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -314,6 +395,21 @@ public static unsafe partial class Ttf {
         TTF_DestroyText(text.Handle);
     }
 
+    /// <summary>
+    /// Draw a text object using a renderer text engine.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to draw.</param>
+    /// <param name="x">The x-coordinate where to draw the text.</param>
+    /// <param name="y">The y-coordinate where to draw the text.</param>
+    /// <remarks>
+    /// <para>The text is drawn at the specified (x, y) coordinates using the associated renderer text engine.</para>
+    /// <para>This function should be called on the thread that created the text object and its renderer.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="Text"/> handle is null or 0x0.</exception>
+    /// <seealso cref="CreateRendererTextEngine(nint)"/>
+    /// <seealso cref="SetTextPosition(Text, int, int)"/>
     public static bool DrawRendererText(Text text, float x, float y) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -321,6 +417,21 @@ public static unsafe partial class Ttf {
         return TTF_DrawRendererText(text.Handle, x, y);
     }
 
+    /// <summary>
+    /// Draw a text object to an SDL surface.
+    /// </summary>
+    /// <param name="text">The <see cref="Text"/> to draw.</param>
+    /// <param name="x">The x-coordinate where to draw the text.</param>
+    /// <param name="y">The y-coordinate where to draw the text.</param>
+    /// <param name="surface">A pointer to the SDL surface to draw to.</param>
+    /// <remarks>
+    /// <para>The text is drawn at the specified (x, y) coordinates on the provided surface.</para>
+    /// <para>This function should be called on the thread that created the text object and surface.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws if the <see cref="Text"/> or <paramref name="surface"/> handle is null or 0x0.</exception>
+    /// <seealso cref="CreateSurfaceTextEngine()"/>
     public static bool DrawSurfaceText(Text text, int x, int y, nint surface) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -331,6 +442,18 @@ public static unsafe partial class Ttf {
         return TTF_DrawSurfaceText(text.Handle, x, y, surface);
     }
 
+    /// <summary>
+    /// Check if a font contains a specific glyph for a Unicode character.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="ch">The Unicode character code to check.</param>
+    /// <remarks>
+    /// <para>This function checks if the font contains a glyph for the specified Unicode character.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> if the glyph exists, or <see langword="false"/> otherwise; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetGlyphImage(Font, int, ImageType)"/>
     public static bool FontHasGlyph(Font font, int ch) {
         bool result = TTF_FontHasGlyph(font.Handle, ch);
         if (!result) {
@@ -339,6 +462,18 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font ascent.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>The ascent is the distance from the baseline to the top of most characters in the font.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font ascent on success, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontDescent(Font)"/>
+    /// <seealso cref="GetFontHeight(Font)"/>
     public static int GetFontAscent(Font font) {
         int result = TTF_GetFontAscent(font.Handle);
         if (result < 0) {
@@ -348,14 +483,50 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font descent.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>The descent is the distance from the baseline to the bottom of most characters in the font.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font descent on success, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontAscent(Font)"/>
+    /// <seealso cref="GetFontHeight(Font)"/>
     public static int GetFontDescent(Font font) {
         return TTF_GetFontDescent(font.Handle);
     }
 
+    /// <summary>
+    /// Get the text direction of a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function returns the text direction set for the font, such as left-to-right or right-to-left.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="Direction"/> of the font.</returns>
+    /// <seealso cref="SetFontDirection(Font, Direction)"/>
     public static Direction GetFontDirection(Font font) {
         return TTF_GetFontDirection(font.Handle);
     }
 
+    /// <summary>
+    /// Get the DPI settings of a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="hdpi">The output horizontal DPI value.</param>
+    /// <param name="vdpi">The output vertical DPI value.</param>
+    /// <remarks>
+    /// <para>This function retrieves the horizontal and vertical DPI settings used by the font.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontSizeDPI(Font, float, int, int)"/>
     public static bool GetFontDPI(Font font, out int hdpi, out int vdpi) {
         nint pHdpi = Sdl.Malloc(4);
         nint pVdpi = Sdl.Malloc(4);
@@ -379,6 +550,37 @@ public static unsafe partial class Ttf {
         }
     }
 
+    /// <summary>
+    /// Get the DPI settings of a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the horizontal and vertical DPI settings used by the font.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns> Returns the output horizontal DPI value and vertical DPI value as a <see cref="Size"/>. This may be empty. If so, call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontSizeDPI(Font, float, int, int)"/>
+    public static Size GetFontDPI(Font font) {
+        if (GetFontDPI(font, out int hdpi, out int vdpi)) {
+            return new Size(hdpi, vdpi);
+        }
+
+        return new();
+    }
+
+    /// <summary>
+    /// Get the font family name.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the family name of the font, such as "Arial" or "Times New Roman".</para>
+    /// <para>The returned string is invalid after calling <see cref="CloseFont(Font)"/>.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font family name as a string, or an empty string on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontStyleName(Font)"/>
     public static string GetFontFamilyName(Font font) {
         string result = TTF_GetFontFamilyName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
@@ -387,6 +589,17 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font generation number.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>The generation number is incremented each time the font's internal data is modified, useful for detecting changes.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font generation number, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="InvalidOperationException">Throws if the generation number cannot be retrieved.</exception>
     public static int GetFontGeneration(Font font) {
         int generation = TTF_GetFontGeneration(font.Handle);
         if (generation == 0) {
@@ -395,6 +608,18 @@ public static unsafe partial class Ttf {
         return generation;
     }
 
+    /// <summary>
+    /// Get the font height.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>The height is the maximum height of the font, typically the sum of ascent and descent.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font height on success, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontAscent(Font)"/>
+    /// <seealso cref="GetFontDescent(Font)"/>
     public static int GetFontHeight(Font font) {
         int result = TTF_GetFontHeight(font.Handle);
         if (result < 0) {
@@ -404,10 +629,32 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font hinting setting.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the hinting setting for the font, which controls how glyphs are rendered.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="Hinting"/> setting of the font.</returns>
+    /// <seealso cref="SetFontHinting(Font, Hinting)"/>
     public static Hinting GetFontHinting(Font font) {
         return TTF_GetFontHinting(font.Handle);
     }
 
+    /// <summary>
+    /// Get the font kerning setting.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function checks if kerning is enabled for the font, which adjusts spacing between certain character pairs.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> if kerning is enabled, or <see langword="false"/> otherwise; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontKerning(Font, bool)"/>
     public static bool GetFontKerning(Font font) {
         bool result = TTF_GetFontKerning(font.Handle);
         if (!result) {
@@ -416,10 +663,32 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the recommended line spacing for a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>The line skip is the recommended spacing between lines of text for the font.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the line skip value, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontLineSkip(Font, int)"/>
     public static int GetFontLineSkip(Font font) {
         return TTF_GetFontLineSkip(font.Handle);
     }
 
+    /// <summary>
+    /// Get the font outline width.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the outline width set for the font, used for rendering outlined text.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the outline width on success, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontOutline(Font, int)"/>
     public static int GetFontOutline(Font font) {
         int result = TTF_GetFontOutline(font.Handle);
         if (result < 0) {
@@ -429,6 +698,18 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font properties.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the properties associated with the font, such as rendering settings.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font properties, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="InvalidOperationException">Throws if the properties cannot be retrieved.</exception>
+    /// <seealso cref="OpenFontWithProperties(int)"/>
     public static int GetFontProperties(Font font) {
         int props = TTF_GetFontProperties(font.Handle);
         if (props == 0) {
@@ -437,10 +718,32 @@ public static unsafe partial class Ttf {
         return props;
     }
 
+    /// <summary>
+    /// Get the script tag for a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the script tag associated with the font, such as 'latn' for Latin.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the script tag as an integer, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontScript(Font, int)"/>
     public static int GetFontScript(Font font) {
         return TTF_GetFontScript(font.Handle);
     }
 
+    /// <summary>
+    /// Check if Signed Distance Field (SDF) rendering is enabled for a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>SDF rendering can improve the quality of scaled text rendering.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> if SDF rendering is enabled, or <see langword="false"/> otherwise; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="SetFontSDF(Font, bool)"/>
     public static bool GetFontSDF(Font font) {
         bool result = TTF_GetFontSDF(font.Handle);
         if (!result) {
@@ -449,6 +752,18 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the point size of a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the point size of the font in points.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the point size as a float, or 0.0f on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="InvalidOperationException">Throws if the point size cannot be retrieved.</exception>
+    /// <seealso cref="SetFontSize(Font, float)"/>
     public static float GetFontSize(Font font) {
         float size = TTF_GetFontSize(font.Handle);
         if (size <= 0.01f) {
@@ -457,10 +772,33 @@ public static unsafe partial class Ttf {
         return size;
     }
 
+    /// <summary>
+    /// Get the font style.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the style of the font, such as bold or italic.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="FontStyle"/> of the font.</returns>
+    /// <seealso cref="SetFontStyle(Font, FontStyle)"/>
     public static FontStyle GetFontStyle(Font font) {
         return TTF_GetFontStyle(font.Handle);
     }
 
+    /// <summary>
+    /// Get the font style name.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the style name of the font, such as "Bold" or "Italic".</para>
+    /// <para>The returned string is invalid after calling <see cref="CloseFont(Font)"/>.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the font style name as a string, or an empty string on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontFamilyName(Font)"/>
     public static string GetFontStyleName(Font font) {
         string result = TTF_GetFontStyleName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
@@ -469,14 +807,46 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the font weight.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the weight of the font, such as normal or bold.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="FontWeight"/> of the font.</returns>
     public static FontWeight GetFontWeight(Font font) {
         return TTF_GetFontWeight(font.Handle);
     }
 
+    /// <summary>
+    /// Get the text wrapping alignment for a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the horizontal alignment used for text wrapping, such as left, center, or right.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="HorizontalAlignment"/> setting for text wrapping.</returns>
+    /// <seealso cref="SetFontWrapAlignment(Font, HorizontalAlignment)"/>
     public static HorizontalAlignment GetFontWrapAlignment(Font font) {
         return TTF_GetFontWrapAlignment(font.Handle);
     }
 
+    /// <summary>
+    /// Get the version of the FreeType library used by SDL_ttf.
+    /// </summary>
+    /// <param name="major">The output major version number.</param>
+    /// <param name="minor">The output minor version number.</param>
+    /// <param name="patch">The output patch version number.</param>
+    /// <remarks>
+    /// <para>This function retrieves the version of the FreeType library linked with SDL_ttf.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <seealso cref="GetHarfBuzzVersion(out int, out int, out int)"/>
     public static void GetFreeTypeVersion(out int major, out int minor, out int patch) {
         nint ma = Sdl.Malloc(4);
         nint mi = Sdl.Malloc(4);
@@ -494,7 +864,21 @@ public static unsafe partial class Ttf {
         Sdl.Free(pa);
     }
 
-    // nint refers to a Surface *
+    /// <summary>
+    /// Get the image for a specific glyph in a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="ch">The Unicode character code of the glyph.</param>
+    /// <param name="image_type">The type of image to generate (e.g., solid, shaded, blended).</param>
+    /// <remarks>
+    /// <para>This function returns a surface containing the rendered glyph for the specified character.</para>
+    /// <para>The caller is responsible for freeing the returned surface.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a pointer to the surface containing the glyph image, or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Throws if the <paramref name="image_type"/> is invalid.</exception>
+    /// <seealso cref="GetGlyphImageForIndex(Font, int, ImageType)"/>
     public static nint GetGlyphImage(Font font, int ch, ImageType image_type) {
         if (!Enum.IsDefined(image_type)) {
             throw new ArgumentOutOfRangeException(nameof(image_type), "Invalid image type value.");
@@ -502,6 +886,21 @@ public static unsafe partial class Ttf {
         return TTF_GetGlyphImage(font.Handle, ch, image_type);
     }
 
+    /// <summary>
+    /// Get the image for a specific glyph by index in a font.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="glyph_index">The index of the glyph in the font.</param>
+    /// <param name="image_type">The type of image to generate (e.g., solid, shaded, blended).</param>
+    /// <remarks>
+    /// <para>This function returns a surface containing the rendered glyph for the specified glyph index.</para>
+    /// <para>The caller is responsible for freeing the returned surface.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a pointer to the surface containing the glyph image, or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Throws if the <paramref name="image_type"/> is invalid.</exception>
+    /// <seealso cref="GetGlyphImage(Font, int, ImageType)"/>
     public static nint GetGlyphImageForIndex(Font font, int glyph_index, ImageType image_type) {
         if (!Enum.IsDefined(image_type)) {
             throw new ArgumentOutOfRangeException(nameof(image_type), "Invalid image type value.");
@@ -509,6 +908,20 @@ public static unsafe partial class Ttf {
         return TTF_GetGlyphImageForIndex(font.Handle, glyph_index, image_type);
     }
 
+    /// <summary>
+    /// Get the kerning value between two glyphs.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="previous_ch">The Unicode character code of the previous glyph.</param>
+    /// <param name="ch">The Unicode character code of the current glyph.</param>
+    /// <param name="kerning">The kerning value to retrieve.</param>
+    /// <remarks>
+    /// <para>This function retrieves the kerning adjustment between two glyphs, if any.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="GetFontKerning(Font)"/>
     public static bool GetGlyphKerning(Font font, int previous_ch, int ch, int kerning) {
         bool result = TTF_GetGlyphKerning(font.Handle, previous_ch, ch, kerning);
         if (!result) {
@@ -517,7 +930,23 @@ public static unsafe partial class Ttf {
         return result;
     }
 
-    // TODO: Work on overloads
+    /// <summary>
+    /// Get the metrics for a specific glyph.
+    /// </summary>
+    /// <param name="font">The <see cref="Font"/> to query.</param>
+    /// <param name="ch">The Unicode character code of the glyph.</param>
+    /// <param name="minx">Pointer to store the minimum x-coordinate of the glyph.</param>
+    /// <param name="maxx">Pointer to store the maximum x-coordinate of the glyph.</param>
+    /// <param name="miny">Pointer to store the minimum y-coordinate of the glyph.</param>
+    /// <param name="maxy">Pointer to store the maximum y-coordinate of the glyph.</param>
+    /// <param name="advance">Pointer to store the advance width of the glyph.</param>
+    /// <remarks>
+    /// <para>This function retrieves the metrics (bounding box and advance) for the specified glyph.</para>
+    /// <para>This function should be called on the thread that created the font.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <seealso cref="FontHasGlyph(Font, int)"/>
     public static bool GetGlyphMetrics(Font font, int ch, nint minx, nint maxx, nint miny, nint maxy, nint advance) {
         bool result = TTF_GetGlyphMetrics(font.Handle, ch, minx, maxx, miny, maxy, advance);
         if (!result) {
@@ -526,6 +955,17 @@ public static unsafe partial class Ttf {
         return result;
     }
 
+    /// <summary>
+    /// Get the script tag for a Unicode character.
+    /// </summary>
+    /// <param name="ch">The Unicode character code to query.</param>
+    /// <remarks>
+    /// <para>This function retrieves the script tag (e.g., 'latn' for Latin) for the specified Unicode character.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the script tag as an integer, or 0 on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentOutOfRangeException">Throws if the character code is not a valid Unicode code point.</exception>
+    /// <seealso cref="SetFontScript(Font, int)"/>
     public static int GetGlyphScript(int ch) {
         if (ch < 0 || ch > MaxUnicodeCodePoint) {
             throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
@@ -540,6 +980,18 @@ public static unsafe partial class Ttf {
         return script;
     }
 
+    /// <summary>
+    /// Get the draw data for a GPU text object.
+    /// </summary>
+    /// <param name="text">A pointer to the text object.</param>
+    /// <remarks>
+    /// <para>This function retrieves the data needed to draw the text using a GPU text engine.</para>
+    /// <para>This function should be called on the thread that created the text object.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns a pointer to the draw data, or <see langword="null"/> on failure; call <see cref="Sdl.GetError"/> for more information.</returns>
+    /// <exception cref="ArgumentNullException">Throws if the <paramref name="text"/> is null or 0x0.</exception>
+    /// <seealso cref="CreateGPUTextEngine(nint)"/>
     public static nint GetGPUTextDrawData(nint text) {
         if (text == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -547,6 +999,18 @@ public static unsafe partial class Ttf {
         return TTF_GetGPUTextDrawData(text);
     }
 
+    /// <summary>
+    /// Get the winding order of a GPU text engine.
+    /// </summary>
+    /// <param name="engine">A pointer to the GPU text engine.</param>
+    /// <remarks>
+    /// <para>This function retrieves the winding order used by the GPU text engine for rendering.</para>
+    /// <para>This function should be called on the thread that created the text engine.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns the <see cref="GPUTextEngineWinding"/> setting of the text engine.</returns>
+    /// <exception cref="ArgumentNullException">Throws if the <paramref name="engine"/> is null or 0x0.</exception>
+    /// <seealso cref="SetGPUTextEngineWinding(nint, GPUTextEngineWinding)"/>
     public static GPUTextEngineWinding GetGPUTextEngineWinding(nint engine) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
@@ -554,6 +1018,17 @@ public static unsafe partial class Ttf {
         return TTF_GetGPUTextEngineWinding(engine);
     }
 
+    /// <summary>
+    /// Get the version of the HarfBuzz library used by SDL_ttf.
+    /// </summary>
+    /// <param name="major">The output major version number.</param>
+    /// <param name="minor">The output minor version number.</param>
+    /// <param name="patch">The output patch version number.</param>
+    /// <remarks>
+    /// <para>This function retrieves the version of the HarfBuzz library linked with SDL_ttf.</para>
+    /// <para>This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <seealso cref="GetFreeTypeVersion(out int, out int, out int)"/>
     public static void GetHarfBuzzVersion(out int major, out int minor, out int patch) {
         nint ma = Sdl.Malloc(4);
         nint mi = Sdl.Malloc(4);
