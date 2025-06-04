@@ -142,7 +142,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="CloseFont"/>
     /// </remarks>
-    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Font CopyFont(Font existingFont) {
         Font font = TTF_CopyFont(existingFont.Handle);
@@ -269,7 +269,7 @@ public static unsafe partial class Ttf {
     /// <seealso cref="DestroyText(Text)"/>
     /// <summary>Create a text object from UTF-8 text and a text engine.</summary>
 
-    /// <param name="engine">the text engine to use when creating the text object, discarded.</param>
+    /// <param name="engine">the text engine to use when creating the text object, may be discarded.</param>
     /// <param name="font">the font to render with.</param>
     /// <param name="text">the text to use, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
@@ -278,7 +278,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="DestroyText"/>
     /// </remarks>
-    /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
@@ -293,7 +293,7 @@ public static unsafe partial class Ttf {
 
     /// <summary>Create a text object from UTF-8 text and a text engine.</summary>
 
-    /// <param name="engine">the text engine to use when creating the text object, discarded.</param>
+    /// <param name="engine">the text engine to use when creating the text object, may be discarded.</param>
     /// <param name="font">the font to render with.</param>
     /// <param name="text">the text to use, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
@@ -302,7 +302,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="DestroyText"/>
     /// </remarks>
-    /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Text CreateText(TextEngine engine, Font font, string text) {
         return CreateText(engine, font, text, text.Length);
@@ -567,7 +567,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the font's family name.</returns>
+    /// <returns>Returns the font's family name.</returns>
 
     public static string GetFontFamilyName(Font font) {
         string result = TTF_GetFontFamilyName(font.Handle);
@@ -773,7 +773,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the font's style name.</returns>
+    /// <returns>Returns the font's style name.</returns>
 
     public static string GetFontStyleName(Font font) {
         string result = TTF_GetFontStyleName(font.Handle);
@@ -843,12 +843,12 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <param name="ch">the codepoint to check.</param>
-    /// <param name="image_type">a pointer filled in with the glyph image type, discarded.</param>
+    /// <param name="image_type">a pointer filled in with the glyph image type, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static nint GetGlyphImage(Font font, int ch, ImageType image_type) {
         if (!Enum.IsDefined(image_type)) {
@@ -861,14 +861,14 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <param name="glyph_index">the index of the glyph to return.</param>
-    /// <param name="image_type">a pointer filled in with the glyph image type, discarded.</param>
+    /// <param name="image_type">a pointer filled in with the glyph image type, may be discarded.</param>
     /// <remarks>
     /// This is useful for text engine implementations, which can call this with
     /// the glyph_index in a TTF_CopyOperation
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static nint GetGlyphImageForIndex(Font font, int glyph_index, ImageType image_type) {
         if (!Enum.IsDefined(image_type)) {
@@ -882,7 +882,7 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <param name="previous_ch">the previous codepoint.</param>
     /// <param name="ch">the current codepoint.</param>
-    /// <param name="kerning">a pointer filled in with the kerning size between the two glyphs, in pixels, discarded.</param>
+    /// <param name="kerning">a pointer filled in with the kerning size between the two glyphs, in pixels, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -1251,10 +1251,10 @@ public static unsafe partial class Ttf {
     /// <summary>Get the color of a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to query.</param>
-    /// <param name="r">a pointer filled in with the red color value in the range of 0-255, discarded.</param>
-    /// <param name="g">a pointer filled in with the green color value in the range of 0-255, discarded.</param>
-    /// <param name="b">a pointer filled in with the blue color value in the range of 0-255, discarded.</param>
-    /// <param name="a">a pointer filled in with the alpha value in the range of 0-255, discarded.</param>
+    /// <param name="r">a pointer filled in with the red color value in the range of 0-255, may be discarded.</param>
+    /// <param name="g">a pointer filled in with the green color value in the range of 0-255, may be discarded.</param>
+    /// <param name="b">a pointer filled in with the blue color value in the range of 0-255, may be discarded.</param>
+    /// <param name="a">a pointer filled in with the alpha value in the range of 0-255, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -1301,10 +1301,10 @@ public static unsafe partial class Ttf {
     /// <summary>Get the color of a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to query.</param>
-    /// <param name="r">a pointer filled in with the red color value, normally in the range of 0-1, discarded.</param>
-    /// <param name="g">a pointer filled in with the green color value, normally in the range of 0-1, discarded.</param>
-    /// <param name="b">a pointer filled in with the blue color value, normally in the range of 0-1, discarded.</param>
-    /// <param name="a">a pointer filled in with the alpha value in the range of 0-1, discarded.</param>
+    /// <param name="r">a pointer filled in with the red color value, normally in the range of 0-1, may be discarded.</param>
+    /// <param name="g">a pointer filled in with the green color value, normally in the range of 0-1, may be discarded.</param>
+    /// <param name="b">a pointer filled in with the blue color value, normally in the range of 0-1, may be discarded.</param>
+    /// <param name="a">a pointer filled in with the alpha value in the range of 0-1, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -1344,7 +1344,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="SetTextEngine"/>
     /// </remarks>
-    /// <returns>(TTF_TextEngine *) Returns theTTF_TextEngine used by the text on success or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_TextEngine *) Returns theTTF_TextEngine used by the text on success or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static unsafe TextEngine GetTextEngine(Text text) {
         if (text.Handle == nint.Zero) {
@@ -1403,8 +1403,8 @@ public static unsafe partial class Ttf {
     /// <summary>Get the position of a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to query.</param>
-    /// <param name="x">a pointer filled in with the x offset of the upper left corner of this text in pixels, discarded.</param>
-    /// <param name="y">a pointer filled in with the y offset of the upper left corner of this text in pixels, discarded.</param>
+    /// <param name="x">a pointer filled in with the x offset of the upper left corner of this text in pixels, may be discarded.</param>
+    /// <param name="y">a pointer filled in with the y offset of the upper left corner of this text in pixels, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -1472,8 +1472,8 @@ public static unsafe partial class Ttf {
     /// <summary>Get the size of a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to query.</param>
-    /// <param name="w">a pointer filled in with the width of the text, in pixels, discarded.</param>
-    /// <param name="h">a pointer filled in with the height of the text, in pixels, discarded.</param>
+    /// <param name="w">a pointer filled in with the width of the text, in pixels, may be discarded.</param>
+    /// <param name="h">a pointer filled in with the height of the text, in pixels, may be discarded.</param>
     /// <remarks>
     /// The size of the text may change when the font or font style and size
     /// change.
@@ -1662,7 +1662,7 @@ public static unsafe partial class Ttf {
     /// <param name="text">the <see cref="Text"/> to query.</param>
     /// <param name="offset">a byte offset into the text string.</param>
     /// <param name="length">the length of the range being queried, in bytes, or -1 for the remainder of the string.</param>
-    /// <param name="count">a pointer filled in with the number of substrings returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of substrings returned, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -1813,8 +1813,8 @@ public static unsafe partial class Ttf {
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, discarded.</param>
+    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1834,8 +1834,8 @@ public static unsafe partial class Ttf {
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, discarded.</param>
+    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1872,7 +1872,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="CloseFont"/>
     /// </remarks>
-    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Font OpenFont(string file, float ptsize) {
         if (string.IsNullOrEmpty(file)) {
@@ -1905,7 +1905,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="CloseFont"/>
     /// </remarks>
-    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> onfailure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Font OpenFontWithProperties(int props) {
         Font font = TTF_OpenFontWithProperties(props);
@@ -2420,7 +2420,7 @@ public static unsafe partial class Ttf {
     /// <summary>Set the font used by a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="font">the font to use, discarded.</param>
+    /// <param name="font">the font to use, may be discarded.</param>
     /// <remarks>
     /// When a text object has a font, any changes to the font will automatically
     /// regenerate the text. If you set the font to <see langword="null" />, the text will continue to
@@ -2497,7 +2497,7 @@ public static unsafe partial class Ttf {
     /// <summary>Set the UTF-8 text used by a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="string">the UTF-8 text to use, discarded.</param>
+    /// <param name="string">the UTF-8 text to use, may be discarded.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.

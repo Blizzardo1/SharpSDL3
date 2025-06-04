@@ -116,7 +116,7 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static long GetAsyncIOSize(nint asyncio) {
         return asyncio == nint.Zero ? throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio)) : SDL_GetAsyncIOSize(asyncio);

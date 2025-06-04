@@ -31,7 +31,7 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetIOProperties(IOStream context) {
         uint result = SDL_GetIOProperties(context.Handle);
@@ -48,7 +48,7 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static long GetIOSize(IOStream context) {
         long result = SDL_GetIOSize(context.Handle);

@@ -231,7 +231,7 @@ public static partial class Sdl {
     /// <seealso cref="ReadStorageFile"/>
     /// <seealso cref="WriteStorageFile"/>
     /// </remarks>
-    /// <returns>(SDL_Storage *) Returns a filesystem storage container onsuccess or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Storage *) Returns a filesystem storage container on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenFileStorage(string path) {
         if (string.IsNullOrEmpty(path)) {

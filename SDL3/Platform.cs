@@ -14,7 +14,7 @@ public static partial class Sdl {
     /// Here are the names returned for some (but not all) supported platforms:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the platform. If the correct platformname is not available, returns a string beginning with the text &quot;Unknown&quot;.</returns>
+    /// <returns>Returns the name of the platform. If the correct platformname is not available, returns a string beginning with the text &quot;Unknown&quot;.</returns>
 
     public static string GetPlatform() {
         return SDL_GetPlatform();
@@ -90,7 +90,7 @@ public static partial class Sdl {
     /// <seealso cref="CreateProcess"/>
     /// <seealso cref="CreateProcessWithProperties"/>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetProcessProperties(nint process) {
         if (process == nint.Zero) {
@@ -102,8 +102,8 @@ public static partial class Sdl {
     /// <summary>Read all the output from a process.</summary>
 
     /// <param name="process">The process to read.</param>
-    /// <param name="datasize">a pointer filled in with the number of bytes read, discarded.</param>
-    /// <param name="exitcode">a pointer filled in with the process exit code if the process has exited, discarded.</param>
+    /// <param name="datasize">a pointer filled in with the number of bytes read, may be discarded.</param>
+    /// <param name="exitcode">a pointer filled in with the process exit code if the process has exited, may be discarded.</param>
     /// <remarks>
     /// If a process was created with I/O enabled, you can use this function to
     /// read the output. This function blocks until the process is complete,
@@ -139,7 +139,7 @@ public static partial class Sdl {
     /// <seealso cref="CreateProcessWithProperties"/>
     /// <seealso cref="GetProcessOutput"/>
     /// </remarks>
-    /// <returns>(SDL_IOStream *) Returns the input stream or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_IOStream *) Returns the input stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetProcessInput(nint process) {
         if (process == nint.Zero) {
@@ -164,7 +164,7 @@ public static partial class Sdl {
     /// <seealso cref="CreateProcessWithProperties"/>
     /// <seealso cref="GetProcessInput"/>
     /// </remarks>
-    /// <returns>(SDL_IOStream *) Returns the output stream or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_IOStream *) Returns the output stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetProcessOutput(nint process) {
         if (process == nint.Zero) {
@@ -198,7 +198,7 @@ public static partial class Sdl {
 
     /// <param name="process">The process to wait for.</param>
     /// <param name="block">If <see langword="true" />, block until the process finishes; otherwise, report on the process' status.</param>
-    /// <param name="exitcode">a pointer filled in with the process exit code if the process has exited, discarded.</param>
+    /// <param name="exitcode">a pointer filled in with the process exit code if the process has exited, may be discarded.</param>
     /// <remarks>
     /// This can be called multiple times to get the status of a process.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>

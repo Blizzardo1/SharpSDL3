@@ -33,7 +33,7 @@ public static partial class Sdl {
     /// <seealso cref="RunHapticEffect"/>
     /// <seealso cref="UpdateHapticEffect"/>
     /// </remarks>
-    /// <returns>Returns the ID of the effect onsuccess or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the ID of the effect on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int CreateHapticEffect(nint haptic, ref HapticEffect effect) {
         if (haptic == nint.Zero) {
@@ -152,7 +152,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetHapticNameForID"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
 
     public static string GetHapticName(nint haptic) {
         if (haptic == nint.Zero) {
@@ -174,7 +174,7 @@ public static partial class Sdl {
     /// <seealso cref="GetHapticName"/>
     /// <seealso cref="OpenHaptic"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
 
     public static string GetHapticNameforId(uint instanceId) {
         if (instanceId == 0) {
@@ -190,7 +190,7 @@ public static partial class Sdl {
 
     /// <summary>Get a list of currently connected haptic devices.</summary>
 
-    /// <param name="count">a pointer filled in with the number of haptic devices returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of haptic devices returned, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="OpenHaptic"/>
@@ -376,7 +376,7 @@ public static partial class Sdl {
     /// <seealso cref="SetHapticAutocenter"/>
     /// <seealso cref="SetHapticGain"/>
     /// </remarks>
-    /// <returns>(SDL_Haptic *) Returns the device identifier or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Haptic *) Returns the device identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenHaptic(uint instanceId) {
         if (instanceId == 0) {
@@ -399,7 +399,7 @@ public static partial class Sdl {
     /// <seealso cref="CloseHaptic"/>
     /// <seealso cref="IsJoystickHaptic"/>
     /// </remarks>
-    /// <returns>(SDL_Haptic *) Returns a valid haptic device identifier onsuccess or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Haptic *) Returns a valid haptic device identifier on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenHapticFromJoystick(nint joystick) {
         if (joystick == nint.Zero) {

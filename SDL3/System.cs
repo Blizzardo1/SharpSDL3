@@ -38,8 +38,8 @@ public static partial class Sdl {
 
     /// <summary>Gets the current preferred date and time format for the system locale.</summary>
 
-    /// <param name="dateFormat">a pointer to the SDL_DateFormat to hold the returned date format, discarded.</param>
-    /// <param name="timeFormat">a pointer to the SDL_TimeFormat to hold the returned time format, discarded.</param>
+    /// <param name="dateFormat">a pointer to the SDL_DateFormat to hold the returned date format, may be discarded.</param>
+    /// <param name="timeFormat">a pointer to the SDL_TimeFormat to hold the returned time format, may be discarded.</param>
     /// <remarks>
     /// This might be a &quot;slow&quot; call that has to query the operating system. It's
     /// best to ask for this once and save the results. However, the preferred
@@ -81,7 +81,7 @@ public static partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the day of year [0-365] if the date is valid or -1 onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the day of year [0-365] if the date is valid or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetDayOfYear(int year, int month, int day) {
         if (month < 1 || month > 12) {

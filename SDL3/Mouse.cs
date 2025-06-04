@@ -20,7 +20,7 @@ public static partial class Sdl {
 
     /// <summary>Get a list of currently connected mice.</summary>
 
-    /// <param name="count">a pointer filled in with the number of mice returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of mice returned, may be discarded.</param>
     /// <remarks>
     /// Note that this will include any device or virtual driver that includes
     /// mouse functionality, including some game controllers, KVM switches, etc.
@@ -51,7 +51,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetMice"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected mouse, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the selected mouse, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetMouseNameForID(uint instanceId) {
         if (instanceId == 0) {
@@ -361,7 +361,7 @@ public static partial class Sdl {
     /// <seealso cref="DestroyCursor"/>
     /// <seealso cref="SetCursor"/>
     /// </remarks>
-    /// <returns>(SDL_Cursor *) Returns the new cursor on success or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Cursor *) Returns the new cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateColorCursor(nint surface, int hotX, int hotY) {
         if (surface == nint.Zero) {
@@ -393,7 +393,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="DestroyCursor"/>
     /// </remarks>
-    /// <returns>(SDL_Cursor *) Returns a cursor on success or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Cursor *) Returns a cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateSystemCursor(SystemCursor id) {
         if (!Enum.IsDefined(id)) {

@@ -1,13 +1,11 @@
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
-using System.Net.NetworkInformation;
-using System.Reflection.PortableExecutable;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.Intrinsics.X86;
 using static SharpSDL3.Delegates;
-using static System.Net.Mime.MediaTypeNames;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SharpSDL3;
@@ -19,6 +17,12 @@ public static unsafe partial class Sdl {
     internal const UnmanagedType BoolType = UnmanagedType.I1;
     internal const StringMarshalling marshalling = StringMarshalling.Utf8;
 
+    /// <summary>
+    /// Converts a <typeparamref name="T"/> to a pointer.
+    /// </summary>
+    /// <typeparam name="T">The unmanaged generic type.</typeparam>
+    /// <param name="str">An unmanaged type to convert to a <see cref="nint"/>.</param>
+    /// <returns>A pointer in memory to an object, else <see cref="nint.Zero"/>.</returns>
     public static unsafe nint StructureToPointer<T>(ref T str) where T : unmanaged {
         int size = sizeof(T);
         nint ptr = Marshal.AllocHGlobal(size);
@@ -26,6 +30,12 @@ public static unsafe partial class Sdl {
         return ptr;
     }
 
+    /// <summary>
+    /// Convert a pointer to a structure of type <typeparamref name="T"/>.
+    /// </summary>
+    /// <typeparam name="T">The unmanaged generic type.</typeparam>
+    /// <param name="ptr">The pointer of which contains a <typeparamref name="T"/>.</param>
+    /// <returns>a <typeparamref name="T"/> filled with data.</returns>
     public static unsafe T PointerToStructure<T>(nint ptr) where T : unmanaged {
         T str = default;
         Unsafe.Copy(ref str, (void*)ptr);
@@ -35,35 +45,27 @@ public static unsafe partial class Sdl {
     /// <summary>
     /// This macro turns the version numbers into a numeric value.
     /// </summary>
-    /// <remarks>
-    /// This macro is available since SDL 3.2.0.
-    /// </remarks>
     /// <param name="major">The Major versiom number</param>
     /// <param name="minor">The Minor version number</param>
     /// <param name="patch">The Patch version number</param>
-    /// <returns>The version as a number</returns>
-    /// <summary>This macro turns the version numbers into a numeric value.</summary>
     /// <remarks>
     /// (1,2,3) becomes 1002003.
     /// <para><strong>Version:</strong> This macro is available since SDL 3.2.0.</para>
     /// </remarks>
-
+    /// <returns>The version as a number</returns>
     public static int VersionNum(int major, int minor, int patch) => major * 1000000 + minor * 1000 + patch;
 
     /// <summary>Add a function to watch a particular hint.</summary>
-
     /// <param name="name">the hint to watch.</param>
-    /// <param name="callback">An SDL_HintCallback function that will be called when the hint value changes.</param>
+    /// <param name="callback">An <see cref="SdlHintCallback"/> function that will be called when the hint value changes.</param>
     /// <param name="userdata">a pointer to pass to the callback function.</param>
     /// <remarks>
-    /// The callback function is called during this function, to provide it an
-    /// initial value, and again each time the hint's value changes.
+    /// The callback function is called during this function, to provide it an initial value, and again each time the hint's value changes.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="RemoveHintCallback"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool AddHintCallback(string name, SdlHintCallback callback, nint userdata) {
         if (string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "AddHintCallback: Name is null or empty.");
@@ -77,7 +79,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Add an alternate version of a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="image">a pointer to an alternate SDL_Surface to associate with this surface.</param>
     /// <remarks>
@@ -92,7 +93,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SurfaceHasAlternateImages"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool AddSurfaceAlternateImage(nint surface, nint image) {
         if (surface == nint.Zero || image == nint.Zero) {
             LogWarn(LogCategory.System, "AddSurfaceAlternateImage: Surface or image pointer is null.");
@@ -104,18 +104,16 @@ public static unsafe partial class Sdl {
     /// <summary>Performs a fast blit from the source surface to the destination surface with clipping.</summary>
 
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the x and y position in the destination surface, or <see langword="null" /> for (0,0). The width and height are ignored, and are copied from srcrect. If you want a specific width and height, you should use SDL_BlitSurfaceScaled().</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the x and y position in the destination surface, or <see langword="null" /> for (0,0). The width and height are ignored, and are copied from srcrect. If you want a specific width and height, you should use <see cref="BlitSurfaceScaled"/>.</param>
     /// <remarks>
-    /// If either srcrect or dstrect are <see langword="null" />, the entire surface (src or
-    /// dst) is copied while ensuring clipping to dst-&gt;clip_rect.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// If either srcrect or dstrect are <see langword="null" />, the entire surface (src or dst) is copied while ensuring clipping to dst-&gt;clip_rect.
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurfaceScaled"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurface(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurface: Source or destination pointer is null.");
@@ -125,29 +123,27 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a scaled blit using the 9-grid algorithm to a destination surface, which may be of a different format.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire surface.</param>
-    /// <param name="left_width">the width, in pixels, of the left corners in srcrect.</param>
-    /// <param name="right_width">the width, in pixels, of the right corners in srcrect.</param>
-    /// <param name="top_height">the height, in pixels, of the top corners in srcrect.</param>
-    /// <param name="bottom_height">the height, in pixels, of the bottom corners in srcrect.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire surface.</param>
+    /// <param name="leftWidth">the width, in pixels, of the left corners in srcrect.</param>
+    /// <param name="rightWidth">the width, in pixels, of the right corners in srcrect.</param>
+    /// <param name="topHeight">the height, in pixels, of the top corners in srcrect.</param>
+    /// <param name="bottomHeight">the height, in pixels, of the bottom corners in srcrect.</param>
     /// <param name="scale">the scale used to transform the corner of srcrect into the corner of dstrect, or 0.0f for an unscaled blit.</param>
     /// <param name="scaleMode">scale algorithm to be used.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
     /// <remarks>
     /// The pixels in the source surface are split into a 3x3 grid, using the
     /// different corner sizes for each corner, and the sides and center making up
     /// the remaining pixels. The corners are then scaled using scale and fit
     /// into the corners of the destination rectangle. The sides and center are
     /// then stretched into place to cover the remaining destination rectangle.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurface9Grid(nint src, nint srcrect, int leftWidth, int rightWidth, int topHeight, int bottomHeight, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurface9Grid: Source or destination pointer is null.");
@@ -157,19 +153,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a scaled blit to a destination surface, which may be of a different format.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire destination surface.</param>
-    /// <param name="scaleMode">the SDL_ScaleMode to be used.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire destination surface.</param>
+    /// <param name="scaleMode">the <see cref="ScaleMode"/> to be used.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurfaceScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurfaceScaled: Source or destination pointer is null.");
@@ -179,20 +173,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a tiled blit to a destination surface, which may be of a different format.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
     /// <remarks>
-    /// The pixels in srcrect will be repeated as many times as needed to
-    /// completely fill dstrect.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// The pixels in srcrect will be repeated as many times as needed to completely fill dstrect.
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurfaceTiled(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurfaceTiled: Source or destination pointer is null.");
@@ -202,22 +193,20 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a scaled and tiled blit to a destination surface, which may be of a different format.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
     /// <param name="scale">the scale used to transform srcrect into the destination rectangle, e.g. a 32x32 texture with a scale of 2 would fill 64x64 tiles.</param>
     /// <param name="scaleMode">scale algorithm to be used.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, or <see langword="null" /> to fill the entire surface.</param>
     /// <remarks>
     /// The pixels in srcrect will be scaled and repeated as many times as needed
     /// to completely fill dstrect.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurfaceTiledWithScale(nint src, nint srcrect, float scale, ScaleMode scaleMode, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurfaceTiledWithScale: Source or destination pointer is null.");
@@ -227,20 +216,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform low-level surface blitting only.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, may not be <see langword="null" />.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, may not be <see langword="null" />.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, may not be <see langword="null" />.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, may not be <see langword="null" />.</param>
     /// <remarks>
     /// This is a semi-private blit function and it performs low-level surface
     /// blitting, assuming the input rectangles have already been clipped.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurfaceUnchecked(nint src, nint srcrect, nint dst, nint dstrect) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurfaceUnchecked: Source or destination pointer is null.");
@@ -250,16 +237,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform low-level surface scaled blitting only.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be copied, may not be <see langword="null" />.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, may not be <see langword="null" />.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
-    /// <param name="dstrect">the SDL_Rect structure representing the target rectangle in the destination surface, may not be <see langword="null" />.</param>
-    /// <param name="scaleMode">the SDL_ScaleMode to be used.</param>
+    /// <param name="dstrect">the <see cref="Rect"/> structure representing the target rectangle in the destination surface, may not be <see langword="null" />.</param>
+    /// <param name="scaleMode">the <see cref="ScaleMode"/> to be used.</param>
     /// <remarks>
     /// This is a semi-private function and it performs low-level surface blitting,
     /// assuming the input rectangles have already been clipped.
-    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any giventime.</para>
+    /// <para><strong>Thread Safety:</strong> Only one thread should be using the src and dst surfaces at any given time.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="BlitSurfaceScaled"/>
     /// </remarks>
@@ -281,8 +267,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-
-    public static void CleanupTLS() {
+    public static void CleanupTls() {
         SDL_CleanupTLS();
     }
 
@@ -293,13 +278,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetClipboardData"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ClearClipboardData() {
         return SDL_ClearClipboardData();
     }
 
     /// <summary>Dismiss the composition window/IME without disabling the subsystem.</summary>
-
     /// <param name="window">the window to affect.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -325,13 +308,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetError"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" />.</returns>
-
     public static bool ClearError() {
         return SDL_ClearError();
     }
 
     /// <summary>Clear a property from a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to clear.</param>
     /// <remarks>
@@ -339,7 +320,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ClearProperty(uint props, string name) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "ClearProperty: Properties handle is zero or name is null/empty.");
@@ -349,7 +329,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Clear a surface with a specific color, with floating point precision.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> to clear.</param>
     /// <param name="r">the red component of the pixel, normally in the range 0-1.</param>
     /// <param name="g">the green component of the pixel, normally in the range 0-1.</param>
@@ -361,7 +340,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ClearSurface(nint surface, float r, float g, float b, float a) {
         if (surface == nint.Zero) {
             LogWarn(LogCategory.System, "ClearSurface: Surface pointer is null.");
@@ -372,17 +350,14 @@ public static unsafe partial class Sdl {
 
     /// <summary>Compose a custom blend mode for renderers.</summary>
 
-    /// <param name="srcColorFactor">the SDL_BlendFactor applied to the red, green, and blue components of the source pixels.</param>
-    /// <param name="dstColorFactor">the SDL_BlendFactor applied to the red, green, and blue components of the destination pixels.</param>
-    /// <param name="colorOperation">the SDL_BlendOperation used to combine the red, green, and blue components of the source and destination pixels.</param>
-    /// <param name="srcAlphaFactor">the SDL_BlendFactor applied to the alpha component of the source pixels.</param>
-    /// <param name="dstAlphaFactor">the SDL_BlendFactor applied to the alpha component of the destination pixels.</param>
-    /// <param name="alphaOperation">the SDL_BlendOperation used to combine the alpha component of the source and destination pixels.</param>
+    /// <param name="srcColorFactor">the <see cref="BlendFactor"/> applied to the red, green, and blue components of the source pixels.</param>
+    /// <param name="dstColorFactor">the <see cref="BlendFactor"/> applied to the red, green, and blue components of the destination pixels.</param>
+    /// <param name="colorOperation">the <see cref="BlendOperation"/> used to combine the red, green, and blue components of the source and destination pixels.</param>
+    /// <param name="srcAlphaFactor">the <see cref="BlendFactor"/> applied to the alpha component of the source pixels.</param>
+    /// <param name="dstAlphaFactor">the <see cref="BlendFactor"/> applied to the alpha component of the destination pixels.</param>
+    /// <param name="alphaOperation">the <see cref="BlendOperation"/> used to combine the alpha component of the source and destination pixels.</param>
     /// <remarks>
-    /// The functions SDL_SetRenderDrawBlendMode and
-    /// SDL_SetTextureBlendMode accept the
-    /// SDL_BlendMode returned by this function if the renderer
-    /// supports it.
+    /// The functions <see cref="SetRenderDrawBlendMode"/> and <see cref="SetTextureBlendMode"/> accept the <see cref="BlendMode"/> returned by this function if the renderer supports it.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetRenderDrawBlendMode"/>
@@ -390,9 +365,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetTextureBlendMode"/>
     /// <seealso cref="GetTextureBlendMode"/>
     /// </remarks>
-    /// <returns>Returns an SDL_BlendModethat represents the chosen factors and operations.</returns>
-
-    public static uint ComposeCustomBlendMode(BlendFactor srcColorFactor, BlendFactor dstColorFactor, BlendOperation colorOperation, BlendFactor srcAlphaFactor, BlendFactor dstAlphaFactor, BlendOperation alphaOperation) {
+    /// <returns>Returns an <see cref="BlendMode"/>that represents the chosen factors and operations.</returns>
+    public static BlendMode ComposeCustomBlendMode(BlendFactor srcColorFactor, BlendFactor dstColorFactor, BlendOperation colorOperation, BlendFactor srcAlphaFactor, BlendFactor dstAlphaFactor, BlendOperation alphaOperation) {
         if (!Enum.IsDefined(srcColorFactor) ||
             !Enum.IsDefined(dstColorFactor) ||
             !Enum.IsDefined(colorOperation) ||
@@ -408,26 +382,24 @@ public static unsafe partial class Sdl {
             LogError(LogCategory.Error, "ComposeCustomBlendMode: Failed to compose custom blend mode.");
         }
 
-        return blendMode;
+        return (BlendMode)blendMode;
     }
 
     /// <summary>Copy a block of pixels of one format to another format.</summary>
-
     /// <param name="width">the width of the block to copy, in pixels.</param>
     /// <param name="height">the height of the block to copy, in pixels.</param>
-    /// <param name="src_format">an SDL_PixelFormat value of the src pixels format.</param>
+    /// <param name="srcFormat">an <see cref="PixelFormat"/> value of the src pixels format.</param>
     /// <param name="src">a pointer to the source pixels.</param>
-    /// <param name="src_pitch">the pitch of the source pixels, in bytes.</param>
-    /// <param name="dst_format">an SDL_PixelFormat value of the dst pixels format.</param>
+    /// <param name="srcPitch">the pitch of the source pixels, in bytes.</param>
+    /// <param name="dstFormat">an <see cref="PixelFormat"/> value of the dst pixels format.</param>
     /// <param name="dst">a pointer to be filled in with new pixel data.</param>
-    /// <param name="dst_pitch">the pitch of the destination pixels, in bytes.</param>
+    /// <param name="dstPitch">the pitch of the destination pixels, in bytes.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. Itis safe to use the same source pixels from multiple threads.</para>
+    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. It is safe to use the same source pixels from multiple threads.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="ConvertPixelsAndColorspace"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ConvertPixels(int width, int height, PixelFormat srcFormat, nint src, int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "ConvertPixels: Source or destination pointer is null.");
@@ -437,21 +409,20 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy a block of pixels of one format and colorspace to another format and colorspace.</summary>
-
     /// <param name="width">the width of the block to copy, in pixels.</param>
     /// <param name="height">the height of the block to copy, in pixels.</param>
-    /// <param name="src_format">an SDL_PixelFormat value of the src pixels format.</param>
-    /// <param name="src_colorspace">an SDL_Colorspace value describing the colorspace of the src pixels.</param>
-    /// <param name="src_properties">an SDL_PropertiesID with additional source color properties, or 0.</param>
+    /// <param name="srcFormat">an <see cref="PixelFormat"/> value of the src pixels format.</param>
+    /// <param name="srcColorspace">an <see cref="Colorspace"/> value describing the colorspace of the src pixels.</param>
+    /// <param name="srcProperties">an SDL_PropertiesID with additional source color properties, or 0.</param>
     /// <param name="src">a pointer to the source pixels.</param>
-    /// <param name="src_pitch">the pitch of the source pixels, in bytes.</param>
-    /// <param name="dst_format">an SDL_PixelFormat value of the dst pixels format.</param>
-    /// <param name="dst_colorspace">an SDL_Colorspace value describing the colorspace of the dst pixels.</param>
-    /// <param name="dst_properties">an SDL_PropertiesID with additional destination color properties, or 0.</param>
+    /// <param name="srcPitch">the pitch of the source pixels, in bytes.</param>
+    /// <param name="dstFormat">an <see cref="PixelFormat"/> value of the dst pixels format.</param>
+    /// <param name="dstColorspace">an <see cref="Colorspace"/> value describing the colorspace of the dst pixels.</param>
+    /// <param name="dstProperties">an SDL_PropertiesID with additional destination color properties, or 0.</param>
     /// <param name="dst">a pointer to be filled in with new pixel data.</param>
-    /// <param name="dst_pitch">the pitch of the destination pixels, in bytes.</param>
+    /// <param name="dstPitch">the pitch of the destination pixels, in bytes.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. Itis safe to use the same source pixels from multiple threads.</para>
+    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. It is safe to use the same source pixels from multiple threads.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="ConvertPixels"/>
     /// </remarks>
@@ -493,7 +464,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="surface">the existing SDL_Surface structure to convert.</param>
     /// <param name="format">the new pixel format.</param>
-    /// <param name="palette">an optional palette to use for indexed formats, discarded.</param>
+    /// <param name="palette">an optional palette to use for indexed formats, may be discarded.</param>
     /// <param name="colorspace">the new colorspace.</param>
     /// <param name="props">an SDL_PropertiesID with additional color properties, or 0.</param>
     /// <remarks>
@@ -516,20 +487,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy a group of properties.</summary>
-
     /// <param name="src">the properties to copy.</param>
     /// <param name="dst">the destination properties.</param>
     /// <remarks>
     /// Copy all the properties from one group of properties to another, with the
-    /// exception of properties requiring cleanup (set using
-    /// SDL_SetPointerPropertyWithCleanup()),
-    /// which will not be copied. Any property that already exists on dst will be
-    /// overwritten.
+    /// exception of properties requiring cleanup (set using <see cref="SetPointerPropertyWithCleanup"/>),
+    /// which will not be copied. Any property that already exists on dst will be overwritten.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool CopyProperties(uint src, uint dst) {
         if (src == 0 || dst == 0) {
             LogWarn(LogCategory.System, "CopyProperties: Source or destination properties handle is zero.");
@@ -539,7 +506,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a palette structure with the specified number of color entries.</summary>
-
     /// <param name="ncolors">represents the number of color entries in the color palette.</param>
     /// <remarks>
     /// The palette entries are initialized to white.
@@ -549,8 +515,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetPaletteColors"/>
     /// <seealso cref="SetSurfacePalette"/>
     /// </remarks>
-    /// <returns>(SDL_Palette *) Returns a new SDL_Palettestructure on success or <see langword="null" /> on failure (e.g. if there wasn't enoughmemory); call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>(SDL_Palette *) Returns a new SDL_Palette structure on success or <see langword="null" /> on failure (e.g. if there wasn't enough memory); call <see cref="GetError()" /> for more information.</returns>
     public static nint CreatePalette(int ncolors) {
         if (ncolors <= 0) {
             LogError(LogCategory.Error, "CreatePalette: Number of colors must be greater than zero.");
@@ -567,11 +532,11 @@ public static unsafe partial class Sdl {
     /// <summary>Create a child popup window of the specified parent window.</summary>
 
     /// <param name="parent">the parent of the window, must not be <see langword="null" />.</param>
-    /// <param name="offset_x">the x position of the popup window relative to the origin of the parent.</param>
-    /// <param name="offset_y">the y position of the popup window relative to the origin of the parent window.</param>
+    /// <param name="offsetX">the x position of the popup window relative to the origin of the parent.</param>
+    /// <param name="offsetY">the y position of the popup window relative to the origin of the parent window.</param>
     /// <param name="w">the width of the window.</param>
     /// <param name="h">the height of the window.</param>
-    /// <param name="flags">SDL_WINDOW_TOOLTIP or SDL_WINDOW_POPUP_MENU, and zero or more additional SDL_WindowFlags OR'd together.</param>
+    /// <param name="flags"><see cref="WindowFlags.Tooltip"/> or <see cref="WindowFlags.PopupMenu"/>, and zero or more additional <see cref="WindowFlags"/> OR'd together.</param>
     /// <remarks>
     /// The window size is a request and may be different than expected based on
     /// the desktop layout and window manager policies. Your application should be
@@ -583,7 +548,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DestroyWindow"/>
     /// <seealso cref="GetWindowParent"/>
     /// </remarks>
-    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreatePopupWindow(nint parent, int offsetX, int offsetY, int w, int h, WindowFlags flags) {
         if (parent == nint.Zero) {
@@ -609,14 +574,12 @@ public static unsafe partial class Sdl {
 
     /// <summary>Create a group of properties.</summary>
     /// <remarks>
-    /// All properties are automatically destroyed when <see cref="Quit"/> is
-    /// called.
+    /// All properties are automatically destroyed when <see cref="Quit"/> is called.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="DestroyProperties"/>
     /// </remarks>
-    /// <returns>Returns an ID for a new group ofproperties, or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns an ID for a new group of properties, or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint CreateProperties() {
         uint props = SDL_CreateProperties();
         if (props == 0) {
@@ -627,10 +590,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Allocate a new surface with a specific pixel format.</summary>
-
     /// <param name="width">the width of the surface.</param>
     /// <param name="height">the height of the surface.</param>
-    /// <param name="format">the SDL_PixelFormat for the new surface's pixel format.</param>
+    /// <param name="format">the <see cref="PixelFormat"/> for the new surface's pixel format.</param>
     /// <remarks>
     /// The pixels of the new surface are initialized to zero.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -639,7 +601,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DestroySurface"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns the new SDL_Surfacestructure that is created or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static nint CreateSurface(int width, int height, PixelFormat format) {
         if (width <= 0 || height <= 0) {
             LogError(LogCategory.Error, "CreateSurface: Invalid width or height.");
@@ -650,10 +611,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Allocate a new surface with a specific pixel format and existing pixel data.</summary>
-
     /// <param name="width">the width of the surface.</param>
     /// <param name="height">the height of the surface.</param>
-    /// <param name="format">the SDL_PixelFormat for the new surface's pixel format.</param>
+    /// <param name="format">the <see cref="PixelFormat"/> for the new surface's pixel format.</param>
     /// <param name="pixels">a pointer to existing pixel data.</param>
     /// <param name="pitch">the number of bytes between each row, including padding.</param>
     /// <remarks>
@@ -664,8 +624,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateSurface"/>
     /// <seealso cref="DestroySurface"/>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns the new SDL_Surfacestructure that is created or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>(SDL_Surface *) Returns the new SDL_Surface structure that is created or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static nint CreateSurfaceFrom(int width, int height, PixelFormat format, nint pixels, int pitch) {
         if (pixels == nint.Zero) {
             LogError(LogCategory.System, "CreateSurfaceFrom: Pixels pointer is null.");
@@ -681,7 +640,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a palette and associate it with a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <remarks>
     /// This function creates a palette compatible with the provided surface. The
@@ -730,11 +688,10 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a window with the specified dimensions and flags.</summary>
-
     /// <param name="title">the title of the window, in UTF-8 encoding.</param>
     /// <param name="w">the width of the window.</param>
     /// <param name="h">the height of the window.</param>
-    /// <param name="flags">0, or one or more SDL_WindowFlags OR'd together.</param>
+    /// <param name="flags">0, or one or more <see cref="WindowFlags"/> OR'd together.</param>
     /// <remarks>
     /// The window size is a request and may be different than expected based on
     /// the desktop layout and window manager policies. Your application should be
@@ -746,8 +703,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateWindowWithProperties"/>
     /// <seealso cref="DestroyWindow"/>
     /// </remarks>
-    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint CreateWindow(string title, int w, int h, WindowFlags flags) {
         if (string.IsNullOrEmpty(title)) {
             LogWarn(LogCategory.System, "CreateWindow: Title is null or empty.");
@@ -757,7 +713,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a window with the specified properties.</summary>
-
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// The window size is a request and may be different than expected based on
@@ -769,8 +724,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateWindow"/>
     /// <seealso cref="DestroyWindow"/>
     /// </remarks>
-    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint CreateWindowWithProperties(uint props) {
         if (props == 0) {
             LogWarn(LogCategory.System, "CreateWindowWithProperties: Properties handle is zero.");
@@ -786,15 +740,13 @@ public static unsafe partial class Sdl {
         return windowHandle;
     }
 
-    /// <summary>Free a palette created with SDL_CreatePalette().</summary>
-
+    /// <summary>Free a palette created with <see cref="CreatePalette"/>.</summary>
     /// <param name="palette">the SDL_Palette structure to be freed.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, as long as the palette is not modified or destroyed in another thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreatePalette"/>
     /// </remarks>
-
     public static void DestroyPalette(nint palette) {
         if (palette == nint.Zero) {
             LogWarn(LogCategory.System, "DestroyPalette: Palette pointer is null.");
@@ -804,16 +756,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Destroy a group of properties.</summary>
-
     /// <param name="props">the properties to destroy.</param>
     /// <remarks>
-    /// All properties are deleted and their cleanup functions will be called, if
-    /// any.
+    /// All properties are deleted and their cleanup functions will be called, if any.
     /// <para><strong>Thread Safety:</strong> This function should not be called while these properties are locked orother threads might be setting or getting values from these properties.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateProperties"/>
     /// </remarks>
-
     public static void DestroyProperties(uint props) {
         if (props == 0) {
             LogWarn(LogCategory.System, "DestroyProperties: Properties handle is zero.");
@@ -823,10 +772,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Free a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> to free.</param>
     /// <remarks>
-    /// It is safe to pass <see langword="null" /> to this function.
+    /// It is safe to pass <see cref="nint.Zero" /> to this function.
     /// <para><strong>Thread Safety:</strong> No other thread should be using the surface when it is freed.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateSurface"/>
@@ -834,26 +782,19 @@ public static unsafe partial class Sdl {
     /// </remarks>
 
     public static void DestroySurface(nint surface) {
-        if (surface == nint.Zero) {
-            LogWarn(LogCategory.System, "DestroySurface: Surface pointer is null.");
-            return;
-        }
         SDL_DestroySurface(surface);
     }
 
     /// <summary>Destroy a window.</summary>
-
     /// <param name="window">the window to destroy.</param>
     /// <remarks>
-    /// Any child windows owned by the window will be recursively destroyed as
-    /// well.
+    /// Any child windows owned by the window will be recursively destroyed as well.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreatePopupWindow"/>
     /// <seealso cref="CreateWindow"/>
     /// <seealso cref="CreateWindowWithProperties"/>
     /// </remarks>
-
     public static void DestroyWindow(nint window) {
         if (window == nint.Zero) {
             LogWarn(LogCategory.System, "DestroyWindow: Window handle is null.");
@@ -863,7 +804,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Destroy the surface associated with the window.</summary>
-
     /// <param name="window">the window to update.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -882,14 +822,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Let a thread clean up on exit without intervention.</summary>
-
-    /// <param name="thread">the SDL_Thread pointer that was returned from the SDL_CreateThread() call that started this thread.</param>
+    /// <param name="thread">the SDL_Thread pointer that was returned from the <see cref="CreateThread"/> call that started this thread.</param>
     /// <remarks>
     /// A thread may be &quot;detached&quot; to signify that it should not remain until
-    /// another thread has called SDL_WaitThread() on it.
+    /// another thread has called <see cref="WaitThread"/> on it.
     /// Detaching a thread is useful for long-running threads that nothing needs to
-    /// synchronize with or further manage. When a detached thread is done, it
-    /// simply goes away.
+    /// synchronize with or further manage. When a detached thread is done, it simply goes away.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateThread"/>
     /// <seealso cref="WaitThread"/>
@@ -905,31 +843,26 @@ public static unsafe partial class Sdl {
 
     /// <summary>Prevent the screen from being blanked by a screen saver.</summary>
     /// <remarks>
-    /// If you disable the screensaver, it is automatically re-enabled when SDL
-    /// quits.
+    /// If you disable the screensaver, it is automatically re-enabled when SDL quits.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="EnableScreenSaver"/>
     /// <seealso cref="ScreenSaverEnabled"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool DisableScreenSaver() {
         return SDL_DisableScreenSaver();
     }
 
     /// <summary>Creates a new surface identical to the existing surface.</summary>
-
     /// <param name="surface">the surface to duplicate.</param>
     /// <remarks>
-    /// If the original surface has alternate images, the new surface will have a
-    /// reference to them as well.
+    /// If the original surface has alternate images, the new surface will have a reference to them as well.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="DestroySurface"/>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint DuplicateSurface(nint surface) {
         if (surface == nint.Zero) {
             LogWarn(LogCategory.System, "DuplicateSurface: Surface pointer is null.");
@@ -946,29 +879,25 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ScreenSaverEnabled"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool EnableScreenSaver() {
         return SDL_EnableScreenSaver();
     }
 
     /// <summary>An entry point for SDL's use in SDL_MAIN_USE_CALLBACKS.</summary>
-
     /// <param name="argc">standard Unix main argc.</param>
     /// <param name="argv">standard Unix main argv.</param>
-    /// <param name="appinit">the application's SDL_AppInit function.</param>
-    /// <param name="appiter">the application's SDL_AppIterate function.</param>
-    /// <param name="appevent">the application's SDL_AppEvent function.</param>
-    /// <param name="appquit">the application's SDL_AppQuit function.</param>
+    /// <param name="appInit">the application's SDL_AppInit function.</param>
+    /// <param name="appIter">the application's SDL_AppIterate function.</param>
+    /// <param name="appEvent">the application's SDL_AppEvent function.</param>
+    /// <param name="appQuit">the application's SDL_AppQuit function.</param>
     /// <remarks>
     /// Generally, you should not call this function directly. This only exists to
     /// hand off work into SDL as soon as possible, where it has a lot more control
-    /// and functionality available, and make the inline code in
-    /// SDL_main.h as small as possible.
+    /// and functionality available, and make the inline code in SDL_main.h as small as possible.
     /// <para><strong>Thread Safety:</strong> It is not safe to call this anywhere except as the only function call inSDL_main.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns standard Unix main return value.</returns>
-
     public static int EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc appInit,
                                                                        SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit) {
         ArgumentNullException.ThrowIfNull(appInit);
@@ -982,7 +911,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Enumerate the properties contained in a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="callback">the function to call for each property.</param>
     /// <param name="userdata">a pointer that is passed to callback.</param>
@@ -1003,13 +931,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a fast fill of a rectangle with a specific color.</summary>
-
     /// <param name="dst">the <see cref="Surface"/> structure that is the drawing target.</param>
-    /// <param name="rect">the SDL_Rect structure representing the rectangle to fill, or <see langword="null" /> to fill the entire surface.</param>
+    /// <param name="rect">the <see cref="Rect"/> structure representing the rectangle to fill, or <see cref="nint.Zero" /> to fill the entire surface.</param>
     /// <param name="color">the color to fill with.</param>
     /// <remarks>
     /// color should be a pixel of the format used by the surface, and can be
-    /// generated by SDL_MapRGB() or SDL_MapRGBA(). If
+    /// generated by <see cref="MapRgb"/> or <see cref="MapRgba"/>. If
     /// the color value contains an alpha component then the destination is simply
     /// filled with that alpha information, no blending takes place.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
@@ -1017,7 +944,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="FillSurfaceRects"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static unsafe bool FillSurfaceRect(nint dst, Rect rect, uint color) {
         if (dst == nint.Zero) {
             LogWarn(LogCategory.System, "FillSurfaceRect: Destination pointer is null.");
@@ -1034,14 +960,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Perform a fast fill of a set of rectangles with a specific color.</summary>
-
     /// <param name="dst">the <see cref="Surface"/> structure that is the drawing target.</param>
-    /// <param name="rects">an array of SDL_Rects representing the rectangles to fill.</param>
-    /// <param name="count">the number of rectangles in the array.</param>
+    /// <param name="rects">an array of <see cref="Rect"/>s representing the rectangles to fill.</param>
     /// <param name="color">the color to fill with.</param>
     /// <remarks>
     /// color should be a pixel of the format used by the surface, and can be
-    /// generated by SDL_MapRGB() or SDL_MapRGBA(). If
+    /// generated by <see cref="MapRgb"/> or <see cref="MapRgba"/>. If
     /// the color value contains an alpha component then the destination is simply
     /// filled with that alpha information, no blending takes place.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
@@ -1075,7 +999,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool FlashWindow(nint window, FlashOperation operation) {
         if (window == nint.Zero) {
             LogWarn(LogCategory.System, "FlashWindow: Window handle is null.");
@@ -1095,7 +1018,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Flip a surface vertically or horizontally.</summary>
-
     /// <param name="surface">the surface to flip.</param>
     /// <param name="flip">the direction to flip.</param>
     /// <remarks>
@@ -1103,7 +1025,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool FlipSurface(nint surface, FlipMode flip) {
         if (surface == nint.Zero) {
             LogWarn(LogCategory.System, "FlipSurface: Surface pointer is null.");
@@ -1127,27 +1048,21 @@ public static unsafe partial class Sdl {
     /// do nothing and set an &quot;unsupported&quot; error message.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-
     public static void GDKSuspendComplete() {
         SDL_GDKSuspendComplete();
     }
 
     /// <summary>Get metadata about your app.</summary>
-
     /// <param name="name">the name of the metadata property to get.</param>
     /// <remarks>
-    /// This returns metadata previously set using
-    /// SDL_SetAppMetadata() or
-    /// SDL_SetAppMetadataProperty(). See
-    /// SDL_SetAppMetadataProperty() for the list of
-    /// available properties and their meanings.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, although the stringreturned is not protected and could potentially be freed if you callSDL_SetAppMetadataProperty() to set thatproperty from another thread.</para>
+    /// This returns metadata previously set using <see cref="SetAppMetadata"/> or <see cref="SetAppMetadataProperty"/>.
+    /// <para>See <see cref="SetAppMetadataProperty"/> for the list of available properties and their meanings.</para>
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, although the stringreturned is not protected and could potentially be freed if you callSDL_SetAppMetadataProperty() to set that property from another thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetAppMetadata"/>
     /// <seealso cref="SetAppMetadataProperty"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the current value of the metadata property, or thedefault if it is not set, <see langword="null" /> for properties with no default.</returns>
-
+    /// <returns>Returns the current value of the metadata property, or the default if it is not set, <see langword="null" /> for properties with no default.</returns>
     public static string GetAppMetadataProperty(string name) {
         if (string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetAppMetadataProperty: Name is null or empty.");
@@ -1161,21 +1076,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a boolean property from a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="name">the name of the property to query.</param>
-    /// <param name="default_value">the default value of the property.</param>
+    /// <param name="defaultValue">the default value of the property.</param>
     /// <remarks>
-    /// You can use SDL_GetPropertyType() to query whether
-    /// the property exists and is a boolean property.
+    /// You can use  <see cref="GetPropertyType"/> to query whether the property exists and is a boolean property.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetPropertyType"/>
     /// <seealso cref="HasProperty"/>
     /// <seealso cref="SetBooleanProperty"/>
     /// </remarks>
-    /// <returns>Returns the value of the property, or default_value if it is notset or not a boolean property.</returns>
-
+    /// <returns>Returns the value of the property, or <paramref name="defaultValue"/> if it is not set or not a boolean property.</returns>
     public static bool GetBooleanProperty(uint props, string name, bool defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetBooleanProperty: Properties handle is zero or name is null/empty.");
@@ -1189,12 +1101,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the data from clipboard for a given mime type.</summary>
-
-    /// <param name="mime_type">the mime type to read from the clipboard.</param>
-    /// <param name="size">a pointer filled in with the length of the returned data.</param>
+    /// <param name="mimeType">the mime type to read from the clipboard.</param>
     /// <remarks>
-    /// The size of text data does not include the terminator, but the text is
-    /// guaranteed to be null terminated.
+    /// The size of text data does not include the terminator, but the text is guaranteed to be null terminated.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasClipboardData"/>
@@ -1224,6 +1133,13 @@ public static unsafe partial class Sdl {
         return new Span<nint>(data);
     }
 
+    /// <summary>Retrieve the list of mime types available in the clipboard.</summary>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetClipboardData"/>
+    /// </remarks>
+    /// <returns>(char **) Returns a null terminated array of strings with mime types, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
     public static Span<nint> GetClipboardMimeTypes() {
         nint result = SDL_GetClipboardMimeTypes(out nuint numMimeTypes);
         if (result == nint.Zero) {
@@ -1238,15 +1154,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Retrieve the list of mime types available in the clipboard.</summary>
-
-    /// <param name="num_mime_types">a pointer filled with the number of mime types, discarded.</param>
+    /// <param name="numMimeTypes">a pointer filled with the number of mime types, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetClipboardData"/>
     /// </remarks>
-    /// <returns>(char **) Returns a null terminated array of strings with mime types, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.This should be freed with <see cref="Free"/> when it is no longerneeded.</returns>
-
+    /// <returns>(char **) Returns a null terminated array of strings with mime types, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
     public static nint GetClipboardMimeTypes(out nuint numMimeTypes) {
         nint result = SDL_GetClipboardMimeTypes(out numMimeTypes);
         if (result == nint.Zero) {
@@ -1258,15 +1172,13 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get UTF-8 text from the clipboard.</summary>
     /// <remarks>
-    /// This functions returns an empty string if there was not enough memory left
-    /// for a copy of the clipboard's content.
+    /// This functions returns an empty string if there was not enough memory left for a copy of the clipboard's content.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasClipboardText"/>
     /// <seealso cref="SetClipboardText"/>
     /// </remarks>
-    /// <returns>(char *) Returns the clipboard text on success or an empty string onfailure; call <see cref="GetError()" /> for more information. Thisshould be freed with <see cref="Free"/> when it is no longer needed.</returns>
-
+    /// <returns>(char *) Returns the clipboard text on success or an empty string on failure; call <see cref="GetError()" /> for more information. Thisshould be freed with <see cref="Free"/> when it is no longer needed.</returns>
     public static string GetClipboardText() {
         string result = SDL_GetClipboardText();
         if (string.IsNullOrEmpty(result)) {
@@ -1276,12 +1188,11 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the closest match to the requested display mode.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <param name="w">the width in pixels of the desired display mode.</param>
     /// <param name="h">the height in pixels of the desired display mode.</param>
-    /// <param name="refresh_rate">the refresh rate of the desired display mode, or 0.0f for the desktop refresh rate.</param>
-    /// <param name="include_high_density_modes">boolean to include high density modes in the search.</param>
+    /// <param name="refreshRate">the refresh rate of the desired display mode, or 0.0f for the desktop refresh rate.</param>
+    /// <param name="includeHighDensityModes">boolean to include high density modes in the search.</param>
     /// <param name="closest">a pointer filled in with the closest display mode equal to or larger than the desired mode.</param>
     /// <remarks>
     /// The available display modes are scanned and closest is filled in with the
@@ -1312,6 +1223,19 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+    /// <summary>Get information about the current display mode.</summary>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <remarks>
+    /// There's a difference between this function and
+    /// <see cref="GetDesktopDisplayMode"/> when SDL runs
+    /// fullscreen and has changed the resolution. In that case this function will
+    /// return the current display mode, and not the previous native display mode.
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetDesktopDisplayMode"/>
+    /// <seealso cref="GetDisplays"/>
+    /// </remarks>
+    /// <returns>(const SDL_DisplayMode *) Returns a pointer to the desktop display mode or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static nint GetCurrentDisplayMode(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetCurrentDisplayMode: Display ID is zero.");
@@ -1325,11 +1249,11 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get information about the current display mode.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <param name="mode">the <see cref="DisplayMode"/></param>
     /// <remarks>
     /// There's a difference between this function and
-    /// SDL_GetDesktopDisplayMode() when SDL runs
+    /// <see cref="GetDesktopDisplayMode"/> when SDL runs
     /// fullscreen and has changed the resolution. In that case this function will
     /// return the current display mode, and not the previous native display mode.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1337,8 +1261,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDesktopDisplayMode"/>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>(const SDL_DisplayMode *) Returns a pointer to thedesktop display mode or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static unsafe void GetCurrentDisplayMode(uint displayId, out DisplayMode mode) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetCurrentDisplayMode: Display ID is zero.");
@@ -1356,14 +1278,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the orientation of a display.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns theSDL_DisplayOrientation enum value of the display,or SDL_ORIENTATION_UNKNOWN if it isn'tavailable.</returns>
+    /// <returns>Returns theSDL_DisplayOrientation enum value of the display,  SDL_ORIENTATION_UNKNOWN if it isn'tavailable.</returns>
 
     public static DisplayOrientation GetCurrentDisplayOrientation(uint displayId) {
         if (displayId == 0) {
@@ -1383,7 +1304,7 @@ public static unsafe partial class Sdl {
     /// If SDL is running on a platform that does not support threads the return
     /// value will always be zero.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetThreadID"/>
+    /// <seealso cref="GetThreadId"/>
     /// </remarks>
     /// <returns>Returns the ID of the current thread.</returns>
 
@@ -1405,23 +1326,17 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetNumVideoDrivers"/>
     /// <seealso cref="GetVideoDriver"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the current video driver or <see langword="null" /> if nodriver has been initialized.</returns>
+    /// <returns>Returns the name of the current video driver or <see langword="null" /> if nodriver has been initialized.</returns>
 
     public static string GetCurrentVideoDriver() {
         return SDL_GetCurrentVideoDriver();
     }
 
-    public static DisplayMode GetDesktopDisplayMode(uint displayId) {
-        GetDesktopDisplayMode(displayId, out DisplayMode mode);
-        return mode;
-    }
-
     /// <summary>Get information about the desktop's display mode.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// There's a difference between this function and
-    /// SDL_GetCurrentDisplayMode() when SDL runs
+    /// <see cref="GetCurrentDisplayMode"/> when SDL runs
     /// fullscreen and has changed the resolution. In that case this function will
     /// return the previous native display mode, and not the current display mode.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1429,8 +1344,25 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetCurrentDisplayMode"/>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>(const SDL_DisplayMode *) Returns a pointer to thedesktop display mode or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns a <see cref="DisplayMode"/> structure to the desktop display mode or <see langword="default" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static DisplayMode GetDesktopDisplayMode(uint displayId) {
+        GetDesktopDisplayMode(displayId, out DisplayMode mode);
+        return mode;
+    }
 
+    /// <summary>Get information about the desktop's display mode.</summary>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <param name="mode">the <see cref="DisplayMode"/>.</param>
+    /// <remarks>
+    /// There's a difference between this function and
+    /// <see cref="GetCurrentDisplayMode"/> when SDL runs
+    /// fullscreen and has changed the resolution. In that case this function will
+    /// return the previous native display mode, and not the current display mode.
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetCurrentDisplayMode"/>
+    /// <seealso cref="GetDisplays"/>
+    /// </remarks>
     public static unsafe void GetDesktopDisplayMode(uint displayId, out DisplayMode mode) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDesktopDisplayMode: Display ID is zero.");
@@ -1447,9 +1379,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the desktop area represented by a display.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
-    /// <param name="rect">the SDL_Rect structure filled in with the display bounds.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <param name="rect">the <see cref="Rect"/> structure filled in with the display bounds.</param>
     /// <remarks>
     /// The primary display is often located at (0,0), but may be placed at a
     /// different location depending on monitor layout.
@@ -1459,7 +1390,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool GetDisplayBounds(uint displayId, out Rect rect) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDisplayBounds: Display ID is zero.");
@@ -1474,8 +1404,7 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the content scale of a display.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// The content scale is the expected scale for content based on the DPI
     /// settings of the display. For example, a 4K display might have a 2.0 (200%)
@@ -1487,7 +1416,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
     /// <returns>Returns the content scale of the display, or 0.0f on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static float GetDisplayContentScale(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDisplayContentScale: Display ID is zero.");
@@ -1501,7 +1429,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the display containing a point.</summary>
-
     /// <param name="point">the point to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1509,8 +1436,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplayBounds"/>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns the instance ID of the displaycontaining the point or 0 on failure; call <see cref="GetError()" />for more information.</returns>
-
+    /// <returns>Returns the instance ID of the displaycontaining the point or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetDisplayForPoint(ref Point point) {
         uint displayId = SDL_GetDisplayForPoint(ref point);
         if (displayId == 0) {
@@ -1520,7 +1446,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the display primarily containing a rect.</summary>
-
     /// <param name="rect">the rect to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1528,8 +1453,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplayBounds"/>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns the instance ID of the displayentirely containing the rect or closest to the center of the rect onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns the instance ID of the display entirely containing the rect or closest to the center of the rect on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetDisplayForRect(ref Rect rect) {
         uint displayId = SDL_GetDisplayForRect(ref rect);
         if (displayId == 0) {
@@ -1539,7 +1463,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the display associated with a window.</summary>
-
     /// <param name="window">the window to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1547,8 +1470,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplayBounds"/>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns the instance ID of the displaycontaining the center of the window on success or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>Returns the instance ID of the display containing the center of the window on success or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
     public static uint GetDisplayForWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetDisplayForWindow: Window handle is null.");
@@ -1562,15 +1484,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the name of a display in UTF-8 encoding.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of a display or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>Returns the name of a display or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static string GetDisplayName(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDisplayName: Display ID is zero.");
@@ -1584,15 +1504,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the properties associated with a display.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// The following read-only properties are provided by SDL:
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetDisplayProperties(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDisplayProperties: Display ID is zero.");
@@ -1606,14 +1524,11 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a list of currently connected displays.</summary>
-
-    /// <param name="count">a pointer filled in with the number of displays returned, discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_DisplayID *) Returns a 0 terminated array of displayinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
-
+    /// <returns>(SDL_DisplayID *) Returns a 0 terminated array of display instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
     public static Span<nint> GetDisplays() {
         Span<nint> result = GetDisplays(out int _);
         if (result == []) {
@@ -1624,12 +1539,12 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently connected displays.</summary>
 
-    /// <param name="count">a pointer filled in with the number of displays returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of displays returned, may bediscarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_DisplayID *) Returns a 0 terminated array of displayinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
+    /// <returns>(SDL_DisplayID *) Returns a 0 terminated array of display instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
 
     public static Span<nint> GetDisplays(out int count) {
         nint result = SDL_GetDisplays(out count);
@@ -1645,11 +1560,10 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the usable desktop area represented by a display, in screen coordinates.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
-    /// <param name="rect">the SDL_Rect structure filled in with the display bounds.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <param name="rect">the <see cref="Rect"/> structure filled in with the display bounds.</param>
     /// <remarks>
-    /// This is the same area as SDL_GetDisplayBounds()
+    /// This is the same area as <see cref="GetDisplayBounds"/>
     /// reports, but with portions reserved by the system removed. For example, on
     /// Apple's macOS, this subtracts the area occupied by the menu bar and dock.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1658,7 +1572,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool GetDisplayUsableBounds(uint displayId, out Rect rect) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetDisplayUsableBounds: Display ID is zero.");
@@ -1675,27 +1588,24 @@ public static unsafe partial class Sdl {
     // Safe wrapper method
     /// <summary>Retrieve a message about the last error that occurred on the current thread.</summary>
     /// <remarks>
-    /// It is possible for multiple errors to occur before calling
-    /// <see cref="GetError()" />. Only the last error is returned.
+    /// It is possible for multiple errors to occur before calling/ <see cref="GetError()" />. Only the last error is returned.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="ClearError"/>
     /// <seealso cref="SetError"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a message with information about the specific errorthat occurred, or an empty string if there hasn't been an error message setsince the last call to SDL_ClearError().</returns>
-
+    /// <returns>Returns a message with information about the specific error that occurred, or an empty string if there hasn't been an error message set since the last call to <see cref="ClearError"/>.</returns>
     public static string GetError() {
         string error = SDL_GetError();
         return string.IsNullOrEmpty(error) ? "No error." : error;
     }
 
     /// <summary>Get a floating point property from a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="name">the name of the property to query.</param>
-    /// <param name="default_value">the default value of the property.</param>
+    /// <param name="defaultValue">the default value of the property.</param>
     /// <remarks>
-    /// You can use SDL_GetPropertyType() to query whether
+    /// You can use <see cref="GetPropertyType"/> to query whether
     /// the property exists and is a floating point property.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -1703,7 +1613,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasProperty"/>
     /// <seealso cref="SetFloatProperty"/>
     /// </remarks>
-    /// <returns>Returns the value of the property, or default_value if it is notset or not a float property.</returns>
+    /// <returns>Returns the value of the property, or default_value if it is not set or not a float property.</returns>
 
     public static float GetFloatProperty(uint props, string name, float defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
@@ -1717,6 +1627,16 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+
+    /// <summary>Get a list of fullscreen display modes available on a display.</summary>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <remarks>
+    /// The display modes are sorted in this priority:
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetDisplays"/>
+    /// </remarks>
+    /// <returns>(SDL_DisplayMode **) Returns a <see langword="null" /> terminated array of display mode pointers or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a singleallocation that should be freed with <see cref="Free"/> when it is nolonger needed.</returns>
     public static Span<int> GetFullscreenDisplayModes(uint displayId) {
         nint result = SDL_GetFullscreenDisplayModes(displayId, out int count);
 
@@ -1737,17 +1657,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a list of fullscreen display modes available on a display.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
-    /// <param name="count">a pointer filled in with the number of display modes returned, discarded.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
+    /// <param name="count">a pointer filled in with the number of display modes returned, may be discarded.</param>
     /// <remarks>
     /// The display modes are sorted in this priority:
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>(SDL_DisplayMode **) Returns a <see langword="null" /> terminated array ofdisplay mode pointers or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a singleallocation that should be freed with <see cref="Free"/> when it is nolonger needed.</returns>
-
+    /// <returns>(SDL_DisplayMode **) Returns a <see langword="null" /> terminated array of display mode pointers or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a single allocation that should be freed with <see cref="Free"/> when it is no longer needed.</returns>
     public static Span<nint> GetFullscreenDisplayModes(uint displayId, out int count) {
         nint result = SDL_GetFullscreenDisplayModes(displayId, out count);
         if (result == nint.Zero) {
@@ -1770,8 +1688,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetGlobalProperties() {
         return SDL_GetGlobalProperties();
     }
@@ -1784,7 +1701,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowKeyboardGrab"/>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window if input is grabbed or <see langword="null" />otherwise.</returns>
-
     public static nint GetGrabbedWindow() {
         nint window = SDL_GetGrabbedWindow();
         if (window == nint.Zero) {
@@ -1794,16 +1710,14 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the value of a hint.</summary>
-
     /// <param name="name">the hint to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, however the return valueonly remains valid until the hint is changed; if another thread might doso, the app should supply locks and/or make a copy of the string. Note thatusing a hint callback instead is always thread-safe, as SDL holds a lock onthe thread subsystem during the callback.</para>
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, however the return value only remains valid until the hint is changed; if another thread might doso, the app should supply locks and/or make a copy of the string. Note that using a hint callback instead is always thread-safe, as SDL holds a lock onthe thread subsystem during the callback.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetHint"/>
     /// <seealso cref="SetHintWithPriority"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the string value of a hint or <see langword="null" /> if the hint isn'tset.</returns>
-
+    /// <returns>Returns the string value of a hint or <see langword="null" /> if the hint isn't set.</returns>
     public static string GetHint(string name) {
         if (string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetHint: Name is null or empty.");
@@ -1819,15 +1733,14 @@ public static unsafe partial class Sdl {
     /// <summary>Get the boolean value of a hint variable.</summary>
 
     /// <param name="name">the name of the hint to get the boolean value from.</param>
-    /// <param name="default_value">the value to return if the hint does not exist.</param>
+    /// <param name="defaultValue">the value to return if the hint does not exist.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetHint"/>
     /// <seealso cref="SetHint"/>
     /// </remarks>
-    /// <returns>Returns the boolean value of a hint or the provided default value ifthe hint does not exist.</returns>
-
+    /// <returns>Returns the boolean value of a hint or the provided default value if the hint does not exist.</returns>
     public static bool GetHintBoolean(string name, bool defaultValue) {
         if (string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetHintBoolean: Name is null or empty.");
@@ -1840,7 +1753,18 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    public static nint GetKeyboard(out int count) {
+    /// <summary>
+    /// Get a list of currently connected keyboards.
+    /// </summary>
+    /// <param name="count">the number of keyboards returned, may be discarded.</param>
+    /// <remarks>
+    /// Note that this will include any device or virtual driver that includes keyboard functionality, including some mice, KVM switches, motherboard power buttons, etc.
+    /// <para>You should wait for input from a device before you consider it actively in use.</para>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0</para>
+    /// </remarks>
+    /// <returns>(SDL_KeyboardID *) Returns a 0 terminated array of keyboards instance IDs or <see cref="nint.Zero"/> on failure; call <see cref="GetError"/> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
+    public static nint GetKeyboards(out int count) {
         nint result = SDL_GetKeyboards(out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetKeyboard: Failed to retrieve keyboard handles.");
@@ -1849,8 +1773,18 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    public static Span<nint> GetKeyboard() {
-        nint result = GetKeyboard(out int count);
+    /// <summary>
+    /// Get a list of currently connected keyboards.
+    /// </summary>
+    /// <remarks>
+    /// Note that this will include any device or virtual driver that includes keyboard functionality, including some mice, KVM switches, motherboard power buttons, etc.
+    /// <para>You should wait for input from a device before you consider it actively in use.</para>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0</para>
+    /// </remarks>
+    /// <returns>(SDL_KeyboardID *) Returns a 0 terminated array of keyboards instance IDs or <see cref="nint.Zero"/> on failure; call <see cref="GetError"/> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
+    public static Span<nint> GetKeyboards() {
+        nint result = GetKeyboards(out int count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetKeyboard: Failed to retrieve keyboard handles.");
             return [];
@@ -1873,7 +1807,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window with keyboard focus.</returns>
-
     public static nint GetKeyboardFocus() {
         nint window = SDL_GetKeyboardFocus();
         if (window == nint.Zero) {
@@ -1883,17 +1816,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the name of a keyboard.</summary>
-
-    /// <param name="instance_id">the keyboard instance ID.</param>
+    /// <param name="instanceId">the keyboard instance ID.</param>
     /// <remarks>
     /// This function returns &quot;&quot; if the keyboard doesn't have a name.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetKeyboards"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected keyboard or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
-
-    public static string GetKeyboardNameForID(uint instanceId) {
+    /// <returns>Returns the name of the selected keyboard or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static string GetKeyboardNameForId(uint instanceId) {
         if (instanceId == 0) {
             LogWarn(LogCategory.System, "GetKeyboardNameForID: Instance ID is zero.");
             return string.Empty;
@@ -1906,19 +1837,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a snapshot of the current state of the keyboard.</summary>
-
     /// <param name="numkeys">if non-<see langword="null" />, receives the length of the returned array.</param>
     /// <remarks>
     /// The pointer returned is a pointer to an internal SDL array. It will be
-    /// valid for the whole lifetime of the application and should not be freed by
-    /// the caller.
+    /// valid for the whole lifetime of the application and should not be freed by the caller.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="PumpEvents"/>
     /// <seealso cref="ResetKeyboard"/>
     /// </remarks>
     /// <returns>(const bool *) Returns a pointer to an array of key states.</returns>
-
     public static Span<bool> GetKeyboardState(out int numkeys) {
         nint result = SDL_GetKeyboardState(out numkeys);
 
@@ -1941,7 +1869,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a key code from a human-readable name.</summary>
-
     /// <param name="name">the human-readable key name.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
@@ -1950,9 +1877,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetKeyName"/>
     /// <seealso cref="GetScancodeFromName"/>
     /// </remarks>
-    /// <returns>Returns key code, orSDLK_UNKNOWN if the name wasn't recognized; call <see cref="GetError()"/> for more information.</returns>
-
-    public static uint GetKeyFromName(string name) {
+    /// <returns>Returns <see cref="Keycode"/>, or <see cref="Keycode.Unknown"/> if the name wasn't recognized; call <see cref="GetError()"/> for more information.</returns>
+    public static Keycode GetKeyFromName(string name) {
         if (string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetKeyFromName: Name is null or empty.");
             return 0;
@@ -1961,27 +1887,24 @@ public static unsafe partial class Sdl {
         if (key == 0) {
             LogError(LogCategory.Error, "GetKeyFromName: Failed to retrieve key from name.");
         }
-        return key;
+        return (Keycode)key;
     }
 
     /// <summary>Get the key code corresponding to the given scancode according to the current keyboard layout.</summary>
 
-    /// <param name="scancode">the desired SDL_Scancode to query.</param>
+    /// <param name="scanCode">the desired SDL_Scancode to query.</param>
     /// <param name="modstate">the modifier state to use when translating the scancode to a keycode.</param>
-    /// <param name="key_event"><see langword="true" /> if the keycode will be used in key events.</param>
+    /// <param name="keyEvent"><see langword="true" /> if the keycode will be used in key events.</param>
     /// <remarks>
     /// If you want to get the keycode as it would be delivered in key events,
     /// including options specified in
-    /// SDL_HINT_KEYCODE_OPTIONS, then you should pass
-    /// key_event as <see langword="true" />. Otherwise this function simply translates the scancode
-    /// based on the given modifier state.
+    /// SDL_HINT_KEYCODE_OPTIONS, then you should pass <paramref name="keyEvent"/> as <see langword="true" />. Otherwise this function simply translates the scancode based on the given modifier state.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetKeyName"/>
     /// <seealso cref="GetScancodeFromKey"/>
     /// </remarks>
-    /// <returns>Returns the SDL_Keycode thatcorresponds to the given SDL_Scancode.</returns>
-
+    /// <returns>Returns the <see cref="Keycode"/> that corresponds to the given <see cref="Scancode"/>.</returns>
     public static uint GetKeyFromScancode(Scancode scanCode, KeyMod modstate, bool keyEvent) {
         if (scanCode == Scancode.Unknown) {
             LogWarn(LogCategory.System, "GetKeyFromScancode: Scan code is unknown.");
@@ -1995,8 +1918,7 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a human-readable name for a key.</summary>
-
-    /// <param name="key">the desired SDL_Keycode to query.</param>
+    /// <param name="key">the desired <see cref="Keycode"/> to query.</param>
     /// <remarks>
     /// If the key doesn't have a name, this function returns an empty string (&quot;&quot;).
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
@@ -2005,14 +1927,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetKeyFromScancode"/>
     /// <seealso cref="GetScancodeFromKey"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a UTF-8 encoded string of the key name.</returns>
-
-    public static string GetKeyName(uint key) {
+    /// <returns>Returns a UTF-8 encoded string of the key name.</returns>
+    public static string GetKeyName(Keycode key) {
         if (key == 0) {
             LogWarn(LogCategory.System, "GetKeyName: Key is zero.");
             return string.Empty;
         }
-        string name = SDL_GetKeyName(key);
+        string name = SDL_GetKeyName((uint)key);
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "GetKeyName: Failed to retrieve key name.");
         }
@@ -2020,20 +1941,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Convert one of the enumerated pixel formats to a bpp value and RGBA masks.</summary>
-
-    /// <param name="format">one of the SDL_PixelFormat values.</param>
+    /// <param name="format">one of the <see cref="PixelFormat"/> values.</param>
     /// <param name="bpp">a bits per pixel value; usually 15, 16, or 32.</param>
-    /// <param name="Rmask">a pointer filled in with the red mask for the format.</param>
-    /// <param name="Gmask">a pointer filled in with the green mask for the format.</param>
-    /// <param name="Bmask">a pointer filled in with the blue mask for the format.</param>
-    /// <param name="Amask">a pointer filled in with the alpha mask for the format.</param>
+    /// <param name="rmask">a pointer filled in with the red mask for the format.</param>
+    /// <param name="gmask">a pointer filled in with the green mask for the format.</param>
+    /// <param name="bmask">a pointer filled in with the blue mask for the format.</param>
+    /// <param name="amask">a pointer filled in with the alpha mask for the format.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetPixelFormatForMasks"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool GetMasksForPixelFormat(PixelFormat format, out int bpp, out uint rmask, out uint gmask,
             out uint bmask, out uint amask) {
         if (format == PixelFormat.Unknown) {
@@ -2059,22 +1978,19 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetKeyboardState"/>
     /// <seealso cref="SetModState"/>
     /// </remarks>
-    /// <returns>Returns an OR'd combination of the modifier keysfor the keyboard. See SDL_Keymod for details.</returns>
-
+    /// <returns>Returns an OR'd combination of the modifier keys for the keyboard. See <see cref="KeyMod"/> for details.</returns>
     public static KeyMod GetModState() {
         return SDL_GetModState();
     }
 
     /// <summary>Get the orientation of a display when it is unrotated.</summary>
-
-    /// <param name="displayID">the instance ID of the display to query.</param>
+    /// <param name="displayId">the instance ID of the display to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns theSDL_DisplayOrientation enum value of the display,or SDL_ORIENTATION_UNKNOWN if it isn'tavailable.</returns>
-
+    /// <returns>Returns the <see cref="DisplayOrientation"/> enum value of the display, or <see cref="DisplayOrientation.Unknown"/> if it isn't available.</returns>
     public static DisplayOrientation GetNaturalDisplayOrientation(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetNaturalDisplayOrientation: Display ID is zero.");
@@ -2088,21 +2004,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a number property from a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="name">the name of the property to query.</param>
-    /// <param name="default_value">the default value of the property.</param>
+    /// <param name="defaultValue">the default value of the property.</param>
     /// <remarks>
-    /// You can use SDL_GetPropertyType() to query whether
-    /// the property exists and is a number property.
+    /// You can use <see cref="GetPropertyType"/> to query whether the property exists and is a number property.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetPropertyType"/>
     /// <seealso cref="HasProperty"/>
     /// <seealso cref="SetNumberProperty"/>
     /// </remarks>
-    /// <returns>Returns the value of the property, or default_value ifit is not set or not a number property.</returns>
-
+    /// <returns>Returns the value of the property, or <paramref name="defaultValue"/> if it is not set or not a number property.</returns>
     public static long GetNumberProperty(uint props, string name, long defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetNumberProperty: Properties handle is zero or name is null/empty.");
@@ -2122,7 +2035,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetVideoDriver"/>
     /// </remarks>
     /// <returns>Returns the number of built in video drivers.</returns>
-
     public static int GetNumVideoDrivers() {
         int numDrivers = SDL_GetNumVideoDrivers();
         if (numDrivers <= 0) {
@@ -2131,17 +2043,16 @@ public static unsafe partial class Sdl {
         return numDrivers;
     }
 
-    /// <summary>Create an SDL_PixelFormatDetails structure corresponding to a pixel format.</summary>
-
-    /// <param name="format">one of the SDL_PixelFormat values.</param>
+    /// <summary>Create an <see cref="PixelFormat"/>Details structure corresponding to a pixel format.</summary>
+    /// <param name="format">one of the <see cref="PixelFormat"/> values.</param>
     /// <remarks>
-    /// Returned structure may come from a shared global cache (i.e. not newly
-    /// allocated), and hence should not be modified, especially the palette. Weird
-    /// errors such as Blit combination not supported may occur.
+    /// Returned structure may come from a shared global cache (i.e. not newly allocated),
+    /// and hence should not be modified, especially the palette.
+    /// Weird errors such as Blit combination not supported may occur.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const SDL_PixelFormatDetails *) Returns apointer to a SDL_PixelFormatDetails structure or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(const <see cref="PixelFormat"/>Details *) Returns apointer to a <see cref="PixelFormat"/>Details structure or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetPixelFormatDetails(PixelFormat format) {
         if (format == PixelFormat.Unknown) {
@@ -2156,21 +2067,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Convert a bpp value and RGBA masks to an enumerated pixel format.</summary>
-
     /// <param name="bpp">a bits per pixel value; usually 15, 16, or 32.</param>
-    /// <param name="Rmask">the red mask for the format.</param>
-    /// <param name="Gmask">the green mask for the format.</param>
-    /// <param name="Bmask">the blue mask for the format.</param>
-    /// <param name="Amask">the alpha mask for the format.</param>
+    /// <param name="rmask">the red mask for the format.</param>
+    /// <param name="gmask">the green mask for the format.</param>
+    /// <param name="bmask">the blue mask for the format.</param>
+    /// <param name="amask">the alpha mask for the format.</param>
     /// <remarks>
-    /// This will return SDL_PIXELFORMAT_UNKNOWN if
-    /// the conversion wasn't possible.
+    /// This will return <see cref="PixelFormat.Unknown"/> if the conversion wasn't possible.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetMasksForPixelFormat"/>
     /// </remarks>
-    /// <returns>Returns theSDL_PixelFormat value corresponding to the format masks,or SDL_PIXELFORMAT_UNKNOWN if there isn't amatch.</returns>
-
+    /// <returns>Returns the<see cref="PixelFormat"/> value corresponding to the format masks, or <see cref="PixelFormat.Unknown"/> if there isn't a match.</returns>
     public static PixelFormat GetPixelFormatForMasks(int bpp, uint rmask, uint gmask, uint bmask, uint amask) {
         if (bpp <= 0 || rmask == 0 || gmask == 0 || bmask == 0) {
             LogWarn(LogCategory.System, "GetPixelFormatForMasks: Invalid parameters.");
@@ -2184,14 +2092,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the human readable name of a pixel format.</summary>
-
     /// <param name="format">the pixel format to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the human readable name of the specified pixelformat or &quot;SDL_PIXELFORMAT_UNKNOWN&quot; if theformat isn't recognized.</returns>
-
+    /// <returns>Returns the human readable name of the specified pixel format or &quot;<see cref="PixelFormat.Unknown"/>&quot; if the format isn't recognized.</returns>
     public static string GetPixelFormatName(PixelFormat format) {
         if (format == PixelFormat.Unknown) {
             LogWarn(LogCategory.System, "GetPixelFormatName: Format is unknown.");
@@ -2205,16 +2111,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a pointer property from a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="name">the name of the property to query.</param>
-    /// <param name="default_value">the default value of the property.</param>
+    /// <param name="defaultValue">the default value of the property.</param>
     /// <remarks>
     /// By convention, the names of properties that SDL exposes on objects will
     /// start with &quot;SDL.&quot;, and properties that SDL uses internally will start with
     /// &quot;SDL.internal.&quot;. These should be considered read-only and should not be
     /// modified by applications.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, although the data returned is not protected and could potentially be freed if you callSDL_SetPointerProperty() orSDL_ClearProperty() on these properties from anotherthread. If you need to avoid this, useSDL_LockProperties() andSDL_UnlockProperties().</para>
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, although the data returned is not protected and could potentially be freed if you call <see cref="SetPointerProperty"/> or <see cref="ClearProperty"/> on these properties from another thread.</para>
+    /// <para>If you need to avoid this, use <see cref="LockProperties"/> an <see cref="UnlockProperties"/>.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetBooleanProperty"/>
     /// <seealso cref="GetFloatProperty"/>
@@ -2224,8 +2130,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasProperty"/>
     /// <seealso cref="SetPointerProperty"/>
     /// </remarks>
-    /// <returns>(void *) Returns the value of the property, or default_value if it is notset or not a pointer property.</returns>
-
+    /// <returns>(void *) Returns the value of the property, or <paramref name="defaultValue"/> if it is not set or not a pointer property.</returns>
     public static nint GetPointerProperty(uint props, string name, nint defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetPointerProperty: Properties handle is zero or name is null/empty.");
@@ -2239,9 +2144,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the current power supply details.</summary>
-
-    /// <param name="seconds">a pointer filled in with the seconds of battery life left, or <see langword="null" /> to ignore. This will be filled in with -1 if we can't determine a value or there is no battery.</param>
-    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or <see langword="null" /> to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
+    /// <param name="seconds">a pointer filled in with the seconds of battery life left, or discarded to ignore. This will be filled in with -1 if we can't determine a value or there is no battery.</param>
+    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or discarded to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
     /// <remarks>
     /// You should never take a battery status as absolute truth. Batteries
     /// (especially failing batteries) are delicate hardware, and the values
@@ -2250,8 +2154,7 @@ public static unsafe partial class Sdl {
     /// reports, or completely drain when reporting it has 20 percent left, etc.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the current battery state orSDL_POWERSTATE_ERROR on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>Returns the current battery state or <see cref="PowerState.Error"/> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static PowerState GetPowerInfo(out int seconds, out int percent) {
         PowerState state = SDL_GetPowerInfo(out seconds, out percent);
         if (state == PowerState.Unknown) {
@@ -2261,8 +2164,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Report the user's preferred locale.</summary>
-
-    /// <param name="count">a pointer filled in with the number of locales returned, discarded.</param>
     /// <remarks>
     /// Returned language strings are in the format xx, where 'xx' is an ISO-639
     /// language specifier (such as &quot;en&quot; for English, &quot;de&quot; for German, etc).
@@ -2274,8 +2175,7 @@ public static unsafe partial class Sdl {
     /// terminate the array.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Locale **) Returns a <see langword="null" /> terminated array of localepointers, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This is a single allocation that should be freed withSDL_free() when it is no longer needed.</returns>
-
+    /// <returns>(SDL_Locale **) Returns a <see langword="null" /> terminated array of locale pointers, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This is a single allocation that should be freed withSDL_free() when it is no longer needed.</returns>
     public static Span<nint> GetPreferredLocales() {
         nint result = SDL_GetPreferredLocales(out int count);
         if (result == nint.Zero) {
@@ -2300,8 +2200,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
-    /// <returns>Returns the instance ID of the primarydisplay on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns the instance ID of the primary display on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetPrimaryDisplay() {
         uint displayId = SDL_GetPrimaryDisplay();
         if (displayId == 0) {
@@ -2319,8 +2218,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasPrimarySelectionText"/>
     /// <seealso cref="SetPrimarySelectionText"/>
     /// </remarks>
-    /// <returns>(char *) Returns the primary selection text on success or an empty stringon failure; call <see cref="GetError()" /> for more information. Thisshould be freed with <see cref="Free"/> when it is no longer needed.</returns>
-
+    /// <returns>(char *) Returns the primary selection text on success or an empty string on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
     public static string GetPrimarySelectionText() {
         string text = SDL_GetPrimarySelectionText();
         if (string.IsNullOrEmpty(text)) {
@@ -2330,7 +2228,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the type of a property in a group of properties.</summary>
-
     /// <param name="props">the properties to query.</param>
     /// <param name="name">the name of the property to query.</param>
     /// <remarks>
@@ -2338,7 +2235,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasProperty"/>
     /// </remarks>
-    /// <returns>Returns the type of the property, orSDL_PROPERTY_TYPE_INVALID if it is not set.</returns>
+    /// <returns>Returns the type of the property, or <see cref="PropertyType.Invalid"/> if it is not set.</returns>
 
     public static PropertyType GetPropertyType(uint props, string name) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
@@ -2348,18 +2245,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the intersection of a rectangle and line segment.</summary>
-
-    /// <param name="rect">an SDL_Rect structure representing the rectangle to intersect.</param>
-    /// <param name="X1">a pointer to the starting X-coordinate of the line.</param>
-    /// <param name="Y1">a pointer to the starting Y-coordinate of the line.</param>
-    /// <param name="X2">a pointer to the ending X-coordinate of the line.</param>
-    /// <param name="Y2">a pointer to the ending Y-coordinate of the line.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the rectangle to intersect.</param>
+    /// <param name="x1">a pointer to the starting X-coordinate of the line.</param>
+    /// <param name="y1">a pointer to the starting Y-coordinate of the line.</param>
+    /// <param name="x2">a pointer to the ending X-coordinate of the line.</param>
+    /// <param name="y2">a pointer to the ending Y-coordinate of the line.</param>
     /// <remarks>
     /// This function is used to clip a line segment to a rectangle. A line segment
     /// contained entirely within the rectangle or that does not intersect will
     /// remain unchanged. A line segment that crosses the rectangle at either or
     /// both ends will be clipped to the boundary of the rectangle and the new
-    /// coordinates saved in X1, Y1, X2, and/or Y2 as necessary.
+    /// coordinates saved in <paramref name="x1"/>, <paramref name="y1"/>, <paramref name="x2"/>, and/or <paramref name="y2"/> as necessary.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
@@ -2373,18 +2269,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the intersection of a rectangle and line segment with float precision.</summary>
-
-    /// <param name="rect">an SDL_FRect structure representing the rectangle to intersect.</param>
-    /// <param name="X1">a pointer to the starting X-coordinate of the line.</param>
-    /// <param name="Y1">a pointer to the starting Y-coordinate of the line.</param>
-    /// <param name="X2">a pointer to the ending X-coordinate of the line.</param>
-    /// <param name="Y2">a pointer to the ending Y-coordinate of the line.</param>
+    /// <param name="rect">an <see cref="FRect"/> structure representing the rectangle to intersect.</param>
+    /// <param name="x1">a pointer to the starting X-coordinate of the line.</param>
+    /// <param name="y1">a pointer to the starting Y-coordinate of the line.</param>
+    /// <param name="x2">a pointer to the ending X-coordinate of the line.</param>
+    /// <param name="y2">a pointer to the ending Y-coordinate of the line.</param>
     /// <remarks>
     /// This function is used to clip a line segment to a rectangle. A line segment
     /// contained entirely within the rectangle or that does not intersect will
     /// remain unchanged. A line segment that crosses the rectangle at either or
     /// both ends will be clipped to the boundary of the rectangle and the new
-    /// coordinates saved in X1, Y1, X2, and/or Y2 as necessary.
+    /// coordinates saved in <paramref name="x1"/>, <paramref name="y1"/>, <paramref name="x2"/>, and/or <paramref name="y2"/> as necessary.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
@@ -2399,18 +2294,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate a minimal rectangle enclosing a set of points.</summary>
-
     /// <param name="points">an array of SDL_Point structures representing points to be enclosed.</param>
     /// <param name="count">the number of structures in the points array.</param>
-    /// <param name="clip">an SDL_Rect used for clipping or <see langword="null" /> to enclose all points.</param>
-    /// <param name="result">an SDL_Rect structure filled in with the minimal enclosing rectangle.</param>
+    /// <param name="clip">a <see cref="Rect"/> used for clipping or <see langword="null" /> to enclose all points.</param>
+    /// <param name="result">a <see cref="Rect"/> structure filled in with the minimal enclosing rectangle.</param>
     /// <remarks>
     /// If clip is not <see langword="null" /> then only points inside of the clipping rectangle are
     /// considered.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if any points were enclosed or <see langword="false" /> if all the pointswere outside of the clipping rectangle.</returns>
-
+    /// <returns>Returns <see langword="true" /> if any points were enclosed or <see langword="false" /> if all the points were outside of the clipping rectangle.</returns>
     public static bool GetRectEnclosingPoints(Span<Point> points, int count, ref Rect clip, out Rect result) {
         bool resultBool = SDL_GetRectEnclosingPoints(points, count, ref clip, out result);
         if (!resultBool) {
@@ -2420,17 +2313,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate a minimal rectangle enclosing a set of points with float precision.</summary>
-
-    /// <param name="points">an array of SDL_FPoint structures representing points to be enclosed.</param>
+    /// <param name="points">an array of <see cref="FPoint"/> structures representing points to be enclosed.</param>
     /// <param name="count">the number of structures in the points array.</param>
-    /// <param name="clip">an SDL_FRect used for clipping or <see langword="null" /> to enclose all points.</param>
-    /// <param name="result">an SDL_FRect structure filled in with the minimal enclosing rectangle.</param>
+    /// <param name="clip">an <see cref="FRect"/> used for clipping or <see langword="null" /> to enclose all points.</param>
+    /// <param name="result">an <see cref="FRect"/> structure filled in with the minimal enclosing rectangle.</param>
     /// <remarks>
     /// If clip is not <see langword="null" /> then only points inside of the clipping rectangle are
     /// considered.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if any points were enclosed or <see langword="false" /> if all the pointswere outside of the clipping rectangle.</returns>
+    /// <returns>Returns <see langword="true" /> if any points were enclosed or <see langword="false" /> if all the points were outside of the clipping rectangle.</returns>
 
     public static bool GetRectEnclosingPointsFloat(Span<FPoint> points, int count, ref FRect clip, out FRect result) {
         bool resultBool = SDL_GetRectEnclosingPointsFloat(points, count, ref clip, out result);
@@ -2441,17 +2333,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the intersection of two rectangles.</summary>
-
-    /// <param name="A">an SDL_Rect structure representing the first rectangle.</param>
-    /// <param name="B">an SDL_Rect structure representing the second rectangle.</param>
-    /// <param name="result">an SDL_Rect structure filled in with the intersection of rectangles A and B.</param>
+    /// <param name="a">a <see cref="Rect"/> structure representing the first rectangle.</param>
+    /// <param name="b">a <see cref="Rect"/> structure representing the second rectangle.</param>
+    /// <param name="result">a <see cref="Rect"/> structure filled in with the intersection of rectangles <paramref name="a"/> and <paramref name="b"/>.</param>
     /// <remarks>
-    /// If result is <see langword="null" /> then this function will return false.
+    /// If result is <see langword="null" /> then this function will return <see langword="false"/>.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasRectIntersection"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
-
     public static bool GetRectIntersection(ref Rect a, ref Rect b, out Rect result) {
         bool resultBool = SDL_GetRectIntersection(ref a, ref b, out result);
         if (!resultBool) {
@@ -2461,12 +2351,11 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the intersection of two rectangles with float precision.</summary>
-
-    /// <param name="A">an SDL_FRect structure representing the first rectangle.</param>
-    /// <param name="B">an SDL_FRect structure representing the second rectangle.</param>
-    /// <param name="result">an SDL_FRect structure filled in with the intersection of rectangles A and B.</param>
+    /// <param name="a">an <see cref="FRect"/> structure representing the first rectangle.</param>
+    /// <param name="b">an <see cref="FRect"/> structure representing the second rectangle.</param>
+    /// <param name="result">an <see cref="FRect"/> structure filled in with the intersection of rectangles <paramref name="a"/> and <paramref name="b".</param>
     /// <remarks>
-    /// If result is <see langword="null" /> then this function will return false.
+    /// If result is <see langword="null" /> then this function will return <see langword="false"/>.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasRectIntersectionFloat"/>
     /// </remarks>
@@ -2481,15 +2370,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the union of two rectangles.</summary>
-
-    /// <param name="A">an SDL_Rect structure representing the first rectangle.</param>
-    /// <param name="B">an SDL_Rect structure representing the second rectangle.</param>
-    /// <param name="result">an SDL_Rect structure filled in with the union of rectangles A and B.</param>
+    /// <param name="a">an <see cref="Rect"/> structure representing the first rectangle.</param>
+    /// <param name="b">an <see cref="Rect"/> structure representing the second rectangle.</param>
+    /// <param name="result">a <see cref="Rect"/> structure filled in with the union of rectangles <paramref name="a"/> and <paramref name="b"/>.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool GetRectUnion(ref Rect a, ref Rect b, out Rect result) {
         bool resultBool = SDL_GetRectUnion(ref a, ref b, out result);
         if (!resultBool) {
@@ -2499,9 +2386,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Calculate the union of two rectangles with float precision.</summary>
-    /// <param name="a">an SDL_FRect structure representing the first rectangle.</param>
-    /// <param name="b">an SDL_FRect structure representing the second rectangle.</param>
-    /// <param name="result">an SDL_FRect structure filled in with the union of rectangles A and B.</param>
+    /// <param name="a">an <see cref="FRect"/> structure representing the first rectangle.</param>
+    /// <param name="b">an <see cref="FRect"/> structure representing the second rectangle.</param>
+    /// <param name="result">an <see cref="FRect"/> structure filled in with the union of rectangles A and B.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
@@ -2517,8 +2404,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get RGB values from a pixel in the specified format.</summary>
     /// <param name="pixel">a pixel value.</param>
-    /// <param name="format">a pointer to SDL_PixelFormatDetails describing the pixel format.</param>
-    /// <param name="palette">an optional palette for indexed formats, discarded.</param>
+    /// <param name="format">a pointer to <see cref="PixelFormat"/>Details describing the pixel format.</param>
+    /// <param name="palette">an optional palette for indexed formats, may be discarded.</param>
     /// <remarks>
     /// This function uses the entire 8-bit [0..255] range when converting color
     /// components from pixel formats with less than 8-bits per RGB component
@@ -2531,7 +2418,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MapRgb"/>
     /// <seealso cref="MapRgba"/>
     /// </remarks>
-
     public static Color GetRgb(uint pixel, nint format, nint palette) {
         if (format == nint.Zero) {
             LogError(LogCategory.Error, "GetRGB: Format pointer is null.");
@@ -2548,8 +2434,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get RGBA values from a pixel in the specified format.</summary>
     /// <param name="pixel">a pixel value.</param>
-    /// <param name="format">a pointer to SDL_PixelFormatDetails describing the pixel format.</param>
-    /// <param name="palette">an optional palette for indexed formats, discarded.</param>
+    /// <param name="format">a pointer to <see cref="PixelFormat"/>Details describing the pixel format.</param>
+    /// <param name="palette">an optional palette for indexed formats, may be discarded.</param>
     /// <remarks>
     /// This function uses the entire 8-bit [0..255] range when converting color
     /// components from pixel formats with less than 8-bits per RGB component
@@ -2638,7 +2524,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetScancodeFromName"/>
     /// <seealso cref="SetScancodeName"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a pointer to the name for the scancode. If the scancode doesn't have a name this function returns an empty string (&quot;&quot;).</returns>
+    /// <returns>Returns a pointer to the name for the scancode. If the scancode doesn't have a name this function returns an empty string (&quot;&quot;).</returns>
     public static string GetScancodeName(Scancode scanCode) {
         if (scanCode == Scancode.Unknown) {
             LogWarn(LogCategory.System, "GetScancodeName: Scan code is unknown.");
@@ -2663,7 +2549,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasProperty"/>
     /// <seealso cref="SetStringProperty"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the value of the property, or <paramref name="defaultValue"/> if itis not set or not a string property.</returns>
+    /// <returns>Returns the value of the property, or <paramref name="defaultValue"/> if itis not set or not a string property.</returns>
 
     public static string GetStringProperty(uint props, string name, string defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
@@ -2725,7 +2611,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get the blend mode used for blit operations.</summary>
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
-    /// <param name="blendMode">a pointer filled in with the current SDL_BlendMode.</param>
+    /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode"/>.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -2771,8 +2657,7 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
     /// <param name="key">a pointer filled in with the transparent pixel.</param>
     /// <remarks>
-    /// The color key is a pixel of the format used by the surface, as generated by
-    /// SDL_MapRGB().
+    /// The color key is a pixel of the format used by the surface, as generated by <see cref="MapRgb"/>.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetSurfaceColorKey"/>
@@ -2819,7 +2704,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get an array including all versions of a surface.</summary>
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
-    /// <param name="count">a pointer filled in with the number of surface pointers returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of surface pointers returned, may be discarded.</param>
     /// <remarks>
     /// This returns all versions of a surface, with the surface being queried as
     /// the first element in the returned array.
@@ -2867,10 +2752,17 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
     /// <remarks>
     /// The following properties are understood by SDL:
+    /// <list type="bullet">
+    /// <item>SDL_PROP_SURFACE_SDR_WHITE_POINT_FLOAT: for HDR10 and floating point surfaces, this defines the value of 100% diffuse white, with higher values being displayed in the High Dynamic Range headroom.This defaults to 203 for HDR10 surfaces and 1.0 for floating point surfaces.</item>
+    /// <item>SDL_PROP_SURFACE_HDR_HEADROOM_FLOAT: for HDR10 and floating point surfaces, this defines the maximum dynamic range used by the content, in terms of the SDR white point.This defaults to 0.0, which disables tone mapping.</item>
+    /// <item>SDL_PROP_SURFACE_TONEMAP_OPERATOR_STRING: the tone mapping operator used when compressing from a surface with high dynamic range to another with lower dynamic range. Currently this supports "chrome", which uses the same tone mapping that Chrome uses for HDR content, the form "*=N", where N is a floating point scale factor applied in linear space, and "none", which disables tone mapping. This defaults to "chrome".</item>
+    /// <item>SDL_PROP_SURFACE_HOTSPOT_X_NUMBER: the hotspot pixel offset from the left edge of the image, if this surface is being used as a cursor.</item>
+    /// <item>SDL_PROP_SURFACE_HOTSPOT_Y_NUMBER: the hotspot pixel offset from the top edge of the image, if this surface is being used as a cursor.</item>
+    /// </list>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetSurfaceProperties(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "GetSurfaceProperties: Surface pointer is null.");
@@ -2899,11 +2791,10 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get the area used to type Unicode text input.</summary>
     /// <param name="window">the window for which to query the text input area.</param>
-    /// <param name="rect">a pointer to an SDL_Rect filled in with the text input area, discarded.</param>
-    /// <param name="cursor">a pointer to the offset of the current cursor location relative to rect-&gt;x, discarded.</param>
+    /// <param name="rect">a pointer to an <see cref="Rect"/> filled in with the text input area, can bediscarded.</param>
+    /// <param name="cursor">a pointer to the offset of the current cursor location relative to rect-&gt;x, may be discarded.</param>
     /// <remarks>
-    /// This returns the values previously set by
-    /// SDL_SetTextInputArea().
+    /// This returns the values previously set by <see cref="SetTextInputArea"/>.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetTextInputArea"/>
@@ -2945,12 +2836,12 @@ public static unsafe partial class Sdl {
         return threadId;
     }
 
-    /// <summary>Get the thread name as it was specified in SDL_CreateThread().</summary>
+    /// <summary>Get the thread name as it was specified in <see cref="CreateThread"/>.</summary>
     /// <param name="thread">the thread to query.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns a pointer to a UTF-8 string that names the specifiedthread, or <see langword="null" /> if it doesn't have a name.</returns>
+    /// <returns>Returns a pointer to a UTF-8 string that names the specifiedthread, or <see langword="null" /> if it doesn't have a name.</returns>
     public static string GetThreadName(nint thread) {
         if (thread == nint.Zero) {
             LogError(LogCategory.Error, "GetThreadName: Thread pointer is null.");
@@ -2969,7 +2860,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="ThreadState"/>
     /// </remarks>
-    /// <returns>Returns the current state of a thread,or SDL_THREAD_UNKNOWN if the thread isn't valid.</returns>
+    /// <returns>Returns the current state of a thread,  SDL_THREAD_UNKNOWN if the thread isn't valid.</returns>
     public static ThreadState GetThreadState(nint thread) {
         if (thread == nint.Zero) {
             LogError(LogCategory.Error, "GetThreadState: Thread pointer is null.");
@@ -3005,13 +2896,12 @@ public static unsafe partial class Sdl {
     /// <summary>Get the name of a built in video driver.</summary>
     /// <param name="index">the index of a video driver.</param>
     /// <remarks>
-    /// The video drivers are presented in the order in which they are normally
-    /// checked during initialization.
+    /// The video drivers are presented in the order in which they are normally checked during initialization.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumVideoDrivers"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the video driver with the givenindex.</returns>
+    /// <returns>Returns the name of the video driver with the givenindex.</returns>
     public static string GetVideoDriver(int index) {
         if (index < 0) {
             LogError(LogCategory.Error, "GetVideoDriver: Index is negative.");
@@ -3025,10 +2915,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the size of a window's client area.</summary>
-
     /// <param name="window">the window to query the width and height from.</param>
-    /// <param name="minAspect">a pointer filled in with the minimum aspect ratio of the window, discarded.</param>
-    /// <param name="maxAspect">a pointer filled in with the maximum aspect ratio of the window, discarded.</param>
+    /// <param name="minAspect">a pointer filled in with the minimum aspect ratio of the window, may be discarded.</param>
+    /// <param name="maxAspect">a pointer filled in with the maximum aspect ratio of the window, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -3051,7 +2940,7 @@ public static unsafe partial class Sdl {
     /// <summary>
     /// Get the size of a window's borders (decorations) around the client area.
     /// </summary>
-    /// <param name="window"></param>
+    /// <param name="window">the window to query the size values of the border (decorations) from.</param>
     /// <param name="top">out to variable for storing the size of the top border; discard is permitted.</param>
     /// <param name="left">out to variable for storing the size of the left border; discard is permitted.</param>
     /// <param name="bottom">out to variable for storing the size of the bottom border; discard is permitted.</param>
@@ -3082,12 +2971,12 @@ public static unsafe partial class Sdl {
     /// <summary>
     /// Get the size of a window's borders (decorations) around the client area.
     /// </summary>
-    /// <param name="window"></param>
+    /// <param name="window">the window to query the size values of the border (decorations) from.</param>
     /// <remarks>
     /// <para>>Note: If this function fails (returns <see langword="false"/>), the size values will be initialized to 0, 0, 0, 0 (if a non-NULL pointer is provided), as if the window in question was borderless.</para>
     /// <para>Note: This function may fail on systems where the window has not yet been decorated by the display server(for example, immediately after calling <see cref="CreateWindow"/>).</para>
     /// <para>It is recommended that you wait at least until the window has been presented and composited, so that the window system has a chance to decorate the window and provide the border dimensions to SDL.</para>
-    /// <para>This function also returns <see langword="false"/> if getting the information is not supported.</para>
+    /// <para>This function also returns a blank <see cref="Rect"/> if getting the information is not supported.</para>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetWindowSize"/>
@@ -3143,7 +3032,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowMouseGrab"/>
     /// <seealso cref="ShowWindow"/>
     /// </remarks>
-    /// <returns>Returns a mask of theSDL_WindowFlags associated with window.</returns>
+    /// <returns>Returns a mask of the<see cref="WindowFlags"/> associated with window.</returns>
     public static WindowFlags GetWindowFlags(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowFlags: Window handle is null.");
@@ -3159,7 +3048,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get a window from a stored ID.</summary>
     /// <param name="id">the ID of the window.</param>
     /// <remarks>
-    /// The numeric ID is what SDL_WindowEvent references, and
+    /// The numeric ID is what <see cref="WindowEvent"/> references, and
     /// is necessary to map these events to specific SDL_Window
     /// objects.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -3245,14 +3134,14 @@ public static unsafe partial class Sdl {
     /// <summary>Get the numeric ID of a window.</summary>
     /// <param name="window">the window to query.</param>
     /// <remarks>
-    /// The numeric ID is what SDL_WindowEvent references, and
+    /// The numeric ID is what <see cref="WindowEvent"/> references, and
     /// is necessary to map these events to specific SDL_Window
     /// objects.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetWindowFromId"/>
     /// </remarks>
-    /// <returns>Returns the ID of the window on success or 0on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the ID of the window on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetWindowId(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowId: Window handle is null.");
@@ -3335,8 +3224,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get the minimum size of a window's client area.</summary>
     /// <param name="window">the window to query.</param>
-    /// <param name="w">a pointer filled in with the minimum width of the window, discarded.</param>
-    /// <param name="h">a pointer filled in with the minimum height of the window, discarded.</param>
+    /// <param name="w">a pointer filled in with the minimum width of the window, may be discarded.</param>
+    /// <param name="h">a pointer filled in with the minimum height of the window, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -3365,8 +3254,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowMaximumSize"/>
     /// <seealso cref="SetWindowMinimumSize"/>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-    public static Rect GetWindowMinumSize(nint window) {
+    /// <returns>Returns a <see cref="Rect"/> on success or a blank <see cref="Rect"/> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static Rect GetWindowMinimumSize(nint window) {
         if (window == nint.Zero) {
             return default;
         }
@@ -3434,7 +3323,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowMouseGrab"/>
     /// <seealso cref="SetWindowMouseGrab"/>
     /// </remarks>
-    /// <returns>(const SDL_Rect *) Returns a pointer to the mouse confinementrectangle of a window, or <see langword="null" /> if there isn't one.</returns>
+    /// <returns>(const <see cref="Rect"/> *) Returns a pointer to the mouse confinement rectangle of a window, or <see langword="null" /> if there isn't one.</returns>
     public static unsafe Rect GetWindowMouseRect(nint window) {
         nint result = GetWindowMouseRectPtr(window);
         if (result == nint.Zero) {
@@ -3448,11 +3337,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the opacity of a window.</summary>
-
     /// <param name="window">the window to get the current opacity value from.</param>
     /// <remarks>
-    /// If transparency isn't supported on this platform, opacity will be returned
-    /// as 1.0f without error.
+    /// If transparency isn't supported on this platform, opacity will be returned as 1.0f without error.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetWindowOpacity"/>
@@ -3477,7 +3364,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreatePopupWindow"/>
     /// </remarks>
-    /// <returns>(SDL_Window *) Returns the parent of the window on success or<see langword="null" /> if the window has no parent.</returns>
+    /// <returns>(SDL_Window *) Returns the parent of the window on success or <see langword="null" /> if the window has no parent.</returns>
     public static nint GetWindowParent(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowParent: Window handle is null.");
@@ -3519,7 +3406,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the pixel format of the windowon success or SDL_PIXELFORMAT_UNKNOWN onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the pixel format of the window on success or <see cref="PixelFormat.Unknown"/> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static PixelFormat GetWindowPixelFormat(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowPixelFormat: Window pointer is null.");
@@ -3537,8 +3424,7 @@ public static unsafe partial class Sdl {
     /// <param name="x">a pointer filled in with the x position of the window, may be discarded.</param>
     /// <param name="y">a pointer filled in with the y position of the window, may be discarded.</param>
     /// <remarks>
-    /// This is the current position of the window as last reported by the
-    /// windowing system.
+    /// This is the current position of the window as last reported by the windowing system.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetWindowPosition"/>
@@ -3586,7 +3472,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetWindowProperties(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowProperties: Window handle is null.");
@@ -3615,16 +3501,16 @@ public static unsafe partial class Sdl {
             return [];
         }
 
-        nint[] nints = new nint[count];
-        if (nints == null) {
+        nint[] windows = new nint[count];
+        if (windows == null) {
             LogError(LogCategory.Error, "GetWindows: Failed to create array for windows.");
             count = 0;
             return [];
         }
 
-        Span<nint> windows = new(nints);
+        Span<nint> windowSpan = new(windows);
 
-        return windows.ToArray();
+        return windowSpan.ToArray();
     }
 
     /// <summary>Get a list of valid windows.</summary>
@@ -3691,8 +3577,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get the size of a window's client area.</summary>
     /// <param name="window">the window to query the width and height from.</param>
-    /// <param name="w">a pointer filled in with the width of the window, discarded.</param>
-    /// <param name="h">a pointer filled in with the height of the window, discarded.</param>
+    /// <param name="w">a pointer filled in with the width of the window, may be discarded.</param>
+    /// <param name="h">a pointer filled in with the height of the window, may be discarded.</param>
     /// <remarks>
     /// The window pixel size may differ from its window coordinate size if the
     /// window is on a high pixel density display. Use <see cref="GetWindowSizeInPixels"/> or <see cref="GetRenderOutputSize"/> to get the real client area size in pixels.
@@ -3785,6 +3671,23 @@ public static unsafe partial class Sdl {
         return new Rect() { W = w, H = h };
     }
 
+    /// <summary>
+    /// Get the SDL surface associated with the window.
+    /// </summary>
+    /// <param name="window">the window to query.</param>
+    /// <remarks>
+    /// A new surface will be created with the optimal format for the window, if necessary. This surface will be freed when the window is destroyed. Do not free this surface.
+    /// <para>This surface will be invalidated if the window is resized.After resizing a window this function must be called again to return a valid surface.</para>
+    /// <para>You may not combine this with 3D or the rendering API on this window.</para>
+    /// <para>This function is affected by SDL_HINT_FRAMEBUFFER_ACCELERATION.</para>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyWindowSurface"/>
+    /// <seealso cref="WindowHasSurface"/>
+    /// <seealso cref="UpdateWindowSurface"/>
+    /// <seealso cref="UpdateWindowSurfaceRects"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns the surface associated with the window, or <see cref="nint.Zero"/> on failure; call <see cref="GetError"/> for more information.</returns>
     public static nint GetWindowSurface(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowSurface: Window pointer is null.");
@@ -3846,7 +3749,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetWindowTitle"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the title of the window in UTF-8 format or &quot;&quot; ifthere is no title.</returns>
+    /// <returns>Returns the title of the window in UTF-8 format or &quot;&quot; if there is no title.</returns>
     public static string GetWindowTitle(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowTitle: Window handle is null.");
@@ -3859,8 +3762,8 @@ public static unsafe partial class Sdl {
         return title;
     }
 
-    /// <summary>Get an ASCII string representation for a given SDL_GUID.</summary>
-    /// <param name="guid">the SDL_GUID you wish to convert to string.</param>
+    /// <summary>Get an ASCII string representation for a given <see cref="SdlGuid"/>.</summary>
+    /// <param name="guid">the <see cref="SdlGuid"/> you wish to convert to string.</param>
     /// <param name="pszGuid">buffer in which to write the ASCII string.</param>
     /// <param name="cbGuid">the size of pszGUID, should be at least 33 bytes.</param>
     /// <remarks>
@@ -3905,7 +3808,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetClipboardText"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the clipboard has text, or <see langword="false" /> if it does not.</returns>
-
     public static bool HasClipboardText() {
         bool result = SDL_HasClipboardText();
         if (!result) {
@@ -3921,7 +3823,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetKeyboards"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a keyboard is connected, <see langword="false" /> otherwise.</returns>
-
     public static bool HasKeyboard() {
         bool result = SDL_HasKeyboard();
         if (!result) {
@@ -3937,8 +3838,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetPrimarySelectionText"/>
     /// <seealso cref="SetPrimarySelectionText"/>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if the primary selection has text, or <see langword="false" /> if it doesnot.</returns>
-
+    /// <returns>Returns <see langword="true" /> if the primary selection has text, or <see langword="false" /> if it does not.</returns>
     public static bool HasPrimarySelectionText() {
         bool result = SDL_HasPrimarySelectionText();
         if (!result) {
@@ -3969,8 +3869,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Determine whether two rectangles intersect.</summary>
-    /// <param name="a">an SDL_Rect structure representing the first rectangle.</param>
-    /// <param name="b">an SDL_Rect structure representing the second rectangle.</param>
+    /// <param name="a">an <see cref="Rect"/> structure representing the first rectangle.</param>
+    /// <param name="b">an <see cref="Rect"/> structure representing the second rectangle.</param>
     /// <remarks>
     /// If either pointer is <see langword="null" /> the function will return false.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -3987,8 +3887,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Determine whether two rectangles intersect with float precision.</summary>
-    /// <param name="a">an SDL_FRect structure representing the first rectangle.</param>
-    /// <param name="b">an SDL_FRect structure representing the second rectangle.</param>
+    /// <param name="a">an <see cref="FRect"/> structure representing the first rectangle.</param>
+    /// <param name="b">an <see cref="FRect"/> structure representing the second rectangle.</param>
     /// <remarks>
     /// If either pointer is <see langword="null" /> the function will return false.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -4011,7 +3911,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ScreenKeyboardShown"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the platform has some screen keyboard support or<see langword="false" /> if not.</returns>
-
     public static bool HasScreenKeyboardSupport() {
         bool result = SDL_HasScreenKeyboardSupport();
         if (!result) {
@@ -4116,7 +4015,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RunOnMainThread"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this thread is the main thread, or <see langword="false" /> otherwise.</returns>
-
     public static bool IsMainThread() {
         bool result = SDL_IsMainThread();
         if (!result) {
@@ -4136,7 +4034,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SaveBMP"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a pointer to a new SDL_Surface structure or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static nint LoadBmp(string file) {
         if (string.IsNullOrEmpty(file)) {
             LogError(LogCategory.Error, "LoadBmp: File path is null or empty.");
@@ -4184,7 +4081,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LoadObject"/>
     /// </remarks>
-    /// <returns>Returns a pointer to thefunction or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a pointer to the function or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint LoadFunction(nint handle, string name) {
         if (handle == nint.Zero) {
             LogError(LogCategory.Error, "LoadFunction: Handle pointer is null.");
@@ -4253,7 +4150,7 @@ public static unsafe partial class Sdl {
     /// surface-&gt;pixels, using the pixel format stored in surface-&gt;format. Once
     /// you are done accessing the surface, you should use
     /// <see cref="UnlockSurface"/> to release it.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe. The locking referred to by this functionis making the pixels available for direct access, not thread-safe locking.</para>
+    /// <para><strong>Thread Safety:</strong> This function is not thread safe. The locking referred to by this function is making the pixels available for direct access, not thread-safe locking.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="MUSTLOCK"/>
     /// <seealso cref="UnlockSurface"/>
@@ -4282,7 +4179,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="realloc"/>
     /// <seealso cref="aligned_alloc"/>
     /// </remarks>
-    /// <returns>(void *) Returns a pointer to the allocated memory, or <see langword="null" /> if allocationfailed.</returns>
+    /// <returns>(void *) Returns a pointer to the allocated memory, or <see langword="null" /> if allocation failed.</returns>
     public static nint Malloc(nuint size) {
         if (size == nuint.Zero) {
             LogWarn(LogCategory.System, "Malloc: Size is zero.");
@@ -4300,8 +4197,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGB triple to an opaque pixel value for a given pixel format.</summary>
-    /// <param name="format">a pointer to SDL_PixelFormatDetails describing the pixel format.</param>
-    /// <param name="palette">an optional palette for indexed formats, discarded.</param>
+    /// <param name="format">a pointer to <see cref="PixelFormat"/>Details describing the pixel format.</param>
+    /// <param name="palette">an optional palette for indexed formats, may be discarded.</param>
     /// <param name="r">the red component of the pixel in the range 0-255.</param>
     /// <param name="g">the green component of the pixel in the range 0-255.</param>
     /// <param name="b">the blue component of the pixel in the range 0-255.</param>
@@ -4330,8 +4227,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGBA quadruple to a pixel value for a given pixel format.</summary>
-    /// <param name="format">a pointer to SDL_PixelFormatDetails describing the pixel format.</param>
-    /// <param name="palette">an optional palette for indexed formats, discarded.</param>
+    /// <param name="format">a pointer to <see cref="PixelFormat"/>Details describing the pixel format.</param>
+    /// <param name="palette">an optional palette for indexed formats, may be discarded.</param>
     /// <param name="r">the red component of the pixel in the range 0-255.</param>
     /// <param name="g">the green component of the pixel in the range 0-255.</param>
     /// <param name="b">the blue component of the pixel in the range 0-255.</param>
@@ -4361,7 +4258,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGB triple to an opaque pixel value for a surface.</summary>
-
     /// <param name="surface">the surface to use for the pixel format and palette.</param>
     /// <param name="r">the red component of the pixel in the range 0-255.</param>
     /// <param name="g">the green component of the pixel in the range 0-255.</param>
@@ -4372,10 +4268,9 @@ public static unsafe partial class Sdl {
     /// the given pixel format.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="MapSurfaceRGBA"/>
+    /// <seealso cref="MapSurfaceRgba"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
-
     public static uint MapSurfaceRgb(nint surface, byte r, byte g, byte b) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "MapSurfaceRgb: Surface pointer is null.");
@@ -4389,18 +4284,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGB triple to an opaque pixel value for a surface.</summary>
-
     /// <param name="surface">the surface to use for the pixel format and palette.</param>
-    /// <param name="r">the red component of the pixel in the range 0-255.</param>
-    /// <param name="g">the green component of the pixel in the range 0-255.</param>
-    /// <param name="b">the blue component of the pixel in the range 0-255.</param>
+    /// <param name="color">the <see cref="Color"/> representing RGB ranging from 0-255.</param>
     /// <remarks>
     /// This function maps the RGB color value to the specified pixel format and
     /// returns the pixel value best approximating the given RGB color value for
     /// the given pixel format.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="MapSurfaceRGBA"/>
+    /// <seealso cref="MapSurfaceRgba"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
 
@@ -4418,7 +4310,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGBA quadruple to a pixel value for a surface.</summary>
-
     /// <param name="surface">the surface to use for the pixel format and palette.</param>
     /// <param name="r">the red component of the pixel in the range 0-255.</param>
     /// <param name="g">the green component of the pixel in the range 0-255.</param>
@@ -4430,7 +4321,7 @@ public static unsafe partial class Sdl {
     /// the given pixel format.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="MapSurfaceRGB"/>
+    /// <seealso cref="MapSurfaceRgb"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
 
@@ -4447,19 +4338,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Map an RGBA quadruple to a pixel value for a surface.</summary>
-
     /// <param name="surface">the surface to use for the pixel format and palette.</param>
-    /// <param name="r">the red component of the pixel in the range 0-255.</param>
-    /// <param name="g">the green component of the pixel in the range 0-255.</param>
-    /// <param name="b">the blue component of the pixel in the range 0-255.</param>
-    /// <param name="a">the alpha component of the pixel in the range 0-255.</param>
+    /// <param name="color">the <see cref="Color"/> representing RGB ranging from 0-255.</param>
     /// <remarks>
     /// This function maps the RGBA color value to the specified pixel format and
     /// returns the pixel value best approximating the given RGBA color value for
     /// the given pixel format.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="MapSurfaceRGB"/>
+    /// <seealso cref="MapSurfaceRgb"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
 
@@ -4476,12 +4363,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the window be made as large as possible.</summary>
-
     /// <param name="window">the window to maximize.</param>
     /// <remarks>
-    /// Non-resizable windows can't be maximized. The window must have the
-    /// SDL_WINDOW_RESIZABLE flag set, or this will have no
-    /// effect.
+    /// Non-resizable windows can't be maximized. The window must have the <see cref="WindowFlags.Resizable"/> flag set, or this will have no effect.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="MinimizeWindow"/>
@@ -4489,7 +4373,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool MaximizeWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "MaximizeWindow: Window pointer is null.");
@@ -4503,7 +4386,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the window be minimized to an iconic representation.</summary>
-
     /// <param name="window">the window to minimize.</param>
     /// <remarks>
     /// If the window is in a fullscreen state, this request has no direct effect.
@@ -4515,7 +4397,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool MinimizeWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "MinimizeWindow: Window pointer is null.");
@@ -4535,7 +4416,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="false" />.</returns>
-
     public static bool OutOfMemory() {
         return SDL_OutOfMemory();
     }
@@ -4547,8 +4427,8 @@ public static unsafe partial class Sdl {
     /// <param name="dst">a pointer to be filled in with premultiplied pixel data.</param>
     /// <param name="linear"><see langword="true" /> to convert from sRGB to linear space for the alpha multiplication, <see langword="false" /> to do multiplication in sRGB space.</param>
     /// <remarks>
-    /// This is safe to use with src == dst, but not for other overlapping areas.
-    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. Itis safe to use the same source pixels from multiple threads.</para>
+    /// This is safe to use with <paramref name="src"/> == <paramref name="dst"/>, but not for other overlapping areas.
+    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. It is safe to use the same source pixels from multiple threads.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
@@ -4571,8 +4451,8 @@ public static unsafe partial class Sdl {
     /// <param name="dst">a pointer to be filled in with premultiplied pixel data.</param>
     /// <param name="linear"><see langword="true" /> to convert from sRGB to linear space for the alpha multiplication, <see langword="false" /> to do multiplication in sRGB space.</param>
     /// <remarks>
-    /// This is safe to use with src == dst, but not for other overlapping areas.
-    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. Itis safe to use the same source pixels from multiple threads.</para>
+    /// This is safe to use with <paramref name="src"/> == <paramref name="dst"/>, but not for other overlapping areas.
+    /// <para><strong>Thread Safety:</strong> The same destination pixels should not be used from two threads at once. It is safe to use the same source pixels from multiple threads.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
@@ -4591,7 +4471,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Premultiply the alpha in a surface.</summary>
-
     /// <param name="surface">the surface to modify.</param>
     /// <param name="linear"><see langword="true" /> to convert from sRGB to linear space for the alpha multiplication, <see langword="false" /> to do multiplication in sRGB space.</param>
     /// <remarks>
@@ -4612,20 +4491,29 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+    /// <summary>
+    /// Clean up all initialized subsystems.
+    /// </summary>
+    /// <remarks>
+    /// You should call this function even if you have already shutdown each initialized subsystem with <see cref="QuitSubSystem"/>. It is safe to call this function even in the case of errors in initialization.
+    /// You can use this function with atexit() to ensure that it is run when your application is shutdown, but it is not wise to do this from a library or other dynamically loaded code.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="Init"/>
+    /// <seealso cref="QuitSubSystem"/>
+    /// </remarks>
     public static void Quit() {
         SDL_Quit();
     }
 
     /// <summary>Shut down specific SDL subsystems.</summary>
-    /// <param name="flags">any of the flags used by <see cref="Init"/>(); see <see cref="Init"/> for details.</param>
+    /// <param name="flags">any of the flags used by <see cref="Init"/>; see <see cref="Init"/> for details.</param>
     /// <remarks>
     /// You still need to call <see cref="Quit"/> even if you close all open
-    /// subsystems with SDL_QuitSubSystem().
+    /// subsystems with <see cref="QuitSubSystem"/>.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="InitSubSystem"/>
     /// <seealso cref="Quit"/>
     /// </remarks>
-
     public static void QuitSubSystem(InitFlags flags) {
         if (!Enum.IsDefined(flags)) {
             LogError(LogCategory.Error, "QuitSubSystem: Invalid initialization flags.");
@@ -4634,6 +4522,11 @@ public static unsafe partial class Sdl {
         SDL_QuitSubSystem(flags);
     }
 
+    /// <summary>
+    /// Request that a window be raised above other windows and gain the input focus.
+    /// </summary>
+    /// <param name="window">the window to raise.</param>
+    /// <returns>Returns <see langword="true"/> on success or <see langword="false"/> on failure; call <see cref="GetError"/> for more information.</returns>
     public static bool RaiseWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "RaiseWindow: Window pointer is null.");
@@ -4650,10 +4543,10 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the surface to read.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">a pointer filled in with the red channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="g">a pointer filled in with the green channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="b">a pointer filled in with the blue channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="a">a pointer filled in with the alpha channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
+    /// <param name="r">a pointer filled in with the red channel, 0-255, or discard to ignore this channel.</param>
+    /// <param name="g">a pointer filled in with the green channel, 0-255, or discard to ignore this channel.</param>
+    /// <param name="b">a pointer filled in with the blue channel, 0-255, or discard to ignore this channel.</param>
+    /// <param name="a">a pointer filled in with the alpha channel, 0-255, or discard to ignore this channel.</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -4678,10 +4571,6 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the surface to read.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">a pointer filled in with the red channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="g">a pointer filled in with the green channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="b">a pointer filled in with the blue channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="a">a pointer filled in with the alpha channel, 0-255, or <see langword="null" /> to ignore this channel.</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -4733,10 +4622,10 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the surface to read.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">a pointer filled in with the red channel, normally in the range 0-1, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="g">a pointer filled in with the green channel, normally in the range 0-1, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="b">a pointer filled in with the blue channel, normally in the range 0-1, or <see langword="null" /> to ignore this channel.</param>
-    /// <param name="a">a pointer filled in with the alpha channel, normally in the range 0-1, or <see langword="null" /> to ignore this channel.</param>
+    /// <param name="r">a pointer filled in with the red channel, normally in the range 0-1, or discard to ignore this channel.</param>
+    /// <param name="g">a pointer filled in with the green channel, normally in the range 0-1, or discard to ignore this channel.</param>
+    /// <param name="b">a pointer filled in with the blue channel, normally in the range 0-1, or discard to ignore this channel.</param>
+    /// <param name="a">a pointer filled in with the alpha channel, normally in the range 0-1, or discard to ignore this channel.</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -4761,6 +4650,7 @@ public static unsafe partial class Sdl {
     /// <param name="surface">the surface to read.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
+    /// <param name="color">the <see cref="FColor"/> structure filled with color data, or discard to ignore.</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -4810,7 +4700,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Remove a function watching a particular hint.</summary>
     /// <param name="name">the hint being watched.</param>
-    /// <param name="callback">an SDL_HintCallback function that will be called when the hint value changes.</param>
+    /// <param name="callback">an <see cref="SdlHintCallback"/> function that will be called when the hint value changes.</param>
     /// <param name="userdata">a pointer being passed to the callback function.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -4904,7 +4794,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool RestoreWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "RestoreWindow: Window pointer is null.");
@@ -4919,17 +4808,16 @@ public static unsafe partial class Sdl {
 
     /// <summary>Initializes and launches an SDL application, by doing platform-specific initialization before calling your mainFunction and cleanups after it returns, if that is needed for a specific platform, otherwise it just calls mainFunction.</summary>
     /// <param name="argc">the argc parameter from the application's main() function, or 0 if the platform's main-equivalent has no argc.</param>
-    /// <param name="argv">the argv parameter from the application's main() function, or <see langword="null" /> if the platform's main-equivalent has no argv.</param>
+    /// <param name="argv">the argv parameter from the application's main() function, or <see cref="nint.Zero"/> if the platform's main-equivalent has no argv.</param>
     /// <param name="mainFunction">your SDL app's C-style main(). NOT the function you're calling this from! Its name doesn't matter; it doesn't literally have to be main.</param>
-    /// <param name="reserved">should be <see langword="null" /> (reserved for future use, will probably be platform-specific then).</param>
+    /// <param name="reserved">should be <see cref="nint.Zero"/> (reserved for future use, will probably be platform-specific then).</param>
     /// <remarks>
     /// You can use this if you want to use your own main() implementation without
     /// using SDL_main (like when using SDL_MAIN_HANDLED). When using this, you do not need <see cref="SetMainReady"/>.
-    /// <para><strong>Thread Safety:</strong> Generally this is called once, near startup, from the process's initialthread.</para>
+    /// <para><strong>Thread Safety:</strong> Generally this is called once, near startup, from the process's initial thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the return value from mainFunction: 0 on success, otherwisefailure; <see cref="GetError()" /> might have more information on thefailure.</returns>
-
+    /// <returns>Returns the return value from mainFunction: 0 on success, otherwise failure; <see cref="GetError()" /> might have more information on the failure.</returns>
     public static int RunApp(int argc, nint argv, SdlMainFunc mainFunction, nint reserved) {
         ArgumentNullException.ThrowIfNull(mainFunction);
 
@@ -4947,7 +4835,7 @@ public static unsafe partial class Sdl {
     /// <summary>Call a function on the main thread during event processing.</summary>
     /// <param name="callback">the callback to call on the main thread.</param>
     /// <param name="userdata">a pointer that is passed to callback.</param>
-    /// <param name="wait_complete"><see langword="true" /> to wait for the callback to complete, <see langword="false" /> to return immediately.</param>
+    /// <param name="waitComplete"><see langword="true" /> to wait for the callback to complete, <see langword="false" /> to return immediately.</param>
     /// <remarks>
     /// If this is called on the main thread, the callback is executed immediately.
     /// If this is called on another thread, this callback is queued for execution
@@ -5008,7 +4896,7 @@ public static unsafe partial class Sdl {
     /// <param name="closeIo">if <see langword="true"/>, calls <see cref="CloseIO"/> on <paramref name="dst"/> before returning, even in case of an error.</param>
     /// <remarks>
     /// Surfaces with a 24-bit, 32-bit and paletted 8-bit format get saved in the BMP directly. 
-    /// Other RGB formats with 8-bit or higher get converted to a 24-bit surface or, if they have an alpha mask or a colorkey, to a 32-bit surface before they are saved. 
+    /// Other RGB formats with 8-bit or higher get converted to a 24-bit surface or, if they have an alpha mask or a color key, to a 32-bit surface before they are saved. 
     /// YUV and paletted 1-bit and 4-bit formats are not supported.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -5033,19 +4921,18 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Creates a new surface identical to the existing surface, scaled to the desired size.</summary>
-
     /// <param name="surface">the surface to duplicate and scale.</param>
     /// <param name="width">the width of the new surface.</param>
     /// <param name="height">the height of the new surface.</param>
-    /// <param name="scaleMode">the SDL_ScaleMode to be used.</param>
+    /// <param name="scaleMode">the <see cref="ScaleMode"/> to be used.</param>
     /// <remarks>
     /// The returned surface should be freed with
-    /// SDL_DestroySurface().
+    /// <see cref="DestroySurface"/>.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="DestroySurface"/>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint ScaleSurface(nint surface, int width, int height, ScaleMode scaleMode) {
         if (surface == nint.Zero) {
@@ -5070,7 +4957,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Check whether the screen keyboard is shown for given window.</summary>
-
     /// <param name="window">the window for which screen keyboard should be queried.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -5078,7 +4964,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasScreenKeyboardSupport"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if screen keyboard is shown or <see langword="false" /> if not.</returns>
-
     public static bool ScreenKeyboardShown(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "ScreenKeyboardShown: Window pointer is null.");
@@ -5100,7 +4985,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="EnableScreenSaver"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the screensaver is enabled, <see langword="false" /> if it is disabled.</returns>
-
     public static bool ScreenSaverEnabled() {
         bool result = SDL_ScreenSaverEnabled();
         if (!result) {
@@ -5136,7 +5020,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Specify metadata about your app through a set of properties.</summary>
-
     /// <param name="name">the name of the metadata property to set.</param>
     /// <param name="value">the value of the property, or <see langword="null" /> to remove that property.</param>
     /// <remarks>
@@ -5148,7 +5031,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetAppMetadata"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetAppMetadataProperty(string name, string value) {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) {
             LogError(LogCategory.Error, "SetAppMetadataProperty: Name or value is null or empty.");
@@ -5162,7 +5044,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a boolean property in a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property.</param>
@@ -5172,7 +5053,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetBooleanProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetBooleanProperty(uint props, string name, bool value) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetBooleanProperty: Properties are zero or name is null/empty.");
@@ -5186,12 +5066,11 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Offer clipboard data to the OS.</summary>
-
     /// <param name="callback">a function pointer to the function that provides the clipboard data.</param>
     /// <param name="cleanup">a function pointer to the function that cleans up the clipboard data.</param>
     /// <param name="userdata">an opaque pointer that will be forwarded to the callbacks.</param>
-    /// <param name="mime_types">a list of mime-types that are being offered.</param>
-    /// <param name="num_mime_types">the number of mime-types in the mime_types list.</param>
+    /// <param name="mimeTypes">a list of mime-types that are being offered.</param>
+    /// <param name="numMimeTypes">the number of mime-types in the mime_types list.</param>
     /// <remarks>
     /// Tell the operating system that the application is offering clipboard data
     /// for each of the provided mime-types. Once another application requests the
@@ -5219,7 +5098,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Put UTF-8 text into the clipboard.</summary>
-
     /// <param name="text">the text to store in the clipboard.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -5242,7 +5120,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the priority for the current thread.</summary>
-
     /// <param name="priority">the SDL_ThreadPriority to set.</param>
     /// <remarks>
     /// Note that some platforms will not let you alter the priority (or at least,
@@ -5251,7 +5128,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetCurrentThreadPriority(ThreadPriority priority) {
         if (!Enum.IsDefined(priority)) {
             LogError(LogCategory.Error, "SetCurrentThreadPriority: Invalid thread priority.");
@@ -5603,7 +5479,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode used for blit operations.</summary>
 
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
-    /// <param name="blendMode">the SDL_BlendMode to use for blit blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode"/> to use for blit blending.</param>
     /// <remarks>
     /// To copy a surface to another surface (or texture) without blending with the
     /// existing data, the blendmode of the SOURCE surface should be set to
@@ -5629,7 +5505,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the clipping rectangle for a surface.</summary>
 
     /// <param name="surface">the <see cref="Surface"/> structure to be clipped.</param>
-    /// <param name="rect">the SDL_Rect structure representing the clipping rectangle, or <see langword="null" /> to disable clipping.</param>
+    /// <param name="rect">the <see cref="Rect"/> structure representing the clipping rectangle, or <see langword="null" /> to disable clipping.</param>
     /// <remarks>
     /// When surface is the destination of a blit, only the area within the clip
     /// rectangle is drawn into.
@@ -5741,7 +5617,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the colorspace used by a surface.</summary>
 
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
-    /// <param name="colorspace">an SDL_Colorspace value describing the surface colorspace.</param>
+    /// <param name="colorspace">an <see cref="Colorspace"/> value describing the surface colorspace.</param>
     /// <remarks>
     /// Setting the colorspace doesn't change the pixels, only how they are
     /// interpreted in color operations.
@@ -5822,7 +5698,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the area used to type Unicode text input.</summary>
 
     /// <param name="window">the window for which to set the text input area.</param>
-    /// <param name="rect">the SDL_Rect representing the text input area, in window coordinates, or <see langword="null" /> to clear it.</param>
+    /// <param name="rect">the <see cref="Rect"/> representing the text input area, in window coordinates, or <see langword="null" /> to clear it.</param>
     /// <param name="cursor">the offset of the current cursor location relative to rect-&gt;x, in window coordinates.</param>
     /// <remarks>
     /// Native input methods may place a window with word suggestions near the
@@ -5850,7 +5726,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="id">a pointer to the thread local storage ID, may not be <see langword="null" />.</param>
     /// <param name="value">the value to associate with the ID for the current thread.</param>
-    /// <param name="destructor">a function called when the thread exits, to free the value, discarded.</param>
+    /// <param name="destructor">a function called when the thread exits, to free the value, may be discarded.</param>
     /// <remarks>
     /// If the thread local storage ID is not initialized (the value is 0), a new
     /// ID will be created in a thread-safe way, so all calls using a pointer to
@@ -6691,7 +6567,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Convert a GUID string into a SDL_GUID structure.</summary>
+    /// <summary>Convert a GUID string into a <see cref="SdlGuid"/> structure.</summary>
 
     /// <param name="pchGUID">string containing an ASCII representation of a GUID.</param>
     /// <remarks>
@@ -6702,7 +6578,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GUIDToString"/>
     /// </remarks>
-    /// <returns>Returns a SDL_GUID structure.</returns>
+    /// <returns>Returns a <see cref="SdlGuid"/> structure.</returns>
 
     public static SdlGuid StringToGUID(string pchGuid) {
         if (string.IsNullOrEmpty(pchGuid)) {
@@ -6924,7 +6800,7 @@ public static unsafe partial class Sdl {
     /// <summary>Copy areas of the window surface to the screen.</summary>
 
     /// <param name="window">the window to update.</param>
-    /// <param name="rects">an array of SDL_Rect structures representing areas of the surface to copy, in pixels.</param>
+    /// <param name="rects">an array of <see cref="Rect"/> structures representing areas of the surface to copy, in pixels.</param>
     /// <param name="numrects">the number of rectangles.</param>
     /// <remarks>
     /// This is the function you use to reflect changes to portions of the surface
@@ -6955,7 +6831,7 @@ public static unsafe partial class Sdl {
     /// <summary>Copy areas of the window surface to the screen.</summary>
 
     /// <param name="window">the window to update.</param>
-    /// <param name="rects">an array of SDL_Rect structures representing areas of the surface to copy, in pixels.</param>
+    /// <param name="rects">an array of <see cref="Rect"/> structures representing areas of the surface to copy, in pixels.</param>
     /// <param name="numrects">the number of rectangles.</param>
     /// <remarks>
     /// This is the function you use to reflect changes to portions of the surface
@@ -6986,7 +6862,7 @@ public static unsafe partial class Sdl {
     /// <summary>Wait for a thread to finish.</summary>
 
     /// <param name="thread">the SDL_Thread pointer that was returned from the SDL_CreateThread() call that started this thread.</param>
-    /// <param name="status">a pointer filled in with the value returned from the thread function by its 'return', or -1 if the thread has been detached or isn't valid, discarded.</param>
+    /// <param name="status">a pointer filled in with the value returned from the thread function by its 'return', or -1 if the thread has been detached or isn't valid, may be discarded.</param>
     /// <remarks>
     /// Threads that haven't been detached will remain until this function cleans
     /// them up. Not doing so is a resource leak.

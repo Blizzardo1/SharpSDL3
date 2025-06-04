@@ -20,7 +20,7 @@ public static partial class Sdl {
     /// <seealso cref="SubmitGPUCommandBuffer"/>
     /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
     /// </remarks>
-    /// <returns>(SDL_GPUCommandBuffer *) Returns a command buffer,or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_GPUCommandBuffer *) Returns a command buffer,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint AcquireGPUCommandBuffer(nint device) {
         if (device == nint.Zero) {
@@ -34,8 +34,8 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <param name="window">a window that has been claimed.</param>
     /// <param name="swapchain_texture">a pointer filled in with a swapchain texture handle.</param>
-    /// <param name="swapchain_texture_width">a pointer filled in with the swapchain texture width, discarded.</param>
-    /// <param name="swapchain_texture_height">a pointer filled in with the swapchain texture height, discarded.</param>
+    /// <param name="swapchain_texture_width">a pointer filled in with the swapchain texture width, may be discarded.</param>
+    /// <param name="swapchain_texture_height">a pointer filled in with the swapchain texture height, may be discarded.</param>
     /// <remarks>
     /// When a swapchain texture is acquired on a command buffer, it will
     /// automatically be submitted for presentation when the command buffer is
@@ -119,7 +119,7 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <param name="color_target_infos">an array of texture subresources with corresponding clear values and load/store ops.</param>
     /// <param name="num_color_targets">the number of color targets in the color_target_infos array.</param>
-    /// <param name="depth_stencil_target_info">a texture subresource with corresponding clear value and load/store ops, discarded.</param>
+    /// <param name="depth_stencil_target_info">a texture subresource with corresponding clear value and load/store ops, may be discarded.</param>
     /// <remarks>
     /// A render pass consists of a set of texture subresources (or depth slices in
     /// the 3D texture case) which will be rendered to during the render pass,
@@ -647,7 +647,7 @@ public static partial class Sdl {
     /// <seealso cref="BindGPUFragmentSamplers"/>
     /// <seealso cref="ReleaseGPUSampler"/>
     /// </remarks>
-    /// <returns>(SDL_GPUSampler *) Returns a sampler object on success,or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_GPUSampler *) Returns a sampler object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateGPUSampler(nint device, in GpuSamplerCreateInfo createinfo) {
         if (device == nint.Zero) {
@@ -695,7 +695,7 @@ public static partial class Sdl {
     /// <seealso cref="ReleaseGPUTexture"/>
     /// <seealso cref="GPUTextureSupportsFormat"/>
     /// </remarks>
-    /// <returns>(SDL_GPUTexture *) Returns a texture object on success,or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_GPUTexture *) Returns a texture object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateGPUTexture(nint device, in GpuTextureCreateInfo createinfo) {
         if (device == nint.Zero) {
@@ -971,7 +971,7 @@ public static partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the device's driver, or <see langword="null" /> on error.</returns>
+    /// <returns>Returns the name of the device's driver, or <see langword="null" /> on error.</returns>
 
     public static string GetGPUDeviceDriver(nint device) {
         if (device == nint.Zero) {
@@ -989,7 +989,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumGPUDrivers"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the GPU driver with the given index.</returns>
+    /// <returns>Returns the name of the GPU driver with the given index.</returns>
 
     public static string GetGPUDriver(int index) {
         if (index < 0) {
@@ -1727,8 +1727,8 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <param name="window">a window that has been claimed.</param>
     /// <param name="swapchain_texture">a pointer filled in with a swapchain texture handle.</param>
-    /// <param name="swapchain_texture_width">a pointer filled in with the swapchain texture width, discarded.</param>
-    /// <param name="swapchain_texture_height">a pointer filled in with the swapchain texture height, discarded.</param>
+    /// <param name="swapchain_texture_width">a pointer filled in with the swapchain texture width, may be discarded.</param>
+    /// <param name="swapchain_texture_height">a pointer filled in with the swapchain texture height, may be discarded.</param>
     /// <remarks>
     /// When a swapchain texture is acquired on a command buffer, it will
     /// automatically be submitted for presentation when the command buffer is

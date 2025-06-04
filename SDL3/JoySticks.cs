@@ -167,7 +167,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static JoystickConnectionState GetJoystickConnectionState(nint joystick) {
         if (joystick == nint.Zero) {
@@ -184,7 +184,7 @@ public static unsafe partial class Sdl {
     /// If the firmware version isn't available this function returns 0.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the firmware version of the selected joystick,or 0 if unavailable.</returns>
+    /// <returns>Returns the firmware version of the selected joystick,  0 if unavailable.</returns>
 
     public static ushort GetJoystickFirmwareVersion(nint joystick) {
         if (joystick == nint.Zero) {
@@ -200,7 +200,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick onsuccess or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
 
     public static nint GetJoystickFromId(uint instanceId) {
         if (instanceId == 0) {
@@ -221,7 +221,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetJoystickPlayerIndex"/>
     /// <seealso cref="SetJoystickPlayerIndex"/>
     /// </remarks>
-    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick onsuccess or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetJoystickFromPlayerIndex(int playerIndex) {
         if (playerIndex < 0) {
@@ -274,9 +274,9 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickGUIDForID(instanceId);
     }
 
-    /// <summary>Get the device information encoded in a SDL_GUID structure.</summary>
+    /// <summary>Get the device information encoded in a <see cref="SdlGuid"/> structure.</summary>
 
-    /// <param name="guid">the SDL_GUID you wish to get info about.</param>
+    /// <param name="guid">the <see cref="SdlGuid"/> you wish to get info about.</param>
     /// <param name="vendor">a pointer filled in with the device VID, or 0 if not available.</param>
     /// <param name="product">a pointer filled in with the device PID, or 0 if not available.</param>
     /// <param name="version">a pointer filled in with the device version, or 0 if not available.</param>
@@ -338,7 +338,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetJoystickNameForID"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetJoystickName(nint joystick) {
         if (joystick == nint.Zero) {
@@ -360,7 +360,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetJoystickName"/>
     /// <seealso cref="GetJoysticks"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetJoystickNameForId(uint instanceId) {
         if (instanceId == 0) {
@@ -382,7 +382,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetJoystickPathForID"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetJoystickPath(nint joystick) {
         if (joystick == nint.Zero) {
@@ -404,7 +404,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetJoystickPath"/>
     /// <seealso cref="GetJoysticks"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetJoystickPathForId(uint instanceId) {
         if (instanceId == 0) {
@@ -460,7 +460,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the battery state of a joystick.</summary>
 
     /// <param name="joystick">the joystick to query.</param>
-    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or <see langword="null" /> to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
+    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or discard to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
     /// <remarks>
     /// You should never take a battery status as absolute truth. Batteries
     /// (especially failing batteries) are delicate hardware, and the values
@@ -560,7 +560,7 @@ public static unsafe partial class Sdl {
     /// The following read-only properties are provided by SDL:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetJoystickProperties(nint joystick) {
         if (joystick == nint.Zero) {
@@ -572,7 +572,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently connected joysticks.</summary>
 
-    /// <param name="count">a pointer filled in with the number of joysticks returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of joysticks returned, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="HasJoystick"/>
@@ -602,7 +602,7 @@ public static unsafe partial class Sdl {
     /// Returns the serial number of the joystick, or <see langword="null" /> if it is not available.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the serial number of the selected joystick, or <see langword="null" />if unavailable.</returns>
+    /// <returns>Returns the serial number of the selected joystick, or <see langword="null" />if unavailable.</returns>
 
     public static string GetJoystickSerial(nint joystick) {
         if (joystick == nint.Zero) {
@@ -850,7 +850,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CloseJoystick"/>
     /// </remarks>
-    /// <returns>(SDL_Joystick *) Returns a joystick identifier or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Joystick *) Returns a joystick identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenJoystick(uint instanceId) {
         nint joystick = SDL_OpenJoystick(instanceId);

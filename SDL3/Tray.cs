@@ -215,7 +215,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt"/>
     /// <seealso cref="SetTrayEntryLabel"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the label of the entry in UTF-8 encoding.</returns>
+    /// <returns>Returns the label of the entry in UTF-8 encoding.</returns>
 
     public static string GetTrayEntryLabel(nint entry) {
         if (entry == nint.Zero) {

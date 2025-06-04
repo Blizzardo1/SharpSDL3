@@ -59,7 +59,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumCameraDrivers"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the camera driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
+    /// <returns>Returns the name of the camera driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
 
     public static string GetCameraDriver(int index) {
         if (index < 0 || index >= GetNumCameraDrivers()) {
@@ -127,7 +127,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetCameras"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a human-readable device name or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a human-readable device name or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetCameraName(uint instanceId) {
         string cameraName = SDL_GetCameraName(instanceId);
@@ -195,7 +195,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetCameraProperties(nint camera) {
         if (camera == nint.Zero) {
@@ -210,7 +210,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently connected camera devices.</summary>
 
-    /// <param name="count">a pointer filled in with the number of cameras returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of cameras returned, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -245,7 +245,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the list of native formats/sizes a camera supports.</summary>
 
     /// <param name="instance_id">the camera device instance ID.</param>
-    /// <param name="count">a pointer filled in with the number of elements in the list, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of elements in the list, may be discarded.</param>
     /// <remarks>
     /// This returns a list of all formats and frame sizes that a specific camera
     /// can offer. This is useful if your app can accept a variety of image formats
@@ -256,7 +256,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetCameras"/>
     /// <seealso cref="OpenCamera"/>
     /// </remarks>
-    /// <returns>(SDL_CameraSpec **) Returns a <see langword="null" /> terminated array ofpointers to SDL_CameraSpec or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a singleallocation that should be freed with <see cref="Free"/> when it is nolonger needed.</returns>
+    /// <returns>(SDL_CameraSpec **) Returns a <see langword="null" /> terminated array ofpointers to SDL_CameraSpec or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a single allocation that should be freed with <see cref="Free"/> when it is no longer needed.</returns>
 
     public static Span<nint> GetCameraSupportedFormats(uint devid, out int count) {
         nint result = SDL_GetCameraSupportedFormats(devid, out count);
@@ -289,7 +289,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the current camera driver or <see langword="null" /> if nodriver has been initialized.</returns>
+    /// <returns>Returns the name of the current camera driver or <see langword="null" /> if nodriver has been initialized.</returns>
 
     public static string GetCurrentCameraDriver() {
         string driverName = SDL_GetCurrentCameraDriver();

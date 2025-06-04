@@ -201,7 +201,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetAudioStreamFormat"/>
     /// <seealso cref="DestroyAudioStream"/>
     /// </remarks>
-    /// <returns>(SDL_AudioStream *) Returns a new audio stream onsuccess or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_AudioStream *) Returns a new audio stream on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateAudioStream(ref AudioSpec srcSpec, ref AudioSpec dstSpec) {
         nint result = SDL_CreateAudioStream(ref srcSpec, ref dstSpec);
@@ -352,7 +352,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetAudioPlaybackDevices"/>
     /// <seealso cref="GetAudioRecordingDevices"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the audio device, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the audio device, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetAudioDeviceName(uint devId) {
         string name = SDL_GetAudioDeviceName(devId);
@@ -374,7 +374,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumAudioDrivers"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the audio driver at the requested index,or <see langword="null" /> if an invalid index was specified.</returns>
+    /// <returns>Returns the name of the audio driver at the requested index,  <see langword="null" /> if an invalid index was specified.</returns>
 
     public static string GetAudioDriver(int index) {
         string driver = SDL_GetAudioDriver(index);
@@ -392,7 +392,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the human readable name of the specified audioformat or &quot;SDL_AUDIO_UNKNOWN&quot; if the format isn'trecognized.</returns>
+    /// <returns>Returns the human readable name of the specified audioformat or &quot;SDL_AUDIO_UNKNOWN&quot; if the format isn'trecognized.</returns>
 
     public static string GetAudioFormatName(AudioFormat format) {
         string name = SDL_GetAudioFormatName(format);
@@ -405,7 +405,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently-connected audio playback devices.</summary>
 
-    /// <param name="count">a pointer filled in with the number of devices returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of devices returned, may be discarded.</param>
     /// <remarks>
     /// This returns of list of available devices that play sound, perhaps to
     /// speakers or headphones (&quot;playback&quot; devices). If you want devices that
@@ -438,7 +438,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently-connected audio recording devices.</summary>
 
-    /// <param name="count">a pointer filled in with the number of devices returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of devices returned, may be discarded.</param>
     /// <remarks>
     /// This returns of list of available devices that record audio, like a
     /// microphone (&quot;recording&quot; devices). If you want devices that play sound,
@@ -482,7 +482,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetAudioStreamData"/>
     /// <seealso cref="PutAudioStreamData"/>
     /// </remarks>
-    /// <returns>Returns the number of converted/resampled bytes available or -1 onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the number of converted/resampled bytes available or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetAudioStreamAvailable(nint stream) {
         int result = SDL_GetAudioStreamAvailable(stream);
@@ -675,7 +675,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetAudioStreamProperties(nint stream) {
         uint result = SDL_GetAudioStreamProperties(stream);
@@ -720,7 +720,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the current audio driver or <see langword="null" /> if nodriver has been initialized.</returns>
+    /// <returns>Returns the name of the current audio driver or <see langword="null" /> if nodriver has been initialized.</returns>
 
     public static string GetCurrentAudioDriver() {
         string driver = SDL_GetCurrentAudioDriver();

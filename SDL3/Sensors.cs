@@ -68,7 +68,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the sensor instance ID, or 0 onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the sensor instance ID, or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetSensorID(nint sensor) {
         uint id = SDL_GetSensorID(sensor);
@@ -84,7 +84,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the sensor name or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the sensor name or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
     public static string GetSensorName(nint sensor) {
         string name = SDL_GetSensorName(sensor);
@@ -101,7 +101,7 @@ public static unsafe partial class Sdl {
     /// This can be called before any sensors are opened.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the sensor name, or <see langword="null" /> if instance_id is notvalid.</returns>
+    /// <returns>Returns the sensor name, or <see langword="null" /> if instance_id is notvalid.</returns>
 
     public static string GetSensorNameForID(uint instanceId) {
         string name = SDL_GetSensorNameForID(instanceId);
@@ -150,7 +150,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetSensorProperties(nint sensor) {
         uint properties = SDL_GetSensorProperties(sensor);
@@ -162,7 +162,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Get a list of currently connected sensors.</summary>
 
-    /// <param name="count">a pointer filled in with the number of sensors returned, discarded.</param>
+    /// <param name="count">a pointer filled in with the number of sensors returned, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>

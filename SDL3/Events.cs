@@ -220,7 +220,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Check the event queue for messages and optionally return them.</summary>
 
-    /// <param name="events">destination buffer for the retrieved events, discarded to leave the events in the queue and return the number of events that would have been stored.</param>
+    /// <param name="events">destination buffer for the retrieved events, may be discarded to leave the events in the queue and return the number of events that would have been stored.</param>
     /// <param name="numevents">if action is SDL_ADDEVENT, the number of events to add back to the event queue; if action is SDL_PEEKEVENT or SDL_GETEVENT, the maximum number of events to retrieve.</param>
     /// <param name="action">action to take; see Remarks for details.</param>
     /// <param name="minType">minimum value of the event type to be considered; SDL_EVENT_FIRST is a safe choice.</param>
@@ -308,7 +308,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="PollEvent"/>
     /// <seealso cref="RegisterEvents"/>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the event was filtered or onfailure; call <see cref="GetError()" /> for more information. A commonreason for error is the event queue being full.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the event was filtered or on failure; call <see cref="GetError()" /> for more information. A commonreason for error is the event queue being full.</returns>
 
     public static bool PushEvent(ref Event @event) {
         // Validate the event structure to ensure it is in a valid state

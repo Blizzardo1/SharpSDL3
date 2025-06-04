@@ -10,7 +10,7 @@ public static unsafe partial class Sdl {
     /// <summary>Create a texture for a rendering context.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="format">one of the enumerated values in SDL_PixelFormat.</param>
+    /// <param name="format">one of the enumerated values in <see cref="PixelFormat"/>.</param>
     /// <param name="access">one of the enumerated values in SDL_TextureAccess.</param>
     /// <param name="w">the width of the texture in pixels.</param>
     /// <param name="h">the height of the texture in pixels.</param>
@@ -24,7 +24,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTextureSize"/>
     /// <seealso cref="UpdateTexture"/>
     /// </remarks>
-    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
                 int w, int h) {
@@ -55,7 +55,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateTextureWithProperties"/>
     /// <seealso cref="DestroyTexture"/>
     /// </remarks>
-    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateTextureFromSurface(nint renderer, nint surface) {
         if (renderer == nint.Zero) {
@@ -82,7 +82,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTextureSize"/>
     /// <seealso cref="UpdateTexture"/>
     /// </remarks>
-    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateTextureWithProperties(nint renderer, uint props) {
         if (renderer == nint.Zero) {
@@ -150,7 +150,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the blend mode used for texture copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
-    /// <param name="blendMode">a pointer filled in with the current SDL_BlendMode.</param>
+    /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode"/>.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -233,7 +233,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetTextureProperties(nint texture) {
         if (texture == nint.Zero) {
@@ -297,7 +297,7 @@ public static unsafe partial class Sdl {
     /// <summary>Lock a portion of the texture for write-only pixel access.</summary>
 
     /// <param name="texture">the texture to lock for access, which was created with SDL_TEXTUREACCESS_STREAMING.</param>
-    /// <param name="rect">an SDL_Rect structure representing the area to lock for access; <see langword="null" /> to lock the entire texture.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the area to lock for access; <see langword="null" /> to lock the entire texture.</param>
     /// <param name="pixels">this is filled in with a pointer to the locked pixels, appropriately offset by the locked area.</param>
     /// <param name="pitch">this is filled in with the pitch of the locked pixels; the pitch is the length of one row in bytes.</param>
     /// <remarks>
@@ -323,7 +323,7 @@ public static unsafe partial class Sdl {
     /// <summary>Lock a portion of the texture for write-only pixel access.</summary>
 
     /// <param name="texture">the texture to lock for access, which was created with SDL_TEXTUREACCESS_STREAMING.</param>
-    /// <param name="rect">an SDL_Rect structure representing the area to lock for access; <see langword="null" /> to lock the entire texture.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the area to lock for access; <see langword="null" /> to lock the entire texture.</param>
     /// <param name="pixels">this is filled in with a pointer to the locked pixels, appropriately offset by the locked area.</param>
     /// <param name="pitch">this is filled in with the pitch of the locked pixels; the pitch is the length of one row in bytes.</param>
     /// <remarks>
@@ -417,7 +417,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode for a texture, used by SDL_RenderTexture().</summary>
 
     /// <param name="texture">the texture to update.</param>
-    /// <param name="blendMode">the SDL_BlendMode to use for texture blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode"/> to use for texture blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen
     /// and this function returns <see langword="false" />.
@@ -537,7 +537,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the scale mode used for texture scale operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
-    /// <param name="scaleMode">the SDL_ScaleMode to use for texture scaling.</param>
+    /// <param name="scaleMode">the <see cref="ScaleMode"/> to use for texture scaling.</param>
     /// <remarks>
     /// The default texture scale mode is
     /// SDL_SCALEMODE_LINEAR.
@@ -605,7 +605,7 @@ public static unsafe partial class Sdl {
     /// <summary>Update the given texture rectangle with new pixel data.</summary>
 
     /// <param name="texture">the texture to update.</param>
-    /// <param name="rect">an SDL_Rect structure representing the area to update, or <see langword="null" /> to update the entire texture.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the area to update, or <see langword="null" /> to update the entire texture.</param>
     /// <param name="pixels">the raw pixel data in the format of the texture.</param>
     /// <param name="pitch">the number of bytes in a row of pixel data, including padding between lines.</param>
     /// <remarks>

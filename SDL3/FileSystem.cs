@@ -63,7 +63,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetPrefPath"/>
     /// </remarks>
-    /// <returns>(const char *) Returns an absolute path in UTF-8 encoding to theapplication data directory. <see langword="null" /> will be returned on error or when theplatform doesn't implement this functionality, call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns an absolute path in UTF-8 encoding to theapplication data directory. <see langword="null" /> will be returned on error or when theplatform doesn't implement this functionality, call <see cref="GetError()"/> for more information.</returns>
 
     public static string GetBasePath() {
         return SDL_GetBasePath();
@@ -120,7 +120,7 @@ public static partial class Sdl {
     /// the path for many of those special locations.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns either a null-terminated C string containing thefull path to the folder, or <see langword="null" /> if an error happened.</returns>
+    /// <returns>Returns either a null-terminated C string containing thefull path to the folder, or <see langword="null" /> if an error happened.</returns>
 
     public static string GetUserFolder(Folder folder) {
         return SDL_GetUserFolder(folder);

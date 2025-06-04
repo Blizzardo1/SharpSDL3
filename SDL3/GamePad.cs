@@ -13,7 +13,7 @@ public static unsafe partial class Sdl {
     /// <param name="mapping">the mapping string.</param>
     /// <remarks>
     /// The mapping string has the format &quot;GUID,name,mapping&quot;, where GUID is the
-    /// string value from SDL_GUIDToString(), name is the human
+    /// string value from <see cref="SdlGuid"/>ToString(), name is the human
     /// readable string for the device and mappings are gamepad mappings to
     /// joystick ones. Under Windows there is a reserved GUID of &quot;xinput&quot; that
     /// covers all XInput devices. The mapping format for joystick is:
@@ -193,7 +193,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadAppleSFSymbolsNameForButton"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
+    /// <returns>Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
 
     public static string GetGamepadAppleSFSymbolsNameForAxis(nint gamepad, GamepadAxis axis) {
         if (gamepad == nint.Zero) {
@@ -213,7 +213,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadAppleSFSymbolsNameForAxis"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
+    /// <returns>Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
 
     public static string GetGamepadAppleSFSymbolsNameForButton(nint gamepad, GamepadButton button) {
         if (gamepad == nint.Zero) {
@@ -259,7 +259,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadStringForAxis"/>
     /// </remarks>
-    /// <returns>Returns theSDL_GamepadAxis enum corresponding to the input string,or SDL_GAMEPAD_AXIS_INVALID if no match wasfound.</returns>
+    /// <returns>Returns theSDL_GamepadAxis enum corresponding to the input string,  SDL_GAMEPAD_AXIS_INVALID if no match wasfound.</returns>
 
     public static GamepadAxis GetGamepadAxisFromString(string str) {
         if (string.IsNullOrWhiteSpace(str)) {
@@ -356,7 +356,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static JoystickConnectionState GetGamepadConnectionState(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -387,7 +387,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Gamepad *) Returns an SDL_Gamepad onsuccess or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_Gamepad *) Returns an SDL_Gamepad on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
 
     public static nint GetGamepadFromID(uint instanceId) {
         if (instanceId == 0) {
@@ -478,7 +478,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetGamepadMappingForGUID"/>
     /// <seealso cref="SetGamepadMapping"/>
     /// </remarks>
-    /// <returns>(char *) Returns a string that has the gamepad's mapping or <see langword="null" /> if nomapping is available; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when it is nolonger needed.</returns>
+    /// <returns>(char *) Returns a string that has the gamepad's mapping or <see langword="null" /> if nomapping is available; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
 
     public static string GetGamepadMapping(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -519,7 +519,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetGamepads"/>
     /// <seealso cref="GetGamepadMapping"/>
     /// </remarks>
-    /// <returns>(char *) Returns the mapping string. Returns <see langword="null" /> if no mapping isavailable. This should be freed with <see cref="Free"/> when it is nolonger needed.</returns>
+    /// <returns>(char *) Returns the mapping string. Returns <see langword="null" /> if no mapping isavailable. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
 
     public static string GetGamepadMappingForID(uint instanceId) {
         if (instanceId == 0) {
@@ -535,7 +535,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadNameForID"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the implementation dependent name for the gamepad,or <see langword="null" /> if there is no name or the identifier passed is invalid.</returns>
+    /// <returns>Returns the implementation dependent name for the gamepad,  <see langword="null" /> if there is no name or the identifier passed is invalid.</returns>
 
     public static string GetGamepadName(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -553,7 +553,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetGamepadName"/>
     /// <seealso cref="GetGamepads"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected gamepad. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the selected gamepad. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetGamepadNameForID(uint instanceId) {
         if (instanceId == 0) {
@@ -569,7 +569,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadPathForID"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the implementation dependent path for the gamepad,or <see langword="null" /> if there is no path or the identifier passed is invalid.</returns>
+    /// <returns>Returns the implementation dependent path for the gamepad,  <see langword="null" /> if there is no path or the identifier passed is invalid.</returns>
 
     public static string GetGamepadPath(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -587,7 +587,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetGamepadPath"/>
     /// <seealso cref="GetGamepads"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the path of the selected gamepad. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the path of the selected gamepad. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetGamepadPathForID(uint instanceId) {
         if (instanceId == 0) {
@@ -634,7 +634,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the battery state of a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
-    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or <see langword="null" /> to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
+    /// <param name="percent">a pointer filled in with the percentage of battery life left, between 0 and 100, or discard to ignore. This will be filled in with -1 we can't determine a value or there is no battery.</param>
     /// <remarks>
     /// You should never take a battery status as absolute truth. Batteries
     /// (especially failing batteries) are delicate hardware, and the values
@@ -731,7 +731,7 @@ public static unsafe partial class Sdl {
     /// These properties are shared with the underlying joystick object.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetGamepadProperties(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -766,7 +766,7 @@ public static unsafe partial class Sdl {
     /// Returns the serial number of the gamepad, or <see langword="null" /> if it is not available.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(const char *) Returns the serial number, or <see langword="null" /> if unavailable.</returns>
+    /// <returns>Returns the serial number, or <see langword="null" /> if unavailable.</returns>
 
     public static string GetGamepadSerial(nint gamepad) {
         if (gamepad == nint.Zero) {
@@ -799,7 +799,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadAxisFromString"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a string for the given axis, or <see langword="null" /> if an invalidaxis is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
+    /// <returns>Returns a string for the given axis, or <see langword="null" /> if an invalidaxis is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
     public static string GetGamepadStringForAxis(GamepadAxis axis) {
         if (axis == GamepadAxis.Invalid) {
@@ -815,7 +815,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadButtonFromString"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a string for the given button, or <see langword="null" /> if an invalidbutton is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
+    /// <returns>Returns a string for the given button, or <see langword="null" /> if an invalidbutton is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
     public static string GetGamepadStringForButton(GamepadButton button) {
         if (button == GamepadButton.Invalid) {
@@ -831,7 +831,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadTypeFromString"/>
     /// </remarks>
-    /// <returns>(const char *) Returns a string for the given type, or <see langword="null" /> if an invalidtype is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
+    /// <returns>Returns a string for the given type, or <see langword="null" /> if an invalidtype is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
     public static string GetGamepadStringForType(GamepadType type) {
         if (type == GamepadType.Unknown) {
@@ -845,10 +845,10 @@ public static unsafe partial class Sdl {
     /// <param name="gamepad">a gamepad.</param>
     /// <param name="touchpad">a touchpad.</param>
     /// <param name="finger">a finger.</param>
-    /// <param name="down">a pointer filled with <see langword="true" /> if the finger is down, <see langword="false" /> otherwise, discarded.</param>
-    /// <param name="x">a pointer filled with the x position, normalized 0 to 1, with the origin in the upper left, discarded.</param>
-    /// <param name="y">a pointer filled with the y position, normalized 0 to 1, with the origin in the upper left, discarded.</param>
-    /// <param name="pressure">a pointer filled with pressure value, discarded.</param>
+    /// <param name="down">a pointer filled with <see langword="true" /> if the finger is down, <see langword="false" /> otherwise, may be discarded.</param>
+    /// <param name="x">a pointer filled with the x position, normalized 0 to 1, with the origin in the upper left, may be discarded.</param>
+    /// <param name="y">a pointer filled with the y position, normalized 0 to 1, with the origin in the upper left, may be discarded.</param>
+    /// <param name="pressure">a pointer filled with pressure value, may be discarded.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumGamepadTouchpadFingers"/>
@@ -912,7 +912,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetGamepadStringForType"/>
     /// </remarks>
-    /// <returns>Returns theSDL_GamepadType enum corresponding to the input string,or SDL_GAMEPAD_TYPE_UNKNOWN if no match wasfound.</returns>
+    /// <returns>Returns theSDL_GamepadType enum corresponding to the input string,  SDL_GAMEPAD_TYPE_UNKNOWN if no match wasfound.</returns>
 
     public static GamepadType GetGamepadTypeFromString(string str) {
         if (string.IsNullOrWhiteSpace(str)) {

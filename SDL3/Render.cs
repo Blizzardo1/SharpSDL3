@@ -322,7 +322,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the clip rectangle for the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an SDL_Rect structure filled in with the current clipping area or an empty rectangle if clipping is disabled.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure filled in with the current clipping area or an empty rectangle if clipping is disabled.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function gets the
     /// cliprect for the current render target.
@@ -374,7 +374,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the blend mode used for drawing operations.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">a pointer filled in with the current SDL_BlendMode.</param>
+    /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode"/>.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -472,7 +472,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumRenderDrivers"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the rendering driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
+    /// <returns>Returns the name of the rendering driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
 
     public static string GetRenderDriver(int index) {
         if (index < 0) {
@@ -537,7 +537,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateRenderer"/>
     /// <seealso cref="CreateRendererWithProperties"/>
     /// </remarks>
-    /// <returns>(const char *) Returns the name of the selected renderer, or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns the name of the selected renderer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetRendererName(nint renderer) {
         if (renderer == nint.Zero) {
@@ -558,7 +558,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns a valid property ID onsuccess or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetRendererProperties(nint renderer) {
         if (renderer == nint.Zero) {
@@ -623,7 +623,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the final presentation rectangle for rendering.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">a pointer filled in with the final presentation rectangle, discarded.</param>
+    /// <param name="rect">a pointer filled in with the final presentation rectangle, may be discarded.</param>
     /// <remarks>
     /// This function returns the calculated rectangle used for logical
     /// presentation, based on the presentation mode and output size. If logical
@@ -819,7 +819,7 @@ public static unsafe partial class Sdl {
     /// <summary>Get the drawing area for the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an SDL_Rect structure filled in with the current drawing area.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure filled in with the current drawing area.</param>
     /// <remarks>
     /// Each render target has its own viewport. This function gets the viewport
     /// for the current render target.
@@ -889,7 +889,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Window *) Returns the window on success or <see langword="null" /> onfailure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Window *) Returns the window on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetRenderWindow(nint renderer) {
         if (renderer == nint.Zero) {
@@ -1567,7 +1567,7 @@ public static unsafe partial class Sdl {
     /// <summary>Read pixels from the current rendering target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an SDL_Rect structure representing the area to read, which will be clipped to the current viewport, or <see langword="null" /> for the entire viewport.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the area to read, which will be clipped to the current viewport, or <see langword="null" /> for the entire viewport.</param>
     /// <remarks>
     /// The returned surface contains pixels inside the desired area clipped to the
     /// current viewport, and should be freed with
@@ -1575,7 +1575,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns a new SDL_Surface onsuccess or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    /// <returns>(SDL_Surface *) Returns a new SDL_Surface on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint RenderReadPixels(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
@@ -1764,7 +1764,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
-    /// <param name="srcrect">the SDL_Rect structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
+    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
     /// <param name="left_width">the width, in pixels, of the left corners in srcrect.</param>
     /// <param name="right_width">the width, in pixels, of the right corners in srcrect.</param>
     /// <param name="top_height">the height, in pixels, of the top corners in srcrect.</param>
@@ -1907,7 +1907,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the clip rectangle for rendering on the specified target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an SDL_Rect structure representing the clip area, relative to the viewport, or <see langword="null" /> to disable clipping.</param>
+    /// <param name="rect">an <see cref="Rect"/> structure representing the clip area, relative to the viewport, or <see langword="null" /> to disable clipping.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function sets the
     /// cliprect for the current render target.
@@ -1958,7 +1958,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">the SDL_BlendMode to use for blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode"/> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -1981,7 +1981,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">the SDL_BlendMode to use for blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode"/> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -2196,7 +2196,7 @@ public static unsafe partial class Sdl {
     /// <summary>Set the drawing area for rendering on the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">the SDL_Rect structure representing the drawing area, or <see langword="null" /> to set the viewport to the entire target.</param>
+    /// <param name="rect">the <see cref="Rect"/> structure representing the drawing area, or <see langword="null" /> to set the viewport to the entire target.</param>
     /// <remarks>
     /// Drawing will clip to this area (separately from any clipping done with
     /// SDL_SetRenderClipRect), and the top left of the

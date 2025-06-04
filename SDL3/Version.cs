@@ -2,8 +2,6 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
-using static SharpSDL3.Sdl;
-
 namespace SharpSDL3;
 
 public static partial class Sdl {
@@ -17,7 +15,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetVersion"/>
     /// </remarks>
-    /// <returns>(const char *) Returns an arbitrary string, uniquely identifying the exactrevision of the SDL library in use.</returns>
+    /// <returns>Returns an arbitrary string, uniquely identifying the exactrevision of the SDL library in use.</returns>
 
     public static string GetRevision() {
         return SDL_GetRevision();
