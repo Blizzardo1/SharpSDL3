@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Structs;
+=======
+﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -8,6 +12,7 @@ namespace SharpSDL3;
 public static unsafe partial class Sdl {
     // /usr/local/include/SDL3/SDL_atomic.h
 
+<<<<<<< HEAD
     /// <summary>Add to an atomic variable.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicInt variable to be modified.</param>
@@ -21,6 +26,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the previous value of the atomic variable.</returns>
 
+=======
+>>>>>>> main
     public static int AddAtomicInt(ref AtomicInt a, int v) {
         // Validate the input parameters
         if (a.Value != 0) {
@@ -30,6 +37,7 @@ public static unsafe partial class Sdl {
         return 0;
     }
 
+<<<<<<< HEAD
     /// <summary>Set an atomic variable to a new value if it is currently an old value.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicInt variable to be modified.</param>
@@ -45,6 +53,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the atomic variable was set, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool CompareAndSwapAtomicInt(ref AtomicInt a, int oldval, int newval) {
         // Validate the input parameters
         if (a.Value == oldval) {
@@ -54,6 +64,7 @@ public static unsafe partial class Sdl {
         return false;
     }
 
+<<<<<<< HEAD
     /// <summary>Set a pointer to a new value if it is currently an old value.</summary>
 
     /// <param name="a">a pointer to a pointer.</param>
@@ -70,6 +81,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the pointer was set, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool CompareAndSwapAtomicPointer(ref nint a, nint oldval, nint newval) {
         // Validate the input parameters
         if (a == oldval) {
@@ -79,6 +92,7 @@ public static unsafe partial class Sdl {
         return false;
     }
 
+<<<<<<< HEAD
     /// <summary>Set an atomic variable to a new value if it is currently an old value.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicU32 variable to be modified.</param>
@@ -94,6 +108,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the atomic variable was set, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool CompareAndSwapAtomicU32(ref AtomicU32 a, uint oldval, uint newval) {
         // Validate the input parameters
         if (a.Value == oldval) {
@@ -103,6 +119,7 @@ public static unsafe partial class Sdl {
         return false;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the value of an atomic variable.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicInt variable.</param>
@@ -115,6 +132,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current value of an atomic variable.</returns>
 
+=======
+>>>>>>> main
     public static int GetAtomicInt(ref AtomicInt a) {
         // Validate the input parameters
         if (a.Value != 0) {
@@ -124,6 +143,7 @@ public static unsafe partial class Sdl {
         return 0;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the value of a pointer atomically.</summary>
 
     /// <param name="a">a pointer to a pointer.</param>
@@ -137,6 +157,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(void *) Returns the current value of a pointer.</returns>
 
+=======
+>>>>>>> main
     public static nint GetAtomicPointer(ref nint a) {
         // Validate the input parameters
         if (a != nint.Zero) {
@@ -146,6 +168,7 @@ public static unsafe partial class Sdl {
         return nint.Zero;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the value of an atomic variable.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicU32 variable.</param>
@@ -158,6 +181,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current value of an atomic variable.</returns>
 
+=======
+>>>>>>> main
     public static uint GetAtomicU32(ref AtomicU32 a) {
         // Validate the input parameters
         if (a.Value != 0) {
@@ -167,6 +192,7 @@ public static unsafe partial class Sdl {
         return 0;
     }
 
+<<<<<<< HEAD
     /// <summary>Lock a spin lock by setting it to a non-zero value.</summary>
 
     /// <param name="lock">a pointer to a lock variable.</param>
@@ -179,12 +205,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UnlockSpinlock"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void LockSpinlock(nint @lock) {
         if (!SDL_TryLockSpinlock(@lock)) {
             SDL_LockSpinlock(@lock);
         }
     }
 
+<<<<<<< HEAD
     /// <summary>Insert a memory acquire barrier (macro version).</summary>
     /// <remarks>
     /// Please see SDL_MemoryBarrierRelease for the
@@ -195,10 +224,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MemoryBarrierAcquireFunction"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void MemoryBarrierAcquire() {
         SDL_MemoryBarrierAcquireFunction();
     }
 
+<<<<<<< HEAD
     /// <summary>Insert a memory release barrier (macro version).</summary>
     /// <remarks>
     /// Memory barriers are designed to prevent reads and writes from being
@@ -209,10 +241,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MemoryBarrierReleaseFunction"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void MemoryBarrierRelease() {
         SDL_MemoryBarrierReleaseFunction();
     }
 
+<<<<<<< HEAD
     /// <summary>Set an atomic variable to a value.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicInt variable to be modified.</param>
@@ -225,6 +260,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the previous value of the atomic variable.</returns>
 
+=======
+>>>>>>> main
     public static int SetAtomicInt(ref AtomicInt a, int v) {
         // Validate the input parameters
         if (a.Value != v) {
@@ -234,6 +271,7 @@ public static unsafe partial class Sdl {
         return a.Value;
     }
 
+<<<<<<< HEAD
     /// <summary>Set a pointer to a value atomically.</summary>
 
     /// <param name="a">a pointer to a pointer.</param>
@@ -248,6 +286,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(void *) Returns the previous value of the pointer.</returns>
 
+=======
+>>>>>>> main
     public static nint SetAtomicPointer(ref nint a, nint v) {
         // Validate the input parameters
         if (a != v) {
@@ -257,6 +297,7 @@ public static unsafe partial class Sdl {
         return a;
     }
 
+<<<<<<< HEAD
     /// <summary>Set an atomic variable to a value.</summary>
 
     /// <param name="a">a pointer to an SDL_AtomicU32 variable to be modified.</param>
@@ -269,6 +310,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the previous value of the atomic variable.</returns>
 
+=======
+>>>>>>> main
     public static uint SetAtomicU32(ref AtomicU32 a, uint v) {
         // Validate the input parameters
         if (a.Value != v) {
@@ -278,6 +321,7 @@ public static unsafe partial class Sdl {
         return a.Value;
     }
 
+<<<<<<< HEAD
     /// <summary>Unlock a spin lock by setting it to 0.</summary>
 
     /// <param name="lock">a pointer to a lock variable.</param>
@@ -289,6 +333,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="TryLockSpinlock"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void UnlockSpinlock(nint @lock) {
         if (@lock == nint.Zero) {
             throw new ArgumentException("Lock pointer cannot be null.", nameof(@lock));

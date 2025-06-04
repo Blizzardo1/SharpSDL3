@@ -1,13 +1,23 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+=======
+﻿using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+using SharpSDL3.Structs;
+>>>>>>> main
 using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Get the current assertion handler.</summary>
 
     /// <param name="puserdata">pointer which is filled with the &quot;userdata&quot; pointer that was passed to SDL_SetAssertionHandler().</param>
@@ -23,11 +33,14 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_AssertionHandler that is called when an asserttriggers.</returns>
 
+=======
+>>>>>>> main
     public static SdlAssertionHandler GetAssertionHandler(out nint puserdata) {
         var handler = SDL_GetAssertionHandler(out puserdata);
         return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
     }
 
+<<<<<<< HEAD
     /// <summary>Get a list of all assertion failures.</summary>
     /// <remarks>
     /// This function gets all assertions triggered since the last call to
@@ -38,6 +51,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ResetAssertionReport"/>
     /// </remarks>
     /// <returns>(const SDL_AssertData *) Returns a list of all failedassertions or <see langword="null" /> if the list is empty. This memory should not be modifiedor freed by the application. This pointer remains valid until the next callto <see cref="Quit"/> or <see cref="ResetAssertionReport"/>.</returns>
+=======
+>>>>>>> main
     public static nint GetAssertionReport() {
         var report = SDL_GetAssertionReport();
         if (report == nint.Zero) {
@@ -46,6 +61,7 @@ public static unsafe partial class Sdl {
         return report;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the default assertion handler.</summary>
     /// <remarks>
     /// This returns the function pointer that is called by default when an
@@ -59,11 +75,14 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the defaultSDL_AssertionHandler that is called when an asserttriggers.</returns>
 
+=======
+>>>>>>> main
     public static SdlAssertionHandler GetDefaultAssertionHandler() {
         var handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
         return handler;
     }
 
+<<<<<<< HEAD
     /// <summary>Never call this directly.</summary>
 
     /// <param name="data">assert data structure.</param>
@@ -77,6 +96,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns assert state.</returns>
 
+=======
+>>>>>>> main
     public static AssertState ReportAssertion(ref AssertData data, string func, string file, int line) {
         // Add validation or logging to make the wrapper less trivial
         if (data.TriggerCount == 0) {
@@ -112,6 +133,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Clear the list of all assertion failures.</summary>
     /// <remarks>
     /// This function will clear the list of all assertions triggered up to that
@@ -124,10 +146,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetAssertionReport"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ResetAssertionReport() {
         SDL_ResetAssertionReport();
     }
 
+<<<<<<< HEAD
     /// <summary>Set an application-defined assertion handler.</summary>
 
     /// <param name="handler">the SDL_AssertionHandler function to call when an assertion fails or <see langword="null" /> for the default handler.</param>
@@ -142,6 +167,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetAssertionHandler"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetAssertionHandler(SdlAssertionHandler handler, nint userdata) {
         if (handler == null) {
             throw new ArgumentNullException(nameof(handler), "Assertion handler cannot be null.");

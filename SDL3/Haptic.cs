@@ -1,13 +1,24 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
+=======
+﻿using SharpSDL3.Structs;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.InteropServices;
+
+using System;
+using SharpSDL3.Enums;
+>>>>>>> main
 
 namespace SharpSDL3;
 
 public static partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Close a haptic device previously opened with SDL_OpenHaptic().</summary>
 
     /// <param name="haptic">the SDL_Haptic device to close.</param>
@@ -15,6 +26,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="OpenHaptic"/>
     /// </remarks>
+=======
+>>>>>>> main
 
     public static void CloseHaptic(nint haptic) {
         if (haptic == nint.Zero) {
@@ -23,6 +36,7 @@ public static partial class Sdl {
         SDL_CloseHaptic(haptic);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a new haptic effect on a specified device.</summary>
 
     /// <param name="haptic">an SDL_Haptic device to create the effect on.</param>
@@ -35,6 +49,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the ID of the effect on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int CreateHapticEffect(nint haptic, ref HapticEffect effect) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -46,6 +62,7 @@ public static partial class Sdl {
         return effectId;
     }
 
+<<<<<<< HEAD
     /// <summary>Destroy a haptic effect on the device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to destroy the effect on.</param>
@@ -57,6 +74,8 @@ public static partial class Sdl {
     /// <seealso cref="CreateHapticEffect"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DestroyHapticEffect(nint haptic, int effect) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -64,6 +83,7 @@ public static partial class Sdl {
         SDL_DestroyHapticEffect(haptic, effect);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the status of the current effect on the specified haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query for the effect status on.</param>
@@ -75,6 +95,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if it is playing, <see langword="false" /> if it isn't playing or hapticstatus isn't supported.</returns>
 
+=======
+>>>>>>> main
     public static bool GetHapticEffectStatus(nint haptic, int effect) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -86,6 +108,7 @@ public static partial class Sdl {
         return status;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the haptic device's supported features in bitwise manner.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
@@ -96,6 +119,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a list of supported haptic features in bitwisemanner (OR'd), or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetHapticFeatures(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -107,6 +132,7 @@ public static partial class Sdl {
         return features;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_Haptic associated with an instance ID, if it has been opened.</summary>
 
     /// <param name="instance_id">the instance ID to get the SDL_Haptic for.</param>
@@ -115,6 +141,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns an SDL_Haptic on successor <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetHapticFromId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -126,6 +154,7 @@ public static partial class Sdl {
         return haptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the instance ID of an opened haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
@@ -134,6 +163,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the instance ID of the specifiedhaptic device on success or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetHapticId(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -145,6 +176,7 @@ public static partial class Sdl {
         return id;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent name of a haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic obtained from SDL_OpenJoystick().</param>
@@ -154,6 +186,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetHapticName(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -165,6 +199,7 @@ public static partial class Sdl {
         return name;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent name of a haptic device.</summary>
 
     /// <param name="instance_id">the haptic device instance ID.</param>
@@ -176,6 +211,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetHapticNameforId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -188,6 +225,7 @@ public static partial class Sdl {
         return name;
     }
 
+<<<<<<< HEAD
     /// <summary>Get a list of currently connected haptic devices.</summary>
 
     /// <param name="count">a pointer filled in with the number of haptic devices returned, may be discarded.</param>
@@ -197,6 +235,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_HapticID *) Returns a 0 terminated array of hapticdevice instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" />for more information. This should be freed with <see cref="Free"/> whenit is no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static Span<nint> GetHaptics() {
         nint result = SDL_GetHaptics(out int count);
         if (result == nint.Zero) {
@@ -214,6 +254,7 @@ public static partial class Sdl {
         return new Span<nint>(ptrs);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of effects a haptic device can store.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
@@ -228,6 +269,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of effects the haptic device can store or anegative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetMaxHapticEffects(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -239,6 +282,7 @@ public static partial class Sdl {
         return maxEffects;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of effects a haptic device can play at the same time.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query maximum playing effects.</param>
@@ -250,6 +294,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of effects the haptic device can play at the sametime or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetMaxHapticEffectsPlaying(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -261,6 +307,7 @@ public static partial class Sdl {
         return maxEffectsPlaying;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of haptic axes the device has.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
@@ -271,6 +318,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of axes on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumHapticAxes(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -282,6 +331,7 @@ public static partial class Sdl {
         return numAxes;
     }
 
+<<<<<<< HEAD
     /// <summary>Initialize a haptic device for simple rumble playback.</summary>
 
     /// <param name="haptic">the haptic device to initialize for simple rumble playback.</param>
@@ -293,6 +343,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool InitHapticRumble(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -327,6 +379,7 @@ public static partial class Sdl {
         return isSupported;
     }
 
+<<<<<<< HEAD
     /// <summary>Query if a joystick has haptic features.</summary>
 
     /// <param name="joystick">the SDL_Joystick to test for haptic capabilities.</param>
@@ -336,6 +389,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick is haptic or <see langword="false" /> if it isn't.</returns>
 
+=======
+>>>>>>> main
     public static bool IsJoystickHaptic(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick handle cannot be null.", nameof(joystick));
@@ -347,6 +402,7 @@ public static partial class Sdl {
         return isHaptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether or not the current mouse has haptic capabilities.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -354,6 +410,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the mouse is haptic or <see langword="false" /> if it isn't.</returns>
 
+=======
+>>>>>>> main
     public static bool IsMouseHaptic() {
         bool isHaptic = SDL_IsMouseHaptic();
         if (!isHaptic) {
@@ -362,6 +420,7 @@ public static partial class Sdl {
         return isHaptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Open a haptic device for use.</summary>
 
     /// <param name="instance_id">the haptic device instance ID.</param>
@@ -378,6 +437,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns the device identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenHaptic(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -389,6 +450,7 @@ public static partial class Sdl {
         return haptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Open a haptic device for use from a joystick device.</summary>
 
     /// <param name="joystick">the SDL_Joystick to create a haptic device from.</param>
@@ -401,6 +463,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns a valid haptic device identifier on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenHapticFromJoystick(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick handle cannot be null.", nameof(joystick));
@@ -412,6 +476,7 @@ public static partial class Sdl {
         return haptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Try to open a haptic device from the current mouse.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -420,6 +485,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns the haptic device identifier or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenHapticFromMouse() {
         nint haptic = SDL_OpenHapticFromMouse();
         if (haptic == nint.Zero) {
@@ -428,6 +495,7 @@ public static partial class Sdl {
         return haptic;
     }
 
+<<<<<<< HEAD
     /// <summary>Pause a haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to pause.</param>
@@ -439,6 +507,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool PauseHaptic(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -450,6 +520,7 @@ public static partial class Sdl {
         return paused;
     }
 
+<<<<<<< HEAD
     /// <summary>Run a simple rumble effect on a haptic device.</summary>
 
     /// <param name="haptic">the haptic device to play the rumble effect on.</param>
@@ -462,6 +533,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool PlayHapticRumble(nint haptic, float strength, uint length) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -476,6 +549,7 @@ public static partial class Sdl {
         return played;
     }
 
+<<<<<<< HEAD
     /// <summary>Resume a haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to unpause.</param>
@@ -486,6 +560,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool ResumeHaptic(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -497,6 +573,7 @@ public static partial class Sdl {
         return resumed;
     }
 
+<<<<<<< HEAD
     /// <summary>Run the haptic effect on its associated haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to run the effect on.</param>
@@ -515,6 +592,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool RunHapticEffect(nint haptic, int effect, uint iterations) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -526,6 +605,7 @@ public static partial class Sdl {
         return ran;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the global autocenter of the device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to set autocentering on.</param>
@@ -538,6 +618,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetHapticAutocenter(nint haptic, int autocenter) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -549,6 +631,7 @@ public static partial class Sdl {
         return set;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the global gain of the specified haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to set the gain on.</param>
@@ -560,6 +643,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetHapticGain(nint haptic, int gain) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -571,6 +656,7 @@ public static partial class Sdl {
         return set;
     }
 
+<<<<<<< HEAD
     /// <summary>Stop the haptic effect on its associated haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to stop the effect on.</param>
@@ -582,6 +668,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool StopHapticEffect(nint haptic, int effect) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -593,6 +681,7 @@ public static partial class Sdl {
         return stopped;
     }
 
+<<<<<<< HEAD
     /// <summary>Stop all the currently playing effects on a haptic device.</summary>
 
     /// <param name="haptic">the SDL_Haptic device to stop.</param>
@@ -603,6 +692,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool StopHapticEffects(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -614,6 +705,7 @@ public static partial class Sdl {
         return stopped;
     }
 
+<<<<<<< HEAD
     /// <summary>Stop the simple rumble on a haptic device.</summary>
 
     /// <param name="haptic">the haptic device to stop the rumble effect on.</param>
@@ -623,6 +715,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool StopHapticRumble(nint haptic) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
@@ -634,6 +728,7 @@ public static partial class Sdl {
         return stopped;
     }
 
+<<<<<<< HEAD
     /// <summary>Update the properties of an effect.</summary>
 
     /// <param name="haptic">the SDL_Haptic device that has the effect.</param>
@@ -650,6 +745,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool UpdateHapticEffect(nint haptic, int effect, ref HapticEffect data) {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));

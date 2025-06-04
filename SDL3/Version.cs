@@ -1,12 +1,22 @@
+<<<<<<< HEAD
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
 
+=======
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.InteropServices;
+
+using static SharpSDL3.Sdl;
+
+>>>>>>> main
 namespace SharpSDL3;
 
 public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_version.h
 
+<<<<<<< HEAD
     /// <summary>Get the code revision of the SDL library that is linked against your program.</summary>
     /// <remarks>
     /// This value is the revision of the code you are linking against and may be
@@ -17,10 +27,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns an arbitrary string, uniquely identifying the exactrevision of the SDL library in use.</returns>
 
+=======
+>>>>>>> main
     public static string GetRevision() {
         return SDL_GetRevision();
     }
 
+<<<<<<< HEAD
     /// <summary>Get the version of SDL that is linked against your program.</summary>
     /// <remarks>
     /// If you are linking to SDL dynamically, then it is possible that the current
@@ -32,6 +45,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the version of the linked library.</returns>
 
+=======
+>>>>>>> main
     public static int GetVersion() {
         return SDL_GetVersion();
     }

@@ -6,4 +6,8 @@ namespace SharpSDL3.TTF;
 public struct GlyphKerningSmart {
     public int RsbDelta;
     public int LsbDelta;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

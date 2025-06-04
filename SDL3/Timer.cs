@@ -1,8 +1,13 @@
+<<<<<<< HEAD
 using SharpSDL3.Structs;
+=======
+﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
+<<<<<<< HEAD
 
 namespace SharpSDL3;
 
@@ -26,6 +31,14 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+using static SharpSDL3.Sdl;
+
+namespace SharpSDL3; 
+public static partial class Sdl {
+    // /usr/local/include/SDL3/SDL_timer.h
+
+>>>>>>> main
     public static uint AddTimer(uint interval, SdlTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
@@ -44,6 +57,7 @@ public static partial class Sdl {
         return timerId;
     }
 
+<<<<<<< HEAD
     /// <summary>Call a callback function at a future time.</summary>
 
     /// <param name="interval">the timer delay, in nanoseconds, passed to callback.</param>
@@ -61,6 +75,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint AddTimerNS(ulong interval, SdlNsTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
@@ -79,6 +95,7 @@ public static partial class Sdl {
         return timerId;
     }
 
+<<<<<<< HEAD
     /// <summary>Wait a specified number of milliseconds before returning.</summary>
 
     /// <param name="ms">the number of milliseconds to delay.</param>
@@ -92,6 +109,8 @@ public static partial class Sdl {
     /// <seealso cref="DelayPrecise"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void Delay(uint ms) {
         if (ms == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ms));
@@ -102,6 +121,7 @@ public static partial class Sdl {
         ulong end = GetTicks();
 
         if (end - start < ms) {
+<<<<<<< HEAD
             throw new InvalidOperationException("Delay did not delay for the expected duration.");
         }
     }
@@ -119,6 +139,12 @@ public static partial class Sdl {
     /// <seealso cref="DelayPrecise"/>
     /// </remarks>
 
+=======
+            throw new InvalidOperationException("SDL_Delay did not delay for the expected duration.");
+        }
+    }
+
+>>>>>>> main
     public static void DelayNS(ulong ns) {
         if (ns == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
@@ -129,6 +155,7 @@ public static partial class Sdl {
         ulong end = GetTicksNS();
 
         if (end - start < ns) {
+<<<<<<< HEAD
             throw new InvalidOperationException("DelayNS did not delay for the expected duration.");
         }
     }
@@ -146,6 +173,12 @@ public static partial class Sdl {
     /// <seealso cref="DelayNS"/>
     /// </remarks>
 
+=======
+            throw new InvalidOperationException("SDL_DelayNS did not delay for the expected duration.");
+        }
+    }
+
+>>>>>>> main
     public static void DelayPrecise(ulong ns) {
         if (ns == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
@@ -156,6 +189,7 @@ public static partial class Sdl {
         ulong end = GetTicksNS();
 
         if (end - start < ns) {
+<<<<<<< HEAD
             throw new InvalidOperationException("DelayPrecise did not delay for the expected duration.");
         }
     }
@@ -169,10 +203,17 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current counter value.</returns>
 
+=======
+            throw new InvalidOperationException("SDL_DelayPrecise did not delay for the expected duration.");
+        }
+    }
+
+>>>>>>> main
     public static ulong GetPerformanceCounter() {
         return SDL_GetPerformanceCounter();
     }
 
+<<<<<<< HEAD
     /// <summary>Get the count per second of the high resolution counter.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -181,10 +222,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a platform-specific count per second.</returns>
 
+=======
+>>>>>>> main
     public static ulong GetPerformanceFrequency() {
         return SDL_GetPerformanceFrequency();
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of milliseconds that have elapsed since the SDL library initialization.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -192,10 +236,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns an unsigned 64‑bit integer that represents thenumber of milliseconds that have elapsed since the SDL library wasinitialized (typically via a call to SDL_Init).</returns>
 
+=======
+>>>>>>> main
     public static ulong GetTicks() {
         return SDL_GetTicks();
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of nanoseconds since SDL library initialization.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -203,10 +250,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns an unsigned 64-bit value representing the numberof nanoseconds since the SDL library initialized.</returns>
 
+=======
+>>>>>>> main
     public static ulong GetTicksNS() {
         return SDL_GetTicksNS();
     }
 
+<<<<<<< HEAD
     /// <summary>Remove a timer created with SDL_AddTimer().</summary>
 
     /// <param name="id">the ID of the timer to remove.</param>
@@ -217,6 +267,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool RemoveTimer(uint id) {
         if (id == 0) {
             throw new ArgumentException("Timer ID must be greater than zero.", nameof(id));
@@ -266,8 +318,15 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetTicksNS();
+<<<<<<< HEAD
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RemoveTimer(uint id);
 }
+=======
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_RemoveTimer(uint id);
+}
+>>>>>>> main

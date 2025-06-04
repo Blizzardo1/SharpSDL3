@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -8,6 +12,7 @@ using static SharpSDL3.Delegates;
 namespace SharpSDL3;
 
 public static partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Closes and frees a storage container.</summary>
 
     /// <param name="storage">a storage container to close.</param>
@@ -19,6 +24,8 @@ public static partial class Sdl {
     /// <seealso cref="OpenUserStorage"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the container was freed with no errors, <see langword="false" />otherwise; call <see cref="GetError()" /> for more information. Evenif the function returns an error, the container data will be freed; theerror is only for informational purposes.</returns>
+=======
+>>>>>>> main
 
     public static void CloseStorage(nint storage) {
         if (storage == nint.Zero) {
@@ -30,6 +37,7 @@ public static partial class Sdl {
         }
     }
 
+<<<<<<< HEAD
     /// <summary>Copy a file in a writable storage container.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -41,6 +49,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool CopyStorageFile(nint storage, string oldpath, string newpath) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -54,6 +64,7 @@ public static partial class Sdl {
         return SDL_CopyStorageFile(storage, oldpath, newpath);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a directory in a writable storage container.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -64,6 +75,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool CreateStorageDirectory(nint storage, string path) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -74,6 +87,7 @@ public static partial class Sdl {
         return SDL_CreateStorageDirectory(storage, path);
     }
 
+<<<<<<< HEAD
     /// <summary>Enumerate a directory in a storage container through a callback function.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -91,6 +105,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool EnumerateStorageDirectory(nint storage, string path, SdlEnumerateDirectoryCallback callback, nint userdata = default) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -104,6 +120,7 @@ public static partial class Sdl {
         return SDL_EnumerateStorageDirectory(storage, path, callback, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Query the size of a file within a storage container.</summary>
 
     /// <param name="storage">a storage container to query.</param>
@@ -116,6 +133,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the file could be queried or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static ulong GetStorageFileSize(nint storage, string path) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -130,6 +149,7 @@ public static partial class Sdl {
         return length;
     }
 
+<<<<<<< HEAD
     /// <summary>Get information about a filesystem path in a storage container.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -141,6 +161,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if the file doesn't exist, oranother failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static PathInfo GetStoragePathInfo(nint storage, string path) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -155,6 +177,7 @@ public static partial class Sdl {
         return info;
     }
 
+<<<<<<< HEAD
     /// <summary>Queries the remaining space in a storage container.</summary>
 
     /// <param name="storage">a storage container to query.</param>
@@ -165,6 +188,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the amount of remaining space, in bytes.</returns>
 
+=======
+>>>>>>> main
     public static ulong GetStorageSpaceRemaining(nint storage) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -172,6 +197,7 @@ public static partial class Sdl {
         return SDL_GetStorageSpaceRemaining(storage);
     }
 
+<<<<<<< HEAD
     /// <summary>Enumerate a directory tree, filtered by pattern, and return a list.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -191,6 +217,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(char **) Returns an array of strings on success or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. The caller should passthe returned pointer to SDL_free when done with it. This is asingle allocation that should be freed with <see cref="Free"/> when itis no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static nint GlobStorageDirectory(nint storage, string path, string pattern, GlobFlags flags, out int count) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -215,6 +243,7 @@ public static partial class Sdl {
         return SDL_StorageReady(storage);
     }
 
+<<<<<<< HEAD
     /// <summary>Opens up a container for local filesystem storage.</summary>
 
     /// <param name="path">the base path prepended to all storage paths, or <see langword="null" /> for no base path.</param>
@@ -233,6 +262,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Storage *) Returns a filesystem storage container on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenFileStorage(string path) {
         if (string.IsNullOrEmpty(path)) {
             throw new ArgumentException("Path must not be null or empty.", nameof(path));
@@ -240,6 +271,7 @@ public static partial class Sdl {
         return SDL_OpenFileStorage(path);
     }
 
+<<<<<<< HEAD
     /// <summary>Opens up a container using a client-provided storage interface.</summary>
 
     /// <param name="iface">the interface that implements this storage, initialized using SDL_INIT_INTERFACE().</param>
@@ -261,6 +293,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Storage *) Returns a storage container on success or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenStorage(ref StorageInterface iface, nint userdata = default) {
         if (iface.Version < 1) {
             throw new ArgumentException("Storage interface version must be at least 1.", nameof(iface));
@@ -268,6 +302,7 @@ public static partial class Sdl {
         return SDL_OpenStorage(ref iface, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Opens up a read-only container for the application's filesystem.</summary>
 
     /// <param name="override">a path to override the backend's default title root.</param>
@@ -285,6 +320,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Storage *) Returns a title storage container on successor <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenTitleStorage(string? @override = null, uint props = 0) {
         if (@override is not null && @override.Length > 0) {
             return SDL_OpenTitleStorage(@override, props);
@@ -292,6 +329,7 @@ public static partial class Sdl {
         return SDL_OpenTitleStorage(null, props);
     }
 
+<<<<<<< HEAD
     /// <summary>Opens up a container for a user's unique read/write filesystem.</summary>
 
     /// <param name="org">the name of your organization.</param>
@@ -313,6 +351,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Storage *) Returns a user storage container on successor <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenUserStorage(string org, string app, uint props = 0) {
         if (org.Length == 0 || app.Length == 0) {
             throw new ArgumentException("Organization and application names must not be empty.");
@@ -320,6 +360,7 @@ public static partial class Sdl {
         return SDL_OpenUserStorage(org, app, props);
     }
 
+<<<<<<< HEAD
     /// <summary>Synchronously read a file from a storage container into a client-provided buffer.</summary>
 
     /// <param name="storage">a storage container to read from.</param>
@@ -337,6 +378,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the file was read or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool ReadStorageFile(nint storage, string path, nint destination, ulong length) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -347,6 +390,7 @@ public static partial class Sdl {
         return SDL_ReadStorageFile(storage, path, destination, length);
     }
 
+<<<<<<< HEAD
     /// <summary>Remove a file or an empty directory in a writable storage container.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -357,6 +401,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool RemoveStoragePath(nint storage, string path) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -367,6 +413,7 @@ public static partial class Sdl {
         return SDL_RemoveStoragePath(storage, path);
     }
 
+<<<<<<< HEAD
     /// <summary>Rename a file or directory in a writable storage container.</summary>
 
     /// <param name="storage">a storage container.</param>
@@ -378,6 +425,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool RenameStoragePath(nint storage, string oldpath, string newpath) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
@@ -391,6 +440,7 @@ public static partial class Sdl {
         return SDL_RenameStoragePath(storage, oldpath, newpath);
     }
 
+<<<<<<< HEAD
     /// <summary>Synchronously write a file from client memory into a storage container.</summary>
 
     /// <param name="storage">a storage container to write to.</param>
@@ -405,6 +455,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the file was written or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WriteStorageFile(nint storage, string path, nint source, ulong length) {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));

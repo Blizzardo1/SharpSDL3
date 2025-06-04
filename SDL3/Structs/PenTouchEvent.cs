@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
@@ -15,4 +16,25 @@ public struct PenTouchEvent {
     public float Y;
     public SdlBool Eraser;
     public SdlBool Down;
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+namespace SharpSDL3.Structs;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct PenTouchEvent
+{
+	public EventType Type;
+	public uint Reserved;
+	public ulong Timestamp;
+	public uint WindowId;
+	public uint Which;
+	public PenInputFlags PenState;
+	public float X;
+	public float Y;
+	public SdlBool Eraser;
+	public SdlBool Down;
+>>>>>>> main
 }

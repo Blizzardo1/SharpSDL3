@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
@@ -14,4 +15,24 @@ public struct GpuTextureCreateInfo {
     public uint NumLevels;
     public GpuSampleCount SampleCount;
     public uint Props;
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+namespace SharpSDL3.Structs;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct GpuTextureCreateInfo
+{
+	public GpuTextureType Type;
+	public GpuTextureFormat Format;
+	public GpuTextureUsageFlags Usage;
+	public uint Width;
+	public uint Height;
+	public uint LayerCountOrDepth;
+	public uint NumLevels;
+	public GpuSampleCount SampleCount;
+	public uint Props;
+>>>>>>> main
 }

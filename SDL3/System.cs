@@ -1,9 +1,14 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+<<<<<<< HEAD
 namespace SharpSDL3;
 
 public static partial class Sdl {
@@ -32,10 +37,21 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+namespace SharpSDL3; 
+public static partial class Sdl {
+    // /usr/local/include/SDL3/SDL_system.h
+
+    public static bool DateTimeToTime(ref SharpSDL3.Structs.DateTime dt, nint ticks) {
+        return SDL_DateTimeToTime(ref dt, ticks);
+    }
+
+>>>>>>> main
     public static bool GetCurrentTime(nint ticks) {
         return SDL_GetCurrentTime(ticks);
     }
 
+<<<<<<< HEAD
     /// <summary>Gets the current preferred date and time format for the system locale.</summary>
 
     /// <param name="dateFormat">a pointer to the SDL_DateFormat to hold the returned date format, may be discarded.</param>
@@ -49,10 +65,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool GetDateTimeLocalePreferences(out DateFormat dateFormat, out TimeFormat timeFormat) {
         return SDL_GetDateTimeLocalePreferences(out dateFormat, out timeFormat);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the day of week for a calendar date.</summary>
 
     /// <param name="year">the year component of the date.</param>
@@ -63,16 +82,23 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a value between 0 and 6 (0 being Sunday) if the date is validor -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetDayOfWeek(int year, int month, int day) {
         if (month < 1 || month > 12) {
             throw new ArgumentOutOfRangeException(nameof(month), "Month must be between 1 and 12.");
         }
         if (day < 1 || day > GetDaysInMonth(year, month)) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
             throw new ArgumentOutOfRangeException(nameof(day), $"Day must be valid for the month of {GetMonth(month)}");
         }
         return SDL_GetDayOfWeek(year, month, day);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the day of year for a calendar date.</summary>
 
     /// <param name="year">the year component of the date.</param>
@@ -83,6 +109,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the day of year [0-365] if the date is valid or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetDayOfYear(int year, int month, int day) {
         if (month < 1 || month > 12) {
             throw new ArgumentOutOfRangeException(nameof(month), "Month must be between 1 and 12.");
@@ -93,6 +121,7 @@ public static partial class Sdl {
         return SDL_GetDayOfYear(year, month, day);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of days in a month for a given year.</summary>
 
     /// <param name="year">the year.</param>
@@ -102,6 +131,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of days in the requested month or -1 on failure;call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetDaysInMonth(int year, int month) {
         if (month < 1 || month > 12) {
             throw new ArgumentOutOfRangeException(nameof(month), "Month must be between 1 and 12.");
@@ -132,16 +163,20 @@ public static partial class Sdl {
         return shortCode ? selectedMonth[..3] : selectedMonth;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the application sandbox environment, if any.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the application sandbox environment orSDL_SANDBOX_NONE if the application is not running in asandbox environment.</returns>
 
+=======
+>>>>>>> main
     public static Sandbox GetSandbox() {
         return SDL_GetSandbox();
     }
 
+<<<<<<< HEAD
     /// <summary>Query if the current device is a tablet.</summary>
     /// <remarks>
     /// If SDL can't determine this, it will return false.
@@ -149,10 +184,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the device is a tablet, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool IsTablet() {
         return SDL_IsTablet();
     }
 
+<<<<<<< HEAD
     /// <summary>Query if the current device is a TV.</summary>
     /// <remarks>
     /// If SDL can't determine this, it will return false.
@@ -160,10 +198,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the device is a TV, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool IsTV() {
         return SDL_IsTV();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationDidEnterBackground.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -177,10 +218,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationDidEnterBackground() {
         SDL_OnApplicationDidEnterBackground();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationDidBecomeActive.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -194,10 +238,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationDidEnterForeground() {
         SDL_OnApplicationDidEnterForeground();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationDidReceiveMemoryWarning.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -211,10 +258,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationDidReceiveMemoryWarning() {
         SDL_OnApplicationDidReceiveMemoryWarning();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationWillResignActive.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -228,10 +278,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationWillEnterBackground() {
         SDL_OnApplicationWillEnterBackground();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationWillEnterForeground.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -245,10 +298,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationWillEnterForeground() {
         SDL_OnApplicationWillEnterForeground();
     }
 
+<<<<<<< HEAD
     /// <summary>Let iOS apps with external event handling report onApplicationWillTerminate.</summary>
     /// <remarks>
     /// This functions allows iOS apps that have their own event handling to hook
@@ -262,10 +318,13 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void OnApplicationWillTerminate() {
         SDL_OnApplicationWillTerminate();
     }
 
+<<<<<<< HEAD
     /// <summary>Converts a Windows FILETIME (100-nanosecond intervals since January 1, 1601) to an SDL time.</summary>
 
     /// <param name="dwLowDateTime">the low portion of the Windows FILETIME value.</param>
@@ -277,10 +336,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the converted SDL time.</returns>
 
+=======
+>>>>>>> main
     public static long TimeFromWindows(uint dwLowDateTime, uint dwHighDateTime) {
         return SDL_TimeFromWindows(dwLowDateTime, dwHighDateTime);
     }
 
+<<<<<<< HEAD
     /// <summary>Converts an SDL_Time in nanoseconds since the epoch to a calendar time in the SDL_DateTime format.</summary>
 
     /// <param name="ticks">the SDL_Time to be converted.</param>
@@ -292,10 +354,14 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
     public static bool TimeToDateTime(long ticks, out Structs.DateTime dt, bool localTime = true) {
+=======
+    public static bool TimeToDateTime(long ticks, out SharpSDL3.Structs.DateTime dt, bool localTime = true) {
+>>>>>>> main
         SdlBool localTimeBool = localTime;
         return SDL_TimeToDateTime(ticks, out dt, localTimeBool);
     }
 
+<<<<<<< HEAD
     /// <summary>Converts an SDL time into a Windows FILETIME (100-nanosecond intervals since January 1, 1601).</summary>
 
     /// <param name="ticks">the time to convert.</param>
@@ -306,13 +372,19 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void TimeToWindows(long ticks, out uint dwLowDateTime, out uint dwHighDateTime) {
         SDL_TimeToWindows(ticks, out dwLowDateTime, out dwHighDateTime);
     }
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+<<<<<<< HEAD
     private static partial SdlBool SDL_DateTimeToTime(ref Structs.DateTime dt, nint ticks);
+=======
+    private static partial SdlBool SDL_DateTimeToTime(ref SharpSDL3.Structs.DateTime dt, nint ticks);
+>>>>>>> main
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -342,11 +414,17 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_IsTablet();
+<<<<<<< HEAD
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_IsTV();
 
+=======
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_IsTV();
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_OnApplicationDidEnterBackground();
@@ -370,16 +448,27 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_OnApplicationWillTerminate();
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial long SDL_TimeFromWindows(uint dwLowDateTime, uint dwHighDateTime);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+<<<<<<< HEAD
     private static partial SdlBool SDL_TimeToDateTime(long ticks, out Structs.DateTime dt, SdlBool localTime);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_TimeToWindows(long ticks, out uint dwLowDateTime, out uint dwHighDateTime);
 }
+=======
+    private static partial SdlBool SDL_TimeToDateTime(long ticks, out SharpSDL3.Structs.DateTime dt, SdlBool localTime);
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void SDL_TimeToWindows(long ticks, out uint dwLowDateTime, out uint dwHighDateTime);
+}
+>>>>>>> main

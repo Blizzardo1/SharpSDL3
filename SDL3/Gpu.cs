@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -8,6 +12,7 @@ using System.Runtime.InteropServices.Marshalling;
 namespace SharpSDL3;
 
 public static partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Acquire a command buffer.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -21,6 +26,8 @@ public static partial class Sdl {
     /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
     /// </remarks>
     /// <returns>(SDL_GPUCommandBuffer *) Returns a command buffer,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+=======
+>>>>>>> main
 
     public static nint AcquireGPUCommandBuffer(nint device) {
         if (device == nint.Zero) {
@@ -29,6 +36,7 @@ public static partial class Sdl {
         return SDL_AcquireGPUCommandBuffer(device);
     }
 
+<<<<<<< HEAD
     /// <summary>Acquire a texture to use in presentation.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -56,6 +64,10 @@ public static partial class Sdl {
 
     public static bool AcquireGPUSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
+=======
+    public static bool AcquireGPUSwapchainTexture(nint commandBuffer, nint window,
+        out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
+>>>>>>> main
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -65,6 +77,7 @@ public static partial class Sdl {
         return SDL_AcquireGPUSwapchainTexture(commandBuffer, window, out swapchainTexture, out swapchainTextureWidth, out swapchainTextureHeight);
     }
 
+<<<<<<< HEAD
     /// <summary>Begins a compute pass on a command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -89,6 +102,11 @@ public static partial class Sdl {
     public static nint BeginGPUComputePass(nint commandBuffer,
             Span<GpuStorageTextureReadWriteBinding> storageTextureBindings, uint numStorageTextureBindings,
             Span<GpuStorageBufferReadWriteBinding> storageBufferBindings, uint numStorageBufferBindings) {
+=======
+    public static nint BeginGPUComputePass(nint commandBuffer,
+        Span<GpuStorageTextureReadWriteBinding> storageTextureBindings, uint numStorageTextureBindings,
+        Span<GpuStorageBufferReadWriteBinding> storageBufferBindings, uint numStorageBufferBindings) {
+>>>>>>> main
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -96,6 +114,7 @@ public static partial class Sdl {
             storageBufferBindings, numStorageBufferBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Begins a copy pass on a command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -107,6 +126,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUCopyPass *) Returns a copy pass handle.</returns>
 
+=======
+>>>>>>> main
     public static nint BeginGPUCopyPass(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -114,6 +135,7 @@ public static partial class Sdl {
         return SDL_BeginGPUCopyPass(commandBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Begins a render pass on a command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -135,12 +157,17 @@ public static partial class Sdl {
 
     public static nint BeginGPURenderPass(nint commandBuffer, Span<GpuColorTargetInfo> colorTargetInfos,
             uint numColorTargets, in GpuDepthStencilTargetInfo depthStencilTargetInfo) {
+=======
+    public static nint BeginGPURenderPass(nint commandBuffer, Span<GpuColorTargetInfo> colorTargetInfos,
+        uint numColorTargets, in GpuDepthStencilTargetInfo depthStencilTargetInfo) {
+>>>>>>> main
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
         return SDL_BeginGPURenderPass(commandBuffer, colorTargetInfos, numColorTargets, depthStencilTargetInfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds a compute pipeline on a command buffer for use in compute dispatch.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -149,6 +176,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void BindGPUComputePipeline(nint computePass, nint computePipeline) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -156,6 +185,7 @@ public static partial class Sdl {
         SDL_BindGPUComputePipeline(computePass, computePipeline);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds texture-sampler pairs for use on the compute shader.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -171,12 +201,17 @@ public static partial class Sdl {
 
     public static void BindGPUComputeSamplers(nint computePass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+=======
+    public static void BindGPUComputeSamplers(nint computePass, uint firstSlot,
+        Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+>>>>>>> main
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
         SDL_BindGPUComputeSamplers(computePass, firstSlot, textureSamplerBindings, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage buffers as readonly for use on the compute pipeline.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -192,12 +227,17 @@ public static partial class Sdl {
 
     public static void BindGPUComputeStorageBuffers(nint computePass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
+=======
+    public static void BindGPUComputeStorageBuffers(nint computePass, uint firstSlot,
+        Span<nint> storageBuffers, uint numBindings) {
+>>>>>>> main
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
         SDL_BindGPUComputeStorageBuffers(computePass, firstSlot, storageBuffers, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage textures as readonly for use on the compute pipeline.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -213,12 +253,17 @@ public static partial class Sdl {
 
     public static void BindGPUComputeStorageTextures(nint computePass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
+=======
+    public static void BindGPUComputeStorageTextures(nint computePass, uint firstSlot,
+        Span<nint> storageTextures, uint numBindings) {
+>>>>>>> main
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
         SDL_BindGPUComputeStorageTextures(computePass, firstSlot, storageTextures, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds texture-sampler pairs for use on the fragment shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -234,12 +279,17 @@ public static partial class Sdl {
 
     public static void BindGPUFragmentSamplers(nint renderPass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+=======
+    public static void BindGPUFragmentSamplers(nint renderPass, uint firstSlot,
+        Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUFragmentSamplers(renderPass, firstSlot, textureSamplerBindings, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage buffers for use on the fragment shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -255,12 +305,17 @@ public static partial class Sdl {
 
     public static void BindGPUFragmentStorageBuffers(nint renderPass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
+=======
+    public static void BindGPUFragmentStorageBuffers(nint renderPass, uint firstSlot,
+        Span<nint> storageBuffers, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUFragmentStorageBuffers(renderPass, firstSlot, storageBuffers, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage textures for use on the fragment shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -276,12 +331,17 @@ public static partial class Sdl {
 
     public static void BindGPUFragmentStorageTextures(nint renderPass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
+=======
+    public static void BindGPUFragmentStorageTextures(nint renderPass, uint firstSlot,
+        Span<nint> storageTextures, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUFragmentStorageTextures(renderPass, firstSlot, storageTextures, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds a graphics pipeline on a render pass to be used in rendering.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -291,6 +351,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void BindGPUGraphicsPipeline(nint renderPass, nint graphicsPipeline) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -298,6 +360,7 @@ public static partial class Sdl {
         SDL_BindGPUGraphicsPipeline(renderPass, graphicsPipeline);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds an index buffer on a command buffer for use with subsequent draw calls.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -309,12 +372,17 @@ public static partial class Sdl {
 
     public static void BindGPUIndexBuffer(nint renderPass, in GpuBufferBinding binding,
             GpuIndexElementSize indexElementSize) {
+=======
+    public static void BindGPUIndexBuffer(nint renderPass, in GpuBufferBinding binding,
+        GpuIndexElementSize indexElementSize) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUIndexBuffer(renderPass, binding, indexElementSize);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds vertex buffers on a command buffer for use with subsequent draw calls.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -327,12 +395,17 @@ public static partial class Sdl {
 
     public static void BindGPUVertexBuffers(nint renderPass, uint firstSlot,
             Span<GpuBufferBinding> bindings, uint numBindings) {
+=======
+    public static void BindGPUVertexBuffers(nint renderPass, uint firstSlot,
+        Span<GpuBufferBinding> bindings, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUVertexBuffers(renderPass, firstSlot, bindings, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds texture-sampler pairs for use on the vertex shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -348,12 +421,17 @@ public static partial class Sdl {
 
     public static void BindGPUVertexSamplers(nint renderPass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+=======
+    public static void BindGPUVertexSamplers(nint renderPass, uint firstSlot,
+        Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUVertexSamplers(renderPass, firstSlot, textureSamplerBindings, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage buffers for use on the vertex shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -369,12 +447,17 @@ public static partial class Sdl {
 
     public static void BindGPUVertexStorageBuffers(nint renderPass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
+=======
+    public static void BindGPUVertexStorageBuffers(nint renderPass, uint firstSlot,
+        Span<nint> storageBuffers, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUVertexStorageBuffers(renderPass, firstSlot, storageBuffers, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Binds storage textures for use on the vertex shader.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -390,12 +473,17 @@ public static partial class Sdl {
 
     public static void BindGPUVertexStorageTextures(nint renderPass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
+=======
+    public static void BindGPUVertexStorageTextures(nint renderPass, uint firstSlot,
+        Span<nint> storageTextures, uint numBindings) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_BindGPUVertexStorageTextures(renderPass, firstSlot, storageTextures, numBindings);
     }
 
+<<<<<<< HEAD
     /// <summary>Blits from a source texture region to a destination texture region.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -405,6 +493,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void BlitGPUTexture(nint commandBuffer, in GpuBlitInfo info) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -412,6 +502,7 @@ public static partial class Sdl {
         SDL_BlitGPUTexture(commandBuffer, info);
     }
 
+<<<<<<< HEAD
     /// <summary>Calculate the size in bytes of a texture format with dimensions.</summary>
 
     /// <param name="format">a texture format.</param>
@@ -423,6 +514,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the size of a texture with this format anddimensions.</returns>
 
+=======
+>>>>>>> main
     public static uint CalculateGPUTextureFormatSize(GpuTextureFormat format, uint width, uint height, uint depthOrLayerCount) {
         if (!Enum.IsDefined(format)) {
             throw new ArgumentOutOfRangeException(nameof(format), "Invalid GpuTextureFormat value.");
@@ -430,6 +523,7 @@ public static partial class Sdl {
         return SDL_CalculateGPUTextureFormatSize(format, width, height, depthOrLayerCount);
     }
 
+<<<<<<< HEAD
     /// <summary>Cancels a command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -442,6 +536,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool CancelGPUCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -449,6 +545,7 @@ public static partial class Sdl {
         return SDL_CancelGPUCommandBuffer(commandBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Claims a window, creating a swapchain structure for it.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -467,6 +564,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool ClaimWindowForGPUDevice(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -477,6 +576,7 @@ public static partial class Sdl {
         return SDL_ClaimWindowForGPUDevice(device, window);
     }
 
+<<<<<<< HEAD
     /// <summary>Performs a buffer-to-buffer copy.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -492,12 +592,17 @@ public static partial class Sdl {
 
     public static void CopyGPUBufferToBuffer(nint copyPass, in GpuBufferLocation source,
             in GpuBufferLocation destination, uint size, bool cycle) {
+=======
+    public static void CopyGPUBufferToBuffer(nint copyPass, in GpuBufferLocation source,
+        in GpuBufferLocation destination, uint size, bool cycle) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_CopyGPUBufferToBuffer(copyPass, source, destination, size, cycle);
     }
 
+<<<<<<< HEAD
     /// <summary>Performs a texture-to-texture copy.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -515,12 +620,17 @@ public static partial class Sdl {
 
     public static void CopyGPUTextureToTexture(nint copyPass, in GpuTextureLocation source,
             in GpuTextureLocation destination, uint w, uint h, uint d, bool cycle) {
+=======
+    public static void CopyGPUTextureToTexture(nint copyPass, in GpuTextureLocation source,
+        in GpuTextureLocation destination, uint w, uint h, uint d, bool cycle) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_CopyGPUTextureToTexture(copyPass, source, destination, w, h, d, cycle);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a buffer object to be used in graphics or compute workflows.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -544,6 +654,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUBuffer *) Returns a buffer object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUBuffer(nint device, in GpuBufferCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -551,6 +663,7 @@ public static partial class Sdl {
         return SDL_CreateGPUBuffer(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a pipeline object to be used in a compute workflow.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -564,6 +677,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUComputePipeline *) Returns a computepipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUComputePipeline(nint device, in GpuComputePipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -571,6 +686,7 @@ public static partial class Sdl {
         return SDL_CreateGPUComputePipeline(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a GPU context.</summary>
 
     /// <param name="format_flags">a bitflag indicating which shader formats the app is able to provide.</param>
@@ -587,6 +703,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUDevice(GpuShaderFormat formatFlags, bool debugMode, string name) {
         if (!Enum.IsDefined(formatFlags)) {
             throw new ArgumentOutOfRangeException(nameof(formatFlags), "Invalid GpuShaderFormat value.");
@@ -597,6 +715,7 @@ public static partial class Sdl {
         return SDL_CreateGPUDevice(formatFlags, debugMode, name);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a GPU context.</summary>
 
     /// <param name="props">the properties to use.</param>
@@ -610,10 +729,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUDeviceWithProperties(uint props) {
         return SDL_CreateGPUDeviceWithProperties(props);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a pipeline object to be used in a graphics workflow.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -628,6 +750,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUGraphicsPipeline *) Returns a graphicspipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUGraphicsPipeline(nint device, in GpuGraphicsPipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -635,6 +759,7 @@ public static partial class Sdl {
         return SDL_CreateGPUGraphicsPipeline(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a sampler object to be used when binding textures in a graphics workflow.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -649,6 +774,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUSampler *) Returns a sampler object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUSampler(nint device, in GpuSamplerCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -656,6 +783,7 @@ public static partial class Sdl {
         return SDL_CreateGPUSampler(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a shader to be used when creating a graphics pipeline.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -669,6 +797,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUShader *) Returns a shader object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUShader(nint device, in GpuShaderCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -676,6 +806,7 @@ public static partial class Sdl {
         return SDL_CreateGPUShader(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a texture object to be used in graphics or compute workflows.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -697,6 +828,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUTexture *) Returns a texture object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUTexture(nint device, in GpuTextureCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -704,6 +837,7 @@ public static partial class Sdl {
         return SDL_CreateGPUTexture(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Creates a transfer buffer to be used when uploading to or downloading from graphics resources.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -720,6 +854,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUTransferBuffer *) Returns a transferbuffer on success, or <see langword="null" /> on failure; call <see cref="GetError()" />for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateGPUTransferBuffer(nint device, in GpuTransferBufferCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -727,6 +863,7 @@ public static partial class Sdl {
         return SDL_CreateGPUTransferBuffer(device, createinfo);
     }
 
+<<<<<<< HEAD
     /// <summary>Destroys a GPU context previously returned by SDL_CreateGPUDevice.</summary>
 
     /// <param name="device">a GPU Context to destroy.</param>
@@ -735,6 +872,8 @@ public static partial class Sdl {
     /// <seealso cref="CreateGPUDevice"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DestroyGPUDevice(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -742,6 +881,7 @@ public static partial class Sdl {
         SDL_DestroyGPUDevice(device);
     }
 
+<<<<<<< HEAD
     /// <summary>Dispatches compute work.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -753,6 +893,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DispatchGPUCompute(nint computePass, uint groupcountX, uint groupcountY, uint groupcountZ) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -760,6 +902,7 @@ public static partial class Sdl {
         SDL_DispatchGPUCompute(computePass, groupcountX, groupcountY, groupcountZ);
     }
 
+<<<<<<< HEAD
     /// <summary>Dispatches compute work with parameters set from a buffer.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -772,6 +915,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DispatchGPUComputeIndirect(nint computePass, nint buffer, uint offset) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -779,6 +924,7 @@ public static partial class Sdl {
         SDL_DispatchGPUComputeIndirect(computePass, buffer, offset);
     }
 
+<<<<<<< HEAD
     /// <summary>Copies data from a buffer to a transfer buffer on the GPU timeline.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -792,12 +938,17 @@ public static partial class Sdl {
 
     public static void DownloadFromGPUBuffer(nint copyPass, in GpuBufferRegion source,
             in GpuTransferBufferLocation destination) {
+=======
+    public static void DownloadFromGPUBuffer(nint copyPass, in GpuBufferRegion source,
+        in GpuTransferBufferLocation destination) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_DownloadFromGPUBuffer(copyPass, source, destination);
     }
 
+<<<<<<< HEAD
     /// <summary>Copies data from a texture to a transfer buffer on the GPU timeline.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -811,12 +962,17 @@ public static partial class Sdl {
 
     public static void DownloadFromGPUTexture(nint copyPass, in GpuTextureRegion source,
             in GpuTextureTransferInfo destination) {
+=======
+    public static void DownloadFromGPUTexture(nint copyPass, in GpuTextureRegion source,
+        in GpuTextureTransferInfo destination) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_DownloadFromGPUTexture(copyPass, source, destination);
     }
 
+<<<<<<< HEAD
     /// <summary>Draws data using bound graphics state with an index buffer and instancing enabled.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -832,12 +988,17 @@ public static partial class Sdl {
 
     public static void DrawGPUIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
             uint firstIndex, int vertexOffset, uint firstInstance) {
+=======
+    public static void DrawGPUIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
+        uint firstIndex, int vertexOffset, uint firstInstance) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_DrawGPUIndexedPrimitives(renderPass, numIndices, numInstances, firstIndex, vertexOffset, firstInstance);
     }
 
+<<<<<<< HEAD
     /// <summary>Draws data using bound graphics state with an index buffer enabled and with draw parameters set from a buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -852,6 +1013,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DrawGPUIndexedPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -859,6 +1022,7 @@ public static partial class Sdl {
         SDL_DrawGPUIndexedPrimitivesIndirect(renderPass, buffer, offset, drawCount);
     }
 
+<<<<<<< HEAD
     /// <summary>Draws data using bound graphics state.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -873,12 +1037,17 @@ public static partial class Sdl {
 
     public static void DrawGPUPrimitives(nint renderPass, uint numVertices, uint numInstances,
             uint firstVertex, uint firstInstance) {
+=======
+    public static void DrawGPUPrimitives(nint renderPass, uint numVertices, uint numInstances,
+        uint firstVertex, uint firstInstance) {
+>>>>>>> main
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
         SDL_DrawGPUPrimitives(renderPass, numVertices, numInstances, firstVertex, firstInstance);
     }
 
+<<<<<<< HEAD
     /// <summary>Draws data using bound graphics state and with draw parameters set from a buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -893,6 +1062,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DrawGPUPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -900,6 +1071,7 @@ public static partial class Sdl {
         SDL_DrawGPUPrimitivesIndirect(renderPass, buffer, offset, drawCount);
     }
 
+<<<<<<< HEAD
     /// <summary>Ends the current compute pass.</summary>
 
     /// <param name="compute_pass">a compute pass handle.</param>
@@ -909,6 +1081,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void EndGPUComputePass(nint computePass) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -916,6 +1090,7 @@ public static partial class Sdl {
         SDL_EndGPUComputePass(computePass);
     }
 
+<<<<<<< HEAD
     /// <summary>Ends the current copy pass.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -923,6 +1098,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void EndGPUCopyPass(nint copyPass) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -930,6 +1107,7 @@ public static partial class Sdl {
         SDL_EndGPUCopyPass(copyPass);
     }
 
+<<<<<<< HEAD
     /// <summary>Ends the given render pass.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -939,6 +1117,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void EndGPURenderPass(nint renderPass) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -946,6 +1126,7 @@ public static partial class Sdl {
         SDL_EndGPURenderPass(renderPass);
     }
 
+<<<<<<< HEAD
     /// <summary>Generates mipmaps for the given texture.</summary>
 
     /// <param name="command_buffer">a command_buffer.</param>
@@ -955,6 +1136,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void GenerateMipmapsForGPUTexture(nint commandBuffer, nint texture) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -965,6 +1148,7 @@ public static partial class Sdl {
         SDL_GenerateMipmapsForGPUTexture(commandBuffer, texture);
     }
 
+<<<<<<< HEAD
     /// <summary>Returns the name of the backend used to create this GPU context.</summary>
 
     /// <param name="device">a GPU context to query.</param>
@@ -973,6 +1157,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the device's driver, or <see langword="null" /> on error.</returns>
 
+=======
+>>>>>>> main
     public static string GetGPUDeviceDriver(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -980,6 +1166,7 @@ public static partial class Sdl {
         return SDL_GetGPUDeviceDriver(device);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the name of a built in GPU driver.</summary>
 
     /// <param name="index">the index of a GPU driver.</param>
@@ -991,6 +1178,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the GPU driver with the given index.</returns>
 
+=======
+>>>>>>> main
     public static string GetGPUDriver(int index) {
         if (index < 0) {
             throw new ArgumentOutOfRangeException(nameof(index), "Index must be non-negative.");
@@ -998,6 +1187,7 @@ public static partial class Sdl {
         return SDL_GetGPUDriver(index);
     }
 
+<<<<<<< HEAD
     /// <summary>Returns the supported shader formats for this GPU context.</summary>
 
     /// <param name="device">a GPU context to query.</param>
@@ -1006,6 +1196,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a bitflag indicatingwhich shader formats the driver is able to consume.</returns>
 
+=======
+>>>>>>> main
     public static GpuShaderFormat GetGPUShaderFormats(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1013,6 +1205,7 @@ public static partial class Sdl {
         return SDL_GetGPUShaderFormats(device);
     }
 
+<<<<<<< HEAD
     /// <summary>Obtains the texture format of the swapchain for the given window.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1023,6 +1216,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the texture formatof the swapchain.</returns>
 
+=======
+>>>>>>> main
     public static GpuTextureFormat GetGPUSwapchainTextureFormat(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1033,6 +1228,7 @@ public static partial class Sdl {
         return SDL_GetGPUSwapchainTextureFormat(device, window);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of GPU drivers compiled into SDL.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -1040,10 +1236,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of built in GPU drivers.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumGPUDrivers() {
         return SDL_GetNumGPUDrivers();
     }
 
+<<<<<<< HEAD
     /// <summary>Checks for GPU runtime support.</summary>
 
     /// <param name="props">the properties to use.</param>
@@ -1053,10 +1252,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GPUSupportsProperties(uint props) {
         return SDL_GPUSupportsProperties(props);
     }
 
+<<<<<<< HEAD
     /// <summary>Checks for GPU runtime support.</summary>
 
     /// <param name="format_flags">a bitflag indicating which shader formats the app is able to provide.</param>
@@ -1067,6 +1269,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GPUSupportsShaderFormats(GpuShaderFormat formatFlags, string name) {
         if (!Enum.IsDefined(formatFlags)) {
             throw new ArgumentOutOfRangeException(nameof(formatFlags), "Invalid GpuShaderFormat value.");
@@ -1077,6 +1281,7 @@ public static partial class Sdl {
         return SDL_GPUSupportsShaderFormats(formatFlags, name);
     }
 
+<<<<<<< HEAD
     /// <summary>Obtains the texel block size for a texture format.</summary>
 
     /// <param name="format">the texture format you want to know the texel size of.</param>
@@ -1086,6 +1291,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the texel block size of the texture format.</returns>
 
+=======
+>>>>>>> main
     public static uint GPUTextureFormatTexelBlockSize(GpuTextureFormat format) {
         if (!Enum.IsDefined(format)) {
             throw new ArgumentOutOfRangeException(nameof(format), "Invalid GpuTextureFormat value.");
@@ -1093,6 +1300,7 @@ public static partial class Sdl {
         return SDL_GPUTextureFormatTexelBlockSize(format);
     }
 
+<<<<<<< HEAD
     /// <summary>Determines whether a texture format is supported for a given type and usage.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1104,6 +1312,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns whether the texture format is supported for this type andusage.</returns>
 
+=======
+>>>>>>> main
     public static bool GPUTextureSupportsFormat(nint device, GpuTextureFormat format, GpuTextureType type, GpuTextureUsageFlags usage) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1117,6 +1327,7 @@ public static partial class Sdl {
         return SDL_GPUTextureSupportsFormat(device, format, type, usage);
     }
 
+<<<<<<< HEAD
     /// <summary>Determines if a sample count for a texture format is supported.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1127,6 +1338,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns whether the sample count is supported for this textureformat.</returns>
 
+=======
+>>>>>>> main
     public static bool GPUTextureSupportsSampleCount(nint device, GpuTextureFormat format, GpuSampleCount sampleCount) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1140,6 +1353,7 @@ public static partial class Sdl {
         return SDL_GPUTextureSupportsSampleCount(device, format, sampleCount);
     }
 
+<<<<<<< HEAD
     /// <summary>Inserts an arbitrary string label into the command buffer callstream.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1149,6 +1363,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void InsertGPUDebugLabel(nint commandBuffer, string text) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1156,6 +1372,7 @@ public static partial class Sdl {
         SDL_InsertGPUDebugLabel(commandBuffer, text);
     }
 
+<<<<<<< HEAD
     /// <summary>Maps a transfer buffer into application address space.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1169,6 +1386,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(void *) Returns the address of the mapped transfer buffer memory, or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint MapGPUTransferBuffer(nint device, nint transferBuffer, bool cycle) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1179,6 +1398,7 @@ public static partial class Sdl {
         return SDL_MapGPUTransferBuffer(device, transferBuffer, cycle);
     }
 
+<<<<<<< HEAD
     /// <summary>Ends the most-recently pushed debug group.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1187,6 +1407,8 @@ public static partial class Sdl {
     /// <seealso cref="PushGPUDebugGroup"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PopGPUDebugGroup(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1194,6 +1416,7 @@ public static partial class Sdl {
         SDL_PopGPUDebugGroup(commandBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Pushes data to a uniform slot on the command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1205,6 +1428,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PushGPUComputeUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1212,6 +1437,7 @@ public static partial class Sdl {
         SDL_PushGPUComputeUniformData(commandBuffer, slotIndex, data, length);
     }
 
+<<<<<<< HEAD
     /// <summary>Begins a debug group with an arbitary name.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1223,6 +1449,8 @@ public static partial class Sdl {
     /// <seealso cref="PopGPUDebugGroup"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PushGPUDebugGroup(nint commandBuffer, string name) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1230,6 +1458,7 @@ public static partial class Sdl {
         SDL_PushGPUDebugGroup(commandBuffer, name);
     }
 
+<<<<<<< HEAD
     /// <summary>Pushes data to a fragment uniform slot on the command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1241,6 +1470,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PushGPUFragmentUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1248,6 +1479,7 @@ public static partial class Sdl {
         SDL_PushGPUFragmentUniformData(commandBuffer, slotIndex, data, length);
     }
 
+<<<<<<< HEAD
     /// <summary>Pushes data to a vertex uniform slot on the command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1259,6 +1491,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PushGPUVertexUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1266,6 +1500,7 @@ public static partial class Sdl {
         SDL_PushGPUVertexUniformData(commandBuffer, slotIndex, data, length);
     }
 
+<<<<<<< HEAD
     /// <summary>Checks the status of a fence.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1276,6 +1511,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the fence is signaled, <see langword="false" /> if it is not.</returns>
 
+=======
+>>>>>>> main
     public static bool QueryGPUFence(nint device, nint fence) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1286,6 +1523,7 @@ public static partial class Sdl {
         return SDL_QueryGPUFence(device, fence);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given buffer as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1295,6 +1533,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUBuffer(nint device, nint buffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1305,6 +1545,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUBuffer(device, buffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given compute pipeline as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1314,6 +1555,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUComputePipeline(nint device, nint computePipeline) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1324,6 +1567,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUComputePipeline(device, computePipeline);
     }
 
+<<<<<<< HEAD
     /// <summary>Releases a fence obtained from SDL_SubmitGPUCommandBufferAndAcquireFence.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1334,6 +1578,8 @@ public static partial class Sdl {
     /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUFence(nint device, nint fence) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1344,6 +1590,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUFence(device, fence);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given graphics pipeline as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1353,6 +1600,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUGraphicsPipeline(nint device, nint graphicsPipeline) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1363,6 +1612,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUGraphicsPipeline(device, graphicsPipeline);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given sampler as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1372,6 +1622,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUSampler(nint device, nint sampler) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1382,6 +1634,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUSampler(device, sampler);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given shader as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1391,6 +1644,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUShader(nint device, nint shader) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1401,6 +1656,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUShader(device, shader);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given texture as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1410,6 +1666,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUTexture(nint device, nint texture) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1420,6 +1678,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUTexture(device, texture);
     }
 
+<<<<<<< HEAD
     /// <summary>Frees the given transfer buffer as soon as it is safe to do so.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1429,6 +1688,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseGPUTransferBuffer(nint device, nint transferBuffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1439,6 +1700,7 @@ public static partial class Sdl {
         SDL_ReleaseGPUTransferBuffer(device, transferBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Unclaims a window, destroying its swapchain structure.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1448,6 +1710,8 @@ public static partial class Sdl {
     /// <seealso cref="ClaimWindowForGPUDevice"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void ReleaseWindowFromGPUDevice(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1458,6 +1722,7 @@ public static partial class Sdl {
         SDL_ReleaseWindowFromGPUDevice(device, window);
     }
 
+<<<<<<< HEAD
     /// <summary>Configures the maximum allowed number of frames in flight.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1474,6 +1739,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGPUAllowedFramesInFlight(nint device, uint allowedFramesInFlight) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1481,6 +1748,7 @@ public static partial class Sdl {
         return SDL_SetGPUAllowedFramesInFlight(device, allowedFramesInFlight);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets the current blend constants on a command buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -1491,6 +1759,8 @@ public static partial class Sdl {
     /// <seealso cref="GPU_BLENDFACTOR_ONE_MINUS_CONSTANT_COLOR"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUBlendConstants(nint renderPass, FColor blendConstants) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -1498,6 +1768,7 @@ public static partial class Sdl {
         SDL_SetGPUBlendConstants(renderPass, blendConstants);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets an arbitrary string constant to label a buffer.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -1513,6 +1784,8 @@ public static partial class Sdl {
     /// <seealso cref="CreateGPUBuffer"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUBufferName(nint device, nint buffer, string text) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1523,6 +1796,7 @@ public static partial class Sdl {
         SDL_SetGPUBufferName(device, buffer, text);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets the current scissor state on a command buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -1531,6 +1805,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUScissor(nint renderPass, in Rect scissor) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -1538,6 +1814,7 @@ public static partial class Sdl {
         SDL_SetGPUScissor(renderPass, scissor);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets the current stencil reference value on a command buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -1546,6 +1823,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUStencilReference(nint renderPass, byte reference) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -1553,6 +1832,7 @@ public static partial class Sdl {
         SDL_SetGPUStencilReference(renderPass, reference);
     }
 
+<<<<<<< HEAD
     /// <summary>Changes the swapchain parameters for the given claimed window.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1572,6 +1852,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGPUSwapchainParameters(nint device, nint window, GpuSwapchainComposition swapchainComposition, GpuPresentMode presentMode) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1582,6 +1864,7 @@ public static partial class Sdl {
         return SDL_SetGPUSwapchainParameters(device, window, swapchainComposition, presentMode);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets an arbitrary string constant to label a texture.</summary>
 
     /// <param name="device">a GPU Context.</param>
@@ -1597,6 +1880,8 @@ public static partial class Sdl {
     /// <seealso cref="CreateGPUTexture"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUTextureName(nint device, nint texture, string text) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1607,6 +1892,7 @@ public static partial class Sdl {
         SDL_SetGPUTextureName(device, texture, text);
     }
 
+<<<<<<< HEAD
     /// <summary>Sets the current viewport state on a command buffer.</summary>
 
     /// <param name="render_pass">a render pass handle.</param>
@@ -1615,6 +1901,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGPUViewport(nint renderPass, in GpuViewport viewport) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -1622,6 +1910,7 @@ public static partial class Sdl {
         SDL_SetGPUViewport(renderPass, viewport);
     }
 
+<<<<<<< HEAD
     /// <summary>Submits a command buffer so its commands can be processed on the GPU.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1635,6 +1924,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SubmitGPUCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1642,6 +1933,7 @@ public static partial class Sdl {
         return SDL_SubmitGPUCommandBuffer(commandBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Submits a command buffer so its commands can be processed on the GPU, and acquires a fence associated with the command buffer.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1657,6 +1949,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUFence *) Returns a fence associated with thecommand buffer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint SubmitGPUCommandBufferAndAcquireFence(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1664,6 +1958,7 @@ public static partial class Sdl {
         return SDL_SubmitGPUCommandBufferAndAcquireFence(commandBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Unmaps a previously mapped transfer buffer.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1672,6 +1967,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void UnmapGPUTransferBuffer(nint device, nint transferBuffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1682,6 +1979,7 @@ public static partial class Sdl {
         SDL_UnmapGPUTransferBuffer(device, transferBuffer);
     }
 
+<<<<<<< HEAD
     /// <summary>Uploads data from a transfer buffer to a buffer.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -1696,12 +1994,17 @@ public static partial class Sdl {
 
     public static void UploadToGPUBuffer(nint copyPass, in GpuTransferBufferLocation source,
             in GpuBufferRegion destination, bool cycle) {
+=======
+    public static void UploadToGPUBuffer(nint copyPass, in GpuTransferBufferLocation source,
+        in GpuBufferRegion destination, bool cycle) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_UploadToGPUBuffer(copyPass, source, destination, cycle);
     }
 
+<<<<<<< HEAD
     /// <summary>Uploads data from a transfer buffer to a texture.</summary>
 
     /// <param name="copy_pass">a copy pass handle.</param>
@@ -1716,12 +2019,17 @@ public static partial class Sdl {
 
     public static void UploadToGPUTexture(nint copyPass, in GpuTextureTransferInfo source,
             in GpuTextureRegion destination, bool cycle) {
+=======
+    public static void UploadToGPUTexture(nint copyPass, in GpuTextureTransferInfo source,
+        in GpuTextureRegion destination, bool cycle) {
+>>>>>>> main
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
         SDL_UploadToGPUTexture(copyPass, source, destination, cycle);
     }
 
+<<<<<<< HEAD
     /// <summary>Blocks the thread until a swapchain texture is available to be acquired, and then acquires it.</summary>
 
     /// <param name="command_buffer">a command buffer.</param>
@@ -1746,6 +2054,10 @@ public static partial class Sdl {
 
     public static bool WaitAndAcquireGPUSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
+=======
+    public static bool WaitAndAcquireGPUSwapchainTexture(nint commandBuffer, nint window,
+        out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
+>>>>>>> main
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1755,6 +2067,7 @@ public static partial class Sdl {
         return SDL_WaitAndAcquireGPUSwapchainTexture(commandBuffer, window, out swapchainTexture, out swapchainTextureWidth, out swapchainTextureHeight);
     }
 
+<<<<<<< HEAD
     /// <summary>Blocks the thread until the given fences are signaled.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1768,6 +2081,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WaitForGPUFences(nint device, bool waitAll, Span<nint> fences, uint numFences) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1775,6 +2090,7 @@ public static partial class Sdl {
         return SDL_WaitForGPUFences(device, waitAll, fences, numFences);
     }
 
+<<<<<<< HEAD
     /// <summary>Blocks the thread until the GPU is completely idle.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1784,6 +2100,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WaitForGPUIdle(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1791,6 +2109,7 @@ public static partial class Sdl {
         return SDL_WaitForGPUIdle(device);
     }
 
+<<<<<<< HEAD
     /// <summary>Blocks the thread until a swapchain texture is available to be acquired.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1804,6 +2123,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WaitForGPUSwapchain(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1814,6 +2135,7 @@ public static partial class Sdl {
         return SDL_WaitForGPUSwapchain(device, window);
     }
 
+<<<<<<< HEAD
     /// <summary>Determines whether a presentation mode is supported by the window.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1826,6 +2148,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 
+=======
+>>>>>>> main
     public static bool WindowSupportsGPUPresentMode(nint device, nint window, GpuPresentMode presentMode) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
@@ -1836,6 +2160,7 @@ public static partial class Sdl {
         return SDL_WindowSupportsGPUPresentMode(device, window, presentMode);
     }
 
+<<<<<<< HEAD
     /// <summary>Determines whether a swapchain composition is supported by the window.</summary>
 
     /// <param name="device">a GPU context.</param>
@@ -1848,6 +2173,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 
+=======
+>>>>>>> main
     public static bool WindowSupportsGPUSwapchainComposition(nint device, nint window, GpuSwapchainComposition swapchainComposition) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");

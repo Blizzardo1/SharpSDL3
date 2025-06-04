@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 namespace SharpSDL3.Enums;
 
+=======
+﻿namespace SharpSDL3.Enums; 
+>>>>>>> main
 public enum MessageBoxResult {
     OK = 0,
     Cancel,
@@ -10,4 +14,8 @@ public enum MessageBoxResult {
     Abort,
     TryAgain,
     Continue,
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

@@ -14,4 +14,8 @@ public unsafe struct GlyphPosition {
     public int X;
     public int Y;
     public int Offset;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

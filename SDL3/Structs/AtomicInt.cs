@@ -108,4 +108,8 @@ public struct AtomicInt {
     public override readonly int GetHashCode() {
         return Value.GetHashCode();
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

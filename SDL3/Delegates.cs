@@ -1,6 +1,13 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+>>>>>>> main
 namespace SharpSDL3;
 
 public static unsafe partial class Delegates {

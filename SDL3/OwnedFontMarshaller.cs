@@ -6,9 +6,14 @@ namespace SharpSDL3;
 
 [CustomMarshaller(typeof(Font), MarshalMode.ManagedToUnmanagedOut, typeof(OwnedFontMarshaller))]
 public static unsafe class OwnedFontMarshaller {
+<<<<<<< HEAD
 
     public static Font ConvertToManaged(nint unmanaged) {
         if (unmanaged == nint.Zero) {
+=======
+    public static Font ConvertToManaged(nint unmanaged) {
+        if(unmanaged == nint.Zero) {
+>>>>>>> main
             return default;
         }
         Font font = Marshal.PtrToStructure<Font>(unmanaged);

@@ -41,10 +41,14 @@ public static unsafe partial class Sdl {
         Unsafe.Copy(ref str, (void*)ptr);
         return str;
     }
+   
 
     /// <summary>
     /// This macro turns the version numbers into a numeric value.
     /// </summary>
+    /// <remarks>
+    /// This macro is available since SDL 3.2.0.
+    /// </remarks>
     /// <param name="major">The Major versiom number</param>
     /// <param name="minor">The Minor version number</param>
     /// <param name="patch">The Patch version number</param>
@@ -602,6 +606,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns the new SDL_Surfacestructure that is created or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static nint CreateSurface(int width, int height, PixelFormat format) {
+
         if (width <= 0 || height <= 0) {
             LogError(LogCategory.Error, "CreateSurface: Invalid width or height.");
             return nint.Zero;
@@ -782,6 +787,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
 
     public static void DestroySurface(nint surface) {
+        if (surface == nint.Zero) {
+            LogWarn(LogCategory.System, "DestroySurface: Surface pointer is null.");
+            return;
+        }
         SDL_DestroySurface(surface);
     }
 
@@ -899,7 +908,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns standard Unix main return value.</returns>
     public static int EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc appInit,
-                                                                       SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit) {
+                                                                   SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit) {
         ArgumentNullException.ThrowIfNull(appInit);
         ArgumentNullException.ThrowIfNull(appIter);
         ArgumentNullException.ThrowIfNull(sdlAppEvent);
@@ -1209,7 +1218,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
     public static bool GetClosestFullscreenDisplayMode(uint displayId, int w, int h, float refreshRate,
-                bool includeHighDensityModes, out DisplayMode closest) {
+            bool includeHighDensityModes, out DisplayMode closest) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetClosestFullscreenDisplayMode: Display ID is zero.");
             closest = default;
@@ -1681,6 +1690,7 @@ public static unsafe partial class Sdl {
         nint[] data = new nint[count];
         Marshal.Copy(result, data, 0, count);
 
+
         return data;
     }
 
@@ -1890,6 +1900,8 @@ public static unsafe partial class Sdl {
         return (Keycode)key;
     }
 
+    public static uint GetKeyFromScancode(ScanCode scanCode, KeyMod modstate, bool keyEvent) {
+        if (scanCode == ScanCode.Unknown) {
     /// <summary>Get the key code corresponding to the given scancode according to the current keyboard layout.</summary>
 
     /// <param name="scanCode">the desired SDL_Scancode to query.</param>
@@ -1954,7 +1966,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static bool GetMasksForPixelFormat(PixelFormat format, out int bpp, out uint rmask, out uint gmask,
-            out uint bmask, out uint amask) {
+        out uint bmask, out uint amask) {
         if (format == PixelFormat.Unknown) {
             LogWarn(LogCategory.System, "GetMasksForPixelFormat: Format is unknown.");
             bpp = 0;
@@ -2285,7 +2297,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
 
     public static bool GetRectAndLineIntersectionFloat(ref FRect rect, ref float x1, ref float y1, ref float x2,
-            ref float y2) {
+        ref float y2) {
         bool result = SDL_GetRectAndLineIntersectionFloat(ref rect, ref x1, ref y1, ref x2, ref y2);
         if (!result) {
             LogError(LogCategory.Error, "GetRectAndLineIntersectionFloat: Failed to retrieve intersection.");
@@ -3332,7 +3344,7 @@ public static unsafe partial class Sdl {
         }
 
         Rect rect = *(Rect*)result;
-
+        
         return rect;
     }
 
@@ -4433,7 +4445,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static bool PremultiplyAlpha(int width, int height, PixelFormat srcFormat, nint src,
-                int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch, bool linear) {
+            int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch, bool linear) {
         if (width <= 0 || height <= 0) {
             LogError(LogCategory.Error, "PremultiplyAlpha: Invalid width or height.");
             return false;
@@ -4457,7 +4469,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static bool PremultiplyAlpha(Rect rect, PixelFormat srcFormat, nint src,
-                int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch, bool linear) {
+            int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch, bool linear) {
         if (rect.W <= 0 || rect.H <= 0) {
             LogError(LogCategory.Error, "PremultiplyAlpha: Invalid rectangle dimensions.");
             return false;
@@ -5085,7 +5097,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
     public static bool SetClipboardData(SdlClipboardDataCallback callback,
-                SdlClipboardCleanupCallback cleanup, nint userdata, nint mimeTypes, nuint numMimeTypes) {
+            SdlClipboardCleanupCallback cleanup, nint userdata, nint mimeTypes, nuint numMimeTypes) {
         if (callback == null || cleanup == null || userdata == nint.Zero || mimeTypes == nint.Zero) {
             LogError(LogCategory.Error, "SetClipboardData: Invalid parameters.");
             return false;
@@ -5365,7 +5377,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
     public static bool SetPointerPropertyWithCleanup(uint props, string name, nint value,
-            SdlCleanupPropertyCallback cleanup, nint userdata) {
+        SdlCleanupPropertyCallback cleanup, nint userdata) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetPointerPropertyWithCleanup: Properties are zero or name is null/empty.");
             return false;

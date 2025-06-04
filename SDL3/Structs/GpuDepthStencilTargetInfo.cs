@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
@@ -15,4 +16,25 @@ public struct GpuDepthStencilTargetInfo {
     public byte ClearStencil;
     public byte Padding1;
     public byte Padding2;
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+namespace SharpSDL3.Structs;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct GpuDepthStencilTargetInfo
+{
+	public nint Texture;
+	public float ClearDepth;
+	public GpuLoadOp LoadOp;
+	public GpuStoreOp StoreOp;
+	public GpuLoadOp StencilLoadOp;
+	public GpuStoreOp StencilStoreOp;
+	public SdlBool Cycle;
+	public byte ClearStencil;
+	public byte Padding1;
+	public byte Padding2;
+>>>>>>> main
 }
