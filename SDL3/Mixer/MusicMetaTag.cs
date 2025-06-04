@@ -1,4 +1,4 @@
-﻿namespace SharpSDL3.Mixer;
+namespace SharpSDL3.Mixer;
 
 public enum MusicMetaTag {
     Title,

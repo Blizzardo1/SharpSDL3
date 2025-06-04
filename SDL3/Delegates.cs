@@ -1,6 +1,5 @@
-using System.Runtime.InteropServices;
-
 using SharpSDL3.Enums;
+using System.Runtime.InteropServices;
 
 namespace SharpSDL3;
 

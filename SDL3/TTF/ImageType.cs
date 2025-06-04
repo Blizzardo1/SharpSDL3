@@ -1,4 +1,5 @@
-﻿namespace SharpSDL3.TTF;
+namespace SharpSDL3.TTF;
+
 public enum ImageType {
     Invalid,
     Alpha,    /**< The color channels are white */

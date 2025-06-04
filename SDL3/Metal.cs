@@ -1,8 +1,6 @@
-﻿using System;
+using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
-
-using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 

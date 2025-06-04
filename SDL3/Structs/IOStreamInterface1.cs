@@ -1,4 +1,4 @@
-﻿using System.Runtime.InteropServices;
+using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Structs;
 
@@ -12,6 +12,7 @@ public unsafe struct IOStreamInterface {
      *
      *  \return the total size of the data stream, or -1 on error.
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate long Size(nint userdata);
 
@@ -21,6 +22,7 @@ public unsafe struct IOStreamInterface {
      *
      *  \return the final offset in the data stream, or -1 on error.
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate long Seek(nint userdata, long offset, IOWhence whence);
 
@@ -34,6 +36,7 @@ public unsafe struct IOStreamInterface {
      *
      *  \return the number of bytes read
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate Structs.Size Read(nint userdata, nint ptr, Structs.Size size, nint status);
 
@@ -47,6 +50,7 @@ public unsafe struct IOStreamInterface {
      *
      *  \return the number of bytes written
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate Structs.Size Write(nint userdata, nint ptr, Structs.Size size, nint status);
 
@@ -57,8 +61,9 @@ public unsafe struct IOStreamInterface {
      *  SDL_IOStatus enum. You do not have to explicitly set this on
      *  a successful flush.
      *
-     *  \return true if successful or false on write error when flushing data.
+     *  \return true if successful or <see langword="false" /> on write error when flushing data.
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate bool Flush(nint userdata, nint status);
 
@@ -71,9 +76,9 @@ public unsafe struct IOStreamInterface {
      *  The SDL_IOStream is still destroyed even if this fails, so clean up anything
      *  even if flushing buffers, etc, returns an error.
      *
-     *  \return true if successful or false on write error when flushing data.
+     *  \return true if successful or <see langword="false" /> on write error when flushing data.
      */
+
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate bool Close(nint userdata);
-
 }

@@ -1,4 +1,4 @@
-﻿namespace SharpSDL3.TTF;
+namespace SharpSDL3.TTF;
 
 public enum FontWeight {
     Thin = 100,

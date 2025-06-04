@@ -1,4 +1,4 @@
-﻿using SharpSDL3.Structs;
+using SharpSDL3.Structs;
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Mixer;

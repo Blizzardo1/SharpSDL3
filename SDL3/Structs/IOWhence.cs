@@ -1,4 +1,4 @@
-﻿namespace SharpSDL3.Structs;
+namespace SharpSDL3.Structs;
 
 public enum IOWhence {
     Set,  /**< Seek from the beginning of data */

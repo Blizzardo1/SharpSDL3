@@ -1,6 +1,7 @@
-﻿using System;
+using System;
 
-namespace SharpSDL3.Structs; 
+namespace SharpSDL3.Structs;
+
 public struct Size(int width, int height) : IEquatable<Size> {
     public int Width { readonly get => width; set => width = value; }
     public int Height { readonly get => height; set => height = value; }

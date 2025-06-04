@@ -1,8 +1,7 @@
 namespace SharpSDL3.Enums;
 
-public enum ColorRange
-{
-	Unknown = 0,
-	Limited = 1,
-	Full = 2
+public enum ColorRange {
+    Unknown = 0,
+    Limited = 1,
+    Full = 2
 }

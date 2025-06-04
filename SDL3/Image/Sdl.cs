@@ -1,8 +1,9 @@
-﻿using System;
-using System.Runtime.InteropServices;
 using SharpSDL3.Enums;
+using System;
+using System.Runtime.InteropServices;
 
 namespace SharpSDL3;
+
 public static unsafe partial class Sdl {
     private const string ImageLibName = "SDL3_image";
     /* WIKI CATEGORY: SDLImage */
@@ -24,11 +25,13 @@ public static unsafe partial class Sdl {
     /**
      * This is the version number macro for the current SDL_image version.
      */
+
     public static int ImageVersion() => VersionNum(ImageMajor, ImageMinor, ImageMicro);
 
     /**
-     * This macro will evaluate to true if compiled with SDL_image at least X.Y.Z.
+     * This macro will evaluate to <see langword="true" /> if compiled with SDL_image at least X.Y.Z.
      */
+
     public static bool ImageVersionAtLeast(int major, int minor, int patch) =>
         (ImageMajor >= major)
         && (ImageMajor > major || ImageMinor >= minor)
@@ -41,6 +44,7 @@ public static unsafe partial class Sdl {
      *
      * \since This function is available since SDL_image 3.0.0.
      */
+
     [LibraryImport(ImageLibName)]
     private static partial int IMG_Version();
 
@@ -67,14 +71,14 @@ public static unsafe partial class Sdl {
      * by calling: SDL_SetSurfaceColorKey(image, SDL_RLEACCEL,
      * image->format->colorkey);
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
      * Even though this function accepts a file type, SDL_image may still try
      * other decoders that are capable of detecting file type from the contents of
      * the image data, but may rely on the caller-provided type string for formats
-     * that it cannot autodetect. If `type` is NULL, SDL_image will rely solely on
+     * that it cannot autodetect. If `type` is <see langword="null" />, SDL_image will rely solely on
      * its ability to guess the format.
      *
      * There is a separate function to read files from disk without having to deal
@@ -84,7 +88,7 @@ public static unsafe partial class Sdl {
      *
      * There is also IMG_Load_IO(), which is equivalent to this function except
      * that it will rely on SDL_image to determine what type of data it is
-     * loading, much like passing a NULL for type.
+     * loading, much like passing a <see langword="null" /> for type.
      *
      * If you are using SDL's 2D rendering API, there is an equivalent call to
      * load images directly into an Texture for use by the GPU without using a
@@ -94,11 +98,11 @@ public static unsafe partial class Sdl {
      * call to SDL_DestroySurface().
      *
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
      * \param type a filename extension that represent this data ("BMP", "GIF",
      *             "PNG", etc).
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -106,11 +110,12 @@ public static unsafe partial class Sdl {
      * \sa IMG_Load_IO
      * \sa SDL_DestroySurface
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
     public static nint LoadTypedImage(nint src, bool closeio, string type) {
-        if(src == nint.Zero) {
+        if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTyped_IO(src, closeio, type);
@@ -151,7 +156,7 @@ public static unsafe partial class Sdl {
      * ().
      *
      * \param file a path on the filesystem to load an image from.
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -159,6 +164,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_Load_IO
      * \sa SDL_DestroySurface
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_Load(string file);
 
@@ -196,7 +202,7 @@ public static unsafe partial class Sdl {
      * by calling: SDL_SetSurfaceColorKey(image, SDL_RLEACCEL,
      * image->format->colorkey);
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
@@ -217,9 +223,9 @@ public static unsafe partial class Sdl {
      * call to SDL_DestroySurface().
      *
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -227,6 +233,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTyped_IO
      * \sa SDL_DestroySurface
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_Load_IO(nint src, [MarshalAs(BoolType)] bool closeio);
 
@@ -267,15 +274,31 @@ public static unsafe partial class Sdl {
      *
      * \param renderer the SDL_Renderer to use to create the GPU texture.
      * \param file a path on the filesystem to load an image from.
-     * \returns a new texture, or NULL on error.
+     * \returns a new texture, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_LoadTextureTyped_IO
      * \sa IMG_LoadTexture_IO
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_LoadTexture(nint renderer, string file);
+
+    /// <summary>Load an image from a filesystem path into a GPU texture.</summary>
+
+    /// <param name="renderer">the SDL_Renderer to use to create the GPU texture.</param>
+    /// <param name="file">a path on the filesystem to load an image from.</param>
+    /// <remarks>
+    /// An SDL_Texture represents an image in GPU memory, usable by SDL's 2D Render
+    /// API. This can be significantly more efficient than using a CPU-bound
+    /// SDL_Surface if you don't need to manipulate the image directly after
+    /// loading it.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="LoadTextureTyped_IO"/>
+    /// <seealso cref="LoadTexture_IO"/>
+    /// </remarks>
+    /// <returns>(SDL_Texture *) Returns a new texture, or <see langword="null" /> on error.</returns>
 
     public static nint LoadTexture(nint renderer, string file) {
         if (string.IsNullOrWhiteSpace(file)) {
@@ -302,7 +325,7 @@ public static unsafe partial class Sdl {
      * data (but in many cases, this will just end up being 32-bit RGB or 32-bit
      * RGBA).
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
@@ -323,9 +346,9 @@ public static unsafe partial class Sdl {
      *
      * \param renderer the SDL_Renderer to use to create the GPU texture.
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
-     * \returns a new texture, or NULL on error.
+     * \returns a new texture, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -333,6 +356,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTextureTyped_IO
      * \sa SDL_DestroyTexture
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTexture_IO(nint renderer, nint src, [MarshalAs(BoolType)] bool closeio);
 
@@ -361,14 +385,14 @@ public static unsafe partial class Sdl {
      * data (but in many cases, this will just end up being 32-bit RGB or 32-bit
      * RGBA).
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
      * Even though this function accepts a file type, SDL_image may still try
      * other decoders that are capable of detecting file type from the contents of
      * the image data, but may rely on the caller-provided type string for formats
-     * that it cannot autodetect. If `type` is NULL, SDL_image will rely solely on
+     * that it cannot autodetect. If `type` is <see langword="null" />, SDL_image will rely solely on
      * its ability to guess the format.
      *
      * There is a separate function to read files from disk without having to deal
@@ -378,7 +402,7 @@ public static unsafe partial class Sdl {
      *
      * There is also IMG_LoadTexture_IO(), which is equivalent to this function
      * except that it will rely on SDL_image to determine what type of data it is
-     * loading, much like passing a NULL for type.
+     * loading, much like passing a <see langword="null" /> for type.
      *
      * If you would rather decode an image to an Surface (a buffer of pixels
      * in CPU memory), call IMG_LoadTyped_IO() instead.
@@ -388,11 +412,11 @@ public static unsafe partial class Sdl {
      *
      * \param renderer the SDL_Renderer to use to create the GPU texture.
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
      * \param type a filename extension that represent this data ("BMP", "GIF",
      *             "PNG", etc).
-     * \returns a new texture, or NULL on error.
+     * \returns a new texture, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -400,6 +424,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTexture_IO
      * \sa SDL_DestroyTexture
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
@@ -456,9 +481,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isAVIF(nint src);
+
+    /// <summary>Detect AVIF image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is AVIF data, zero otherwise.</returns>
 
     public static bool IsAVIF(nint src) {
         if (src == nint.Zero) {
@@ -508,9 +562,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isICO(nint src);
+
+    /// <summary>Detect ICO image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is ICO data, zero otherwise.</returns>
 
     public static bool IsICO(nint src) {
         if (src == nint.Zero) {
@@ -560,9 +642,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isCUR(nint src);
+
+    /// <summary>Detect CUR image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is CUR data, zero otherwise.</returns>
 
     public static bool IsCUR(nint src) {
         if (src == nint.Zero) {
@@ -612,9 +722,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isBMP(nint src);
+
+    /// <summary>Detect BMP image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is BMP data, zero otherwise.</returns>
 
     public static bool IsBMP(nint src) {
         if (src == nint.Zero) {
@@ -665,10 +803,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
 
-
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isGIF(nint src);
+
+    /// <summary>Detect GIF image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is GIF data, zero otherwise.</returns>
+
     public static bool IsGIF(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -717,9 +882,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isJPG(nint src);
+
+    /// <summary>Detect JPG image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is JPG data, zero otherwise.</returns>
 
     public static bool IsJPG(nint src) {
         if (src == nint.Zero) {
@@ -769,9 +962,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isJXL(nint src);
+
+    /// <summary>Detect JXL image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is JXL data, zero otherwise.</returns>
 
     public static bool IsJXL(nint src) {
         if (src == nint.Zero) {
@@ -821,9 +1042,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isLBM(nint src);
+
+    /// <summary>Detect LBM image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is LBM data, zero otherwise.</returns>
+
     public static bool IsLBM(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -872,9 +1122,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isPCX(nint src);
+
+    /// <summary>Detect PCX image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is PCX data, zero otherwise.</returns>
+
     public static bool IsPCX(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -923,9 +1202,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isPNG(nint src);
+
+    /// <summary>Detect PNG image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is PNG data, zero otherwise.</returns>
+
     public static bool IsPNG(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -974,9 +1282,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isPNM(nint src);
+
+    /// <summary>Detect PNM image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is PNM data, zero otherwise.</returns>
+
     public static bool IsPNM(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1025,9 +1362,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isSVG(nint src);
+
+    /// <summary>Detect SVG image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is SVG data, zero otherwise.</returns>
+
     public static bool IsSVG(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1076,9 +1442,38 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isQOI(nint src);
+
+    /// <summary>Detect QOI image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is QOI data, zero otherwise.</returns>
+
     public static bool IsQOI(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1127,9 +1522,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isTIF(nint src);
+
+    /// <summary>Detect TIFF image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is TIFF data, zero otherwise.</returns>
 
     public static bool IsTIF(nint src) {
         if (src == nint.Zero) {
@@ -1179,9 +1602,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isXCF(nint src);
+
+    /// <summary>Detect XCF image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is XCF data, zero otherwise.</returns>
 
     public static bool IsXCF(nint src) {
         if (src == nint.Zero) {
@@ -1231,9 +1682,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXV
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isXPM(nint src);
+
+    /// <summary>Detect XPM image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXV"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is XPM data, zero otherwise.</returns>
 
     public static bool IsXPM(nint src) {
         if (src == nint.Zero) {
@@ -1283,9 +1762,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXPM
      * \sa IMG_isWEBP
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isXV(nint src);
+
+    /// <summary>Detect XV image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isWEBP"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is XV data, zero otherwise.</returns>
 
     public static bool IsXV(nint src) {
         if (src == nint.Zero) {
@@ -1335,9 +1842,37 @@ public static unsafe partial class Sdl {
      * \sa IMG_isXPM
      * \sa IMG_isXV
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isWEBP(nint src);
+
+    /// <summary>Detect WEBP image data on a readable/seekable SDL_IOStream.</summary>
+
+    /// <param name="src">a seekable/readable SDL_IOStream to provide image data.</param>
+    /// <remarks>
+    /// This function attempts to determine if a file is a given filetype, reading
+    /// the least amount possible from the SDL_IOStream (usually a few bytes).
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF"/>
+    /// <seealso cref="isICO"/>
+    /// <seealso cref="isCUR"/>
+    /// <seealso cref="isBMP"/>
+    /// <seealso cref="isGIF"/>
+    /// <seealso cref="isJPG"/>
+    /// <seealso cref="isJXL"/>
+    /// <seealso cref="isLBM"/>
+    /// <seealso cref="isPCX"/>
+    /// <seealso cref="isPNG"/>
+    /// <seealso cref="isPNM"/>
+    /// <seealso cref="isSVG"/>
+    /// <seealso cref="isQOI"/>
+    /// <seealso cref="isTIF"/>
+    /// <seealso cref="isXCF"/>
+    /// <seealso cref="isXPM"/>
+    /// <seealso cref="isXV"/>
+    /// </remarks>
+    /// <returns>Returns non-zero if this is WEBP data, zero otherwise.</returns>
 
     public static bool IsWEBP(nint src) {
         if (src == nint.Zero) {
@@ -1355,7 +1890,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1378,6 +1913,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadAVIF_IO(nint src);
 
@@ -1397,7 +1933,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1420,6 +1956,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadICO_IO(nint src);
 
@@ -1439,7 +1976,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1462,6 +1999,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadCUR_IO(nint src);
 
@@ -1481,7 +2019,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1504,6 +2042,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadBMP_IO(nint src);
 
@@ -1523,7 +2062,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1546,8 +2085,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadGIF_IO(nint src);
+
     public static nint LoadGifIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1564,7 +2105,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1587,8 +2128,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadJPG_IO(nint src);
+
     public static nint LoadJpgIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1605,7 +2148,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1628,8 +2171,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadJXL_IO(nint src);
+
     public static nint LoadJxlIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1646,7 +2191,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1669,8 +2214,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadLBM_IO(nint src);
+
     public static nint LoadLbmIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1687,7 +2234,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1710,8 +2257,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPCX_IO(nint src);
+
     public static nint LoadPcxIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1728,7 +2277,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1751,8 +2300,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPNG_IO(nint src);
+
     public static nint LoadPngIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1769,7 +2320,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1792,8 +2343,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPNM_IO(nint src);
+
     public static nint LoadPnmIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1810,7 +2363,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1833,8 +2386,10 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadSVG_IO(nint src);
+
     public static nint LoadSvgIo(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
@@ -1851,7 +2406,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1874,6 +2429,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadQOI_IO(nint src);
 
@@ -1893,7 +2449,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1916,6 +2472,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTGA_IO(nint src);
 
@@ -1935,7 +2492,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -1958,6 +2515,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTIF_IO(nint src);
 
@@ -1977,7 +2535,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2000,6 +2558,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXCF_IO(nint src);
 
@@ -2019,7 +2578,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2042,6 +2601,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXV_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXPM_IO(nint src);
 
@@ -2061,7 +2621,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2084,6 +2644,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXPM_IO
      * \sa IMG_LoadWEBP_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXV_IO(nint src);
 
@@ -2103,7 +2664,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream to load image data from.
-     * \returns SDL surface, or NULL on error.
+     * \returns SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2126,6 +2687,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadXPM_IO
      * \sa IMG_LoadXV_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadWEBP_IO(nint src);
 
@@ -2151,10 +2713,11 @@ public static unsafe partial class Sdl {
      * \param src an IOStream to load SVG data from.
      * \param width desired width of the generated surface, in pixels.
      * \param height desired height of the generated surface, in pixels.
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadSizedSVG_IO(nint src, int width, int height);
 
@@ -2176,14 +2739,27 @@ public static unsafe partial class Sdl {
      * call to SDL_DestroySurface().
      *
      * \param xpm a null-terminated array of strings that comprise XPM data.
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_ReadXPMFromArrayToRGB888
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_ReadXPMFromArray(string[] xpm);
+
+    /// <summary>Load an XPM image from a memory array.</summary>
+
+    /// <param name="xpm">a null-terminated array of strings that comprise XPM data.</param>
+    /// <remarks>
+    /// The returned surface will be an 8bpp indexed surface, if possible,
+    /// otherwise it will be 32bpp. If you always want 32-bit data, use
+    /// IMG_ReadXPMFromArrayToRGB888() instead.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="ReadXPMFromArrayToRGB888"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
     public static nint ReadXpmFromArray(string[] xpm) {
         if (xpm == null) {
@@ -2203,14 +2779,27 @@ public static unsafe partial class Sdl {
      * call to SDL_DestroySurface().
      *
      * \param xpm a null-terminated array of strings that comprise XPM data.
-     * \returns a new SDL surface, or NULL on error.
+     * \returns a new SDL surface, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_ReadXPMFromArray
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_ReadXPMFromArrayToRGB888(string[] xpm);
+
+    /// <summary>Load an XPM image from a memory array.</summary>
+
+    /// <param name="xpm">a null-terminated array of strings that comprise XPM data.</param>
+    /// <remarks>
+    /// The returned surface will always be a 32-bit RGB surface. If you want 8-bit
+    /// indexed colors (and the XPM data allows it), use
+    /// IMG_ReadXPMFromArray() instead.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="ReadXPMFromArray"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
     public static nint ReadXpmFromArrayToRgb888(string[] xpm) {
         if (xpm == null) {
@@ -2228,16 +2817,29 @@ public static unsafe partial class Sdl {
      * \param file path on the filesystem to write new file to.
      * \param quality the desired quality, ranging between 0 (lowest) and 100
      *                (highest).
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SaveAVIF_IO
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveAVIF(nint surface, string file, int quality);
+
+    /// <summary>Save an SDL_Surface into a AVIF image file.</summary>
+
+    /// <param name="surface">the SDL surface to save.</param>
+    /// <param name="file">path on the filesystem to write new file to.</param>
+    /// <param name="quality">the desired quality, ranging between 0 (lowest) and 100 (highest).</param>
+    /// <remarks>
+    /// If the file already exists, it will be overwritten.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SaveAVIF_IO"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SaveAvif(nint surface, string file, int quality) {
         if (surface == nint.Zero) {
@@ -2254,22 +2856,23 @@ public static unsafe partial class Sdl {
      *
      * If you just want to save to a filename, you can use IMG_SaveAVIF() instead.
      *
-     * If `closeio` is true, `dst` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `dst` will be closed before returning, whether this
      * function succeeds or not.
      *
      * \param surface the SDL surface to save.
      * \param dst the IOStream to save the image data to.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
      * \param quality the desired quality, ranging between 0 (lowest) and 100
      *                (highest).
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SaveAVIF
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveAVIF_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio, int quality);
@@ -2291,16 +2894,28 @@ public static unsafe partial class Sdl {
      *
      * \param surface the SDL surface to save.
      * \param file path on the filesystem to write new file to.
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SavePNG_IO
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SavePNG(nint surface, string file);
+
+    /// <summary>Save an SDL_Surface into a PNG image file.</summary>
+
+    /// <param name="surface">the SDL surface to save.</param>
+    /// <param name="file">path on the filesystem to write new file to.</param>
+    /// <remarks>
+    /// If the file already exists, it will be overwritten.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SavePNG_IO"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SavePng(nint surface, string file) {
         if (surface == nint.Zero) {
@@ -2317,23 +2932,25 @@ public static unsafe partial class Sdl {
      *
      * If you just want to save to a filename, you can use IMG_SavePNG() instead.
      *
-     * If `closeio` is true, `dst` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `dst` will be closed before returning, whether this
      * function succeeds or not.
      *
      * \param surface the SDL surface to save.
      * \param dst the IOStream to save the image data to.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SavePNG
      */
+
     [LibraryImport(ImageLibName)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SavePNG_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio);
+
     public static bool SavePngIo(nint surface, nint dst, bool closeio) {
         if (surface == nint.Zero) {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
@@ -2353,16 +2970,29 @@ public static unsafe partial class Sdl {
      * \param file path on the filesystem to write new file to.
      * \param quality [0; 33] is Lowest quality, [34; 66] is Middle quality, [67;
      *                100] is Highest quality.
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SaveJPG_IO
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveJPG(nint surface, string file, int quality);
+
+    /// <summary>Save an SDL_Surface into a JPEG image file.</summary>
+
+    /// <param name="surface">the SDL surface to save.</param>
+    /// <param name="file">path on the filesystem to write new file to.</param>
+    /// <param name="quality">[0; 33] is Lowest quality, [34; 66] is Middle quality, [67; 100] is Highest quality.</param>
+    /// <remarks>
+    /// If the file already exists, it will be overwritten.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SaveJPG_IO"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SaveJpg(nint surface, string file, int quality) {
         if (surface == nint.Zero) {
@@ -2379,22 +3009,23 @@ public static unsafe partial class Sdl {
      *
      * If you just want to save to a filename, you can use IMG_SaveJPG() instead.
      *
-     * If `closeio` is true, `dst` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `dst` will be closed before returning, whether this
      * function succeeds or not.
      *
      * \param surface the SDL surface to save.
      * \param dst the IOStream to save the image data to.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
      * \param quality [0; 33] is Lowest quality, [34; 66] is Middle quality, [67;
      *                100] is Highest quality.
-     * \returns true on success or false on failure; call SDL_GetError() for more
+     * \returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more
      *          information.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_SaveJPG
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio, int quality);
@@ -2416,15 +3047,26 @@ public static unsafe partial class Sdl {
      * call to IMG_FreeAnimation().
      *
      * \param file path on the filesystem containing an animated image.
-     * \returns a new IMG_Animation, or NULL on error.
+     * \returns a new IMG_Animation, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_FreeAnimation
      */
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
 
+    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_LoadAnimation(string file);
+
+    /// <summary>Load an animation from a file.</summary>
+
+    /// <param name="file">path on the filesystem containing an animated image.</param>
+    /// <remarks>
+    /// When done with the returned animation, the app should dispose of it with a
+    /// call to IMG_FreeAnimation().
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="FreeAnimation"/>
+    /// </remarks>
+    /// <returns>(IMG_Animation *) Returns a newIMG_Animation, or <see langword="null" /> on error.</returns>
 
     public static nint LoadAnimation(string file) {
         if (file == null) {
@@ -2436,7 +3078,7 @@ public static unsafe partial class Sdl {
     /**
      * Load an animation from an IOStream.
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
@@ -2444,14 +3086,15 @@ public static unsafe partial class Sdl {
      * call to IMG_FreeAnimation().
      *
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
-     * \returns a new IMG_Animation, or NULL on error.
+     * \returns a new IMG_Animation, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
      * \sa IMG_FreeAnimation
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadAnimation_IO(nint src, [MarshalAs(BoolType)] bool closeio);
 
@@ -2468,10 +3111,10 @@ public static unsafe partial class Sdl {
      * Even though this function accepts a file type, SDL_image may still try
      * other decoders that are capable of detecting file type from the contents of
      * the image data, but may rely on the caller-provided type string for formats
-     * that it cannot autodetect. If `type` is NULL, SDL_image will rely solely on
+     * that it cannot autodetect. If `type` is <see langword="null" />, SDL_image will rely solely on
      * its ability to guess the format.
      *
-     * If `closeio` is true, `src` will be closed before returning, whether this
+     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
      * function succeeds or not. SDL_image reads everything it needs from `src`
      * during this call in any case.
      *
@@ -2479,10 +3122,10 @@ public static unsafe partial class Sdl {
      * call to IMG_FreeAnimation().
      *
      * \param src an IOStream that data will be read from.
-     * \param closeio true to close/free the IOStream before returning, false
+     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
      *                to leave it open.
      * \param type a filename extension that represent this data ("GIF", etc).
-     * \returns a new IMG_Animation, or NULL on error.
+     * \returns a new IMG_Animation, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2490,6 +3133,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimation_IO
      * \sa IMG_FreeAnimation
      */
+
     [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
     private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
@@ -2516,8 +3160,20 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimation_IO
      * \sa IMG_LoadAnimationTyped_IO
      */
+
     [LibraryImport(ImageLibName)]
     private static partial void IMG_FreeAnimation(nint anim);
+
+    /// <summary>Dispose of an IMG_Animation and free its resources.</summary>
+
+    /// <param name="anim">IMG_Animation to dispose of.</param>
+    /// <remarks>
+    /// The provided anim pointer is not valid once this call returns.
+    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="LoadAnimation"/>
+    /// <seealso cref="LoadAnimation_IO"/>
+    /// <seealso cref="LoadAnimationTyped_IO"/>
+    /// </remarks>
 
     public static void FreeAnimation(nint anim) {
         if (anim == nint.Zero) {
@@ -2535,7 +3191,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream that data will be read from.
-     * \returns a new IMG_Animation, or NULL on error.
+     * \returns a new IMG_Animation, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2544,6 +3200,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimationTyped_IO
      * \sa IMG_FreeAnimation
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadGIFAnimation_IO(nint src);
 
@@ -2563,7 +3220,7 @@ public static unsafe partial class Sdl {
      * interface available here.
      *
      * \param src an IOStream that data will be read from.
-     * \returns a new IMG_Animation, or NULL on error.
+     * \returns a new IMG_Animation, or <see langword="null" /> on error.
      *
      * \since This function is available since SDL_image 3.0.0.
      *
@@ -2572,6 +3229,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadAnimationTyped_IO
      * \sa IMG_FreeAnimation
      */
+
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadWEBPAnimation_IO(nint src);
 

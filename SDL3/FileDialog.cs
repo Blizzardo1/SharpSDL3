@@ -1,11 +1,9 @@
-﻿using SharpSDL3.Enums;
+using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
-
-using static SharpSDL3.Sdl;
 
 namespace SharpSDL3;
 
@@ -53,8 +51,26 @@ public static partial class Sdl {
         SDL_ShowSaveFileDialog(callback, userdata, window, filters, nfilters, defaultLocation);
     }
 
+    /// <summary>Create and launch a file dialog with the specified properties.</summary>
+
+    /// <param name="type">the type of file dialog.</param>
+    /// <param name="callback">a function pointer to be invoked when the user selects a file and accepts, or cancels the dialog, or an error occurs.</param>
+    /// <param name="userdata">an optional pointer to pass extra data to the callback when it will be invoked.</param>
+    /// <param name="props">the properties to use.</param>
+    /// <remarks>
+    /// These are the supported properties:
+    /// <para><strong>Thread Safety:</strong> This function should be called only from the main thread. The callback maybe invoked from the same thread or from a different one, depending on theOS's constraints.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="FileDialogType"/>
+    /// <seealso cref="DialogFileCallback"/>
+    /// <seealso cref="DialogFileFilter"/>
+    /// <seealso cref="ShowOpenFileDialog"/>
+    /// <seealso cref="ShowSaveFileDialog"/>
+    /// <seealso cref="ShowOpenFolderDialog"/>
+    /// </remarks>
+
     public static void ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback, nint userdata,
-        uint props) {
+            uint props) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
         }

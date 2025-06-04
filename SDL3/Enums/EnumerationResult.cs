@@ -1,8 +1,7 @@
 namespace SharpSDL3.Enums;
 
-public enum EnumerationResult
-{
-	Continue = 0,
-	Success = 1,
-	Failure = 2
+public enum EnumerationResult {
+    Continue = 0,
+    Success = 1,
+    Failure = 2
 }

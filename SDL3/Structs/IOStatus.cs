@@ -1,4 +1,4 @@
-﻿namespace SharpSDL3.Structs;
+namespace SharpSDL3.Structs;
 
 public enum IOStatus {
     Ready,     /**< Everything is ready (no errors and not EOF). */

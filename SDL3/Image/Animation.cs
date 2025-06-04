@@ -1,4 +1,4 @@
-﻿using SharpSDL3.Structs;
+using SharpSDL3.Structs;
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Image;
@@ -7,6 +7,7 @@ namespace SharpSDL3.Image;
  *
  * Currently only animated GIFs and WEBP images are supported.
  */
+
 [StructLayout(LayoutKind.Sequential)]
 public struct Animation {
     public int W;                  /**< The width of the frames */

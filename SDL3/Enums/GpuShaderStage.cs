@@ -1,7 +1,6 @@
 namespace SharpSDL3.Enums;
 
-public enum GpuShaderStage
-{
-	Vertex = 0,
-	Fragment = 1
+public enum GpuShaderStage {
+    Vertex = 0,
+    Fragment = 1
 }

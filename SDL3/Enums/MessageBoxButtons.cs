@@ -1,4 +1,5 @@
-﻿namespace SharpSDL3.Enums; 
+namespace SharpSDL3.Enums;
+
 public enum MessageBoxButtons {
     YesNo = 0,
     YesNoCancel,

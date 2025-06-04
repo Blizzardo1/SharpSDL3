@@ -1,4 +1,4 @@
-﻿namespace SharpSDL3.Mixer;
+namespace SharpSDL3.Mixer;
 
 /// <summary>
 /// These are types of music files (not libraries used to load them)

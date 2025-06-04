@@ -1,4 +1,5 @@
-﻿namespace SharpSDL3.TTF;
+namespace SharpSDL3.TTF;
+
 public enum Direction {
     Invalid = 0,
     LeftToRight = 4,   // Left to Right

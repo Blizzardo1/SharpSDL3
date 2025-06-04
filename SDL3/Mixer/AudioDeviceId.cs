@@ -1,6 +1,7 @@
-﻿namespace SharpSDL3.Mixer;
+namespace SharpSDL3.Mixer;
 
 public enum AudioDeviceId : uint {
+
     /// <summary>
     /// A value used to request a default playback audio device.
     /// Several functions that require an <see cref="AudioDeviceId"/> will accept this value
