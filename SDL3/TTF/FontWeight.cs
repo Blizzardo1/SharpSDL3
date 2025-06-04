@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+namespace SharpSDL3.TTF;
+=======
 ﻿namespace SharpSDL3.TTF;
+>>>>>>> main
 
 public enum FontWeight {
     Thin = 100,
@@ -11,4 +15,8 @@ public enum FontWeight {
     ExtraBold = 800,
     Black = 900,
     ExtraBlack = 950
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using SharpSDL3.Structs;
+=======
 ﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.TTF;
@@ -24,4 +28,8 @@ public struct TextData {
     public bool NeedsEngineUpdate;   // True if the engine text needs to be updated
     public nint Engine;              // TTF_TextEngine* engine
     public nint EngineText;          // void* engine_text
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

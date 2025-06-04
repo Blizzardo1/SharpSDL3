@@ -2,7 +2,11 @@
 
 	<PropertyGroup>
 		<TargetFramework>net9.0</TargetFramework>
+<<<<<<< HEAD
+		<AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+=======
 		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+>>>>>>> main
 	</PropertyGroup>
 
 	<PropertyGroup>

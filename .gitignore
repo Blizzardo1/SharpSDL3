@@ -4,3 +4,4 @@ obj
 .vs/
 .idea/
 *.sln
+/SDL3/TTF/SDL_ttf.h

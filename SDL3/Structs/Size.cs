@@ -1,6 +1,13 @@
+<<<<<<< HEAD
+using System;
+
+namespace SharpSDL3.Structs;
+
+=======
 ﻿using System;
 
 namespace SharpSDL3.Structs; 
+>>>>>>> main
 public struct Size(int width, int height) : IEquatable<Size> {
     public int Width { readonly get => width; set => width = value; }
     public int Height { readonly get => height; set => height = value; }
@@ -36,4 +43,8 @@ public struct Size(int width, int height) : IEquatable<Size> {
     public static explicit operator Size(FSize sizeF) {
         return new Size((int)sizeF.Width, (int)sizeF.Height);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

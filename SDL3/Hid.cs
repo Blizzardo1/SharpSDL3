@@ -1,14 +1,25 @@
+<<<<<<< HEAD
+using SharpSDL3.Enums;
+=======
 ﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Collections.Generic;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+<<<<<<< HEAD
+namespace SharpSDL3;
+
+public static unsafe partial class Sdl {
+
+=======
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
 public static unsafe partial class Sdl {
+>>>>>>> main
     public static void BleScan(SdlBool active) {
         SDL_hid_ble_scan(active);
         LogInfo(LogCategory.System, $"HID BLE scan set to {active}");
@@ -245,13 +256,19 @@ public static unsafe partial class Sdl {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_get_indexed_string(nint dev, int stringIndex, string @string, nuint maxlen);
 
+<<<<<<< HEAD
+=======
    
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int
         SDL_hid_get_input_report(nint dev, nint data, nuint length);
 
+<<<<<<< HEAD
+=======
    
+>>>>>>> main
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_get_manufacturer_string(nint dev, string @string, nuint maxlen);
@@ -272,6 +289,17 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_init();
+<<<<<<< HEAD
+
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint SDL_hid_open(ushort vendorId, ushort productId, string serialNumber);
+
+    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint SDL_hid_open_path(string path);
+
+=======
     
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
@@ -279,6 +307,7 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_hid_open_path(string path);
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_read(nint dev, nint data, nuint length);
@@ -294,8 +323,11 @@ public static unsafe partial class Sdl {
     private static partial int
         SDL_hid_send_feature_report(nint dev, nint data, nuint length);
 
+<<<<<<< HEAD
+=======
    
    
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_set_nonblocking(nint dev, int nonblock);
@@ -303,6 +335,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_hid_write(nint dev, nint data, nuint length);
+<<<<<<< HEAD
+}
+=======
     
     
 }
+>>>>>>> main

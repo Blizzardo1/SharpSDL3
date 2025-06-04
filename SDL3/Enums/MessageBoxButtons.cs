@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+namespace SharpSDL3.Enums;
+
+=======
 ﻿namespace SharpSDL3.Enums; 
+>>>>>>> main
 public enum MessageBoxButtons {
     YesNo = 0,
     YesNoCancel,
@@ -18,4 +23,8 @@ public enum MessageBoxButtons {
     RetryIgnoreAll,
     NoToAllCancel,
     YesToAllCancel,
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

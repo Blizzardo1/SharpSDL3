@@ -9,4 +9,8 @@ public unsafe struct CachedGlyphPositions {
     public sbyte* Text;
     public nuint Length;
     public GlyphPositions Positions;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

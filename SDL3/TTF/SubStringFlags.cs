@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using System;
+=======
 ﻿using System;
+>>>>>>> main
 
 namespace SharpSDL3.TTF;
 

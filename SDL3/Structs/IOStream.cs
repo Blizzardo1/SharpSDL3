@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using System.Runtime.InteropServices;
+=======
 ﻿using System.Runtime.InteropServices;
+>>>>>>> main
 
 namespace SharpSDL3.Structs;
 
@@ -10,4 +14,8 @@ public struct IOStream {
     public int Props;
 
     public nint Handle;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using SharpSDL3.Structs;
+=======
 ﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Mixer;
@@ -60,7 +64,11 @@ public struct MusicInterface {
     /// Creates a music object from an SDL_IOStream.
     /// </summary>
     /// <param name="src">The input stream containing music data.</param>
+<<<<<<< HEAD
+    /// <param name="closeio">True to close the stream after loading, <see langword="false" /> otherwise.</param>
+=======
     /// <param name="closeio">True to close the stream after loading, false otherwise.</param>
+>>>>>>> main
     /// <returns>An opaque pointer to the music object, or <see cref="nint.Zero"/> on failure.</returns>
     /// <remarks>
     /// If the function returns <see cref="nint.Zero"/>, the caller is responsible for freeing <paramref name="src"/> if needed.
@@ -105,7 +113,11 @@ public struct MusicInterface {
     /// Checks if a music object is currently playing.
     /// </summary>
     /// <param name="music">An opaque pointer to the music object.</param>
+<<<<<<< HEAD
+    /// <returns>True if the music is playing, <see langword="false" /> otherwise.</returns>
+=======
     /// <returns>True if the music is playing, false otherwise.</returns>
+>>>>>>> main
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     [return: MarshalAs(Sdl.BoolType)]
     public delegate bool IsPlayingDelegate(nint music);

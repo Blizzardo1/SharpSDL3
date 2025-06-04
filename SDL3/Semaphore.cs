@@ -1,10 +1,17 @@
+<<<<<<< HEAD
+using SharpSDL3.Structs;
+=======
 ﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+<<<<<<< HEAD
+=======
 using static SharpSDL3.Sdl;
 
+>>>>>>> main
 namespace SharpSDL3;
 
 public static partial class Sdl {
@@ -12,7 +19,11 @@ public static partial class Sdl {
     public static nint Create(uint initialValue) {
         nint sem = SDL_CreateSemaphore(initialValue);
         if (sem == 0) {
+<<<<<<< HEAD
+            throw new InvalidOperationException("CreateSemaphore failed");
+=======
             throw new InvalidOperationException("SDL_CreateSemaphore failed");
+>>>>>>> main
         }
         return sem;
     }

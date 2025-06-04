@@ -140,8 +140,13 @@ public enum EventType : uint {
     /* Drag and drop events */
     DropFile = 0x1000, /**< The system requests a file open */
     DropText,                 /**< text/plain drag-and-drop event */
+<<<<<<< HEAD
+    DropBegin,                /**< A new set of drops is beginning (<see langword="null" /> filename) */
+    DropComplete,             /**< Current set of drops is now complete (<see langword="null" /> filename) */
+=======
     DropBegin,                /**< A new set of drops is beginning (NULL filename) */
     DropComplete,             /**< Current set of drops is now complete (NULL filename) */
+>>>>>>> main
     DropPosition,             /**< Position while moving over the window */
 
     /* Audio hotplug events */

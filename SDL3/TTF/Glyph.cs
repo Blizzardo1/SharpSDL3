@@ -14,4 +14,8 @@ public unsafe struct Glyph {
     public int SzRows;
     public int Advance;
     public GlyphUnion Hinting;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

@@ -6,4 +6,8 @@ namespace SharpSDL3.TTF;
 public unsafe struct Line {
     public sbyte* Text;
     public nuint Length;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

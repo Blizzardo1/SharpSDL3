@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using SharpSDL3.Structs;
+=======
 ﻿using SharpSDL3.Structs;
+>>>>>>> main
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.Mixer;
@@ -12,4 +16,8 @@ public struct Music {
     public int FadeStep;
     public int FadeSteps;
     [MarshalAs(Sdl.StringType)] public string Filename;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

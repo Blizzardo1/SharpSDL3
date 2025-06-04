@@ -1,14 +1,25 @@
+<<<<<<< HEAD
+using SharpSDL3.Enums;
+=======
 ﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
 
+<<<<<<< HEAD
+namespace SharpSDL3;
+
+public static partial class Sdl {
+
+=======
 using static SharpSDL3.Sdl;
 
 namespace SharpSDL3; 
 public static partial class Sdl {
+>>>>>>> main
     public static nint EglGetCurrentConfig() {
         var result = SDL_EGL_GetCurrentConfig();
         if (result == IntPtr.Zero) {
@@ -268,6 +279,10 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_LoadLibrary(string path);
+<<<<<<< HEAD
+
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GL_MakeCurrent(nint window, nint context);
@@ -291,4 +306,8 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GL_UnloadLibrary();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

@@ -6,4 +6,8 @@ namespace SharpSDL3.TTF;
 public unsafe struct FontList {
     public nint Font;
     public FontList* Next;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

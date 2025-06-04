@@ -1,7 +1,15 @@
+<<<<<<< HEAD
+using SharpSDL3.Structs;
+using System.Runtime.InteropServices;
+
+namespace SharpSDL3.TTF;
+
+=======
 ﻿using SharpSDL3.Structs;
 using System.Runtime.InteropServices;
 
 namespace SharpSDL3.TTF;
+>>>>>>> main
 [StructLayout(LayoutKind.Sequential)]
 public struct SubString {
     public SubStringFlags Flags;   // The flags for this substring

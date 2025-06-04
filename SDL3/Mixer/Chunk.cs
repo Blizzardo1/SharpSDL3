@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+using System.Runtime.InteropServices;
+=======
 ﻿using System.Runtime.InteropServices;
+>>>>>>> main
 
 namespace SharpSDL3.Mixer;
 

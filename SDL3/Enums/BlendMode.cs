@@ -1,4 +1,9 @@
+<<<<<<< HEAD
+namespace SharpSDL3.Enums;
+
+=======
 ﻿namespace SharpSDL3.Enums;
+>>>>>>> main
 public enum BlendMode : uint {
     None = 0x00000000u,/**< no blending: dstRGBA = srcRGBA */
     Blend = 0x00000001u,/**< alpha blending: dstRGB = (srcRGB * srcA) + (dstRGB * (1-srcA)), dstA = srcA + (dstA * (1-srcA)) */
@@ -8,4 +13,8 @@ public enum BlendMode : uint {
     Mod = 0x00000004u,/**< color modulate: dstRGB = srcRGB * dstRGB, dstA = dstA */
     Mul = 0x00000008u,/**< color multiply: dstRGB = (srcRGB * dstRGB) + (dstRGB * (1-srcA)), dstA = dstA */
     Invalid = 0x7FFFFFFFu
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

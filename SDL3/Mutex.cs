@@ -1,16 +1,37 @@
+<<<<<<< HEAD
+using SharpSDL3.Enums;
+=======
 ﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+<<<<<<< HEAD
+=======
 using static SharpSDL3.Sdl;
 
+>>>>>>> main
 namespace SharpSDL3;
 
 public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_mutex.h
 
+<<<<<<< HEAD
+    /// <summary>Restart all threads that are waiting on the condition variable.</summary>
+
+    /// <param name="cond">the condition variable to signal.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SignalCondition"/>
+    /// <seealso cref="WaitCondition"/>
+    /// <seealso cref="WaitConditionTimeout"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void BroadcastCondition(nint cond) {
         if (cond == nint.Zero) {
             throw new ArgumentNullException(nameof(cond), "Condition variable cannot be null.");
@@ -18,6 +39,20 @@ public static partial class Sdl {
         SDL_BroadcastCondition(cond);
     }
 
+<<<<<<< HEAD
+    /// <summary>Create a condition variable.</summary>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition"/>
+    /// <seealso cref="SignalCondition"/>
+    /// <seealso cref="WaitCondition"/>
+    /// <seealso cref="WaitConditionTimeout"/>
+    /// <seealso cref="DestroyCondition"/>
+    /// </remarks>
+    /// <returns>(SDL_Condition *) Returns a new condition variable or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
+
+=======
+>>>>>>> main
     public static nint CreateCondition() {
         var cond = SDL_CreateCondition();
         if (cond == nint.Zero) {
@@ -26,6 +61,20 @@ public static partial class Sdl {
         return cond;
     }
 
+<<<<<<< HEAD
+    /// <summary>Create a new mutex.</summary>
+    /// <remarks>
+    /// All newly-created mutexes begin in the unlocked state.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyMutex"/>
+    /// <seealso cref="LockMutex"/>
+    /// <seealso cref="TryLockMutex"/>
+    /// <seealso cref="UnlockMutex"/>
+    /// </remarks>
+    /// <returns>(SDL_Mutex *) Returns the initialized and unlocked mutex or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+
+=======
+>>>>>>> main
     public static nint CreateMutex() {
         var mutex = SDL_CreateMutex();
         if (mutex == nint.Zero) {
@@ -34,6 +83,28 @@ public static partial class Sdl {
         return mutex;
     }
 
+<<<<<<< HEAD
+    /// <summary>Create a new read/write lock.</summary>
+    /// <remarks>
+    /// A read/write lock is useful for situations where you have multiple threads
+    /// trying to access a resource that is rarely updated. All threads requesting
+    /// a read-only lock will be allowed to run in parallel; if a thread requests a
+    /// write lock, it will be provided exclusive access. This makes it safe for
+    /// multiple threads to use a resource at the same time if they promise not to
+    /// change it, and when it has to be changed, the rwlock will serve as a
+    /// gateway to make sure those changes can be made safely.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyRWLock"/>
+    /// <seealso cref="LockRWLockForReading"/>
+    /// <seealso cref="LockRWLockForWriting"/>
+    /// <seealso cref="TryLockRWLockForReading"/>
+    /// <seealso cref="TryLockRWLockForWriting"/>
+    /// <seealso cref="UnlockRWLock"/>
+    /// </remarks>
+    /// <returns>(SDL_RWLock *) Returns the initialized and unlockedread/write lock or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+
+=======
+>>>>>>> main
     public static nint CreateRWLock() {
         var rwlock = SDL_CreateRWLock();
         if (rwlock == nint.Zero) {
@@ -42,6 +113,17 @@ public static partial class Sdl {
         return rwlock;
     }
 
+<<<<<<< HEAD
+    /// <summary>Destroy a condition variable.</summary>
+
+    /// <param name="cond">the condition variable to destroy.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateCondition"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void DestroyCondition(nint cond) {
         if (cond == nint.Zero) {
             throw new ArgumentNullException(nameof(cond), "Condition variable cannot be null.");
@@ -49,6 +131,22 @@ public static partial class Sdl {
         SDL_DestroyCondition(cond);
     }
 
+<<<<<<< HEAD
+    /// <summary>Destroy a mutex created with SDL_CreateMutex().</summary>
+
+    /// <param name="mutex">the mutex to destroy.</param>
+    /// <remarks>
+    /// This function must be called on any mutex that is no longer needed. Failure
+    /// to destroy a mutex will result in a system memory or resource leak. While
+    /// it is safe to destroy a mutex that is unlocked, it is not safe to attempt
+    /// to destroy a locked mutex, and may result in undefined behavior depending
+    /// on the platform.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateMutex"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void DestroyMutex(nint mutex) {
         if (mutex == nint.Zero) {
             throw new ArgumentNullException(nameof(mutex), "Mutex cannot be null.");
@@ -56,6 +154,22 @@ public static partial class Sdl {
         SDL_DestroyMutex(mutex);
     }
 
+<<<<<<< HEAD
+    /// <summary>Destroy a read/write lock created with SDL_CreateRWLock().</summary>
+
+    /// <param name="rwlock">the rwlock to destroy.</param>
+    /// <remarks>
+    /// This function must be called on any read/write lock that is no longer
+    /// needed. Failure to destroy a rwlock will result in a system memory or
+    /// resource leak. While it is safe to destroy a rwlock that is unlocked, it
+    /// is not safe to attempt to destroy a locked rwlock, and may result in
+    /// undefined behavior depending on the platform.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRWLock"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void DestroyRWLock(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -63,6 +177,21 @@ public static partial class Sdl {
         SDL_DestroyRWLock(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Lock the mutex.</summary>
+
+    /// <param name="mutex">the mutex to lock.</param>
+    /// <remarks>
+    /// This will block until the mutex is available, which is to say it is in the
+    /// unlocked state and the OS has chosen the caller as the next thread to lock
+    /// it. Of all threads waiting to lock the mutex, only one may do so at a time.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="TryLockMutex"/>
+    /// <seealso cref="UnlockMutex"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void LockMutex(nint mutex) {
         if (mutex == nint.Zero) {
             throw new ArgumentNullException(nameof(mutex), "Mutex cannot be null.");
@@ -70,6 +199,25 @@ public static partial class Sdl {
         SDL_LockMutex(mutex);
     }
 
+<<<<<<< HEAD
+    /// <summary>Lock the read/write lock for read only operations.</summary>
+
+    /// <param name="rwlock">the read/write lock to lock.</param>
+    /// <remarks>
+    /// This will block until the rwlock is available, which is to say it is not
+    /// locked for writing by any other thread. Of all threads waiting to lock the
+    /// rwlock, all may do so at the same time as long as they are requesting
+    /// read-only access; if a thread wants to lock for writing, only one may do so
+    /// at a time, and no other threads, read-only or not, may hold the lock at the
+    /// same time.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRWLockForWriting"/>
+    /// <seealso cref="TryLockRWLockForReading"/>
+    /// <seealso cref="UnlockRWLock"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void LockRWLockForReading(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -77,6 +225,24 @@ public static partial class Sdl {
         SDL_LockRWLockForReading(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Lock the read/write lock for write operations.</summary>
+
+    /// <param name="rwlock">the read/write lock to lock.</param>
+    /// <remarks>
+    /// This will block until the rwlock is available, which is to say it is not
+    /// locked for reading or writing by any other thread. Only one thread may hold
+    /// the lock when it requests write access; all other threads, whether they
+    /// also want to write or only want read-only access, must wait until the
+    /// writer thread has released the lock.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRWLockForReading"/>
+    /// <seealso cref="TryLockRWLockForWriting"/>
+    /// <seealso cref="UnlockRWLock"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void LockRWLockForWriting(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -84,6 +250,24 @@ public static partial class Sdl {
         SDL_LockRWLockForWriting(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Finish an initialization state transition.</summary>
+
+    /// <param name="state">the initialization state to check.</param>
+    /// <param name="initialized">the new initialization state.</param>
+    /// <remarks>
+    /// This function sets the status of the passed in state to
+    /// SDL_INIT_STATUS_INITIALIZED or
+    /// SDL_INIT_STATUS_UNINITIALIZED and allows
+    /// any threads waiting for the status to proceed.
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShouldInit"/>
+    /// <seealso cref="ShouldQuit"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void SetInitialized(ref InitState state, SdlBool initialized) {
         if (state.Thread == 0) {
             LogWarn(LogCategory.System, "SetInitialized: State thread is not set.");
@@ -98,6 +282,25 @@ public static partial class Sdl {
         SDL_SetInitialized(ref state, initialized);
     }
 
+<<<<<<< HEAD
+    /// <summary>Return whether initialization should be done.</summary>
+
+    /// <param name="state">the initialization state to check.</param>
+    /// <remarks>
+    /// This function checks the passed in state and if initialization should be
+    /// done, sets the status to
+    /// SDL_INIT_STATUS_INITIALIZING and returns
+    /// <see langword="true" />. If another thread is already modifying this state, it will wait until
+    /// that's done before returning.
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetInitialized"/>
+    /// <seealso cref="ShouldQuit"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> if initialization needs to be done, <see langword="false" /> otherwise.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool ShouldInit(ref InitState state) {
         if (state.Status == 0) {
             LogInfo(LogCategory.System, "ShouldInit: Initialization is required.");
@@ -108,6 +311,24 @@ public static partial class Sdl {
         return false;
     }
 
+<<<<<<< HEAD
+    /// <summary>Return whether cleanup should be done.</summary>
+
+    /// <param name="state">the initialization state to check.</param>
+    /// <remarks>
+    /// This function checks the passed in state and if cleanup should be done,
+    /// sets the status to
+    /// SDL_INIT_STATUS_UNINITIALIZING and
+    /// returns <see langword="true" />.
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetInitialized"/>
+    /// <seealso cref="ShouldInit"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> if cleanup needs to be done, <see langword="false" /> otherwise.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool ShouldQuit(ref InitState state) {
         if (state.Thread == 0) {
             LogWarn(LogCategory.System, "ShouldQuit: State thread is not set.");
@@ -124,6 +345,20 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
+    /// <summary>Restart one of the threads that are waiting on the condition variable.</summary>
+
+    /// <param name="cond">the condition variable to signal.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition"/>
+    /// <seealso cref="WaitCondition"/>
+    /// <seealso cref="WaitConditionTimeout"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void SignalCondition(nint cond) {
         if (cond == nint.Zero) {
             throw new ArgumentNullException(nameof(cond), "Condition variable cannot be null.");
@@ -131,6 +366,21 @@ public static partial class Sdl {
         SDL_SignalCondition(cond);
     }
 
+<<<<<<< HEAD
+    /// <summary>Try to lock a mutex without blocking.</summary>
+
+    /// <param name="mutex">the mutex to try to lock.</param>
+    /// <remarks>
+    /// This works just like SDL_LockMutex(), but if the mutex is
+    /// not available, this function returns <see langword="false" /> immediately.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockMutex"/>
+    /// <seealso cref="UnlockMutex"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the mutex would block.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool TryLockMutex(nint mutex) {
         if (mutex == nint.Zero) {
             throw new ArgumentNullException(nameof(mutex), "Mutex cannot be null.");
@@ -138,6 +388,23 @@ public static partial class Sdl {
         return SDL_TryLockMutex(mutex);
     }
 
+<<<<<<< HEAD
+    /// <summary>Try to lock a read/write lock for reading without blocking.</summary>
+
+    /// <param name="rwlock">the rwlock to try to lock.</param>
+    /// <remarks>
+    /// This works just like
+    /// SDL_LockRWLockForReading(), but if the rwlock
+    /// is not available, then this function returns <see langword="false" /> immediately.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRWLockForReading"/>
+    /// <seealso cref="TryLockRWLockForWriting"/>
+    /// <seealso cref="UnlockRWLock"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool TryLockRWLockForReading(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -145,6 +412,23 @@ public static partial class Sdl {
         return SDL_TryLockRWLockForReading(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Try to lock a read/write lock for writing without blocking.</summary>
+
+    /// <param name="rwlock">the rwlock to try to lock.</param>
+    /// <remarks>
+    /// This works just like
+    /// SDL_LockRWLockForWriting(), but if the rwlock
+    /// is not available, then this function returns <see langword="false" /> immediately.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRWLockForWriting"/>
+    /// <seealso cref="TryLockRWLockForReading"/>
+    /// <seealso cref="UnlockRWLock"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool TryLockRWLockForWriting(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -152,6 +436,21 @@ public static partial class Sdl {
         return SDL_TryLockRWLockForWriting(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Unlock the mutex.</summary>
+
+    /// <param name="mutex">the mutex to unlock.</param>
+    /// <remarks>
+    /// It is legal for the owning thread to lock an already-locked mutex. It must
+    /// unlock it the same number of times before it is actually made available for
+    /// other threads in the system (this is known as a &quot;recursive mutex&quot;).
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockMutex"/>
+    /// <seealso cref="TryLockMutex"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void UnlockMutex(nint mutex) {
         if (mutex == nint.Zero) {
             throw new ArgumentNullException(nameof(mutex), "Mutex cannot be null.");
@@ -159,6 +458,22 @@ public static partial class Sdl {
         SDL_UnlockMutex(mutex);
     }
 
+<<<<<<< HEAD
+    /// <summary>Unlock the read/write lock.</summary>
+
+    /// <param name="rwlock">the rwlock to unlock.</param>
+    /// <remarks>
+    /// Use this function to unlock the rwlock, whether it was locked for read-only
+    /// or write operations.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRWLockForReading"/>
+    /// <seealso cref="LockRWLockForWriting"/>
+    /// <seealso cref="TryLockRWLockForReading"/>
+    /// <seealso cref="TryLockRWLockForWriting"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void UnlockRWLock(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
@@ -166,6 +481,26 @@ public static partial class Sdl {
         SDL_UnlockRWLock(rwlock);
     }
 
+<<<<<<< HEAD
+    /// <summary>Wait until a condition variable is signaled.</summary>
+
+    /// <param name="cond">the condition variable to wait on.</param>
+    /// <param name="mutex">the mutex used to coordinate thread access.</param>
+    /// <remarks>
+    /// This function unlocks the specified mutex and waits for another thread to
+    /// call SDL_SignalCondition() or
+    /// SDL_BroadcastCondition() on the condition
+    /// variable cond. Once the condition variable is signaled, the mutex is
+    /// re-locked and the function returns.
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition"/>
+    /// <seealso cref="SignalCondition"/>
+    /// <seealso cref="WaitConditionTimeout"/>
+    /// </remarks>
+
+=======
+>>>>>>> main
     public static void WaitCondition(nint cond, nint mutex) {
         if (cond == nint.Zero) {
             throw new ArgumentNullException(nameof(cond), "Condition variable cannot be null.");
@@ -183,6 +518,29 @@ public static partial class Sdl {
         }
     }
 
+<<<<<<< HEAD
+    /// <summary>Wait until a condition variable is signaled or a certain time has passed.</summary>
+
+    /// <param name="cond">the condition variable to wait on.</param>
+    /// <param name="mutex">the mutex used to coordinate thread access.</param>
+    /// <param name="timeoutMS">the maximum time to wait, in milliseconds, or -1 to wait indefinitely.</param>
+    /// <remarks>
+    /// This function unlocks the specified mutex and waits for another thread to
+    /// call SDL_SignalCondition() or
+    /// SDL_BroadcastCondition() on the condition
+    /// variable cond, or for the specified time to elapse. Once the condition
+    /// variable is signaled or the time elapsed, the mutex is re-locked and the
+    /// function returns.
+    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition"/>
+    /// <seealso cref="SignalCondition"/>
+    /// <seealso cref="WaitCondition"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> if the condition variable is signaled, <see langword="false" /> if thecondition is not signaled in the allotted time.</returns>
+
+=======
+>>>>>>> main
     public static SdlBool WaitConditionTimeout(nint cond, nint mutex, int timeoutMs) {
         if (cond == nint.Zero || mutex == nint.Zero) {
             throw new ArgumentNullException(cond == nint.Zero ? nameof(cond) : nameof(mutex), "Condition or mutex cannot be null.");
@@ -197,7 +555,11 @@ public static partial class Sdl {
         if (!result) {
             var error = GetError();
             if (!string.IsNullOrEmpty(error)) {
+<<<<<<< HEAD
+                throw new InvalidOperationException($"WaitConditionTimeout failed: {error}");
+=======
                 throw new InvalidOperationException($"SDL_WaitConditionTimeout failed: {error}");
+>>>>>>> main
             }
         }
 

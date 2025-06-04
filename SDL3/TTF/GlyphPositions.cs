@@ -10,4 +10,8 @@ public unsafe struct GlyphPositions {
     public int Height26Dot6;
     public int NumClusters;
     public int MaxLen;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

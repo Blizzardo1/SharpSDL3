@@ -1,12 +1,30 @@
+<<<<<<< HEAD
+using SharpSDL3.Enums;
+using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+=======
 ﻿using SharpSDL3.Enums;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.InteropServices;
+>>>>>>> main
 
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
+<<<<<<< HEAD
+    /// <summary>Get the touch device name as reported from the driver.</summary>
+
+    /// <param name="touchID">the touch device instance ID.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>Returns touch device name, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+=======
+>>>>>>> main
 
     public static string GetTouchDeviceName(ulong touchId) {
         if (touchId == 0) {
@@ -22,6 +40,20 @@ public static unsafe partial class Sdl {
         return deviceName;
     }
 
+<<<<<<< HEAD
+    /// <summary>Get a list of registered touch devices.</summary>
+
+    /// <param name="count">a pointer filled in with the number of devices returned, may be discarded.</param>
+    /// <remarks>
+    /// On some platforms SDL first sees the touch device if it was actually used.
+    /// Therefore the returned list might be empty, although devices are available.
+    /// After using all devices at least once the number will be correct.
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>(SDL_TouchID *) Returns a 0 terminated array of touch deviceIDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
+
+=======
+>>>>>>> main
     public static Span<nint> GetTouchDevices() {
         nint result = SDL_GetTouchDevices(out int count);
 
@@ -35,6 +67,17 @@ public static unsafe partial class Sdl {
         return data;
     }
 
+<<<<<<< HEAD
+    /// <summary>Get the type of the given touch device.</summary>
+
+    /// <param name="touchID">the ID of a touch device.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>Returns touch device type.</returns>
+
+=======
+>>>>>>> main
     public static TouchDeviceType GetTouchDeviceType(ulong touchId) {
         if (touchId == 0) {
             throw new ArgumentException("Touch ID cannot be zero.", nameof(touchId));
@@ -46,6 +89,18 @@ public static unsafe partial class Sdl {
         return deviceType;
     }
 
+<<<<<<< HEAD
+    /// <summary>Get a list of active fingers for a given touch device.</summary>
+
+    /// <param name="touchID">the ID of a touch device.</param>
+    /// <param name="count">a pointer filled in with the number of fingers returned, can be <see langword="null" />.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>(SDL_Finger **) Returns a <see langword="null" /> terminated array ofSDL_Finger pointers or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a single allocation that should be freed with <see cref="Free"/> when it is no longer needed.</returns>
+
+=======
+>>>>>>> main
     public static Span<nint> GetTouchFingers(ulong touchId) {
         nint result = SDL_GetTouchFingers(touchId, out int count);
         if (result == nint.Zero) {
@@ -58,6 +113,18 @@ public static unsafe partial class Sdl {
         return data;
     }
 
+<<<<<<< HEAD
+    /// <summary>Get a list of active fingers for a given touch device.</summary>
+
+    /// <param name="touchID">the ID of a touch device.</param>
+    /// <param name="count">a pointer filled in with the number of fingers returned, can be <see langword="null" />.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>(SDL_Finger **) Returns a <see langword="null" /> terminated array ofSDL_Finger pointers or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This is a single allocation that should be freed with <see cref="Free"/> when it is no longer needed.</returns>
+
+=======
+>>>>>>> main
     public static Span<nint> GetTouchFingers(ulong touchId, out int count) {
         nint result = SDL_GetTouchFingers(touchId, out count);
         if (result == nint.Zero) {

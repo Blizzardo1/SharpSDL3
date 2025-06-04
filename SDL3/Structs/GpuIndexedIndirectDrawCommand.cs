@@ -3,6 +3,14 @@ using System.Runtime.InteropServices;
 namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
+<<<<<<< HEAD
+public struct GpuIndexedIndirectDrawCommand {
+    public uint NumIndices;
+    public uint NumInstances;
+    public uint FirstIndex;
+    public int VertexOffset;
+    public uint FirstInstance;
+=======
 public struct GpuIndexedIndirectDrawCommand
 {
 	public uint NumIndices;
@@ -10,4 +18,5 @@ public struct GpuIndexedIndirectDrawCommand
 	public uint FirstIndex;
 	public int VertexOffset;
 	public uint FirstInstance;
+>>>>>>> main
 }
