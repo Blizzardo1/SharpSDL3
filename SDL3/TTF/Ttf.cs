@@ -1005,7 +1005,7 @@ public static unsafe partial class Ttf {
     /// <param name="engine">A pointer to the GPU text engine.</param>
     /// <remarks>
     /// <para>This function retrieves the winding order used by the GPU text engine for rendering.</para>
-    /// <para>This function should be called on the thread that created the text engine.</para>
+    /// <para><strong>This function should be called on the thread that created the text engine.</strong></para>
     /// <para>This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the <see cref="GPUTextEngineWinding"/> setting of the text engine.</returns>
