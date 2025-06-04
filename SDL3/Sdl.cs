@@ -5188,6 +5188,12 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="name"></param>
+    /// <param name="value"></param>
+    /// <returns></returns>
     public static bool SetHint(string name, string value) {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) {
             LogError(LogCategory.Error, "SetHint: Name or value is null or empty.");
@@ -5216,7 +5222,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetHint"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetHintWithPriority(string name, string value, HintPriority priority) {
         if (string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) {
             LogError(LogCategory.Error, "SetHintWithPriority: Name or value is null or empty.");
@@ -5229,7 +5234,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Circumvent failure of SDL_Init() when not using SDL_main() as an entry point.</summary>
+    /// <summary>Circumvent failure of <see cref="Init"/> when not using SDL_main() as an entry point.</summary>
     /// <remarks>
     /// This function is defined in SDL_main.h, along with the
     /// preprocessor rule to redefine main() as SDL_main(). Thus to
@@ -5238,20 +5243,18 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="Init"/>
     /// </remarks>
-
     public static void SetMainReady() {
         SDL_SetMainReady();
     }
 
     /// <summary>Set the current key modifier state for the keyboard.</summary>
-
-    /// <param name="modstate">the desired SDL_Keymod for the keyboard.</param>
+    /// <param name="modstate">the desired <see cref="KeyMod"/> for the keyboard.</param>
     /// <remarks>
     /// The inverse of SDL_GetModState(),
     /// SDL_SetModState() allows you to impose modifier key
     /// states on your application. Simply pass your desired modifier states into
-    /// modstate. This value may be a bitwise, OR'd combination of
-    /// SDL_Keymod values.
+    /// <paramref name="modstate"/>. This value may be a bitwise, OR'd combination of
+    /// <see cref="KeyMod"/> values.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetModState"/>
@@ -5266,7 +5269,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set an integer property in a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property.</param>
@@ -5276,7 +5278,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetNumberProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetNumberProperty(uint props, string name, long value) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetNumberProperty: Properties are zero or name is null/empty.");
