@@ -14,9 +14,8 @@ public static unsafe partial class Mixer {
     /// Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
     /// </summary>
     public const int Major = 3;
-
-    public const int Micro = 0;
-    public const int Minor = 0;
+    public const int Micro = 2;
+    public const int Minor = 4;
 
     private const string NativeLibName = "SDL3_mixer";
 

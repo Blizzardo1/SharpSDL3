@@ -5291,7 +5291,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a range of colors in a palette.</summary>
-
     /// <param name="palette">the SDL_Palette structure to modify.</param>
     /// <param name="colors">an array of SDL_Color structures to copy into the palette.</param>
     /// <param name="firstcolor">the index of the first palette entry to modify.</param>
@@ -5301,7 +5300,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetPaletteColors(nint palette, Span<Color> colors, int firstcolor, int ncolors) {
         if (palette == nint.Zero) {
             LogError(LogCategory.Error, "SetPaletteColors: Palette pointer is null.");

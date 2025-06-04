@@ -13,8 +13,8 @@ public static unsafe partial class Ttf {
      * Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
      */
     public const int Major = 3;
-    public const int Micro = 0;
-    public const int Minor = 3;
+    public const int Micro = 2;
+    public const int Minor = 2;
     public const string TTF_PROP_FONT_CREATE_EXISTING_FONT = "ttf.font.create.existing_font";
     public const string TTF_PROP_FONT_CREATE_FACE_NUMBER = "ttf.font.create.face";
     public const string TTF_PROP_FONT_CREATE_FILENAME_STRING = "ttf.font.create.filename";
@@ -1855,7 +1855,7 @@ public static unsafe partial class Ttf {
     /// <param name="minor">The minor version to check.</param>
     /// <param name="micro">The micro version to check.</param>
     /// <returns>True if the compiled version is at least the specified version; otherwise, <see langword="false" />.</returns>
-    public static bool MixerVersionAtLeast(int major, int minor, int micro) =>
+    public static bool TtfVersionAtLeast(int major, int minor, int micro) =>
         (Major >= major) &&
         (Major > major || Minor >= minor) &&
         (Major > major || Minor > minor || Micro >= micro);
