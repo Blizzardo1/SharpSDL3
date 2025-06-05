@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -7,6 +11,7 @@ using System.Runtime.InteropServices;
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Create a texture for a rendering context.</summary>
 
     /// <param name="renderer">the rendering context.</param>
@@ -28,6 +33,12 @@ public static unsafe partial class Sdl {
 
     public static nint CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
                 int w, int h) {
+=======
+
+    public static nint CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
+            int w, int h) {
+
+>>>>>>> main
         if (renderer == nint.Zero) {
             LogError(LogCategory.Render, "Renderer is null");
         }
@@ -43,6 +54,7 @@ public static unsafe partial class Sdl {
         return SDL_CreateTexture(renderer, format, access, w, h);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a texture from an existing surface.</summary>
 
     /// <param name="renderer">the rendering context.</param>
@@ -57,6 +69,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateTextureFromSurface(nint renderer, nint surface) {
         if (renderer == nint.Zero) {
             LogError(LogCategory.Render, "Renderer is null");
@@ -67,6 +81,7 @@ public static unsafe partial class Sdl {
         return SDL_CreateTextureFromSurface(renderer, surface);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a texture for a rendering context with the specified properties.</summary>
 
     /// <param name="renderer">the rendering context.</param>
@@ -84,6 +99,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns the created texture or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateTextureWithProperties(nint renderer, uint props) {
         if (renderer == nint.Zero) {
             LogError(LogCategory.Render, "Renderer is null");
@@ -98,6 +115,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureAlphaMod(texture, out alpha);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the additional alpha value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -111,6 +129,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static byte GetTextureAlphaMod(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -126,6 +146,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureAlphaModFloat(texture, out alpha);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the additional alpha value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -139,6 +160,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static float GetTextureAlphaModFloat(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -147,6 +170,7 @@ public static unsafe partial class Sdl {
         return alpha;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the blend mode used for texture copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -158,6 +182,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool GetTextureBlendMode(nint texture, nint blendMode) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -172,6 +198,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureColorMod(texture, out r, out g, out b);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -187,6 +214,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static Color GetTextureColorMod(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -202,6 +231,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureColorModFloat(texture, out r, out g, out b);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -217,6 +247,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static FColor GetTextureColorModFloat(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -225,6 +257,7 @@ public static unsafe partial class Sdl {
         return new FColor() { R = r, G = g, B = b };
     }
 
+<<<<<<< HEAD
     /// <summary>Get the properties associated with a texture.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -235,6 +268,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetTextureProperties(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -249,6 +284,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureScaleMode(texture, out scaleMode);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the scale mode used for texture scale operations.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -260,6 +296,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static ScaleMode GetTextureScaleMode(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -275,6 +313,7 @@ public static unsafe partial class Sdl {
         return SDL_GetTextureSize(texture, out w, out h);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the size of a texture, as floating point values.</summary>
 
     /// <param name="texture">the texture to query.</param>
@@ -286,6 +325,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static Vector2 GetTextureSize(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -294,6 +335,7 @@ public static unsafe partial class Sdl {
         return new(w, h);
     }
 
+<<<<<<< HEAD
     /// <summary>Lock a portion of the texture for write-only pixel access.</summary>
 
     /// <param name="texture">the texture to lock for access, which was created with SDL_TEXTUREACCESS_STREAMING.</param>
@@ -314,12 +356,17 @@ public static unsafe partial class Sdl {
 
     public static bool LockTexture(nint texture, ref Rect rect, out nint pixels,
                 out int pitch) {
+=======
+    public static bool LockTexture(nint texture, ref Rect rect, out nint pixels,
+            out int pitch) {
+>>>>>>> main
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
         return SDL_LockTexture(texture, ref rect, out pixels, out pitch);
     }
 
+<<<<<<< HEAD
     /// <summary>Lock a portion of the texture for write-only pixel access.</summary>
 
     /// <param name="texture">the texture to lock for access, which was created with SDL_TEXTUREACCESS_STREAMING.</param>
@@ -340,6 +387,10 @@ public static unsafe partial class Sdl {
 
     public static bool LockTexture(nint texture, nint rect, out nint pixels,
                 out int pitch) {
+=======
+    public static bool LockTexture(nint texture, nint rect, out nint pixels,
+            out int pitch) {
+>>>>>>> main
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
@@ -347,6 +398,7 @@ public static unsafe partial class Sdl {
         return SDL_LockTexture(texture, ref trect, out pixels, out pitch);
     }
 
+<<<<<<< HEAD
     /// <summary>Lock a portion of the texture for write-only pixel access, and expose it as a SDL surface.</summary>
 
     /// <param name="texture">the texture to lock for access, which must be created with SDL_TEXTUREACCESS_STREAMING.</param>
@@ -364,12 +416,17 @@ public static unsafe partial class Sdl {
 
     public static bool LockTextureToSurface(nint texture, ref Rect rect,
                 out nint surface) {
+=======
+    public static bool LockTextureToSurface(nint texture, ref Rect rect,
+            out nint surface) {
+>>>>>>> main
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
         return SDL_LockTextureToSurface(texture, ref rect, out surface);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional alpha value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -385,6 +442,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureAlphaMod(nint texture, byte alpha) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -392,6 +451,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureAlphaMod(texture, alpha);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional alpha value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -407,6 +467,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureAlphaModFloat(nint texture, float alpha) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -414,6 +476,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureAlphaModFloat(texture, alpha);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the blend mode for a texture, used by SDL_RenderTexture().</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -427,6 +490,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureBlendMode(nint texture, uint blendMode) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -434,6 +499,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureBlendMode(texture, blendMode);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -452,6 +518,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureColorMod(nint texture, byte r, byte g, byte b) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -459,6 +527,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureColorMod(texture, r, g, b);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -477,6 +546,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureColorMod(nint texture, Color color) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -484,6 +555,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureColorMod(texture, color.R, color.G, color.B);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -502,6 +574,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureColorModFloat(nint texture, float r, float g, float b) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -509,6 +583,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureColorModFloat(texture, r, g, b);
     }
 
+<<<<<<< HEAD
     /// <summary>Set an additional color value multiplied into render copy operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -527,6 +602,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureColorModFloat(nint texture, FColor color) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -534,6 +611,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureColorModFloat(texture, color.R, color.G, color.B);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the scale mode used for texture scale operations.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -547,6 +625,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetTextureScaleMode(nint texture, ScaleMode scaleMode) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -554,6 +634,7 @@ public static unsafe partial class Sdl {
         return SDL_SetTextureScaleMode(texture, scaleMode);
     }
 
+<<<<<<< HEAD
     /// <summary>Unlock a texture, uploading the changes to video memory, if needed.</summary>
 
     /// <param name="texture">a texture locked by SDL_LockTexture().</param>
@@ -568,6 +649,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="LockTexture"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void UnlockTexture(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -575,6 +658,7 @@ public static unsafe partial class Sdl {
         SDL_UnlockTexture(texture);
     }
 
+<<<<<<< HEAD
     /// <summary>Update a rectangle within a planar NV12 or NV21 texture with new pixels.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -596,12 +680,17 @@ public static unsafe partial class Sdl {
 
     public static bool UpdateNVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
                 nint uVplane, int uVpitch) {
+=======
+    public static bool UpdateNVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
+            nint uVplane, int uVpitch) {
+>>>>>>> main
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
         return SDL_UpdateNVTexture(texture, ref rect, yplane, ypitch, uVplane, uVpitch);
     }
 
+<<<<<<< HEAD
     /// <summary>Update the given texture rectangle with new pixel data.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -621,6 +710,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool UpdateTexture(nint texture, ref Rect rect, nint pixels, int pitch) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -628,6 +719,7 @@ public static unsafe partial class Sdl {
         return SDL_UpdateTexture(texture, ref rect, pixels, pitch);
     }
 
+<<<<<<< HEAD
     /// <summary>Update a rectangle within a planar YV12 or IYUV texture with new pixel data.</summary>
 
     /// <param name="texture">the texture to update.</param>
@@ -651,6 +743,10 @@ public static unsafe partial class Sdl {
 
     public static bool UpdateYUVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
                 nint uplane, int upitch, nint vplane, int vpitch) {
+=======
+    public static bool UpdateYUVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
+            nint uplane, int upitch, nint vplane, int vpitch) {
+>>>>>>> main
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
@@ -662,22 +758,35 @@ public static unsafe partial class Sdl {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
         int w, int h);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     // nint refers to a nint
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureFromSurface(nint renderer, nint surface);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     // nint refers to a nint
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureWithProperties(nint renderer, uint props);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureAlphaMod(nint texture, out byte alpha);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
@@ -693,6 +802,10 @@ public static unsafe partial class Sdl {
     private static partial SdlBool
         SDL_GetTextureColorMod(nint texture, out byte r, out byte g, out byte b);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
@@ -702,7 +815,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetTextureProperties(nint texture);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
@@ -719,21 +835,38 @@ public static unsafe partial class Sdl {
         SDL_LockTexture(nint texture, ref Rect rect, out nint pixels,
             out int pitch);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_LockTextureToSurface(nint texture, ref Rect rect,
             out nint surface);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetTextureAlphaMod(nint texture, byte alpha);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureAlphaModFloat(nint texture, float alpha);
 
+<<<<<<< HEAD
+=======
+   
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
@@ -743,17 +876,28 @@ public static unsafe partial class Sdl {
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureColorMod(nint texture, byte r, byte g, byte b);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureColorModFloat(nint texture, float r, float g, float b);
 
+<<<<<<< HEAD
+=======
+    
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureScaleMode(nint texture, ScaleMode scaleMode);
+<<<<<<< HEAD
 
+=======
+                                                                   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockTexture(nint texture);
@@ -763,13 +907,26 @@ public static unsafe partial class Sdl {
     private static partial SdlBool SDL_UpdateNVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
             nint uVplane, int uVpitch);
 
+<<<<<<< HEAD
+=======
+   
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_UpdateTexture(nint texture, ref Rect rect, nint pixels, int pitch);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_UpdateYUVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
         nint uplane, int upitch, nint vplane, int vpitch);
+<<<<<<< HEAD
 }
+=======
+    
+
+}
+>>>>>>> main

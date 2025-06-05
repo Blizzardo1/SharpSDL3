@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.InteropServices;

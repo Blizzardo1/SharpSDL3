@@ -5,16 +5,24 @@ namespace SharpSDL3.TTF;
 
 [StructLayout(LayoutKind.Sequential, Size = 384)]
 public unsafe struct Font {
+<<<<<<< HEAD
 
     [MarshalAs(Sdl.StringType)]
     public string Name;
 
+=======
+    [MarshalAs(Sdl.StringType)]
+    public string Name;
+>>>>>>> main
     public nint Face;
     public long FaceIndex;
     public nint Props;
     public readonly uint Generation => (uint)Ttf.GetFontGeneration(this);
     public nint Text;
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public readonly float Size {
         get => Ttf.GetFontSize(this);
         set => Ttf.SetFontSize(this, value);
@@ -26,7 +34,10 @@ public unsafe struct Font {
     public readonly int Ascent => Ttf.GetFontAscent(this);
     public readonly int Descent => Ttf.GetFontDescent(this);
     public readonly int Lineskip => Ttf.GetFontLineSkip(this);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public readonly FontStyle Style {
         get => Ttf.GetFontStyle(this);
         set => Ttf.SetFontStyle(this, value);
@@ -35,12 +46,18 @@ public unsafe struct Font {
     public readonly FontWeight Weight => Ttf.GetFontWeight(this);
     public int Outline;
     public nint Stroker;
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public readonly SdlBool EnableKerning {
         get => Ttf.GetFontKerning(this);
         set => Ttf.SetFontKerning(this, value);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
 #if !TTF_USE_HARFBUZZ
     public SdlBool UseKerning;
 #endif
@@ -76,6 +93,7 @@ public unsafe struct Font {
     }
 
     public readonly Size GetTextSize(string text) => Ttf.MeasureString(this, text);
+<<<<<<< HEAD
 
     public readonly nint RenderTextSolid(string text, Color foregroundColor) => Ttf.RenderTextSolid(this, text, (ulong)text.Length, foregroundColor);
 
@@ -89,6 +107,14 @@ public unsafe struct Font {
 
     public readonly nint RenderGlyphBlended(char c, Color foregroundColor) => Ttf.RenderGlyphBlended(this, c, foregroundColor);
 
+=======
+    public readonly nint RenderTextSolid(string text, Color foregroundColor) => Ttf.RenderTextSolid(this, text, (ulong)text.Length, foregroundColor);
+    public readonly nint RenderGlyphSolid(char c, Color foregroundColor) => Ttf.RenderGlyphSolid(this, c, foregroundColor);
+    public readonly nint RenderTextShaded(string text, Color foregroundColor, Color bg) => Ttf.RenderTextShaded(this, text, (ulong)text.Length, foregroundColor, bg);
+    public readonly nint RenderGlyphShaded(char c, Color foregroundColor, Color bg) => Ttf.RenderGlyphShaded(this, c, foregroundColor, bg);
+    public readonly nint RenderTextBlended(string text, Color foregroundColor) => Ttf.RenderTextBlended(this, text, foregroundColor);
+    public readonly nint RenderGlyphBlended(char c, Color foregroundColor) => Ttf.RenderGlyphBlended(this, c, foregroundColor);
+>>>>>>> main
     public readonly nint RenderTextBlendedWrapped(string text, Color foregroundColor, int wrapped) => Ttf.RenderTextBlendedWrapped(this, text, foregroundColor, wrapped);
 
     public readonly SdlBool GetFontKerningSize() => Ttf.GetFontKerning(this);

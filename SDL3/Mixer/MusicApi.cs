@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 namespace SharpSDL3.Mixer;
+=======
+﻿namespace SharpSDL3.Mixer;
+>>>>>>> main
 
 public enum MusicApi {
     Wave,
@@ -15,4 +19,8 @@ public enum MusicApi {
     WavPack,
     Gme,
     Last
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

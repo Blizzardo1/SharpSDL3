@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
+=======
+﻿using SharpSDL3.Enums;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.InteropServices;
+
+using static SharpSDL3.Sdl;
+using System;
+using SharpSDL3.Structs;
+>>>>>>> main
 
 namespace SharpSDL3;
 
 public static partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Return whether a mouse is currently connected.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -33,6 +45,11 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_MouseID *) Returns a 0 terminated array of mouseinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
 
+=======
+
+    public static bool HasMouse() => SDL_HasMouse();
+
+>>>>>>> main
     public static nint GetMice(out int count) {
         nint result = SDL_GetMice(out count);
         if (result == nint.Zero) {
@@ -42,6 +59,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the name of a mouse.</summary>
 
     /// <param name="instance_id">the mouse instance ID.</param>
@@ -53,6 +71,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected mouse, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetMouseNameForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -66,6 +86,7 @@ public static partial class Sdl {
         return mouseName;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the window which currently has mouse focus.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -89,6 +110,10 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
 
+=======
+    public static nint GetMouseFocus() => SDL_GetMouseFocus();
+
+>>>>>>> main
     public static MouseButtonFlags GetMouseState(out float x, out float y) {
         MouseButtonFlags state = SDL_GetMouseState(out x, out y);
 
@@ -100,6 +125,7 @@ public static partial class Sdl {
         return state;
     }
 
+<<<<<<< HEAD
     /// <summary>Query the platform for the asynchronous mouse button state and the desktop-relative platform-cursor position.</summary>
 
     /// <param name="x">a pointer to receive the platform-cursor's x-position from the desktop's top left corner, can be <see langword="null" /> if unused.</param>
@@ -116,6 +142,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
 
+=======
+>>>>>>> main
     public static MouseButtonFlags GetGlobalMouseState(out float x, out float y) {
         MouseButtonFlags state = SDL_GetGlobalMouseState(out x, out y);
 
@@ -127,6 +155,7 @@ public static partial class Sdl {
         return state;
     }
 
+<<<<<<< HEAD
     /// <summary>Query SDL's cache for the synchronous mouse button state and accumulated mouse delta since last call.</summary>
 
     /// <param name="x">a pointer to receive the x mouse delta accumulated since last call, can be <see langword="null" /> if unused.</param>
@@ -141,6 +170,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
 
+=======
+>>>>>>> main
     public static MouseButtonFlags GetRelativeMouseState(out float x, out float y) {
         MouseButtonFlags state = SDL_GetRelativeMouseState(out x, out y);
 
@@ -151,6 +182,7 @@ public static partial class Sdl {
         return state;
     }
 
+<<<<<<< HEAD
     /// <summary>Move the mouse cursor to the given position within the window.</summary>
 
     /// <param name="window">the window to move the mouse into, or <see langword="null" /> for the current mouse focus.</param>
@@ -167,6 +199,8 @@ public static partial class Sdl {
     /// <seealso cref="WarpMouseGlobal"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void WarpMouseInWindow(nint window, float x, float y) {
         if (window == nint.Zero) {
             throw new ArgumentException("Window handle cannot be null.", nameof(window));
@@ -183,6 +217,7 @@ public static partial class Sdl {
         SDL_WarpMouseInWindow(window, x, y);
     }
 
+<<<<<<< HEAD
     /// <summary>Move the mouse to the given position in global screen space.</summary>
 
     /// <param name="x">the x coordinate.</param>
@@ -195,6 +230,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WarpMouseGlobal(float x, float y) {
         if (x < 0) {
             throw new ArgumentOutOfRangeException(nameof(x), "Mouse coordinates must be non-negative.");
@@ -212,6 +249,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set relative mouse mode for a window.</summary>
 
     /// <param name="window">the window to change.</param>
@@ -227,6 +265,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetWindowRelativeMouseMode(nint window, bool enabled) {
         if (window == nint.Zero) {
             throw new ArgumentException("Window handle cannot be null.", nameof(window));
@@ -240,6 +280,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether relative mouse mode is enabled for a window.</summary>
 
     /// <param name="window">the window to query.</param>
@@ -250,6 +291,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if relative mode is enabled for a window or <see langword="false" />otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GetWindowRelativeMouseMode(nint window) {
         if (window == nint.Zero) {
             throw new ArgumentException("Window handle cannot be null.", nameof(window));
@@ -263,6 +306,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Capture the mouse and to track input outside an SDL window.</summary>
 
     /// <param name="enabled"><see langword="true" /> to enable capturing, <see langword="false" /> to disable.</param>
@@ -278,6 +322,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool CaptureMouse(bool enabled) {
         SdlBool result = SDL_CaptureMouse(enabled);
         if (!result) {
@@ -287,6 +333,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Create a cursor using the specified bitmap data and mask (in MSB format).</summary>
 
     /// <param name="data">the color value for each pixel of the cursor.</param>
@@ -306,6 +353,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns a new cursor with the specifiedparameters on success or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateCursor(nint data, nint mask, int w, int h, int hotX, int hotY) {
         if (data == nint.Zero) {
             throw new ArgumentException("Data handle cannot be null.", nameof(data));
@@ -339,6 +388,7 @@ public static partial class Sdl {
         return cursor;
     }
 
+<<<<<<< HEAD
     /// <summary>Create a color cursor.</summary>
 
     /// <param name="surface">an SDL_Surface structure representing the cursor image.</param>
@@ -363,6 +413,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns the new cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateColorCursor(nint surface, int hotX, int hotY) {
         if (surface == nint.Zero) {
             throw new ArgumentException("Surface handle cannot be null.", nameof(surface));
@@ -385,6 +437,7 @@ public static partial class Sdl {
         return cursor;
     }
 
+<<<<<<< HEAD
     /// <summary>Create a system cursor.</summary>
 
     /// <param name="id">an SDL_SystemCursor enum value.</param>
@@ -395,6 +448,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns a cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateSystemCursor(SystemCursor id) {
         if (!Enum.IsDefined(id)) {
             throw new ArgumentOutOfRangeException(nameof(id), "Invalid system cursor ID.");
@@ -408,6 +463,7 @@ public static partial class Sdl {
         return cursor;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the active cursor.</summary>
 
     /// <param name="cursor">a cursor to make active.</param>
@@ -422,6 +478,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetCursor(nint cursor) {
         if (cursor == nint.Zero) {
             throw new ArgumentException("Cursor handle cannot be null.", nameof(cursor));
@@ -435,6 +493,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the active cursor.</summary>
     /// <remarks>
     /// This function returns a pointer to the current cursor which is owned by the
@@ -474,6 +533,12 @@ public static partial class Sdl {
     /// <seealso cref="CreateSystemCursor"/>
     /// </remarks>
 
+=======
+    public static nint GetCursor() => SDL_GetCursor();
+
+    public static nint GetDefaultCursor() => SDL_GetDefaultCursor();
+
+>>>>>>> main
     public static void DestroyCursor(nint cursor) {
         if (cursor == nint.Zero) {
             throw new ArgumentException("Cursor handle cannot be null.", nameof(cursor));
@@ -482,6 +547,7 @@ public static partial class Sdl {
         SDL_DestroyCursor(cursor);
     }
 
+<<<<<<< HEAD
     /// <summary>Show the cursor.</summary>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -513,6 +579,12 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the cursor is being shown, or <see langword="false" /> if thecursor is hidden.</returns>
 
+=======
+    public static bool ShowCursor() => SDL_ShowCursor();
+
+    public static bool HideCursor() => SDL_HideCursor();
+
+>>>>>>> main
     public static bool CursorVisible() => SDL_CursorVisible();
 
     [LibraryImport(NativeLibName)]

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Collections.Generic;
@@ -6,6 +10,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 
+<<<<<<< HEAD
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
@@ -17,6 +22,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DetachVirtualJoystick"/>
     /// </remarks>
     /// <returns>Returns the joystick instance ID, or 0on failure; call <see cref="GetError()" /> for more information.</returns>
+=======
+namespace SharpSDL3; 
+public static unsafe partial class Sdl {
+
+>>>>>>> main
 
     public static uint AttachVirtualJoystick(ref VirtualJoystickDesc desc) {
         // VirtualJoystickDesc is a struct, which is a value type and cannot be null.
@@ -31,6 +41,7 @@ public static unsafe partial class Sdl {
         return instanceId;
     }
 
+<<<<<<< HEAD
     /// <summary>Close a joystick previously opened with SDL_OpenJoystick().</summary>
 
     /// <param name="joystick">the joystick device to close.</param>
@@ -39,6 +50,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="OpenJoystick"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void CloseJoystick(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -46,6 +59,7 @@ public static unsafe partial class Sdl {
         SDL_CloseJoystick(joystick);
     }
 
+<<<<<<< HEAD
     /// <summary>Detach a virtual joystick.</summary>
 
     /// <param name="instance_id">the joystick instance ID, previously returned from SDL_AttachVirtualJoystick().</param>
@@ -55,6 +69,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool DetachVirtualJoystick(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -66,6 +82,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of an axis control on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -81,6 +98,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a 16-bit signed integer representing the currentposition of the axis or 0 on failure; call <see cref="GetError()" />for more information.</returns>
 
+=======
+>>>>>>> main
     public static short GetJoystickAxis(nint joystick, int axis) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -92,6 +111,7 @@ public static unsafe partial class Sdl {
         return axisValue;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the initial state of an axis control on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -103,6 +123,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this axis has any initial value, or <see langword="false" /> if not.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool GetJoystickAxisInitialState(nint joystick, int axis, out short state) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -114,6 +136,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the ball axis change since the last poll.</summary>
 
     /// <param name="joystick">the SDL_Joystick to query.</param>
@@ -129,6 +152,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool GetJoystickBall(nint joystick, int ball, out int dx, out int dy) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -140,6 +165,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of a button on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -150,6 +176,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the button is pressed, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool GetJoystickButton(nint joystick, int button) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -161,6 +189,7 @@ public static unsafe partial class Sdl {
         return buttonState;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the connection state of a joystick.</summary>
 
     /// <param name="joystick">the joystick to query.</param>
@@ -169,6 +198,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static JoystickConnectionState GetJoystickConnectionState(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -177,6 +208,7 @@ public static unsafe partial class Sdl {
         return connectionState;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the firmware version of an opened joystick, if available.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -186,6 +218,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the firmware version of the selected joystick,  0 if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickFirmwareVersion(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -194,6 +228,7 @@ public static unsafe partial class Sdl {
         return firmwareVersion;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_Joystick associated with an instance ID, if it has been opened.</summary>
 
     /// <param name="instance_id">the instance ID to get the SDL_Joystick for.</param>
@@ -202,6 +237,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetJoystickFromId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -213,6 +250,7 @@ public static unsafe partial class Sdl {
         return joystick;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_Joystick associated with a player index.</summary>
 
     /// <param name="player_index">the player index to get the SDL_Joystick for.</param>
@@ -223,6 +261,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetJoystickFromPlayerIndex(int playerIndex) {
         if (playerIndex < 0) {
             throw new ArgumentException("Player index cannot be negative.", nameof(playerIndex));
@@ -234,6 +274,7 @@ public static unsafe partial class Sdl {
         return joystick;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation-dependent GUID for the joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -245,6 +286,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the GUID of the given joystick. If called onan invalid index, this function returns a zero GUID; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlGuid GetJoystickGuid(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -256,6 +299,7 @@ public static unsafe partial class Sdl {
         return guid;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation-dependent GUID of a joystick.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -267,6 +311,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the GUID of the selected joystick. If calledwith an invalid instance_id, this function returns a zero GUID.</returns>
 
+=======
+>>>>>>> main
     public static SdlGuid GetJoystickGuidForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -274,6 +320,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickGUIDForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the device information encoded in a <see cref="SdlGuid"/> structure.</summary>
 
     /// <param name="guid">the <see cref="SdlGuid"/> you wish to get info about.</param>
@@ -286,6 +333,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetJoystickGUIDForID"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void GetJoystickGUIDInfo(SdlGuid guid, out ushort vendor, out ushort product, out ushort version, out ushort crc16) {
         if (guid.Data == null) {
             throw new ArgumentException("GUID cannot be null.", nameof(guid));
@@ -293,6 +342,7 @@ public static unsafe partial class Sdl {
         SDL_GetJoystickGUIDInfo(guid, out vendor, out product, out version, out crc16);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of a POV hat on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -304,6 +354,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current hat position.</returns>
 
+=======
+>>>>>>> main
     public static byte GetJoystickHat(nint joystick, int hat) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -315,6 +367,7 @@ public static unsafe partial class Sdl {
         return hatValue;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the instance ID of an opened joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -323,6 +376,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the instance ID of the specifiedjoystick on success or 0 on failure; call <see cref="GetError()" />for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetJoystickID(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -331,6 +386,7 @@ public static unsafe partial class Sdl {
         return id;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent name of a joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -340,6 +396,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetJoystickName(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -351,6 +409,7 @@ public static unsafe partial class Sdl {
         return joystickName;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent name of a joystick.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -362,6 +421,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetJoystickNameForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -375,6 +436,7 @@ public static unsafe partial class Sdl {
         return joystickName;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent path of a joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -384,6 +446,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetJoystickPath(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -395,6 +459,7 @@ public static unsafe partial class Sdl {
         return joystickPath;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent path of a joystick.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -406,6 +471,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetJoystickPathForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -417,6 +484,7 @@ public static unsafe partial class Sdl {
         return joystickPath;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the player index of an opened joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -428,6 +496,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the player index, or -1 if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static int GetJoystickPlayerIndex(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -439,6 +509,7 @@ public static unsafe partial class Sdl {
         return playerIndex;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the player index of a joystick.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -450,6 +521,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the player index of a joystick, or -1 if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static int GetJoystickPlayerIndexForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -457,6 +530,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickPlayerIndexForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the battery state of a joystick.</summary>
 
     /// <param name="joystick">the joystick to query.</param>
@@ -471,6 +545,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current battery state orSDL_POWERSTATE_ERROR on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static PowerState GetJoystickPowerInfo(nint joystick, out int percent) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -479,6 +555,7 @@ public static unsafe partial class Sdl {
         return powerState;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB product ID of an opened joystick, if available.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -489,6 +566,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB product ID of the selected joystick, or0 if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickProduct(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -497,6 +576,7 @@ public static unsafe partial class Sdl {
         return product;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB product ID of a joystick, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -509,6 +589,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB product ID of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickProductForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -516,6 +598,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickProductForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the product version of an opened joystick, if available.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -526,6 +609,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the product version of the selected joystick, or0 if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickProductVersion(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -534,6 +619,7 @@ public static unsafe partial class Sdl {
         return productVersion;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the product version of a joystick, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -546,6 +632,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the product version of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickProductVersionForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -553,6 +641,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickProductVersionForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the properties associated with a joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -562,6 +651,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetJoystickProperties(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -570,6 +661,7 @@ public static unsafe partial class Sdl {
         return properties;
     }
 
+<<<<<<< HEAD
     /// <summary>Get a list of currently connected joysticks.</summary>
 
     /// <param name="count">a pointer filled in with the number of joysticks returned, may be discarded.</param>
@@ -580,6 +672,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_JoystickID *) Returns a 0 terminated array ofjoystick instance IDs or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This should be freedwith <see cref="Free"/> when it is no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static List<nint> GetJoysticks(out int count) {
         nint joystickArrayPtr = SDL_GetJoysticks(out count);
         if (joystickArrayPtr == 0 || count <= 0) {
@@ -595,6 +689,7 @@ public static unsafe partial class Sdl {
         return joysticks;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the serial number of an opened joystick, if available.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -604,6 +699,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the serial number of the selected joystick, or <see langword="null" />if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static string GetJoystickSerial(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -615,6 +712,7 @@ public static unsafe partial class Sdl {
         return serial;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of an opened joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -624,6 +722,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_JoystickType of the selected joystick.</returns>
 
+=======
+>>>>>>> main
     public static JoystickType GetJoystickType(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -632,6 +732,7 @@ public static unsafe partial class Sdl {
         return joystickType;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of a joystick, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -643,6 +744,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_JoystickType of the selected joystick. If calledwith an invalid instance_id, this function returnsSDL_JOYSTICK_TYPE_UNKNOWN.</returns>
 
+=======
+>>>>>>> main
     public static JoystickType GetJoystickTypeForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -650,6 +753,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickTypeForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB vendor ID of an opened joystick, if available.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -660,6 +764,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB vendor ID of the selected joystick, or 0if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickVendor(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -668,6 +774,7 @@ public static unsafe partial class Sdl {
         return vendor;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB vendor ID of a joystick, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -680,6 +787,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB vendor ID of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetJoystickVendorForId(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -687,6 +796,7 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickVendorForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of general axis controls on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -702,6 +812,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of axis controls/number of axes on success or -1on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumJoystickAxes(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -710,6 +822,7 @@ public static unsafe partial class Sdl {
         return numAxes;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of trackballs on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -724,6 +837,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of trackballs on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumJoystickBalls(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -732,6 +847,7 @@ public static unsafe partial class Sdl {
         return numBalls;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of buttons on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -744,6 +860,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of buttons on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumJoystickButtons(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -752,6 +870,7 @@ public static unsafe partial class Sdl {
         return numButtons;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of POV hats on a joystick.</summary>
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
@@ -764,6 +883,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of POV hats on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumJoystickHats(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -772,6 +893,7 @@ public static unsafe partial class Sdl {
         return numHats;
     }
 
+<<<<<<< HEAD
     /// <summary>Return whether a joystick is currently connected.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -779,10 +901,13 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a joystick is connected, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool HasJoystick() {
         return SDL_HasJoystick();
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether or not a joystick is virtual.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -791,6 +916,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick is virtual, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool IsJoystickVirtual(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -799,6 +926,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the status of a specified joystick.</summary>
 
     /// <param name="joystick">the joystick to query.</param>
@@ -807,6 +935,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick has been opened, <see langword="false" /> if it has not;call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool JoystickConnected(nint joystick) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -815,6 +945,7 @@ public static unsafe partial class Sdl {
         return connected;
     }
 
+<<<<<<< HEAD
     /// <summary>Query the state of joystick event processing.</summary>
     /// <remarks>
     /// If joystick events are disabled, you must call
@@ -825,10 +956,13 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if joystick events are being processed, <see langword="false" />otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool JoystickEventsEnabled() {
         return SDL_JoystickEventsEnabled();
     }
 
+<<<<<<< HEAD
     /// <summary>Locking for atomic access to the joystick API.</summary>
     /// <remarks>
     /// The SDL joystick functions are thread-safe, however you can lock the
@@ -837,10 +971,13 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void LockJoysticks() {
         SDL_LockJoysticks();
     }
 
+<<<<<<< HEAD
     /// <summary>Open a joystick for use.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -852,6 +989,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns a joystick identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenJoystick(uint instanceId) {
         nint joystick = SDL_OpenJoystick(instanceId);
         if (joystick == nint.Zero) {
@@ -860,6 +999,7 @@ public static unsafe partial class Sdl {
         return joystick;
     }
 
+<<<<<<< HEAD
     /// <summary>Start a rumble effect.</summary>
 
     /// <param name="joystick">the joystick to vibrate.</param>
@@ -873,6 +1013,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" />, or <see langword="false" /> if rumble isn't supported on this joystick.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool RumbleJoystick(nint joystick, ushort lowFrequencyRumble, ushort highFrequencyRumble, uint durationMs) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -884,6 +1026,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Start a rumble effect in the joystick's triggers.</summary>
 
     /// <param name="joystick">the joystick to vibrate.</param>
@@ -898,6 +1041,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool RumbleJoystickTriggers(nint joystick, ushort leftRumble, ushort rightRumble, uint durationMs) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -909,6 +1054,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Send a joystick specific effect packet.</summary>
 
     /// <param name="joystick">the joystick to affect.</param>
@@ -919,6 +1065,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SendJoystickEffect(nint joystick, nint data, int size) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -933,6 +1081,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Send a sensor update for an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -952,6 +1101,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, nint data, int numValues) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -966,6 +1117,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Send a sensor update for an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -985,6 +1137,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, float[] data) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -995,6 +1149,7 @@ public static unsafe partial class Sdl {
         if (data == null || data.Length == 0) {
             throw new ArgumentException("Data array cannot be null or empty.", nameof(data));
         }
+<<<<<<< HEAD
 
         nint pData = Marshal.AllocHGlobal(data.Length * sizeof(float));
 
@@ -1002,11 +1157,21 @@ public static unsafe partial class Sdl {
 
         Marshal.Copy(data, 0, pData, data.Length);
 
+=======
+        
+        nint pData = Marshal.AllocHGlobal(data.Length * sizeof(float));
+
+        bool result = SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, pData, data.Length);
+        
+        Marshal.Copy(data, 0, pData, data.Length);
+        
+>>>>>>> main
         Free(pData);
 
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of joystick event processing.</summary>
 
     /// <param name="enabled">whether to process joystick events or not.</param>
@@ -1019,10 +1184,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UpdateJoysticks"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetJoystickEventsEnabled(bool enabled) {
         SDL_SetJoystickEventsEnabled(enabled);
 
         LogInfo(LogCategory.System, $"Joystick events enabled: {enabled}");
+<<<<<<< HEAD
     }
 
     /// <summary>Update a joystick's LED color.</summary>
@@ -1038,6 +1206,11 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+
+    }
+
+>>>>>>> main
     public static SdlBool SetJoystickLED(nint joystick, byte red, byte green, byte blue) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1046,6 +1219,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the player index of an opened joystick.</summary>
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
@@ -1056,6 +1230,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickPlayerIndex(nint joystick, int playerIndex) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1067,6 +1243,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of an axis on an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -1084,6 +1261,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickVirtualAxis(nint joystick, int axis, short value) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1095,6 +1274,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Generate ball motion on an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -1113,6 +1293,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickVirtualBall(nint joystick, int ball, short xrel, short yrel) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1124,6 +1306,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of a button on an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -1141,6 +1324,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickVirtualButton(nint joystick, int button, SdlBool down) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1152,6 +1337,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of a hat on an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -1169,6 +1355,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickVirtualHat(nint joystick, int hat, byte value) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1180,6 +1368,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Set touchpad finger state on an opened virtual joystick.</summary>
 
     /// <param name="joystick">the virtual joystick on which to set state.</param>
@@ -1201,6 +1390,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool SetJoystickVirtualTouchpad(nint joystick, int touchpad, int finger, SdlBool down, float x, float y, float pressure) {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
@@ -1215,15 +1406,19 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Unlocking for atomic access to the joystick API.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void UnlockJoysticks() {
         SDL_UnlockJoysticks();
     }
 
+<<<<<<< HEAD
     /// <summary>Update the current state of the open joysticks.</summary>
     /// <remarks>
     /// This is called automatically by the event loop if any joystick events are
@@ -1231,6 +1426,8 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void UpdateJoysticks() {
         SDL_UpdateJoysticks();
     }
@@ -1412,7 +1609,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_LockJoysticks();
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_OpenJoystick(uint instanceId);
@@ -1472,8 +1672,15 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockJoysticks();
+<<<<<<< HEAD
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UpdateJoysticks();
 }
+=======
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void SDL_UpdateJoysticks();
+}
+>>>>>>> main

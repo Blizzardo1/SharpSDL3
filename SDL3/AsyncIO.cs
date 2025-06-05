@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -18,6 +19,17 @@ public static partial class Sdl {
     /// <seealso cref="WriteAsyncIO"/>
     /// </remarks>
     /// <returns>(SDL_AsyncIO *) Returns a pointer to theSDL_AsyncIO structure that is created or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
+=======
+﻿using System;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Structs;
+
+namespace SharpSDL3;
+
+public static partial class Sdl {
+>>>>>>> main
 
     public static nint AsyncIOFromFile(string file, string mode) {
         if (string.IsNullOrEmpty(file)) {
@@ -45,6 +57,7 @@ public static partial class Sdl {
         return SDL_CloseAsyncIO(asyncio, flush, queue, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a task queue for tracking multiple I/O operations.</summary>
     /// <remarks>
     /// Async I/O operations are assigned to a queue when started. The queue can be
@@ -57,6 +70,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_AsyncIOQueue *) Returns a new task queue object or<see langword="null" /> if there was an error; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateAsyncIOQueue() {
         nint result = SDL_CreateAsyncIOQueue();
         return result == nint.Zero
@@ -64,6 +79,7 @@ public static partial class Sdl {
             : result;
     }
 
+<<<<<<< HEAD
     /// <summary>Destroy a previously-created async I/O task queue.</summary>
 
     /// <param name="queue">the task queue to destroy.</param>
@@ -75,6 +91,8 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DestroyAsyncIOQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -82,6 +100,7 @@ public static partial class Sdl {
         SDL_DestroyAsyncIOQueue(queue);
     }
 
+<<<<<<< HEAD
     /// <summary>Query an async I/O task queue for completed tasks.</summary>
 
     /// <param name="queue">the async I/O task queue to query.</param>
@@ -96,6 +115,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a task has completed, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool GetAsyncIOResult(nint queue, out AsyncIoOutcome outcome) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -107,6 +128,7 @@ public static partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Use this function to get the size of the data stream in an SDL_AsyncIO.</summary>
 
     /// <param name="asyncio">the SDL_AsyncIO to get the size of the data stream from.</param>
@@ -118,10 +140,13 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static long GetAsyncIOSize(nint asyncio) {
         return asyncio == nint.Zero ? throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio)) : SDL_GetAsyncIOSize(asyncio);
     }
 
+<<<<<<< HEAD
     /// <summary>Load all the data from a file path, asynchronously.</summary>
 
     /// <param name="file">the path to read all available data from.</param>
@@ -137,6 +162,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool LoadFileAsync(string file, nint queue, nint userdata) {
         if (string.IsNullOrEmpty(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
@@ -160,6 +187,7 @@ public static partial class Sdl {
         return SDL_ReadAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Wake up any threads that are blocking in SDL_WaitAsyncIOResult().</summary>
 
     /// <param name="queue">the async I/O task queue to signal.</param>
@@ -172,6 +200,8 @@ public static partial class Sdl {
     /// <seealso cref="WaitAsyncIOResult"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SignalAsyncIOQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -179,6 +209,7 @@ public static partial class Sdl {
         SDL_SignalAsyncIOQueue(queue);
     }
 
+<<<<<<< HEAD
     /// <summary>Block until an async I/O task queue has a completed task.</summary>
 
     /// <param name="queue">the async I/O task queue to wait on.</param>
@@ -193,6 +224,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if task has completed, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool WaitAsyncIOResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));

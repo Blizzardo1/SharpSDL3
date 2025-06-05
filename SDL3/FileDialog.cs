@@ -1,10 +1,19 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
 
+<<<<<<< HEAD
+=======
+using static SharpSDL3.Sdl;
+
+>>>>>>> main
 namespace SharpSDL3;
 
 public static partial class Sdl {
@@ -51,6 +60,7 @@ public static partial class Sdl {
         SDL_ShowSaveFileDialog(callback, userdata, window, filters, nfilters, defaultLocation);
     }
 
+<<<<<<< HEAD
     /// <summary>Create and launch a file dialog with the specified properties.</summary>
 
     /// <param name="type">the type of file dialog.</param>
@@ -71,6 +81,10 @@ public static partial class Sdl {
 
     public static void ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback, nint userdata,
             uint props) {
+=======
+    public static void ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback, nint userdata,
+        uint props) {
+>>>>>>> main
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
         }

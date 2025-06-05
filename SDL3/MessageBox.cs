@@ -1,13 +1,25 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
+<<<<<<< HEAD
 namespace SharpSDL3;
 
 public static partial class Sdl {
 
+=======
+using static SharpSDL3.Sdl;
+
+namespace SharpSDL3;
+
+public static partial class Sdl {
+>>>>>>> main
     public static unsafe bool ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid) {
         // Validate input parameters
         if (messageboxdata.NumButtons < 0 || messageboxdata.Buttons == nint.Zero) {
@@ -34,6 +46,7 @@ public static partial class Sdl {
         return ShowMessageBox(nint.Zero, message, title);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a modal message box.</summary>
 
     /// <param name="messageboxdata">the SDL_MessageBoxData structure with title, text and other options.</param>
@@ -46,6 +59,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title) {
         return ShowMessageBox(windowOwner, message, title, MessageBoxFlags.Information);
     }
@@ -54,6 +69,7 @@ public static partial class Sdl {
         return ShowMessageBox(windowOwner, message, title, flags, MessageBoxButtons.Ok);
     }
 
+<<<<<<< HEAD
     public static MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons) {
         return ShowMessageBox(windowOwner, message, title, flags, buttons, MessageBoxDefaultButton.ReturnKeyDefault);
     }
@@ -70,11 +86,18 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+    public static MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons ) {
+        return ShowMessageBox(windowOwner, message, title, flags, buttons, MessageBoxDefaultButton.ReturnKeyDefault);
+    }
+
+>>>>>>> main
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator) {
         MessageBoxColorScheme scheme = default;
         return ShowMessageBox(windowOwner, message, title, flags, buttons, accelerator, ref scheme);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a modal message box.</summary>
 
     /// <param name="messageboxdata">the SDL_MessageBoxData structure with title, text and other options.</param>
@@ -87,6 +110,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator, ref MessageBoxColorScheme scheme) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
             throw new ArgumentException("Title and message cannot be null or empty.");
@@ -112,7 +137,11 @@ public static partial class Sdl {
 
         // With the following corrected code:
         object[][] buttonData = buttons switch {
+<<<<<<< HEAD
             MessageBoxButtons.YesNo => [no, yes],
+=======
+            MessageBoxButtons.YesNo => [ no, yes],
+>>>>>>> main
             MessageBoxButtons.YesNoCancel => [cancel, no, yes],
             MessageBoxButtons.Ok => [ok],
             MessageBoxButtons.OkCancel => [cancel, ok],
@@ -172,6 +201,7 @@ public static partial class Sdl {
         }
     }
 
+<<<<<<< HEAD
     /// <summary>Display a simple modal message box.</summary>
 
     /// <param name="flags">an SDL_MessageBoxFlags value.</param>
@@ -186,11 +216,17 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool ShowSimpleMessageBox(MessageBoxFlags flags, string message, string title, nint window) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         var result = SDL_ShowSimpleMessageBox(flags, title, message, window);
 
         if (!result) {

@@ -1,7 +1,13 @@
+<<<<<<< HEAD
 using System;
 
 namespace SharpSDL3.Structs;
 
+=======
+﻿using System;
+
+namespace SharpSDL3.Structs; 
+>>>>>>> main
 public struct FSize(float width, float height) {
     public float Width { get; set; } = width;
     public float Height { get; set; } = height;
@@ -9,7 +15,10 @@ public struct FSize(float width, float height) {
     public override readonly bool Equals(object? obj) {
         return obj is FSize size && Equals(size);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     public static bool operator ==(FSize left, FSize right) {
         return left.Equals(right);
     }
@@ -33,4 +42,8 @@ public struct FSize(float width, float height) {
     public static explicit operator FSize(Size size) {
         return new FSize(size.Width, size.Height);
     }
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

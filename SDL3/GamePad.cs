@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 
+<<<<<<< HEAD
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
@@ -28,6 +33,12 @@ public static unsafe partial class Sdl {
     /// <seealso cref="EVENT_GAMEPAD_ADDED"/>
     /// </remarks>
     /// <returns>Returns 1 if a new mapping is added, 0 if an existing mapping isupdated, -1 on failure; call <see cref="GetError()" /> for more information.</returns>
+=======
+using static SharpSDL3.Sdl;
+
+namespace SharpSDL3; 
+public static unsafe partial class Sdl {
+>>>>>>> main
 
     public static int AddGamepadMapping(string mapping) {
         if (string.IsNullOrWhiteSpace(mapping)) {
@@ -36,6 +47,7 @@ public static unsafe partial class Sdl {
         return SDL_AddGamepadMapping(mapping);
     }
 
+<<<<<<< HEAD
     /// <summary>Load a set of gamepad mappings from a file.</summary>
 
     /// <param name="file">the mappings file to load.</param>
@@ -54,6 +66,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of mappings added or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int AddGamepadMappingsFromFile(string file) {
         if (string.IsNullOrWhiteSpace(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
@@ -68,6 +82,7 @@ public static unsafe partial class Sdl {
         return SDL_AddGamepadMappingsFromIO(src, closeio);
     }
 
+<<<<<<< HEAD
     /// <summary>Close a gamepad previously opened with SDL_OpenGamepad().</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -76,6 +91,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="OpenGamepad"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void CloseGamepad(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -83,6 +100,7 @@ public static unsafe partial class Sdl {
         SDL_CloseGamepad(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Check if a gamepad has been opened and is currently connected.</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -91,6 +109,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the gamepad has been opened and is currentlyconnected, or <see langword="false" /> if not.</returns>
 
+=======
+>>>>>>> main
     public static bool GamepadConnected(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -98,6 +118,7 @@ public static unsafe partial class Sdl {
         return SDL_GamepadConnected(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether a gamepad has a given axis.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -111,6 +132,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the gamepad has this axis, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GamepadHasAxis(nint gamepad, GamepadAxis axis) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -121,6 +144,7 @@ public static unsafe partial class Sdl {
         return SDL_GamepadHasAxis(gamepad, axis);
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether a gamepad has a given button.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -133,6 +157,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the gamepad has this button, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GamepadHasButton(nint gamepad, GamepadButton button) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -143,6 +169,7 @@ public static unsafe partial class Sdl {
         return SDL_GamepadHasButton(gamepad, button);
     }
 
+<<<<<<< HEAD
     /// <summary>Return whether a gamepad has a particular sensor.</summary>
 
     /// <param name="gamepad">the gamepad to query.</param>
@@ -155,6 +182,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the sensor exists, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GamepadHasSensor(nint gamepad, SensorType type) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -165,6 +194,7 @@ public static unsafe partial class Sdl {
         return SDL_GamepadHasSensor(gamepad, type);
     }
 
+<<<<<<< HEAD
     /// <summary>Query whether sensor data reporting is enabled for a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad to query.</param>
@@ -175,6 +205,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the sensor is enabled, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GamepadSensorEnabled(nint gamepad, SensorType type) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -185,6 +217,7 @@ public static unsafe partial class Sdl {
         return SDL_GamepadSensorEnabled(gamepad, type);
     }
 
+<<<<<<< HEAD
     /// <summary>Return the sfSymbolsName for a given axis on a gamepad on Apple platforms.</summary>
 
     /// <param name="gamepad">the gamepad to query.</param>
@@ -195,6 +228,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadAppleSFSymbolsNameForAxis(nint gamepad, GamepadAxis axis) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -205,6 +240,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadAppleSFSymbolsNameForAxis(gamepad, axis);
     }
 
+<<<<<<< HEAD
     /// <summary>Return the sfSymbolsName for a given button on a gamepad on Apple platforms.</summary>
 
     /// <param name="gamepad">the gamepad to query.</param>
@@ -215,6 +251,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the sfSymbolsName or <see langword="null" /> if the name can't befound.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadAppleSFSymbolsNameForButton(nint gamepad, GamepadButton button) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -225,6 +263,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadAppleSFSymbolsNameForButton(gamepad, button);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of an axis control on a gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -237,6 +276,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns axis state.</returns>
 
+=======
+>>>>>>> main
     public static short GetGamepadAxis(nint gamepad, GamepadAxis axis) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -247,6 +288,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadAxis(gamepad, axis);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert a string into SDL_GamepadAxis enum.</summary>
 
     /// <param name="str">string representing a SDL_Gamepad axis.</param>
@@ -261,6 +303,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_GamepadAxis enum corresponding to the input string,  SDL_GAMEPAD_AXIS_INVALID if no match wasfound.</returns>
 
+=======
+>>>>>>> main
     public static GamepadAxis GetGamepadAxisFromString(string str) {
         if (string.IsNullOrWhiteSpace(str)) {
             throw new ArgumentException("Axis string cannot be null or empty.", nameof(str));
@@ -268,6 +312,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadAxisFromString(str);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of a button on a gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -279,6 +324,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the button is pressed, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool GetGamepadButton(nint gamepad, GamepadButton button) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -289,6 +336,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadButton(gamepad, button);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert a string into an SDL_GamepadButton enum.</summary>
 
     /// <param name="str">string representing a SDL_Gamepad axis.</param>
@@ -303,6 +351,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_GamepadButton enum corresponding to the inputstring, or SDL_GAMEPAD_BUTTON_INVALID if nomatch was found.</returns>
 
+=======
+>>>>>>> main
     public static GamepadButton GetGamepadButtonFromString(string str) {
         if (string.IsNullOrWhiteSpace(str)) {
             throw new ArgumentException("Button string cannot be null or empty.", nameof(str));
@@ -310,6 +360,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadButtonFromString(str);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the label of a button on a gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -320,6 +371,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_GamepadButtonLabel enum corresponding to thebutton label.</returns>
 
+=======
+>>>>>>> main
     public static GamepadButtonLabel GetGamepadButtonLabel(nint gamepad, GamepadButton button) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -330,6 +383,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadButtonLabel(gamepad, button);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the label of a button on a gamepad.</summary>
 
     /// <param name="type">the type of gamepad to check.</param>
@@ -340,6 +394,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_GamepadButtonLabel enum corresponding to thebutton label.</returns>
 
+=======
+>>>>>>> main
     public static GamepadButtonLabel GetGamepadButtonLabelForType(GamepadType type, GamepadButton button) {
         if (type == GamepadType.Unknown) {
             throw new ArgumentException("Invalid gamepad type specified.", nameof(type));
@@ -350,6 +406,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadButtonLabelForType(type, button);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the connection state of a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -358,6 +415,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static JoystickConnectionState GetGamepadConnectionState(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -365,6 +424,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadConnectionState(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the firmware version of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -374,6 +434,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad firmware version, or zero ifunavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadFirmwareVersion(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -381,6 +443,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadFirmwareVersion(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_Gamepad associated with a joystick instance ID, if it has been opened.</summary>
 
     /// <param name="instance_id">the joystick instance ID of the gamepad.</param>
@@ -389,6 +452,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Gamepad *) Returns an SDL_Gamepad on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetGamepadFromID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -396,6 +461,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadFromID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_Gamepad associated with a player index.</summary>
 
     /// <param name="player_index">the player index, which different from the instance ID.</param>
@@ -406,6 +472,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Gamepad *) Returns the SDL_Gamepadassociated with a player index.</returns>
 
+=======
+>>>>>>> main
     public static nint GetGamepadFromPlayerIndex(int playerIndex) {
         if (playerIndex < 0) {
             throw new ArgumentException("Player index cannot be negative.", nameof(playerIndex));
@@ -413,6 +481,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadFromPlayerIndex(playerIndex);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation-dependent GUID of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -424,6 +493,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the GUID of the selected gamepad. If calledon an invalid index, this function returns a zero GUID.</returns>
 
+=======
+>>>>>>> main
     public static SdlGuid GetGamepadGUIDForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -431,6 +502,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadGUIDForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the instance ID of an opened gamepad.</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -439,6 +511,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the instance ID of the specifiedgamepad on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetGamepadID(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -446,6 +520,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadID(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the underlying joystick from a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object that you want to get a joystick from.</param>
@@ -459,6 +534,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns an SDL_Joystickobject, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetGamepadJoystick(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -466,6 +543,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadJoystick(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current mapping of a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad you want to get the current mapping for.</param>
@@ -480,6 +558,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(char *) Returns a string that has the gamepad's mapping or <see langword="null" /> if nomapping is available; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadMapping(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -487,6 +567,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadMapping(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the gamepad mapping string for a given GUID.</summary>
 
     /// <param name="guid">a structure containing the GUID for which a mapping is desired.</param>
@@ -497,6 +578,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(char *) Returns a mapping string or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This should be freedwith <see cref="Free"/> when it is no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadMappingForGUID(SdlGuid guid) {
         if (guid.Data == null) {
             throw new ArgumentException("GUID data cannot be null.", nameof(guid));
@@ -510,6 +593,7 @@ public static unsafe partial class Sdl {
         return mapping;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the mapping of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -521,6 +605,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(char *) Returns the mapping string. Returns <see langword="null" /> if no mapping isavailable. This should be freed with <see cref="Free"/> when it is no longer needed.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadMappingForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -528,6 +614,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadMappingForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation-dependent name for an opened gamepad.</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -537,6 +624,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the implementation dependent name for the gamepad,  <see langword="null" /> if there is no name or the identifier passed is invalid.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadName(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -544,6 +633,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadName(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent name of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -555,6 +645,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the selected gamepad. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadNameForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -562,6 +654,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadNameForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation-dependent path for an opened gamepad.</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -571,6 +664,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the implementation dependent path for the gamepad,  <see langword="null" /> if there is no path or the identifier passed is invalid.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadPath(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -578,6 +673,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadPath(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the implementation dependent path of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -589,6 +685,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the path of the selected gamepad. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadPathForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -596,6 +694,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadPathForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the player index of an opened gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -606,6 +705,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the player index for gamepad, or -1 if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static int GetGamepadPlayerIndex(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -613,6 +714,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadPlayerIndex(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the player index of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -624,6 +726,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the player index of a gamepad, or -1 if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static int GetGamepadPlayerIndexForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -631,6 +735,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadPlayerIndexForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the battery state of a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -645,6 +750,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the current battery state.</returns>
 
+=======
+>>>>>>> main
     public static PowerState GetGamepadPowerInfo(nint gamepad, out int percent) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -652,6 +759,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadPowerInfo(gamepad, out percent);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB product ID of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -662,6 +770,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB product ID, or zero if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadProduct(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -669,6 +779,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadProduct(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB product ID of a gamepad, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -681,6 +792,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB product ID of the selected gamepad. Ifcalled on an invalid index, this function returns zero.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadProductForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -688,6 +801,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadProductForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the product version of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -698,6 +812,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB product version, or zero if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadProductVersion(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -705,6 +821,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadProductVersion(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the product version of a gamepad, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -717,6 +834,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the product version of the selected gamepad. Ifcalled on an invalid index, this function returns zero.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadProductVersionForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -724,6 +843,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadProductVersionForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the properties associated with an opened gamepad.</summary>
 
     /// <param name="gamepad">a gamepad identifier previously returned by SDL_OpenGamepad().</param>
@@ -733,6 +853,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetGamepadProperties(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -740,6 +862,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadProperties(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the data rate (number of events per second) of a gamepad sensor.</summary>
 
     /// <param name="gamepad">the gamepad to query.</param>
@@ -749,6 +872,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the data rate, or 0.0f if the data rate is not available.</returns>
 
+=======
+>>>>>>> main
     public static float GetGamepadSensorDataRate(nint gamepad, SensorType type) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -759,6 +884,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadSensorDataRate(gamepad, type);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the serial number of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -768,6 +894,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the serial number, or <see langword="null" /> if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadSerial(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -775,6 +903,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadSerial(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the Steam Input handle of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -785,6 +914,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad handle, or 0 if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ulong GetGamepadSteamHandle(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -792,6 +923,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadSteamHandle(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert from an SDL_GamepadAxis enum to a string.</summary>
 
     /// <param name="axis">an enum value for a given SDL_GamepadAxis.</param>
@@ -801,6 +933,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a string for the given axis, or <see langword="null" /> if an invalidaxis is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadStringForAxis(GamepadAxis axis) {
         if (axis == GamepadAxis.Invalid) {
             throw new ArgumentException("Invalid axis specified.", nameof(axis));
@@ -808,6 +942,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadStringForAxis(axis);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert from an SDL_GamepadButton enum to a string.</summary>
 
     /// <param name="button">an enum value for a given SDL_GamepadButton.</param>
@@ -817,6 +952,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a string for the given button, or <see langword="null" /> if an invalidbutton is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadStringForButton(GamepadButton button) {
         if (button == GamepadButton.Invalid) {
             throw new ArgumentException("Invalid button specified.", nameof(button));
@@ -824,6 +961,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadStringForButton(button);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert from an SDL_GamepadType enum to a string.</summary>
 
     /// <param name="type">an enum value for a given SDL_GamepadType.</param>
@@ -833,6 +971,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a string for the given type, or <see langword="null" /> if an invalidtype is specified. The string returned is of the format used bySDL_Gamepad mapping strings.</returns>
 
+=======
+>>>>>>> main
     public static string GetGamepadStringForType(GamepadType type) {
         if (type == GamepadType.Unknown) {
             throw new ArgumentException("Invalid gamepad type specified.", nameof(type));
@@ -840,6 +980,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadStringForType(type);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the current state of a finger on a touchpad on a gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -857,6 +998,10 @@ public static unsafe partial class Sdl {
 
     public static bool GetGamepadTouchpadFinger(nint gamepad, int touchpad, int finger,
             out bool down, out float x, out float y, out float pressure) {
+=======
+    public static bool GetGamepadTouchpadFinger(nint gamepad, int touchpad, int finger,
+        out bool down, out float x, out float y, out float pressure) {
+>>>>>>> main
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
         }
@@ -865,6 +1010,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of an opened gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -874,6 +1020,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad type, orSDL_GAMEPAD_TYPE_UNKNOWN if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static GamepadType GetGamepadType(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -881,6 +1029,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadType(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of a gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -893,6 +1042,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad type.</returns>
 
+=======
+>>>>>>> main
     public static GamepadType GetGamepadTypeForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -900,6 +1051,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadTypeForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Convert a string into SDL_GamepadType enum.</summary>
 
     /// <param name="str">string representing a SDL_GamepadType type.</param>
@@ -914,6 +1066,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_GamepadType enum corresponding to the input string,  SDL_GAMEPAD_TYPE_UNKNOWN if no match wasfound.</returns>
 
+=======
+>>>>>>> main
     public static GamepadType GetGamepadTypeFromString(string str) {
         if (string.IsNullOrWhiteSpace(str)) {
             throw new ArgumentException("Type string cannot be null or empty.", nameof(str));
@@ -921,6 +1075,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadTypeFromString(str);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB vendor ID of an opened gamepad, if available.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -931,6 +1086,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB vendor ID, or zero if unavailable.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadVendor(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -938,6 +1095,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadVendor(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the USB vendor ID of a gamepad, if available.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -950,6 +1108,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the USB vendor ID of the selected gamepad. Ifcalled on an invalid index, this function returns zero.</returns>
 
+=======
+>>>>>>> main
     public static ushort GetGamepadVendorForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -957,6 +1117,7 @@ public static unsafe partial class Sdl {
         return SDL_GetGamepadVendorForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of supported simultaneous fingers on a touchpad on a game gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -968,6 +1129,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns number of supported simultaneous fingers.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumGamepadTouchpadFingers(nint gamepad, int touchpad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -975,6 +1138,7 @@ public static unsafe partial class Sdl {
         return SDL_GetNumGamepadTouchpadFingers(gamepad, touchpad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the number of touchpads on a gamepad.</summary>
 
     /// <param name="gamepad">a gamepad.</param>
@@ -984,6 +1148,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns number of touchpads.</returns>
 
+=======
+>>>>>>> main
     public static int GetNumGamepadTouchpads(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -991,6 +1157,7 @@ public static unsafe partial class Sdl {
         return SDL_GetNumGamepadTouchpads(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of an opened gamepad, ignoring any mapping override.</summary>
 
     /// <param name="gamepad">the gamepad object to query.</param>
@@ -1000,6 +1167,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad type, orSDL_GAMEPAD_TYPE_UNKNOWN if it's not available.</returns>
 
+=======
+>>>>>>> main
     public static GamepadType GetRealGamepadType(nint gamepad) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1007,6 +1176,7 @@ public static unsafe partial class Sdl {
         return SDL_GetRealGamepadType(gamepad);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the type of a gamepad, ignoring any mapping override.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -1019,6 +1189,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gamepad type.</returns>
 
+=======
+>>>>>>> main
     public static GamepadType GetRealGamepadTypeForID(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -1026,6 +1198,7 @@ public static unsafe partial class Sdl {
         return SDL_GetRealGamepadTypeForID(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Check if the given joystick is supported by the gamepad interface.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -1036,6 +1209,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the given joystick is supported by the gamepadinterface, <see langword="false" /> if it isn't or it's an invalid index.</returns>
 
+=======
+>>>>>>> main
     public static bool IsGamepad(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -1043,6 +1218,7 @@ public static unsafe partial class Sdl {
         return SDL_IsGamepad(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Open a gamepad for use.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -1053,6 +1229,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Gamepad *) Returns a gamepad identifier or <see langword="null" /> if anerror occurred; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint OpenGamepad(uint instanceId) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -1060,6 +1238,7 @@ public static unsafe partial class Sdl {
         return SDL_OpenGamepad(instanceId);
     }
 
+<<<<<<< HEAD
     /// <summary>Start a rumble effect on a gamepad.</summary>
 
     /// <param name="gamepad">the gamepad to vibrate.</param>
@@ -1073,6 +1252,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool RumbleGamepad(nint gamepad, ushort lowFrequencyRumble, ushort highFrequencyRumble, uint durationMs) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1080,6 +1261,7 @@ public static unsafe partial class Sdl {
         return SDL_RumbleGamepad(gamepad, lowFrequencyRumble, highFrequencyRumble, durationMs);
     }
 
+<<<<<<< HEAD
     /// <summary>Start a rumble effect in the gamepad's triggers.</summary>
 
     /// <param name="gamepad">the gamepad to vibrate.</param>
@@ -1094,6 +1276,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool RumbleGamepadTriggers(nint gamepad, ushort leftRumble, ushort rightRumble, uint durationMs) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1101,6 +1285,7 @@ public static unsafe partial class Sdl {
         return SDL_RumbleGamepadTriggers(gamepad, leftRumble, rightRumble, durationMs);
     }
 
+<<<<<<< HEAD
     /// <summary>Send a gamepad specific effect packet.</summary>
 
     /// <param name="gamepad">the gamepad to affect.</param>
@@ -1111,6 +1296,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SendGamepadEffect(nint gamepad, nint data, int size) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1124,6 +1311,7 @@ public static unsafe partial class Sdl {
         return SDL_SendGamepadEffect(gamepad, data, size);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of gamepad event processing.</summary>
 
     /// <param name="enabled">whether to process gamepad events or not.</param>
@@ -1136,12 +1324,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UpdateGamepads"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetGamepadEventsEnabled(bool enabled) {
         SDL_SetGamepadEventsEnabled(enabled);
 
         LogInfo(LogCategory.System, $"Gamepad events enabled: {enabled}");
     }
 
+<<<<<<< HEAD
     /// <summary>Update a gamepad's LED color.</summary>
 
     /// <param name="gamepad">the gamepad to update.</param>
@@ -1155,6 +1346,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGamepadLED(nint gamepad, byte red, byte green, byte blue) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1162,6 +1355,7 @@ public static unsafe partial class Sdl {
         return SDL_SetGamepadLED(gamepad, red, green, blue);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the current mapping of a joystick or gamepad.</summary>
 
     /// <param name="instance_id">the joystick instance ID.</param>
@@ -1175,6 +1369,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGamepadMapping(uint instanceId, string mapping) {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
@@ -1185,6 +1381,7 @@ public static unsafe partial class Sdl {
         return SDL_SetGamepadMapping(instanceId, mapping);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the player index of an opened gamepad.</summary>
 
     /// <param name="gamepad">the gamepad object to adjust.</param>
@@ -1195,6 +1392,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGamepadPlayerIndex(nint gamepad, int playerIndex) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1205,6 +1404,7 @@ public static unsafe partial class Sdl {
         return SDL_SetGamepadPlayerIndex(gamepad, playerIndex);
     }
 
+<<<<<<< HEAD
     /// <summary>Set whether data reporting for a gamepad sensor is enabled.</summary>
 
     /// <param name="gamepad">the gamepad to update.</param>
@@ -1217,6 +1417,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool SetGamepadSensorEnabled(nint gamepad, SensorType type, bool enabled) {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
@@ -1226,7 +1428,10 @@ public static unsafe partial class Sdl {
         }
         return SDL_SetGamepadSensorEnabled(gamepad, type, enabled);
     }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_AddGamepadMapping(string mapping);
@@ -1238,7 +1443,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_AddGamepadMappingsFromIO(nint src, SdlBool closeio);
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CloseGamepad(nint gamepad);
@@ -1498,7 +1706,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReloadGamepadMappings();
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RumbleGamepad(nint gamepad, ushort lowFrequencyRumble,
@@ -1524,11 +1735,17 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetGamepadMapping(uint instanceId, string mapping);
+<<<<<<< HEAD
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetGamepadPlayerIndex(nint gamepad, int playerIndex);
 
+=======
+    [LibraryImport(NativeLibName)]
+    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_SetGamepadPlayerIndex(nint gamepad, int playerIndex);
+>>>>>>> main
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetGamepadSensorEnabled(nint gamepad, SensorType type, SdlBool enabled);
@@ -1536,4 +1753,8 @@ public static unsafe partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UpdateGamepads();
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

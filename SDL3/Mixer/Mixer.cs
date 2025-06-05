@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
+=======
+﻿using SharpSDL3.Enums;
+>>>>>>> main
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -8,14 +12,23 @@ using System.Runtime.InteropServices.Marshalling;
 namespace SharpSDL3.Mixer;
 
 public static unsafe partial class Mixer {
+<<<<<<< HEAD
     public const string EffectMaxSpeed = "EFFECTSMAXSPEED";
+=======
+    public const string EffectMaxSpeed = "MIX_EFFECTSMAXSPEED";
+>>>>>>> main
 
     /// <summary>
     /// Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
     /// </summary>
     public const int Major = 3;
+<<<<<<< HEAD
     public const int Micro = 2;
     public const int Minor = 4;
+=======
+    public const int Micro = 0;
+    public const int Minor = 0;
+>>>>>>> main
 
     private const string NativeLibName = "SDL3_mixer";
 
@@ -113,7 +126,11 @@ public static unsafe partial class Mixer {
         if (result == -1) {
             Sdl.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
         }
+<<<<<<< HEAD
 
+=======
+        
+>>>>>>> main
         return result;
     }
 
@@ -354,7 +371,11 @@ public static unsafe partial class Mixer {
     /// <param name="major">The major version to check.</param>
     /// <param name="minor">The minor version to check.</param>
     /// <param name="micro">The micro version to check.</param>
+<<<<<<< HEAD
     /// <returns>True if the compiled version is at least the specified version; otherwise, <see langword="false" />.</returns>
+=======
+    /// <returns>True if the compiled version is at least the specified version; otherwise, false.</returns>
+>>>>>>> main
     public static bool MixerVersionAtLeast(int major, int minor, int micro) =>
         (Major >= major) &&
         (Major > major || Minor >= minor) &&
@@ -506,6 +527,7 @@ public static unsafe partial class Mixer {
     /// <remarks>
     /// Dispose of the returned <see cref="Chunk"/> when no longer needed.
     /// </remarks>
+<<<<<<< HEAD
     /// <summary>Loads a WAV from a file path.</summary>
 
     /// <param name="path">the file path of the WAV file to open.</param>
@@ -521,6 +543,8 @@ public static unsafe partial class Mixer {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success. audio_buf will be filled with a pointerto an allocated buffer containing the audio data, and audio_len is filledwith the length of that audio buffer in bytes.</returns>
 
+=======
+>>>>>>> main
     public static unsafe Chunk LoadWav(string filePath) {
         if (string.IsNullOrEmpty(filePath))
             throw new ArgumentNullException(nameof(filePath));
@@ -599,7 +623,11 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Registers a custom audio effect for a channel or the final mix.
     /// </summary>
+<<<<<<< HEAD
     /// <param name="channel">The channel to apply the effect to, or <see cref="CHANNEL_POST"/> for the final mix.</param>
+=======
+    /// <param name="channel">The channel to apply the effect to, or <see cref="MIX_CHANNEL_POST"/> for the final mix.</param>
+>>>>>>> main
     /// <param name="effect">The effect callback that processes audio data.</param>
     /// <param name="done">The callback invoked when the effect is unregistered (optional).</param>
     /// <param name="userData">User-defined data passed to the callbacks.</param>
@@ -615,7 +643,11 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Sets the stereo panning for a specific channel or the final mix.
     /// </summary>
+<<<<<<< HEAD
     /// <param name="channel">The channel to apply panning to, or <see cref="CHANNEL_POST"/> for the final mix.</param>
+=======
+    /// <param name="channel">The channel to apply panning to, or <see cref="MIX_CHANNEL_POST"/> for the final mix.</param>
+>>>>>>> main
     /// <param name="left">The volume of the left channel (0 to 255, where 0 is silent and 255 is full volume).</param>
     /// <param name="right">The volume of the right channel (0 to 255, where 0 is silent and 255 is full volume).</param>
     /// <exception cref="SdlException">Thrown if panning cannot be set.</exception>
@@ -691,7 +723,11 @@ public static unsafe partial class Mixer {
      * whatever the callback might want to do with it (keep track of some ongoing
      * state, settings, etc).
      *
+<<<<<<< HEAD
      * Passing a <see langword="null" /> callback disables the post-mix callback until such a time as
+=======
+     * Passing a NULL callback disables the post-mix callback until such a time as
+>>>>>>> main
      * a new one callback is set.
      *
      * There is only one callback available. If you need to mix multiple inputs,
@@ -774,13 +810,21 @@ public static unsafe partial class Mixer {
         }
 
         bool result = Mix_PlayMusic(music, loops);
+<<<<<<< HEAD
         if (!result) {
+=======
+        if(!result) {
+>>>>>>> main
             Sdl.LogError(LogCategory.Error, $"Failed to play music: {Sdl.GetError()}");
         }
 
         return result;
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     public static int ReserveChannels(int num) {
         if (num < 0)
             throw new ArgumentOutOfRangeException(nameof(num), "Number of channels must be non-negative.");
@@ -1205,7 +1249,11 @@ public static unsafe partial class Mixer {
      * \param chunk the chunk whose volume to adjust.
      * \param volume the new volume, between 0 and MIX_MAX_VOLUME, or -1 to query.
      * \returns the previous volume. If the specified volume is -1, this returns
+<<<<<<< HEAD
      *          the current volume. If `chunk` is <see langword="null" />, this returns -1.
+=======
+     *          the current volume. If `chunk` is NULL, this returns -1.
+>>>>>>> main
      *
      * \since This function is available since SDL_mixer 3.0.0.
      */

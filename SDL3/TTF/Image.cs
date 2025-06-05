@@ -11,4 +11,8 @@ public unsafe struct Image {
     public int Rows;
     public int Pitch;
     public int IsColor;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

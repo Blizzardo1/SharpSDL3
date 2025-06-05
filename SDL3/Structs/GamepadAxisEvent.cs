@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
@@ -15,4 +16,25 @@ public struct GamepadAxisEvent {
     public byte Padding3;
     public short Value;
     public ushort Padding4;
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+namespace SharpSDL3.Structs;
+
+[StructLayout(LayoutKind.Sequential)]
+public struct GamepadAxisEvent
+{
+	public EventType Type;
+	public uint Reserved;
+	public ulong Timestamp;
+	public uint Which;
+	public byte Axis;
+	public byte Padding1;
+	public byte Padding2;
+	public byte Padding3;
+	public short Value;
+	public ushort Padding4;
+>>>>>>> main
 }

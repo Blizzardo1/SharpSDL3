@@ -6,4 +6,8 @@ namespace SharpSDL3.TTF;
 public struct GlyphSubpixel {
     public int LsbMinusRsb;
     public int Translation;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main

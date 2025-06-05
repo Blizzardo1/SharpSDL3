@@ -1,13 +1,26 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using static SharpSDL3.Delegates;
+=======
+﻿using SharpSDL3.Enums;
+using SharpSDL3.Structs;
+using System;
+using System.Diagnostics.CodeAnalysis;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
+using System.Runtime.InteropServices.Marshalling;
+using static SharpSDL3.Delegates;
+using static SharpSDL3.Sdl;
+>>>>>>> main
 
 namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
+<<<<<<< HEAD
     /// <summary>Add a callback to be triggered when an event is added to the event queue.</summary>
 
     /// <param name="filter">an SDL_EventFilter function to call when an event happens.</param>
@@ -21,6 +34,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetEventFilter"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+=======
+>>>>>>> main
 
     public static bool AddEventWatch(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -32,6 +47,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Query the state of processing events by type.</summary>
 
     /// <param name="type">the type of event; see SDL_EventType for details.</param>
@@ -42,6 +58,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the event is being processed, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static bool EventEnabled(uint type) {
         // Validate the event type to ensure it is within a valid range
         if (type == 0) {
@@ -51,6 +69,7 @@ public static unsafe partial class Sdl {
         return SDL_EventEnabled(type);
     }
 
+<<<<<<< HEAD
     /// <summary>Run a specific filter function on the current event queue, removing any events for which the filter returns <see langword="false" />.</summary>
 
     /// <param name="filter">the SDL_EventFilter function to call when an event happens.</param>
@@ -66,6 +85,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetEventFilter"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void FilterEvents(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
         if (filter == null) {
@@ -75,6 +96,7 @@ public static unsafe partial class Sdl {
         SDL_FilterEvents(filter, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Clear events of a specific type from the event queue.</summary>
 
     /// <param name="type">the type of event to be cleared; see SDL_EventType for details.</param>
@@ -87,6 +109,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="FlushEvents"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void FlushEvent(uint type) {
         // Validate the event type to ensure it is within a valid range
         if (type == 0) {
@@ -96,6 +120,7 @@ public static unsafe partial class Sdl {
         SDL_FlushEvent(type);
     }
 
+<<<<<<< HEAD
     /// <summary>Clear events of a range of types from the event queue.</summary>
 
     /// <param name="minType">the low end of event type to be cleared, inclusive; see SDL_EventType for details.</param>
@@ -109,6 +134,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="FlushEvent"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void FlushEvents(uint minType, uint maxType) {
         // Validate the event type range to ensure it is within a valid range
         if (minType == 0 || maxType == 0) {
@@ -121,6 +148,7 @@ public static unsafe partial class Sdl {
         SDL_FlushEvents(minType, maxType);
     }
 
+<<<<<<< HEAD
     /// <summary>Query the current event filter.</summary>
 
     /// <param name="filter">the current callback function will be stored here.</param>
@@ -134,12 +162,15 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there is no event filter set.</returns>
 
+=======
+>>>>>>> main
     public static bool GetEventFilter(out SdlEventFilter filter, out nint userdata) {
         // Call the native method and check the result
         var result = SDL_GetEventFilter(out filter, out userdata);
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Get window associated with an event.</summary>
 
     /// <param name="event">an event containing a windowID.</param>
@@ -152,6 +183,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the associated window on success or<see langword="null" /> if there is none.</returns>
 
+=======
+>>>>>>> main
     public static nint GetWindowFromEvent(ref Event @event) {
         // Validate the event structure to ensure it is in a valid state
         if (@event.Type == 0) {
@@ -171,6 +204,7 @@ public static unsafe partial class Sdl {
         }
     }
 
+<<<<<<< HEAD
     /// <summary>Check for the existence of a certain event type in the event queue.</summary>
 
     /// <param name="type">the type of event to be queried; see SDL_EventType for details.</param>
@@ -183,6 +217,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if events matching type are present, or <see langword="false" /> ifevents matching type are not present.</returns>
 
+=======
+>>>>>>> main
     public static bool HasEvent(uint type) {
         // Validate the event type to ensure it is within a valid range
         if (type == 0) {
@@ -193,6 +229,7 @@ public static unsafe partial class Sdl {
         return SDL_HasEvent(type);
     }
 
+<<<<<<< HEAD
     /// <summary>Check for the existence of certain event types in the event queue.</summary>
 
     /// <param name="minType">the low end of event type to be queried, inclusive; see SDL_EventType for details.</param>
@@ -206,6 +243,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if events with type &gt;= minType and &lt;= maxType arepresent, or <see langword="false" /> if not.</returns>
 
+=======
+>>>>>>> main
     public static bool HasEvents(uint minType, uint maxType) {
         // Validate the event type range to ensure it is within a valid range
         if (minType == 0 || maxType == 0) {
@@ -218,6 +257,7 @@ public static unsafe partial class Sdl {
         return SDL_HasEvents(minType, maxType);
     }
 
+<<<<<<< HEAD
     /// <summary>Check the event queue for messages and optionally return them.</summary>
 
     /// <param name="events">destination buffer for the retrieved events, may be discarded to leave the events in the queue and return the number of events that would have been stored.</param>
@@ -235,6 +275,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of events actually stored or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static int PeepEvents(ref Event[] events, int numevents, EventAction action, EventType minType, EventType maxType) {
         if (numevents <= 0) {
             throw new ArgumentOutOfRangeException(nameof(numevents), "Number of events must be greater than zero.");
@@ -252,6 +294,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Poll for currently pending events.</summary>
 
     /// <param name="event">the SDL_Event structure to be filled with the next event from the queue, or <see langword="null" />.</param>
@@ -268,6 +311,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this got an event or <see langword="false" /> if there are noneavailable.</returns>
 
+=======
+>>>>>>> main
     public static bool PollEvent(out Event @event) {
         // Call the native method and check the result
         var result = SDL_PollEvent(out @event);
@@ -279,6 +324,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Pump the event loop, gathering events from the input devices.</summary>
     /// <remarks>
     /// This function updates the event queue and internal input device state.
@@ -288,10 +334,13 @@ public static unsafe partial class Sdl {
     /// <seealso cref="WaitEvent"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void PumpEvents() {
         SDL_PumpEvents();
     }
 
+<<<<<<< HEAD
     /// <summary>Add an event to the event queue.</summary>
 
     /// <param name="event">the SDL_Event to be added to the queue.</param>
@@ -310,6 +359,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the event was filtered or on failure; call <see cref="GetError()" /> for more information. A commonreason for error is the event queue being full.</returns>
 
+=======
+>>>>>>> main
     public static bool PushEvent(ref Event @event) {
         // Validate the event structure to ensure it is in a valid state
         if (@event.Type == 0) {
@@ -326,6 +377,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Allocate a set of user-defined events, and return the beginning event number for that set of events.</summary>
 
     /// <param name="numevents">the number of events to be allocated.</param>
@@ -336,6 +388,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the beginning event number, or 0 if numevents isinvalid or if there are not enough user-defined events left.</returns>
 
+=======
+>>>>>>> main
     public static uint RegisterEvents(int numevents) {
         // Validate the number of events to ensure it is greater than zero
         if (numevents <= 0) {
@@ -345,6 +399,7 @@ public static unsafe partial class Sdl {
         return SDL_RegisterEvents(numevents);
     }
 
+<<<<<<< HEAD
     /// <summary>Remove an event watch callback added with SDL_AddEventWatch().</summary>
 
     /// <param name="filter">the function originally passed to SDL_AddEventWatch().</param>
@@ -358,6 +413,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="AddEventWatch"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void RemoveEventWatch(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
         if (filter == null) {
@@ -367,6 +424,7 @@ public static unsafe partial class Sdl {
         SDL_RemoveEventWatch(filter, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Set the state of processing events by type.</summary>
 
     /// <param name="type">the type of event; see SDL_EventType for details.</param>
@@ -377,6 +435,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="EventEnabled"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetEventEnabled(uint type, bool enabled) {
         // Validate the event type to ensure it is within a valid range
         if (type == 0) {
@@ -386,6 +446,7 @@ public static unsafe partial class Sdl {
         SDL_SetEventEnabled(type, enabled);
     }
 
+<<<<<<< HEAD
     /// <summary>Set up a filter to process all events before they are added to the internal event queue.</summary>
 
     /// <param name="filter">an SDL_EventFilter function to call when an event happens.</param>
@@ -403,6 +464,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="PushEvent"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void SetEventFilter(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
         if (filter == null) {
@@ -412,6 +475,7 @@ public static unsafe partial class Sdl {
         SDL_SetEventFilter(filter, userdata);
     }
 
+<<<<<<< HEAD
     /// <summary>Wait indefinitely for the next available event.</summary>
 
     /// <param name="event">the SDL_Event structure to be filled in with the next event from the queue, or <see langword="null" />.</param>
@@ -426,6 +490,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there was an error while waitingfor events; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static bool WaitEvent(out Event @event) {
         var result = SDL_WaitEvent(out @event);
 
@@ -436,6 +502,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+<<<<<<< HEAD
     /// <summary>Wait until the specified timeout (in milliseconds) for the next available event.</summary>
 
     /// <param name="event">the SDL_Event structure to be filled in with the next event from the queue, or <see langword="null" />.</param>
@@ -451,6 +518,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this got an event or <see langword="false" /> if the timeout elapsedwithout any events available.</returns>
 
+=======
+>>>>>>> main
     public static bool WaitEventTimeout(out Event @event, int timeoutMs) {
         // Initialize the event structure to ensure it is in a valid state
         @event = default;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Enums;
 using System.Runtime.InteropServices;
 
@@ -11,4 +12,21 @@ public unsafe struct ClipboardEvent {
     public SdlBool Owner;
     public int NumMimeTypes;
     public nint* MimeTypes;
+=======
+using System.Runtime.InteropServices;
+
+using SharpSDL3.Enums;
+
+namespace SharpSDL3.Structs;
+
+[StructLayout(LayoutKind.Sequential)]
+public unsafe struct ClipboardEvent
+{
+	public EventType Type;
+	public uint Reserved;
+	public ulong Timestamp;
+	public SdlBool Owner;
+	public int NumMimeTypes;
+	public nint* MimeTypes;
+>>>>>>> main
 }

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
@@ -15,11 +16,26 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the name of the platform. If the correct platformname is not available, returns a string beginning with the text &quot;Unknown&quot;.</returns>
+=======
+﻿using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices.Marshalling;
+using System.Runtime.InteropServices;
+
+using static SharpSDL3.Sdl;
+using System;
+using SharpSDL3.Structs;
+
+namespace SharpSDL3; 
+public static partial class Sdl {
+
+    // /usr/local/include/SDL3/SDL_platform.h
+>>>>>>> main
 
     public static string GetPlatform() {
         return SDL_GetPlatform();
     }
 
+<<<<<<< HEAD
     /// <summary>Create a new process.</summary>
 
     /// <param name="args">the path and arguments for the new process.</param>
@@ -41,6 +57,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Process *) Returns the newly created and runningprocess, or <see langword="null" /> if the process couldn't be created.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateProcess(nint args, SdlBool pipeStdio) {
         if (args == nint.Zero) {
             throw new ArgumentException("Arguments cannot be null.", nameof(args));
@@ -48,6 +66,7 @@ public static partial class Sdl {
         return SDL_CreateProcess(args, pipeStdio);
     }
 
+<<<<<<< HEAD
     /// <summary>Create a new process with the specified properties.</summary>
 
     /// <param name="props">the properties to use.</param>
@@ -66,6 +85,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Process *) Returns the newly created and runningprocess, or <see langword="null" /> if the process couldn't be created.</returns>
 
+=======
+>>>>>>> main
     public static nint CreateProcessWithProperties(uint props) {
         if (props == 0) {
             throw new ArgumentException("Properties cannot be zero.", nameof(props));
@@ -80,6 +101,7 @@ public static partial class Sdl {
         return processHandle;
     }
 
+<<<<<<< HEAD
     /// <summary>Get the properties associated with a process.</summary>
 
     /// <param name="process">the process to query.</param>
@@ -92,6 +114,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static uint GetProcessProperties(nint process) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -99,6 +123,7 @@ public static partial class Sdl {
         return SDL_GetProcessProperties(process);
     }
 
+<<<<<<< HEAD
     /// <summary>Read all the output from a process.</summary>
 
     /// <param name="process">The process to read.</param>
@@ -116,6 +141,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(void *) Returns the data or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint ReadProcess(nint process, out nuint datasize, out int exitcode) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -123,6 +150,7 @@ public static partial class Sdl {
         return SDL_ReadProcess(process, out datasize, out exitcode);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_IOStream associated with process standard input.</summary>
 
     /// <param name="process">The process to get the input stream for.</param>
@@ -141,6 +169,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns the input stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetProcessInput(nint process) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -148,6 +178,7 @@ public static partial class Sdl {
         return SDL_GetProcessInput(process);
     }
 
+<<<<<<< HEAD
     /// <summary>Get the SDL_IOStream associated with process standard output.</summary>
 
     /// <param name="process">The process to get the output stream for.</param>
@@ -166,6 +197,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns the output stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
+=======
+>>>>>>> main
     public static nint GetProcessOutput(nint process) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -173,6 +206,7 @@ public static partial class Sdl {
         return SDL_GetProcessOutput(process);
     }
 
+<<<<<<< HEAD
     /// <summary>Stop a process.</summary>
 
     /// <param name="process">The process to stop.</param>
@@ -187,6 +221,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool KillProcess(nint process, SdlBool force) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -194,6 +230,7 @@ public static partial class Sdl {
         return SDL_KillProcess(process, force);
     }
 
+<<<<<<< HEAD
     /// <summary>Wait for a process to finish.</summary>
 
     /// <param name="process">The process to wait for.</param>
@@ -210,6 +247,8 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the process exited, <see langword="false" /> otherwise.</returns>
 
+=======
+>>>>>>> main
     public static SdlBool WaitProcess(nint process, SdlBool block, out int exitcode) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -217,6 +256,7 @@ public static partial class Sdl {
         return SDL_WaitProcess(process, block, out exitcode);
     }
 
+<<<<<<< HEAD
     /// <summary>Destroy a previously created process object.</summary>
 
     /// <param name="process">The process object to destroy.</param>
@@ -231,6 +271,8 @@ public static partial class Sdl {
     /// <seealso cref="KillProcess"/>
     /// </remarks>
 
+=======
+>>>>>>> main
     public static void DestroyProcess(nint process) {
         if (process == nint.Zero) {
             throw new ArgumentException("Process handle cannot be null.", nameof(process));
@@ -238,6 +280,10 @@ public static partial class Sdl {
         SDL_DestroyProcess(process);
     }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> main
     [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
@@ -278,4 +324,8 @@ public static partial class Sdl {
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyProcess(nint process);
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> main
