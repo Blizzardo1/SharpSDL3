@@ -2,6 +2,7 @@ using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using System;
 using System.IO;
+using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
@@ -2010,6 +2011,27 @@ public static unsafe partial class Ttf {
         return TTF_RenderText_Shaded_Wrapped(font.Handle, text, length, fg, bg, wrap_width);
     }
 
+    /// <summary>
+    /// Render UTF-8 text at fast quality to a new 8-bit surface.
+    /// </summary>
+    /// <param name="font">the font to render with.</param>
+    /// <param name="text">text to render, in UTF-8 encoding.</param>
+    /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
+    /// <param name="fg">the foreground color for the text.</param>
+    /// <remarks>
+    /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
+    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
+    /// <para>This will not wrap on newline characters.</para>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended"/>, and <see cref="RenderTextLCD"/>.</para>
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
+    /// <seealso cref="RenderTextBlended"/>
+    /// <seealso cref="RenderTextLCD"/>
+    /// <seealso cref="RenderTextShaded"/>
+    /// <seealso cref="RenderTextSolid"/>
+    /// <seealso cref="RenderTextSolidWrapped"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
     public static nint RenderTextSolid(Font font, string text, ulong length, Color fg) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         if (font.Handle == nint.Zero) {
@@ -2018,6 +2040,26 @@ public static unsafe partial class Ttf {
         return TTF_RenderText_Solid(font.Handle, text, length, fg);
     }
 
+    /// <summary>
+    /// Render UTF-8 text at fast quality to a new 8-bit surface.
+    /// </summary>
+    /// <param name="font">the font to render with.</param>
+    /// <param name="text">text to render, in UTF-8 encoding.</param>
+    /// <param name="fg">the foreground color for the text.</param>
+    /// <remarks>
+    /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
+    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
+    /// <para>This will not wrap on newline characters.</para>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended"/>, and <see cref="RenderTextLCD"/>.</para>
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
+    /// <seealso cref="RenderTextBlended"/>
+    /// <seealso cref="RenderTextLCD"/>
+    /// <seealso cref="RenderTextShaded"/>
+    /// <seealso cref="RenderTextSolid"/>
+    /// <seealso cref="RenderTextSolidWrapped"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
     public static nint RenderTextSolid(Font font, string text, Color fg) {
         return RenderTextSolid(font, text, (ulong)text.Length, fg);
     }
@@ -2028,7 +2070,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the direction to be used for text shaping by a font.</summary>
-
     /// <param name="font">the font to modify.</param>
     /// <param name="direction">the new direction for text to flow.</param>
     /// <remarks>
@@ -2038,7 +2079,6 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontDirection(Font font, Direction direction) {
         bool result = TTF_SetFontDirection(font.Handle, direction);
         if (!result) {
@@ -2048,17 +2088,15 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set a font's current hinter setting.</summary>
-
     /// <param name="font">the font to set a new hinter setting on.</param>
     /// <param name="hinting">the new hinter setting.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font, and clears
+    /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontHinting"/>
     /// </remarks>
-
     public static void SetFontHinting(Font font, Hinting hinting) {
         if (!Enum.IsDefined(hinting)) {
             throw new ArgumentOutOfRangeException(nameof(hinting), "Invalid hinting value.");
@@ -2067,7 +2105,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set if kerning is enabled for a font.</summary>
-
     /// <param name="font">the font to set kerning on.</param>
     /// <param name="enabled"><see langword="true" /> to enable kerning, <see langword="false" /> to disable.</param>
     /// <remarks>
@@ -2079,23 +2116,19 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontKerning"/>
     /// </remarks>
-
     public static void SetFontKerning(Font font, bool enabled) {
         TTF_SetFontKerning(font.Handle, enabled);
     }
 
     /// <summary>Set language to be used for text shaping by a font.</summary>
-
     /// <param name="font">the font to specify a language for.</param>
     /// <param name="language_bcp47">a null-terminated string containing the desired language's BCP47 code. Or null to reset the value.</param>
     /// <remarks>
-    /// If SDL_ttf was not built with HarfBuzz support, this function returns
-    /// <see langword="false" />.
+    /// If SDL_ttf was not built with HarfBuzz support, this function returns <see langword="false" />.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontLanguage(Font font, string language_bcp47) {
         bool result = TTF_SetFontLanguage(font.Handle, language_bcp47);
         if (!result) {
@@ -2105,37 +2138,34 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the spacing between lines of text for a font.</summary>
-
     /// <param name="font">the font to modify.</param>
     /// <param name="lineskip">the new line spacing for the font.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font.
+    /// This updates any <see cref="Text"/> objects using this font.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontLineSkip"/>
     /// </remarks>
-
     public static void SetFontLineSkip(Font font, int lineskip) {
         TTF_SetFontLineSkip(font.Handle, lineskip);
     }
 
     /// <summary>Set a font's current outline.</summary>
-
     /// <param name="font">the font to set a new outline on.</param>
     /// <param name="outline">positive outline value, 0 to default.</param>
     /// <remarks>
-    /// This uses the font properties
-    /// TTF_PROP_FONT_OUTLINE_LINE_CAP_NUMBER,
-    /// TTF_PROP_FONT_OUTLINE_LINE_JOIN_NUMBER,
-    /// and
-    /// TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER
+    /// This uses the font properties:
+    /// <list type="bullet">
+    /// <item>TTF_PROP_FONT_OUTLINE_LINE_CAP_NUMBER</item>
+    /// <item>TTF_PROP_FONT_OUTLINE_LINE_JOIN_NUMBER</item>
+    /// <item>TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER</item>
+    /// </list>
     /// when setting the font outline.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontOutline"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontOutline(Font font, int outline) {
         bool result = TTF_SetFontOutline(font.Handle, outline);
         if (!result) {
@@ -2145,7 +2175,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the script to be used for text shaping by a font.</summary>
-
     /// <param name="font">the font to modify.</param>
     /// <param name="script">an ISO 15924 code .</param>
     /// <remarks>
@@ -2155,7 +2184,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="StringToTag"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontScript(Font font, int script) {
         bool result = TTF_SetFontScript(font.Handle, script);
         if (!result) {
@@ -2165,7 +2193,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Enable Signed Distance Field rendering for a font.</summary>
-
     /// <param name="font">the font to set SDF support on.</param>
     /// <param name="enabled"><see langword="true" /> to enable SDF, <see langword="false" /> to disable.</param>
     /// <remarks>
@@ -2176,7 +2203,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetFontSDF"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontSDF(Font font, bool enabled) {
         bool result = TTF_SetFontSDF(font.Handle, enabled);
         if (!result) {
@@ -2186,18 +2212,16 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set a font's size dynamically.</summary>
-
     /// <param name="font">the font to resize.</param>
     /// <param name="ptsize">the new point size.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font, and clears
+    /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontSize"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontSize(Font font, float ptsize) {
         if (ptsize <= 0) {
             throw new ArgumentOutOfRangeException(nameof(ptsize), "Point size must be greater than zero.");
@@ -2211,13 +2235,12 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set font size dynamically with target resolutions, in dots per inch.</summary>
-
     /// <param name="font">the font to resize.</param>
     /// <param name="ptsize">the new point size.</param>
     /// <param name="hdpi">the target horizontal DPI.</param>
     /// <param name="vdpi">the target vertical DPI.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font, and clears
+    /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
@@ -2225,7 +2248,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetFontSizeDPI"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetFontSizeDPI(Font font, float ptsize, int hdpi, int vdpi) {
         bool result = TTF_SetFontSizeDPI(font.Handle, ptsize, hdpi, vdpi);
         if (!result) {
@@ -2235,17 +2257,15 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set a font's current style.</summary>
-
     /// <param name="font">the font to set a new style on.</param>
     /// <param name="style">the new style values to set, OR'd together.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font, and clears
+    /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontStyle"/>
     /// </remarks>
-
     public static void SetFontStyle(Font font, FontStyle style) {
         if (!Enum.IsDefined(style)) {
             throw new ArgumentOutOfRangeException(nameof(style), "Invalid font style.");
@@ -2254,16 +2274,14 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set a font's current wrap alignment option.</summary>
-
     /// <param name="font">the font to set a new wrap alignment option on.</param>
     /// <param name="align">the new wrap alignment option.</param>
     /// <remarks>
-    /// This updates any TTF_Text objects using this font.
+    /// This updates any <see cref="Text"/> objects using this font.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontWrapAlignment"/>
     /// </remarks>
-
     public static void SetFontWrapAlignment(Font font, HorizontalAlignment align) {
         if (!Enum.IsDefined(align)) {
             throw new ArgumentOutOfRangeException(nameof(align), "Invalid horizontal alignment value.");
@@ -2271,16 +2289,14 @@ public static unsafe partial class Ttf {
         TTF_SetFontWrapAlignment(font.Handle, align);
     }
 
-    /// <summary>Sets the winding order of the vertices returned by TTF_GetGPUTextDrawData for a particular GPU text engine.</summary>
-
-    /// <param name="engine">a TTF_TextEngine object created with TTF_CreateGPUTextEngine().</param>
+    /// <summary>Sets the winding order of the vertices returned by <see cref="GetGPUTextDrawData"/> for a particular GPU text engine.</summary>
+    /// <param name="engine">a TTF_TextEngine object created with <see cref="CreateGPUTextEngine"/>.</param>
     /// <param name="winding">the new winding order option.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetGPUTextEngineWinding"/>
     /// </remarks>
-
     public static void SetGPUTextEngineWinding(nint engine, GPUTextEngineWinding winding) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
@@ -2289,7 +2305,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="r">the red color value in the range of 0-255.</param>
     /// <param name="g">the green color value in the range of 0-255.</param>
@@ -2303,7 +2318,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="SetTextColorFloat"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextColor(Text text, byte r, byte g, byte b, byte a) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2312,12 +2326,8 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="r">the red color value in the range of 0-255.</param>
-    /// <param name="g">the green color value in the range of 0-255.</param>
-    /// <param name="b">the blue color value in the range of 0-255.</param>
-    /// <param name="a">the alpha value in the range of 0-255.</param>
+    /// <param name="color">the color value.</param>
     /// <remarks>
     /// The default text color is white (255, 255, 255, 255).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
@@ -2326,7 +2336,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="SetTextColorFloat"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextColor(Text text, Color color) {
         return SetTextColor(text, color.R, color.G, color.B, color.A);
     }
@@ -2346,7 +2355,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="SetTextColor"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextColorFloat(Text text, float r, float g, float b, float a) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2355,12 +2363,8 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="r">the red color value, normally in the range of 0-1.</param>
-    /// <param name="g">the green color value, normally in the range of 0-1.</param>
-    /// <param name="b">the blue color value, normally in the range of 0-1.</param>
-    /// <param name="a">the alpha value in the range of 0-1.</param>
+    /// <param name="color">the color value</param>
     /// <remarks>
     /// The default text color is white (1.0f, 1.0f, 1.0f, 1.0f).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
@@ -2375,7 +2379,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the direction to be used for text shaping a text object.</summary>
-
     /// <param name="text">the text to modify.</param>
     /// <param name="direction">the new direction for text to flow.</param>
     /// <remarks>
@@ -2385,7 +2388,6 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextDirection(Text text, Direction direction) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2394,7 +2396,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the text engine used by a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="engine">the text engine to use for drawing.</param>
     /// <remarks>
@@ -2404,7 +2405,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetTextEngine"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextEngine(Text text, TextEngine engine) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2418,7 +2418,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the font used by a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="font">the font to use, may be discarded.</param>
     /// <remarks>
@@ -2430,7 +2429,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetTextFont"/>
     /// </remarks>
     /// <returns>Returns <see langword="false" /> if the text pointer is null; otherwise, <see langword="true" />. call<see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextFont(Text text, Font font) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2439,7 +2437,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the position of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="x">the x offset of the upper left corner of this text in pixels.</param>
     /// <param name="y">the y offset of the upper left corner of this text in pixels.</param>
@@ -2450,7 +2447,6 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetTextPosition"/>
     /// </remarks>
-
     public static bool SetTextPosition(Text text, int x, int y) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2459,7 +2455,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the position of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="x">the x offset of the upper left corner of this text in pixels.</param>
     /// <param name="y">the y offset of the upper left corner of this text in pixels.</param>
@@ -2470,13 +2465,11 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetTextPosition"/>
     /// </remarks>
-
     public static bool SetTextPosition(Text text, Point position) {
         return SetTextPosition(text, position.X, position.Y);
     }
 
     /// <summary>Set the script to be used for text shaping a text object.</summary>
-
     /// <param name="text">the text to modify.</param>
     /// <param name="script">an ISO 15924 code .</param>
     /// <remarks>
@@ -2486,7 +2479,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="StringToTag"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextScript(Text text, int script) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2495,7 +2487,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the UTF-8 text used by a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="string">the UTF-8 text to use, may be discarded.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
@@ -2508,7 +2499,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="InsertTextString"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextString(Text text, string str, ulong length) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
@@ -2520,7 +2510,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set whether whitespace should be visible when wrapping a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="visible"><see langword="true" /> to show whitespace when wrapping text, <see langword="false" /> to hide it.</param>
     /// <remarks>
@@ -2533,7 +2522,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="TextWrapWhitespaceVisible"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool SetTextWrapWhitespaceVisible(Text text, bool visible) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2542,7 +2530,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set whether wrapping is enabled on a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="wrap_width">the maximum width in pixels, 0 to wrap on newline characters.</param>
     /// <remarks>
@@ -2551,8 +2538,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetTextWrapWidth"/>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns
     public static bool SetTextWrapWidth(Text text, int wrap_width) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2561,7 +2547,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Convert from a 4 character string to a 32-bit tag.</summary>
-
     /// <param name="string">the 4 character string to convert.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -2569,7 +2554,7 @@ public static unsafe partial class Ttf {
     /// <seealso cref="TagToString"/>
     /// </remarks>
     /// <returns>Returns the 32-bit representation of the string.</returns>
-
+    /// <exception cref="ArgumentException">Thrown if <paramref name="str"/> is not exactly 4 characters long, or if <paramref name="str"/> contains <see langword="null"/> characters.</exception>
     public static int StringToTag(string str) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
@@ -2582,29 +2567,31 @@ public static unsafe partial class Ttf {
         return TTF_StringToTag(str);
     }
 
-    /// <summary>
-    /// May not work properly
-    /// </summary>
-    /// <param name="tag"></param>
-    /// <param name="size"></param>
-    /// <returns></returns>
     /// <summary>Convert from a 32-bit tag to a 4 character string.</summary>
-
     /// <param name="tag">the 32-bit tag to convert.</param>
-    /// <param name="string">a pointer filled in with the 4 character representation of the tag.</param>
     /// <param name="size">the size of the buffer pointed at by string, should be at least 4.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="TagToString"/>
     /// </remarks>
-
+    /// <returns>a pointer filled in with the 4 character representation of the tag.</returns>
     public static string TagToString(int tag, ulong size) {
         Span<char> buffer = stackalloc char[5];
         TTF_TagToString(tag, new string(buffer), size);
         return new string(buffer);
     }
 
+    /// <summary>
+    /// Return whether whitespace is shown when wrapping a text object.
+    /// </summary>
+    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
+    /// </remarks>
+    /// <returns><see langword="true"/> if whitespace is shown when wrapping text, or <see langword="false"/> otherwise.</returns>
+    /// <exception cref="ArgumentNullException">Thrown is <paramref name="text"/> is <see langword="null"/>.</exception>
     public static bool TextWrapWhitespaceVisible(Text text) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2615,7 +2602,6 @@ public static unsafe partial class Ttf {
     public static int TtfVersion() => TTF_Version();
 
     /// <summary>Update the layout of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to update.</param>
     /// <remarks>
     /// This is automatically done when the layout is requested or the text is
@@ -2625,7 +2611,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is <see langword="null"/>.</exception>
     public static bool UpdateText(Text text) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -2640,15 +2626,13 @@ public static unsafe partial class Ttf {
     public static int Version() => Sdl.VersionNum(Major, Minor, Micro);
 
     /// <summary>Get a mask of the specified subsystems which are currently initialized.</summary>
-
-    /// <param name="flags">any of the flags used by <see cref="Init"/>(); see <see cref="Init"/> for details.</param>
+    /// <param name="flags">any of the flags used by <see cref="Init"/>; see <see cref="Init"/> for details.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="Init"/>
     /// <seealso cref="InitSubSystem"/>
     /// </remarks>
-    /// <returns>Returns a mask of all initializedsubsystems if flags is 0, otherwise it returns the initialization statusof the specified subsystems.</returns>
-
+    /// <returns>Returns a mask of all initialized subsystems if flags is 0, otherwise it returns the initialization status of the specified subsystems.</returns>
     public static int WasInit() {
         return TTF_WasInit();
     }
