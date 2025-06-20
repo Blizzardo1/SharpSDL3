@@ -24,10 +24,10 @@ For more information about SDL3, visit the [SDL Wiki](https://wiki.libsdl.org/SD
 ## Documentation
 |Library | Progress|
 --------|----------
-|SDL3 | Not Started |
-|SDL3_image | Not Started |
-|SDL3_mixer | Not Started |
-|SDL3_net | Not Started |
+|SDL3 | Started |
+|SDL3_image | Started |
+|SDL3_mixer | Started |
+|SDL3_net | Started |
 |SDL3_ttf | Started |
 
 
