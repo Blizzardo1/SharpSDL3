@@ -393,19 +393,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    public static bool GetRenderDrawColor(nint renderer, out byte r, out byte g, out byte b, out byte a) {
-        if (renderer == nint.Zero) {
-            throw new SdlException("Renderer is null");
-        }
-        SdlBool result = SDL_GetRenderDrawColor(renderer, out r, out g, out b, out a);
-        if (!result) {
-            LogError(LogCategory.Error, "Failed to get render draw color");
-        }
-        return result;
-    }
-
     /// <summary>Get the color used for drawing operations (Rect, Line and Clear).</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <param name="r">a pointer filled in with the red value used to draw on the rendering target.</param>
     /// <param name="g">a pointer filled in with the green value used to draw on the rendering target.</param>
@@ -418,7 +406,26 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColor"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static bool GetRenderDrawColor(nint renderer, out byte r, out byte g, out byte b, out byte a) {
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        SdlBool result = SDL_GetRenderDrawColor(renderer, out r, out g, out b, out a);
+        if (!result) {
+            LogError(LogCategory.Error, "Failed to get render draw color");
+        }
+        return result;
+    }
 
+    /// <summary>Get the color used for drawing operations (Rect, Line and Clear).</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColorFloat"/>
+    /// <seealso cref="SetRenderDrawColor"/>
+    /// </remarks>
+    /// <returns>Returns a <see cref="Color"/> on success or a blank <see cref="Color"/> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static Color GetRenderDrawColor(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1824,7 +1831,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy a portion of the source texture to the current rendering target, with rotation and flipping, at subpixel precision.</summary>
-
     /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
@@ -1838,7 +1844,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, ref FRect dstrect,
             double angle, ref FPoint center, FlipMode flip) {
         if (renderer == nint.Zero) {
@@ -1852,8 +1857,119 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Tile a portion of the texture to the current rendering target at subpixel precision.</summary>
+    /// <summary>Copy a portion of the source texture to the current rendering target, with rotation and flipping, at subpixel precision.</summary>
+    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <param name="texture">the source texture.</param>
+    /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
+    /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
+    /// <param name="angle">an angle in degrees that indicates the rotation that will be applied to dstrect, rotating it in a clockwise direction.</param>
+    /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
+    /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, ref FPoint center, FlipMode flip) {
+        FRect srect = new();
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        if (srcrect != nint.Zero) {
+            Marshal.PtrToStructure(srcrect, srect);
+        }
+        return RenderTextureRotated(renderer, texture, ref srect, ref dstrect, angle, ref center, flip);
+    }
 
+    /// <summary>Copy a portion of the source texture to the current rendering target, with rotation and flipping, at subpixel precision.</summary>
+    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <param name="texture">the source texture.</param>
+    /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
+    /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
+    /// <param name="angle">an angle in degrees that indicates the rotation that will be applied to dstrect, rotating it in a clockwise direction.</param>
+    /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
+    /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, ref FPoint center, FlipMode flip) {
+        FRect drect = new();
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        if (dstrect != nint.Zero) {
+            Marshal.PtrToStructure(dstrect, drect);
+        }
+        return RenderTextureRotated(renderer, texture, ref srcrect, ref drect, angle, ref center, flip);
+    }
+
+    /// <summary>Copy a portion of the source texture to the current rendering target, with rotation and flipping, at subpixel precision.</summary>
+    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <param name="texture">the source texture.</param>
+    /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
+    /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
+    /// <param name="angle">an angle in degrees that indicates the rotation that will be applied to dstrect, rotating it in a clockwise direction.</param>
+    /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
+    /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, nint center, FlipMode flip) {
+        FRect srect = new();
+        FPoint centerPoint = new();
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        if (srcrect != nint.Zero) {
+            Marshal.PtrToStructure(srcrect, srect);
+        }
+        if(center != nint.Zero) {
+            centerPoint = Marshal.PtrToStructure<FPoint>(center);
+        }
+
+        return RenderTextureRotated(renderer, texture, ref srect, ref dstrect, angle, ref centerPoint, flip);
+    }
+
+    /// <summary>Copy a portion of the source texture to the current rendering target, with rotation and flipping, at subpixel precision.</summary>
+    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <param name="texture">the source texture.</param>
+    /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
+    /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
+    /// <param name="angle">an angle in degrees that indicates the rotation that will be applied to dstrect, rotating it in a clockwise direction.</param>
+    /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
+    /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture"/>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, nint center, FlipMode flip) {
+        FRect drect = new();
+        FPoint centerPoint = new();
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        if (dstrect != nint.Zero) {
+            Marshal.PtrToStructure(dstrect, drect);
+        }
+
+        if (center != nint.Zero) {
+            centerPoint = Marshal.PtrToStructure<FPoint>(center);
+        }
+
+        return RenderTextureRotated(renderer, texture, ref srcrect, ref drect, angle, ref centerPoint, flip);
+    }
+
+
+    /// <summary>Tile a portion of the texture to the current rendering target at subpixel precision.</summary>
     /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
