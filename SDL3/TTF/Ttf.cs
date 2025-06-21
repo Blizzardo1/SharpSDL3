@@ -2577,8 +2577,8 @@ public static unsafe partial class Ttf {
     /// <returns>a pointer filled in with the 4 character representation of the tag.</returns>
     public static string TagToString(int tag, ulong size) {
         Span<char> buffer = stackalloc char[5];
-        TTF_TagToString(tag, new string(buffer), size);
-        return new string(buffer);
+        TTF_TagToString(tag, ref MemoryMarshal.GetReference(buffer), size);
+        return new string(buffer.Slice(0, 4));
     }
 
     /// <summary>
