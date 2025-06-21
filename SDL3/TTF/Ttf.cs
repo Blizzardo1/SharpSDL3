@@ -2538,7 +2538,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetTextWrapWidth"/>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextWrapWidth(Text text, int wrap_width) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
