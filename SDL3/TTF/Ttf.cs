@@ -2560,8 +2560,10 @@ public static unsafe partial class Ttf {
         if (str.Length != 4) {
             throw new ArgumentException("String must be exactly 4 characters long.", nameof(str));
         }
-        if (str[0] == '\0' || str[1] == '\0' || str[2] == '\0' || str[3] == '\0') {
-            throw new ArgumentException("String must not contain null characters.", nameof(str));
+        for(int i = 0; i < 4; i++) {
+            if (str[i] == '\0') {
+                throw new ArgumentException("String must not contain null characters.", nameof(str));
+            }
         }
         return TTF_StringToTag(str);
     }
@@ -2575,10 +2577,13 @@ public static unsafe partial class Ttf {
     /// <seealso cref="TagToString"/>
     /// </remarks>
     /// <returns>a pointer filled in with the 4 character representation of the tag.</returns>
+    /// <exception cref="ArgumentException">Thrown if the length of characters exceeds 5: 4 tag characters and one null-terminated character.</exception>
     public static string TagToString(int tag, ulong size) {
-        Span<char> buffer = stackalloc char[5];
-        TTF_TagToString(tag, ref MemoryMarshal.GetReference(buffer), size);
-        return new string(buffer.Slice(0, 4));
+        TTF_TagToString(tag, out string str, size);
+        if (str.Length > 5) {
+            throw new ArgumentException("String must be at most 4 characters long with a null-terminated character '\\0'.", nameof(str));
+        }
+        return str[..4];
     }
 
     /// <summary>
@@ -3090,7 +3095,7 @@ public static unsafe partial class Ttf {
 
     [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_TagToString(int tag, [MarshalAs(Sdl.StringType)] string str, ulong size);
+    private static partial void TTF_TagToString(int tag, [MarshalAs(Sdl.StringType)] out string str, ulong size);
 
     [LibraryImport(NativeLibName)]
     [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
