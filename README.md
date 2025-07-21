@@ -16,7 +16,7 @@ For more information about SDL3, visit the [SDL Wiki](https://wiki.libsdl.org/SD
 |Library | Progress |
 ---------|-----------
 |SDL3 | Works, needs updating|
-|SDL3_image | Words, needs updating|
+|SDL3_image | Works, needs updating|
 |SDL3_mixer | Works, needs updating|
 |SDL3_net | Not Started|
 |SDL3_ttf | Works, needs updating|
