@@ -591,7 +591,7 @@ public static unsafe partial class Ttf {
     public static int GetFontGeneration(Font font) {
         int generation = TTF_GetFontGeneration(font.Handle);
         if (generation == 0) {
-            throw new InvalidOperationException($"Failed to get font generation. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font generation. SDL Error: {Sdl.GetError()}");
         }
         return generation;
     }
@@ -700,21 +700,18 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the script used for text shaping a font.</summary>
-
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="TagToString"/>
     /// </remarks>
-    /// <returns>Returns anISO 15924 codeor 0 if a script hasn't been set.</returns>
-
+    /// <returns>Returns anISO 15924 code or 0 if a script hasn't been set.</returns>
     public static int GetFontScript(Font font) {
         return TTF_GetFontScript(font.Handle);
     }
 
     /// <summary>Query whether Signed Distance Field rendering is enabled for a font.</summary>
-
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -722,7 +719,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="SetFontSDF"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if enabled, <see langword="false" /> otherwise.</returns>
-
     public static bool GetFontSDF(Font font) {
         bool result = TTF_GetFontSDF(font.Handle);
         if (!result) {
@@ -732,7 +728,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the size of a font.</summary>
-
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
@@ -741,11 +736,10 @@ public static unsafe partial class Ttf {
     /// <seealso cref="SetFontSizeDPI"/>
     /// </remarks>
     /// <returns>Returns the size of the font, or 0.0f on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static float GetFontSize(Font font) {
         float size = TTF_GetFontSize(font.Handle);
         if (size <= 0.01f) {
-            throw new InvalidOperationException($"Failed to get font size. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get font size. SDL Error: {Sdl.GetError()}");
         }
         return size;
     }

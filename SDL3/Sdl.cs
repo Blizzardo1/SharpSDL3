@@ -1837,7 +1837,7 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a snapshot of the current state of the keyboard.</summary>
-    /// <param name="numkeys">if non-<see langword="null" />, receives the length of the returned array.</param>
+    /// <param name="numKeys">if non-<see langword="null" />, receives the length of the returned array.</param>
     /// <remarks>
     /// The pointer returned is a pointer to an internal SDL array. It will be
     /// valid for the whole lifetime of the application and should not be freed by the caller.
@@ -1847,25 +1847,25 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ResetKeyboard"/>
     /// </remarks>
     /// <returns>(const bool *) Returns a pointer to an array of key states.</returns>
-    public static Span<bool> GetKeyboardState(out int numkeys) {
-        nint result = SDL_GetKeyboardState(out numkeys);
+    public static Span<bool> GetKeyboardState(out int numKeys) {
+        nint result = SDL_GetKeyboardState(out numKeys);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetKeyboardState: Failed to retrieve keyboard state.");
             return [];
         }
 
-        if (numkeys <= 0) {
+        if (numKeys <= 0) {
             LogWarn(LogCategory.System, "GetKeyboardState: Retrieved count is zero or negative.");
             return [];
         }
 
-        bool[] state = new bool[numkeys];
-        for (int i = 0; i < numkeys; i++) {
+        bool[] state = new bool[numKeys];
+        for (int i = 0; i < numKeys; i++) {
             state[i] = Marshal.ReadByte(result, i) != 0;
         }
 
-        return state;
+        return new(state);
     }
 
     /// <summary>Get a key code from a human-readable name.</summary>
