@@ -1,7 +1,6 @@
-<<<<<<< HEAD
 /* SDL3-CS - C# Bindings for SDL3
  *
- * Copyright (c) 2024 Colin Jackson
+ * Copyright (c) 2024 Adonis Deliannis
  *
  * This software is provided 'as-is', without any express or implied warranty.
  * In no event will the authors be held liable for any damages arising from
@@ -21,7 +20,7 @@
  *
  * 3. This notice may not be removed or altered from any source distribution.
  *
- * Colin "cryy22" Jackson <c@cryy22.art>
+ * Adonis "Blizzardo1" Deliannis <blizzardo1@blizzeta.net>
  *
  */
 =======
