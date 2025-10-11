@@ -90,18 +90,10 @@ public static partial class Sdl {
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
 
     public static MouseButtonFlags GetMouseState(out float x, out float y) {
-        MouseButtonFlags state = SDL_GetMouseState(out x, out y);
-
-        // I SWEAR IF THIS IS AN ISSUE, I WILL BASH COPILOT IN THE HEAD
-        if (x < 0 || y < 0) {
-            throw new InvalidOperationException("Mouse coordinates are invalid.");
-        }
-
-        return state;
+        return SDL_GetMouseState(out x, out y);
     }
 
     /// <summary>Query the platform for the asynchronous mouse button state and the desktop-relative platform-cursor position.</summary>
-
     /// <param name="x">a pointer to receive the platform-cursor's x-position from the desktop's top left corner, can be <see langword="null" /> if unused.</param>
     /// <param name="y">a pointer to receive the platform-cursor's y-position from the desktop's top left corner, can be <see langword="null" /> if unused.</param>
     /// <remarks>
@@ -115,20 +107,11 @@ public static partial class Sdl {
     /// <seealso cref="GetGlobalMouseState"/>
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
-
     public static MouseButtonFlags GetGlobalMouseState(out float x, out float y) {
-        MouseButtonFlags state = SDL_GetGlobalMouseState(out x, out y);
-
-        // AND THIS
-        if (x < 0 || y < 0) {
-            throw new InvalidOperationException("Global mouse coordinates are invalid.");
-        }
-
-        return state;
+        return SDL_GetGlobalMouseState(out x, out y);
     }
 
     /// <summary>Query SDL's cache for the synchronous mouse button state and accumulated mouse delta since last call.</summary>
-
     /// <param name="x">a pointer to receive the x mouse delta accumulated since last call, can be <see langword="null" /> if unused.</param>
     /// <param name="y">a pointer to receive the y mouse delta accumulated since last call, can be <see langword="null" /> if unused.</param>
     /// <remarks>
@@ -140,7 +123,6 @@ public static partial class Sdl {
     /// <seealso cref="GetGlobalMouseState"/>
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
-
     public static MouseButtonFlags GetRelativeMouseState(out float x, out float y) {
         MouseButtonFlags state = SDL_GetRelativeMouseState(out x, out y);
 
