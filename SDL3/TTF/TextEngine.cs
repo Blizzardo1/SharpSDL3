@@ -1,7 +1,25 @@
 using System.Runtime.InteropServices;
+using SharpSDL3.Structs;
 
 namespace SharpSDL3.TTF;
 
+/// <summary>
+/// A text engine used to create text objects.
+/// </summary>
+/// <remarks>
+/// <para>
+///     This is a public interface that can be used by applications and libraries to perform customize rendering with text objects. See &lt;SDL3_ttf/SDL_textengine.h&gt; for details.
+/// </para>
+/// <para>
+///     There are three text engines provided with the library:
+///     <list type="bullet">
+///     <item>Drawing to a <see cref="Surface"/>, created with <see cref="Ttf.CreateSurfaceTextEngine"/></item>
+///     <item>Drawing with an SDL 2D renderer, created with <see cref="Ttf.CreateRendererTextEngine"/></item>
+///     <item>Drawing with the SDL GPU API, created with <see cref="Ttf.CreateGPUTextEngine"/></item>
+///     </list>
+/// </para>
+/// <para><strong>Version:</strong> This struct is available since SDL_ttf 3.0.0</para>
+/// </remarks>
 [StructLayout(LayoutKind.Sequential)]
 public struct TextEngine {
 

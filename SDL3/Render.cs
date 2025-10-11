@@ -1698,7 +1698,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool RenderTexture(nint renderer, nint texture, nint srcrect, nint destrect) {
+    public static bool RenderTexture(nint renderer, nint texture, nint srcrect, nint dstrect) {
         FRect srect = new();
         FRect drect = new();
         if (renderer == nint.Zero) {
@@ -1708,8 +1708,8 @@ public static unsafe partial class Sdl {
             Marshal.PtrToStructure(srcrect, srect);
         }
 
-        if (destrect != nint.Zero) {
-            Marshal.PtrToStructure(destrect, drect);
+        if (dstrect != nint.Zero) {
+            Marshal.PtrToStructure(dstrect, drect);
         }
 
         return RenderTexture(renderer, texture, ref srect, ref drect);
@@ -1729,13 +1729,13 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, nint destrect) {
+    public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, nint dstrect) {
         FRect drect = new();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        if (destrect != nint.Zero) {
-            Marshal.PtrToStructure(destrect, drect);
+        if (dstrect != nint.Zero) {
+            Marshal.PtrToStructure(dstrect, drect);
         }
 
         return RenderTexture(renderer, texture, ref srcrect, ref drect);
@@ -1755,7 +1755,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool RenderTexture(nint renderer, nint texture, nint srcrect, ref FRect destrect) {
+    public static bool RenderTexture(nint renderer, nint texture, nint srcrect, ref FRect dstrect) {
         FRect srect = new();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1764,7 +1764,7 @@ public static unsafe partial class Sdl {
             Marshal.PtrToStructure(srcrect, srect);
         }
 
-        return RenderTexture(renderer, texture, ref srect, ref destrect);
+        return RenderTexture(renderer, texture, ref srect, ref dstrect);
     }
 
     /// <summary>Perform a scaled copy using the 9-grid algorithm to the current rendering target at subpixel precision.</summary>
@@ -1772,10 +1772,10 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
-    /// <param name="left_width">the width, in pixels, of the left corners in srcrect.</param>
-    /// <param name="right_width">the width, in pixels, of the right corners in srcrect.</param>
-    /// <param name="top_height">the height, in pixels, of the top corners in srcrect.</param>
-    /// <param name="bottom_height">the height, in pixels, of the bottom corners in srcrect.</param>
+    /// <param name="leftWidth">the width, in pixels, of the left corners in srcrect.</param>
+    /// <param name="rightWidth">the width, in pixels, of the right corners in srcrect.</param>
+    /// <param name="topHeight">the height, in pixels, of the top corners in srcrect.</param>
+    /// <param name="bottomHeight">the height, in pixels, of the bottom corners in srcrect.</param>
     /// <param name="scale">the scale used to transform the corner of srcrect into the corner of dstrect, or 0.0f for an unscaled copy.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>

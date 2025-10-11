@@ -133,17 +133,15 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Create a copy of an existing font.</summary>
-
     /// <param name="existing_font">the font to copy.</param>
     /// <remarks>
     /// The copy will be distinct from the original, but will share the font file
     /// and have the same size and style as the original.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the originalfont.</para>
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the original font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="CloseFont"/>
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static Font CopyFont(Font existingFont) {
         Font font = TTF_CopyFont(existingFont.Handle);
         return font;
@@ -266,27 +264,29 @@ public static unsafe partial class Ttf {
         return engine;
     }
 
-    /// <seealso cref="DestroyText(Text)"/>
     /// <summary>Create a text object from UTF-8 text and a text engine.</summary>
-
     /// <param name="engine">the text engine to use when creating the text object, may be discarded.</param>
     /// <param name="font">the font to render with.</param>
     /// <param name="text">the text to use, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font and textengine.</para>
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font and <see cref="TextEngine"/>.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="DestroyText"/>
     /// </remarks>
-    /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
+    /// <returns>(TTF_Text *) Returns a <see cref="Text"/> object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         nint tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
         if (tPtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create text. SDL Error: {Sdl.GetError()}");
         }
-        Text textObj = *(Text*)tPtr;
+        
+        //Text textObj = *(Text*)tPtr;
+        
+        Text textObj = default;
+        Unsafe.Copy(ref textObj, (void*)tPtr);
+
         textObj.Handle = tPtr;
         return textObj;
     }
@@ -1782,9 +1782,23 @@ public static unsafe partial class Ttf {
         return result;
     }
 
-    public static bool MeasureString(Font font, string text, int max_width, out int measured_width, out int measured_length) {
+    /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
+    /// <param name="font">the font to query.</param>
+    /// <param name="text">text to calculate, in UTF-8 encoding.</param>
+    /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
+    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
+    /// <remarks>
+    /// This reports the number of characters that can be rendered before reaching
+    /// max_width.
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    public static bool MeasureString(Font font, string text, nuint length, int max_width, out int measured_width, out int measured_length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        bool result = TTF_MeasureString(font.Handle, text, (nuint)text.Length, max_width, out int mW, out nuint mL);
+        bool result = TTF_MeasureString(font.Handle, text, length, max_width, out int mW, out nuint mL);
 
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
@@ -1793,6 +1807,44 @@ public static unsafe partial class Ttf {
         measured_length = (int)mL;
         return result;
     }
+
+    /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
+    /// <param name="font">the font to query.</param>
+    /// <param name="text">text to calculate, in UTF-8 encoding.</param>
+    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
+    /// <remarks>
+    /// This reports the number of characters that can be rendered before reaching
+    /// max_width.
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+
+    public static bool MeasureString(Font font, string text, int max_width, out int measured_width, out int measured_length) {
+        ArgumentException.ThrowIfNullOrEmpty(text);
+        bool result = MeasureString(font, text, (nuint)text.Length, max_width, out int mW, out int mL);
+
+        if (!result) {
+            Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
+        }
+        measured_width = mW;
+        measured_length = (int)mL;
+        return result;
+    }
+
+    /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
+    /// <param name="font">the font to query.</param>
+    /// <param name="text">text to calculate, in UTF-8 encoding.</param>
+    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <remarks>
+    /// This reports the number of characters that can be rendered before reaching
+    /// max_width.
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static bool MeasureString(Font font, string text, int max_width, out Size measuredSize) {
         bool result = MeasureString(font, text, max_width, out int mW, out int mL);
@@ -1805,10 +1857,7 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
-    /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1823,13 +1872,8 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
-
     /// <param name="font">the font to query.</param>
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
-    /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
-    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -2481,7 +2525,7 @@ public static unsafe partial class Ttf {
 
     /// <summary>Set the UTF-8 text used by a text object.</summary>
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="string">the UTF-8 text to use, may be discarded.</param>
+    /// <param name="str">the UTF-8 text to use, may be discarded.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
