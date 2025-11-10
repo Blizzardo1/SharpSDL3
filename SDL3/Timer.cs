@@ -10,7 +10,6 @@ public static partial class Sdl {
     // /usr/local/include/SDL3/SDL_timer.h
 
     /// <summary>Call a callback function at a future time.</summary>
-
     /// <param name="interval">the timer delay, in milliseconds, passed to callback.</param>
     /// <param name="callback">the SDL_TimerCallback function to call when the specified interval elapses.</param>
     /// <param name="userdata">a pointer that is passed to callback.</param>
@@ -21,11 +20,10 @@ public static partial class Sdl {
     /// 0, the timer is canceled and will be removed.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddTimerNS"/>
+    /// <seealso cref="AddTimerNs"/>
     /// <seealso cref="RemoveTimer"/>
     /// </remarks>
     /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static uint AddTimer(uint interval, SdlTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
@@ -37,15 +35,10 @@ public static partial class Sdl {
 
         uint timerId = SDL_AddTimer(interval, callback, userdata);
 
-        if (timerId == 0) {
-            throw new InvalidOperationException("Failed to add timer. SDL_AddTimer returned 0.");
-        }
-
-        return timerId;
+        return timerId == 0 ? throw new InvalidOperationException("Failed to add timer. SDL_AddTimer returned 0.") : timerId;
     }
 
     /// <summary>Call a callback function at a future time.</summary>
-
     /// <param name="interval">the timer delay, in nanoseconds, passed to callback.</param>
     /// <param name="callback">the SDL_TimerCallback function to call when the specified interval elapses.</param>
     /// <param name="userdata">a pointer that is passed to callback.</param>
@@ -60,8 +53,7 @@ public static partial class Sdl {
     /// <seealso cref="RemoveTimer"/>
     /// </remarks>
     /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
-
-    public static uint AddTimerNS(ulong interval, SdlNsTimerCallback callback, nint userdata) {
+    public static uint AddTimerNs(ulong interval, SdlNsTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
         }
@@ -72,11 +64,7 @@ public static partial class Sdl {
 
         uint timerId = SDL_AddTimerNS(interval, callback, userdata);
 
-        if (timerId == 0) {
-            throw new InvalidOperationException("Failed to add timer. SDL_AddTimerNS returned 0.");
-        }
-
-        return timerId;
+        return timerId == 0 ? throw new InvalidOperationException("Failed to add timer. SDL_AddTimerNS returned 0.") : timerId;
     }
 
     /// <summary>Wait a specified number of milliseconds before returning.</summary>
@@ -88,10 +76,9 @@ public static partial class Sdl {
     /// scheduling.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DelayNS"/>
+    /// <seealso cref="DelayNs"/>
     /// <seealso cref="DelayPrecise"/>
     /// </remarks>
-
     public static void Delay(uint ms) {
         if (ms == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ms));
@@ -107,7 +94,6 @@ public static partial class Sdl {
     }
 
     /// <summary>Wait a specified number of nanoseconds before returning.</summary>
-
     /// <param name="ns">the number of nanoseconds to delay.</param>
     /// <remarks>
     /// This function waits a specified number of nanoseconds before returning. It
@@ -118,15 +104,14 @@ public static partial class Sdl {
     /// <seealso cref="Delay"/>
     /// <seealso cref="DelayPrecise"/>
     /// </remarks>
-
-    public static void DelayNS(ulong ns) {
+    public static void DelayNs(ulong ns) {
         if (ns == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
         }
 
-        ulong start = GetTicksNS();
+        ulong start = GetTicksNs();
         SDL_DelayNS(ns);
-        ulong end = GetTicksNS();
+        ulong end = GetTicksNs();
 
         if (end - start < ns) {
             throw new InvalidOperationException("DelayNS did not delay for the expected duration.");
@@ -143,17 +128,16 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="Delay"/>
-    /// <seealso cref="DelayNS"/>
+    /// <seealso cref="DelayNs"/>
     /// </remarks>
-
     public static void DelayPrecise(ulong ns) {
         if (ns == 0) {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
         }
 
-        ulong start = GetTicksNS();
+        ulong start = GetTicksNs();
         SDL_DelayPrecise(ns);
-        ulong end = GetTicksNS();
+        ulong end = GetTicksNs();
 
         if (end - start < ns) {
             throw new InvalidOperationException("DelayPrecise did not delay for the expected duration.");
@@ -168,7 +152,6 @@ public static partial class Sdl {
     /// <seealso cref="GetPerformanceFrequency"/>
     /// </remarks>
     /// <returns>Returns the current counter value.</returns>
-
     public static ulong GetPerformanceCounter() {
         return SDL_GetPerformanceCounter();
     }
@@ -180,7 +163,6 @@ public static partial class Sdl {
     /// <seealso cref="GetPerformanceCounter"/>
     /// </remarks>
     /// <returns>Returns a platform-specific count per second.</returns>
-
     public static ulong GetPerformanceFrequency() {
         return SDL_GetPerformanceFrequency();
     }
@@ -190,8 +172,7 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns an unsigned 64‑bit integer that represents thenumber of milliseconds that have elapsed since the SDL library wasinitialized (typically via a call to SDL_Init).</returns>
-
+    /// <returns>Returns an unsigned 64‑bit integer that represents the number of milliseconds that have elapsed since the SDL library was initialized (typically via a call to SDL_Init).</returns>
     public static ulong GetTicks() {
         return SDL_GetTicks();
     }
@@ -201,9 +182,8 @@ public static partial class Sdl {
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns an unsigned 64-bit value representing the numberof nanoseconds since the SDL library initialized.</returns>
-
-    public static ulong GetTicksNS() {
+    /// <returns>Returns an unsigned 64-bit value representing the number of nanoseconds since the SDL library initialized.</returns>
+    public static ulong GetTicksNs() {
         return SDL_GetTicksNS();
     }
 
@@ -216,58 +196,43 @@ public static partial class Sdl {
     /// <seealso cref="AddTimer"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static SdlBool RemoveTimer(uint id) {
         if (id == 0) {
             throw new ArgumentException("Timer ID must be greater than zero.", nameof(id));
         }
 
-        SdlBool result = SDL_RemoveTimer(id);
+        bool result = SDL_RemoveTimer(id);
 
-        if (!result) {
-            throw new InvalidOperationException($"Failed to remove timer with ID {id}.");
-        }
-
-        return result;
+        return !result ? throw new InvalidOperationException($"Failed to remove timer with ID {id}.") : result;
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_AddTimer(uint interval, SdlTimerCallback callback, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_AddTimerNS(ulong interval, SdlNsTimerCallback callback, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_Delay(uint ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DelayNS(ulong ns);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DelayPrecise(ulong ns);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetPerformanceCounter();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetPerformanceFrequency();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetTicks();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetTicksNS();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RemoveTimer(uint id);
 }

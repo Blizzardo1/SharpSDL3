@@ -54,7 +54,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Sensor *) Returns an SDL_Sensor object or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint GetSensorFromID(uint instanceId) {
+    public static nint GetSensorFromId(uint instanceId) {
         nint sensor = SDL_GetSensorFromID(instanceId);
         if (sensor == nint.Zero) {
             throw new InvalidOperationException("GetSensorFromID failed");
@@ -70,7 +70,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the sensor instance ID, or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static uint GetSensorID(nint sensor) {
+    public static uint GetSensorId(nint sensor) {
         uint id = SDL_GetSensorID(sensor);
         if (id == 0) {
             throw new InvalidOperationException("GetSensorID failed");
@@ -103,7 +103,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the sensor name, or <see langword="null" /> if instance_id is notvalid.</returns>
 
-    public static string GetSensorNameForID(uint instanceId) {
+    public static string GetSensorNameForId(uint instanceId) {
         string name = SDL_GetSensorNameForID(instanceId);
         if (name == null) {
             throw new InvalidOperationException("GetSensorNameForID failed");
@@ -136,7 +136,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the sensor platform dependent type, or -1 if instance_id is not valid.</returns>
 
-    public static int GetSensorNonPortableTypeForID(uint instanceId) {
+    public static int GetSensorNonPortableTypeForId(uint instanceId) {
         int type = SDL_GetSensorNonPortableTypeForID(instanceId);
         if (type == -1) {
             throw new InvalidOperationException("GetSensorNonPortableTypeForID failed");
@@ -201,7 +201,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns theSDL_SensorType, orSDL_SENSOR_INVALID if instance_id is not valid.</returns>
 
-    public static SensorType GetSensorTypeForID(uint instanceId) {
+    public static SensorType GetSensorTypeForId(uint instanceId) {
         SensorType type = SDL_GetSensorTypeForID(instanceId);
         if (type == SensorType.Unknown) {
             throw new InvalidOperationException("GetSensorTypeForID failed");
@@ -236,61 +236,49 @@ public static unsafe partial class Sdl {
         SDL_UpdateSensors();
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CloseSensor(nint sensor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSensorData(nint sensor, nint data, int numValues);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetSensorFromID(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetSensorID(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorName(nint sensor);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetSensorNameForID(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_GetSensorNonPortableType(nint sensor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_GetSensorNonPortableTypeForID(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetSensorProperties(nint sensor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetSensors(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SensorType SDL_GetSensorType(nint sensor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SensorType SDL_GetSensorTypeForID(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_OpenSensor(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UpdateSensors();
 }

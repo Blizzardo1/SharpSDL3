@@ -15,7 +15,7 @@ namespace SharpSDL3.TTF;
 ///     <list type="bullet">
 ///     <item>Drawing to a <see cref="Surface"/>, created with <see cref="Ttf.CreateSurfaceTextEngine"/></item>
 ///     <item>Drawing with an SDL 2D renderer, created with <see cref="Ttf.CreateRendererTextEngine"/></item>
-///     <item>Drawing with the SDL GPU API, created with <see cref="Ttf.CreateGPUTextEngine"/></item>
+///     <item>Drawing with the SDL GPU API, created with <see cref="Ttf.CreateGpuTextEngine"/></item>
 ///     </list>
 /// </para>
 /// <para><strong>Version:</strong> This struct is available since SDL_ttf 3.0.0</para>

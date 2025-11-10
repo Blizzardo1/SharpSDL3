@@ -20,10 +20,10 @@ public static unsafe partial class Mixer {
     private const string NativeLibName = "SDL3_mixer";
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void Mix_ChannelFinishedCallback(int channel);
+    public delegate void MixChannelFinishedCallback(int channel);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate bool Mix_EachSoundFontCallback(string a, nint b);
+    public delegate bool MixEachSoundFontCallback(string a, nint b);
 
     /// <summary>
     /// This is a callback that signifies that a channel has finished all its loops
@@ -37,7 +37,7 @@ public static unsafe partial class Mixer {
     /// unregister a callback while it's still playing.
     /// </remarks>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void Mix_EffectDone_t(int chan, nint udata);
+    public delegate void MixEffectDoneT(int chan, nint udata);
 
     /// <summary>
     /// This is the format of a special effect callback:
@@ -60,10 +60,10 @@ public static unsafe partial class Mixer {
     /// mixed with the rest of the channels and music for the final output stream.
     /// </remarks>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void Mix_EffectFunc_t(int chan, nint stream, int len, nint udata);
+    public delegate void MixEffectFuncT(int chan, nint stream, int len, nint udata);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate void Mix_MixCallback(nint udata, nint stream, int len);
+    public delegate void MixMixCallback(nint udata, nint stream, int len);
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void MusicFinishedCallback();
@@ -76,7 +76,7 @@ public static unsafe partial class Mixer {
     /// This method ensures that the callback is properly registered and provides a layer of abstraction
     /// over the native method to make it less trivial.
     /// </remarks>
-    public static void ChannelFinished(Mix_ChannelFinishedCallback channelFinishedCallback) {
+    public static void ChannelFinished(MixChannelFinishedCallback channelFinishedCallback) {
         if (channelFinishedCallback == null) {
             throw new ArgumentNullException(nameof(channelFinishedCallback), "Callback cannot be null.");
         }
@@ -88,7 +88,7 @@ public static unsafe partial class Mixer {
         if (udata == nint.Zero)
             throw new ArgumentNullException(nameof(udata));
 
-        Mix_EffectDone_t effectDone = Marshal.GetDelegateForFunctionPointer<Mix_EffectDone_t>(udata);
+        MixEffectDoneT effectDone = Marshal.GetDelegateForFunctionPointer<MixEffectDoneT>(udata);
 
         effectDone(channel, udata);
     }
@@ -325,16 +325,16 @@ public static unsafe partial class Mixer {
 
     public static void HaltMusic() => Mix_HaltMusic();
 
-    public static void HookMusic(Mix_MixCallback mix_func, nint arg) {
-        if (mix_func == null)
-            throw new ArgumentNullException(nameof(mix_func), "Callback cannot be null.");
-        Mix_HookMusic(mix_func, arg);
+    public static void HookMusic(MixMixCallback mixFunc, nint arg) {
+        if (mixFunc == null)
+            throw new ArgumentNullException(nameof(mixFunc), "Callback cannot be null.");
+        Mix_HookMusic(mixFunc, arg);
     }
 
-    public static void HookMusicFinished(MusicFinishedCallback music_finished) {
-        if (music_finished == null)
-            throw new ArgumentNullException(nameof(music_finished), "Callback cannot be null.");
-        Mix_HookMusicFinished(music_finished);
+    public static void HookMusicFinished(MusicFinishedCallback musicFinished) {
+        if (musicFinished == null)
+            throw new ArgumentNullException(nameof(musicFinished), "Callback cannot be null.");
+        Mix_HookMusicFinished(musicFinished);
     }
 
     public static int MasterVolume(int volume) {
@@ -415,17 +415,14 @@ public static unsafe partial class Mixer {
     /// </remarks>
     public static void Quit() => Mix_Quit();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial MixInit Mix_Init(MixInit flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_OpenAudio(AudioDeviceId deviceId, nint spec);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_Quit();
 
     #endregion Initialization and Cleanup
@@ -576,20 +573,18 @@ public static unsafe partial class Mixer {
         return Mix_PlayChannelTimed(channel, pChunk, loops, ticks);
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_FreeChunk(nint chunk);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_FreeMusic(nint music);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint Mix_LoadMUS(string file);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint Mix_LoadWAV(string file);
 
     #endregion Audio Loading
@@ -607,7 +602,7 @@ public static unsafe partial class Mixer {
     /// <remarks>
     /// The effect callback must be kept alive for the duration of its use.
     /// </remarks>
-    public static void RegisterEffect(int channel, Mix_EffectFunc_t effect, Mix_EffectDone_t done, nint userData) {
+    public static void RegisterEffect(int channel, MixEffectFuncT effect, MixEffectDoneT done, nint userData) {
         if (!Mix_RegisterEffect(channel, effect, done, userData))
             throw new SdlException($"Failed to register effect: {Sdl.GetError()}");
     }
@@ -659,12 +654,12 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Special channel value for applying effects to the final mixed stream.
     /// </summary>
-    public const int MIX_CHANNEL_POST = -2;
+    public const int MixChannelPost = -2;
 
     /// <summary>
     /// Alias for <see cref="MaxVolume"/>.
     /// </summary>
-    public const int MIX_MAX_VOLUME = 128;
+    public const int MixMaxVolume = 128;
 
     #endregion Constants
 
@@ -827,10 +822,10 @@ public static unsafe partial class Mixer {
         return Mix_SetPosition(channel, angle, distance);
     }
 
-    public static void SetPostMix(Mix_MixCallback mix_func, nint arg) {
-        if (mix_func == null)
-            throw new ArgumentNullException(nameof(mix_func), "Callback cannot be null.");
-        Mix_SetPostMix(mix_func, arg);
+    public static void SetPostMix(MixMixCallback mixFunc, nint arg) {
+        if (mixFunc == null)
+            throw new ArgumentNullException(nameof(mixFunc), "Callback cannot be null.");
+        Mix_SetPostMix(mixFunc, arg);
     }
 
     public static bool SetReverseStereo(int channel, int flip) {
@@ -867,7 +862,7 @@ public static unsafe partial class Mixer {
         return Mix_UnregisterAllEffects(channel);
     }
 
-    public static bool UnregisterEffect(int channel, Mix_EffectFunc_t f) {
+    public static bool UnregisterEffect(int channel, MixEffectFuncT f) {
         if (channel < 0)
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
         if (f == null)
@@ -901,286 +896,224 @@ public static unsafe partial class Mixer {
         return Mix_VolumeMusic(volume);
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void Mix_ChannelFinished(Mix_ChannelFinishedCallback channel_finished);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void Mix_ChannelFinished(MixChannelFinishedCallback channelFinished);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_CloseAudio();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
-    private static partial bool Mix_EachSoundFont(Mix_EachSoundFontCallback function, nint data);
+    private static partial bool Mix_EachSoundFont(MixEachSoundFontCallback function, nint data);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_ExpireChannel(int channel, int ticks);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_FadeInChannel(int channel, nint chunk, int loops, int ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_FadeInChannelTimed(int channel, nint chunk, int loops, int ms, int ticks);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeInMusic(nint music, int loops, int ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeInMusicPos(nint music, int loops, int ms, double position);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_FadeOutChannel(int which, int ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_FadeOutGroup(int tag, int ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_FadeOutMusic(int ms);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Fading Mix_FadingChannel(int which);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Fading Mix_FadingMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint Mix_GetChunk(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint Mix_GetMusicHookData();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial double Mix_GetMusicLoopEndTime(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial double Mix_GetMusicLoopLengthTime(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial double Mix_GetMusicLoopStartTime(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial double Mix_GetMusicPosition(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GetMusicVolume(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GetNumTracks(nint music);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial string Mix_GetSoundFonts();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string Mix_GetTimidityCfg();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GroupAvailable(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_GroupChannel(int which, int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_GroupChannels(int from, int to, int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GroupCount(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GroupNewer(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_GroupOldest(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_HaltChannel(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_HaltGroup(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_HaltMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void Mix_HookMusic(Mix_MixCallback mix_func, nint arg);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void Mix_HookMusic(MixMixCallback mixFunc, nint arg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void Mix_HookMusicFinished(MusicFinishedCallback music_finished);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void Mix_HookMusicFinished(MusicFinishedCallback musicFinished);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_MasterVolume(int volume);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_ModMusicJumpToOrder(int order);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial double Mix_MusicDuration(nint music);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_Pause(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_Paused(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PausedMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_PauseGroup(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_PauseMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_PlayChannel(int channel, nint chunk, int loops);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_PlayChannelTimed(int channel, nint chunk, int loops, int ticks);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_Playing(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PlayingMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_PlayMusic(nint music, int loops);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
-    private static partial bool Mix_RegisterEffect(int chan, Mix_EffectFunc_t f, Mix_EffectDone_t d, nint arg);
+    private static partial bool Mix_RegisterEffect(int chan, MixEffectFuncT f, MixEffectDoneT d, nint arg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_ReserveChannels(int num);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_Resume(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_ResumeGroup(int tag);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_ResumeMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void Mix_RewindMusic();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetDistance(int channel, byte distance);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetMusicPosition(double position);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetPanning(int channel, byte left, byte right);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetPosition(int channel, short angle, byte distance);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void Mix_SetPostMix(Mix_MixCallback mix_func, nint arg);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void Mix_SetPostMix(MixMixCallback mixFunc, nint arg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetReverseStereo(int channel, int flip);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetSoundFonts(string paths);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_SetTimidityCfg(string path);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_StartTrack(nint music, int track);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
     private static partial bool Mix_UnregisterAllEffects(int channel);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalAs(Sdl.BoolType)]
-    private static partial bool Mix_UnregisterEffect(int channel, Mix_EffectFunc_t f);
+    private static partial bool Mix_UnregisterEffect(int channel, MixEffectFuncT f);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_Volume(int channel, int volume);
 
     /**
@@ -1209,9 +1142,7 @@ public static unsafe partial class Mixer {
      *
      * \since This function is available since SDL_mixer 3.0.0.
      */
-
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_VolumeChunk(nint chunk, int volume);
 
     /**
@@ -1233,8 +1164,6 @@ public static unsafe partial class Mixer {
      *
      * \since This function is available since SDL_mixer 3.0.0.
      */
-
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int Mix_VolumeMusic(int volume);
 }

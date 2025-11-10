@@ -66,7 +66,7 @@ public struct MusicInterface {
     /// If the function returns <see cref="nint.Zero"/>, the caller is responsible for freeing <paramref name="src"/> if needed.
     /// </remarks>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
-    public delegate nint CreateFromIODelegate(nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
+    public delegate nint CreateFromIoDelegate(nint src, [MarshalAs(Sdl.BoolType)] bool closeio);
 
     /// <summary>
     /// Creates a music object from a file, used when SDL_IOStream is not supported.
@@ -80,7 +80,7 @@ public struct MusicInterface {
     /// Sets the volume for a music object.
     /// </summary>
     /// <param name="music">An opaque pointer to the music object.</param>
-    /// <param name="volume">The volume level (0 to <see cref="Mixer.MIX_MAX_VOLUME"/>).</param>
+    /// <param name="volume">The volume level (0 to <see cref="Mixer.MixMaxVolume"/>).</param>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void SetVolumeDelegate(nint music, int volume);
 
@@ -88,7 +88,7 @@ public struct MusicInterface {
     /// Gets the volume for a music object.
     /// </summary>
     /// <param name="music">An opaque pointer to the music object.</param>
-    /// <returns>The current volume level (0 to <see cref="Mixer.MIX_MAX_VOLUME"/>).</returns>
+    /// <returns>The current volume level (0 to <see cref="Mixer.MixMaxVolume"/>).</returns>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate int GetVolumeDelegate(nint music);
 
@@ -249,7 +249,7 @@ public struct MusicInterface {
     public LoadDelegate Load;
 
     public OpenDelegate Open;
-    public CreateFromIODelegate CreateFromIO;
+    public CreateFromIoDelegate CreateFromIO;
     public CreateFromFileDelegate CreateFromFile;
     public SetVolumeDelegate SetVolume;
     public GetVolumeDelegate GetVolume;

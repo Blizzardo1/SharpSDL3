@@ -13,13 +13,13 @@ public static partial class Sdl {
     /// <remarks>
     /// The mode string understands the following values:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseAsyncIO"/>
-    /// <seealso cref="ReadAsyncIO"/>
-    /// <seealso cref="WriteAsyncIO"/>
+    /// <seealso cref="CloseAsyncIo"/>
+    /// <seealso cref="ReadAsyncIo"/>
+    /// <seealso cref="WriteAsyncIo"/>
     /// </remarks>
     /// <returns>(SDL_AsyncIO *) Returns a pointer to theSDL_AsyncIO structure that is created or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint AsyncIOFromFile(string file, string mode) {
+    public static nint AsyncIoFromFile(string file, string mode) {
         if (string.IsNullOrEmpty(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
@@ -35,7 +35,7 @@ public static partial class Sdl {
             : result;
     }
 
-    public static SdlBool CloseAsyncIO(nint asyncio, SdlBool flush, nint queue, nint userdata) {
+    public static SdlBool CloseAsyncIo(nint asyncio, SdlBool flush, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
         }
@@ -51,13 +51,13 @@ public static partial class Sdl {
     /// checked for completed tasks thereafter.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyAsyncIOQueue"/>
-    /// <seealso cref="GetAsyncIOResult"/>
-    /// <seealso cref="WaitAsyncIOResult"/>
+    /// <seealso cref="DestroyAsyncIoQueue"/>
+    /// <seealso cref="GetAsyncIoResult"/>
+    /// <seealso cref="WaitAsyncIoResult"/>
     /// </remarks>
     /// <returns>(SDL_AsyncIOQueue *) Returns a new task queue object or<see langword="null" /> if there was an error; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateAsyncIOQueue() {
+    public static nint CreateAsyncIoQueue() {
         nint result = SDL_CreateAsyncIOQueue();
         return result == nint.Zero
             ? throw new InvalidOperationException("Failed to create AsyncIO queue.")
@@ -75,7 +75,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DestroyAsyncIOQueue(nint queue) {
+    public static void DestroyAsyncIoQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
@@ -92,11 +92,11 @@ public static partial class Sdl {
     /// finished, this function will return false. This function does not block.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAsyncIOResult"/>
+    /// <seealso cref="WaitAsyncIoResult"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a task has completed, <see langword="false" /> otherwise.</returns>
 
-    public static SdlBool GetAsyncIOResult(nint queue, out AsyncIoOutcome outcome) {
+    public static SdlBool GetAsyncIoResult(nint queue, out AsyncIoOutcome outcome) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
@@ -118,7 +118,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static long GetAsyncIOSize(nint asyncio) {
+    public static long GetAsyncIoSize(nint asyncio) {
         return asyncio == nint.Zero ? throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio)) : SDL_GetAsyncIOSize(asyncio);
     }
 
@@ -147,7 +147,7 @@ public static partial class Sdl {
         return SDL_LoadFileAsync(file, queue, userdata);
     }
 
-    public static SdlBool ReadAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
+    public static SdlBool ReadAsyncIo(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
         }
@@ -169,10 +169,10 @@ public static partial class Sdl {
     /// cause them to return from that function.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAsyncIOResult"/>
+    /// <seealso cref="WaitAsyncIoResult"/>
     /// </remarks>
 
-    public static void SignalAsyncIOQueue(nint queue) {
+    public static void SignalAsyncIoQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
@@ -189,11 +189,11 @@ public static partial class Sdl {
     /// to the queue that has finished.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SignalAsyncIOQueue"/>
+    /// <seealso cref="SignalAsyncIoQueue"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if task has completed, <see langword="false" /> otherwise.</returns>
 
-    public static SdlBool WaitAsyncIOResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs) {
+    public static SdlBool WaitAsyncIoResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
@@ -201,7 +201,7 @@ public static partial class Sdl {
         return !result ? throw new InvalidOperationException("Failed to wait for AsyncIO result.") : result;
     }
 
-    public static SdlBool WriteAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
+    public static SdlBool WriteAsyncIo(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
         }
@@ -214,49 +214,40 @@ public static partial class Sdl {
         return SDL_WriteAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_AsyncIOFromFile(string file, string mode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CloseAsyncIO(nint asyncio, SdlBool flush, nint queue, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateAsyncIOQueue();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyAsyncIOQueue(nint queue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetAsyncIOResult(nint queue, out AsyncIoOutcome outcome);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial long SDL_GetAsyncIOSize(nint asyncio);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_LoadFileAsync(string file, nint queue, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReadAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue,
         nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SignalAsyncIOQueue(nint queue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitAsyncIOResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WriteAsyncIO(nint asyncio, nint ptr, ulong offset, ulong size, nint queue,
         nint userdata);
 }
