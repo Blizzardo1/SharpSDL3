@@ -3,10 +3,10 @@ using System.Runtime.InteropServices;
 namespace SharpSDL3.Structs;
 
 [StructLayout(LayoutKind.Sequential)]
-public struct IOStream {
-    public IOStreamInterface Interface;
+public struct IoStream {
+    public IoStreamInterface Interface;
     public nint Userdata;
-    public IOStatus Status;
+    public IoStatus Status;
     public int Props;
 
     public nint Handle;

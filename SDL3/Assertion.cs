@@ -24,7 +24,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns theSDL_AssertionHandler that is called when an asserttriggers.</returns>
 
     public static SdlAssertionHandler GetAssertionHandler(out nint puserdata) {
-        var handler = SDL_GetAssertionHandler(out puserdata);
+        SdlAssertionHandler? handler = SDL_GetAssertionHandler(out puserdata);
         return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
     }
 
@@ -39,7 +39,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(const SDL_AssertData *) Returns a list of all failedassertions or <see langword="null" /> if the list is empty. This memory should not be modifiedor freed by the application. This pointer remains valid until the next callto <see cref="Quit"/> or <see cref="ResetAssertionReport"/>.</returns>
     public static nint GetAssertionReport() {
-        var report = SDL_GetAssertionReport();
+        nint report = SDL_GetAssertionReport();
         if (report == nint.Zero) {
             throw new InvalidOperationException("Failed to get assertion report.");
         }
@@ -60,7 +60,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns the defaultSDL_AssertionHandler that is called when an asserttriggers.</returns>
 
     public static SdlAssertionHandler GetDefaultAssertionHandler() {
-        var handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
+        SdlAssertionHandler handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
         return handler;
     }
 
@@ -84,7 +84,7 @@ public static unsafe partial class Sdl {
         }
 
         // Call the native method
-        var result = SDL_ReportAssertion(ref data, func, file, line);
+        AssertState result = SDL_ReportAssertion(ref data, func, file, line);
 
         // Handle the result or add additional logic
         switch (result) {
@@ -150,27 +150,22 @@ public static unsafe partial class Sdl {
         SDL_SetAssertionHandler(handler, userdata);
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlAssertionHandler SDL_GetAssertionHandler(out nint puserdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetAssertionReport();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlAssertionHandler SDL_GetDefaultAssertionHandler();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial AssertState SDL_ReportAssertion(ref AssertData data, string func, string file, int line);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ResetAssertionReport();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetAssertionHandler(SdlAssertionHandler handler, nint userdata);
 }

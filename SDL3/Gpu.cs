@@ -17,12 +17,12 @@ public static partial class Sdl {
     /// acquired on. The command buffer should be submitted on the thread it was
     /// acquired on.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGPUCommandBuffer"/>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
+    /// <seealso cref="SubmitGpuCommandBuffer"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
     /// </remarks>
     /// <returns>(SDL_GPUCommandBuffer *) Returns a command buffer,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint AcquireGPUCommandBuffer(nint device) {
+    public static nint AcquireGpuCommandBuffer(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -43,18 +43,18 @@ public static partial class Sdl {
     /// buffer used to acquire it.
     /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGPUDevice"/>
-    /// <seealso cref="SubmitGPUCommandBuffer"/>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
-    /// <seealso cref="CancelGPUCommandBuffer"/>
+    /// <seealso cref="ClaimWindowForGpuDevice"/>
+    /// <seealso cref="SubmitGpuCommandBuffer"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <seealso cref="CancelGpuCommandBuffer"/>
     /// <seealso cref="GetWindowSizeInPixels"/>
-    /// <seealso cref="WaitForGPUSwapchain"/>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="SetGPUAllowedFramesInFlight"/>
+    /// <seealso cref="WaitForGpuSwapchain"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="SetGpuAllowedFramesInFlight"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool AcquireGPUSwapchainTexture(nint commandBuffer, nint window,
+    public static bool AcquireGpuSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -82,11 +82,11 @@ public static partial class Sdl {
     /// must take place inside of a compute pass. You must not begin another
     /// compute pass, or a render pass or copy pass before ending the compute pass.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="EndGPUComputePass"/>
+    /// <seealso cref="EndGpuComputePass"/>
     /// </remarks>
     /// <returns>(SDL_GPUComputePass *) Returns a compute pass handle.</returns>
 
-    public static nint BeginGPUComputePass(nint commandBuffer,
+    public static nint BeginGpuComputePass(nint commandBuffer,
             Span<GpuStorageTextureReadWriteBinding> storageTextureBindings, uint numStorageTextureBindings,
             Span<GpuStorageBufferReadWriteBinding> storageBufferBindings, uint numStorageBufferBindings) {
         if (commandBuffer == nint.Zero) {
@@ -107,7 +107,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_GPUCopyPass *) Returns a copy pass handle.</returns>
 
-    public static nint BeginGPUCopyPass(nint commandBuffer) {
+    public static nint BeginGpuCopyPass(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -129,11 +129,11 @@ public static partial class Sdl {
     /// is called. You cannot begin another render pass, or begin a compute pass or
     /// copy pass until you have ended the render pass.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="EndGPURenderPass"/>
+    /// <seealso cref="EndGpuRenderPass"/>
     /// </remarks>
     /// <returns>(SDL_GPURenderPass *) Returns a render pass handle.</returns>
 
-    public static nint BeginGPURenderPass(nint commandBuffer, Span<GpuColorTargetInfo> colorTargetInfos,
+    public static nint BeginGpuRenderPass(nint commandBuffer, Span<GpuColorTargetInfo> colorTargetInfos,
             uint numColorTargets, in GpuDepthStencilTargetInfo depthStencilTargetInfo) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -149,7 +149,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void BindGPUComputePipeline(nint computePass, nint computePipeline) {
+    public static void BindGpuComputePipeline(nint computePass, nint computePipeline) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
@@ -166,10 +166,10 @@ public static partial class Sdl {
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUComputeSamplers(nint computePass, uint firstSlot,
+    public static void BindGpuComputeSamplers(nint computePass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -187,10 +187,10 @@ public static partial class Sdl {
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUComputeStorageBuffers(nint computePass, uint firstSlot,
+    public static void BindGpuComputeStorageBuffers(nint computePass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -208,10 +208,10 @@ public static partial class Sdl {
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUComputeStorageTextures(nint computePass, uint firstSlot,
+    public static void BindGpuComputeStorageTextures(nint computePass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
@@ -229,10 +229,10 @@ public static partial class Sdl {
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUFragmentSamplers(nint renderPass, uint firstSlot,
+    public static void BindGpuFragmentSamplers(nint renderPass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -250,10 +250,10 @@ public static partial class Sdl {
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUFragmentStorageBuffers(nint renderPass, uint firstSlot,
+    public static void BindGpuFragmentStorageBuffers(nint renderPass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -271,10 +271,10 @@ public static partial class Sdl {
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUFragmentStorageTextures(nint renderPass, uint firstSlot,
+    public static void BindGpuFragmentStorageTextures(nint renderPass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -291,7 +291,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void BindGPUGraphicsPipeline(nint renderPass, nint graphicsPipeline) {
+    public static void BindGpuGraphicsPipeline(nint renderPass, nint graphicsPipeline) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -307,7 +307,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void BindGPUIndexBuffer(nint renderPass, in GpuBufferBinding binding,
+    public static void BindGpuIndexBuffer(nint renderPass, in GpuBufferBinding binding,
             GpuIndexElementSize indexElementSize) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -325,7 +325,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void BindGPUVertexBuffers(nint renderPass, uint firstSlot,
+    public static void BindGpuVertexBuffers(nint renderPass, uint firstSlot,
             Span<GpuBufferBinding> bindings, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -343,10 +343,10 @@ public static partial class Sdl {
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUVertexSamplers(nint renderPass, uint firstSlot,
+    public static void BindGpuVertexSamplers(nint renderPass, uint firstSlot,
             Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -364,10 +364,10 @@ public static partial class Sdl {
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUVertexStorageBuffers(nint renderPass, uint firstSlot,
+    public static void BindGpuVertexStorageBuffers(nint renderPass, uint firstSlot,
             Span<nint> storageBuffers, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -385,10 +385,10 @@ public static partial class Sdl {
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
+    /// <seealso cref="CreateGpuShader"/>
     /// </remarks>
 
-    public static void BindGPUVertexStorageTextures(nint renderPass, uint firstSlot,
+    public static void BindGpuVertexStorageTextures(nint renderPass, uint firstSlot,
             Span<nint> storageTextures, uint numBindings) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -405,7 +405,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void BlitGPUTexture(nint commandBuffer, in GpuBlitInfo info) {
+    public static void BlitGpuTexture(nint commandBuffer, in GpuBlitInfo info) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -423,7 +423,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the size of a texture with this format anddimensions.</returns>
 
-    public static uint CalculateGPUTextureFormatSize(GpuTextureFormat format, uint width, uint height, uint depthOrLayerCount) {
+    public static uint CalculateGpuTextureFormatSize(GpuTextureFormat format, uint width, uint height, uint depthOrLayerCount) {
         if (!Enum.IsDefined(format)) {
             throw new ArgumentOutOfRangeException(nameof(format), "Invalid GpuTextureFormat value.");
         }
@@ -436,13 +436,13 @@ public static partial class Sdl {
     /// <remarks>
     /// None of the enqueued commands are executed.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="AcquireGPUCommandBuffer"/>
-    /// <seealso cref="AcquireGPUSwapchainTexture"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="AcquireGpuCommandBuffer"/>
+    /// <seealso cref="AcquireGpuSwapchainTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool CancelGPUCommandBuffer(nint commandBuffer) {
+    public static bool CancelGpuCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -460,14 +460,14 @@ public static partial class Sdl {
     /// created the window.
     /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="ReleaseWindowFromGPUDevice"/>
-    /// <seealso cref="WindowSupportsGPUPresentMode"/>
-    /// <seealso cref="WindowSupportsGPUSwapchainComposition"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="ReleaseWindowFromGpuDevice"/>
+    /// <seealso cref="WindowSupportsGpuPresentMode"/>
+    /// <seealso cref="WindowSupportsGpuSwapchainComposition"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool ClaimWindowForGPUDevice(nint device, nint window) {
+    public static bool ClaimWindowForGpuDevice(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -490,7 +490,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void CopyGPUBufferToBuffer(nint copyPass, in GpuBufferLocation source,
+    public static void CopyGpuBufferToBuffer(nint copyPass, in GpuBufferLocation source,
             in GpuBufferLocation destination, uint size, bool cycle) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -513,7 +513,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void CopyGPUTextureToTexture(nint copyPass, in GpuTextureLocation source,
+    public static void CopyGpuTextureToTexture(nint copyPass, in GpuTextureLocation source,
             in GpuTextureLocation destination, uint w, uint h, uint d, bool cycle) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -529,22 +529,22 @@ public static partial class Sdl {
     /// The contents of this buffer are undefined until data is written to the
     /// buffer.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGPUBuffer"/>
-    /// <seealso cref="DownloadFromGPUBuffer"/>
-    /// <seealso cref="CopyGPUBufferToBuffer"/>
-    /// <seealso cref="BindGPUVertexBuffers"/>
-    /// <seealso cref="BindGPUIndexBuffer"/>
-    /// <seealso cref="BindGPUVertexStorageBuffers"/>
-    /// <seealso cref="BindGPUFragmentStorageBuffers"/>
-    /// <seealso cref="DrawGPUPrimitivesIndirect"/>
-    /// <seealso cref="DrawGPUIndexedPrimitivesIndirect"/>
-    /// <seealso cref="BindGPUComputeStorageBuffers"/>
-    /// <seealso cref="DispatchGPUComputeIndirect"/>
-    /// <seealso cref="ReleaseGPUBuffer"/>
+    /// <seealso cref="UploadToGpuBuffer"/>
+    /// <seealso cref="DownloadFromGpuBuffer"/>
+    /// <seealso cref="CopyGpuBufferToBuffer"/>
+    /// <seealso cref="BindGpuVertexBuffers"/>
+    /// <seealso cref="BindGpuIndexBuffer"/>
+    /// <seealso cref="BindGpuVertexStorageBuffers"/>
+    /// <seealso cref="BindGpuFragmentStorageBuffers"/>
+    /// <seealso cref="DrawGpuPrimitivesIndirect"/>
+    /// <seealso cref="DrawGpuIndexedPrimitivesIndirect"/>
+    /// <seealso cref="BindGpuComputeStorageBuffers"/>
+    /// <seealso cref="DispatchGpuComputeIndirect"/>
+    /// <seealso cref="ReleaseGpuBuffer"/>
     /// </remarks>
     /// <returns>(SDL_GPUBuffer *) Returns a buffer object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUBuffer(nint device, in GpuBufferCreateInfo createinfo) {
+    public static nint CreateGpuBuffer(nint device, in GpuBufferCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -559,12 +559,12 @@ public static partial class Sdl {
     /// Shader resource bindings must be authored to follow a particular order
     /// depending on the shader format.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BindGPUComputePipeline"/>
-    /// <seealso cref="ReleaseGPUComputePipeline"/>
+    /// <seealso cref="BindGpuComputePipeline"/>
+    /// <seealso cref="ReleaseGpuComputePipeline"/>
     /// </remarks>
     /// <returns>(SDL_GPUComputePipeline *) Returns a computepipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static nint CreateGPUComputePipeline(nint device, in GpuComputePipelineCreateInfo createinfo) {
+    public static nint CreateGpuComputePipeline(nint device, in GpuComputePipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -579,15 +579,15 @@ public static partial class Sdl {
     /// <remarks>
     /// The GPU driver name can be one of the following:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUDeviceWithProperties"/>
-    /// <seealso cref="GetGPUShaderFormats"/>
-    /// <seealso cref="GetGPUDeviceDriver"/>
-    /// <seealso cref="DestroyGPUDevice"/>
-    /// <seealso cref="GPUSupportsShaderFormats"/>
+    /// <seealso cref="CreateGpuDeviceWithProperties"/>
+    /// <seealso cref="GetGpuShaderFormats"/>
+    /// <seealso cref="GetGpuDeviceDriver"/>
+    /// <seealso cref="DestroyGpuDevice"/>
+    /// <seealso cref="GpuSupportsShaderFormats"/>
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUDevice(GpuShaderFormat formatFlags, bool debugMode, string name) {
+    public static nint CreateGpuDevice(GpuShaderFormat formatFlags, bool debugMode, string name) {
         if (!Enum.IsDefined(formatFlags)) {
             throw new ArgumentOutOfRangeException(nameof(formatFlags), "Invalid GpuShaderFormat value.");
         }
@@ -603,14 +603,14 @@ public static partial class Sdl {
     /// <remarks>
     /// These are the supported properties:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGPUShaderFormats"/>
-    /// <seealso cref="GetGPUDeviceDriver"/>
-    /// <seealso cref="DestroyGPUDevice"/>
-    /// <seealso cref="GPUSupportsProperties"/>
+    /// <seealso cref="GetGpuShaderFormats"/>
+    /// <seealso cref="GetGpuDeviceDriver"/>
+    /// <seealso cref="DestroyGpuDevice"/>
+    /// <seealso cref="GpuSupportsProperties"/>
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUDeviceWithProperties(uint props) {
+    public static nint CreateGpuDeviceWithProperties(uint props) {
         return SDL_CreateGPUDeviceWithProperties(props);
     }
 
@@ -622,13 +622,13 @@ public static partial class Sdl {
     /// There are optional properties that can be provided through props. These
     /// are the supported properties:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUShader"/>
-    /// <seealso cref="BindGPUGraphicsPipeline"/>
-    /// <seealso cref="ReleaseGPUGraphicsPipeline"/>
+    /// <seealso cref="CreateGpuShader"/>
+    /// <seealso cref="BindGpuGraphicsPipeline"/>
+    /// <seealso cref="ReleaseGpuGraphicsPipeline"/>
     /// </remarks>
     /// <returns>(SDL_GPUGraphicsPipeline *) Returns a graphicspipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static nint CreateGPUGraphicsPipeline(nint device, in GpuGraphicsPipelineCreateInfo createinfo) {
+    public static nint CreateGpuGraphicsPipeline(nint device, in GpuGraphicsPipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -643,13 +643,13 @@ public static partial class Sdl {
     /// There are optional properties that can be provided through props. These
     /// are the supported properties:
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BindGPUVertexSamplers"/>
-    /// <seealso cref="BindGPUFragmentSamplers"/>
-    /// <seealso cref="ReleaseGPUSampler"/>
+    /// <seealso cref="BindGpuVertexSamplers"/>
+    /// <seealso cref="BindGpuFragmentSamplers"/>
+    /// <seealso cref="ReleaseGpuSampler"/>
     /// </remarks>
     /// <returns>(SDL_GPUSampler *) Returns a sampler object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUSampler(nint device, in GpuSamplerCreateInfo createinfo) {
+    public static nint CreateGpuSampler(nint device, in GpuSamplerCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -664,12 +664,12 @@ public static partial class Sdl {
     /// Shader resource bindings must be authored to follow a particular order
     /// depending on the shader format.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUGraphicsPipeline"/>
-    /// <seealso cref="ReleaseGPUShader"/>
+    /// <seealso cref="CreateGpuGraphicsPipeline"/>
+    /// <seealso cref="ReleaseGpuShader"/>
     /// </remarks>
     /// <returns>(SDL_GPUShader *) Returns a shader object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUShader(nint device, in GpuShaderCreateInfo createinfo) {
+    public static nint CreateGpuShader(nint device, in GpuShaderCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -684,20 +684,20 @@ public static partial class Sdl {
     /// The contents of this texture are undefined until data is written to the
     /// texture.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGPUTexture"/>
-    /// <seealso cref="DownloadFromGPUTexture"/>
-    /// <seealso cref="BindGPUVertexSamplers"/>
-    /// <seealso cref="BindGPUVertexStorageTextures"/>
-    /// <seealso cref="BindGPUFragmentSamplers"/>
-    /// <seealso cref="BindGPUFragmentStorageTextures"/>
-    /// <seealso cref="BindGPUComputeStorageTextures"/>
-    /// <seealso cref="BlitGPUTexture"/>
-    /// <seealso cref="ReleaseGPUTexture"/>
-    /// <seealso cref="GPUTextureSupportsFormat"/>
+    /// <seealso cref="UploadToGpuTexture"/>
+    /// <seealso cref="DownloadFromGpuTexture"/>
+    /// <seealso cref="BindGpuVertexSamplers"/>
+    /// <seealso cref="BindGpuVertexStorageTextures"/>
+    /// <seealso cref="BindGpuFragmentSamplers"/>
+    /// <seealso cref="BindGpuFragmentStorageTextures"/>
+    /// <seealso cref="BindGpuComputeStorageTextures"/>
+    /// <seealso cref="BlitGpuTexture"/>
+    /// <seealso cref="ReleaseGpuTexture"/>
+    /// <seealso cref="GpuTextureSupportsFormat"/>
     /// </remarks>
     /// <returns>(SDL_GPUTexture *) Returns a texture object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUTexture(nint device, in GpuTextureCreateInfo createinfo) {
+    public static nint CreateGpuTexture(nint device, in GpuTextureCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -712,15 +712,15 @@ public static partial class Sdl {
     /// Download buffers can be particularly expensive to create, so it is good
     /// practice to reuse them if data will be downloaded regularly.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGPUBuffer"/>
-    /// <seealso cref="DownloadFromGPUBuffer"/>
-    /// <seealso cref="UploadToGPUTexture"/>
-    /// <seealso cref="DownloadFromGPUTexture"/>
-    /// <seealso cref="ReleaseGPUTransferBuffer"/>
+    /// <seealso cref="UploadToGpuBuffer"/>
+    /// <seealso cref="DownloadFromGpuBuffer"/>
+    /// <seealso cref="UploadToGpuTexture"/>
+    /// <seealso cref="DownloadFromGpuTexture"/>
+    /// <seealso cref="ReleaseGpuTransferBuffer"/>
     /// </remarks>
     /// <returns>(SDL_GPUTransferBuffer *) Returns a transferbuffer on success, or <see langword="null" /> on failure; call <see cref="GetError()" />for more information.</returns>
 
-    public static nint CreateGPUTransferBuffer(nint device, in GpuTransferBufferCreateInfo createinfo) {
+    public static nint CreateGpuTransferBuffer(nint device, in GpuTransferBufferCreateInfo createinfo) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -732,10 +732,10 @@ public static partial class Sdl {
     /// <param name="device">a GPU Context to destroy.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUDevice"/>
+    /// <seealso cref="CreateGpuDevice"/>
     /// </remarks>
 
-    public static void DestroyGPUDevice(nint device) {
+    public static void DestroyGpuDevice(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -753,7 +753,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DispatchGPUCompute(nint computePass, uint groupcountX, uint groupcountY, uint groupcountZ) {
+    public static void DispatchGpuCompute(nint computePass, uint groupcountX, uint groupcountY, uint groupcountZ) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
@@ -772,7 +772,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DispatchGPUComputeIndirect(nint computePass, nint buffer, uint offset) {
+    public static void DispatchGpuComputeIndirect(nint computePass, nint buffer, uint offset) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
@@ -790,7 +790,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DownloadFromGPUBuffer(nint copyPass, in GpuBufferRegion source,
+    public static void DownloadFromGpuBuffer(nint copyPass, in GpuBufferRegion source,
             in GpuTransferBufferLocation destination) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -809,7 +809,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DownloadFromGPUTexture(nint copyPass, in GpuTextureRegion source,
+    public static void DownloadFromGpuTexture(nint copyPass, in GpuTextureRegion source,
             in GpuTextureTransferInfo destination) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -830,7 +830,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DrawGPUIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
+    public static void DrawGpuIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
             uint firstIndex, int vertexOffset, uint firstInstance) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -852,7 +852,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DrawGPUIndexedPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
+    public static void DrawGpuIndexedPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -871,7 +871,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DrawGPUPrimitives(nint renderPass, uint numVertices, uint numInstances,
+    public static void DrawGpuPrimitives(nint renderPass, uint numVertices, uint numInstances,
             uint firstVertex, uint firstInstance) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
@@ -893,7 +893,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void DrawGPUPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
+    public static void DrawGpuPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -909,7 +909,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void EndGPUComputePass(nint computePass) {
+    public static void EndGpuComputePass(nint computePass) {
         if (computePass == nint.Zero) {
             throw new ArgumentNullException(nameof(computePass), "Compute pass cannot be null.");
         }
@@ -923,7 +923,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void EndGPUCopyPass(nint copyPass) {
+    public static void EndGpuCopyPass(nint copyPass) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
         }
@@ -939,7 +939,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void EndGPURenderPass(nint renderPass) {
+    public static void EndGpuRenderPass(nint renderPass) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -955,7 +955,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void GenerateMipmapsForGPUTexture(nint commandBuffer, nint texture) {
+    public static void GenerateMipmapsForGpuTexture(nint commandBuffer, nint texture) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -973,7 +973,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the device's driver, or <see langword="null" /> on error.</returns>
 
-    public static string GetGPUDeviceDriver(nint device) {
+    public static string GetGpuDeviceDriver(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -987,11 +987,11 @@ public static partial class Sdl {
     /// The GPU drivers are presented in the order in which they are normally
     /// checked during initialization.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumGPUDrivers"/>
+    /// <seealso cref="GetNumGpuDrivers"/>
     /// </remarks>
     /// <returns>Returns the name of the GPU driver with the given index.</returns>
 
-    public static string GetGPUDriver(int index) {
+    public static string GetGpuDriver(int index) {
         if (index < 0) {
             throw new ArgumentOutOfRangeException(nameof(index), "Index must be non-negative.");
         }
@@ -1006,7 +1006,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a bitflag indicatingwhich shader formats the driver is able to consume.</returns>
 
-    public static GpuShaderFormat GetGPUShaderFormats(nint device) {
+    public static GpuShaderFormat GetGpuShaderFormats(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1023,7 +1023,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the texture formatof the swapchain.</returns>
 
-    public static GpuTextureFormat GetGPUSwapchainTextureFormat(nint device, nint window) {
+    public static GpuTextureFormat GetGpuSwapchainTextureFormat(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1036,11 +1036,11 @@ public static partial class Sdl {
     /// <summary>Get the number of GPU drivers compiled into SDL.</summary>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGPUDriver"/>
+    /// <seealso cref="GetGpuDriver"/>
     /// </remarks>
     /// <returns>Returns the number of built in GPU drivers.</returns>
 
-    public static int GetNumGPUDrivers() {
+    public static int GetNumGpuDrivers() {
         return SDL_GetNumGPUDrivers();
     }
 
@@ -1049,11 +1049,11 @@ public static partial class Sdl {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUDeviceWithProperties"/>
+    /// <seealso cref="CreateGpuDeviceWithProperties"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
-    public static bool GPUSupportsProperties(uint props) {
+    public static bool GpuSupportsProperties(uint props) {
         return SDL_GPUSupportsProperties(props);
     }
 
@@ -1063,11 +1063,11 @@ public static partial class Sdl {
     /// <param name="name">the preferred GPU driver, or <see langword="null" /> to let SDL pick the optimal driver.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUDevice"/>
+    /// <seealso cref="CreateGpuDevice"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
-    public static bool GPUSupportsShaderFormats(GpuShaderFormat formatFlags, string name) {
+    public static bool GpuSupportsShaderFormats(GpuShaderFormat formatFlags, string name) {
         if (!Enum.IsDefined(formatFlags)) {
             throw new ArgumentOutOfRangeException(nameof(formatFlags), "Invalid GpuShaderFormat value.");
         }
@@ -1082,11 +1082,11 @@ public static partial class Sdl {
     /// <param name="format">the texture format you want to know the texel size of.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGPUTexture"/>
+    /// <seealso cref="UploadToGpuTexture"/>
     /// </remarks>
     /// <returns>Returns the texel block size of the texture format.</returns>
 
-    public static uint GPUTextureFormatTexelBlockSize(GpuTextureFormat format) {
+    public static uint GpuTextureFormatTexelBlockSize(GpuTextureFormat format) {
         if (!Enum.IsDefined(format)) {
             throw new ArgumentOutOfRangeException(nameof(format), "Invalid GpuTextureFormat value.");
         }
@@ -1104,7 +1104,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns whether the texture format is supported for this type andusage.</returns>
 
-    public static bool GPUTextureSupportsFormat(nint device, GpuTextureFormat format, GpuTextureType type, GpuTextureUsageFlags usage) {
+    public static bool GpuTextureSupportsFormat(nint device, GpuTextureFormat format, GpuTextureType type, GpuTextureUsageFlags usage) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1127,7 +1127,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns whether the sample count is supported for this textureformat.</returns>
 
-    public static bool GPUTextureSupportsSampleCount(nint device, GpuTextureFormat format, GpuSampleCount sampleCount) {
+    public static bool GpuTextureSupportsSampleCount(nint device, GpuTextureFormat format, GpuSampleCount sampleCount) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1149,7 +1149,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void InsertGPUDebugLabel(nint commandBuffer, string text) {
+    public static void InsertGpuDebugLabel(nint commandBuffer, string text) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1169,7 +1169,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(void *) Returns the address of the mapped transfer buffer memory, or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint MapGPUTransferBuffer(nint device, nint transferBuffer, bool cycle) {
+    public static nint MapGpuTransferBuffer(nint device, nint transferBuffer, bool cycle) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1184,10 +1184,10 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PushGPUDebugGroup"/>
+    /// <seealso cref="PushGpuDebugGroup"/>
     /// </remarks>
 
-    public static void PopGPUDebugGroup(nint commandBuffer) {
+    public static void PopGpuDebugGroup(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1205,7 +1205,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void PushGPUComputeUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
+    public static void PushGpuComputeUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1220,10 +1220,10 @@ public static partial class Sdl {
     /// Used for denoting groups of calls when viewing the command buffer
     /// callstream in a graphics debugging tool.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PopGPUDebugGroup"/>
+    /// <seealso cref="PopGpuDebugGroup"/>
     /// </remarks>
 
-    public static void PushGPUDebugGroup(nint commandBuffer, string name) {
+    public static void PushGpuDebugGroup(nint commandBuffer, string name) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1241,7 +1241,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void PushGPUFragmentUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
+    public static void PushGpuFragmentUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1259,7 +1259,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void PushGPUVertexUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
+    public static void PushGpuVertexUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1272,11 +1272,11 @@ public static partial class Sdl {
     /// <param name="fence">a fence.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the fence is signaled, <see langword="false" /> if it is not.</returns>
 
-    public static bool QueryGPUFence(nint device, nint fence) {
+    public static bool QueryGpuFence(nint device, nint fence) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1295,7 +1295,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUBuffer(nint device, nint buffer) {
+    public static void ReleaseGpuBuffer(nint device, nint buffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1314,7 +1314,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUComputePipeline(nint device, nint computePipeline) {
+    public static void ReleaseGpuComputePipeline(nint device, nint computePipeline) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1331,10 +1331,10 @@ public static partial class Sdl {
     /// <remarks>
     /// You must not reference the fence after calling this function.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
     /// </remarks>
 
-    public static void ReleaseGPUFence(nint device, nint fence) {
+    public static void ReleaseGpuFence(nint device, nint fence) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1353,7 +1353,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUGraphicsPipeline(nint device, nint graphicsPipeline) {
+    public static void ReleaseGpuGraphicsPipeline(nint device, nint graphicsPipeline) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1372,7 +1372,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUSampler(nint device, nint sampler) {
+    public static void ReleaseGpuSampler(nint device, nint sampler) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1391,7 +1391,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUShader(nint device, nint shader) {
+    public static void ReleaseGpuShader(nint device, nint shader) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1410,7 +1410,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUTexture(nint device, nint texture) {
+    public static void ReleaseGpuTexture(nint device, nint texture) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1429,7 +1429,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void ReleaseGPUTransferBuffer(nint device, nint transferBuffer) {
+    public static void ReleaseGpuTransferBuffer(nint device, nint transferBuffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1445,10 +1445,10 @@ public static partial class Sdl {
     /// <param name="window">an SDL_Window that has been claimed.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGPUDevice"/>
+    /// <seealso cref="ClaimWindowForGpuDevice"/>
     /// </remarks>
 
-    public static void ReleaseWindowFromGPUDevice(nint device, nint window) {
+    public static void ReleaseWindowFromGpuDevice(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1474,7 +1474,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool SetGPUAllowedFramesInFlight(nint device, uint allowedFramesInFlight) {
+    public static bool SetGpuAllowedFramesInFlight(nint device, uint allowedFramesInFlight) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1491,7 +1491,7 @@ public static partial class Sdl {
     /// <seealso cref="GPU_BLENDFACTOR_ONE_MINUS_CONSTANT_COLOR"/>
     /// </remarks>
 
-    public static void SetGPUBlendConstants(nint renderPass, FColor blendConstants) {
+    public static void SetGpuBlendConstants(nint renderPass, FColor blendConstants) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -1510,10 +1510,10 @@ public static partial class Sdl {
     /// avoid thread safety issues.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe, you must make sure the buffer is notsimultaneously used by any other thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUBuffer"/>
+    /// <seealso cref="CreateGpuBuffer"/>
     /// </remarks>
 
-    public static void SetGPUBufferName(nint device, nint buffer, string text) {
+    public static void SetGpuBufferName(nint device, nint buffer, string text) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1531,7 +1531,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void SetGPUScissor(nint renderPass, in Rect scissor) {
+    public static void SetGpuScissor(nint renderPass, in Rect scissor) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -1546,7 +1546,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void SetGPUStencilReference(nint renderPass, byte reference) {
+    public static void SetGpuStencilReference(nint renderPass, byte reference) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -1567,12 +1567,12 @@ public static partial class Sdl {
     /// SDL_WindowSupportsGPUSwapchainComposition
     /// prior to calling this function.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WindowSupportsGPUPresentMode"/>
-    /// <seealso cref="WindowSupportsGPUSwapchainComposition"/>
+    /// <seealso cref="WindowSupportsGpuPresentMode"/>
+    /// <seealso cref="WindowSupportsGpuSwapchainComposition"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool SetGPUSwapchainParameters(nint device, nint window, GpuSwapchainComposition swapchainComposition, GpuPresentMode presentMode) {
+    public static bool SetGpuSwapchainParameters(nint device, nint window, GpuSwapchainComposition swapchainComposition, GpuPresentMode presentMode) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1594,10 +1594,10 @@ public static partial class Sdl {
     /// to avoid thread safety issues.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe, you must make sure the texture is notsimultaneously used by any other thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGPUTexture"/>
+    /// <seealso cref="CreateGpuTexture"/>
     /// </remarks>
 
-    public static void SetGPUTextureName(nint device, nint texture, string text) {
+    public static void SetGpuTextureName(nint device, nint texture, string text) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1615,7 +1615,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void SetGPUViewport(nint renderPass, in GpuViewport viewport) {
+    public static void SetGpuViewport(nint renderPass, in GpuViewport viewport) {
         if (renderPass == nint.Zero) {
             throw new ArgumentNullException(nameof(renderPass), "Render pass cannot be null.");
         }
@@ -1628,14 +1628,14 @@ public static partial class Sdl {
     /// <remarks>
     /// It is invalid to use the command buffer after this is called.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGPUCommandBuffer"/>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="AcquireGPUSwapchainTexture"/>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
+    /// <seealso cref="AcquireGpuCommandBuffer"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="AcquireGpuSwapchainTexture"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool SubmitGPUCommandBuffer(nint commandBuffer) {
+    public static bool SubmitGpuCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1649,15 +1649,15 @@ public static partial class Sdl {
     /// You must release this fence when it is no longer needed or it will cause a
     /// leak. It is invalid to use the command buffer after this is called.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGPUCommandBuffer"/>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="AcquireGPUSwapchainTexture"/>
-    /// <seealso cref="SubmitGPUCommandBuffer"/>
-    /// <seealso cref="ReleaseGPUFence"/>
+    /// <seealso cref="AcquireGpuCommandBuffer"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="AcquireGpuSwapchainTexture"/>
+    /// <seealso cref="SubmitGpuCommandBuffer"/>
+    /// <seealso cref="ReleaseGpuFence"/>
     /// </remarks>
     /// <returns>(SDL_GPUFence *) Returns a fence associated with thecommand buffer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint SubmitGPUCommandBufferAndAcquireFence(nint commandBuffer) {
+    public static nint SubmitGpuCommandBufferAndAcquireFence(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
         }
@@ -1672,7 +1672,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void UnmapGPUTransferBuffer(nint device, nint transferBuffer) {
+    public static void UnmapGpuTransferBuffer(nint device, nint transferBuffer) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1694,7 +1694,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void UploadToGPUBuffer(nint copyPass, in GpuTransferBufferLocation source,
+    public static void UploadToGpuBuffer(nint copyPass, in GpuTransferBufferLocation source,
             in GpuBufferRegion destination, bool cycle) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -1714,7 +1714,7 @@ public static partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
-    public static void UploadToGPUTexture(nint copyPass, in GpuTextureTransferInfo source,
+    public static void UploadToGpuTexture(nint copyPass, in GpuTextureTransferInfo source,
             in GpuTextureRegion destination, bool cycle) {
         if (copyPass == nint.Zero) {
             throw new ArgumentNullException(nameof(copyPass), "Copy pass cannot be null.");
@@ -1738,13 +1738,13 @@ public static partial class Sdl {
     /// swapchain texture is acquired.
     /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGPUCommandBuffer"/>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
-    /// <seealso cref="AcquireGPUSwapchainTexture"/>
+    /// <seealso cref="SubmitGpuCommandBuffer"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <seealso cref="AcquireGpuSwapchainTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool WaitAndAcquireGPUSwapchainTexture(nint commandBuffer, nint window,
+    public static bool WaitAndAcquireGpuSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
         if (commandBuffer == nint.Zero) {
             throw new ArgumentNullException(nameof(commandBuffer), "Command buffer cannot be null.");
@@ -1763,12 +1763,12 @@ public static partial class Sdl {
     /// <param name="num_fences">the number of fences in the fences array.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGPUCommandBufferAndAcquireFence"/>
-    /// <seealso cref="WaitForGPUIdle"/>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <seealso cref="WaitForGpuIdle"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool WaitForGPUFences(nint device, bool waitAll, Span<nint> fences, uint numFences) {
+    public static bool WaitForGpuFences(nint device, bool waitAll, Span<nint> fences, uint numFences) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1780,11 +1780,11 @@ public static partial class Sdl {
     /// <param name="device">a GPU context.</param>
     /// <remarks>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitForGPUFences"/>
+    /// <seealso cref="WaitForGpuFences"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool WaitForGPUIdle(nint device) {
+    public static bool WaitForGpuIdle(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1798,13 +1798,13 @@ public static partial class Sdl {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGPUSwapchainTexture"/>
-    /// <seealso cref="WaitAndAcquireGPUSwapchainTexture"/>
-    /// <seealso cref="SetGPUAllowedFramesInFlight"/>
+    /// <seealso cref="AcquireGpuSwapchainTexture"/>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
+    /// <seealso cref="SetGpuAllowedFramesInFlight"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool WaitForGPUSwapchain(nint device, nint window) {
+    public static bool WaitForGpuSwapchain(nint device, nint window) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1822,11 +1822,11 @@ public static partial class Sdl {
     /// <remarks>
     /// The window must be claimed before calling this function.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGPUDevice"/>
+    /// <seealso cref="ClaimWindowForGpuDevice"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 
-    public static bool WindowSupportsGPUPresentMode(nint device, nint window, GpuPresentMode presentMode) {
+    public static bool WindowSupportsGpuPresentMode(nint device, nint window, GpuPresentMode presentMode) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1844,11 +1844,11 @@ public static partial class Sdl {
     /// <remarks>
     /// The window must be claimed before calling this function.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGPUDevice"/>
+    /// <seealso cref="ClaimWindowForGpuDevice"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 
-    public static bool WindowSupportsGPUSwapchainComposition(nint device, nint window, GpuSwapchainComposition swapchainComposition) {
+    public static bool WindowSupportsGpuSwapchainComposition(nint device, nint window, GpuSwapchainComposition swapchainComposition) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -1858,414 +1858,330 @@ public static partial class Sdl {
         return SDL_WindowSupportsGPUSwapchainComposition(device, window, swapchainComposition);
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_AcquireGPUCommandBuffer(nint device);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_AcquireGPUSwapchainTexture(nint commandBuffer, nint window,
         out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_BeginGPUComputePass(nint commandBuffer,
         Span<GpuStorageTextureReadWriteBinding> storageTextureBindings, uint numStorageTextureBindings,
         Span<GpuStorageBufferReadWriteBinding> storageBufferBindings, uint numStorageBufferBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_BeginGPUCopyPass(nint commandBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_BeginGPURenderPass(nint commandBuffer,
         Span<GpuColorTargetInfo> colorTargetInfos, uint numColorTargets,
         in GpuDepthStencilTargetInfo depthStencilTargetInfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUComputePipeline(nint computePass, nint computePipeline);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUComputeSamplers(nint computePass, uint firstSlot,
         Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUComputeStorageBuffers(nint computePass, uint firstSlot,
         Span<nint> storageBuffers, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUComputeStorageTextures(nint computePass, uint firstSlot,
         Span<nint> storageTextures, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUFragmentSamplers(nint renderPass, uint firstSlot,
         Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUFragmentStorageBuffers(nint renderPass, uint firstSlot,
         Span<nint> storageBuffers, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUFragmentStorageTextures(nint renderPass, uint firstSlot,
         Span<nint> storageTextures, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUGraphicsPipeline(nint renderPass, nint graphicsPipeline);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUIndexBuffer(nint renderPass, in GpuBufferBinding binding,
         GpuIndexElementSize indexElementSize);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUVertexBuffers(nint renderPass, uint firstSlot,
         Span<GpuBufferBinding> bindings, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUVertexSamplers(nint renderPass, uint firstSlot,
         Span<GpuTextureSamplerBinding> textureSamplerBindings, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUVertexStorageBuffers(nint renderPass, uint firstSlot,
         Span<nint> storageBuffers, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BindGPUVertexStorageTextures(nint renderPass, uint firstSlot,
         Span<nint> storageTextures, uint numBindings);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BlitGPUTexture(nint commandBuffer, in GpuBlitInfo info);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_CalculateGPUTextureFormatSize(GpuTextureFormat format, uint width, uint height,
         uint depthOrLayerCount);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CancelGPUCommandBuffer(nint commandBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClaimWindowForGPUDevice(nint device, nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CopyGPUBufferToBuffer(nint copyPass, in GpuBufferLocation source,
         in GpuBufferLocation destination, uint size, SdlBool cycle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CopyGPUTextureToTexture(nint copyPass, in GpuTextureLocation source,
         in GpuTextureLocation destination, uint w, uint h, uint d, SdlBool cycle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUBuffer(nint device, in GpuBufferCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUComputePipeline(nint device,
         in GpuComputePipelineCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUDevice(GpuShaderFormat formatFlags, SdlBool debugMode, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUDeviceWithProperties(uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUGraphicsPipeline(nint device,
         in GpuGraphicsPipelineCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUSampler(nint device, in GpuSamplerCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUShader(nint device, in GpuShaderCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUTexture(nint device, in GpuTextureCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateGPUTransferBuffer(nint device,
         in GpuTransferBufferCreateInfo createinfo);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyGPUDevice(nint device);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DispatchGPUCompute(nint computePass, uint groupcountX, uint groupcountY,
         uint groupcountZ);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DispatchGPUComputeIndirect(nint computePass, nint buffer, uint offset);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DownloadFromGPUBuffer(nint copyPass, in GpuBufferRegion source,
         in GpuTransferBufferLocation destination);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DownloadFromGPUTexture(nint copyPass, in GpuTextureRegion source,
         in GpuTextureTransferInfo destination);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DrawGPUIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
         uint firstIndex, int vertexOffset, uint firstInstance);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DrawGPUIndexedPrimitivesIndirect(nint renderPass, nint buffer, uint offset,
         uint drawCount);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DrawGPUPrimitives(nint renderPass, uint numVertices, uint numInstances,
         uint firstVertex, uint firstInstance);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DrawGPUPrimitivesIndirect(nint renderPass, nint buffer, uint offset,
         uint drawCount);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_EndGPUComputePass(nint computePass);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_EndGPUCopyPass(nint copyPass);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_EndGPURenderPass(nint renderPass);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GenerateMipmapsForGPUTexture(nint commandBuffer, nint texture);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetGPUDeviceDriver(nint device);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetGPUDriver(int index);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial GpuShaderFormat SDL_GetGPUShaderFormats(nint device);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial GpuTextureFormat SDL_GetGPUSwapchainTextureFormat(nint device, nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_GetNumGPUDrivers();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUSupportsProperties(uint props);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUSupportsShaderFormats(GpuShaderFormat formatFlags, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GPUTextureFormatTexelBlockSize(GpuTextureFormat format);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUTextureSupportsFormat(nint device, GpuTextureFormat format,
         GpuTextureType type, GpuTextureUsageFlags usage);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GPUTextureSupportsSampleCount(nint device, GpuTextureFormat format,
         GpuSampleCount sampleCount);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_InsertGPUDebugLabel(nint commandBuffer, string text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_MapGPUTransferBuffer(nint device, nint transferBuffer, SdlBool cycle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PopGPUDebugGroup(nint commandBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PushGPUComputeUniformData(nint commandBuffer, uint slotIndex, nint data,
         uint length);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PushGPUDebugGroup(nint commandBuffer, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PushGPUFragmentUniformData(nint commandBuffer, uint slotIndex, nint data,
         uint length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_PushGPUVertexUniformData(nint commandBuffer, uint slotIndex, nint data,
         uint length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_QueryGPUFence(nint device, nint fence);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUBuffer(nint device, nint buffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUComputePipeline(nint device, nint computePipeline);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUFence(nint device, nint fence);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUGraphicsPipeline(nint device, nint graphicsPipeline);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUSampler(nint device, nint sampler);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUShader(nint device, nint shader);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUTexture(nint device, nint texture);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseGPUTransferBuffer(nint device, nint transferBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ReleaseWindowFromGPUDevice(nint device, nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetGPUAllowedFramesInFlight(nint device, uint allowedFramesInFlight);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUBlendConstants(nint renderPass, FColor blendConstants);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUBufferName(nint device, nint buffer, string text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUScissor(nint renderPass, in Rect scissor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUStencilReference(nint renderPass, byte reference);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetGPUSwapchainParameters(nint device, nint window,
         GpuSwapchainComposition swapchainComposition, GpuPresentMode presentMode);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUTextureName(nint device, nint texture, string text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetGPUViewport(nint renderPass, in GpuViewport viewport);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SubmitGPUCommandBuffer(nint commandBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_SubmitGPUCommandBufferAndAcquireFence(nint commandBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnmapGPUTransferBuffer(nint device, nint transferBuffer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UploadToGPUBuffer(nint copyPass, in GpuTransferBufferLocation source,
         in GpuBufferRegion destination, SdlBool cycle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UploadToGPUTexture(nint copyPass, in GpuTextureTransferInfo source,
         in GpuTextureRegion destination, SdlBool cycle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitAndAcquireGPUSwapchainTexture(nint commandBuffer, nint window,
         out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitForGPUFences(nint device, SdlBool waitAll, Span<nint> fences,
         uint numFences);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitForGPUIdle(nint device);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitForGPUSwapchain(nint device, nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WindowSupportsGPUPresentMode(nint device, nint window,
         GpuPresentMode presentMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WindowSupportsGPUSwapchainComposition(nint device, nint window,
         GpuSwapchainComposition swapchainComposition);
 }

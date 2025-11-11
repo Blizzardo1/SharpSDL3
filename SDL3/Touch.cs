@@ -114,20 +114,17 @@ public static unsafe partial class Sdl {
         return data;
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetTouchDeviceName(ulong touchId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetTouchDevices(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial TouchDeviceType SDL_GetTouchDeviceType(ulong touchId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetTouchFingers(ulong touchId, out int count);
 }

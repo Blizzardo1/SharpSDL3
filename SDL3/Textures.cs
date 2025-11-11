@@ -590,11 +590,11 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="UpdateTexture"/>
-    /// <seealso cref="UpdateYUVTexture"/>
+    /// <seealso cref="UpdateYuvTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool UpdateNVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
+    public static bool UpdateNvTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
                 nint uVplane, int uVpitch) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -616,8 +616,8 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LockTexture"/>
     /// <seealso cref="UnlockTexture"/>
-    /// <seealso cref="UpdateNVTexture"/>
-    /// <seealso cref="UpdateYUVTexture"/>
+    /// <seealso cref="UpdateNvTexture"/>
+    /// <seealso cref="UpdateYuvTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
@@ -644,12 +644,12 @@ public static unsafe partial class Sdl {
     /// this function is available if your pixel data is not contiguous.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UpdateNVTexture"/>
+    /// <seealso cref="UpdateNvTexture"/>
     /// <seealso cref="UpdateTexture"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
 
-    public static bool UpdateYUVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
+    public static bool UpdateYuvTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
                 nint uplane, int upitch, nint vplane, int vpitch) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
@@ -658,118 +658,95 @@ public static unsafe partial class Sdl {
     }
 
     // nint refers to a nint
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTexture(nint renderer, PixelFormat format, TextureAccess access,
         int w, int h);
 
     // nint refers to a nint
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureFromSurface(nint renderer, nint surface);
 
     // nint refers to a nint
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateTextureWithProperties(nint renderer, uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureAlphaMod(nint texture, out byte alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureAlphaModFloat(nint texture, out float alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureBlendMode(nint texture, nint blendMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureColorMod(nint texture, out byte r, out byte g, out byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureColorModFloat(nint texture, out float r, out float g,
             out float b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetTextureProperties(nint texture);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureScaleMode(nint texture, out ScaleMode scaleMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_GetTextureSize(nint texture, out float w, out float h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_LockTexture(nint texture, ref Rect rect, out nint pixels,
             out int pitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_LockTextureToSurface(nint texture, ref Rect rect,
             out nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetTextureAlphaMod(nint texture, byte alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureAlphaModFloat(nint texture, float alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureBlendMode(nint texture, uint blendMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureColorMod(nint texture, byte r, byte g, byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureColorModFloat(nint texture, float r, float g, float b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_SetTextureScaleMode(nint texture, ScaleMode scaleMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockTexture(nint texture);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_UpdateNVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
             nint uVplane, int uVpitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_UpdateTexture(nint texture, ref Rect rect, nint pixels, int pitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_UpdateYUVTexture(nint texture, ref Rect rect, nint yplane, int ypitch,
         nint uplane, int upitch, nint vplane, int vpitch);
 }

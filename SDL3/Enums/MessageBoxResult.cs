@@ -1,7 +1,7 @@
 namespace SharpSDL3.Enums;
 
 public enum MessageBoxResult {
-    OK = 0,
+    Ok = 0,
     Cancel,
     Yes,
     No,

@@ -77,23 +77,22 @@ public static partial class Sdl {
         SDL_ShowFileDialogWithProperties(type, callback, userdata, props);
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback,
         nint userdata, uint props);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ShowOpenFileDialog(SdlDialogFileCallback callback, nint userdata, nint window,
 Span<DialogFileFilter> filters, int nfilters, string defaultLocation, SdlBool allowMany);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ShowOpenFolderDialog(SdlDialogFileCallback callback, nint userdata, nint window,
         string defaultLocation, SdlBool allowMany);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ShowSaveFileDialog(SdlDialogFileCallback callback, nint userdata, nint window,
         Span<DialogFileFilter> filters, int nfilters, string defaultLocation);
 }

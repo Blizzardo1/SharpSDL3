@@ -1,6 +1,6 @@
 namespace SharpSDL3.TTF;
 
-public enum GPUTextEngineWinding {
+public enum GpuTextEngineWinding {
     Invalid = -1,
     Clockwise,
     CounterClockwise

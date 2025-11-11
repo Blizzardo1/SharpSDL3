@@ -15,7 +15,7 @@ public static unsafe partial class Sdl {
 
     internal const UnmanagedType StringType = UnmanagedType.LPUTF8Str;
     internal const UnmanagedType BoolType = UnmanagedType.I1;
-    internal const StringMarshalling marshalling = StringMarshalling.Utf8;
+    internal const StringMarshalling Marshalling = StringMarshalling.Utf8;
 
     /// <summary>
     /// Converts a <typeparamref name="T"/> to a pointer.
@@ -782,6 +782,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
 
     public static void DestroySurface(nint surface) {
+        if (surface == nint.Zero) {
+            LogInfo(LogCategory.System, "Will destroy nothing.");
+        }
+
         SDL_DestroySurface(surface);
     }
 
@@ -1048,7 +1052,7 @@ public static unsafe partial class Sdl {
     /// do nothing and set an &quot;unsupported&quot; error message.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    public static void GDKSuspendComplete() {
+    public static void GdkSuspendComplete() {
         SDL_GDKSuspendComplete();
     }
 
@@ -1308,7 +1312,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the ID of the current thread.</returns>
 
-    public static ulong GetCurrentThreadID() {
+    public static ulong GetCurrentThreadId() {
         ulong threadId = SDL_GetCurrentThreadID();
         if (threadId == 0) {
             LogError(LogCategory.Error, "GetCurrentThreadID: Failed to retrieve thread ID.");
@@ -2821,7 +2825,7 @@ public static unsafe partial class Sdl {
     /// If SDL is running on a platform that does not support threads the return
     /// value will always be zero.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetCurrentThreadID"/>
+    /// <seealso cref="GetCurrentThreadId"/>
     /// </remarks>
     /// <returns>Returns the ID of the specified thread, orthe ID of the current thread if thread is <see langword="null" />.</returns>
     public static ulong GetThreadId(nint thread) {
@@ -2861,7 +2865,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ThreadState"/>
     /// </remarks>
     /// <returns>Returns the current state of a thread,  SDL_THREAD_UNKNOWN if the thread isn't valid.</returns>
-    public static ThreadState GetThreadState(nint thread) {
+    public static SharpSDL3.Enums.ThreadState GetThreadState(nint thread) {
         if (thread == nint.Zero) {
             LogError(LogCategory.Error, "GetThreadState: Thread pointer is null.");
             return ThreadState.Unknown;
@@ -3118,7 +3122,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(void *) Returns the raw ICC profile data on success or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information. This should befreed with <see cref="Free"/> when it is no longer needed.</returns>
-    public static nint GetWindowICCProfile(nint window, out nuint size) {
+    public static nint GetWindowIccProfile(nint window, out nuint size) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "GetWindowICCProfile: Window pointer is null.");
             size = 0;
@@ -3769,7 +3773,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="StringToGUID"/>
+    /// <seealso cref="StringToGuid"/>
     /// </remarks>
     public static void GuidToString(SdlGuid guid, string pszGuid, int cbGuid) {
         if (guid.Data is null) {
@@ -3946,7 +3950,7 @@ public static unsafe partial class Sdl {
     /// <param name="flags">subsystem initialization flags.</param>
     /// <remarks>
     /// <see cref="Init"/> simply forwards to calling <see cref="InitSubSystem"/>. Therefore, the two may be used interchangeably. Though for readability of your code <see cref="InitSubSystem"/> might be preferred.
-    /// <para>The file I/O(for example: <see cref="IOFromFile"/>) and threading (<see cref="CreateThread"/>) subsystems are initialized by default.</para>
+    /// <para>The file I/O(for example: <see cref="IoFromFile"/>) and threading (<see cref="CreateThread"/>) subsystems are initialized by default.</para>
     /// <para>Message boxes(<see cref="ShowSimpleMessageBox"/>) also attempt to work without initializing the video subsystem, in hopes of being useful in showing an error dialog when <see cref="Init"/> fails. You must specifically initialize other subsystems if you use them in your application.</para>
     /// <para>Logging(such as <see cref="Log"/>) works without initialization, too.
     /// flags may be any of the following OR'd together:
@@ -4050,17 +4054,17 @@ public static unsafe partial class Sdl {
     /// Load a BMP image from a seekable SDL data stream.
     /// </summary>
     /// <param name="src">the data stream for the surface.</param>
-    /// <param name="closeIo">if <see langword="true"/>, calls <see cref="CloseIO"/> on src before returning, even in the case of an error.</param>
+    /// <param name="closeIo">if <see langword="true"/>, calls <see cref="CloseIo"/> on src before returning, even in the case of an error.</param>
     /// <remarks>
     /// The new surface should be freed with <see cref="DestroySurface"/>. Not doing so will result in a memory leak.
     /// <para><strong>Thread Safety:</strong> it is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL3 3.2.0.</para>
     /// <seealso cref="DestroySurface"/>
     /// <seealso cref="LoadBmp"/>
-    /// <seealso cref="SaveBmpIO"/>
+    /// <seealso cref="SaveBmpIo"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a pointer to a new SDL_Surface structure or <see langword="null"/> on failure; call <see cref="GetError"/> for more information.</returns>
-    public static nint LoadBmpIO(nint src, bool closeIo) {
+    public static nint LoadBmpIo(nint src, bool closeIo) {
         if (src == nint.Zero) {
             LogError(LogCategory.Error, "LoadBmpIo: Source pointer is null.");
             return nint.Zero;
@@ -4869,7 +4873,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LoadBmp"/>
-    /// <seealso cref="SaveBmpIO"/>
+    /// <seealso cref="SaveBmpIo"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
     public static bool SaveBmp(nint surface, string file) {
@@ -4893,18 +4897,18 @@ public static unsafe partial class Sdl {
     /// </summary>
     /// <param name="surface">the <see cref="Surface"/> structure containing the image to be saved.</param>
     /// <param name="dst">a data stream to save to.</param>
-    /// <param name="closeIo">if <see langword="true"/>, calls <see cref="CloseIO"/> on <paramref name="dst"/> before returning, even in case of an error.</param>
+    /// <param name="closeIo">if <see langword="true"/>, calls <see cref="CloseIo"/> on <paramref name="dst"/> before returning, even in case of an error.</param>
     /// <remarks>
     /// Surfaces with a 24-bit, 32-bit and paletted 8-bit format get saved in the BMP directly. 
     /// Other RGB formats with 8-bit or higher get converted to a 24-bit surface or, if they have an alpha mask or a color key, to a 32-bit surface before they are saved. 
     /// YUV and paletted 1-bit and 4-bit formats are not supported.
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LoadBmpIO"/>
+    /// <seealso cref="LoadBmpIo(System.IntPtr,bool)"/>
     /// <seealso cref="SaveBmp"/>
     /// </remarks>
     /// <returns></returns>
-    public static bool SaveBmpIO(nint surface, nint dst, bool closeIo) {
+    public static bool SaveBmpIo(nint surface, nint dst, bool closeIo) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SaveBmpIp: Surface pointer is null.");
             return false;
@@ -5128,7 +5132,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-    public static bool SetCurrentThreadPriority(ThreadPriority priority) {
+    public static bool SetCurrentThreadPriority(SharpSDL3.Enums.ThreadPriority priority) {
         if (!Enum.IsDefined(priority)) {
             LogError(LogCategory.Error, "SetCurrentThreadPriority: Invalid thread priority.");
             return false;
@@ -5141,16 +5145,14 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the SDL error message for the current thread.</summary>
-
     /// <param name="fmt">a printf()-style message format string.</param>
-    /// <param name="...">additional parameters matching % tokens in the fmt string, if any.</param>
+    /// <param name="args">additional parameters matching % tokens in the fmt string, if any.</param>
     /// <remarks>
     /// Calling this function will replace any previous error message that was set.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="ClearError"/>
     /// <seealso cref="GetError"/>
-    /// <seealso cref="SetErrorV"/>
     /// </remarks>
     /// <returns>Returns <see langword="false" />.</returns>
 
@@ -5165,7 +5167,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a floating point property in a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property.</param>
@@ -5175,7 +5176,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetFloatProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetFloatProperty(uint props, string name, float value) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetFloatProperty: Properties are zero or name is null/empty.");
@@ -5207,7 +5207,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a hint with a specific priority.</summary>
-
     /// <param name="name">the hint to set.</param>
     /// <param name="value">the value of the hint variable.</param>
     /// <param name="priority">the SDL_HintPriority level for the hint.</param>
@@ -5250,8 +5249,8 @@ public static unsafe partial class Sdl {
     /// <summary>Set the current key modifier state for the keyboard.</summary>
     /// <param name="modstate">the desired <see cref="KeyMod"/> for the keyboard.</param>
     /// <remarks>
-    /// The inverse of SDL_GetModState(),
-    /// SDL_SetModState() allows you to impose modifier key
+    /// The inverse of <see cref="GetModState"/>,
+    /// <see cref="SetModState"/> allows you to impose modifier key
     /// states on your application. Simply pass your desired modifier states into
     /// <paramref name="modstate"/>. This value may be a bitwise, OR'd combination of
     /// <see cref="KeyMod"/> values.
@@ -5259,7 +5258,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetModState"/>
     /// </remarks>
-
     public static void SetModState(KeyMod modstate) {
         if (!Enum.IsDefined(modstate)) {
             LogError(LogCategory.Error, "SetModState: Invalid key modifier state.");
@@ -5317,7 +5315,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a pointer property in a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property, or <see langword="null" /> to delete the property.</param>
@@ -5333,7 +5330,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetStringProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetPointerProperty(uint props, string name, nint value) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetPointerProperty: Properties are zero or name is null/empty.");
@@ -5347,7 +5343,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a pointer property in a group of properties with a cleanup function that is called when the property is deleted.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property, or <see langword="null" /> to delete the property.</param>
@@ -5363,7 +5358,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CleanupPropertyCallback"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetPointerPropertyWithCleanup(uint props, string name, nint value,
             SdlCleanupPropertyCallback cleanup, nint userdata) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
@@ -5378,7 +5372,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Put UTF-8 text into the primary selection.</summary>
-
     /// <param name="text">the text to store in the primary selection.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -5387,7 +5380,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasPrimarySelectionText"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetPrimarySelectionText(string text) {
         if (string.IsNullOrEmpty(text)) {
             LogError(LogCategory.Error, "SetPrimarySelectionText: Text is null or empty.");
@@ -5401,8 +5393,7 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a human-readable name for a scancode.</summary>
-
-    /// <param name="scancode">the desired SDL_Scancode.</param>
+    /// <param name="scanCode">the desired SDL_Scancode.</param>
     /// <param name="name">the name to use for the scancode, encoded as UTF-8. The string is not copied, so the pointer given to this function must stay valid while SDL is being used.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
@@ -5410,7 +5401,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetScancodeName"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetScancodeName(Scancode scanCode, string name) {
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "SetScancodeName: Name is null or empty.");
@@ -5424,7 +5414,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a string property in a group of properties.</summary>
-
     /// <param name="props">the properties to modify.</param>
     /// <param name="name">the name of the property to modify.</param>
     /// <param name="value">the new value of the property, or <see langword="null" /> to delete the property.</param>
@@ -5436,7 +5425,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetStringProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetStringProperty(uint props, string name, string value) {
         if (props == 0 || string.IsNullOrEmpty(name) || string.IsNullOrEmpty(value)) {
             LogError(LogCategory.Error, "SetStringProperty: Properties are zero or name/value is null/empty.");
@@ -5450,7 +5438,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set an additional alpha value used in blit operations.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="alpha">the alpha value multiplied into blit operations.</param>
     /// <remarks>
@@ -5462,7 +5449,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetSurfaceColorMod"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceAlphaMod(nint surface, byte alpha) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceAlphaMod: Surface pointer is null.");
@@ -5476,7 +5462,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the blend mode used for blit operations.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="blendMode">the <see cref="BlendMode"/> to use for blit blending.</param>
     /// <remarks>
@@ -5488,7 +5473,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfaceBlendMode"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceBlendMode(nint surface, uint blendMode) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceBlendMode: Surface pointer is null.");
@@ -5502,7 +5486,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the clipping rectangle for a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to be clipped.</param>
     /// <param name="rect">the <see cref="Rect"/> structure representing the clipping rectangle, or <see langword="null" /> to disable clipping.</param>
     /// <remarks>
@@ -5513,7 +5496,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfaceClipRect"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the rectangle intersects the surface, otherwise<see langword="false" /> and blits will be completely clipped.</returns>
-
     public static bool SetSurfaceClipRect(nint surface, ref Rect rect) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceClipRect: Surface pointer is null.");
@@ -5527,7 +5509,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the color key (transparent pixel) in a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="enabled"><see langword="true" /> to enable color key, <see langword="false" /> to disable color key.</param>
     /// <param name="key">the transparent pixel.</param>
@@ -5538,11 +5519,10 @@ public static unsafe partial class Sdl {
     /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetSurfaceColorKey"/>
-    /// <seealso cref="SetSurfaceRLE"/>
+    /// <seealso cref="SetSurfaceRle"/>
     /// <seealso cref="SurfaceHasColorKey"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceColorKey(nint surface, bool enabled, uint key) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceColorKey: Surface pointer is null.");
@@ -5556,7 +5536,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set an additional color value multiplied into blit operations.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="r">the red color value multiplied into blit operations.</param>
     /// <param name="g">the green color value multiplied into blit operations.</param>
@@ -5571,7 +5550,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetSurfaceAlphaMod"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceColorMod(nint surface, byte r, byte g, byte b) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceColorMod: Surface pointer is null.");
@@ -5585,7 +5563,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set an additional color value multiplied into blit operations.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="r">the red color value multiplied into blit operations.</param>
     /// <param name="g">the green color value multiplied into blit operations.</param>
@@ -5600,7 +5577,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetSurfaceAlphaMod"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceColorMod(nint surface, Color color) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceColorMod: Surface pointer is null.");
@@ -5614,7 +5590,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the colorspace used by a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="colorspace">an <see cref="Colorspace"/> value describing the surface colorspace.</param>
     /// <remarks>
@@ -5625,7 +5600,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfaceColorspace"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfaceColorspace(nint surface, Colorspace colorspace) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceColorspace: Surface pointer is null.");
@@ -5639,7 +5613,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the palette used by a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to update.</param>
     /// <param name="palette">the SDL_Palette structure to use.</param>
     /// <remarks>
@@ -5650,7 +5623,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfacePalette"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetSurfacePalette(nint surface, nint palette) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfacePalette: Surface pointer is null.");
@@ -5668,7 +5640,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the RLE acceleration hint for a surface.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to optimize.</param>
     /// <param name="enabled"><see langword="true" /> to enable RLE acceleration, <see langword="false" /> to disable it.</param>
     /// <remarks>
@@ -5681,8 +5652,7 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UnlockSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
-    public static bool SetSurfaceRLE(nint surface, bool enabled) {
+    public static bool SetSurfaceRle(nint surface, bool enabled) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SetSurfaceRLE: Surface pointer is null.");
             return false;
@@ -5695,7 +5665,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the area used to type Unicode text input.</summary>
-
     /// <param name="window">the window for which to set the text input area.</param>
     /// <param name="rect">the <see cref="Rect"/> representing the text input area, in window coordinates, or <see langword="null" /> to clear it.</param>
     /// <param name="cursor">the offset of the current cursor location relative to rect-&gt;x, in window coordinates.</param>
@@ -5708,7 +5677,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="StartTextInput"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetTextInputArea(nint window, ref Rect rect, int cursor) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetTextInputArea: Window pointer is null.");
@@ -5722,7 +5690,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the current thread's value associated with a thread local storage ID.</summary>
-
     /// <param name="id">a pointer to the thread local storage ID, may not be <see langword="null" />.</param>
     /// <param name="value">the value to associate with the ID for the current thread.</param>
     /// <param name="destructor">a function called when the thread exits, to free the value, may be discarded.</param>
@@ -5735,7 +5702,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTls"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetTls(nint id, nint value, SdlTlsDestructorCallback destructor) {
         if (id == nint.Zero || value == nint.Zero) {
             LogError(LogCategory.Error, "SetTls: ID or value is null.");
@@ -5749,9 +5715,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the window to always be above the others.</summary>
-
     /// <param name="window">the window of which to change the always on top state.</param>
-    /// <param name="on_top"><see langword="true" /> to set the window always on top, <see langword="false" /> to disable.</param>
+    /// <param name="onTop"><see langword="true" /> to set the window always on top, <see langword="false" /> to disable.</param>
     /// <remarks>
     /// This will add or remove the window's
     /// SDL_WINDOW_ALWAYS_ON_TOP flag. This will
@@ -5761,7 +5726,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowFlags"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowAlwaysOnTop(nint window, bool onTop) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowAlwaysOnTop: Window pointer is null.");
@@ -5775,7 +5739,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the aspect ratio of a window's client area be set.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="min_aspect">the minimum aspect ratio of the window, or 0.0f for no limit.</param>
     /// <param name="max_aspect">the maximum aspect ratio of the window, or 0.0f for no limit.</param>
@@ -5789,7 +5752,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowAspectRatio(nint window, float minAspect, float maxAspect) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowAspectRatio: Window pointer is null.");
@@ -5803,7 +5765,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the border state of a window.</summary>
-
     /// <param name="window">the window of which to change the border state.</param>
     /// <param name="bordered"><see langword="false" /> to remove border, <see langword="true" /> to add border.</param>
     /// <remarks>
@@ -5816,7 +5777,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowFlags"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowBordered(nint window, bool bordered) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowBordered: Window pointer is null.");
@@ -5830,7 +5790,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set whether the window may have input focus.</summary>
-
     /// <param name="window">the window to set focusable state.</param>
     /// <param name="focusable"><see langword="true" /> to allow input focus, <see langword="false" /> to not allow input focus.</param>
     /// <remarks>
@@ -5838,7 +5797,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowFocusable(nint window, bool focusable) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowFocusable: Window pointer is null.");
@@ -5852,7 +5810,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the window's fullscreen state be changed.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="fullscreen"><see langword="true" /> for fullscreen mode, <see langword="false" /> for windowed mode.</param>
     /// <remarks>
@@ -5867,7 +5824,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="WINDOW_FULLSCREEN"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowFullscreen(nint window, bool fullscreen) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowFullscreen: Window pointer is null.");
@@ -5881,7 +5837,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the display mode to use when a window is visible and fullscreen.</summary>
-
     /// <param name="window">the window to affect.</param>
     /// <param name="mode">a pointer to the display mode to use, which can be <see langword="null" /> for borderless fullscreen desktop mode, or one of the fullscreen modes returned by SDL_GetFullscreenDisplayModes() to set an exclusive fullscreen mode.</param>
     /// <remarks>
@@ -5895,7 +5850,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowFullscreenMode(nint window, ref DisplayMode mode) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowFullscreenMode: Window pointer is null.");
@@ -5909,10 +5863,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Provide a callback that decides if a window region has special properties.</summary>
-
     /// <param name="window">the window to set hit-testing on.</param>
     /// <param name="callback">the function to call when doing a hit-test.</param>
-    /// <param name="callback_data">an app-defined void pointer passed to callback.</param>
+    /// <param name="callbackData">an app-defined void pointer passed to callback.</param>
     /// <remarks>
     /// Normally windows are dragged and resized by decorations provided by the
     /// system window manager (a title bar, borders, etc), but for some apps, it
@@ -5923,7 +5876,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowHitTest(nint window, SdlHitTest callback, nint callbackData) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowHitTest: Window pointer is null.");
@@ -5937,7 +5889,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the icon for a window.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="icon">an SDL_Surface structure containing the icon for the window.</param>
     /// <remarks>
@@ -5954,7 +5905,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowIcon(nint window, nint icon) {
         // Impement an overloaded function that acceps an Icon from LoadIcon
         if (window == nint.Zero) {
@@ -5973,7 +5923,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a window's keyboard grab mode.</summary>
-
     /// <param name="window">the window for which the keyboard grab mode should be set.</param>
     /// <param name="grabbed">this is <see langword="true" /> to grab keyboard, and <see langword="false" /> to release.</param>
     /// <remarks>
@@ -5986,7 +5935,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowMouseGrab"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowKeyboardGrab(nint window, bool grabbed) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowKeyboardGrab: Window pointer is null.");
@@ -6000,7 +5948,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the maximum size of a window's client area.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="max_w">the maximum width of the window, or 0 for no limit.</param>
     /// <param name="max_h">the maximum height of the window, or 0 for no limit.</param>
@@ -6011,7 +5958,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowMinimumSize"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowMaximumSize(nint window, int maxW, int maxH) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowMaximumSize: Window pointer is null.");
@@ -6025,7 +5971,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the minimum size of a window's client area.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="min_w">the minimum width of the window, or 0 for no limit.</param>
     /// <param name="min_h">the minimum height of the window, or 0 for no limit.</param>
@@ -6036,7 +5981,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowMaximumSize"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowMinimumSize(nint window, int minW, int minH) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowMinimumSize: Window pointer is null.");
@@ -6050,7 +5994,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Toggle the state of the window as modal.</summary>
-
     /// <param name="window">the window on which to set the modal state.</param>
     /// <param name="modal"><see langword="true" /> to toggle modal status on, <see langword="false" /> to toggle it off.</param>
     /// <remarks>
@@ -6062,7 +6005,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="WINDOW_MODAL"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowModal(nint window, bool modal) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowModal: Window pointer is null.");
@@ -6076,7 +6018,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set a window's mouse grab mode.</summary>
-
     /// <param name="window">the window for which the mouse grab mode should be set.</param>
     /// <param name="grabbed">this is <see langword="true" /> to grab mouse, and <see langword="false" /> to release.</param>
     /// <remarks>
@@ -6088,7 +6029,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowKeyboardGrab"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowMouseGrab(nint window, bool grabbed) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowMouseGrab: Window pointer is null.");
@@ -6102,7 +6042,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Confines the cursor to the specified area of a window.</summary>
-
     /// <param name="window">the window that will be associated with the barrier.</param>
     /// <param name="rect">a rectangle area in window-relative coordinates. If <see langword="null" /> the barrier for the specified window will be destroyed.</param>
     /// <remarks>
@@ -6115,7 +6054,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowMouseGrab"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowMouseRect(nint window, ref Rect rect) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowMouseRect: Window pointer is null.");
@@ -6129,7 +6067,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the opacity for a window.</summary>
-
     /// <param name="window">the window which will be made transparent or opaque.</param>
     /// <param name="opacity">the opacity value (0.0f - transparent, 1.0f - opaque).</param>
     /// <remarks>
@@ -6140,7 +6077,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowOpacity"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowOpacity(nint window, float opacity) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowOpacity: Window pointer is null.");
@@ -6154,7 +6090,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the window as a child of a parent window.</summary>
-
     /// <param name="window">the window that should become the child of a parent.</param>
     /// <param name="parent">the new parent window for the child window.</param>
     /// <remarks>
@@ -6166,7 +6101,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetWindowModal"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowParent(nint window, nint parent) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowParent: Window pointer is null.");
@@ -6184,7 +6118,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the window's position be set.</summary>
-
     /// <param name="window">the window to reposition.</param>
     /// <param name="x">the x coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
     /// <param name="y">the y coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
@@ -6197,7 +6130,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowPosition(nint window, int x, int y) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowPosition: Window pointer is null.");
@@ -6211,7 +6143,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the window's position be set.</summary>
-
     /// <param name="window">the window to reposition.</param>
     /// <param name="x">the x coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
     /// <param name="y">the y coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
@@ -6224,7 +6155,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowPosition(nint window, Point position) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowPosition: Window pointer is null.");
@@ -6238,7 +6168,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the user-resizable state of a window.</summary>
-
     /// <param name="window">the window of which to change the resizable state.</param>
     /// <param name="resizable"><see langword="true" /> to allow resizing, <see langword="false" /> to disallow.</param>
     /// <remarks>
@@ -6251,7 +6180,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowFlags"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowResizable(nint window, bool resizable) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowResizable: Window pointer is null.");
@@ -6265,7 +6193,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the shape of a transparent window.</summary>
-
     /// <param name="window">the window.</param>
     /// <param name="shape">the surface representing the shape of the window, or <see langword="null" /> to remove any current shape.</param>
     /// <remarks>
@@ -6278,7 +6205,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowShape(nint window, nint shape) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowShape: Window pointer is null.");
@@ -6296,7 +6222,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the size of a window's client area be set.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="w">the width of the window, must be &gt; 0.</param>
     /// <param name="h">the height of the window, must be &gt; 0.</param>
@@ -6310,7 +6235,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowSize(nint window, int w, int h) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowSize: Window pointer is null.");
@@ -6324,10 +6248,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request that the size of a window's client area be set.</summary>
-
     /// <param name="window">the window to change.</param>
-    /// <param name="w">the width of the window, must be &gt; 0.</param>
-    /// <param name="h">the height of the window, must be &gt; 0.</param>
+    /// <param name="rect">the <see cref="Rect"/> with a Width and Height </param>
     /// <remarks>
     /// If the window is in a fullscreen or maximized state, this request has no
     /// effect.
@@ -6338,7 +6260,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SyncWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowSize(nint window, Rect rect) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowSize: Window pointer is null.");
@@ -6352,7 +6273,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Toggle VSync for the window surface.</summary>
-
     /// <param name="window">the window.</param>
     /// <param name="vsync">the vertical refresh sync interval.</param>
     /// <remarks>
@@ -6363,7 +6283,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowSurfaceVSync"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowSurfaceVSync(nint window, int vsync) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowSurfaceVSync: Window pointer is null.");
@@ -6377,7 +6296,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Set the title of a window.</summary>
-
     /// <param name="window">the window to change.</param>
     /// <param name="title">the desired window title in UTF-8 format.</param>
     /// <remarks>
@@ -6387,7 +6305,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowTitle"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetWindowTitle(nint window, string title) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SetWindowTitle: Window handle is null.");
@@ -6401,7 +6318,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Show a window.</summary>
-
     /// <param name="window">the window to show.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -6410,7 +6326,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RaiseWindow"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ShowWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "ShowWindow: Window pointer is null.");
@@ -6424,7 +6339,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Display the system-level window menu.</summary>
-
     /// <param name="window">the window for which the menu will be displayed.</param>
     /// <param name="x">the x coordinate of the menu, relative to the origin (top-left) of the client area.</param>
     /// <param name="y">the y coordinate of the menu, relative to the origin (top-left) of the client area.</param>
@@ -6437,7 +6351,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ShowWindowSystemMenu(nint window, int x, int y) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "ShowWindowSystemMenu: Window pointer is null.");
@@ -6451,7 +6364,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Display the system-level window menu.</summary>
-
     /// <param name="window">the window for which the menu will be displayed.</param>
     /// <param name="x">the x coordinate of the menu, relative to the origin (top-left) of the client area.</param>
     /// <param name="y">the y coordinate of the menu, relative to the origin (top-left) of the client area.</param>
@@ -6464,7 +6376,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ShowWindowSystemMenu(nint window, Point position) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "ShowWindowSystemMenu: Window pointer is null.");
@@ -6482,7 +6393,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Start accepting Unicode text input events in a window.</summary>
-
     /// <param name="window">the window to enable text input.</param>
     /// <remarks>
     /// This function will enable text input
@@ -6498,7 +6408,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="TextInputActive"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool StartTextInput(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "StartTextInput: Window pointer is null.");
@@ -6512,7 +6421,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Start accepting Unicode text input events in a window, with properties describing the input.</summary>
-
     /// <param name="window">the window to enable text input.</param>
     /// <param name="props">the properties to use.</param>
     /// <remarks>
@@ -6529,7 +6437,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="TextInputActive"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool StartTextInputWithProperties(nint window, uint props) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "StartTextInputWithProperties: Window pointer is null.");
@@ -6543,7 +6450,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Stop receiving any text input events in a window.</summary>
-
     /// <param name="window">the window to disable text input.</param>
     /// <remarks>
     /// If SDL_StartTextInput() showed the screen keyboard,
@@ -6553,7 +6459,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="StartTextInput"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool StopTextInput(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "StopTextInput: Window pointer is null.");
@@ -6567,19 +6472,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Convert a GUID string into a <see cref="SdlGuid"/> structure.</summary>
-
-    /// <param name="pchGUID">string containing an ASCII representation of a GUID.</param>
+    /// <param name="pchGuid">string containing an ASCII representation of a GUID.</param>
     /// <remarks>
     /// Performs no error checking. If this function is given a string containing
     /// an invalid GUID, the function will silently succeed, but the GUID generated
     /// will not be useful.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GUIDToString"/>
+    /// <seealso cref="GuidToString"/>
     /// </remarks>
     /// <returns>Returns a <see cref="SdlGuid"/> structure.</returns>
-
-    public static SdlGuid StringToGUID(string pchGuid) {
+    public static SdlGuid StringToGuid(string pchGuid) {
         if (string.IsNullOrEmpty(pchGuid)) {
             LogError(LogCategory.Error, "StringToGUID: GUID string is null or empty.");
             return default;
@@ -6592,7 +6495,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Return whether a surface has alternate versions available.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
@@ -6602,7 +6504,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfaceImages"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if alternate versions are available or <see langword="false" /> otherwise.</returns>
-
     public static bool SurfaceHasAlternateImages(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SurfaceHasAlternateImages: Surface pointer is null.");
@@ -6616,7 +6517,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Returns whether the surface has a color key.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
     /// <remarks>
     /// It is safe to pass a <see langword="null" /> surface here; it will return false.
@@ -6626,7 +6526,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetSurfaceColorKey"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the surface has a color key, <see langword="false" /> otherwise.</returns>
-
     public static bool SurfaceHasColorKey(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SurfaceHasColorKey: Surface pointer is null.");
@@ -6640,17 +6539,15 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Returns whether the surface is RLE enabled.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to query.</param>
     /// <remarks>
     /// It is safe to pass a <see langword="null" /> surface here; it will return false.
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetSurfaceRLE"/>
+    /// <seealso cref="SetSurfaceRle"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the surface is RLE enabled, <see langword="false" /> otherwise.</returns>
-
-    public static bool SurfaceHasRLE(nint surface) {
+    public static bool SurfaceHasRle(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "SurfaceHasRLE: Surface pointer is null.");
             return false;
@@ -6663,7 +6560,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Block until any pending window state is finalized.</summary>
-
     /// <param name="window">the window for which to wait for the pending state to be applied.</param>
     /// <remarks>
     /// On asynchronous windowing systems, this acts as a synchronization barrier
@@ -6683,7 +6579,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HINT_VIDEO_SYNC_WINDOW_OPERATIONS"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if the operation timed out beforethe window was in the requested state.</returns>
-
     public static bool SyncWindow(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "SyncWindow: Window pointer is null.");
@@ -6697,7 +6592,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Check whether or not Unicode text input events are enabled for a window.</summary>
-
     /// <param name="window">the window to check.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -6705,7 +6599,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="StartTextInput"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if text input events are enabled else <see langword="false" />.</returns>
-
     public static bool TextInputActive(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "TextInputActive: Window pointer is null.");
@@ -6719,7 +6612,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Unload a shared object from memory.</summary>
-
     /// <param name="handle">a valid shared object handle returned by SDL_LoadObject().</param>
     /// <remarks>
     /// Note that any pointers from this object looked up through
@@ -6728,7 +6620,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LoadObject"/>
     /// </remarks>
-
     public static void UnloadObject(nint handle) {
         if (handle == nint.Zero) {
             LogError(LogCategory.Error, "UnloadObject: Handle pointer is null.");
@@ -6738,14 +6629,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Unlock a group of properties.</summary>
-
     /// <param name="props">the properties to unlock.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LockProperties"/>
     /// </remarks>
-
     public static void UnlockProperties(uint props) {
         if (props == 0) {
             LogError(LogCategory.Error, "UnlockProperties: Properties are zero.");
@@ -6755,14 +6644,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Release a surface after directly accessing the pixels.</summary>
-
     /// <param name="surface">the <see cref="Surface"/> structure to be unlocked.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function is not thread safe. The locking referred to by this functionis making the pixels available for direct access, not thread-safe locking.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="LockSurface"/>
     /// </remarks>
-
     public static void UnlockSurface(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "UnlockSurface: Surface pointer is null.");
@@ -6772,7 +6659,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy the window surface to the screen.</summary>
-
     /// <param name="window">the window to update.</param>
     /// <remarks>
     /// This is the function you use to reflect any changes to the surface on the
@@ -6783,7 +6669,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UpdateWindowSurfaceRects"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool UpdateWindowSurface(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "UpdateWindowSurface: Window pointer is null.");
@@ -6797,7 +6682,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy areas of the window surface to the screen.</summary>
-
     /// <param name="window">the window to update.</param>
     /// <param name="rects">an array of <see cref="Rect"/> structures representing areas of the surface to copy, in pixels.</param>
     /// <param name="numrects">the number of rectangles.</param>
@@ -6810,7 +6694,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UpdateWindowSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool UpdateWindowSurfaceRects(nint window, Span<Rect> rects, int numrects) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Window pointer is null.");
@@ -6828,10 +6711,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy areas of the window surface to the screen.</summary>
-
     /// <param name="window">the window to update.</param>
     /// <param name="rects">an array of <see cref="Rect"/> structures representing areas of the surface to copy, in pixels.</param>
-    /// <param name="numrects">the number of rectangles.</param>
     /// <remarks>
     /// This is the function you use to reflect changes to portions of the surface
     /// on the screen.
@@ -6841,7 +6722,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="UpdateWindowSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool UpdateWindowSurfaceRects(nint window, Rect[] rects) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "UpdateWindowSurfaceRects: Window pointer is null.");
@@ -6859,7 +6739,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Wait for a thread to finish.</summary>
-
     /// <param name="thread">the SDL_Thread pointer that was returned from the SDL_CreateThread() call that started this thread.</param>
     /// <param name="status">a pointer filled in with the value returned from the thread function by its 'return', or -1 if the thread has been detached or isn't valid, may be discarded.</param>
     /// <remarks>
@@ -6869,7 +6748,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateThread"/>
     /// <seealso cref="DetachThread"/>
     /// </remarks>
-
     public static void WaitThread(nint thread, nint status) {
         if (thread == nint.Zero) {
             LogError(LogCategory.Error, "WaitThread: Thread pointer is null.");
@@ -6895,7 +6773,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Return whether the window has a surface associated with it.</summary>
-
     /// <param name="window">the window to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
@@ -6903,7 +6780,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowSurface"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is a surface associated with the window, or<see langword="false" /> otherwise.</returns>
-
     public static bool WindowHasSurface(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "WindowHasSurface: Window pointer is null.");
@@ -6917,7 +6793,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
@@ -6932,7 +6807,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool WriteSurfacePixel(nint surface, int x, int y, byte r, byte g, byte b, byte a) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
@@ -6946,14 +6820,10 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">the red channel value, 0-255.</param>
-    /// <param name="g">the green channel value, 0-255.</param>
-    /// <param name="b">the blue channel value, 0-255.</param>
-    /// <param name="a">the alpha channel value, 0-255.</param>
+    /// <param name="color">the <see cref="Color"/> struct filled with data</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -6961,7 +6831,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool WriteSurfacePixel(nint surface, int x, int y, Color color) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
@@ -6975,14 +6844,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
-    /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
-    /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">the red channel value, 0-255.</param>
-    /// <param name="g">the green channel value, 0-255.</param>
-    /// <param name="b">the blue channel value, 0-255.</param>
-    /// <param name="a">the alpha channel value, 0-255.</param>
+    /// <param name="location">the <see cref="Point"/> struct that provides xy coordinates</param>
+    /// <param name="color">the <see cref="Color"/> struct filled with data</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -6990,7 +6854,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool WriteSurfacePixel(nint surface, Point location, Color color) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
@@ -7000,10 +6863,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
-    /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
-    /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
+    /// <param name="location">the <see cref="Point"/> struct that provides xy coordinates</param>
     /// <param name="r">the red channel value, 0-255.</param>
     /// <param name="g">the green channel value, 0-255.</param>
     /// <param name="b">the blue channel value, 0-255.</param>
@@ -7015,7 +6876,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool WriteSurfacePixel(nint surface, Point location, byte r, byte g, byte b, byte a) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixel: Surface pointer is null.");
@@ -7025,7 +6885,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
     /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
     /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
@@ -7040,7 +6899,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool WriteSurfacePixelFloat(nint surface, int x, int y, float r, float g, float b, float a) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixelFloat: Surface pointer is null.");
@@ -7054,14 +6912,9 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
-    /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
-    /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
-    /// <param name="r">the red channel value, normally in the range 0-1.</param>
-    /// <param name="g">the green channel value, normally in the range 0-1.</param>
-    /// <param name="b">the blue channel value, normally in the range 0-1.</param>
-    /// <param name="a">the alpha channel value, normally in the range 0-1.</param>
+    /// <param name="location">the <see cref="Point"/> struct that provides xy coordinates</param>
+    /// <param name="color">the <see cref="Color"/> struct filled with data</param>
     /// <remarks>
     /// This function prioritizes correctness over speed: it is suitable for unit
     /// tests, but is not intended for use in a game engine.
@@ -7069,21 +6922,18 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
-    public static bool WriteSurfacePixelFloat(nint window, Point location, FColor color) {
-        if (window == nint.Zero) {
+    public static bool WriteSurfacePixelFloat(nint surface, Point location, FColor color) {
+        if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixelFloat: Window pointer is null.");
             return false;
         }
-        return WriteSurfacePixelFloat(window, location.X, location.Y, color.R, color.G, color.B,
+        return WriteSurfacePixelFloat(surface, location.X, location.Y, color.R, color.G, color.B,
             color.A);
     }
 
     /// <summary>Writes a single pixel to a surface.</summary>
-
     /// <param name="surface">the surface to write.</param>
-    /// <param name="x">the horizontal coordinate, 0 &lt;= x &lt; width.</param>
-    /// <param name="y">the vertical coordinate, 0 &lt;= y &lt; height.</param>
+    /// <param name="location">the <see cref="Point"/> struct that provides xy coordinates</param>
     /// <param name="r">the red channel value, normally in the range 0-1.</param>
     /// <param name="g">the green channel value, normally in the range 0-1.</param>
     /// <param name="b">the blue channel value, normally in the range 0-1.</param>
@@ -7095,1152 +6945,933 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
-    public static bool WriteSurfacePixelFloat(nint window, Point location, float r, float g, float b, float a) {
-        if (window == nint.Zero) {
+    public static bool WriteSurfacePixelFloat(nint surface, Point location, float r, float g, float b, float a) {
+        if (surface == nint.Zero) {
             LogError(LogCategory.Error, "WriteSurfacePixelFloat: Window pointer is null.");
             return false;
         }
-        return WriteSurfacePixelFloat(window, location.X, location.Y, r, g, b, a);
+        return WriteSurfacePixelFloat(surface, location.X, location.Y, r, g, b, a);
     }
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_AddHintCallback(string name, SdlHintCallback callback, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_AddSurfaceAlternateImage(nint surface, nint image);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_BlitSurface(nint src, nint srcrect, nint dst, nint dstrect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_BlitSurface9Grid(nint src, nint srcrect, int leftWidth, int rightWidth,
         int topHeight, int bottomHeight, float scale, ScaleMode scaleMode, nint dst,
         nint dstrect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_BlitSurfaceScaled(nint src, nint srcrect, nint dst, nint dstrect,
         ScaleMode scaleMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_BlitSurfaceTiled(nint src, nint srcrect, nint dst, nint dstrect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_BlitSurfaceTiledWithScale(nint src, nint srcrect, float scale,
         ScaleMode scaleMode, nint dst, nint dstrect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_BlitSurfaceUnchecked(nint src, nint srcrect, nint dst,
             nint dstrect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_BlitSurfaceUncheckedScaled(nint src, nint srcrect, nint dst, nint dstrect,
         ScaleMode scaleMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_CleanupTLS();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClearClipboardData();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClearComposition(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClearError();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClearProperty(uint props, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ClearSurface(nint surface, float r, float g, float b, float a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_ComposeCustomBlendMode(BlendFactor srcColorFactor, BlendFactor dstColorFactor,
         BlendOperation colorOperation, BlendFactor srcAlphaFactor, BlendFactor dstAlphaFactor,
         BlendOperation alphaOperation);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ConvertPixels(int width, int height, PixelFormat srcFormat, nint src,
         int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ConvertPixelsAndColorspace(int width, int height, PixelFormat srcFormat,
         Colorspace srcColorspace, uint srcProperties, nint src, int srcPitch, PixelFormat dstFormat,
         Colorspace dstColorspace, uint dstProperties, nint dst, int dstPitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_ConvertSurface(nint surface, PixelFormat format);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_ConvertSurfaceAndColorspace(nint surface, PixelFormat format,
         nint palette, Colorspace colorspace, uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_CopyProperties(uint src, uint dst);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreatePalette(int ncolors);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreatePopupWindow(nint parent, int offsetX, int offsetY, int w, int h,
         WindowFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_CreateProperties();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateSurface(int width, int height, PixelFormat format);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateSurfaceFrom(int width, int height, PixelFormat format, nint pixels,
         int pitch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateSurfacePalette(nint surface);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateThreadRuntime(SdlThreadFunction fn, string name, nint data,
         nint pfnBeginThread, nint pfnEndThread);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateThreadWithPropertiesRuntime(uint props, nint pfnBeginThread,
         nint pfnEndThread);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateWindow(string title, int w, int h, WindowFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateWindowWithProperties(uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyPalette(nint palette);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyProperties(uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroySurface(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_DestroyWindowSurface(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DetachThread(nint thread);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_DisableScreenSaver();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_DuplicateSurface(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_EnableScreenSaver();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial int SDL_EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc AppInit,
-        SdlAppIterateFunc AppIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc AppQuit);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial int SDL_EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc appInit,
+        SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_EnumerateProperties(uint props, SdlEnumeratePropertiesCallback callback,
         nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool
         SDL_FillSurfaceRect(nint dst, nint rect, uint color);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_FillSurfaceRects(nint dst, Span<Rect> rects, int count, uint color);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_FlashWindow(nint window, FlashOperation operation);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_FlipSurface(nint surface, FlipMode flip);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_free(nint mem);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GDKSuspendComplete();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetAppMetadataProperty(string name);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetBooleanProperty(uint props, string name, SdlBool defaultValue);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetClipboardData(string mimeType, out nuint size);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetClipboardMimeTypes(out nuint numMimeTypes);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(CallerOwnedStringMarshaller))]
     private static partial string SDL_GetClipboardText();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetClosestFullscreenDisplayMode(uint displayId, int w, int h, float refreshRate,
         SdlBool includeHighDensityModes, out DisplayMode closest);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetCurrentDisplayMode(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial DisplayOrientation SDL_GetCurrentDisplayOrientation(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetCurrentThreadID();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetCurrentVideoDriver();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetDesktopDisplayMode(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetDisplayBounds(uint displayId, out Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float SDL_GetDisplayContentScale(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetDisplayForPoint(ref Point point);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetDisplayForRect(ref Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetDisplayForWindow(nint window);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetDisplayName(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetDisplayProperties(uint displayId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetDisplays(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetDisplayUsableBounds(uint displayId, out Rect rect);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetError();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float SDL_GetFloatProperty(uint props, string name, float defaultValue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetFullscreenDisplayModes(uint displayId, out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetGlobalProperties();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetGrabbedWindow();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetHint(string name);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetHintBoolean(string name, SdlBool defaultValue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetKeyboardFocus();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetKeyboardNameForID(uint instanceId);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetKeyboards(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetKeyboardState(out int numkeys);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetKeyFromName(string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetKeyFromScancode(Scancode scanCode, KeyMod modstate, SdlBool keyEvent);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetKeyName(uint key);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetMasksForPixelFormat(PixelFormat format, out int bpp, out uint rmask,
         out uint gmask, out uint bmask, out uint amask);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial KeyMod SDL_GetModState();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial DisplayOrientation SDL_GetNaturalDisplayOrientation(uint displayId);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial long SDL_GetNumberProperty(uint props, string name, long defaultValue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_GetNumVideoDrivers();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetPixelFormatDetails(PixelFormat format);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial PixelFormat SDL_GetPixelFormatForMasks(int bpp, uint rmask, uint gmask, uint bmask,
         uint amask);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetPixelFormatName(PixelFormat format);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetPointerProperty(uint props, string name, nint defaultValue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial PowerState SDL_GetPowerInfo(out int seconds, out int percent);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetPreferredLocales(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetPrimaryDisplay();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(CallerOwnedStringMarshaller))]
     private static partial string SDL_GetPrimarySelectionText();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial PropertyType SDL_GetPropertyType(uint props, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectAndLineIntersection(ref Rect rect, ref int x1, ref int y1, ref int x2,
         ref int y2);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectAndLineIntersectionFloat(ref FRect rect, ref float x1, ref float y1,
         ref float x2, ref float y2);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectEnclosingPoints(Span<Point> points, int count, ref Rect clip,
         out Rect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectEnclosingPointsFloat(Span<FPoint> points, int count, ref FRect clip,
         out FRect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectIntersection(ref Rect a, ref Rect b, out Rect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectIntersectionFloat(ref FRect a, ref FRect b, out FRect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectUnion(ref Rect a, ref Rect b, out Rect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetRectUnionFloat(ref FRect a, ref FRect b, out FRect result);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GetRGB(uint pixel, nint format, nint palette, out byte r, out byte g,
         out byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GetRGBA(uint pixel, nint format, nint palette, out byte r, out byte g,
         out byte b, out byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Scancode SDL_GetScancodeFromKey(uint key, nint modstate);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Scancode SDL_GetScancodeFromName(string name);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetScancodeName(Scancode scanCode);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetStringProperty(uint props, string name, string defaultValue);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSurfaceAlphaMod(nint surface, out byte alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSurfaceBlendMode(nint surface, nint blendMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSurfaceClipRect(nint surface, out Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSurfaceColorKey(nint surface, out uint key);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetSurfaceColorMod(nint surface, out byte r, out byte g, out byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Colorspace SDL_GetSurfaceColorspace(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetSurfaceImages(nint surface, out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetSurfacePalette(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetSurfaceProperties(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SystemTheme SDL_GetSystemTheme();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetTextInputArea(nint window, out Rect rect, out int cursor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial ulong SDL_GetThreadID(nint thread);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetThreadName(nint thread);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial ThreadState SDL_GetThreadState(nint thread);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SharpSDL3.Enums.ThreadState SDL_GetThreadState(nint thread);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetTLS(nint id);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetVideoDriver(int index);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowAspectRatio(nint window, out float minAspect, out float maxAspect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowBordersSize(nint window, out int top, out int left, out int bottom,
         out int right);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float SDL_GetWindowDisplayScale(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial WindowFlags SDL_GetWindowFlags(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowFromID(uint id);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowFullscreenMode(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowICCProfile(nint window, out nuint size);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetWindowID(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowKeyboardGrab(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowMaximumSize(nint window, out int w, out int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowMinimumSize(nint window, out int w, out int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowMouseGrab(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowMouseRect(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float SDL_GetWindowOpacity(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowParent(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float SDL_GetWindowPixelDensity(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial PixelFormat SDL_GetWindowPixelFormat(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowPosition(nint window, out int x, out int y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_GetWindowProperties(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindows(out int count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowSafeArea(nint window, out Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowSize(nint window, out int w, out int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowSizeInPixels(nint window, out int w, out int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetWindowSurface(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_GetWindowSurfaceVSync(nint window, out int vsync);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedStringMarshaller))]
     private static partial string SDL_GetWindowTitle(nint window);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_GUIDToString(SdlGuid guid, string pszGuid, int cbGuid);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasClipboardData(string mimeType);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasClipboardText();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasKeyboard();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasPrimarySelectionText();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasProperty(uint props, string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasRectIntersection(ref Rect a, ref Rect b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasRectIntersectionFloat(ref FRect a, ref FRect b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HasScreenKeyboardSupport();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_HideWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_Init(InitFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_InitSubSystem(InitFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_IsMainThread();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_LoadBMP(string file);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_LoadBMP_IO(nint src, SdlBool closeio);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_LoadFunction(nint handle, string name);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_LoadObject(string sofile);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_LockProperties(uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_LockSurface(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_malloc(nuint size);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_MapRGB(nint format, nint palette, byte r, byte g, byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_MapRGBA(nint format, nint palette, byte r, byte g, byte b, byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_MapSurfaceRGB(nint surface, byte r, byte g, byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint SDL_MapSurfaceRGBA(nint surface, byte r, byte g, byte b, byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_MaximizeWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_MinimizeWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_OutOfMemory();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_PremultiplyAlpha(int width, int height, PixelFormat srcFormat, nint src,
             int srcPitch, PixelFormat dstFormat, nint dst, int dstPitch, SdlBool linear);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_PremultiplySurfaceAlpha(nint surface, SdlBool linear);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_Quit();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_QuitSubSystem(InitFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RaiseWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReadSurfacePixel(nint surface, int x, int y, out byte r, out byte g, out byte b,
         out byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ReadSurfacePixelFloat(nint surface, int x, int y, out float r, out float g,
         out float b, out float a);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_RemoveHintCallback(string name, SdlHintCallback callback, nint userdata);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_RemoveSurfaceAlternateImages(nint surface);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ResetHint(string name);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ResetHints();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_ResetKeyboard();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RestoreWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int SDL_RunApp(int argc, nint argv, SdlMainFunc mainFunction, nint reserved);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_RunOnMainThread(SdlMainThreadCallback callback, nint userdata,
             SdlBool waitComplete);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SaveBMP(nint surface, string file);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SaveBMP_IO(nint surface, nint dst, SdlBool closeio);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_ScaleSurface(nint surface, int width, int height, ScaleMode scaleMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ScreenKeyboardShown(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ScreenSaverEnabled();
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetAppMetadata(string appname, string appversion, string appidentifier);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetAppMetadataProperty(string name, string value);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetBooleanProperty(uint props, string name, SdlBool value);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetClipboardData(SdlClipboardDataCallback callback,
             SdlClipboardCleanupCallback cleanup, nint userdata, nint mimeTypes, nuint numMimeTypes);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetClipboardText(string text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool SDL_SetCurrentThreadPriority(ThreadPriority priority);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool SDL_SetCurrentThreadPriority(SharpSDL3.Enums.ThreadPriority priority);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetError(string fmt);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetFloatProperty(uint props, string name, float value);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetHint(string name, string value);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetHintWithPriority(string name, string value, HintPriority priority);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetMainReady();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetModState(KeyMod modstate);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetNumberProperty(uint props, string name, long value);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetPaletteColors(nint palette, Span<Color> colors, int firstcolor,
         int ncolors);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetPointerProperty(uint props, string name, nint value);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetPointerPropertyWithCleanup(uint props, string name, nint value,
         SdlCleanupPropertyCallback cleanup, nint userdata);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetPrimarySelectionText(string text);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetScancodeName(Scancode scanCode, string name);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetStringProperty(uint props, string name, string value);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceAlphaMod(nint surface, byte alpha);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceBlendMode(nint surface, uint blendMode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceClipRect(nint surface, ref Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceColorKey(nint surface, SdlBool enabled, uint key);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceColorMod(nint surface, byte r, byte g, byte b);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceColorspace(nint surface, Colorspace colorspace);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfacePalette(nint surface, nint palette);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetSurfaceRLE(nint surface, SdlBool enabled);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetTextInputArea(nint window, ref Rect rect, int cursor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetTLS(nint id, nint value, SdlTlsDestructorCallback destructor);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowAlwaysOnTop(nint window, SdlBool onTop);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowAspectRatio(nint window, float minAspect, float maxAspect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowBordered(nint window, SdlBool bordered);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowFocusable(nint window, SdlBool focusable);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowFullscreen(nint window, SdlBool fullscreen);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowFullscreenMode(nint window, ref DisplayMode mode);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowHitTest(nint window, SdlHitTest callback, nint callbackData);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowIcon(nint window, nint icon);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowKeyboardGrab(nint window, SdlBool grabbed);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowMaximumSize(nint window, int maxW, int maxH);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowMinimumSize(nint window, int minW, int minH);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowModal(nint window, SdlBool modal);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowMouseGrab(nint window, SdlBool grabbed);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowMouseRect(nint window, ref Rect rect);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowOpacity(nint window, float opacity);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowParent(nint window, nint parent);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowPosition(nint window, int x, int y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowResizable(nint window, SdlBool resizable);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowShape(nint window, nint shape);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowSize(nint window, int w, int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowSurfaceVSync(nint window, int vsync);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SetWindowTitle(nint window, string title);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowWindowSystemMenu(nint window, int x, int y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_StartTextInput(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_StartTextInputWithProperties(nint window, uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_StopTextInput(nint window);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlGuid SDL_StringToGUID(string pchGuid);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SurfaceHasAlternateImages(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SurfaceHasColorKey(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SurfaceHasRLE(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_SyncWindow(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_TextInputActive(nint window);
 
     // /usr/local/include/SDL3/SDL_loadso.h
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnloadObject(nint handle);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockProperties(uint props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockSurface(nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_UpdateWindowSurface(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_UpdateWindowSurfaceRects(nint window, Span<Rect> rects, int numrects);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_WaitThread(nint thread, nint status);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial InitFlags SDL_WasInit(InitFlags flags);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WindowHasSurface(nint window);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WriteSurfacePixel(nint surface, int x, int y, byte r, byte g, byte b, byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WriteSurfacePixelFloat(nint surface, int x, int y, float r, float g, float b,
         float a);
 }

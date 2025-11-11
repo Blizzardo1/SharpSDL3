@@ -39,7 +39,7 @@ public static partial class Sdl {
     /// <returns>(SDL_Condition *) Returns a new condition variable or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateCondition() {
-        var cond = SDL_CreateCondition();
+        nint cond = SDL_CreateCondition();
         if (cond == nint.Zero) {
             throw new InvalidOperationException($"Failed to create condition variable: {GetError()}");
         }
@@ -58,7 +58,7 @@ public static partial class Sdl {
     /// <returns>(SDL_Mutex *) Returns the initialized and unlocked mutex or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateMutex() {
-        var mutex = SDL_CreateMutex();
+        nint mutex = SDL_CreateMutex();
         if (mutex == nint.Zero) {
             throw new InvalidOperationException($"Failed to create mutex: {GetError()}");
         }
@@ -75,17 +75,17 @@ public static partial class Sdl {
     /// change it, and when it has to be changed, the rwlock will serve as a
     /// gateway to make sure those changes can be made safely.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyRWLock"/>
-    /// <seealso cref="LockRWLockForReading"/>
-    /// <seealso cref="LockRWLockForWriting"/>
-    /// <seealso cref="TryLockRWLockForReading"/>
-    /// <seealso cref="TryLockRWLockForWriting"/>
-    /// <seealso cref="UnlockRWLock"/>
+    /// <seealso cref="DestroyRwLock"/>
+    /// <seealso cref="LockRwLockForReading"/>
+    /// <seealso cref="LockRwLockForWriting"/>
+    /// <seealso cref="TryLockRwLockForReading"/>
+    /// <seealso cref="TryLockRwLockForWriting"/>
+    /// <seealso cref="UnlockRwLock"/>
     /// </remarks>
     /// <returns>(SDL_RWLock *) Returns the initialized and unlockedread/write lock or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static nint CreateRWLock() {
-        var rwlock = SDL_CreateRWLock();
+    public static nint CreateRwLock() {
+        nint rwlock = SDL_CreateRWLock();
         if (rwlock == nint.Zero) {
             throw new InvalidOperationException($"Failed to create RW lock: {GetError()}");
         }
@@ -137,10 +137,10 @@ public static partial class Sdl {
     /// is not safe to attempt to destroy a locked rwlock, and may result in
     /// undefined behavior depending on the platform.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRWLock"/>
+    /// <seealso cref="CreateRwLock"/>
     /// </remarks>
 
-    public static void DestroyRWLock(nint rwlock) {
+    public static void DestroyRwLock(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -177,12 +177,12 @@ public static partial class Sdl {
     /// at a time, and no other threads, read-only or not, may hold the lock at the
     /// same time.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRWLockForWriting"/>
-    /// <seealso cref="TryLockRWLockForReading"/>
-    /// <seealso cref="UnlockRWLock"/>
+    /// <seealso cref="LockRwLockForWriting"/>
+    /// <seealso cref="TryLockRwLockForReading"/>
+    /// <seealso cref="UnlockRwLock"/>
     /// </remarks>
 
-    public static void LockRWLockForReading(nint rwlock) {
+    public static void LockRwLockForReading(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -199,12 +199,12 @@ public static partial class Sdl {
     /// also want to write or only want read-only access, must wait until the
     /// writer thread has released the lock.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRWLockForReading"/>
-    /// <seealso cref="TryLockRWLockForWriting"/>
-    /// <seealso cref="UnlockRWLock"/>
+    /// <seealso cref="LockRwLockForReading"/>
+    /// <seealso cref="TryLockRwLockForWriting"/>
+    /// <seealso cref="UnlockRwLock"/>
     /// </remarks>
 
-    public static void LockRWLockForWriting(nint rwlock) {
+    public static void LockRwLockForWriting(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -342,13 +342,13 @@ public static partial class Sdl {
     /// SDL_LockRWLockForReading(), but if the rwlock
     /// is not available, then this function returns <see langword="false" /> immediately.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRWLockForReading"/>
-    /// <seealso cref="TryLockRWLockForWriting"/>
-    /// <seealso cref="UnlockRWLock"/>
+    /// <seealso cref="LockRwLockForReading"/>
+    /// <seealso cref="TryLockRwLockForWriting"/>
+    /// <seealso cref="UnlockRwLock"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
 
-    public static SdlBool TryLockRWLockForReading(nint rwlock) {
+    public static SdlBool TryLockRwLockForReading(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -363,13 +363,13 @@ public static partial class Sdl {
     /// SDL_LockRWLockForWriting(), but if the rwlock
     /// is not available, then this function returns <see langword="false" /> immediately.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRWLockForWriting"/>
-    /// <seealso cref="TryLockRWLockForReading"/>
-    /// <seealso cref="UnlockRWLock"/>
+    /// <seealso cref="LockRwLockForWriting"/>
+    /// <seealso cref="TryLockRwLockForReading"/>
+    /// <seealso cref="UnlockRwLock"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
 
-    public static SdlBool TryLockRWLockForWriting(nint rwlock) {
+    public static SdlBool TryLockRwLockForWriting(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -402,13 +402,13 @@ public static partial class Sdl {
     /// Use this function to unlock the rwlock, whether it was locked for read-only
     /// or write operations.
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRWLockForReading"/>
-    /// <seealso cref="LockRWLockForWriting"/>
-    /// <seealso cref="TryLockRWLockForReading"/>
-    /// <seealso cref="TryLockRWLockForWriting"/>
+    /// <seealso cref="LockRwLockForReading"/>
+    /// <seealso cref="LockRwLockForWriting"/>
+    /// <seealso cref="TryLockRwLockForReading"/>
+    /// <seealso cref="TryLockRwLockForWriting"/>
     /// </remarks>
 
-    public static void UnlockRWLock(nint rwlock) {
+    public static void UnlockRwLock(nint rwlock) {
         if (rwlock == nint.Zero) {
             throw new ArgumentNullException(nameof(rwlock), "RW lock cannot be null.");
         }
@@ -478,10 +478,10 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(timeoutMs), "Timeout must be non-negative.");
         }
 
-        var result = SDL_WaitConditionTimeout(cond, mutex, timeoutMs);
+        SdlBool result = SDL_WaitConditionTimeout(cond, mutex, timeoutMs);
 
         if (!result) {
-            var error = GetError();
+            string error = GetError();
             if (!string.IsNullOrEmpty(error)) {
                 throw new InvalidOperationException($"WaitConditionTimeout failed: {error}");
             }
@@ -490,87 +490,66 @@ public static partial class Sdl {
         return result;
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_BroadcastCondition(nint cond);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateCondition();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateMutex();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_CreateRWLock();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyCondition(nint cond);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyMutex(nint mutex);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_DestroyRWLock(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_LockMutex(nint mutex);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_LockRWLockForReading(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_LockRWLockForWriting(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SetInitialized(ref InitState state, SdlBool initialized);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShouldInit(ref InitState state);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShouldQuit(ref InitState state);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_SignalCondition(nint cond);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_TryLockMutex(nint mutex);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_TryLockRWLockForReading(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_TryLockRWLockForWriting(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockMutex(nint mutex);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_UnlockRWLock(nint rwlock);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void SDL_WaitCondition(nint cond, nint mutex);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_WaitConditionTimeout(nint cond, nint mutex, int timeoutMs);
 }

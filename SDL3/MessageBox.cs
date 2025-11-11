@@ -16,7 +16,7 @@ public static partial class Sdl {
 
         LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi(messageboxdata.Title)}");
         // Call the native method
-        var result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
+        SdlBool result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
 
         // Check the result and handle errors
         if (!result) {
@@ -95,20 +95,20 @@ public static partial class Sdl {
         object[] yes = ["Yes", MessageBoxResult.Yes, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] no = ["No", MessageBoxResult.No, MessageBoxDefaultButton.EscapeKeyDefault];
         object[] cancel = ["Cancel", MessageBoxResult.Cancel, MessageBoxDefaultButton.EscapeKeyDefault];
-        object[] ok = ["Ok", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] ok = ["Ok", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] retry = ["Retry", MessageBoxResult.Retry, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] ignore = ["Ignore", MessageBoxResult.Ignore, MessageBoxDefaultButton.EscapeKeyDefault];
         object[] abort = ["Abort", MessageBoxResult.Abort, MessageBoxDefaultButton.EscapeKeyDefault];
         object[] tryAgain = ["Try Again", MessageBoxResult.TryAgain, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] continueButton = ["Continue", MessageBoxResult.Continue, MessageBoxDefaultButton.ReturnKeyDefault];
         object[] ignoreAll = ["Ignore All", MessageBoxResult.Ignore, MessageBoxDefaultButton.EscapeKeyDefault];
-        object[] noToAll = ["No To All", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
-        object[] yesToAll = ["Yes To All", MessageBoxResult.OK];
-        object[] help = ["Help", MessageBoxResult.OK];
-        object[] close = ["Close", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
-        object[] apply = ["Apply", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
-        object[] save = ["Save", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
-        object[] reset = ["Reset", MessageBoxResult.OK, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] noToAll = ["No To All", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] yesToAll = ["Yes To All", MessageBoxResult.Ok];
+        object[] help = ["Help", MessageBoxResult.Ok];
+        object[] close = ["Close", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] apply = ["Apply", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] save = ["Save", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
+        object[] reset = ["Reset", MessageBoxResult.Ok, MessageBoxDefaultButton.ReturnKeyDefault];
 
         // With the following corrected code:
         object[][] buttonData = buttons switch {
@@ -154,7 +154,7 @@ public static partial class Sdl {
         };
 
         try {
-            var result = ShowMessageBox(ref messageboxdata, out int buttonid);
+            bool result = ShowMessageBox(ref messageboxdata, out int buttonid);
 
             if (!result) {
                 throw new InvalidOperationException("Failed to display the message box.");
@@ -163,7 +163,7 @@ public static partial class Sdl {
             return (MessageBoxResult)buttonid;
         } finally {
             // Ensure all unmanaged resources are freed
-            foreach (var button in buttonDataArray) {
+            foreach (MessageBoxButtonData button in buttonDataArray) {
                 Marshal.FreeHGlobal(button.Text);
             }
 
@@ -191,7 +191,7 @@ public static partial class Sdl {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
 
-        var result = SDL_ShowSimpleMessageBox(flags, title, message, window);
+        SdlBool result = SDL_ShowSimpleMessageBox(flags, title, message, window);
 
         if (!result) {
             throw new InvalidOperationException("Failed to display the simple message box.");
@@ -199,12 +199,11 @@ public static partial class Sdl {
         return result;
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowMessageBox(ref MessageBoxData messageboxdata, out int buttonid);
 
-    [LibraryImport(NativeLibName, StringMarshalling = marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool SDL_ShowSimpleMessageBox(MessageBoxFlags flags, string title, string message,
         nint window);
 }

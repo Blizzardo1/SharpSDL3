@@ -15,22 +15,22 @@ public static unsafe partial class Ttf {
     public const int Major = 3;
     public const int Micro = 2;
     public const int Minor = 2;
-    public const string TTF_PROP_FONT_CREATE_EXISTING_FONT = "ttf.font.create.existing_font";
-    public const string TTF_PROP_FONT_CREATE_FACE_NUMBER = "ttf.font.create.face";
-    public const string TTF_PROP_FONT_CREATE_FILENAME_STRING = "ttf.font.create.filename";
-    public const string TTF_PROP_FONT_CREATE_HORIZONTAL_DPI_NUMBER = "ttf.font.create.hdpi";
-    public const string TTF_PROP_FONT_CREATE_IOSTREAM_AUTOCLOSE_BOOLEAN = "ttf.font.create.iostream.autoclose";
-    public const string TTF_PROP_FONT_CREATE_IOSTREAM_OFFSET_NUMBER = "ttf.font.create.iostream.offset";
-    public const string TTF_PROP_FONT_CREATE_IOSTREAM_POINTER = "ttf.font.create.iostream";
-    public const string TTF_PROP_FONT_CREATE_SIZE_FLOAT = "ttf.font.create.size";
-    public const string TTF_PROP_FONT_CREATE_VERTICAL_DPI_NUMBER = "ttf.font.create.vdpi";
-    public const string TTF_PROP_FONT_OUTLINE_LINE_CAP_NUMBER = "ttf.font.outline.line_cap";
-    public const string TTF_PROP_FONT_OUTLINE_LINE_JOIN_NUMBER = "ttf.font.outline.line_join";
-    public const string TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER = "ttf.font.outline.miter_limit";
-    public const string TTF_PROP_GPU_TEXT_ENGINE_ATLAS_TEXTURE_SIZE = "ttf.gpu_text_engine.create.atlas_texture_size";
-    public const string TTF_PROP_GPU_TEXT_ENGINE_DEVICE = "ttf.gpu_text_engine.create.device";
-    public const string TTF_PROP_RENDERER_TEXT_ENGINE_ATLAS_TEXTURE_SIZE = "ttf.renderer_text_engine.create.atlas_texture_size";
-    public const string TTF_PROP_RENDERER_TEXT_ENGINE_RENDERER = "ttf.renderer_text_engine.create.renderer";
+    public const string TtfPropFontCreateExistingFont = "ttf.font.create.existing_font";
+    public const string TtfPropFontCreateFaceNumber = "ttf.font.create.face";
+    public const string TtfPropFontCreateFilenameString = "ttf.font.create.filename";
+    public const string TtfPropFontCreateHorizontalDpiNumber = "ttf.font.create.hdpi";
+    public const string TtfPropFontCreateIoStreamAutocloseBoolean = "ttf.font.create.iostream.autoclose";
+    public const string TtfPropFontCreateIoStreamOffsetNumber = "ttf.font.create.iostream.offset";
+    public const string TtfPropFontCreateIoStreamPointer = "ttf.font.create.iostream";
+    public const string TtfPropFontCreateSizeFloat = "ttf.font.create.size";
+    public const string TtfPropFontCreateVerticalDpiNumber = "ttf.font.create.vdpi";
+    public const string TtfPropFontOutlineLineCapNumber = "ttf.font.outline.line_cap";
+    public const string TtfPropFontOutlineLineJoinNumber = "ttf.font.outline.line_join";
+    public const string TtfPropFontOutlineMiterLimitNumber = "ttf.font.outline.miter_limit";
+    public const string TtfPropGpuTextEngineAtlasTextureSize = "ttf.gpu_text_engine.create.atlas_texture_size";
+    public const string TtfPropGpuTextEngineDevice = "ttf.gpu_text_engine.create.device";
+    public const string TtfPropRendererTextEngineAtlasTextureSize = "ttf.renderer_text_engine.create.atlas_texture_size";
+    public const string TtfPropRendererTextEngineRenderer = "ttf.renderer_text_engine.create.renderer";
     private const int MaxUnicodeCodePoint = 0x10FFFF;
     private const string NativeLibName = "SDL3_ttf";
 
@@ -125,7 +125,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Thread Safety:</strong> This function should not be called while any other thread is using thefont.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="OpenFont"/>
-    /// <seealso cref="OpenFontIO"/>
+    /// <seealso cref="OpenFontIo"/>
     /// </remarks>
 
     public static void CloseFont(Font font) {
@@ -153,13 +153,13 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the device.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGPUTextEngineWithProperties"/>
-    /// <seealso cref="DestroyGPUTextEngine"/>
-    /// <seealso cref="GetGPUTextDrawData"/>
+    /// <seealso cref="CreateGpuTextEngineWithProperties"/>
+    /// <seealso cref="DestroyGpuTextEngine"/>
+    /// <seealso cref="GetGpuTextDrawData"/>
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static TextEngine CreateGPUTextEngine(nint device) {
+    public static TextEngine CreateGpuTextEngine(nint device) {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
@@ -179,13 +179,13 @@ public static unsafe partial class Ttf {
     /// These are the supported properties:
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the device.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGPUTextEngine"/>
-    /// <seealso cref="DestroyGPUTextEngine"/>
-    /// <seealso cref="GetGPUTextDrawData"/>
+    /// <seealso cref="CreateGpuTextEngine"/>
+    /// <seealso cref="DestroyGpuTextEngine"/>
+    /// <seealso cref="GetGpuTextDrawData"/>
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static nint CreateGPUTextEngineWithProperties(int props) {
+    public static nint CreateGpuTextEngineWithProperties(int props) {
         if (props == 0) {
             throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
         }
@@ -205,7 +205,7 @@ public static unsafe partial class Ttf {
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static unsafe TextEngine CreateRendererTextEngine(nint renderer) {
-        if (renderer == IntPtr.Zero) {
+        if (renderer == nint.Zero) {
             throw new ArgumentNullException(nameof(renderer), "Renderer cannot be null.");
         }
         nint tePtr = TTF_CreateRendererTextEngine(renderer);
@@ -282,8 +282,6 @@ public static unsafe partial class Ttf {
             throw new InvalidOperationException($"Failed to create text. SDL Error: {Sdl.GetError()}");
         }
         
-        //Text textObj = *(Text*)tPtr;
-        
         Text textObj = default;
         Unsafe.Copy(ref textObj, (void*)tPtr);
 
@@ -338,10 +336,10 @@ public static unsafe partial class Ttf {
     /// function.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGPUTextEngine"/>
+    /// <seealso cref="CreateGpuTextEngine"/>
     /// </remarks>
 
-    public static void DestroyGPUTextEngine(nint engine) {
+    public static void DestroyGpuTextEngine(nint engine) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
         }
@@ -516,7 +514,7 @@ public static unsafe partial class Ttf {
         return TTF_GetFontDirection(font.Handle);
     }
 
-    public static bool GetFontDPI(Font font, out int hdpi, out int vdpi) {
+    public static bool GetFontDpi(Font font, out int hdpi, out int vdpi) {
         nint pHdpi = Sdl.Malloc(4);
         nint pVdpi = Sdl.Malloc(4);
 
@@ -547,12 +545,12 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontSizeDPI"/>
+    /// <seealso cref="SetFontSizeDpi"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static Size GetFontDPI(Font font) {
-        if (GetFontDPI(font, out int hdpi, out int vdpi)) {
+    public static Size GetFontDpi(Font font) {
+        if (GetFontDpi(font, out int hdpi, out int vdpi)) {
             return new Size(hdpi, vdpi);
         }
 
@@ -716,10 +714,10 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontSDF"/>
+    /// <seealso cref="SetFontSdf"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if enabled, <see langword="false" /> otherwise.</returns>
-    public static bool GetFontSDF(Font font) {
+    public static bool GetFontSdf(Font font) {
         bool result = TTF_GetFontSDF(font.Handle);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font SDF. SDL Error: {Sdl.GetError()}");
@@ -733,7 +731,7 @@ public static unsafe partial class Ttf {
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="SetFontSize"/>
-    /// <seealso cref="SetFontSizeDPI"/>
+    /// <seealso cref="SetFontSizeDpi"/>
     /// </remarks>
     /// <returns>Returns the size of the font, or 0.0f on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
     public static float GetFontSize(Font font) {
@@ -844,11 +842,11 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static nint GetGlyphImage(Font font, int ch, ImageType image_type) {
-        if (!Enum.IsDefined(image_type)) {
-            throw new ArgumentOutOfRangeException(nameof(image_type), "Invalid image type value.");
+    public static nint GetGlyphImage(Font font, int ch, ImageType imageType) {
+        if (!Enum.IsDefined(imageType)) {
+            throw new ArgumentOutOfRangeException(nameof(imageType), "Invalid image type value.");
         }
-        return TTF_GetGlyphImage(font.Handle, ch, image_type);
+        return TTF_GetGlyphImage(font.Handle, ch, imageType);
     }
 
     /// <summary>Get the pixel image for a character index.</summary>
@@ -864,11 +862,11 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static nint GetGlyphImageForIndex(Font font, int glyph_index, ImageType image_type) {
-        if (!Enum.IsDefined(image_type)) {
-            throw new ArgumentOutOfRangeException(nameof(image_type), "Invalid image type value.");
+    public static nint GetGlyphImageForIndex(Font font, int glyphIndex, ImageType imageType) {
+        if (!Enum.IsDefined(imageType)) {
+            throw new ArgumentOutOfRangeException(nameof(imageType), "Invalid image type value.");
         }
-        return TTF_GetGlyphImageForIndex(font.Handle, glyph_index, image_type);
+        return TTF_GetGlyphImageForIndex(font.Handle, glyphIndex, imageType);
     }
 
     /// <summary>Query the kerning size between the glyphs of two UNICODE codepoints.</summary>
@@ -883,10 +881,10 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static bool GetGlyphKerning(Font font, int previous_ch, int ch, int kerning) {
-        bool result = TTF_GetGlyphKerning(font.Handle, previous_ch, ch, kerning);
+    public static bool GetGlyphKerning(Font font, int previousCh, int ch, int kerning) {
+        bool result = TTF_GetGlyphKerning(font.Handle, previousCh, ch, kerning);
         if (!result) {
-            Sdl.LogError(LogCategory.Error, $"Failed to get glyph kerning for characters {previous_ch} and {ch}. SDL Error: {Sdl.GetError()}");
+            Sdl.LogError(LogCategory.Error, $"Failed to get glyph kerning for characters {previousCh} and {ch}. SDL Error: {Sdl.GetError()}");
         }
         return result;
     }
@@ -926,7 +924,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns anISO 15924 codeon success, or 0 on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static int GetGlyphScript(int ch) {
-        if (ch < 0 || ch > MaxUnicodeCodePoint) {
+        if (ch is < 0 or > MaxUnicodeCodePoint) {
             throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
         }
 
@@ -947,12 +945,12 @@ public static unsafe partial class Ttf {
     /// TTF_CreateGPUTextEngine().
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGPUTextEngine"/>
+    /// <seealso cref="CreateGpuTextEngine"/>
     /// <seealso cref="CreateText"/>
     /// </remarks>
     /// <returns>(TTF_GPUAtlasDrawSequence *) Returns a <see langword="null" />terminated linked list ofTTF_GPUAtlasDrawSequence objects or <see langword="null" /> if thepassed text is empty or in case of failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static nint GetGPUTextDrawData(nint text) {
+    public static nint GetGpuTextDrawData(nint text) {
         if (text == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
@@ -965,11 +963,11 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetGPUTextEngineWinding"/>
+    /// <seealso cref="SetGpuTextEngineWinding"/>
     /// </remarks>
     /// <returns>Returns the windingorder used by the GPU text engine orTTF_GPU_TEXTENGINE_WINDING_INVALID incase of error.</returns>
 
-    public static GPUTextEngineWinding GetGPUTextEngineWinding(nint engine) {
+    public static GpuTextEngineWinding GetGpuTextEngineWinding(nint engine) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
         }
@@ -1186,8 +1184,8 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static bool GetStringSizeWrapped(Font font, string text, ulong length, int wrap_width, int w, int h) {
-        bool result = TTF_GetStringSizeWrapped(font.Handle, text, length, wrap_width, w, h);
+    public static bool GetStringSizeWrapped(Font font, string text, ulong length, int wrapWidth, int w, int h) {
+        bool result = TTF_GetStringSizeWrapped(font.Handle, text, length, wrapWidth, w, h);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to get wrapped string size for text '{text}'. SDL Error: {Sdl.GetError()}");
         }
@@ -1210,8 +1208,8 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static bool GetStringSizeWrapped(Font font, string text, ulong length, int wrap_width, Size size) {
-        return GetStringSizeWrapped(font, text, length, wrap_width, size.Width, size.Height);
+    public static bool GetStringSizeWrapped(Font font, string text, ulong length, int wrapWidth, Size size) {
+        return GetStringSizeWrapped(font, text, length, wrapWidth, size.Width, size.Height);
     }
 
     public static bool GetTextColor(Text text, out byte r, out byte g, out byte b, out byte a) {
@@ -1371,7 +1369,9 @@ public static unsafe partial class Ttf {
         if (fPtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to get text font. SDL Error: {Sdl.GetError()}");
         }
+#pragma warning disable CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
         Font font = *(Font*)fPtr;
+#pragma warning restore CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
         font.Handle = fPtr;
         return font;
     }
@@ -1693,17 +1693,15 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get whether wrapping is enabled on a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to query.</param>
-    /// <param name="wrap_width">a pointer filled in with the maximum width in pixels or 0 if the text is being wrapped on newline characters.</param>
+    /// <param name="wrapWidth">a pointer filled in with the maximum width in pixels or 0 if the text is being wrapped on newline characters.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="SetTextWrapWidth"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
-    public static bool GetTextWrapWidth(Text text, out int wrap_width) {
+    public static bool GetTextWrapWidth(Text text, out int wrapWidth) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
@@ -1712,7 +1710,7 @@ public static unsafe partial class Ttf {
 
         bool result = TTF_GetTextWrapWidth(text.Handle, pWrapWidth);
 
-        wrap_width = Marshal.ReadInt32(pWrapWidth);
+        wrapWidth = Marshal.ReadInt32(pWrapWidth);
 
         Sdl.Free(pWrapWidth);
 
@@ -1722,46 +1720,39 @@ public static unsafe partial class Ttf {
     public static bool Init() => TTF_Init();
 
     /// <summary>Insert UTF-8 text into a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="offset">the offset, in bytes, from the beginning of the string if &gt;= 0, the offset from the end of the string if &lt; 0. Note that this does not do UTF-8 validation, so you should only insert at UTF-8 sequence boundaries.</param>
-    /// <param name="string">the UTF-8 text to insert.</param>
+    /// <param name="str">the UTF-8 text to insert.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString"/>
+    /// <seealso cref="AppendTextString(Text, string)"/>
     /// <seealso cref="DeleteTextString"/>
     /// <seealso cref="SetTextString"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool InsertTextString(Text text, int offset, string str, ulong length) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_InsertTextString(text.Handle, offset, str, length);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_InsertTextString(text.Handle, offset, str, length);
     }
 
     /// <summary>Insert UTF-8 text into a text object.</summary>
 
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="offset">the offset, in bytes, from the beginning of the string if &gt;= 0, the offset from the end of the string if &lt; 0. Note that this does not do UTF-8 validation, so you should only insert at UTF-8 sequence boundaries.</param>
-    /// <param name="string">the UTF-8 text to insert.</param>
-    /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
+    /// <param name="str">the UTF-8 text to insert.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString"/>
+    /// <seealso cref="AppendTextString(Text, string)"/>
     /// <seealso cref="DeleteTextString"/>
     /// <seealso cref="SetTextString"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static bool InsertTextString(Text text, int offset, string str) {
         return InsertTextString(text, offset, str, (ulong)str.Length);
     }
@@ -1786,9 +1777,9 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
-    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
+    /// <param name="maxWidth">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="measuredWidth">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measuredLength">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1796,24 +1787,24 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool MeasureString(Font font, string text, nuint length, int max_width, out int measured_width, out int measured_length) {
+    public static bool MeasureString(Font font, string text, nuint length, int maxWidth, out int measuredWidth, out int measuredLength) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        bool result = TTF_MeasureString(font.Handle, text, length, max_width, out int mW, out nuint mL);
+        bool result = TTF_MeasureString(font.Handle, text, length, maxWidth, out int mW, out nuint mL);
 
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
         }
-        measured_width = mW;
-        measured_length = (int)mL;
+        measuredWidth = mW;
+        measuredLength = (int)mL;
         return result;
     }
 
     /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
     /// <param name="font">the font to query.</param>
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
-    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <param name="measured_width">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
-    /// <param name="measured_length">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
+    /// <param name="maxWidth">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="measuredWidth">a pointer filled in with the width, in pixels, of the string that will fit, may be discarded.</param>
+    /// <param name="measuredLength">a pointer filled in with the length, in bytes, of the string that will fit, may be discarded.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1821,23 +1812,41 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
-    public static bool MeasureString(Font font, string text, int max_width, out int measured_width, out int measured_length) {
+    public static bool MeasureString(Font font, string text, int maxWidth, out int measuredWidth, out int measuredLength) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        bool result = MeasureString(font, text, (nuint)text.Length, max_width, out int mW, out int mL);
+        bool result = MeasureString(font, text, (nuint)text.Length, maxWidth, out int mW, out int mL);
 
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
         }
-        measured_width = mW;
-        measured_length = (int)mL;
+        measuredWidth = mW;
+        measuredLength = mL;
         return result;
     }
 
     /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
     /// <param name="font">the font to query.</param>
     /// <param name="text">text to calculate, in UTF-8 encoding.</param>
-    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="maxWidth">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
+    /// <param name="measuredSize">the measured size, both width and height.</param>
+    /// <remarks>
+    /// This reports the number of characters that can be rendered before reaching maxWidth.
+    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+
+    public static bool MeasureString(Font font, string text, int maxWidth, out Size measuredSize) {
+        bool result = MeasureString(font, text, maxWidth, out int mW, out int mL);
+
+        measuredSize = new Size(mW, mL);
+        return result;
+    }
+
+    /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
+    /// <param name="font">the font to query.</param>
+    /// <param name="text">text to calculate, in UTF-8 encoding.</param>
+    /// <param name="maxWidth">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
@@ -1845,29 +1854,8 @@ public static unsafe partial class Ttf {
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
-    public static bool MeasureString(Font font, string text, int max_width, out Size measuredSize) {
-        bool result = MeasureString(font, text, max_width, out int mW, out int mL);
-
-        measuredSize = new(mW, mL);
-        return result;
-    }
-
-    /// <summary>Calculate how much of a UTF-8 string will fit in a given width.</summary>
-
-    /// <param name="font">the font to query.</param>
-    /// <param name="text">text to calculate, in UTF-8 encoding.</param>
-    /// <param name="max_width">maximum width, in pixels, available for the string, or 0 for unbounded width.</param>
-    /// <remarks>
-    /// This reports the number of characters that can be rendered before reaching
-    /// max_width.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
-    public static Size MeasureString(Font font, string text, int max_width) {
-        MeasureString(font, text, max_width, out Size measuredSize);
+    public static Size MeasureString(Font font, string text, int maxWidth) {
+        MeasureString(font, text, maxWidth, out Size measuredSize);
         return measuredSize;
     }
 
@@ -1901,7 +1889,7 @@ public static unsafe partial class Ttf {
     /// <summary>Create a font from a file, using a specified point size.</summary>
 
     /// <param name="file">path to font file.</param>
-    /// <param name="ptsize">point size to use for the newly-opened font.</param>
+    /// <param name="ptSize">point size to use for the newly-opened font.</param>
     /// <remarks>
     /// Some .fon fonts will have several sizes embedded in the file, so the point
     /// size becomes the index of choosing which size. If the value is too high,
@@ -1912,7 +1900,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
-    public static Font OpenFont(string file, float ptsize) {
+    public static Font OpenFont(string file, float ptSize) {
         if (string.IsNullOrEmpty(file)) {
             throw new ArgumentException("Font file path cannot be null or empty.", nameof(file));
         }
@@ -1921,21 +1909,20 @@ public static unsafe partial class Ttf {
             throw new FileNotFoundException($"Font file not found: {file}", file);
         }
 
-        Font fontPtr = TTF_OpenFont(file, ptsize);
+        Font fontPtr = TTF_OpenFont(file, ptSize);
 
         return fontPtr;
     }
 
-    public static Font OpenFontIO(IOStream src, bool closeio, float ptsize) {
+    public static Font OpenFontIo(IoStream src, bool closeIo, float ptSize) {
         if (src.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        Font font = TTF_OpenFontIO(src.Handle, closeio, ptsize);
+        Font font = TTF_OpenFontIO(src.Handle, closeIo, ptSize);
         return font;
     }
 
     /// <summary>Create a font with the specified properties.</summary>
-
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
@@ -1944,7 +1931,6 @@ public static unsafe partial class Ttf {
     /// <seealso cref="CloseFont"/>
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-
     public static Font OpenFontWithProperties(int props) {
         Font font = TTF_OpenFontWithProperties(props);
         return font;
@@ -1955,7 +1941,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Remove a fallback font.</summary>
-
     /// <param name="font">the font to modify.</param>
     /// <param name="fallback">the font to remove as a fallback.</param>
     /// <remarks>
@@ -1965,20 +1950,16 @@ public static unsafe partial class Ttf {
     /// <seealso cref="AddFallbackFont"/>
     /// <seealso cref="ClearFallbackFonts"/>
     /// </remarks>
-
     public static void RemoveFallbackFont(Font font, Font fallback) {
         TTF_RemoveFallbackFont(font.Handle, fallback.Handle);
     }
 
     public static nint RenderGlyphBlended(Font font, int ch, Color fg) {
-        if (ch < 0) {
-            throw new ArgumentOutOfRangeException(nameof(ch), "Character codepoint must be non-negative.");
-        }
-        return TTF_RenderGlyph_Blended(font.Handle, ch, fg);
+        return ch < 0 ? throw new ArgumentOutOfRangeException(nameof(ch), "Character codepoint must be non-negative.") : TTF_RenderGlyph_Blended(font.Handle, ch, fg);
     }
 
-    public static Surface RenderGlyphLCD(Font font, int ch, Color fg, Color bg) {
-        if (ch < 0 || ch > MaxUnicodeCodePoint) {
+    public static Surface RenderGlyphLcd(Font font, int ch, Color fg, Color bg) {
+        if (ch is < 0 or > MaxUnicodeCodePoint) {
             throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
         }
         if (fg.A == 0 && bg.A == 0) {
@@ -1994,17 +1975,11 @@ public static unsafe partial class Ttf {
     }
 
     public static nint RenderGlyphShaded(Font font, int ch, Color fg, Color bg) {
-        if (ch < 0 || ch > MaxUnicodeCodePoint) {
-            throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
-        }
-        return TTF_RenderGlyph_Shaded(font.Handle, ch, fg, bg);
+        return ch is < 0 or > MaxUnicodeCodePoint ? throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.") : TTF_RenderGlyph_Shaded(font.Handle, ch, fg, bg);
     }
 
     public static nint RenderGlyphSolid(Font font, int ch, Color fg) {
-        if (ch < 0 || ch > MaxUnicodeCodePoint) {
-            throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
-        }
-        return TTF_RenderGlyph_Solid(font.Handle, ch, fg);
+        return ch is < 0 or > MaxUnicodeCodePoint ? throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.") : TTF_RenderGlyph_Solid(font.Handle, ch, fg);
     }
 
     public static nint RenderTextBlended(Font font, string text, ulong length, Color fg) {
@@ -2017,25 +1992,25 @@ public static unsafe partial class Ttf {
         return RenderTextBlended(font, text, (ulong)text.Length, fg);
     }
 
-    public static nint RenderTextBlendedWrapped(Font font, string text, ulong length, Color fg, int wrap_width) {
+    public static nint RenderTextBlendedWrapped(Font font, string text, ulong length, Color fg, int wrapWidth) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        return TTF_RenderText_Blended_Wrapped(font.Handle, text, length, fg, wrap_width);
+        return TTF_RenderText_Blended_Wrapped(font.Handle, text, length, fg, wrapWidth);
     }
 
-    public static nint RenderTextBlendedWrapped(Font font, string text, Color fg, int wrap_width) {
+    public static nint RenderTextBlendedWrapped(Font font, string text, Color fg, int wrapWidth) {
         ArgumentException.ThrowIfNullOrEmpty(text);
 
-        return RenderTextBlendedWrapped(font, text, (ulong)text.Length, fg, wrap_width);
+        return RenderTextBlendedWrapped(font, text, (ulong)text.Length, fg, wrapWidth);
     }
 
-    public static nint RenderTextLCD(Font font, string text, ulong length, Color fg, Color bg) {
+    public static nint RenderTextLcd(Font font, string text, ulong length, Color fg, Color bg) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         return TTF_RenderText_LCD(font.Handle, text, length, fg, bg);
     }
 
-    public static nint RenderTextLCDWrapped(Font font, string text, ulong length, Color fg, Color bg, int wrap_width) {
+    public static nint RenderTextLcdWrapped(Font font, string text, ulong length, Color fg, Color bg, int wrapWidth) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        return TTF_RenderText_LCD_Wrapped(font.Handle, text, length, fg, bg, wrap_width);
+        return TTF_RenderText_LCD_Wrapped(font.Handle, text, length, fg, bg, wrapWidth);
     }
 
     public static nint RenderTextShaded(Font font, string text, ulong length, Color fg, Color bg) {
@@ -2043,9 +2018,9 @@ public static unsafe partial class Ttf {
         return TTF_RenderText_Shaded(font.Handle, text, length, fg, bg);
     }
 
-    public static nint RenderTextShadedWrapped(Font font, string text, ulong length, Color fg, Color bg, int wrap_width) {
+    public static nint RenderTextShadedWrapped(Font font, string text, ulong length, Color fg, Color bg, int wrapWidth) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        return TTF_RenderText_Shaded_Wrapped(font.Handle, text, length, fg, bg, wrap_width);
+        return TTF_RenderText_Shaded_Wrapped(font.Handle, text, length, fg, bg, wrapWidth);
     }
 
     /// <summary>
@@ -2059,22 +2034,19 @@ public static unsafe partial class Ttf {
     /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
     /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
     /// <para>This will not wrap on newline characters.</para>
-    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended"/>, and <see cref="RenderTextLCD"/>.</para>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended(Font, string, Color)"/>, and <see cref="RenderTextLcd"/>.</para>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
-    /// <seealso cref="RenderTextBlended"/>
-    /// <seealso cref="RenderTextLCD"/>
+    /// <seealso cref="RenderTextBlended(Font, string, Color)"/>
+    /// <seealso cref="RenderTextLcd"/>
     /// <seealso cref="RenderTextShaded"/>
-    /// <seealso cref="RenderTextSolid"/>
+    /// <seealso cref="RenderTextSolid(Font, string, Color)"/>
     /// <seealso cref="RenderTextSolidWrapped"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
     public static nint RenderTextSolid(Font font, string text, ulong length, Color fg) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        if (font.Handle == nint.Zero) {
-            return nint.Zero;
-        }
-        return TTF_RenderText_Solid(font.Handle, text, length, fg);
+        return font.Handle == nint.Zero ? nint.Zero : TTF_RenderText_Solid(font.Handle, text, length, fg);
     }
 
     /// <summary>
@@ -2087,13 +2059,13 @@ public static unsafe partial class Ttf {
     /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
     /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
     /// <para>This will not wrap on newline characters.</para>
-    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended"/>, and <see cref="RenderTextLCD"/>.</para>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended(Font, string, Color)"/>, and <see cref="RenderTextLcd"/>.</para>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
-    /// <seealso cref="RenderTextBlended"/>
-    /// <seealso cref="RenderTextLCD"/>
+    /// <seealso cref="RenderTextBlended(Font, string, Color)"/>
+    /// <seealso cref="RenderTextLcd"/>
     /// <seealso cref="RenderTextShaded"/>
-    /// <seealso cref="RenderTextSolid"/>
+    /// <seealso cref="RenderTextSolid(Font, string, Color)"/>
     /// <seealso cref="RenderTextSolidWrapped"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
@@ -2159,15 +2131,15 @@ public static unsafe partial class Ttf {
 
     /// <summary>Set language to be used for text shaping by a font.</summary>
     /// <param name="font">the font to specify a language for.</param>
-    /// <param name="language_bcp47">a null-terminated string containing the desired language's BCP47 code. Or null to reset the value.</param>
+    /// <param name="languageBcp47">a null-terminated string containing the desired language's BCP47 code. Or null to reset the value.</param>
     /// <remarks>
     /// If SDL_ttf was not built with HarfBuzz support, this function returns <see langword="false" />.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool SetFontLanguage(Font font, string language_bcp47) {
-        bool result = TTF_SetFontLanguage(font.Handle, language_bcp47);
+    public static bool SetFontLanguage(Font font, string languageBcp47) {
+        bool result = TTF_SetFontLanguage(font.Handle, languageBcp47);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to set font language. SDL Error: {Sdl.GetError()}");
         }
@@ -2176,15 +2148,15 @@ public static unsafe partial class Ttf {
 
     /// <summary>Set the spacing between lines of text for a font.</summary>
     /// <param name="font">the font to modify.</param>
-    /// <param name="lineskip">the new line spacing for the font.</param>
+    /// <param name="lineSkip">the new line spacing for the font.</param>
     /// <remarks>
     /// This updates any <see cref="Text"/> objects using this font.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontLineSkip"/>
     /// </remarks>
-    public static void SetFontLineSkip(Font font, int lineskip) {
-        TTF_SetFontLineSkip(font.Handle, lineskip);
+    public static void SetFontLineSkip(Font font, int lineSkip) {
+        TTF_SetFontLineSkip(font.Handle, lineSkip);
     }
 
     /// <summary>Set a font's current outline.</summary>
@@ -2237,10 +2209,10 @@ public static unsafe partial class Ttf {
     /// rotating, and requires special shader support for display.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontSDF"/>
+    /// <seealso cref="GetFontSdf"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool SetFontSDF(Font font, bool enabled) {
+    public static bool SetFontSdf(Font font, bool enabled) {
         bool result = TTF_SetFontSDF(font.Handle, enabled);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to set font SDF. SDL Error: {Sdl.GetError()}");
@@ -2250,7 +2222,7 @@ public static unsafe partial class Ttf {
 
     /// <summary>Set a font's size dynamically.</summary>
     /// <param name="font">the font to resize.</param>
-    /// <param name="ptsize">the new point size.</param>
+    /// <param name="ptSize">the new point size.</param>
     /// <remarks>
     /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
@@ -2259,12 +2231,12 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetFontSize"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool SetFontSize(Font font, float ptsize) {
-        if (ptsize <= 0) {
-            throw new ArgumentOutOfRangeException(nameof(ptsize), "Point size must be greater than zero.");
+    public static bool SetFontSize(Font font, float ptSize) {
+        if (ptSize <= 0) {
+            throw new ArgumentOutOfRangeException(nameof(ptSize), "Point size must be greater than zero.");
         }
 
-        bool result = TTF_SetFontSize(font.Handle, ptsize);
+        bool result = TTF_SetFontSize(font.Handle, ptSize);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to set font size. SDL Error: {Sdl.GetError()}");
         }
@@ -2273,20 +2245,20 @@ public static unsafe partial class Ttf {
 
     /// <summary>Set font size dynamically with target resolutions, in dots per inch.</summary>
     /// <param name="font">the font to resize.</param>
-    /// <param name="ptsize">the new point size.</param>
-    /// <param name="hdpi">the target horizontal DPI.</param>
-    /// <param name="vdpi">the target vertical DPI.</param>
+    /// <param name="ptSize">the new point size.</param>
+    /// <param name="hDpi">the target horizontal DPI.</param>
+    /// <param name="vDpi">the target vertical DPI.</param>
     /// <remarks>
     /// This updates any <see cref="Text"/> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
     /// <seealso cref="GetFontSize"/>
-    /// <seealso cref="GetFontSizeDPI"/>
+    /// <seealso cref="GetFontSizeDpi"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool SetFontSizeDPI(Font font, float ptsize, int hdpi, int vdpi) {
-        bool result = TTF_SetFontSizeDPI(font.Handle, ptsize, hdpi, vdpi);
+    public static bool SetFontSizeDpi(Font font, float ptSize, int hDpi, int vDpi) {
+        bool result = TTF_SetFontSizeDPI(font.Handle, ptSize, hDpi, vDpi);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to set font size DPI. SDL Error: {Sdl.GetError()}");
         }
@@ -2326,15 +2298,15 @@ public static unsafe partial class Ttf {
         TTF_SetFontWrapAlignment(font.Handle, align);
     }
 
-    /// <summary>Sets the winding order of the vertices returned by <see cref="GetGPUTextDrawData"/> for a particular GPU text engine.</summary>
-    /// <param name="engine">a TTF_TextEngine object created with <see cref="CreateGPUTextEngine"/>.</param>
+    /// <summary>Sets the winding order of the vertices returned by <see cref="GetGpuTextDrawData"/> for a particular GPU text engine.</summary>
+    /// <param name="engine">a TTF_TextEngine object created with <see cref="CreateGpuTextEngine"/>.</param>
     /// <param name="winding">the new winding order option.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetGPUTextEngineWinding"/>
+    /// <seealso cref="GetGpuTextEngineWinding"/>
     /// </remarks>
-    public static void SetGPUTextEngineWinding(nint engine, GPUTextEngineWinding winding) {
+    public static void SetGpuTextEngineWinding(nint engine, GpuTextEngineWinding winding) {
         if (engine == nint.Zero) {
             throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
         }
@@ -2351,15 +2323,12 @@ public static unsafe partial class Ttf {
     /// The default text color is white (255, 255, 255, 255).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColor"/>
-    /// <seealso cref="SetTextColorFloat"/>
+    /// <seealso cref="GetTextColor(Text)"/>
+    /// <seealso cref="SetTextColorFloat(Text, FColor)"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColor(Text text, byte r, byte g, byte b, byte a) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextColor(text.Handle, r, g, b, a);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextColor(text.Handle, r, g, b, a);
     }
 
     /// <summary>Set the color of a text object.</summary>
@@ -2369,8 +2338,8 @@ public static unsafe partial class Ttf {
     /// The default text color is white (255, 255, 255, 255).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColor"/>
-    /// <seealso cref="SetTextColorFloat"/>
+    /// <seealso cref="GetTextColor(Text)"/>
+    /// <seealso cref="SetTextColorFloat(Text, FColor)"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColor(Text text, Color color) {
@@ -2378,7 +2347,6 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-
     /// <param name="text">the <see cref="Text"/> to modify.</param>
     /// <param name="r">the red color value, normally in the range of 0-1.</param>
     /// <param name="g">the green color value, normally in the range of 0-1.</param>
@@ -2388,15 +2356,12 @@ public static unsafe partial class Ttf {
     /// The default text color is white (1.0f, 1.0f, 1.0f, 1.0f).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColorFloat"/>
-    /// <seealso cref="SetTextColor"/>
+    /// <seealso cref="GetTextColorFloat(Text, out FColor)"/>
+    /// <seealso cref="SetTextColor(Text, Color)"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColorFloat(Text text, float r, float g, float b, float a) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextColorFloat(text.Handle, r, g, b, a);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextColorFloat(text.Handle, r, g, b, a);
     }
 
     /// <summary>Set the color of a text object.</summary>
@@ -2406,8 +2371,8 @@ public static unsafe partial class Ttf {
     /// The default text color is white (1.0f, 1.0f, 1.0f, 1.0f).
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColorFloat"/>
-    /// <seealso cref="SetTextColor"/>
+    /// <seealso cref="GetTextColorFloat(Text, out FColor)"/>
+    /// <seealso cref="SetTextColor(Text, Color)"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -2426,10 +2391,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextDirection(Text text, Direction direction) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextDirection(text.Handle, direction);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextDirection(text.Handle, direction);
     }
 
     /// <summary>Set the text engine used by a text object.</summary>
@@ -2447,11 +2409,7 @@ public static unsafe partial class Ttf {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
 
-        if (engine.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(engine), "Engine cannot be null.");
-        }
-
-        return TTF_SetTextEngine(text.Handle, engine.Handle);
+        return engine.Handle == nint.Zero ? throw new ArgumentNullException(nameof(engine), "Engine cannot be null.") : TTF_SetTextEngine(text.Handle, engine.Handle);
     }
 
     /// <summary>Set the font used by a text object.</summary>
@@ -2467,10 +2425,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="false" /> if the text pointer is null; otherwise, <see langword="true" />. call<see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextFont(Text text, Font font) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextFont(text.Handle, font.Handle);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextFont(text.Handle, font.Handle);
     }
 
     /// <summary>Set the position of a text object.</summary>
@@ -2482,25 +2437,21 @@ public static unsafe partial class Ttf {
     /// text area.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextPosition"/>
+    /// <seealso cref="GetTextPosition(Text)"/>
     /// </remarks>
     public static bool SetTextPosition(Text text, int x, int y) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextPosition(text.Handle, x, y);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextPosition(text.Handle, x, y);
     }
 
     /// <summary>Set the position of a text object.</summary>
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="x">the x offset of the upper left corner of this text in pixels.</param>
-    /// <param name="y">the y offset of the upper left corner of this text in pixels.</param>
+    /// <param name="position">the <see cref="Point"/> struct that provides xy coordinates</param>
     /// <remarks>
     /// This can be used to position multiple text objects within a single wrapping
     /// text area.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
     /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextPosition"/>
+    /// <seealso cref="GetTextPosition(Text)"/>
     /// </remarks>
     public static bool SetTextPosition(Text text, Point position) {
         return SetTextPosition(text, position.X, position.Y);
@@ -2517,10 +2468,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextScript(Text text, int script) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextScript(text.Handle, script);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextScript(text.Handle, script);
     }
 
     /// <summary>Set the UTF-8 text used by a text object.</summary>
@@ -2539,11 +2487,7 @@ public static unsafe partial class Ttf {
     public static bool SetTextString(Text text, string str, ulong length) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-
-        return TTF_SetTextString(text.Handle, str, length);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextString(text.Handle, str, length);
     }
 
     /// <summary>Set whether whitespace should be visible when wrapping a text object.</summary>
@@ -2560,15 +2504,12 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextWrapWhitespaceVisible(Text text, bool visible) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextWrapWhitespaceVisible(text.Handle, visible);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextWrapWhitespaceVisible(text.Handle, visible);
     }
 
     /// <summary>Set whether wrapping is enabled on a text object.</summary>
     /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="wrap_width">the maximum width in pixels, 0 to wrap on newline characters.</param>
+    /// <param name="wrapWidth">the maximum width in pixels, 0 to wrap on newline characters.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
     /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
@@ -2576,11 +2517,8 @@ public static unsafe partial class Ttf {
     /// <seealso cref="GetTextWrapWidth"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    public static bool SetTextWrapWidth(Text text, int wrap_width) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_SetTextWrapWidth(text.Handle, wrap_width);
+    public static bool SetTextWrapWidth(Text text, int wrapWidth) {
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextWrapWidth(text.Handle, wrapWidth);
     }
 
     /// <summary>Convert from a 4 character string to a 32-bit tag.</summary>
@@ -2618,10 +2556,7 @@ public static unsafe partial class Ttf {
     /// <exception cref="ArgumentException">Thrown if the length of characters exceeds 5: 4 tag characters and one null-terminated character.</exception>
     public static string TagToString(int tag, ulong size) {
         TTF_TagToString(tag, out string str, size);
-        if (str.Length > 5) {
-            throw new ArgumentException("String must be at most 4 characters long with a null-terminated character '\\0'.", nameof(str));
-        }
-        return str[..4];
+        return str.Length > 5 ? throw new ArgumentException("String must be at most 4 characters long with a null-terminated character '\\0'.", nameof(tag)) : str[..4];
     }
 
     /// <summary>
@@ -2635,10 +2570,7 @@ public static unsafe partial class Ttf {
     /// <returns><see langword="true"/> if whitespace is shown when wrapping text, or <see langword="false"/> otherwise.</returns>
     /// <exception cref="ArgumentNullException">Thrown is <paramref name="text"/> is <see langword="null"/>.</exception>
     public static bool TextWrapWhitespaceVisible(Text text) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_TextWrapWhitespaceVisible(text.Handle);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_TextWrapWhitespaceVisible(text.Handle);
     }
 
     public static int TtfVersion() => TTF_Version();
@@ -2655,10 +2587,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is <see langword="null"/>.</exception>
     public static bool UpdateText(Text text) {
-        if (text.Handle == nint.Zero) {
-            throw new ArgumentNullException(nameof(text), "Text cannot be null.");
-        }
-        return TTF_UpdateText(text.Handle);
+        return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_UpdateText(text.Handle);
     }
 
     /// <summary>
@@ -2679,475 +2608,379 @@ public static unsafe partial class Ttf {
         return TTF_WasInit();
     }
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_AddFallbackFont(nint font, nint fallback);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_AppendTextString(nint text, [MarshalAs(Sdl.StringType)] string str, ulong length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_ClearFallbackFonts(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_CloseFont(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedFontMarshaller))]
-    private static partial Font TTF_CopyFont(nint existing_font);
+    private static partial Font TTF_CopyFont(nint existingFont);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateGPUTextEngine(nint device);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateGPUTextEngineWithProperties(int props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateRendererTextEngine(nint renderer);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateRendererTextEngineWithProperties(int props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateSurfaceTextEngine();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_CreateText(nint engine, nint font, [MarshalAs(Sdl.StringType)] string text, nuint length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_DeleteTextString(nint text, int offset, int length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_DestroyGPUTextEngine(nint engine);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_DestroyRendererTextEngine(nint engine);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_DestroySurfaceTextEngine(nint engine);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_DestroyText(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_DrawRendererText(nint text, float x, float y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_DrawSurfaceText(nint text, int x, int y, nint surface);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_FontHasGlyph(nint font, int ch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_FontIsFixedWidth(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_FontIsScalable(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontAscent(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontDescent(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Direction TTF_GetFontDirection(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetFontDPI(nint font, nint hdpi, nint vdpi);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial string TTF_GetFontFamilyName(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontGeneration(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontHeight(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Hinting TTF_GetFontHinting(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetFontKerning(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontLineSkip(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontOutline(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontProperties(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetFontScript(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetFontSDF(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial float TTF_GetFontSize(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial FontStyle TTF_GetFontStyle(nint font);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial string TTF_GetFontStyleName(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial FontWeight TTF_GetFontWeight(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial HorizontalAlignment TTF_GetFontWrapAlignment(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_GetFreeTypeVersion(nint major, nint minor, nint patch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint TTF_GetGlyphImage(nint font, int ch, ImageType image_type);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint TTF_GetGlyphImage(nint font, int ch, ImageType imageType);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint TTF_GetGlyphImageForIndex(nint font, int glyph_index, ImageType image_type);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint TTF_GetGlyphImageForIndex(nint font, int glyphIndex, ImageType imageType);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_GetGlyphKerning(nint font, int previous_ch, int ch, int kerning);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_GetGlyphKerning(nint font, int previousCh, int ch, int kerning);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetGlyphMetrics(nint font, int ch, nint minx, nint maxx, nint miny, nint maxy, nint advance);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetGlyphScript(int ch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_GetGPUTextDrawData(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial GPUTextEngineWinding TTF_GetGPUTextEngineWinding(nint engine);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial GpuTextEngineWinding TTF_GetGPUTextEngineWinding(nint engine);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_GetHarfBuzzVersion(nint major, nint minor, nint patch);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetNextTextSubString(nint text, nint substring, nint next);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetNumFontFaces(nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetPreviousTextSubString(nint text, nint substring, nint previous);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetStringSize(nint font, [MarshalAs(Sdl.StringType)] string text, ulong length, int w, int h);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_GetStringSizeWrapped(nint font, [MarshalAs(Sdl.StringType)] string text, ulong length, int wrap_width, int w, int h);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_GetStringSizeWrapped(nint font, [MarshalAs(Sdl.StringType)] string text, ulong length, int wrapWidth, int w, int h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextColor(nint text, nint r, nint g, nint b, nint a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextColorFloat(nint text, nint r, nint g, nint b, nint a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial Direction TTF_GetTextDirection(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_GetTextEngine(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_GetTextFont(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextPosition(nint text, nint x, nint y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial uint TTF_GetTextProperties(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_GetTextScript(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextSize(nint text, nint w, nint h);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextSubString(nint text, int offset, nint substring);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextSubStringForLine(nint text, int line, nint substring);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_GetTextSubStringForPoint(nint text, int x, int y, nint substring);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_GetTextSubStringsForRange(nint text, int offset, int length, nint count);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_GetTextWrapWidth(nint text, nint wrap_width);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_GetTextWrapWidth(nint text, nint wrapWidth);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_Init();
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_InsertTextString(nint text, int offset, string str, ulong length);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_MeasureString(nint font, string text, nuint length, int max_width, out int measured_width, out nuint measured_length);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_MeasureString(nint font, string text, nuint length, int maxWidth, out int measuredWidth, out nuint measuredLength);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedFontMarshaller))]
     private static partial Font TTF_OpenFont(string file, float ptsize);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedFontMarshaller))]
     private static partial Font TTF_OpenFontIO(nint src, [MarshalAs(Sdl.BoolType)] bool closeio, float ptsize);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     [return: MarshalUsing(typeof(OwnedFontMarshaller))]
     private static partial Font TTF_OpenFontWithProperties(int props);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_Quit();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_RemoveFallbackFont(nint font, nint fallback);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderGlyph_Blended(nint font, int ch, Color fg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderGlyph_LCD(nint font, int ch, Color fg, Color bg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderGlyph_Shaded(nint font, int ch, Color fg, Color bg);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderGlyph_Solid(nint font, int ch, Color fg);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderText_Blended(nint font, string text, ulong length, Color fg);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint TTF_RenderText_Blended_Wrapped(nint font, string text, ulong length, Color fg, int wrap_width);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint TTF_RenderText_Blended_Wrapped(nint font, string text, ulong length, Color fg, int wrapWidth);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderText_LCD(nint font, string text, ulong length, Color fg, Color bg);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint TTF_RenderText_LCD_Wrapped(nint font, string text, ulong length, Color fg, Color bg, int wrap_width);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint TTF_RenderText_LCD_Wrapped(nint font, string text, ulong length, Color fg, Color bg, int wrapWidth);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderText_Shaded(nint font, string text, ulong length, Color fg, Color bg);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial nint TTF_RenderText_Shaded_Wrapped(nint font, string text, ulong length, Color fg, Color bg, int wrap_width);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial nint TTF_RenderText_Shaded_Wrapped(nint font, string text, ulong length, Color fg, Color bg, int wrapWidth);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderText_Solid(nint font, string text, ulong length, Color fg);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint TTF_RenderText_Solid_Wrapped(nint font, string text, ulong length, Color fg, int wrapLength);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontDirection(nint font, Direction direction);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontHinting(nint font, Hinting hinting);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontKerning(nint font, [MarshalAs(Sdl.BoolType)] bool enabled);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_SetFontLanguage(nint font, string language_bcp47);
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_SetFontLanguage(nint font, string languageBcp47);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontLineSkip(nint font, int lineskip);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontOutline(nint font, int outline);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontScript(nint font, int script);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontSDF(nint font, [MarshalAs(Sdl.BoolType)] bool enabled);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontSize(nint font, float ptsize);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetFontSizeDPI(nint font, float ptsize, int hdpi, int vdpi);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontStyle(nint font, FontStyle style);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_SetFontWrapAlignment(nint font, HorizontalAlignment align);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial void TTF_SetGPUTextEngineWinding(nint engine, GPUTextEngineWinding winding);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial void TTF_SetGPUTextEngineWinding(nint engine, GpuTextEngineWinding winding);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextColor(nint text, byte r, byte g, byte b, byte a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextColorFloat(nint text, float r, float g, float b, float a);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextDirection(nint text, Direction direction);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextEngine(nint text, nint engine);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextFont(nint text, nint font);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextPosition(nint text, int x, int y);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextScript(nint text, int script);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextString(nint text, [MarshalAs(Sdl.StringType)] string str, ulong length);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_SetTextWrapWhitespaceVisible(nint text, [MarshalAs(Sdl.BoolType)] bool visible);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlBool TTF_SetTextWrapWidth(nint text, int wrap_width);
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    private static partial SdlBool TTF_SetTextWrapWidth(nint text, int wrapWidth);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_StringToTag([MarshalAs(Sdl.StringType)] string str);
 
-    [LibraryImport(NativeLibName, StringMarshalling = Sdl.marshalling)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName, StringMarshalling = Sdl.Marshalling),
+     UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial void TTF_TagToString(int tag, [MarshalAs(Sdl.StringType)] out string str, ulong size);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_TextWrapWhitespaceVisible(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial SdlBool TTF_UpdateText(nint text);
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_Version();
 
-    [LibraryImport(NativeLibName)]
-    [UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
+    [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial int TTF_WasInit();
 }

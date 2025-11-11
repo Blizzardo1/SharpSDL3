@@ -111,7 +111,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroySurface
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
     public static nint LoadTypedImage(nint src, bool closeio, string type) {
@@ -165,7 +165,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroySurface
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_Load(string file);
 
     public static nint LoadImage(string file) {
@@ -234,7 +234,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroySurface
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_Load_IO(nint src, [MarshalAs(BoolType)] bool closeio);
 
     public static nint LoadImageIo(nint src, bool closeio) {
@@ -282,7 +282,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_LoadTexture_IO
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTexture(nint renderer, string file);
 
     /// <summary>Load an image from a filesystem path into a GPU texture.</summary>
@@ -425,7 +425,7 @@ public static unsafe partial class Sdl {
      * \sa SDL_DestroyTexture
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
     public static nint LoadTextureTypedIo(nint renderer, nint src, bool closeio, string type) {
@@ -482,7 +482,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_isWEBP
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_isAVIF(nint src);
 
@@ -514,7 +514,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is AVIF data, zero otherwise.</returns>
 
-    public static bool IsAVIF(nint src) {
+    public static bool IsAvif(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -594,7 +594,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is ICO data, zero otherwise.</returns>
 
-    public static bool IsICO(nint src) {
+    public static bool IsIco(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -674,7 +674,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is CUR data, zero otherwise.</returns>
 
-    public static bool IsCUR(nint src) {
+    public static bool IsCur(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -754,7 +754,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is BMP data, zero otherwise.</returns>
 
-    public static bool IsBMP(nint src) {
+    public static bool IsBmp(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -834,7 +834,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is GIF data, zero otherwise.</returns>
 
-    public static bool IsGIF(nint src) {
+    public static bool IsGif(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -914,7 +914,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is JPG data, zero otherwise.</returns>
 
-    public static bool IsJPG(nint src) {
+    public static bool IsJpg(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -994,7 +994,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is JXL data, zero otherwise.</returns>
 
-    public static bool IsJXL(nint src) {
+    public static bool IsJxl(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1074,7 +1074,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is LBM data, zero otherwise.</returns>
 
-    public static bool IsLBM(nint src) {
+    public static bool IsLbm(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1154,7 +1154,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PCX data, zero otherwise.</returns>
 
-    public static bool IsPCX(nint src) {
+    public static bool IsPcx(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1234,7 +1234,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PNG data, zero otherwise.</returns>
 
-    public static bool IsPNG(nint src) {
+    public static bool IsPng(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1314,7 +1314,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PNM data, zero otherwise.</returns>
 
-    public static bool IsPNM(nint src) {
+    public static bool IsPnm(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1394,7 +1394,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is SVG data, zero otherwise.</returns>
 
-    public static bool IsSVG(nint src) {
+    public static bool IsSvg(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1474,7 +1474,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is QOI data, zero otherwise.</returns>
 
-    public static bool IsQOI(nint src) {
+    public static bool IsQoi(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1554,7 +1554,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is TIFF data, zero otherwise.</returns>
 
-    public static bool IsTIF(nint src) {
+    public static bool IsTif(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1634,7 +1634,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XCF data, zero otherwise.</returns>
 
-    public static bool IsXCF(nint src) {
+    public static bool IsXcf(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1714,7 +1714,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XPM data, zero otherwise.</returns>
 
-    public static bool IsXPM(nint src) {
+    public static bool IsXpm(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1794,7 +1794,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XV data, zero otherwise.</returns>
 
-    public static bool IsXV(nint src) {
+    public static bool IsXv(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -1874,7 +1874,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is WEBP data, zero otherwise.</returns>
 
-    public static bool IsWEBP(nint src) {
+    public static bool IsWebp(nint src) {
         if (src == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
@@ -2746,7 +2746,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_ReadXPMFromArrayToRGB888
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_ReadXPMFromArray(string[] xpm);
 
     /// <summary>Load an XPM image from a memory array.</summary>
@@ -2786,7 +2786,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_ReadXPMFromArray
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_ReadXPMFromArrayToRGB888(string[] xpm);
 
     /// <summary>Load an XPM image from a memory array.</summary>
@@ -2825,7 +2825,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveAVIF_IO
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveAVIF(nint surface, string file, int quality);
 
@@ -2902,7 +2902,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SavePNG_IO
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SavePNG(nint surface, string file);
 
@@ -2978,7 +2978,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveJPG_IO
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveJPG(nint surface, string file, int quality);
 
@@ -3026,7 +3026,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_SaveJPG
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio, int quality);
 
@@ -3054,7 +3054,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadAnimation(string file);
 
     /// <summary>Load an animation from a file.</summary>
@@ -3134,7 +3134,7 @@ public static unsafe partial class Sdl {
      * \sa IMG_FreeAnimation
      */
 
-    [LibraryImport(ImageLibName, StringMarshalling = marshalling)]
+    [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
     public static nint LoadAnimationTypedIo(nint src, bool closeio, string type) {
