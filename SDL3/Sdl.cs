@@ -1,12 +1,11 @@
-using SharpSDL3.Enums;
-using SharpSDL3.Structs;
 using System;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 using System.Runtime.InteropServices.Marshalling;
 using System.Runtime.Intrinsics.X86;
+using SharpSDL3.Enums;
+using SharpSDL3.Structs;
 using static SharpSDL3.Delegates;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace SharpSDL3;
 
@@ -22,24 +21,39 @@ public static unsafe partial class Sdl {
     /// </summary>
     /// <typeparam name="T">The unmanaged generic type.</typeparam>
     /// <param name="str">An unmanaged type to convert to a <see cref="nint"/>.</param>
+    /// <remarks>
+    /// <para>
+    ///     This is a <see cref="Marshal"/> wrapped function that translates an <typeparamref name="T"/> into a <see cref="nint"/>.
+    ///     <list type="bullet">
+    ///         <item>It allocates unmanaged memory using <see cref="Marshal.AllocHGlobal(int)"/> </item>
+    ///         <item>It copies the data into the allocated region using <see cref="Marshal.StructureToPtr"/>.</item>
+    ///     </list>
+    /// </para>
+    /// <para>The caller is responsible for releasing allocated memory when it's no longer necessary to prevent any memory leaks.</para>
+    /// </remarks>
     /// <returns>A pointer in memory to an object, else <see cref="nint.Zero"/>.</returns>
-    public static unsafe nint StructureToPointer<T>(ref T str) where T : unmanaged {
-        int size = sizeof(T);
+    public static unsafe nint StructureToPointer<T>(ref T str) where T : struct {
+        int size = Marshal.SizeOf<T>();
         nint ptr = Marshal.AllocHGlobal(size);
-        Unsafe.CopyBlockUnaligned((void*)ptr, Unsafe.AsPointer(ref str), (uint)size);
+        Marshal.StructureToPtr(str, ptr, false);
         return ptr;
     }
 
     /// <summary>
     /// Convert a pointer to a structure of type <typeparamref name="T"/>.
     /// </summary>
-    /// <typeparam name="T">The unmanaged generic type.</typeparam>
-    /// <param name="ptr">The pointer of which contains a <typeparamref name="T"/>.</param>
+    /// <typeparam name="T">The struct generic type.</typeparam>
+    /// <param name="ptr">The memory address of which contains a <typeparamref name="T"/>.</param>
+    /// <remarks>
+    /// As this library predominantly relies on <see cref="nint"/> as a managed way to handle pointers, sometimes we need to handle the structure data or manipulate the data.
+    /// </remarks>
     /// <returns>a <typeparamref name="T"/> filled with data.</returns>
-    public static unsafe T PointerToStructure<T>(nint ptr) where T : unmanaged {
-        T str = default;
-        Unsafe.Copy(ref str, (void*)ptr);
-        return str;
+    public static unsafe T PointerToStructure<T>(nint ptr) where T : struct {
+        if (ptr == nint.Zero) {
+            return default;
+        }
+
+        return Marshal.PtrToStructure<T>(ptr);
     }
 
     /// <summary>
