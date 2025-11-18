@@ -1,34 +1,48 @@
-This is SDL3-CS, C# bindings for SDL3.  [![CI](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml/badge.svg)](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml)
+![Social Preview](https://repository-images.githubusercontent.com/981861045/a9c02098-8b5d-48de-b9cf-13a8c6c6cf69)
+
+This is SDL3-CS, C# bindings for SDL3. 
+
+[![CI](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml/badge.svg)](https://github.com/Blizzardo1/SharpSDL3/actions/workflows/ci.yml)
+![GitHub Release](https://img.shields.io/github/v/release/Blizzardo1/SharpSDL3)
+![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/Blizzardo1/SharpSDL3/total)
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Blizzardo1/SharpSDL3/main?label=commit%20activity%20(main))
+![GitHub commit activity (branch)](https://img.shields.io/github/commit-activity/w/Blizzardo1/SharpSDL3/dev?label=commit%20activity%20(dev))
+![GitHub repo size](https://img.shields.io/github/repo-size/Blizzardo1/SharpSDL3)
+
+![GitHub Issues](https://img.shields.io/github/issues/Blizzardo1/SharpSDL3)
+![GitHub Pull Requests](https://img.shields.io/github/issues-pr/Blizzardo1/SharpSDL3)
+
+
 
 This is SharpSDL3, a C# wrapper for SDL3. Originally, this stems from [flibitijibibo's work](https://github.com/flibitijibibo/SDL3-CS), but since he dislikes adapting the APIs to a more C#-like style (dropping `SDL_` prefixes etc.), here's a fork that does adapt the style.
 
 This project is also inspired by [GeorchW's SharpSDL2](https://github.com/GeorchW/SharpSDL2).  
 
-## License
+## 🪪License
 
 SDL3 and SDL3-CS are released under the zlib license. See LICENSE for details.  
   
-## About SDL3
+## 🚀About SDL3
 
 For more information about SDL3, visit the [SDL Wiki](https://wiki.libsdl.org/SDL3/FrontPage).
 
-## Status
-|Library | Progress |
----------|-----------
-|SDL3 | Works, needs updating|
-|SDL3_image | Works, needs updating|
-|SDL3_mixer | Works, needs updating|
-|SDL3_net | Not Started|
-|SDL3_ttf | Works, needs updating|
+## ➡️Status
+| Library   | Progress |
+------------|-----------
+|SDL3       | ⚠️ Works, needs updating|
+|SDL3_image | ⚠️ Works, needs updating|
+|SDL3_mixer | ⚠️ Works, needs updating|
+|SDL3_net   | 🥲 Not Started|
+|SDL3_ttf   | ⚠️ Works, needs updating|
 
 ## Documentation
 |Library | Progress|
 --------|----------
-|SDL3 | Started |
-|SDL3_image | Started |
-|SDL3_mixer | Started |
-|SDL3_net | Started |
-|SDL3_ttf | Started |
+|SDL3 | 🧑🏻‍💻Started |
+|SDL3_image | 🧑🏻‍💻Started |
+|SDL3_mixer | 🧑🏻‍💻Started |
+|SDL3_net | 🧑🏻‍💻Started |
+|SDL3_ttf | 🧑🏻‍💻Started |
 
 
 
