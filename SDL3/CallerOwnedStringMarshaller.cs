@@ -15,10 +15,7 @@ public static unsafe class CallerOwnedStringMarshaller {
     /// <returns>A managed string.</returns>
     public static string ConvertToManaged(nint unmanaged) {
         string? result = Marshal.PtrToStringUTF8(unmanaged);
-        if (result == null) {
-            return "";
-        }
-        return result;
+        return result ?? "";
     }
 
     /// <summary>

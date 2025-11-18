@@ -11,7 +11,7 @@ public static unsafe class OwnedFontMarshaller {
         if (unmanaged == nint.Zero) {
             return default;
         }
-        Font font = Marshal.PtrToStructure<Font>(unmanaged);
+        var font = Marshal.PtrToStructure<Font>(unmanaged);
         font.Handle = unmanaged;
         return font;
     }

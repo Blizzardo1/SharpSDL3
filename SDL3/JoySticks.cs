@@ -79,7 +79,7 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetNumJoystickAxes"/>
     /// </remarks>
-    /// <returns>Returns a 16-bit signed integer representing the currentposition of the axis or 0 on failure; call <see cref="GetError()" />for more information.</returns>
+    /// <returns>Returns a 16-bit signed integer representing the current position of the axis or 0 on failure; call <see cref="GetError()" />for more information.</returns>
 
     public static short GetJoystickAxis(nint joystick, int axis) {
         if (joystick == nint.Zero) {
