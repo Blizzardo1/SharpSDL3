@@ -102,7 +102,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Performs a fast blit from the source surface to the destination surface with clipping.</summary>
-
     /// <param name="src">the <see cref="Surface"/> structure to be copied from.</param>
     /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be copied, or <see langword="null" /> to copy the entire surface.</param>
     /// <param name="dst">the <see cref="Surface"/> structure that is the blit target.</param>
@@ -250,7 +249,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="BlitSurfaceScaled"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool BlitSurfaceUncheckedScaled(nint src, nint srcrect, nint dst, nint dstrect, ScaleMode scaleMode) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "BlitSurfaceUncheckedScaled: Source or destination pointer is null.");
@@ -291,7 +289,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="StopTextInput"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ClearComposition(nint window) {
         if (window == nint.Zero) {
             LogWarn(LogCategory.System, "ClearComposition: Window handle is null.");
@@ -349,7 +346,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Compose a custom blend mode for renderers.</summary>
-
     /// <param name="srcColorFactor">the <see cref="BlendFactor"/> applied to the red, green, and blue components of the source pixels.</param>
     /// <param name="dstColorFactor">the <see cref="BlendFactor"/> applied to the red, green, and blue components of the destination pixels.</param>
     /// <param name="colorOperation">the <see cref="BlendOperation"/> used to combine the red, green, and blue components of the source and destination pixels.</param>
@@ -427,7 +423,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="ConvertPixels"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool ConvertPixelsAndColorspace(int width, int height, PixelFormat srcFormat, Colorspace srcColorspace, uint srcProperties, nint src, int srcPitch, PixelFormat dstFormat, Colorspace dstColorspace, uint dstProperties, nint dst, int dstPitch) {
         if (src == nint.Zero || dst == nint.Zero) {
             LogWarn(LogCategory.System, "ConvertPixelsAndColorspace: Source or destination pointer is null.");
@@ -437,7 +432,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy an existing surface to a new surface of the specified format.</summary>
-
     /// <param name="surface">the existing SDL_Surface structure to convert.</param>
     /// <param name="format">the new pixel format.</param>
     /// <remarks>
@@ -461,7 +455,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Copy an existing surface to a new surface of the specified format and colorspace.</summary>
-
     /// <param name="surface">the existing SDL_Surface structure to convert.</param>
     /// <param name="format">the new pixel format.</param>
     /// <param name="palette">an optional palette to use for indexed formats, may be discarded.</param>
@@ -530,7 +523,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a child popup window of the specified parent window.</summary>
-
     /// <param name="parent">the parent of the window, must not be <see langword="null" />.</param>
     /// <param name="offsetX">the x position of the popup window relative to the origin of the parent.</param>
     /// <param name="offsetY">the y position of the popup window relative to the origin of the parent window.</param>
@@ -549,7 +541,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetWindowParent"/>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window that was created or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreatePopupWindow(nint parent, int offsetX, int offsetY, int w, int h, WindowFlags flags) {
         if (parent == nint.Zero) {
             LogError(LogCategory.Error, "CreatePopupWindow: Parent window handle is null.");
@@ -652,7 +643,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetPaletteColors"/>
     /// </remarks>
     /// <returns>(SDL_Palette *) Returns a new SDL_Palettestructure on success or <see langword="null" /> on failure (e.g. if the surface didn't have anindex format); call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreateSurfacePalette(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.System, "CreateSurfacePalette: Surface pointer is null.");
@@ -780,7 +770,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateSurface"/>
     /// <seealso cref="CreateSurfaceFrom"/>
     /// </remarks>
-
     public static void DestroySurface(nint surface) {
         if (surface == nint.Zero) {
             LogInfo(LogCategory.System, "Will destroy nothing.");
@@ -836,7 +825,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateThread"/>
     /// <seealso cref="WaitThread"/>
     /// </remarks>
-
     public static void DetachThread(nint thread) {
         if (thread == nint.Zero) {
             LogWarn(LogCategory.System, "DetachThread: Thread handle is null.");
@@ -903,15 +891,15 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns standard Unix main return value.</returns>
     public static int EnterAppMainCallbacks(int argc, nint argv, SdlAppInitFunc appInit,
-                                                                       SdlAppIterateFunc appIter, SdlAppEventFunc sdlAppEvent, SdlAppQuitFunc appQuit) {
+                                                                       SdlAppIterateFunc appIter, SdlAppEventFunc appEvent, SdlAppQuitFunc appQuit) {
         ArgumentNullException.ThrowIfNull(appInit);
         ArgumentNullException.ThrowIfNull(appIter);
-        ArgumentNullException.ThrowIfNull(sdlAppEvent);
+        ArgumentNullException.ThrowIfNull(appEvent);
         ArgumentNullException.ThrowIfNull(appQuit);
 
         LogDebug(LogCategory.System, "Entering App Main Callbacks with provided delegates.");
 
-        return SDL_EnterAppMainCallbacks(argc, argv, appInit, appIter, sdlAppEvent, appQuit);
+        return SDL_EnterAppMainCallbacks(argc, argv, appInit, appIter, appEvent, appQuit);
     }
 
     /// <summary>Enumerate the properties contained in a group of properties.</summary>
@@ -925,7 +913,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool EnumerateProperties(uint props, SdlEnumeratePropertiesCallback callback, nint userdata) {
         if (props == 0 || callback == null) {
             LogWarn(LogCategory.System, "EnumerateProperties: Properties handle is zero or callback is null.");
@@ -977,7 +964,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="FillSurfaceRect"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool FillSurfaceRects(nint dst, Span<Rect> rects, uint color) {
         if (dst == nint.Zero) {
             LogWarn(LogCategory.System, "FillSurfaceRects: Destination pointer is null.");
@@ -995,7 +981,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Request a window to demand attention from the user.</summary>
-
     /// <param name="window">the window to be flashed.</param>
     /// <param name="operation">the operation to perform.</param>
     /// <remarks>
@@ -1114,7 +1099,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetClipboardData"/>
     /// </remarks>
     /// <returns>(void *) Returns the retrieved data buffer or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This should be freedwith <see cref="Free"/> when it is no longer needed.</returns>
-
     public static Span<nint> GetClipboardData(string mimeType) {
         if (string.IsNullOrEmpty(mimeType)) {
             LogWarn(LogCategory.System, "GetClipboardData: MimeType is null or empty.");
@@ -1211,7 +1195,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetFullscreenDisplayModes"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool GetClosestFullscreenDisplayMode(uint displayId, int w, int h, float refreshRate,
                 bool includeHighDensityModes, out DisplayMode closest) {
         if (displayId == 0) {
@@ -1289,7 +1272,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetDisplays"/>
     /// </remarks>
     /// <returns>Returns theSDL_DisplayOrientation enum value of the display,  SDL_ORIENTATION_UNKNOWN if it isn'tavailable.</returns>
-
     public static DisplayOrientation GetCurrentDisplayOrientation(uint displayId) {
         if (displayId == 0) {
             LogWarn(LogCategory.System, "GetCurrentDisplayOrientation: Display ID is zero.");
@@ -1311,7 +1293,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetThreadId"/>
     /// </remarks>
     /// <returns>Returns the ID of the current thread.</returns>
-
     public static ulong GetCurrentThreadId() {
         ulong threadId = SDL_GetCurrentThreadID();
         if (threadId == 0) {
@@ -1331,7 +1312,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetVideoDriver"/>
     /// </remarks>
     /// <returns>Returns the name of the current video driver or <see langword="null" /> if nodriver has been initialized.</returns>
-
     public static string GetCurrentVideoDriver() {
         return SDL_GetCurrentVideoDriver();
     }
@@ -1542,14 +1522,12 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a list of currently connected displays.</summary>
-
     /// <param name="count">a pointer filled in with the number of displays returned, may bediscarded.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_DisplayID *) Returns a 0 terminated array of display instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
-
     public static Span<nint> GetDisplays(out int count) {
         nint result = SDL_GetDisplays(out count);
         if (result == nint.Zero) {
@@ -1589,7 +1567,6 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    // Safe wrapper method
     /// <summary>Retrieve a message about the last error that occurred on the current thread.</summary>
     /// <remarks>
     /// It is possible for multiple errors to occur before calling/ <see cref="GetError()" />. Only the last error is returned.
@@ -1618,7 +1595,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetFloatProperty"/>
     /// </remarks>
     /// <returns>Returns the value of the property, or default_value if it is not set or not a float property.</returns>
-
     public static float GetFloatProperty(uint props, string name, float defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetFloatProperty: Properties handle is zero or name is null/empty.");
@@ -1895,7 +1871,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the key code corresponding to the given scancode according to the current keyboard layout.</summary>
-
     /// <param name="scanCode">the desired SDL_Scancode to query.</param>
     /// <param name="modstate">the modifier state to use when translating the scancode to a keycode.</param>
     /// <param name="keyEvent"><see langword="true" /> if the keycode will be used in key events.</param>
@@ -2240,7 +2215,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasProperty"/>
     /// </remarks>
     /// <returns>Returns the type of the property, or <see cref="PropertyType.Invalid"/> if it is not set.</returns>
-
     public static PropertyType GetPropertyType(uint props, string name) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetPropertyType: Properties handle is zero or name is null/empty.");
@@ -2287,7 +2261,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
-
     public static bool GetRectAndLineIntersectionFloat(ref FRect rect, ref float x1, ref float y1, ref float x2,
             ref float y2) {
         bool result = SDL_GetRectAndLineIntersectionFloat(ref rect, ref x1, ref y1, ref x2, ref y2);
@@ -2327,7 +2300,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if any points were enclosed or <see langword="false" /> if all the points were outside of the clipping rectangle.</returns>
-
     public static bool GetRectEnclosingPointsFloat(Span<FPoint> points, int count, ref FRect clip, out FRect result) {
         bool resultBool = SDL_GetRectEnclosingPointsFloat(points, count, ref clip, out result);
         if (!resultBool) {
@@ -2364,7 +2336,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasRectIntersectionFloat"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if there is an intersection, <see langword="false" /> otherwise.</returns>
-
     public static bool GetRectIntersectionFloat(ref FRect a, ref FRect b, out FRect result) {
         bool resultBool = SDL_GetRectIntersectionFloat(ref a, ref b, out result);
         if (!resultBool) {
@@ -2554,7 +2525,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetStringProperty"/>
     /// </remarks>
     /// <returns>Returns the value of the property, or <paramref name="defaultValue"/> if itis not set or not a string property.</returns>
-
     public static string GetStringProperty(uint props, string name, string defaultValue) {
         if (props == 0 || string.IsNullOrEmpty(name)) {
             LogWarn(LogCategory.System, "GetStringProperty: Properties is zero or name is null/empty.");
@@ -4299,7 +4269,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MapSurfaceRgba"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
-
     public static uint MapSurfaceRgb(nint surface, Color color) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "MapSurfaceRgb: Surface pointer is null.");
@@ -4328,7 +4297,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MapSurfaceRgb"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
-
     public static uint MapSurfaceRgba(nint surface, byte r, byte g, byte b, byte a) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "MapSurfaceRgba: Surface pointer is null.");
@@ -4353,7 +4321,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="MapSurfaceRgb"/>
     /// </remarks>
     /// <returns>Returns a pixel value.</returns>
-
     public static uint MapSurfaceRgba(nint surface, Color color) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "MapSurfaceRgba: Surface pointer is null.");
@@ -4937,7 +4904,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DestroySurface"/>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint ScaleSurface(nint surface, int width, int height, ScaleMode scaleMode) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "ScaleSurface: Surface pointer is null.");
@@ -4958,6 +4924,27 @@ public static unsafe partial class Sdl {
             LogError(LogCategory.Error, "ScaleSurface: Failed to scale surface.");
         }
         return scaledSurface;
+    }
+
+    /// <summary>Creates a new surface identical to the existing surface, scaled to the desired size.</summary>
+    /// <param name="surface">the surface to duplicate and scale.</param>
+    /// <param name="width">the width of the new surface.</param>
+    /// <param name="height">the height of the new surface.</param>
+    /// <param name="scaleMode">the <see cref="ScaleMode"/> to be used.</param>
+    /// <remarks>
+    /// <para>The returned surface should be freed with <see cref="DestroySurface"/>.</para>
+    /// <para>The referenced surface is immediately destroyed</para>
+    /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroySurface"/>
+    /// </remarks>
+    /// <returns>(SDL_Surface *) Returns a copy of the surface or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static Surface ScaleSurface(ref Surface surface, int width, int height, ScaleMode scaleMode) {
+        nint oSurface = StructureToPointer(ref surface);
+        nint newSurface = ScaleSurface(oSurface, width, height, scaleMode);
+        var rSurface = PointerToStructure<Surface>(newSurface);
+        DestroySurface(oSurface);
+        return rSurface;
     }
 
     /// <summary>Check whether the screen keyboard is shown for given window.</summary>
@@ -4998,7 +4985,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Specify basic metadata about your app.</summary>
-
     /// <param name="appname">The name of the application (&quot;My Game 2: Bad Guy's Revenge!&quot;).</param>
     /// <param name="appversion">The version of the application (&quot;1.0.0beta5&quot; or a git hash, or whatever makes sense).</param>
     /// <param name="appidentifier">A unique string in reverse-domain format that identifies this app (&quot;com.example.mygame2&quot;).</param>
@@ -5010,7 +4996,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetAppMetadataProperty"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetAppMetadata(string appname, string appversion, string appidentifier) {
         if (string.IsNullOrEmpty(appname) || string.IsNullOrEmpty(appversion) || string.IsNullOrEmpty(appidentifier)) {
             LogError(LogCategory.Error, "SetAppMetadata: App metadata is null or empty.");
@@ -5087,7 +5072,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasClipboardData"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetClipboardData(SdlClipboardDataCallback callback,
                 SdlClipboardCleanupCallback cleanup, nint userdata, nint mimeTypes, nuint numMimeTypes) {
         if (callback == null || cleanup == null || userdata == nint.Zero || mimeTypes == nint.Zero) {
@@ -5110,7 +5094,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="HasClipboardText"/>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
     public static bool SetClipboardText(string text) {
         if (string.IsNullOrEmpty(text)) {
             LogError(LogCategory.Error, "SetClipboardText: Text is null or empty.");
@@ -5155,7 +5138,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetError"/>
     /// </remarks>
     /// <returns>Returns <see langword="false" />.</returns>
-
     public static bool SetError(string fmt, params object[] args) {
         if (string.IsNullOrEmpty(fmt)) {
             LogWarn(LogCategory.System, "SetError: Format string is null or empty.");
@@ -5188,6 +5170,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
+    // #TODO: Add documentation for Sdl.SetHint
     /// <summary>
     /// 
     /// </summary>
@@ -5841,8 +5824,7 @@ public static unsafe partial class Sdl {
     /// <param name="mode">a pointer to the display mode to use, which can be <see langword="null" /> for borderless fullscreen desktop mode, or one of the fullscreen modes returned by SDL_GetFullscreenDisplayModes() to set an exclusive fullscreen mode.</param>
     /// <remarks>
     /// This only affects the display mode used when the window is fullscreen. To
-    /// change the window size when the window is not fullscreen, use
-    /// SDL_SetWindowSize().
+    /// change the window size when the window is not fullscreen, use <seealso cref="SetWindowSize"/>.
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// <seealso cref="GetWindowFullscreenMode"/>
@@ -5892,15 +5874,17 @@ public static unsafe partial class Sdl {
     /// <param name="window">the window to change.</param>
     /// <param name="icon">an SDL_Surface structure containing the icon for the window.</param>
     /// <remarks>
-    /// If this function is passed a surface with alternate representations, the
+    /// <para>If this function is passed a surface with alternate representations, the
     /// surface will be interpreted as the content to be used for 100% display
     /// scale, and the alternate representations will be used for high DPI
-    /// situations. For example, if the original surface is 32x32, then on a 2x
+    /// situations.</para>
+    /// <para>For example, if the original surface is 32x32, then on a 2x
     /// macOS display or 200% display scale on Windows, a 64x64 version of the
-    /// image will be used, if available. If a matching version of the image isn't
+    /// image will be used, if available.</para>
+    /// <para>If a matching version of the image isn't
     /// available, the closest larger size image will be downscaled to the
     /// appropriate size and be used instead, if available. Otherwise, the closest
-    /// smaller image will be upscaled and be used instead.
+    /// smaller image will be upscaled and be used instead.</para>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
     /// </remarks>
@@ -5949,8 +5933,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Set the maximum size of a window's client area.</summary>
     /// <param name="window">the window to change.</param>
-    /// <param name="max_w">the maximum width of the window, or 0 for no limit.</param>
-    /// <param name="max_h">the maximum height of the window, or 0 for no limit.</param>
+    /// <param name="maxW">the maximum width of the window, or 0 for no limit.</param>
+    /// <param name="maxH">the maximum height of the window, or 0 for no limit.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -5972,8 +5956,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Set the minimum size of a window's client area.</summary>
     /// <param name="window">the window to change.</param>
-    /// <param name="min_w">the minimum width of the window, or 0 for no limit.</param>
-    /// <param name="min_h">the minimum height of the window, or 0 for no limit.</param>
+    /// <param name="minW">the minimum width of the window, or 0 for no limit.</param>
+    /// <param name="minH">the minimum height of the window, or 0 for no limit.</param>
     /// <remarks>
     /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
     /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
@@ -6144,8 +6128,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Request that the window's position be set.</summary>
     /// <param name="window">the window to reposition.</param>
-    /// <param name="x">the x coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
-    /// <param name="y">the y coordinate of the window, or SDL_WINDOWPOS_CENTERED or SDL_WINDOWPOS_UNDEFINED.</param>
+    /// <param name="position">the <see cref="Point"/> </param>
     /// <remarks>
     /// If the window is in an exclusive fullscreen or maximized state, this
     /// request has no effect.
@@ -6756,6 +6739,16 @@ public static unsafe partial class Sdl {
         SDL_WaitThread(thread, status);
     }
 
+    /// <summary>
+    /// Get a mask of the specified subsystems which are currently initialized.
+    /// </summary>
+    /// <param name="flags">any of the flags used by <see cref="Init"/>; see <see cref="Init"/> for details.</param>
+    /// <remarks>
+    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0</para>
+    /// <seealso cref="Init"/>
+    /// <seealso cref="InitSubSystem"/>
+    /// </remarks>
+    /// <returns>Returns a mask of all initialized subsystems if flags is 0, otherise it returns the initialization status of the specified subsystems.</returns>
     public static InitFlags WasInit(InitFlags flags) {
         if (!Enum.IsDefined(flags)) {
             LogError(LogCategory.Error, "WasInit: Flags are not defined.");

@@ -85,21 +85,22 @@ public static unsafe partial class Mixer {
     }
 
     public static void EffectDone(int channel, nint udata) {
-        if (udata == nint.Zero)
+        if (udata == nint.Zero) {
             throw new ArgumentNullException(nameof(udata));
+        }
 
-        MixEffectDoneT effectDone = Marshal.GetDelegateForFunctionPointer<MixEffectDoneT>(udata);
+        var effectDone = Marshal.GetDelegateForFunctionPointer<MixEffectDoneT>(udata);
 
         effectDone(channel, udata);
     }
 
     public static int ExpireChannel(int channel, int ticks) {
-        if (ticks < 0)
-            throw new ArgumentOutOfRangeException(nameof(ticks), "Ticks must be non-negative.");
-        return Mix_ExpireChannel(channel, ticks);
+        return ticks < 0
+            ? throw new ArgumentOutOfRangeException(nameof(ticks), "Ticks must be non-negative.")
+            : Mix_ExpireChannel(channel, ticks);
     }
 
-    public static unsafe int FadeInChannel(int channel, Chunk chunk, int loops, int ms) {
+    public static int FadeInChannel(int channel, Chunk chunk, int loops, int ms) {
         if (chunk.AudioBuffer == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Null Chunk");
             return -1;
@@ -133,12 +134,10 @@ public static unsafe partial class Mixer {
     }
 
     public static bool FadeInMusic(Music music, int loops, int ms) {
-        if (music.Interface == nint.Zero) {
-            Sdl.LogError(LogCategory.Error, "Null Music");
-            return false;
-        }
+        if (music.Interface != nint.Zero) return Mix_FadeInMusic((nint)Unsafe.AsPointer(ref music), loops, ms);
+        Sdl.LogError(LogCategory.Error, "Null Music");
+        return false;
 
-        return Mix_FadeInMusic((nint)Unsafe.AsPointer(ref music), loops, ms);
     }
 
     public static bool FadeInMusicPos(Music music, int loops, int ms, double position) {
@@ -150,197 +149,209 @@ public static unsafe partial class Mixer {
     }
 
     public static int FadeOutChannel(int which, int ms) {
-        if (ms < 0)
-            throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.");
-        return Mix_FadeOutChannel(which, ms);
+        return ms < 0
+            ? throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.") 
+            : Mix_FadeOutChannel(which, ms);
     }
 
     public static int FadeOutGroup(int tag, int ms) {
-        if (ms < 0)
-            throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.");
-        return Mix_FadeOutGroup(tag, ms);
+        return ms < 0
+            ? throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.")
+            : Mix_FadeOutGroup(tag, ms);
     }
 
     public static bool FadeOutMusic(int ms) {
-        if (ms < 0)
-            throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.");
-        return Mix_FadeOutMusic(ms);
+        return ms < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(ms), "Milliseconds must be non-negative.") 
+            : Mix_FadeOutMusic(ms);
     }
 
     public static Fading FadingChannel(int which) {
-        if (which < 0)
-            throw new ArgumentOutOfRangeException(nameof(which), "Channel must be non-negative.");
-        return Mix_FadingChannel(which);
+        return which < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(which), "Channel must be non-negative.") 
+            : Mix_FadingChannel(which);
     }
 
     public static Fading FadingMusic() => Mix_FadingMusic();
 
     public static nint GetChunk(int channel) {
-        if (channel < 0)
-            throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        return Mix_GetChunk(channel);
+        return channel < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.") 
+            : Mix_GetChunk(channel);
     }
 
     public static nint GetMusicHookData() => Mix_GetMusicHookData();
 
     public static double GetMusicLoopEndTime(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopEndTime((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicLoopEndTime((nint)Unsafe.AsPointer(ref music));
     }
 
     public static double GetMusicLoopEndTime(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopEndTime(music);
+        return music == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music))
+            : Mix_GetMusicLoopEndTime(music);
     }
 
     public static double GetMusicLoopLengthTime(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopLengthTime((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero
+            ? throw new ArgumentNullException(nameof(music))
+            : Mix_GetMusicLoopLengthTime((nint)Unsafe.AsPointer(ref music));
     }
 
     public static double GetMusicLoopLengthTime(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopLengthTime(music);
+        return music == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicLoopLengthTime(music);
     }
 
     public static double GetMusicLoopStartTime(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopStartTime((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicLoopStartTime((nint)Unsafe.AsPointer(ref music));
     }
 
     public static double GetMusicLoopStartTime(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicLoopStartTime(music);
+        return music == nint.Zero
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicLoopStartTime(music);
     }
 
     public static double GetMusicPosition(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicPosition((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicPosition((nint)Unsafe.AsPointer(ref music));
     }
 
     public static double GetMusicPosition(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicPosition(music);
+        return music == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicPosition(music);
     }
 
     public static int GetMusicVolume(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicVolume((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicVolume((nint)Unsafe.AsPointer(ref music));
     }
 
     public static int GetMusicVolume(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetMusicVolume(music);
+        return music == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetMusicVolume(music);
     }
 
     public static int GetNumTracks(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetNumTracks((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music))
+            : Mix_GetNumTracks((nint)Unsafe.AsPointer(ref music));
     }
 
     public static int GetNumTracks(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_GetNumTracks(music);
+        return music == nint.Zero 
+            ? throw new ArgumentNullException(nameof(music)) 
+            : Mix_GetNumTracks(music);
     }
 
     public static string GetSoundFonts() {
         string soundFonts = Mix_GetSoundFonts();
-        if (string.IsNullOrEmpty(soundFonts))
-            throw new SdlException($"Failed to get sound fonts: {Sdl.GetError()}");
-        return soundFonts;
+        return string.IsNullOrEmpty(soundFonts) 
+            ? throw new SdlException($"Failed to get sound fonts: {Sdl.GetError()}") 
+            : soundFonts;
     }
 
     public static string GetTimidityCfg() {
         string timidityCfg = Mix_GetTimidityCfg();
-        if (string.IsNullOrEmpty(timidityCfg))
-            throw new SdlException($"Failed to get Timidity configuration: {Sdl.GetError()}");
-        return timidityCfg;
+        return string.IsNullOrEmpty(timidityCfg) 
+            ? throw new SdlException($"Failed to get Timidity configuration: {Sdl.GetError()}")
+            : timidityCfg;
     }
 
     public static int GroupAvailable(int tag) {
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupAvailable(tag);
+        return tag < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.") 
+            : Mix_GroupAvailable(tag);
     }
 
     public static bool GroupChannel(int which, int tag) {
-        if (which < 0)
+        if (which < 0) {
             throw new ArgumentOutOfRangeException(nameof(which), "Channel must be non-negative.");
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupChannel(which, tag);
+        }
+
+        return tag < 0 ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.") : Mix_GroupChannel(which, tag);
     }
 
     public static bool GroupChannels(int from, int to, int tag) {
-        if (from < 0)
+        if (from < 0) {
             throw new ArgumentOutOfRangeException(nameof(from), "From channel must be non-negative.");
-        if (to < 0)
+        }
+
+        if (to < 0) {
             throw new ArgumentOutOfRangeException(nameof(to), "To channel must be non-negative.");
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupChannels(from, to, tag);
+        }
+
+        return tag < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.")
+            : Mix_GroupChannels(from, to, tag);
     }
 
     public static int GroupCount(int tag) {
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupCount(tag);
+        return tag < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.") 
+            : Mix_GroupCount(tag);
     }
 
     public static int GroupNewer(int tag) {
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupNewer(tag);
+        return tag < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.") 
+            : Mix_GroupNewer(tag);
     }
 
     public static int GroupOldest(int tag) {
-        if (tag < 0)
-            throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
-        return Mix_GroupOldest(tag);
+        return tag < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.") 
+            : Mix_GroupOldest(tag);
     }
 
     public static void HaltChannel(int channel) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
+        }
+
         Mix_HaltChannel(channel);
     }
 
     public static void HaltGroup(int tag) {
-        if (tag < 0)
+        if (tag < 0) {
             throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
+        }
+
         Mix_HaltGroup(tag);
     }
 
     public static void HaltMusic() => Mix_HaltMusic();
 
     public static void HookMusic(MixMixCallback mixFunc, nint arg) {
-        if (mixFunc == null)
+        if (mixFunc == null) {
             throw new ArgumentNullException(nameof(mixFunc), "Callback cannot be null.");
+        }
+
         Mix_HookMusic(mixFunc, arg);
     }
 
     public static void HookMusicFinished(MusicFinishedCallback musicFinished) {
-        if (musicFinished == null)
+        if (musicFinished == null) {
             throw new ArgumentNullException(nameof(musicFinished), "Callback cannot be null.");
+        }
+
         Mix_HookMusicFinished(musicFinished);
     }
 
     public static int MasterVolume(int volume) {
-        if (volume < 0 || volume > MaxVolume)
-            throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.");
-        return Mix_MasterVolume(volume);
+        return volume is < 0 or > MaxVolume 
+            ? throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.") 
+            : Mix_MasterVolume(volume);
     }
 
     /// <summary>
@@ -384,8 +395,10 @@ public static unsafe partial class Mixer {
     /// </remarks>
     public static MixInit Initialize(MixInit flags) {
         MixInit result = Mix_Init(flags);
-        if (result != flags)
+        if (result != flags) {
             Sdl.LogError(LogCategory.Audio, $"Failed to initialize SDL3_mixer with flags {flags}: {Sdl.GetError()}");
+        }
+
         return result;
     }
 
@@ -402,8 +415,9 @@ public static unsafe partial class Mixer {
     public static void OpenAudio(AudioDeviceId deviceId, AudioSpec? spec = null) {
         AudioSpec nativeSpec = spec ?? default;
         bool result = Mix_OpenAudio(deviceId, spec.HasValue ? (nint)Unsafe.AsPointer(ref nativeSpec) : nint.Zero);
-        if (!result)
+        if (!result) {
             Sdl.LogError(LogCategory.Audio, $"Failed to open audio device: {Sdl.GetError()}");
+        }
     }
 
     /// <summary>
@@ -474,8 +488,10 @@ public static unsafe partial class Mixer {
     /// Dispose of the returned <see cref="Music"/> when no longer needed.
     /// </remarks>
     public static Music LoadMusic(string filePath) {
-        if (string.IsNullOrEmpty(filePath))
+        if (string.IsNullOrEmpty(filePath)) {
             throw new ArgumentNullException(nameof(filePath));
+        }
+
         nint musicPtr = Mix_LoadMUS(filePath);
         if (musicPtr == nint.Zero) {
             Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
@@ -485,12 +501,11 @@ public static unsafe partial class Mixer {
         // Use unsafe code to avoid runtime marshalling
         Music music = *(Music*)musicPtr;
 
-        if (music.Interface == nint.Zero) {
-            Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
-            return default; // Return default Music struct instead of comparing.
-        }
+        if (music.Interface != nint.Zero) return music;
+        
+        Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
+        return default; // Return default Music struct instead of comparing.
 
-        return music;
     }
 
     /// <summary>
@@ -519,8 +534,10 @@ public static unsafe partial class Mixer {
     /// <returns>Returns <see langword="true" /> on success. audio_buf will be filled with a pointerto an allocated buffer containing the audio data, and audio_len is filledwith the length of that audio buffer in bytes.</returns>
 
     public static unsafe Chunk LoadWav(string filePath) {
-        if (string.IsNullOrEmpty(filePath))
+        if (string.IsNullOrEmpty(filePath)) {
             throw new ArgumentNullException(nameof(filePath));
+        }
+
         nint chunkPtr = Mix_LoadWAV(filePath);
         if (chunkPtr == nint.Zero) {
             Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
@@ -528,12 +545,11 @@ public static unsafe partial class Mixer {
         }
 
         Chunk chunk = *(Chunk*)chunkPtr;
-        if (chunk.AudioBuffer == nint.Zero) {
-            Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
-            return default;
-        }
+        if (chunk.AudioBuffer != nint.Zero) return chunk;
+        
+        Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
+        return default;
 
-        return chunk;
     }
 
     /// <summary>
@@ -553,8 +569,10 @@ public static unsafe partial class Mixer {
         nint pChunk = (nint)Unsafe.AsPointer(ref chunk);
 
         int result = Mix_PlayChannel(channel, pChunk, loops);
-        if (result == -1 && channel == -1)
+        if (result == -1 && channel == -1) {
             throw new SdlException($"No available channel for playback: {Sdl.GetError()}");
+        }
+
         return result;
     }
 
@@ -603,8 +621,9 @@ public static unsafe partial class Mixer {
     /// The effect callback must be kept alive for the duration of its use.
     /// </remarks>
     public static void RegisterEffect(int channel, MixEffectFuncT effect, MixEffectDoneT done, nint userData) {
-        if (!Mix_RegisterEffect(channel, effect, done, userData))
+        if (!Mix_RegisterEffect(channel, effect, done, userData)) {
             throw new SdlException($"Failed to register effect: {Sdl.GetError()}");
+        }
     }
 
     /// <summary>
@@ -618,8 +637,9 @@ public static unsafe partial class Mixer {
     /// This has no effect if the audio device is not in stereo mode.
     /// </remarks>
     public static void SetPanning(int channel, byte left, byte right) {
-        if (!Mix_SetPanning(channel, left, right))
+        if (!Mix_SetPanning(channel, left, right)) {
             throw new SdlException($"Failed to set panning: {Sdl.GetError()}");
+        }
     }
 
     #endregion Effects
@@ -701,49 +721,53 @@ public static unsafe partial class Mixer {
      */
 
     public static bool ModMusicJumpToOrder(int order) {
-        if (order < 0)
-            throw new ArgumentOutOfRangeException(nameof(order), "Order must be non-negative.");
-        return Mix_ModMusicJumpToOrder(order);
+        return order < 0
+            ? throw new ArgumentOutOfRangeException(nameof(order), "Order must be non-negative.")
+            : Mix_ModMusicJumpToOrder(order);
     }
 
     public static double MusicDuration(Music music) {
-        if (music.Interface == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_MusicDuration((nint)Unsafe.AsPointer(ref music));
+        return music.Interface == nint.Zero
+            ? throw new ArgumentNullException(nameof(music))
+            : Mix_MusicDuration((nint)Unsafe.AsPointer(ref music));
     }
 
     public static double MusicDuration(nint music) {
-        if (music == nint.Zero)
-            throw new ArgumentNullException(nameof(music));
-        return Mix_MusicDuration(music);
+        return music == nint.Zero
+            ? throw new ArgumentNullException(nameof(music))
+            : Mix_MusicDuration(music);
     }
 
     public static void Pause(int channel) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
+        }
+
         Mix_Pause(channel);
     }
 
     public static int Paused(int channel) {
-        if (channel < 0)
-            throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        return Mix_Paused(channel);
+        return channel < 0
+            ? throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.")
+            : Mix_Paused(channel);
     }
 
     public static bool PausedMusic() => Mix_PausedMusic();
 
     public static void PauseGroup(int tag) {
-        if (tag < 0)
+        if (tag < 0) {
             throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
+        }
+
         Mix_PauseGroup(tag);
     }
 
     public static void PauseMusic() => Mix_PauseMusic();
 
     public static int Playing(int channel) {
-        if (channel < 0)
-            throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        return Mix_Playing(channel);
+        return channel < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.") 
+            : Mix_Playing(channel);
     }
 
     public static bool PlayingMusic() => Mix_PlayingMusic();
@@ -777,20 +801,24 @@ public static unsafe partial class Mixer {
     }
 
     public static int ReserveChannels(int num) {
-        if (num < 0)
-            throw new ArgumentOutOfRangeException(nameof(num), "Number of channels must be non-negative.");
-        return Mix_ReserveChannels(num);
+        return num < 0
+            ? throw new ArgumentOutOfRangeException(nameof(num), "Number of channels must be non-negative.")
+            : Mix_ReserveChannels(num);
     }
 
     public static void Resume(int channel) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
+        }
+
         Mix_Resume(channel);
     }
 
     public static void ResumeGroup(int tag) {
-        if (tag < 0)
+        if (tag < 0) {
             throw new ArgumentOutOfRangeException(nameof(tag), "Tag must be non-negative.");
+        }
+
         Mix_ResumeGroup(tag);
     }
 
@@ -799,83 +827,89 @@ public static unsafe partial class Mixer {
     public static void RewindMusic() => Mix_RewindMusic();
 
     public static bool SetDistance(int channel, byte distance) {
-        if (channel < 0)
-            throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        if (distance > 255)
-            throw new ArgumentOutOfRangeException(nameof(distance), "Distance must be between 0 and 255.");
-        return Mix_SetDistance(channel, distance);
+        return channel < 0
+            ? throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.")
+            : Mix_SetDistance(channel, distance);
     }
 
     public static bool SetMusicPosition(double position) {
-        if (position < 0)
-            throw new ArgumentOutOfRangeException(nameof(position), "Position must be non-negative.");
-        return Mix_SetMusicPosition(position);
+        return position < 0 ? throw new ArgumentOutOfRangeException(nameof(position), "Position must be non-negative.") : Mix_SetMusicPosition(position);
     }
 
     public static bool SetPosition(int channel, short angle, byte distance) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        if (angle < -360 || angle > 360)
-            throw new ArgumentOutOfRangeException(nameof(angle), "Angle must be between -360 and 360.");
-        if (distance > 255)
-            throw new ArgumentOutOfRangeException(nameof(distance), "Distance must be between 0 and 255.");
-        return Mix_SetPosition(channel, angle, distance);
+        }
+
+        return angle is < -360 or > 360
+            ? throw new ArgumentOutOfRangeException(nameof(angle), "Angle must be between -360 and 360.")
+            : Mix_SetPosition(channel, angle, distance);
     }
 
     public static void SetPostMix(MixMixCallback mixFunc, nint arg) {
-        if (mixFunc == null)
+        if (mixFunc == null) {
             throw new ArgumentNullException(nameof(mixFunc), "Callback cannot be null.");
+        }
+
         Mix_SetPostMix(mixFunc, arg);
     }
 
     public static bool SetReverseStereo(int channel, int flip) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        if (flip < 0 || flip > 1)
-            throw new ArgumentOutOfRangeException(nameof(flip), "Flip must be either 0 or 1.");
-        return Mix_SetReverseStereo(channel, flip);
+        }
+
+        return flip is < 0 or > 1
+            ? throw new ArgumentOutOfRangeException(nameof(flip), "Flip must be either 0 or 1.")
+            : Mix_SetReverseStereo(channel, flip);
     }
 
     public static bool SetSoundFonts(string paths) {
-        if (string.IsNullOrEmpty(paths))
-            throw new ArgumentNullException(nameof(paths), "Paths cannot be null or empty.");
-        return Mix_SetSoundFonts(paths);
+        return string.IsNullOrEmpty(paths)
+            ? throw new ArgumentNullException(nameof(paths), "Paths cannot be null or empty.")
+            : Mix_SetSoundFonts(paths);
     }
 
     public static bool SetTimidityCfg(string path) {
-        if (string.IsNullOrEmpty(path))
-            throw new ArgumentNullException(nameof(path), "Path cannot be null or empty.");
-        return Mix_SetTimidityCfg(path);
+        return string.IsNullOrEmpty(path) 
+            ? throw new ArgumentNullException(nameof(path), "Path cannot be null or empty.") 
+            : Mix_SetTimidityCfg(path);
     }
 
     public static bool StartTrack(Music music, int track) {
-        if (music.Interface == nint.Zero)
+        if (music.Interface == nint.Zero) {
             throw new ArgumentNullException(nameof(music));
-        if (track < 0)
-            throw new ArgumentOutOfRangeException(nameof(track), "Track must be non-negative.");
-        return Mix_StartTrack((nint)Unsafe.AsPointer(ref music), track);
+        }
+
+        return track < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(track), "Track must be non-negative.") 
+            : Mix_StartTrack((nint)Unsafe.AsPointer(ref music), track);
     }
 
     public static bool UnregisterAllEffects(int channel) {
-        if (channel < 0)
-            throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        return Mix_UnregisterAllEffects(channel);
+        return channel < 0 
+            ? throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.") 
+            : Mix_UnregisterAllEffects(channel);
     }
 
     public static bool UnregisterEffect(int channel, MixEffectFuncT f) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        if (f == null)
-            throw new ArgumentNullException(nameof(f), "Effect function cannot be null.");
-        return Mix_UnregisterEffect(channel, f);
+        }
+
+        return f == null 
+            ? throw new ArgumentNullException(nameof(f), "Effect function cannot be null.") 
+            : Mix_UnregisterEffect(channel, f);
     }
 
     public static int Volume(int channel, int volume) {
-        if (channel < 0)
+        if (channel < 0) {
             throw new ArgumentOutOfRangeException(nameof(channel), "Channel must be non-negative.");
-        if (volume < 0 || volume > MaxVolume)
-            throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.");
-        return Mix_Volume(channel, volume);
+        }
+
+        return volume is < 0 or > MaxVolume 
+            ? throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.") 
+            : Mix_Volume(channel, volume);
     }
 
     public static int VolumeChunk(Chunk chunk, int volume) {
@@ -883,17 +917,16 @@ public static unsafe partial class Mixer {
     }
 
     public static int VolumeChunk(nint chunk, int volume) {
-        if (chunk == nint.Zero) {
-            Sdl.LogError(LogCategory.Error, "Null Chunk");
-            return -1;
-        }
-        return Mix_VolumeChunk(chunk, volume);
+        if (chunk != nint.Zero) return Mix_VolumeChunk(chunk, volume);
+
+        Sdl.LogError(LogCategory.Error, "Null Chunk");
+        return -1;
     }
 
     public static int VolumeMusic(int volume) {
-        if (volume < 0 || volume > MaxVolume)
-            throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.");
-        return Mix_VolumeMusic(volume);
+        return volume is < 0 or > MaxVolume 
+            ? throw new ArgumentOutOfRangeException(nameof(volume), $"Volume must be between 0 and {MaxVolume}.") 
+            : Mix_VolumeMusic(volume);
     }
 
     [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
