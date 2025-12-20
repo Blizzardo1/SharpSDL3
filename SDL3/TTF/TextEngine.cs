@@ -13,12 +13,12 @@ namespace SharpSDL3.TTF;
 /// <para>
 ///     There are three text engines provided with the library:
 ///     <list type="bullet">
-///     <item>Drawing to a <see cref="Surface"/>, created with <see cref="Ttf.CreateSurfaceTextEngine"/></item>
-///     <item>Drawing with an SDL 2D renderer, created with <see cref="Ttf.CreateRendererTextEngine"/></item>
-///     <item>Drawing with the SDL GPU API, created with <see cref="Ttf.CreateGpuTextEngine"/></item>
+///     <item>Drawing to a <see cref="Surface" />, created with <see cref="Ttf.CreateSurfaceTextEngine" /></item>
+///     <item>Drawing with an SDL 2D renderer, created with <see cref="Ttf.CreateRendererTextEngine" /></item>
+///     <item>Drawing with the SDL GPU API, created with <see cref="Ttf.CreateGpuTextEngine" /></item>
 ///     </list>
 /// </para>
-/// <para><strong>Version:</strong> This struct is available since SDL_ttf 3.0.0</para>
+/// <para><strong>Version</strong>: This struct is available since SDL_ttf 3.0.0</para>
 /// </remarks>
 [StructLayout(LayoutKind.Sequential)]
 public struct TextEngine {
@@ -52,7 +52,7 @@ public struct TextEngine {
     public delegate void DestroyText(nint userdata, Text text);
 
     /// <summary>
-    /// Handle to this <see cref="TextEngine"/> structure.
+    /// Handle to this <see cref="TextEngine" /> structure.
     /// </summary>
     public nint Handle;
 };

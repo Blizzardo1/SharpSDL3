@@ -13,11 +13,11 @@ public static partial class Sdl {
 
     /// <param name="cond">the condition variable to signal.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SignalCondition"/>
-    /// <seealso cref="WaitCondition"/>
-    /// <seealso cref="WaitConditionTimeout"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SignalCondition" />
+    /// <seealso cref="WaitCondition" />
+    /// <seealso cref="WaitConditionTimeout" />
     /// </remarks>
 
     public static void BroadcastCondition(nint cond) {
@@ -29,12 +29,12 @@ public static partial class Sdl {
 
     /// <summary>Create a condition variable.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BroadcastCondition"/>
-    /// <seealso cref="SignalCondition"/>
-    /// <seealso cref="WaitCondition"/>
-    /// <seealso cref="WaitConditionTimeout"/>
-    /// <seealso cref="DestroyCondition"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition" />
+    /// <seealso cref="SignalCondition" />
+    /// <seealso cref="WaitCondition" />
+    /// <seealso cref="WaitConditionTimeout" />
+    /// <seealso cref="DestroyCondition" />
     /// </remarks>
     /// <returns>(SDL_Condition *) Returns a new condition variable or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -49,11 +49,11 @@ public static partial class Sdl {
     /// <summary>Create a new mutex.</summary>
     /// <remarks>
     /// All newly-created mutexes begin in the unlocked state.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyMutex"/>
-    /// <seealso cref="LockMutex"/>
-    /// <seealso cref="TryLockMutex"/>
-    /// <seealso cref="UnlockMutex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyMutex" />
+    /// <seealso cref="LockMutex" />
+    /// <seealso cref="TryLockMutex" />
+    /// <seealso cref="UnlockMutex" />
     /// </remarks>
     /// <returns>(SDL_Mutex *) Returns the initialized and unlocked mutex or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -74,13 +74,13 @@ public static partial class Sdl {
     /// multiple threads to use a resource at the same time if they promise not to
     /// change it, and when it has to be changed, the rwlock will serve as a
     /// gateway to make sure those changes can be made safely.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyRwLock"/>
-    /// <seealso cref="LockRwLockForReading"/>
-    /// <seealso cref="LockRwLockForWriting"/>
-    /// <seealso cref="TryLockRwLockForReading"/>
-    /// <seealso cref="TryLockRwLockForWriting"/>
-    /// <seealso cref="UnlockRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyRwLock" />
+    /// <seealso cref="LockRwLockForReading" />
+    /// <seealso cref="LockRwLockForWriting" />
+    /// <seealso cref="TryLockRwLockForReading" />
+    /// <seealso cref="TryLockRwLockForWriting" />
+    /// <seealso cref="UnlockRwLock" />
     /// </remarks>
     /// <returns>(SDL_RWLock *) Returns the initialized and unlockedread/write lock or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -96,8 +96,8 @@ public static partial class Sdl {
 
     /// <param name="cond">the condition variable to destroy.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateCondition"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateCondition" />
     /// </remarks>
 
     public static void DestroyCondition(nint cond) {
@@ -116,8 +116,8 @@ public static partial class Sdl {
     /// it is safe to destroy a mutex that is unlocked, it is not safe to attempt
     /// to destroy a locked mutex, and may result in undefined behavior depending
     /// on the platform.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateMutex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateMutex" />
     /// </remarks>
 
     public static void DestroyMutex(nint mutex) {
@@ -136,8 +136,8 @@ public static partial class Sdl {
     /// resource leak. While it is safe to destroy a rwlock that is unlocked, it
     /// is not safe to attempt to destroy a locked rwlock, and may result in
     /// undefined behavior depending on the platform.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRwLock" />
     /// </remarks>
 
     public static void DestroyRwLock(nint rwlock) {
@@ -154,9 +154,9 @@ public static partial class Sdl {
     /// This will block until the mutex is available, which is to say it is in the
     /// unlocked state and the OS has chosen the caller as the next thread to lock
     /// it. Of all threads waiting to lock the mutex, only one may do so at a time.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="TryLockMutex"/>
-    /// <seealso cref="UnlockMutex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="TryLockMutex" />
+    /// <seealso cref="UnlockMutex" />
     /// </remarks>
 
     public static void LockMutex(nint mutex) {
@@ -176,10 +176,10 @@ public static partial class Sdl {
     /// read-only access; if a thread wants to lock for writing, only one may do so
     /// at a time, and no other threads, read-only or not, may hold the lock at the
     /// same time.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRwLockForWriting"/>
-    /// <seealso cref="TryLockRwLockForReading"/>
-    /// <seealso cref="UnlockRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRwLockForWriting" />
+    /// <seealso cref="TryLockRwLockForReading" />
+    /// <seealso cref="UnlockRwLock" />
     /// </remarks>
 
     public static void LockRwLockForReading(nint rwlock) {
@@ -198,10 +198,10 @@ public static partial class Sdl {
     /// the lock when it requests write access; all other threads, whether they
     /// also want to write or only want read-only access, must wait until the
     /// writer thread has released the lock.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRwLockForReading"/>
-    /// <seealso cref="TryLockRwLockForWriting"/>
-    /// <seealso cref="UnlockRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRwLockForReading" />
+    /// <seealso cref="TryLockRwLockForWriting" />
+    /// <seealso cref="UnlockRwLock" />
     /// </remarks>
 
     public static void LockRwLockForWriting(nint rwlock) {
@@ -220,10 +220,10 @@ public static partial class Sdl {
     /// SDL_INIT_STATUS_INITIALIZED or
     /// SDL_INIT_STATUS_UNINITIALIZED and allows
     /// any threads waiting for the status to proceed.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ShouldInit"/>
-    /// <seealso cref="ShouldQuit"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShouldInit" />
+    /// <seealso cref="ShouldQuit" />
     /// </remarks>
 
     public static void SetInitialized(ref InitState state, SdlBool initialized) {
@@ -249,10 +249,10 @@ public static partial class Sdl {
     /// SDL_INIT_STATUS_INITIALIZING and returns
     /// <see langword="true" />. If another thread is already modifying this state, it will wait until
     /// that's done before returning.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetInitialized"/>
-    /// <seealso cref="ShouldQuit"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetInitialized" />
+    /// <seealso cref="ShouldQuit" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if initialization needs to be done, <see langword="false" /> otherwise.</returns>
 
@@ -274,10 +274,10 @@ public static partial class Sdl {
     /// sets the status to
     /// SDL_INIT_STATUS_UNINITIALIZING and
     /// returns <see langword="true" />.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetInitialized"/>
-    /// <seealso cref="ShouldInit"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetInitialized" />
+    /// <seealso cref="ShouldInit" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if cleanup needs to be done, <see langword="false" /> otherwise.</returns>
 
@@ -301,11 +301,11 @@ public static partial class Sdl {
 
     /// <param name="cond">the condition variable to signal.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BroadcastCondition"/>
-    /// <seealso cref="WaitCondition"/>
-    /// <seealso cref="WaitConditionTimeout"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition" />
+    /// <seealso cref="WaitCondition" />
+    /// <seealso cref="WaitConditionTimeout" />
     /// </remarks>
 
     public static void SignalCondition(nint cond) {
@@ -321,9 +321,9 @@ public static partial class Sdl {
     /// <remarks>
     /// This works just like SDL_LockMutex(), but if the mutex is
     /// not available, this function returns <see langword="false" /> immediately.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockMutex"/>
-    /// <seealso cref="UnlockMutex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockMutex" />
+    /// <seealso cref="UnlockMutex" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the mutex would block.</returns>
 
@@ -341,10 +341,10 @@ public static partial class Sdl {
     /// This works just like
     /// SDL_LockRWLockForReading(), but if the rwlock
     /// is not available, then this function returns <see langword="false" /> immediately.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRwLockForReading"/>
-    /// <seealso cref="TryLockRwLockForWriting"/>
-    /// <seealso cref="UnlockRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRwLockForReading" />
+    /// <seealso cref="TryLockRwLockForWriting" />
+    /// <seealso cref="UnlockRwLock" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
 
@@ -362,10 +362,10 @@ public static partial class Sdl {
     /// This works just like
     /// SDL_LockRWLockForWriting(), but if the rwlock
     /// is not available, then this function returns <see langword="false" /> immediately.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRwLockForWriting"/>
-    /// <seealso cref="TryLockRwLockForReading"/>
-    /// <seealso cref="UnlockRwLock"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRwLockForWriting" />
+    /// <seealso cref="TryLockRwLockForReading" />
+    /// <seealso cref="UnlockRwLock" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the lock would block.</returns>
 
@@ -383,9 +383,9 @@ public static partial class Sdl {
     /// It is legal for the owning thread to lock an already-locked mutex. It must
     /// unlock it the same number of times before it is actually made available for
     /// other threads in the system (this is known as a &quot;recursive mutex&quot;).
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockMutex"/>
-    /// <seealso cref="TryLockMutex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockMutex" />
+    /// <seealso cref="TryLockMutex" />
     /// </remarks>
 
     public static void UnlockMutex(nint mutex) {
@@ -401,11 +401,11 @@ public static partial class Sdl {
     /// <remarks>
     /// Use this function to unlock the rwlock, whether it was locked for read-only
     /// or write operations.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LockRwLockForReading"/>
-    /// <seealso cref="LockRwLockForWriting"/>
-    /// <seealso cref="TryLockRwLockForReading"/>
-    /// <seealso cref="TryLockRwLockForWriting"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LockRwLockForReading" />
+    /// <seealso cref="LockRwLockForWriting" />
+    /// <seealso cref="TryLockRwLockForReading" />
+    /// <seealso cref="TryLockRwLockForWriting" />
     /// </remarks>
 
     public static void UnlockRwLock(nint rwlock) {
@@ -425,11 +425,11 @@ public static partial class Sdl {
     /// SDL_BroadcastCondition() on the condition
     /// variable cond. Once the condition variable is signaled, the mutex is
     /// re-locked and the function returns.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BroadcastCondition"/>
-    /// <seealso cref="SignalCondition"/>
-    /// <seealso cref="WaitConditionTimeout"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition" />
+    /// <seealso cref="SignalCondition" />
+    /// <seealso cref="WaitConditionTimeout" />
     /// </remarks>
 
     public static void WaitCondition(nint cond, nint mutex) {
@@ -461,11 +461,11 @@ public static partial class Sdl {
     /// variable cond, or for the specified time to elapse. Once the condition
     /// variable is signaled or the time elapsed, the mutex is re-locked and the
     /// function returns.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BroadcastCondition"/>
-    /// <seealso cref="SignalCondition"/>
-    /// <seealso cref="WaitCondition"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BroadcastCondition" />
+    /// <seealso cref="SignalCondition" />
+    /// <seealso cref="WaitCondition" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the condition variable is signaled, <see langword="false" /> if thecondition is not signaled in the allotted time.</returns>
 

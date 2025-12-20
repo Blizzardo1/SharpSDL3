@@ -27,7 +27,7 @@ public struct Text {
     public TextData Internal;
 
     /// <summary>
-    /// The Handle of the <see cref="Text"/> structure.
+    /// The Handle of the <see cref="Text" /> structure.
     /// </summary>
     public nint Handle;
 }

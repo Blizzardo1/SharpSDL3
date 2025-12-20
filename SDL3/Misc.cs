@@ -17,9 +17,9 @@ public static partial class Sdl {
     /// sense to handle a specific URL's protocol (a web browser for http://,
     /// etc), but it might also be able to launch file managers for directories and
     /// other things.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool OpenUrl(string url) {
         if (string.IsNullOrWhiteSpace(url)) {
             throw new ArgumentException("URL cannot be null or empty.", nameof(url));

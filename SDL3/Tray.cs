@@ -13,8 +13,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="entry">The entry to activate.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ClickTrayEntry(nint entry) {
@@ -32,11 +32,11 @@ public static unsafe partial class Sdl {
     /// Many platforms advise not using a system tray unless persistence is a
     /// necessary feature. Avoid needlessly creating a tray icon, as the user may
     /// feel like it clutters their interface.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTrayMenu"/>
-    /// <seealso cref="GetTrayMenu"/>
-    /// <seealso cref="DestroyTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTrayMenu" />
+    /// <seealso cref="GetTrayMenu" />
+    /// <seealso cref="DestroyTray" />
     /// </remarks>
     /// <returns>(SDL_Tray *) Returns The newly created system tray icon.</returns>
 
@@ -59,11 +59,11 @@ public static unsafe partial class Sdl {
     /// <param name="tray">the tray to bind the menu to.</param>
     /// <remarks>
     /// This should be called at most once per tray icon.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTray"/>
-    /// <seealso cref="GetTrayMenu"/>
-    /// <seealso cref="GetTrayMenuParentTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTray" />
+    /// <seealso cref="GetTrayMenu" />
+    /// <seealso cref="GetTrayMenuParentTray" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
 
@@ -83,11 +83,11 @@ public static unsafe partial class Sdl {
     /// <param name="entry">the tray entry to bind the menu to.</param>
     /// <remarks>
     /// This should be called at most once per tray entry.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="GetTraySubmenu"/>
-    /// <seealso cref="GetTrayMenuParentEntry"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="GetTraySubmenu" />
+    /// <seealso cref="GetTrayMenuParentEntry" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
 
@@ -107,9 +107,9 @@ public static unsafe partial class Sdl {
     /// <param name="tray">the tray icon to be destroyed.</param>
     /// <remarks>
     /// This also destroys all associated menus and entries.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTray" />
     /// </remarks>
 
     public static void DestroyTray(nint tray) {
@@ -124,10 +124,10 @@ public static unsafe partial class Sdl {
     /// <param name="menu">The menu to get entries from.</param>
     /// <param name="count">An optional pointer to obtain the number of entries in the menu.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RemoveTrayEntry"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RemoveTrayEntry" />
+    /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
     /// <returns>(const SDL_TrayEntry **) Returns a <see langword="null" />-terminated list ofentries within the given menu. The pointer becomes invalid when anyfunction that inserts or deletes entries in the menu is called.</returns>
 
@@ -162,11 +162,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// The entry must have been created with the
     /// SDL_TRAYENTRY_CHECKBOX flag.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="SetTrayEntryChecked"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="SetTrayEntryChecked" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the entry is checked; <see langword="false" /> otherwise.</returns>
 
@@ -185,11 +185,11 @@ public static unsafe partial class Sdl {
 
     /// <param name="entry">the entry to be read.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="SetTrayEntryEnabled"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="SetTrayEntryEnabled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the entry is enabled; <see langword="false" /> otherwise.</returns>
 
@@ -209,11 +209,11 @@ public static unsafe partial class Sdl {
     /// <param name="entry">the entry to be read.</param>
     /// <remarks>
     /// If the returned value is <see langword="null" />, the entry is a separator.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="SetTrayEntryLabel"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="SetTrayEntryLabel" />
     /// </remarks>
     /// <returns>Returns the label of the entry in UTF-8 encoding.</returns>
 
@@ -232,9 +232,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="entry">the entry for which to get the parent menu.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="InsertTrayEntryAt"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the parent menu.</returns>
 
@@ -255,10 +255,10 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// You should have called SDL_CreateTrayMenu() on the
     /// tray object. This function allows you to fetch it again later.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTray"/>
-    /// <seealso cref="CreateTrayMenu"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTray" />
+    /// <seealso cref="CreateTrayMenu" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
 
@@ -280,10 +280,10 @@ public static unsafe partial class Sdl {
     /// Either this function or
     /// SDL_GetTrayMenuParentTray() will return
     /// non-<see langword="null" /> for any given menu.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTraySubmenu"/>
-    /// <seealso cref="GetTrayMenuParentTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTraySubmenu" />
+    /// <seealso cref="GetTrayMenuParentTray" />
     /// </remarks>
     /// <returns>(SDL_TrayEntry *) Returns the parent entry, or <see langword="null" /> ifthis menu is not a submenu.</returns>
 
@@ -305,10 +305,10 @@ public static unsafe partial class Sdl {
     /// Either this function or
     /// SDL_GetTrayMenuParentEntry() will return
     /// non-<see langword="null" /> for any given menu.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTrayMenu"/>
-    /// <seealso cref="GetTrayMenuParentEntry"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTrayMenu" />
+    /// <seealso cref="GetTrayMenuParentEntry" />
     /// </remarks>
     /// <returns>(SDL_Tray *) Returns the parent tray, or <see langword="null" /> if this menu is asubmenu.</returns>
 
@@ -329,10 +329,10 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// You should have called SDL_CreateTraySubmenu() on
     /// the entry object. This function allows you to fetch it again later.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="CreateTraySubmenu"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="CreateTraySubmenu" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
 
@@ -356,12 +356,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// If label is <see langword="null" />, the entry will be a separator. Many functions won't work
     /// for an entry that is a separator.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="TrayEntryFlags"/>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="RemoveTrayEntry"/>
-    /// <seealso cref="GetTrayEntryParent"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="TrayEntryFlags" />
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="RemoveTrayEntry" />
+    /// <seealso cref="GetTrayEntryParent" />
     /// </remarks>
     /// <returns>(SDL_TrayEntry *) Returns the newly created entry, or <see langword="null" />if pos is out of bounds.</returns>
 
@@ -383,10 +383,10 @@ public static unsafe partial class Sdl {
 
     /// <param name="entry">The entry to be deleted.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
 
     public static void RemoveTrayEntry(nint entry) {
@@ -402,10 +402,10 @@ public static unsafe partial class Sdl {
     /// <param name="callback">a callback to be invoked when the entry is selected.</param>
     /// <param name="userdata">an optional pointer to pass extra data to the callback when it will be invoked.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
 
     public static void SetTrayEntryCallback(nint entry, SdlTrayCallback callback, nint userdata) {
@@ -425,11 +425,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// The entry must have been created with the
     /// SDL_TRAYENTRY_CHECKBOX flag.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="GetTrayEntryChecked"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="GetTrayEntryChecked" />
     /// </remarks>
 
     public static void SetTrayEntryChecked(nint entry, bool check) {
@@ -444,11 +444,11 @@ public static unsafe partial class Sdl {
     /// <param name="entry">the entry to be updated.</param>
     /// <param name="enabled"><see langword="true" /> if the entry should be enabled; <see langword="false" /> otherwise.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="GetTrayEntryEnabled"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="GetTrayEntryEnabled" />
     /// </remarks>
 
     public static void SetTrayEntryEnabled(nint entry, bool enabled) {
@@ -467,11 +467,11 @@ public static unsafe partial class Sdl {
     /// it is not possible to set a non-<see langword="null" /> label on an entry that has a <see langword="null" />
     /// label (separators), or to set a <see langword="null" /> label to an entry that has a non-<see langword="null" />
     /// label. The function will silently fail if that happens.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetTrayEntries"/>
-    /// <seealso cref="InsertTrayEntryAt"/>
-    /// <seealso cref="GetTrayEntryLabel"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetTrayEntries" />
+    /// <seealso cref="InsertTrayEntryAt" />
+    /// <seealso cref="GetTrayEntryLabel" />
     /// </remarks>
 
     public static void SetTrayEntryLabel(nint entry, string label) {
@@ -489,9 +489,9 @@ public static unsafe partial class Sdl {
     /// <param name="tray">the tray icon to be updated.</param>
     /// <param name="icon">the new icon. May be <see langword="null" />.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTray" />
     /// </remarks>
 
     public static void SetTrayIcon(nint tray, nint icon) {
@@ -509,9 +509,9 @@ public static unsafe partial class Sdl {
     /// <param name="tray">the tray icon to be updated.</param>
     /// <param name="tooltip">the new tooltip in UTF-8 encoding. May be <see langword="null" />.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the tray.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTray"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTray" />
     /// </remarks>
 
     public static void SetTrayTooltip(nint tray, string tooltip) {

@@ -10,9 +10,9 @@ namespace SharpSDL3;
 public static partial class Sdl {
     /// <summary>Return whether a mouse is currently connected.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMice"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMice" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a mouse is connected, <see langword="false" /> otherwise.</returns>
 
@@ -26,12 +26,12 @@ public static partial class Sdl {
     /// mouse functionality, including some game controllers, KVM switches, etc.
     /// You should wait for input from a device before you consider it actively in
     /// use.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMouseNameForId"/>
-    /// <seealso cref="HasMouse"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMouseNameForId" />
+    /// <seealso cref="HasMouse" />
     /// </remarks>
-    /// <returns>(SDL_MouseID *) Returns a 0 terminated array of mouseinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
+    /// <returns>(SDL_MouseID *) Returns a 0 terminated array of mouseinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free" /> when itis no longer needed.</returns>
 
     public static nint GetMice(out int count) {
         nint result = SDL_GetMice(out count);
@@ -47,9 +47,9 @@ public static partial class Sdl {
     /// <param name="instance_id">the mouse instance ID.</param>
     /// <remarks>
     /// This function returns &quot;&quot; if the mouse doesn't have a name.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMice"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMice" />
     /// </remarks>
     /// <returns>Returns the name of the selected mouse, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
@@ -68,8 +68,8 @@ public static partial class Sdl {
 
     /// <summary>Get the window which currently has mouse focus.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window with mouse focus.</returns>
 
@@ -82,10 +82,10 @@ public static partial class Sdl {
     /// <remarks>
     /// This function returns the cached synchronous state as SDL understands it
     /// from the last pump of the event queue.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGlobalMouseState"/>
-    /// <seealso cref="GetRelativeMouseState"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetGlobalMouseState" />
+    /// <seealso cref="GetRelativeMouseState" />
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
 
@@ -100,11 +100,11 @@ public static partial class Sdl {
     /// This function immediately queries the platform for the most recent
     /// asynchronous state, more costly than retrieving SDL's cached state in
     /// SDL_GetMouseState().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CaptureMouse"/>
-    /// <seealso cref="GetMouseState"/>
-    /// <seealso cref="GetGlobalMouseState"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CaptureMouse" />
+    /// <seealso cref="GetMouseState" />
+    /// <seealso cref="GetGlobalMouseState" />
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
     public static MouseButtonFlags GetGlobalMouseState(out float x, out float y) {
@@ -117,10 +117,10 @@ public static partial class Sdl {
     /// <remarks>
     /// This function returns the cached synchronous state as SDL understands it
     /// from the last pump of the event queue.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMouseState"/>
-    /// <seealso cref="GetGlobalMouseState"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMouseState" />
+    /// <seealso cref="GetGlobalMouseState" />
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
     public static MouseButtonFlags GetRelativeMouseState(out float x, out float y) {
@@ -144,9 +144,9 @@ public static partial class Sdl {
     /// warp by setting the
     /// SDL_HINT_MOUSE_RELATIVE_WARP_MOTION
     /// hint.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WarpMouseGlobal"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WarpMouseGlobal" />
     /// </remarks>
 
     public static void WarpMouseInWindow(nint window, float x, float y) {
@@ -171,11 +171,11 @@ public static partial class Sdl {
     /// <param name="y">the y coordinate.</param>
     /// <remarks>
     /// This function generates a mouse motion event.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WarpMouseInWindow"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WarpMouseInWindow" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool WarpMouseGlobal(float x, float y) {
         if (x < 0) {
@@ -203,11 +203,11 @@ public static partial class Sdl {
     /// is hidden, the mouse position is constrained to the window, and SDL will
     /// report continuous relative mouse motion even if the mouse is at the edge of
     /// the window.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetWindowRelativeMouseMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetWindowRelativeMouseMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetWindowRelativeMouseMode(nint window, bool enabled) {
         if (window == nint.Zero) {
@@ -226,9 +226,9 @@ public static partial class Sdl {
 
     /// <param name="window">the window to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetWindowRelativeMouseMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetWindowRelativeMouseMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if relative mode is enabled for a window or <see langword="false" />otherwise.</returns>
 
@@ -254,11 +254,11 @@ public static partial class Sdl {
     /// capturing is enabled, the current window will get all mouse events, but
     /// unlike relative mode, no change is made to the cursor and it is not
     /// restrained to your window.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGlobalMouseState"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetGlobalMouseState" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool CaptureMouse(bool enabled) {
         SdlBool result = SDL_CaptureMouse(enabled);
@@ -279,14 +279,14 @@ public static partial class Sdl {
     /// <param name="hot_y">the y-axis offset from the top of the cursor image to the mouse y position, in the range of 0 to h - 1.</param>
     /// <remarks>
     /// mask has to be in MSB (Most Significant Bit) format.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateColorCursor"/>
-    /// <seealso cref="CreateSystemCursor"/>
-    /// <seealso cref="DestroyCursor"/>
-    /// <seealso cref="SetCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateColorCursor" />
+    /// <seealso cref="CreateSystemCursor" />
+    /// <seealso cref="DestroyCursor" />
+    /// <seealso cref="SetCursor" />
     /// </remarks>
-    /// <returns>(SDL_Cursor *) Returns a new cursor with the specifiedparameters on success or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_Cursor *) Returns a new cursor with the specifiedparameters on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateCursor(nint data, nint mask, int w, int h, int hotX, int hotY) {
         if (data == nint.Zero) {
@@ -336,12 +336,12 @@ public static partial class Sdl {
     /// available, the closest larger size image will be downscaled to the
     /// appropriate size and be used instead, if available. Otherwise, the closest
     /// smaller image will be upscaled and be used instead.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateCursor"/>
-    /// <seealso cref="CreateSystemCursor"/>
-    /// <seealso cref="DestroyCursor"/>
-    /// <seealso cref="SetCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateCursor" />
+    /// <seealso cref="CreateSystemCursor" />
+    /// <seealso cref="DestroyCursor" />
+    /// <seealso cref="SetCursor" />
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns the new cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -371,9 +371,9 @@ public static partial class Sdl {
 
     /// <param name="id">an SDL_SystemCursor enum value.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyCursor" />
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns a cursor on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -398,11 +398,11 @@ public static partial class Sdl {
     /// cursor is currently visible, the change will be immediately represented on
     /// the display. SDL_SetCursor(<see langword="null" />) can be used to force
     /// cursor redraw, if this is desired for any reason.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetCursor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetCursor(nint cursor) {
         if (cursor == nint.Zero) {
@@ -422,9 +422,9 @@ public static partial class Sdl {
     /// This function returns a pointer to the current cursor which is owned by the
     /// library. It is not necessary to free the cursor with
     /// SDL_DestroyCursor().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetCursor" />
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns the active cursor or <see langword="null" /> if there isno mouse.</returns>
 
@@ -434,8 +434,8 @@ public static partial class Sdl {
     /// <remarks>
     /// You do not have to call SDL_DestroyCursor() on the
     /// return value, but it is safe to do so.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Cursor *) Returns the default cursor on success or <see langword="null" />on failuree; call <see cref="GetError()" /> for more information.</returns>
 
@@ -449,11 +449,11 @@ public static partial class Sdl {
     /// SDL_CreateCursor(),
     /// SDL_CreateColorCursor() or
     /// SDL_CreateSystemCursor().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateColorCursor"/>
-    /// <seealso cref="CreateCursor"/>
-    /// <seealso cref="CreateSystemCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateColorCursor" />
+    /// <seealso cref="CreateCursor" />
+    /// <seealso cref="CreateSystemCursor" />
     /// </remarks>
 
     public static void DestroyCursor(nint cursor) {
@@ -466,32 +466,32 @@ public static partial class Sdl {
 
     /// <summary>Show the cursor.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CursorVisible"/>
-    /// <seealso cref="HideCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CursorVisible" />
+    /// <seealso cref="HideCursor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool ShowCursor() => SDL_ShowCursor();
 
     /// <summary>Hide the cursor.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CursorVisible"/>
-    /// <seealso cref="ShowCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CursorVisible" />
+    /// <seealso cref="ShowCursor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool HideCursor() => SDL_HideCursor();
 
     /// <summary>Return whether the cursor is currently being shown.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HideCursor"/>
-    /// <seealso cref="ShowCursor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HideCursor" />
+    /// <seealso cref="ShowCursor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the cursor is being shown, or <see langword="false" /> if thecursor is hidden.</returns>
 

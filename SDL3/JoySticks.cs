@@ -13,8 +13,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="desc">joystick description, initialized using SDL_INIT_INTERFACE().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DetachVirtualJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DetachVirtualJoystick" />
     /// </remarks>
     /// <returns>Returns the joystick instance ID, or 0on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -35,8 +35,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the joystick device to close.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="OpenJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="OpenJoystick" />
     /// </remarks>
 
     public static void CloseJoystick(nint joystick) {
@@ -50,10 +50,10 @@ public static unsafe partial class Sdl {
 
     /// <param name="instance_id">the joystick instance ID, previously returned from SDL_AttachVirtualJoystick().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AttachVirtualJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AttachVirtualJoystick" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool DetachVirtualJoystick(uint instanceId) {
         if (instanceId == 0) {
@@ -76,8 +76,8 @@ public static unsafe partial class Sdl {
     /// specify what each axis should be bound to. Alternately, SDL's higher-level
     /// Game Controller API makes a great effort to apply order to this lower-level
     /// interface, so you know that a specific axis is the &quot;left thumb stick,&quot; etc.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumJoystickAxes"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumJoystickAxes" />
     /// </remarks>
     /// <returns>Returns a 16-bit signed integer representing the current position of the axis or 0 on failure; call <see cref="GetError()" />for more information.</returns>
 
@@ -99,7 +99,7 @@ public static unsafe partial class Sdl {
     /// <param name="state">upon return, the initial value is supplied here.</param>
     /// <remarks>
     /// The state is a value ranging from -32768 to 32767.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this axis has any initial value, or <see langword="false" /> if not.</returns>
 
@@ -124,10 +124,10 @@ public static unsafe partial class Sdl {
     /// Trackballs can only return relative motion since the last call to
     /// SDL_GetJoystickBall(), these motion deltas are
     /// placed into dx and dy.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumJoystickBalls"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumJoystickBalls" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool GetJoystickBall(nint joystick, int ball, out int dx, out int dy) {
         if (joystick == nint.Zero) {
@@ -145,8 +145,8 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
     /// <param name="button">the button index to get the state from; indices start at index 0.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumJoystickButtons"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumJoystickButtons" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the button is pressed, <see langword="false" /> otherwise.</returns>
 
@@ -165,7 +165,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the joystick to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns theconnection state on success orSDL_JOYSTICK_CONNECTION_INVALID on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -182,7 +182,7 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// If the firmware version isn't available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the firmware version of the selected joystick,  0 if unavailable.</returns>
 
@@ -198,9 +198,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="instance_id">the instance ID to get the SDL_Joystick for.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetJoystickFromId(uint instanceId) {
         if (instanceId == 0) {
@@ -217,9 +217,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="player_index">the player index to get the SDL_Joystick for.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickPlayerIndex"/>
-    /// <seealso cref="SetJoystickPlayerIndex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickPlayerIndex" />
+    /// <seealso cref="SetJoystickPlayerIndex" />
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns an SDL_Joystick on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -239,11 +239,11 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// This function requires an open joystick.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickGUIDForID"/>
-    /// <seealso cref="GUIDToString"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickGUIDForID" />
+    /// <seealso cref="GUIDToString" />
     /// </remarks>
-    /// <returns>Returns the GUID of the given joystick. If called onan invalid index, this function returns a zero GUID; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the GUID of the given joystick. If called onan invalid index, this function returns a zero GUID; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlGuid GetJoystickGuid(nint joystick) {
         if (joystick == nint.Zero) {
@@ -261,9 +261,9 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
     /// This can be called before any joysticks are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickGUID"/>
-    /// <seealso cref="GUIDToString"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickGUID" />
+    /// <seealso cref="GUIDToString" />
     /// </remarks>
     /// <returns>Returns the GUID of the selected joystick. If calledwith an invalid instance_id, this function returns a zero GUID.</returns>
 
@@ -274,16 +274,16 @@ public static unsafe partial class Sdl {
         return SDL_GetJoystickGUIDForID(instanceId);
     }
 
-    /// <summary>Get the device information encoded in a <see cref="SdlGuid"/> structure.</summary>
+    /// <summary>Get the device information encoded in a <see cref="SdlGuid" /> structure.</summary>
 
-    /// <param name="guid">the <see cref="SdlGuid"/> you wish to get info about.</param>
+    /// <param name="guid">the <see cref="SdlGuid" /> you wish to get info about.</param>
     /// <param name="vendor">a pointer filled in with the device VID, or 0 if not available.</param>
     /// <param name="product">a pointer filled in with the device PID, or 0 if not available.</param>
     /// <param name="version">a pointer filled in with the device version, or 0 if not available.</param>
     /// <param name="crc16">a pointer filled in with a CRC used to distinguish different products with the same VID/PID, or 0 if not available.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickGUIDForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickGUIDForID" />
     /// </remarks>
 
     public static void GetJoystickGuidInfo(SdlGuid guid, out ushort vendor, out ushort product, out ushort version, out ushort crc16) {
@@ -299,8 +299,8 @@ public static unsafe partial class Sdl {
     /// <param name="hat">the hat index to get the state from; indices start at index 0.</param>
     /// <remarks>
     /// The returned value will be one of the SDL_HAT_* values.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumJoystickHats"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumJoystickHats" />
     /// </remarks>
     /// <returns>Returns the current hat position.</returns>
 
@@ -319,7 +319,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the instance ID of the specifiedjoystick on success or 0 on failure; call <see cref="GetError()" />for more information.</returns>
 
@@ -335,8 +335,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickNameForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickNameForID" />
     /// </remarks>
     /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
@@ -356,9 +356,9 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
     /// This can be called before any joysticks are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickName"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickName" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the name of the selected joystick. If no name can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
@@ -379,8 +379,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickPathForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickPathForID" />
     /// </remarks>
     /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
@@ -400,9 +400,9 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
     /// This can be called before any joysticks are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickPath"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickPath" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the path of the selected joystick. If no path can befound, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
@@ -423,8 +423,8 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// For XInput controllers this returns the XInput user index. Many joysticks
     /// will not be able to supply this information.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetJoystickPlayerIndex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetJoystickPlayerIndex" />
     /// </remarks>
     /// <returns>Returns the player index, or -1 if it's not available.</returns>
 
@@ -444,9 +444,9 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
     /// This can be called before any joysticks are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickPlayerIndex"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickPlayerIndex" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the player index of a joystick, or -1 if it's not available.</returns>
 
@@ -467,9 +467,9 @@ public static unsafe partial class Sdl {
     /// reported here are best estimates based on what that hardware reports. It's
     /// not uncommon for older batteries to lose stored power much faster than it
     /// reports, or completely drain when reporting it has 20 percent left, etc.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the current battery state orSDL_POWERSTATE_ERROR on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the current battery state orSDL_POWERSTATE_ERROR on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static PowerState GetJoystickPowerInfo(nint joystick, out int percent) {
         if (joystick == nint.Zero) {
@@ -484,8 +484,8 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// If the product ID isn't available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickProductForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickProductForID" />
     /// </remarks>
     /// <returns>Returns the USB product ID of the selected joystick, or0 if unavailable.</returns>
 
@@ -503,9 +503,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This can be called before any joysticks are opened. If the product ID isn't
     /// available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickProduct"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickProduct" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the USB product ID of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
@@ -521,8 +521,8 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// If the product version isn't available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickProductVersionForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickProductVersionForID" />
     /// </remarks>
     /// <returns>Returns the product version of the selected joystick, or0 if unavailable.</returns>
 
@@ -540,9 +540,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This can be called before any joysticks are opened. If the product version
     /// isn't available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickProductVersion"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickProductVersion" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the product version of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
@@ -558,7 +558,7 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// The following read-only properties are provided by SDL:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -574,11 +574,11 @@ public static unsafe partial class Sdl {
 
     /// <param name="count">a pointer filled in with the number of joysticks returned, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasJoystick"/>
-    /// <seealso cref="OpenJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasJoystick" />
+    /// <seealso cref="OpenJoystick" />
     /// </remarks>
-    /// <returns>(SDL_JoystickID *) Returns a 0 terminated array ofjoystick instance IDs or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information. This should be freedwith <see cref="Free"/> when it is no longer needed.</returns>
+    /// <returns>(SDL_JoystickID *) Returns a 0 terminated array ofjoystick instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freedwith <see cref="Free" /> when it is no longer needed.</returns>
 
     public static List<nint> GetJoysticks(out int count) {
         nint joystickArrayPtr = SDL_GetJoysticks(out count);
@@ -600,7 +600,7 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// Returns the serial number of the joystick, or <see langword="null" /> if it is not available.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the serial number of the selected joystick, or <see langword="null" />if unavailable.</returns>
 
@@ -619,8 +619,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickTypeForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickTypeForID" />
     /// </remarks>
     /// <returns>Returns theSDL_JoystickType of the selected joystick.</returns>
 
@@ -637,9 +637,9 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
     /// This can be called before any joysticks are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickType"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickType" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns theSDL_JoystickType of the selected joystick. If calledwith an invalid instance_id, this function returnsSDL_JOYSTICK_TYPE_UNKNOWN.</returns>
 
@@ -655,8 +655,8 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <remarks>
     /// If the vendor ID isn't available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickVendorForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickVendorForID" />
     /// </remarks>
     /// <returns>Returns the USB vendor ID of the selected joystick, or 0if unavailable.</returns>
 
@@ -674,9 +674,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This can be called before any joysticks are opened. If the vendor ID isn't
     /// available this function returns 0.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickVendor"/>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickVendor" />
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns the USB vendor ID of the selected joystick. Ifcalled with an invalid instance_id, this function returns 0.</returns>
 
@@ -694,11 +694,11 @@ public static unsafe partial class Sdl {
     /// Often, the directional pad on a game controller will either look like 4
     /// separate buttons or a POV hat, and not axes, but all of this is up to the
     /// device and platform.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickAxis"/>
-    /// <seealso cref="GetNumJoystickBalls"/>
-    /// <seealso cref="GetNumJoystickButtons"/>
-    /// <seealso cref="GetNumJoystickHats"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickAxis" />
+    /// <seealso cref="GetNumJoystickBalls" />
+    /// <seealso cref="GetNumJoystickButtons" />
+    /// <seealso cref="GetNumJoystickHats" />
     /// </remarks>
     /// <returns>Returns the number of axis controls/number of axes on success or -1on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -716,13 +716,13 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Joystick trackballs have only relative motion events associated with them
     /// and their state cannot be polled.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickBall"/>
-    /// <seealso cref="GetNumJoystickAxes"/>
-    /// <seealso cref="GetNumJoystickButtons"/>
-    /// <seealso cref="GetNumJoystickHats"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickBall" />
+    /// <seealso cref="GetNumJoystickAxes" />
+    /// <seealso cref="GetNumJoystickButtons" />
+    /// <seealso cref="GetNumJoystickHats" />
     /// </remarks>
-    /// <returns>Returns the number of trackballs on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the number of trackballs on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetNumJoystickBalls(nint joystick) {
         if (joystick == nint.Zero) {
@@ -736,13 +736,13 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickButton"/>
-    /// <seealso cref="GetNumJoystickAxes"/>
-    /// <seealso cref="GetNumJoystickBalls"/>
-    /// <seealso cref="GetNumJoystickHats"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickButton" />
+    /// <seealso cref="GetNumJoystickAxes" />
+    /// <seealso cref="GetNumJoystickBalls" />
+    /// <seealso cref="GetNumJoystickHats" />
     /// </remarks>
-    /// <returns>Returns the number of buttons on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the number of buttons on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetNumJoystickButtons(nint joystick) {
         if (joystick == nint.Zero) {
@@ -756,13 +756,13 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">an SDL_Joystick structure containing joystick information.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickHat"/>
-    /// <seealso cref="GetNumJoystickAxes"/>
-    /// <seealso cref="GetNumJoystickBalls"/>
-    /// <seealso cref="GetNumJoystickButtons"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickHat" />
+    /// <seealso cref="GetNumJoystickAxes" />
+    /// <seealso cref="GetNumJoystickBalls" />
+    /// <seealso cref="GetNumJoystickButtons" />
     /// </remarks>
-    /// <returns>Returns the number of POV hats on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the number of POV hats on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetNumJoystickHats(nint joystick) {
         if (joystick == nint.Zero) {
@@ -774,8 +774,8 @@ public static unsafe partial class Sdl {
 
     /// <summary>Return whether a joystick is currently connected.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoysticks" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a joystick is connected, <see langword="false" /> otherwise.</returns>
 
@@ -787,7 +787,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="instance_id">the joystick instance ID.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick is virtual, <see langword="false" /> otherwise.</returns>
 
@@ -803,7 +803,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="joystick">the joystick to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick has been opened, <see langword="false" /> if it has not;call <see cref="GetError()" /> for more information.</returns>
 
@@ -820,8 +820,8 @@ public static unsafe partial class Sdl {
     /// If joystick events are disabled, you must call
     /// SDL_UpdateJoysticks() yourself and check the state
     /// of the joystick when you want joystick information.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetJoystickEventsEnabled"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetJoystickEventsEnabled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if joystick events are being processed, <see langword="false" />otherwise.</returns>
 
@@ -834,7 +834,7 @@ public static unsafe partial class Sdl {
     /// The SDL joystick functions are thread-safe, however you can lock the
     /// joysticks while processing to guarantee that the joystick list won't change
     /// and joystick and gamepad events will not be delivered.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void LockJoysticks() {
@@ -847,8 +847,8 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// The joystick subsystem must be initialized before a joystick can be opened
     /// for use.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CloseJoystick" />
     /// </remarks>
     /// <returns>(SDL_Joystick *) Returns a joystick identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -869,7 +869,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Each call to this function cancels any previous rumble effect, and calling
     /// it with 0 intensity stops any rumbling.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" />, or <see langword="false" /> if rumble isn't supported on this joystick.</returns>
 
@@ -893,10 +893,10 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Each call to this function cancels any previous trigger rumble effect, and
     /// calling it with 0 intensity stops any rumbling.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RumbleJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RumbleJoystick" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool RumbleJoystickTriggers(nint joystick, ushort leftRumble, ushort rightRumble, uint durationMs) {
         if (joystick == nint.Zero) {
@@ -915,9 +915,9 @@ public static unsafe partial class Sdl {
     /// <param name="data">the data to send to the joystick.</param>
     /// <param name="size">the size of the data to send to the joystick.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SendJoystickEffect(nint joystick, nint data, int size) {
         if (joystick == nint.Zero) {
@@ -948,9 +948,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, nint data, int numValues) {
         if (joystick == nint.Zero) {
@@ -981,9 +981,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SendJoystickVirtualSensorData(nint joystick, SensorType type, ulong sensorTimestamp, float[] data) {
         if (joystick == nint.Zero) {
@@ -1014,9 +1014,9 @@ public static unsafe partial class Sdl {
     /// If joystick events are disabled, you must call
     /// SDL_UpdateJoysticks() yourself and check the state
     /// of the joystick when you want joystick information.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="JoystickEventsEnabled"/>
-    /// <seealso cref="UpdateJoysticks"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="JoystickEventsEnabled" />
+    /// <seealso cref="UpdateJoysticks" />
     /// </remarks>
 
     public static void SetJoystickEventsEnabled(bool enabled) {
@@ -1034,9 +1034,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// An example of a joystick LED is the light on the back of a PlayStation 4's
     /// DualShock 4 controller.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickLed(nint joystick, byte red, byte green, byte blue) {
         if (joystick == nint.Zero) {
@@ -1051,10 +1051,10 @@ public static unsafe partial class Sdl {
     /// <param name="joystick">the SDL_Joystick obtained from SDL_OpenJoystick().</param>
     /// <param name="player_index">player index to assign to this joystick, or -1 to clear the player index and turn off player LEDs.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetJoystickPlayerIndex"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetJoystickPlayerIndex" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickPlayerIndex(nint joystick, int playerIndex) {
         if (joystick == nint.Zero) {
@@ -1080,9 +1080,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickVirtualAxis(nint joystick, int axis, short value) {
         if (joystick == nint.Zero) {
@@ -1109,9 +1109,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickVirtualBall(nint joystick, int ball, short xrel, short yrel) {
         if (joystick == nint.Zero) {
@@ -1137,9 +1137,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickVirtualButton(nint joystick, int button, SdlBool down) {
         if (joystick == nint.Zero) {
@@ -1165,9 +1165,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickVirtualHat(nint joystick, int hat, byte value) {
         if (joystick == nint.Zero) {
@@ -1197,9 +1197,9 @@ public static unsafe partial class Sdl {
     /// SDL_PollEvent, SDL_PumpEvents,
     /// SDL_WaitEventTimeout,
     /// SDL_WaitEvent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetJoystickVirtualTouchpad(nint joystick, int touchpad, int finger, SdlBool down, float x, float y, float pressure) {
         if (joystick == nint.Zero) {
@@ -1217,7 +1217,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Unlocking for atomic access to the joystick API.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UnlockJoysticks() {
@@ -1228,7 +1228,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This is called automatically by the event loop if any joystick events are
     /// enabled.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UpdateJoysticks() {

@@ -18,12 +18,12 @@ public static partial class Sdl {
     /// supplied parameter from the SDL_AddTimer() call and should
     /// return the next timer interval. If the value returned from the callback is
     /// 0, the timer is canceled and will be removed.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddTimerNs"/>
-    /// <seealso cref="RemoveTimer"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AddTimerNs" />
+    /// <seealso cref="RemoveTimer" />
     /// </remarks>
-    /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint AddTimer(uint interval, SdlTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
@@ -47,12 +47,12 @@ public static partial class Sdl {
     /// supplied parameter from the SDL_AddTimerNS() call and
     /// should return the next timer interval. If the value returned from the
     /// callback is 0, the timer is canceled and will be removed.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddTimer"/>
-    /// <seealso cref="RemoveTimer"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AddTimer" />
+    /// <seealso cref="RemoveTimer" />
     /// </remarks>
-    /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns a timer ID or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint AddTimerNs(ulong interval, SdlNsTimerCallback callback, nint userdata) {
         if (callback == null) {
             throw new ArgumentNullException(nameof(callback), "Callback cannot be null.");
@@ -74,10 +74,10 @@ public static partial class Sdl {
     /// This function waits a specified number of milliseconds before returning. It
     /// waits at least the specified time, but possibly longer due to OS
     /// scheduling.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DelayNs"/>
-    /// <seealso cref="DelayPrecise"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DelayNs" />
+    /// <seealso cref="DelayPrecise" />
     /// </remarks>
     public static void Delay(uint ms) {
         if (ms == 0) {
@@ -99,10 +99,10 @@ public static partial class Sdl {
     /// This function waits a specified number of nanoseconds before returning. It
     /// waits at least the specified time, but possibly longer due to OS
     /// scheduling.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="Delay"/>
-    /// <seealso cref="DelayPrecise"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="Delay" />
+    /// <seealso cref="DelayPrecise" />
     /// </remarks>
     public static void DelayNs(ulong ns) {
         if (ns == 0) {
@@ -125,10 +125,10 @@ public static partial class Sdl {
     /// This function waits a specified number of nanoseconds before returning. It
     /// will attempt to wait as close to the requested time as possible, busy
     /// waiting if necessary, but could return later due to OS scheduling.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="Delay"/>
-    /// <seealso cref="DelayNs"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="Delay" />
+    /// <seealso cref="DelayNs" />
     /// </remarks>
     public static void DelayPrecise(ulong ns) {
         if (ns == 0) {
@@ -147,9 +147,9 @@ public static partial class Sdl {
     /// <summary>Get the current value of the high resolution counter.</summary>
     /// <remarks>
     /// This function is typically used for profiling.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetPerformanceFrequency"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetPerformanceFrequency" />
     /// </remarks>
     /// <returns>Returns the current counter value.</returns>
     public static ulong GetPerformanceCounter() {
@@ -158,9 +158,9 @@ public static partial class Sdl {
 
     /// <summary>Get the count per second of the high resolution counter.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetPerformanceCounter"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetPerformanceCounter" />
     /// </remarks>
     /// <returns>Returns a platform-specific count per second.</returns>
     public static ulong GetPerformanceFrequency() {
@@ -169,8 +169,8 @@ public static partial class Sdl {
 
     /// <summary>Get the number of milliseconds that have elapsed since the SDL library initialization.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns an unsigned 64‑bit integer that represents the number of milliseconds that have elapsed since the SDL library was initialized (typically via a call to SDL_Init).</returns>
     public static ulong GetTicks() {
@@ -179,8 +179,8 @@ public static partial class Sdl {
 
     /// <summary>Get the number of nanoseconds since SDL library initialization.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns an unsigned 64-bit value representing the number of nanoseconds since the SDL library initialized.</returns>
     public static ulong GetTicksNs() {
@@ -191,11 +191,11 @@ public static partial class Sdl {
 
     /// <param name="id">the ID of the timer to remove.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddTimer"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AddTimer" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool RemoveTimer(uint id) {
         if (id == 0) {
             throw new ArgumentException("Timer ID must be greater than zero.", nameof(id));

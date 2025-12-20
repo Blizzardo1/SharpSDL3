@@ -15,12 +15,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// filter will be called when an event happens, and its return value is
     /// ignored.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RemoveEventWatch"/>
-    /// <seealso cref="SetEventFilter"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RemoveEventWatch" />
+    /// <seealso cref="SetEventFilter" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool AddEventWatch(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -36,9 +36,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="type">the type of event; see SDL_EventType for details.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetEventEnabled"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetEventEnabled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the event is being processed, <see langword="false" /> otherwise.</returns>
 
@@ -57,10 +57,10 @@ public static unsafe partial class Sdl {
     /// SDL_SetEventFilter(), this function does not change
     /// the filter permanently, it only uses the supplied filter until this
     /// function returns.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetEventFilter"/>
-    /// <seealso cref="SetEventFilter"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetEventFilter" />
+    /// <seealso cref="SetEventFilter" />
     /// </remarks>
     public static void FilterEvents(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -77,9 +77,9 @@ public static unsafe partial class Sdl {
     /// This will unconditionally remove any events from the queue that match
     /// type. If you need to remove a range of event types, use
     /// SDL_FlushEvents() instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="FlushEvents"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="FlushEvents" />
     /// </remarks>
     public static void FlushEvent(uint type) {
         // Validate the event type to ensure it is within a valid range
@@ -97,9 +97,9 @@ public static unsafe partial class Sdl {
     /// This will unconditionally remove any events from the queue that are in the
     /// range of minType to maxType, inclusive. If you need to remove a single
     /// event type, use SDL_FlushEvent() instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="FlushEvent"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="FlushEvent" />
     /// </remarks>
     public static void FlushEvents(uint minType, uint maxType) {
         // Validate the event type range to ensure it is within a valid range
@@ -119,9 +119,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function can be used to &quot;chain&quot; filters, by saving the existing filter
     /// before replacing it with a function that will call that saved filter.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetEventFilter"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetEventFilter" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there is no event filter set.</returns>
     public static bool GetEventFilter(out SdlEventFilter filter, out nint userdata) {
@@ -133,11 +133,11 @@ public static unsafe partial class Sdl {
     /// <summary>Get window associated with an event.</summary>
     /// <param name="event">an event containing a windowID.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="WaitEvent"/>
-    /// <seealso cref="WaitEventTimeout"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="WaitEvent" />
+    /// <seealso cref="WaitEventTimeout" />
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the associated window on success or<see langword="null" /> if there is none.</returns>
     public static nint GetWindowFromEvent(ref Event @event) {
@@ -164,9 +164,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// If you need to check for a range of event types, use
     /// SDL_HasEvents() instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasEvents"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasEvents" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if events matching type are present, or <see langword="false" /> ifevents matching type are not present.</returns>
     public static bool HasEvent(uint type) {
@@ -182,9 +182,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// If you need to check for a single event type, use
     /// SDL_HasEvent() instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasEvents"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasEvents" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if events with type &gt;= minType and &lt;= maxType arepresent, or <see langword="false" /> if not.</returns>
     public static bool HasEvents(uint minType, uint maxType) {
@@ -205,13 +205,13 @@ public static unsafe partial class Sdl {
     /// <param name="maxType">maximum value of the event type to be considered; SDL_EVENT_LAST is a safe choice.</param>
     /// <remarks>
     /// action may be any of the following:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="PumpEvents"/>
-    /// <seealso cref="PushEvent"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="PumpEvents" />
+    /// <seealso cref="PushEvent" />
     /// </remarks>
-    /// <returns>Returns the number of events actually stored or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the number of events actually stored or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static int PeepEvents(ref Event[] events, int numEvents, EventAction action, EventType minType, EventType maxType) {
         if (numEvents <= 0) {
             throw new ArgumentOutOfRangeException(nameof(numEvents), "Number of events must be greater than zero.");
@@ -236,11 +236,11 @@ public static unsafe partial class Sdl {
     /// in the SDL_Event structure pointed to by event. The 1
     /// returned refers to this event, immediately stored in the SDL Event
     /// structure -- not an event to follow.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PushEvent"/>
-    /// <seealso cref="WaitEvent"/>
-    /// <seealso cref="WaitEventTimeout"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PushEvent" />
+    /// <seealso cref="WaitEvent" />
+    /// <seealso cref="WaitEventTimeout" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this got an event or <see langword="false" /> if there are none available.</returns>
     public static bool PollEvent(out Event @event) {
@@ -257,10 +257,10 @@ public static unsafe partial class Sdl {
     /// <summary>Pump the event loop, gathering events from the input devices.</summary>
     /// <remarks>
     /// This function updates the event queue and internal input device state.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="WaitEvent"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="WaitEvent" />
     /// </remarks>
     public static void PumpEvents() {
         SDL_PumpEvents();
@@ -274,12 +274,12 @@ public static unsafe partial class Sdl {
     /// their own events onto it. event is a pointer to the event structure you
     /// wish to push onto the queue. The event is copied into the queue, and the
     /// caller may dispose of the memory pointed to after
-    /// <see cref="PushEvent"/> returns.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PeepEvents"/>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="RegisterEvents"/>
+    /// <see cref="PushEvent" /> returns.
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PeepEvents" />
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="RegisterEvents" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> if the event was filtered or on failure; call <see cref="GetError()" /> for more information. A common reason for error is the event queue being full.</returns>
     public static bool PushEvent(ref Event @event) {
@@ -301,9 +301,9 @@ public static unsafe partial class Sdl {
     /// <summary>Allocate a set of user-defined events, and return the beginning event number for that set of events.</summary>
     /// <param name="numEvents">the number of events to be allocated.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PushEvent"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PushEvent" />
     /// </remarks>
     /// <returns>Returns the beginning event number, or 0 if numEvents is invalid or if there are not enough user-defined events left.</returns>
     public static uint RegisterEvents(int numEvents) {
@@ -320,9 +320,9 @@ public static unsafe partial class Sdl {
     /// This function takes the same input as
     /// SDL_AddEventWatch() to identify and delete the
     /// corresponding callback.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddEventWatch"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AddEventWatch" />
     /// </remarks>
     public static void RemoveEventWatch(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -337,9 +337,9 @@ public static unsafe partial class Sdl {
     /// <param name="type">the type of event; see SDL_EventType for details.</param>
     /// <param name="enabled">whether to process the event or not.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="EventEnabled"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="EventEnabled" />
     /// </remarks>
     public static void SetEventEnabled(uint type, bool enabled) {
         // Validate the event type to ensure it is within a valid range
@@ -357,13 +357,13 @@ public static unsafe partial class Sdl {
     /// If you just want to see events without modifying them or preventing them
     /// from being queued, you should use SDL_AddEventWatch()
     /// instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AddEventWatch"/>
-    /// <seealso cref="SetEventEnabled"/>
-    /// <seealso cref="GetEventFilter"/>
-    /// <seealso cref="PeepEvents"/>
-    /// <seealso cref="PushEvent"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AddEventWatch" />
+    /// <seealso cref="SetEventEnabled" />
+    /// <seealso cref="GetEventFilter" />
+    /// <seealso cref="PeepEvents" />
+    /// <seealso cref="PushEvent" />
     /// </remarks>
     public static void SetEventFilter(SdlEventFilter filter, nint userdata) {
         // Validate the filter function pointer to ensure it is not null
@@ -379,11 +379,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// If event is not <see langword="null" />, the next event is removed from the queue and stored
     /// in the SDL_Event structure pointed to by event.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="PushEvent"/>
-    /// <seealso cref="WaitEventTimeout"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="PushEvent" />
+    /// <seealso cref="WaitEventTimeout" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there was an error while waiting for events; call <see cref="GetError()" /> for more information.</returns>
     public static bool WaitEvent(out Event @event) {
@@ -402,11 +402,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// If event is not <see langword="null" />, the next event is removed from the queue and stored
     /// in the SDL_Event structure pointed to by event.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PollEvent"/>
-    /// <seealso cref="PushEvent"/>
-    /// <seealso cref="WaitEvent"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PollEvent" />
+    /// <seealso cref="PushEvent" />
+    /// <seealso cref="WaitEvent" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if this got an event or <see langword="false" /> if the timeout elapsed without any events available.</returns>
     public static bool WaitEventTimeout(out Event @event, int timeoutMs) {

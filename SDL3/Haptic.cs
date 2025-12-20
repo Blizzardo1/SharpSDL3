@@ -12,8 +12,8 @@ public static partial class Sdl {
 
     /// <param name="haptic">the SDL_Haptic device to close.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="OpenHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="OpenHaptic" />
     /// </remarks>
 
     public static void CloseHaptic(nint haptic) {
@@ -28,10 +28,10 @@ public static partial class Sdl {
     /// <param name="haptic">an SDL_Haptic device to create the effect on.</param>
     /// <param name="effect">an SDL_HapticEffect structure containing the properties of the effect to create.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyHapticEffect"/>
-    /// <seealso cref="RunHapticEffect"/>
-    /// <seealso cref="UpdateHapticEffect"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyHapticEffect" />
+    /// <seealso cref="RunHapticEffect" />
+    /// <seealso cref="UpdateHapticEffect" />
     /// </remarks>
     /// <returns>Returns the ID of the effect on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -53,8 +53,8 @@ public static partial class Sdl {
     /// <remarks>
     /// This will stop the effect if it's running. Effects are automatically
     /// destroyed when the device is closed.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateHapticEffect"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateHapticEffect" />
     /// </remarks>
 
     public static void DestroyHapticEffect(nint haptic, int effect) {
@@ -70,8 +70,8 @@ public static partial class Sdl {
     /// <param name="effect">the ID of the haptic effect to query its status.</param>
     /// <remarks>
     /// Device must support the SDL_HAPTIC_STATUS feature.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticFeatures"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticFeatures" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if it is playing, <see langword="false" /> if it isn't playing or hapticstatus isn't supported.</returns>
 
@@ -90,9 +90,9 @@ public static partial class Sdl {
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HapticEffectSupported"/>
-    /// <seealso cref="GetMaxHapticEffects"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HapticEffectSupported" />
+    /// <seealso cref="GetMaxHapticEffects" />
     /// </remarks>
     /// <returns>Returns a list of supported haptic features in bitwisemanner (OR'd), or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -111,9 +111,9 @@ public static partial class Sdl {
 
     /// <param name="instance_id">the instance ID to get the SDL_Haptic for.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_Haptic *) Returns an SDL_Haptic on successor <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_Haptic *) Returns an SDL_Haptic on successor <see langword="null" /> on failure or if it hasn't been opened yet; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint GetHapticFromId(uint instanceId) {
         if (instanceId == 0) {
@@ -130,9 +130,9 @@ public static partial class Sdl {
 
     /// <param name="haptic">the SDL_Haptic device to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the instance ID of the specifiedhaptic device on success or 0 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the instance ID of the specifiedhaptic device on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static uint GetHapticId(nint haptic) {
         if (haptic == nint.Zero) {
@@ -149,10 +149,10 @@ public static partial class Sdl {
 
     /// <param name="haptic">the SDL_Haptic obtained from SDL_OpenJoystick().</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticNameForID"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticNameForID" />
     /// </remarks>
-    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetHapticName(nint haptic) {
         if (haptic == nint.Zero) {
@@ -170,11 +170,11 @@ public static partial class Sdl {
     /// <param name="instance_id">the haptic device instance ID.</param>
     /// <remarks>
     /// This can be called before any haptic devices are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticName"/>
-    /// <seealso cref="OpenHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticName" />
+    /// <seealso cref="OpenHaptic" />
     /// </remarks>
-    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the name of the selected haptic device. If no namecan be found, this function returns <see langword="null" />; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetHapticNameforId(uint instanceId) {
         if (instanceId == 0) {
@@ -192,10 +192,10 @@ public static partial class Sdl {
 
     /// <param name="count">a pointer filled in with the number of haptic devices returned, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="OpenHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="OpenHaptic" />
     /// </remarks>
-    /// <returns>(SDL_HapticID *) Returns a 0 terminated array of hapticdevice instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" />for more information. This should be freed with <see cref="Free"/> whenit is no longer needed.</returns>
+    /// <returns>(SDL_HapticID *) Returns a 0 terminated array of hapticdevice instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" />for more information. This should be freed with <see cref="Free" /> whenit is no longer needed.</returns>
 
     public static Span<nint> GetHaptics() {
         nint result = SDL_GetHaptics(out int count);
@@ -222,9 +222,9 @@ public static partial class Sdl {
     /// approximation. Always check to see if your created effect was actually
     /// created and do not rely solely on
     /// SDL_GetMaxHapticEffects().
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMaxHapticEffectsPlaying"/>
-    /// <seealso cref="GetHapticFeatures"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMaxHapticEffectsPlaying" />
+    /// <seealso cref="GetHapticFeatures" />
     /// </remarks>
     /// <returns>Returns the number of effects the haptic device can store or anegative error code on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -244,9 +244,9 @@ public static partial class Sdl {
     /// <param name="haptic">the SDL_Haptic device to query maximum playing effects.</param>
     /// <remarks>
     /// This is not supported on all platforms, but will always return a value.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetMaxHapticEffects"/>
-    /// <seealso cref="GetHapticFeatures"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetMaxHapticEffects" />
+    /// <seealso cref="GetHapticFeatures" />
     /// </remarks>
     /// <returns>Returns the number of effects the haptic device can play at the sametime or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -267,9 +267,9 @@ public static partial class Sdl {
     /// <remarks>
     /// The number of haptic axes might be useful if working with the
     /// SDL_HapticDirection effect.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the number of axes on success or -1 on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the number of axes on success or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetNumHapticAxes(nint haptic) {
         if (haptic == nint.Zero) {
@@ -286,12 +286,12 @@ public static partial class Sdl {
 
     /// <param name="haptic">the haptic device to initialize for simple rumble playback.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PlayHapticRumble"/>
-    /// <seealso cref="StopHapticRumble"/>
-    /// <seealso cref="HapticRumbleSupported"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PlayHapticRumble" />
+    /// <seealso cref="StopHapticRumble" />
+    /// <seealso cref="HapticRumbleSupported" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool InitHapticRumble(nint haptic) {
         if (haptic == nint.Zero) {
@@ -331,8 +331,8 @@ public static partial class Sdl {
 
     /// <param name="joystick">the SDL_Joystick to test for haptic capabilities.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="OpenHapticFromJoystick"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="OpenHapticFromJoystick" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the joystick is haptic or <see langword="false" /> if it isn't.</returns>
 
@@ -349,8 +349,8 @@ public static partial class Sdl {
 
     /// <summary>Query whether or not the current mouse has haptic capabilities.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="OpenHapticFromMouse"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="OpenHapticFromMouse" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the mouse is haptic or <see langword="false" /> if it isn't.</returns>
 
@@ -368,13 +368,13 @@ public static partial class Sdl {
     /// <remarks>
     /// The index passed as an argument refers to the N'th haptic device on this
     /// system.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseHaptic"/>
-    /// <seealso cref="GetHaptics"/>
-    /// <seealso cref="OpenHapticFromJoystick"/>
-    /// <seealso cref="OpenHapticFromMouse"/>
-    /// <seealso cref="SetHapticAutocenter"/>
-    /// <seealso cref="SetHapticGain"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CloseHaptic" />
+    /// <seealso cref="GetHaptics" />
+    /// <seealso cref="OpenHapticFromJoystick" />
+    /// <seealso cref="OpenHapticFromMouse" />
+    /// <seealso cref="SetHapticAutocenter" />
+    /// <seealso cref="SetHapticGain" />
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns the device identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -395,9 +395,9 @@ public static partial class Sdl {
     /// <remarks>
     /// You must still close the haptic device separately. It will not be closed
     /// with the joystick.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseHaptic"/>
-    /// <seealso cref="IsJoystickHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CloseHaptic" />
+    /// <seealso cref="IsJoystickHaptic" />
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns a valid haptic device identifier on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -414,9 +414,9 @@ public static partial class Sdl {
 
     /// <summary>Try to open a haptic device from the current mouse.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseHaptic"/>
-    /// <seealso cref="IsMouseHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CloseHaptic" />
+    /// <seealso cref="IsMouseHaptic" />
     /// </remarks>
     /// <returns>(SDL_Haptic *) Returns the haptic device identifier or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -434,10 +434,10 @@ public static partial class Sdl {
     /// <remarks>
     /// Device must support the SDL_HAPTIC_PAUSE feature.
     /// Call SDL_ResumeHaptic() to resume playback.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ResumeHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ResumeHaptic" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool PauseHaptic(nint haptic) {
         if (haptic == nint.Zero) {
@@ -456,11 +456,11 @@ public static partial class Sdl {
     /// <param name="strength">strength of the rumble to play as a 0-1 float value.</param>
     /// <param name="length">length of the rumble to play in milliseconds.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="InitHapticRumble"/>
-    /// <seealso cref="StopHapticRumble"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="InitHapticRumble" />
+    /// <seealso cref="StopHapticRumble" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool PlayHapticRumble(nint haptic, float strength, uint length) {
         if (haptic == nint.Zero) {
@@ -481,10 +481,10 @@ public static partial class Sdl {
     /// <param name="haptic">the SDL_Haptic device to unpause.</param>
     /// <remarks>
     /// Call to unpause after SDL_PauseHaptic().
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PauseHaptic"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PauseHaptic" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool ResumeHaptic(nint haptic) {
         if (haptic == nint.Zero) {
@@ -508,12 +508,12 @@ public static partial class Sdl {
     /// attack and fade.) To make one instance of the effect last indefinitely (so
     /// the effect does not fade), set the effect's length in its structure/union
     /// to SDL_HAPTIC_INFINITY instead.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticEffectStatus"/>
-    /// <seealso cref="StopHapticEffect"/>
-    /// <seealso cref="StopHapticEffects"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticEffectStatus" />
+    /// <seealso cref="StopHapticEffect" />
+    /// <seealso cref="StopHapticEffects" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RunHapticEffect(nint haptic, int effect, uint iterations) {
         if (haptic == nint.Zero) {
@@ -533,10 +533,10 @@ public static partial class Sdl {
     /// <remarks>
     /// Autocenter should be between 0 and 100. Setting it to 0 will disable
     /// autocentering.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticFeatures"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticFeatures" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetHapticAutocenter(nint haptic, int autocenter) {
         if (haptic == nint.Zero) {
@@ -555,10 +555,10 @@ public static partial class Sdl {
     /// <param name="gain">value to set the gain to, should be between 0 and 100 (0 - 100).</param>
     /// <remarks>
     /// Device must support the SDL_HAPTIC_GAIN feature.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetHapticFeatures"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetHapticFeatures" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetHapticGain(nint haptic, int gain) {
         if (haptic == nint.Zero) {
@@ -576,11 +576,11 @@ public static partial class Sdl {
     /// <param name="haptic">the SDL_Haptic device to stop the effect on.</param>
     /// <param name="effect">the ID of the haptic effect to stop.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RunHapticEffect"/>
-    /// <seealso cref="StopHapticEffects"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RunHapticEffect" />
+    /// <seealso cref="StopHapticEffects" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool StopHapticEffect(nint haptic, int effect) {
         if (haptic == nint.Zero) {
@@ -597,11 +597,11 @@ public static partial class Sdl {
 
     /// <param name="haptic">the SDL_Haptic device to stop.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RunHapticEffect"/>
-    /// <seealso cref="StopHapticEffects"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RunHapticEffect" />
+    /// <seealso cref="StopHapticEffects" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool StopHapticEffects(nint haptic) {
         if (haptic == nint.Zero) {
@@ -618,10 +618,10 @@ public static partial class Sdl {
 
     /// <param name="haptic">the haptic device to stop the rumble effect on.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PlayHapticRumble"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PlayHapticRumble" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool StopHapticRumble(nint haptic) {
         if (haptic == nint.Zero) {
@@ -644,11 +644,11 @@ public static partial class Sdl {
     /// direction may be strange. Specifically the effect may re-upload itself and
     /// start playing from the start. You also cannot change the type either when
     /// running SDL_UpdateHapticEffect().
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateHapticEffect"/>
-    /// <seealso cref="RunHapticEffect"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateHapticEffect" />
+    /// <seealso cref="RunHapticEffect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool UpdateHapticEffect(nint haptic, int effect, ref HapticEffect data) {
         if (haptic == nint.Zero) {

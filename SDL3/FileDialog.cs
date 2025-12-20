@@ -59,14 +59,14 @@ public static partial class Sdl {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> This function should be called only from the main thread. The callback maybe invoked from the same thread or from a different one, depending on theOS's constraints.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="FileDialogType"/>
-    /// <seealso cref="DialogFileCallback"/>
-    /// <seealso cref="DialogFileFilter"/>
-    /// <seealso cref="ShowOpenFileDialog"/>
-    /// <seealso cref="ShowSaveFileDialog"/>
-    /// <seealso cref="ShowOpenFolderDialog"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called only from the main thread. The callback maybe invoked from the same thread or from a different one, depending on theOS's constraints.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="FileDialogType" />
+    /// <seealso cref="DialogFileCallback" />
+    /// <seealso cref="DialogFileFilter" />
+    /// <seealso cref="ShowOpenFileDialog" />
+    /// <seealso cref="ShowSaveFileDialog" />
+    /// <seealso cref="ShowOpenFolderDialog" />
     /// </remarks>
 
     public static void ShowFileDialogWithProperties(FileDialogType type, SdlDialogFileCallback callback, nint userdata,

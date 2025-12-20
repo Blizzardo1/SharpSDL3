@@ -12,7 +12,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object to close.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void CloseSensor(nint sensor) {
@@ -34,9 +34,9 @@ public static unsafe partial class Sdl {
     /// <param name="num_values">the number of values to write to data.</param>
     /// <remarks>
     /// The number of values and interpretation of the data is sensor dependent.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool GetSensorData(nint sensor, nint data, int numValues) {
         SdlBool result = SDL_GetSensorData(sensor, data, numValues);
@@ -50,7 +50,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="instance_id">the sensor instance ID.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Sensor *) Returns an SDL_Sensor object or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -66,7 +66,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object to inspect.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the sensor instance ID, or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -82,9 +82,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the sensor name or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns the sensor name or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static string GetSensorName(nint sensor) {
         string name = SDL_GetSensorName(sensor);
@@ -99,7 +99,7 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the sensor instance ID.</param>
     /// <remarks>
     /// This can be called before any sensors are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the sensor name, or <see langword="null" /> if instance_id is notvalid.</returns>
 
@@ -115,7 +115,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object to inspect.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the sensor platform dependent type, or -1 if sensor is<see langword="null" />.</returns>
 
@@ -132,7 +132,7 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the sensor instance ID.</param>
     /// <remarks>
     /// This can be called before any sensors are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the sensor platform dependent type, or -1 if instance_id is not valid.</returns>
 
@@ -148,7 +148,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -164,9 +164,9 @@ public static unsafe partial class Sdl {
 
     /// <param name="count">a pointer filled in with the number of sensors returned, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>(SDL_SensorID *) Returns a 0 terminated array of sensorinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free"/> when itis no longer needed.</returns>
+    /// <returns>(SDL_SensorID *) Returns a 0 terminated array of sensorinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free" /> when itis no longer needed.</returns>
 
     public static nint GetSensors(out int count) {
         nint sensors = SDL_GetSensors(out count);
@@ -180,7 +180,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="sensor">the SDL_Sensor object to inspect.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns theSDL_SensorType type, orSDL_SENSOR_INVALID if sensor is <see langword="null" />.</returns>
 
@@ -197,7 +197,7 @@ public static unsafe partial class Sdl {
     /// <param name="instance_id">the sensor instance ID.</param>
     /// <remarks>
     /// This can be called before any sensors are opened.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns theSDL_SensorType, orSDL_SENSOR_INVALID if instance_id is not valid.</returns>
 
@@ -213,7 +213,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="instance_id">the sensor instance ID.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Sensor *) Returns an SDL_Sensor object or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -229,7 +229,7 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This is called automatically by the event loop if sensor events are
     /// enabled.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UpdateSensors() {

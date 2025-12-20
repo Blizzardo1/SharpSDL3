@@ -11,8 +11,8 @@ public static partial class Sdl {
     /// <remarks>
     /// This is useful for determining multi-threaded structure padding or SIMD
     /// prefetch sizes.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the L1 cache line size of the CPU, in bytes.</returns>
 
@@ -22,8 +22,8 @@ public static partial class Sdl {
 
     /// <summary>Get the number of logical CPU cores available.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the total number of logical CPU cores. On CPUs that includetechnologies such as hyperthreading, the number of logical cores may bemore than the number of physical cores.</returns>
 
@@ -41,10 +41,10 @@ public static partial class Sdl {
     /// SDL_HasAVX512F(), then it might return 16 for the SSE
     /// support it sees and not 64 for the AVX-512 instructions that exist but SDL
     /// doesn't know about. Plan accordingly.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="aligned_alloc"/>
-    /// <seealso cref="aligned_free"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="aligned_alloc" />
+    /// <seealso cref="aligned_free" />
     /// </remarks>
     /// <returns>Returns the alignment in bytes needed for available, known SIMDinstructions.</returns>
 
@@ -54,8 +54,8 @@ public static partial class Sdl {
 
     /// <summary>Get the amount of RAM configured in the system.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the amount of RAM configured in the system in MiB.</returns>
 
@@ -67,8 +67,8 @@ public static partial class Sdl {
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using PowerPC instruction
     /// sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has AltiVec features or <see langword="false" /> if not.</returns>
 
@@ -79,9 +79,9 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has ARM SIMD (ARMv6) features.</summary>
     /// <remarks>
     /// This is different from ARM NEON, which is a different instruction set.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasNeon"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasNeon" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has ARM SIMD features or <see langword="false" /> if not.</returns>
 
@@ -92,10 +92,10 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has AVX features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasAvx2"/>
-    /// <seealso cref="HasAvx512F"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasAvx2" />
+    /// <seealso cref="HasAvx512F" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has AVX features or <see langword="false" /> if not.</returns>
 
@@ -106,10 +106,10 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has AVX2 features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasAvx"/>
-    /// <seealso cref="HasAvx512F"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasAvx" />
+    /// <seealso cref="HasAvx512F" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has AVX2 features or <see langword="false" /> if not.</returns>
 
@@ -120,10 +120,10 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has AVX-512F (foundation) features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasAvx"/>
-    /// <seealso cref="HasAvx2"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasAvx" />
+    /// <seealso cref="HasAvx2" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has AVX-512F features or <see langword="false" /> if not.</returns>
 
@@ -135,8 +135,8 @@ public static partial class Sdl {
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using LOONGARCH instruction
     /// sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has LOONGARCH LASX features or <see langword="false" /> if not.</returns>
 
@@ -148,8 +148,8 @@ public static partial class Sdl {
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using LOONGARCH instruction
     /// sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has LOONGARCH LSX features or <see langword="false" /> if not.</returns>
 
@@ -160,8 +160,8 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has MMX features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has MMX features or <see langword="false" /> if not.</returns>
 
@@ -172,8 +172,8 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has NEON (ARM SIMD) features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using ARM instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has ARM NEON features or <see langword="false" /> if not.</returns>
 
@@ -184,12 +184,12 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has SSE features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasSse2"/>
-    /// <seealso cref="HasSse3"/>
-    /// <seealso cref="HasSse41"/>
-    /// <seealso cref="HasSse42"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasSse2" />
+    /// <seealso cref="HasSse3" />
+    /// <seealso cref="HasSse41" />
+    /// <seealso cref="HasSse42" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has SSE features or <see langword="false" /> if not.</returns>
 
@@ -200,12 +200,12 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has SSE2 features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasSse"/>
-    /// <seealso cref="HasSse3"/>
-    /// <seealso cref="HasSse41"/>
-    /// <seealso cref="HasSse42"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasSse" />
+    /// <seealso cref="HasSse3" />
+    /// <seealso cref="HasSse41" />
+    /// <seealso cref="HasSse42" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has SSE2 features or <see langword="false" /> if not.</returns>
 
@@ -216,12 +216,12 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has SSE3 features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasSse"/>
-    /// <seealso cref="HasSse2"/>
-    /// <seealso cref="HasSse41"/>
-    /// <seealso cref="HasSse42"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasSse" />
+    /// <seealso cref="HasSse2" />
+    /// <seealso cref="HasSse41" />
+    /// <seealso cref="HasSse42" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has SSE3 features or <see langword="false" /> if not.</returns>
 
@@ -232,12 +232,12 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has SSE4.1 features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasSse"/>
-    /// <seealso cref="HasSse2"/>
-    /// <seealso cref="HasSse3"/>
-    /// <seealso cref="HasSse42"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasSse" />
+    /// <seealso cref="HasSse2" />
+    /// <seealso cref="HasSse3" />
+    /// <seealso cref="HasSse42" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has SSE4.1 features or <see langword="false" /> if not.</returns>
 
@@ -248,12 +248,12 @@ public static partial class Sdl {
     /// <summary>Determine whether the CPU has SSE4.2 features.</summary>
     /// <remarks>
     /// This always returns <see langword="false" /> on CPUs that aren't using Intel instruction sets.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="HasSse"/>
-    /// <seealso cref="HasSse2"/>
-    /// <seealso cref="HasSse3"/>
-    /// <seealso cref="HasSse41"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="HasSse" />
+    /// <seealso cref="HasSse2" />
+    /// <seealso cref="HasSse3" />
+    /// <seealso cref="HasSse41" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the CPU has SSE4.2 features or <see langword="false" /> if not.</returns>
 

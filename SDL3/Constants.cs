@@ -1,8 +1,10 @@
 namespace SharpSDL3;
 
-public partial class Constants {
+/// <summary>
+/// SDL String Properties
+/// </summary>
+public class Constants {
     // /usr/local/include/SDL3/SDL_thread.h
-
     public const string SdlPropThreadCreateEntryFunctionPointer = "SDL.thread.create.entry_function";
     public const string SdlPropThreadCreateNameString = "SDL.thread.create.name";
     public const string SdlPropThreadCreateUserdataPointer = "SDL.thread.create.userdata";
@@ -37,10 +39,7 @@ public partial class Constants {
     public const string SdlPropWindowCreateBorderlessBoolean = "SDL.window.create.borderless";
     public const string SdlPropWindowCreateConstrainPopupBoolean = "SDL.window.create.constrain_popup";
     public const string SdlPropWindowCreateFocusableBoolean = "SDL.window.create.focusable";
-
-    public const string SdlPropWindowCreateExternalGraphicsContextBoolean =
-        "SDL.window.create.external_graphics_context";
-
+    public const string SdlPropWindowCreateExternalGraphicsContextBoolean = "SDL.window.create.external_graphics_context";
     public const string SdlPropWindowCreateFlagsNumber = "SDL.window.create.flags";
     public const string SdlPropWindowCreateFullscreenBoolean = "SDL.window.create.fullscreen";
     public const string SdlPropWindowCreateHeightNumber = "SDL.window.create.height";
@@ -65,22 +64,14 @@ public partial class Constants {
     public const string SdlPropWindowCreateYNumber = "SDL.window.create.y";
     public const string SdlPropWindowCreateCocoaWindowPointer = "SDL.window.create.cocoa.window";
     public const string SdlPropWindowCreateCocoaViewPointer = "SDL.window.create.cocoa.view";
-
-    public const string SdlPropWindowCreateWaylandSurfaceRoleCustomBoolean =
-        "SDL.window.create.wayland.surface_role_custom";
-
-    public const string SdlPropWindowCreateWaylandCreateEglWindowBoolean =
-        "SDL.window.create.wayland.create_egl_window";
-
+    public const string SdlPropWindowCreateWaylandSurfaceRoleCustomBoolean = "SDL.window.create.wayland.surface_role_custom";
+    public const string SdlPropWindowCreateWaylandCreateEglWindowBoolean = "SDL.window.create.wayland.create_egl_window";
     public const string SdlPropWindowCreateWaylandWlSurfacePointer = "SDL.window.create.wayland.wl_surface";
     public const string SdlPropWindowCreateWin32HwndPointer = "SDL.window.create.win32.hwnd";
     public const string SdlPropWindowCreateWin32PixelFormatHwndPointer = "SDL.window.create.win32.pixel_format_hwnd";
     public const string SdlPropWindowCreateX11WindowNumber = "SDL.window.create.x11.window";
     public const string SdlPropWindowCreateEmscriptenCanvasIdString = "SDL.window.create.emscripten.canvas_id";
-
-    public const string SdlPropWindowCreateEmscriptenKeyboardElementString =
-        "SDL.window.create.emscripten.keyboard_element";
-
+    public const string SdlPropWindowCreateEmscriptenKeyboardElementString = "SDL.window.create.emscripten.keyboard_element";
     public const string SdlPropWindowShapePointer = "SDL.window.shape";
     public const string SdlPropWindowHdrEnabledBoolean = "SDL.window.HDR_enabled";
     public const string SdlPropWindowSdrWhiteLevelFloat = "SDL.window.SDR_white_level";
@@ -91,10 +82,7 @@ public partial class Constants {
     public const string SdlPropWindowUikitMetalViewTagNumber = "SDL.window.uikit.metal_view_tag";
     public const string SdlPropWindowUikitOpenglFramebufferNumber = "SDL.window.uikit.opengl.framebuffer";
     public const string SdlPropWindowUikitOpenglRenderbufferNumber = "SDL.window.uikit.opengl.renderbuffer";
-
-    public const string SdlPropWindowUikitOpenglResolveFramebufferNumber =
-        "SDL.window.uikit.opengl.resolve_framebuffer";
-
+    public const string SdlPropWindowUikitOpenglResolveFramebufferNumber = "SDL.window.uikit.opengl.resolve_framebuffer";
     public const string SdlPropWindowKmsDrmDeviceIndexNumber = "SDL.window.kmsdrm.dev_index";
     public const string SdlPropWindowKmsDrmDrmFdNumber = "SDL.window.kmsdrm.drm_fd";
     public const string SdlPropWindowKmsDrmGbmDevicePointer = "SDL.window.kmsdrm.gbm_dev";
@@ -113,10 +101,7 @@ public partial class Constants {
     public const string SdlPropWindowWaylandEglWindowPointer = "SDL.window.wayland.egl_window";
     public const string SdlPropWindowWaylandXdgSurfacePointer = "SDL.window.wayland.xdg_surface";
     public const string SdlPropWindowWaylandXdgToplevelPointer = "SDL.window.wayland.xdg_toplevel";
-
-    public const string SdlPropWindowWaylandXdgToplevelExportHandleString =
-        "SDL.window.wayland.xdg_toplevel_export_handle";
-
+    public const string SdlPropWindowWaylandXdgToplevelExportHandleString = "SDL.window.wayland.xdg_toplevel_export_handle";
     public const string SdlPropWindowWaylandXdgPopupPointer = "SDL.window.wayland.xdg_popup";
     public const string SdlPropWindowWaylandXdgPositionerPointer = "SDL.window.wayland.xdg_positioner";
     public const string SdlPropWindowX11DisplayPointer = "SDL.window.x11.display";
@@ -146,11 +131,30 @@ public partial class Constants {
 
     // /usr/local/include/SDL3/SDL_keyboard.h
 
+    /// <summary>
+    /// Please refer to <see cref="Sdl.StartTextInputWithProperties"/> for details.
+    /// </summary>
     public const string SdlPropTextInputTypeNumber = "SDL.textinput.type";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.StartTextInputWithProperties"/> for details.
+    /// </summary>
     public const string SdlPropTextInputCapitalizationNumber = "SDL.textinput.capitalization";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.StartTextInputWithProperties"/> for details.
+    /// </summary>
     public const string SdlPropTextInputAutocorrectBoolean = "SDL.textinput.autocorrect";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.StartTextInputWithProperties"/> for details.
+    /// </summary>
     public const string SdlPropTextInputMultilineBoolean = "SDL.textinput.multiline";
-    public const string SdlPropTextInputAndroidInputtypeNumber = "SDL.textinput.android.inputtype";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.StartTextInputWithProperties"/> for details.
+    /// </summary>
+    public const string SdlPropTextInputAndroidInputTypeNumber = "SDL.textinput.android.inputtype";
 
     // /usr/local/include/SDL3/SDL_gpu.h
 
@@ -173,13 +177,43 @@ public partial class Constants {
     public const string SdlPropGpuGraphicsPipelineCreateNameString = "SDL.gpu.graphicspipeline.create.name";
     public const string SdlPropGpuSamplerCreateNameString = "SDL.gpu.sampler.create.name";
     public const string SdlPropGpuShaderCreateNameString = "SDL.gpu.shader.create.name";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearRFloat = "SDL.gpu.texture.create.d3d12.clear.r";
+    
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearGFloat = "SDL.gpu.texture.create.d3d12.clear.g";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearBFloat = "SDL.gpu.texture.create.d3d12.clear.b";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearAFloat = "SDL.gpu.texture.create.d3d12.clear.a";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearDepthFloat = "SDL.gpu.texture.create.d3d12.clear.depth";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateD3D12ClearStencilNumber = "SDL.gpu.texture.create.d3d12.clear.stencil";
+
+    /// <summary>
+    /// Please refer to <see cref="Sdl.CreateGpuTexture"/> for details.
+    /// </summary>
     public const string SdlPropGpuTextureCreateNameString = "SDL.gpu.texture.create.name";
+
+
     public const string SdlPropGpuBufferCreateNameString = "SDL.gpu.buffer.create.name";
     public const string SdlPropGpuTransferBufferCreateNameString = "SDL.gpu.transferbuffer.create.name";
 
@@ -472,13 +506,8 @@ public partial class Constants {
     public const string SdlPropRendererCreateVulkanSurfaceNumber = "SDL.renderer.create.vulkan.surface";
     public const string SdlPropRendererCreateVulkanPhysicalDevicePointer = "SDL.renderer.create.vulkan.physical_device";
     public const string SdlPropRendererCreateVulkanDevicePointer = "SDL.renderer.create.vulkan.device";
-
-    public const string SdlPropRendererCreateVulkanGraphicsQueueFamilyIndexNumber =
-        "SDL.renderer.create.vulkan.graphics_queue_family_index";
-
-    public const string SdlPropRendererCreateVulkanPresentQueueFamilyIndexNumber =
-        "SDL.renderer.create.vulkan.present_queue_family_index";
-
+    public const string SdlPropRendererCreateVulkanGraphicsQueueFamilyIndexNumber = "SDL.renderer.create.vulkan.graphics_queue_family_index";
+    public const string SdlPropRendererCreateVulkanPresentQueueFamilyIndexNumber = "SDL.renderer.create.vulkan.present_queue_family_index";
     public const string SdlPropRendererNameString = "SDL.renderer.name";
     public const string SdlPropRendererWindowPointer = "SDL.renderer.window";
     public const string SdlPropRendererSurfacePointer = "SDL.renderer.surface";
@@ -499,13 +528,8 @@ public partial class Constants {
     public const string SdlPropRendererVulkanSurfaceNumber = "SDL.renderer.vulkan.surface";
     public const string SdlPropRendererVulkanPhysicalDevicePointer = "SDL.renderer.vulkan.physical_device";
     public const string SdlPropRendererVulkanDevicePointer = "SDL.renderer.vulkan.device";
-
-    public const string SdlPropRendererVulkanGraphicsQueueFamilyIndexNumber =
-        "SDL.renderer.vulkan.graphics_queue_family_index";
-
-    public const string SdlPropRendererVulkanPresentQueueFamilyIndexNumber =
-        "SDL.renderer.vulkan.present_queue_family_index";
-
+    public const string SdlPropRendererVulkanGraphicsQueueFamilyIndexNumber = "SDL.renderer.vulkan.graphics_queue_family_index";
+    public const string SdlPropRendererVulkanPresentQueueFamilyIndexNumber = "SDL.renderer.vulkan.present_queue_family_index";
     public const string SdlPropRendererVulkanSwapchainImageCountNumber = "SDL.renderer.vulkan.swapchain_image_count";
     public const string SdlPropRendererGpuDevicePointer = "SDL.renderer.gpu.device";
     public const string SdlPropTextureCreateColorspaceNumber = "SDL.texture.create.colorspace";
