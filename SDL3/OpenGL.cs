@@ -162,10 +162,7 @@ public static partial class Sdl {
             throw new ArgumentNullException(nameof(context), "Context cannot be null.");
         }
         SdlBool result = SDL_GL_MakeCurrent(window, context);
-        if (!result) {
-            throw new InvalidOperationException("Failed to make OpenGL context current.");
-        }
-        return result;
+        return !result ? throw new InvalidOperationException("Failed to make OpenGL context current.") : result;
     }
 
     public static void GlResetAttributes() {

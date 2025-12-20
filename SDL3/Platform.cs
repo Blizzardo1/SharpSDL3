@@ -12,7 +12,7 @@ public static partial class Sdl {
     /// <summary>Get the name of the platform.</summary>
     /// <remarks>
     /// Here are the names returned for some (but not all) supported platforms:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the name of the platform. If the correct platformname is not available, returns a string beginning with the text &quot;Unknown&quot;.</returns>
 
@@ -28,16 +28,16 @@ public static partial class Sdl {
     /// The path to the executable is supplied in args[0]. args[1..N] are
     /// additional arguments passed on the command line of the new process, and the
     /// argument list should be terminated with a <see langword="null" />, e.g.:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="GetProcessProperties"/>
-    /// <seealso cref="ReadProcess"/>
-    /// <seealso cref="GetProcessInput"/>
-    /// <seealso cref="GetProcessOutput"/>
-    /// <seealso cref="KillProcess"/>
-    /// <seealso cref="WaitProcess"/>
-    /// <seealso cref="DestroyProcess"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="GetProcessProperties" />
+    /// <seealso cref="ReadProcess" />
+    /// <seealso cref="GetProcessInput" />
+    /// <seealso cref="GetProcessOutput" />
+    /// <seealso cref="KillProcess" />
+    /// <seealso cref="WaitProcess" />
+    /// <seealso cref="DestroyProcess" />
     /// </remarks>
     /// <returns>(SDL_Process *) Returns the newly created and runningprocess, or <see langword="null" /> if the process couldn't be created.</returns>
 
@@ -53,16 +53,16 @@ public static partial class Sdl {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="GetProcessProperties"/>
-    /// <seealso cref="ReadProcess"/>
-    /// <seealso cref="GetProcessInput"/>
-    /// <seealso cref="GetProcessOutput"/>
-    /// <seealso cref="KillProcess"/>
-    /// <seealso cref="WaitProcess"/>
-    /// <seealso cref="DestroyProcess"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="GetProcessProperties" />
+    /// <seealso cref="ReadProcess" />
+    /// <seealso cref="GetProcessInput" />
+    /// <seealso cref="GetProcessOutput" />
+    /// <seealso cref="KillProcess" />
+    /// <seealso cref="WaitProcess" />
+    /// <seealso cref="DestroyProcess" />
     /// </remarks>
     /// <returns>(SDL_Process *) Returns the newly created and runningprocess, or <see langword="null" /> if the process couldn't be created.</returns>
 
@@ -85,10 +85,10 @@ public static partial class Sdl {
     /// <param name="process">the process to query.</param>
     /// <remarks>
     /// The following read-only properties are provided by SDL:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -108,13 +108,13 @@ public static partial class Sdl {
     /// If a process was created with I/O enabled, you can use this function to
     /// read the output. This function blocks until the process is complete,
     /// capturing all output, and providing the process exit code.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="DestroyProcess"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="DestroyProcess" />
     /// </remarks>
-    /// <returns>(void *) Returns the data or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(void *) Returns the data or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint ReadProcess(nint process, out nuint datasize, out int exitcode) {
         if (process == nint.Zero) {
@@ -133,11 +133,11 @@ public static partial class Sdl {
     /// and
     /// SDL_PROP_PROCESS_CREATE_STDIN_NUMBER
     /// set to SDL_PROCESS_STDIO_APP.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="GetProcessOutput"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="GetProcessOutput" />
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns the input stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -158,11 +158,11 @@ public static partial class Sdl {
     /// and
     /// SDL_PROP_PROCESS_CREATE_STDOUT_NUMBER
     /// set to SDL_PROCESS_STDIO_APP.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="GetProcessInput"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="GetProcessInput" />
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns the output stream or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -178,14 +178,14 @@ public static partial class Sdl {
     /// <param name="process">The process to stop.</param>
     /// <param name="force"><see langword="true" /> to terminate the process immediately, <see langword="false" /> to try to stop the process gracefully. In general you should try to stop the process gracefully first as terminating a process may leave it with half-written data or in some other unstable state.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="WaitProcess"/>
-    /// <seealso cref="DestroyProcess"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="WaitProcess" />
+    /// <seealso cref="DestroyProcess" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool KillProcess(nint process, SdlBool force) {
         if (process == nint.Zero) {
@@ -201,12 +201,12 @@ public static partial class Sdl {
     /// <param name="exitcode">a pointer filled in with the process exit code if the process has exited, may be discarded.</param>
     /// <remarks>
     /// This can be called multiple times to get the status of a process.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="KillProcess"/>
-    /// <seealso cref="DestroyProcess"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="KillProcess" />
+    /// <seealso cref="DestroyProcess" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the process exited, <see langword="false" /> otherwise.</returns>
 
@@ -224,11 +224,11 @@ public static partial class Sdl {
     /// Note that this does not stop the process, just destroys the SDL object used
     /// to track it. If you want to stop the process you should use
     /// SDL_KillProcess().
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProcess"/>
-    /// <seealso cref="CreateProcessWithProperties"/>
-    /// <seealso cref="KillProcess"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProcess" />
+    /// <seealso cref="CreateProcessWithProperties" />
+    /// <seealso cref="KillProcess" />
     /// </remarks>
 
     public static void DestroyProcess(nint process) {

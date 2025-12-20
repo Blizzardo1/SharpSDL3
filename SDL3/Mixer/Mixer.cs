@@ -378,20 +378,20 @@ public static unsafe partial class Mixer {
     /// </summary>
     /// <remarks>
     /// This triggers any registered channel and music finished callbacks.
-    /// Ensure all <see cref="Chunk"/> and <see cref="Music"/> objects are disposed before calling.
+    /// Ensure all <see cref="Chunk" /> and <see cref="Music" /> objects are disposed before calling.
     /// </remarks>
     public static void CloseAudio() => Mix_CloseAudio();
 
     /// <summary>
     /// Initializes SDL3_mixer with the specified audio format support.
     /// </summary>
-    /// <param name="flags">Flags indicating which audio formats to initialize (e.g., <see cref="MixInit.MIX_INIT_WAV"/>).</param>
+    /// <param name="flags">Flags indicating which audio formats to initialize (e.g., <see cref="MixInit.MIX_INIT_WAV" />).</param>
     /// <returns>The flags that were successfully initialized.</returns>
     /// <exception cref="SdlException">Thrown if initialization fails for any requested flags.</exception>
     /// <remarks>
     /// Call this before opening an audio device to ensure support for specific audio formats.
     /// You can call this multiple times to initialize additional formats.
-    /// Use <see cref="Quit"/> to deinitialize when done.
+    /// Use <see cref="Quit" /> to deinitialize when done.
     /// </remarks>
     public static MixInit Initialize(MixInit flags) {
         MixInit result = Mix_Init(flags);
@@ -409,8 +409,8 @@ public static unsafe partial class Mixer {
     /// <param name="spec">The desired audio specification, or null for default settings.</param>
     /// <exception cref="SdlException">Thrown if the audio device cannot be opened.</exception>
     /// <remarks>
-    /// Call <see cref="CloseAudio"/> when done to close the device.
-    /// If <paramref name="spec"/> is null, SDL3_mixer uses reasonable defaults.
+    /// Call <see cref="CloseAudio" /> when done to close the device.
+    /// If <paramref name="spec" /> is null, SDL3_mixer uses reasonable defaults.
     /// </remarks>
     public static void OpenAudio(AudioDeviceId deviceId, AudioSpec? spec = null) {
         AudioSpec nativeSpec = spec ?? default;
@@ -482,10 +482,10 @@ public static unsafe partial class Mixer {
     /// Loads a music object from a file.
     /// </summary>
     /// <param name="filePath">The path to the music file (e.g., MP3, OGG).</param>
-    /// <returns>A <see cref="Music"/> object representing the loaded music.</returns>
+    /// <returns>A <see cref="Music" /> object representing the loaded music.</returns>
     /// <exception cref="SdlException">Thrown if the file cannot be loaded.</exception>
     /// <remarks>
-    /// Dispose of the returned <see cref="Music"/> when no longer needed.
+    /// Dispose of the returned <see cref="Music" /> when no longer needed.
     /// </remarks>
     public static Music LoadMusic(string filePath) {
         if (string.IsNullOrEmpty(filePath)) {
@@ -512,11 +512,11 @@ public static unsafe partial class Mixer {
     /// Loads an audio chunk from a file.
     /// </summary>
     /// <param name="filePath">The path to the audio file (e.g., WAV).</param>
-    /// <returns>A <see cref="Chunk"/> object representing the loaded audio.</returns>
+    /// <returns>A <see cref="Chunk" /> object representing the loaded audio.</returns>
     /// <exception cref="ArgumentNullException">Thrown if the file path is null or empty.</exception>
     /// <exception cref="SdlException">Thrown if the file cannot be loaded.</exception>
     /// <remarks>
-    /// Dispose of the returned <see cref="Chunk"/> when no longer needed.
+    /// Dispose of the returned <see cref="Chunk" /> when no longer needed.
     /// </remarks>
     /// <summary>Loads a WAV from a file path.</summary>
 
@@ -526,10 +526,10 @@ public static unsafe partial class Mixer {
     /// <param name="audio_len">a pointer filled with the length of the audio data buffer in bytes.</param>
     /// <remarks>
     /// This is a convenience function that is effectively the same as:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="free"/>
-    /// <seealso cref="LoadWAV_IO"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="free" />
+    /// <seealso cref="LoadWAV_IO" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success. audio_buf will be filled with a pointerto an allocated buffer containing the audio data, and audio_len is filledwith the length of that audio buffer in bytes.</returns>
 
@@ -555,7 +555,7 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Plays an audio chunk on a specific channel or the first available channel.
     /// </summary>
-    /// <param name="chunk">The <see cref="Chunk"/> to play.</param>
+    /// <param name="chunk">The <see cref="Chunk" /> to play.</param>
     /// <param name="loops">The number of times to loop the sound (-1 for infinite, 0 for once).</param>
     /// <param name="channel">The channel to play on, or -1 for the first available channel.</param>
     /// <returns>The channel used for playback, or -1 if no channel was available.</returns>
@@ -612,7 +612,7 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Registers a custom audio effect for a channel or the final mix.
     /// </summary>
-    /// <param name="channel">The channel to apply the effect to, or <see cref="CHANNEL_POST"/> for the final mix.</param>
+    /// <param name="channel">The channel to apply the effect to, or <see cref="CHANNEL_POST" /> for the final mix.</param>
     /// <param name="effect">The effect callback that processes audio data.</param>
     /// <param name="done">The callback invoked when the effect is unregistered (optional).</param>
     /// <param name="userData">User-defined data passed to the callbacks.</param>
@@ -629,7 +629,7 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Sets the stereo panning for a specific channel or the final mix.
     /// </summary>
-    /// <param name="channel">The channel to apply panning to, or <see cref="CHANNEL_POST"/> for the final mix.</param>
+    /// <param name="channel">The channel to apply panning to, or <see cref="CHANNEL_POST" /> for the final mix.</param>
     /// <param name="left">The volume of the left channel (0 to 255, where 0 is silent and 255 is full volume).</param>
     /// <param name="right">The volume of the right channel (0 to 255, where 0 is silent and 255 is full volume).</param>
     /// <exception cref="SdlException">Thrown if panning cannot be set.</exception>
@@ -677,7 +677,7 @@ public static unsafe partial class Mixer {
     public const int MixChannelPost = -2;
 
     /// <summary>
-    /// Alias for <see cref="MaxVolume"/>.
+    /// Alias for <see cref="MaxVolume" />.
     /// </summary>
     public const int MixMaxVolume = 128;
 
@@ -775,9 +775,9 @@ public static unsafe partial class Mixer {
     /// <summary>
     /// Plays a music object.
     /// </summary>
-    /// <param name="music">The <see cref="Music"/> to play.</param>
+    /// <param name="music">The <see cref="Music" /> to play.</param>
     /// <param name="loops">The number of times to loop the music (0 for once, -1 for infinite).</param>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="music"/> is null.</exception>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="music" /> is null.</exception>
     /// <exception cref="SdlException">Thrown if playback fails.</exception>
     /// <remarks>
     /// Only one music object can play at a time. This halts any currently playing music.

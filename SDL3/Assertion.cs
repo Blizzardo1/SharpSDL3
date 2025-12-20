@@ -7,43 +7,43 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Sdl {
+/// <summary>
+/// Core SDL Functionality
+/// </summary>
+public static partial class Sdl {
     /// <summary>Get the current assertion handler.</summary>
 
-    /// <param name="puserdata">pointer which is filled with the &quot;userdata&quot; pointer that was passed to SDL_SetAssertionHandler().</param>
+    /// <param name="pUserData">pointer which is filled with the &quot;userdata&quot; pointer that was passed to SDL_SetAssertionHandler().</param>
     /// <remarks>
-    /// This returns the function pointer that is called when an assertion is
-    /// triggered. This is either the value last passed to
-    /// SDL_SetAssertionHandler(), or if no
-    /// application-specified function is set, is equivalent to calling
-    /// SDL_GetDefaultAssertionHandler().
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetAssertionHandler"/>
+    /// <para>This returns the function pointer that is called when an assertion is triggered.</para>
+    /// <para>This is either the value last passed to <see cref="SetAssertionHandler" />,
+    /// or if no application-specified function is set, is equivalent to calling <see cref="GetDefaultAssertionHandler" />.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetAssertionHandler" />
     /// </remarks>
-    /// <returns>Returns theSDL_AssertionHandler that is called when an asserttriggers.</returns>
-
-    public static SdlAssertionHandler GetAssertionHandler(out nint puserdata) {
-        SdlAssertionHandler? handler = SDL_GetAssertionHandler(out puserdata);
+    /// <returns>Returns the <see cref="SdlAssertionHandler" /> that is called when an assert triggers.</returns>
+    public static SdlAssertionHandler GetAssertionHandler(out nint pUserData) {
+        SdlAssertionHandler? handler = SDL_GetAssertionHandler(out pUserData);
         return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
     }
 
     /// <summary>Get a list of all assertion failures.</summary>
     /// <remarks>
     /// This function gets all assertions triggered since the last call to
-    /// <see cref="ResetAssertionReport"/>, or the start of the
+    /// <see cref="ResetAssertionReport" />, or the start of the
     /// program.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe. Other threads calling<see cref="ResetAssertionReport"/> simultaneously, mayrender the returned pointer invalid.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ResetAssertionReport"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe.
+    /// Other threads calling<see cref="ResetAssertionReport" /> simultaneously, may render the returned pointer invalid.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ResetAssertionReport" />
     /// </remarks>
-    /// <returns>(const SDL_AssertData *) Returns a list of all failedassertions or <see langword="null" /> if the list is empty. This memory should not be modifiedor freed by the application. This pointer remains valid until the next callto <see cref="Quit"/> or <see cref="ResetAssertionReport"/>.</returns>
+    /// <returns>(const SDL_AssertData *) Returns a list of all failed assertions or <see langword="null" /> if the list is empty.
+    /// This memory should not be modified or freed by the application.
+    /// This pointer remains valid until the next call to <see cref="Quit" /> or <see cref="ResetAssertionReport" />.</returns>
     public static nint GetAssertionReport() {
         nint report = SDL_GetAssertionReport();
-        if (report == nint.Zero) {
-            throw new InvalidOperationException("Failed to get assertion report.");
-        }
-        return report;
+        return report == nint.Zero ? throw new InvalidOperationException("Failed to get assertion report.") : report;
     }
 
     /// <summary>Get the default assertion handler.</summary>
@@ -53,11 +53,11 @@ public static unsafe partial class Sdl {
     /// is used for assertions when
     /// SDL_SetAssertionHandler() hasn't been used to
     /// provide a different function.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetAssertionHandler"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetAssertionHandler" />
     /// </remarks>
-    /// <returns>Returns the defaultSDL_AssertionHandler that is called when an asserttriggers.</returns>
+    /// <returns>Returns the defaultSDL_AssertionHandler that is called when an assert triggers.</returns>
 
     public static SdlAssertionHandler GetDefaultAssertionHandler() {
         SdlAssertionHandler handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
@@ -65,18 +65,16 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Never call this directly.</summary>
-
     /// <param name="data">assert data structure.</param>
     /// <param name="func">function name.</param>
     /// <param name="file">file name.</param>
     /// <param name="line">line number.</param>
     /// <remarks>
     /// Use the SDL_assert macros instead.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns assert state.</returns>
-
     public static AssertState ReportAssertion(ref AssertData data, string func, string file, int line) {
         // Add validation or logging to make the wrapper less trivial
         if (data.TriggerCount == 0) {
@@ -119,17 +117,15 @@ public static unsafe partial class Sdl {
     /// SDL_GetAssertionReport will return no items. In
     /// addition, any previously-triggered assertions will be reset to a
     /// trigger_count of zero, and their always_ignore state will be <see langword="false" />.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe. Other threads triggering an assertion, orsimultaneously calling this function may cause memory leaks or crashes.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetAssertionReport"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe. Other threads triggering an assertion, or simultaneously calling this function may cause memory leaks or crashes.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetAssertionReport" />
     /// </remarks>
-
     public static void ResetAssertionReport() {
         SDL_ResetAssertionReport();
     }
 
     /// <summary>Set an application-defined assertion handler.</summary>
-
     /// <param name="handler">the SDL_AssertionHandler function to call when an assertion fails or <see langword="null" /> for the default handler.</param>
     /// <param name="userdata">a pointer that is passed to handler.</param>
     /// <remarks>
@@ -137,11 +133,10 @@ public static unsafe partial class Sdl {
     /// force the response to an assertion failure. If the application doesn't
     /// provide this, SDL will try to do the right thing, popping up a
     /// system-specific GUI dialog, and probably minimizing any fullscreen windows.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetAssertionHandler"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetAssertionHandler" />
     /// </remarks>
-
     public static void SetAssertionHandler(SdlAssertionHandler handler, nint userdata) {
         if (handler == null) {
             throw new ArgumentNullException(nameof(handler), "Assertion handler cannot be null.");
@@ -151,7 +146,7 @@ public static unsafe partial class Sdl {
     }
 
     [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
-    private static partial SdlAssertionHandler SDL_GetAssertionHandler(out nint puserdata);
+    private static partial SdlAssertionHandler SDL_GetAssertionHandler(out nint pUserData);
 
     [LibraryImport(NativeLibName), UnmanagedCallConv(CallConvs = [typeof(CallConvCdecl)])]
     private static partial nint SDL_GetAssertionReport();

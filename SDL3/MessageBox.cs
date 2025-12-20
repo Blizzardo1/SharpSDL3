@@ -41,10 +41,10 @@ public static partial class Sdl {
     /// <remarks>
     /// If your needs aren't complex, it might be easier to use
     /// SDL_ShowSimpleMessageBox.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ShowSimpleMessageBox"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShowSimpleMessageBox" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title) {
         return ShowMessageBox(windowOwner, message, title, MessageBoxFlags.Information);
@@ -65,10 +65,10 @@ public static partial class Sdl {
     /// <remarks>
     /// If your needs aren't complex, it might be easier to use
     /// SDL_ShowSimpleMessageBox.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ShowSimpleMessageBox"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShowSimpleMessageBox" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator) {
         MessageBoxColorScheme scheme = default;
@@ -82,10 +82,10 @@ public static partial class Sdl {
     /// <remarks>
     /// If your needs aren't complex, it might be easier to use
     /// SDL_ShowSimpleMessageBox.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ShowSimpleMessageBox"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShowSimpleMessageBox" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static unsafe MessageBoxResult ShowMessageBox(nint windowOwner, string message, string title, MessageBoxFlags flags, MessageBoxButtons buttons, MessageBoxDefaultButton accelerator, ref MessageBoxColorScheme scheme) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {
@@ -181,10 +181,10 @@ public static partial class Sdl {
     /// <remarks>
     /// If your needs aren't complex, this function is preferred over
     /// SDL_ShowMessageBox.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ShowMessageBox"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ShowMessageBox" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool ShowSimpleMessageBox(MessageBoxFlags flags, string message, string title, nint window) {
         if (string.IsNullOrEmpty(title) || string.IsNullOrEmpty(message)) {

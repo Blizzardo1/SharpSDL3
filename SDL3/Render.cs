@@ -18,10 +18,10 @@ public static unsafe partial class Sdl {
     /// The Vulkan renderer will wait for wait_semaphore before submitting
     /// rendering commands and signal signal_semaphore after rendering commands
     /// are complete for this frame.
-    /// <para><strong>Thread Safety:</strong> It is NOT safe to call this function from two threads at once.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is NOT safe to call this function from two threads at once.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool AddVulkanRenderSemaphores(nint renderer, uint waitStageMask, long waitSemaphore,
             long signalSemaphore) {
@@ -41,12 +41,11 @@ public static unsafe partial class Sdl {
     /// <param name="event">the event to modify.</param>
     /// <remarks>
     /// This takes into account several states:
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderCoordinatesFromWindow"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderCoordinatesFromWindow" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ConvertEventToRenderCoordinates(nint renderer, ref Event @event) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -64,7 +63,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a 2D rendering context for a window.</summary>
-
     /// <param name="window">the window where rendering is displayed.</param>
     /// <param name="name">the name of the rendering driver to initialize, or <see langword="null" /> to let SDL choose one.</param>
     /// <remarks>
@@ -74,14 +72,14 @@ public static unsafe partial class Sdl {
     /// from 0 to SDL_GetNumRenderDrivers()-1. If you
     /// don't need a specific renderer, specify <see langword="null" /> and SDL will attempt to choose
     /// the best option for you, based on what is available on the user's system.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRendererWithProperties"/>
-    /// <seealso cref="CreateSoftwareRenderer"/>
-    /// <seealso cref="DestroyRenderer"/>
-    /// <seealso cref="GetNumRenderDrivers"/>
-    /// <seealso cref="GetRenderDriver"/>
-    /// <seealso cref="GetRendererName"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRendererWithProperties" />
+    /// <seealso cref="CreateSoftwareRenderer" />
+    /// <seealso cref="DestroyRenderer" />
+    /// <seealso cref="GetNumRenderDrivers" />
+    /// <seealso cref="GetRenderDriver" />
+    /// <seealso cref="GetRendererName" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
 
@@ -103,13 +101,13 @@ public static unsafe partial class Sdl {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateProperties"/>
-    /// <seealso cref="CreateRenderer"/>
-    /// <seealso cref="CreateSoftwareRenderer"/>
-    /// <seealso cref="DestroyRenderer"/>
-    /// <seealso cref="GetRendererName"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateProperties" />
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="CreateSoftwareRenderer" />
+    /// <seealso cref="DestroyRenderer" />
+    /// <seealso cref="GetRendererName" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
 
@@ -123,7 +121,7 @@ public static unsafe partial class Sdl {
 
     /// <summary>Create a 2D software rendering context for a surface.</summary>
 
-    /// <param name="surface">the <see cref="Surface"/> structure representing the surface where rendering is done.</param>
+    /// <param name="surface">the <see cref="Surface" /> structure representing the surface where rendering is done.</param>
     /// <remarks>
     /// Two other API which can be used to create SDL_Renderer:
     /// SDL_CreateRenderer() and
@@ -131,9 +129,9 @@ public static unsafe partial class Sdl {
     /// also create a software renderer, but they are intended to be used with an
     /// SDL_Window as the final destination and not an
     /// SDL_Surface.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyRenderer"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyRenderer" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
 
@@ -173,12 +171,12 @@ public static unsafe partial class Sdl {
     /// <param name="window">a pointer filled with the window, or <see langword="null" /> on error.</param>
     /// <param name="renderer">a pointer filled with the renderer, or <see langword="null" /> on error.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRenderer"/>
-    /// <seealso cref="CreateWindow"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="CreateWindow" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateWindowAndRenderer(string title, int width, int height,
             WindowFlags windowFlags, out nint renderer) {
@@ -199,9 +197,9 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// This should be called before destroying the associated window.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRenderer"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
     /// </remarks>
 
     public static void DestroyRenderer(nint renderer) {
@@ -217,10 +215,10 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Passing <see langword="null" /> or an otherwise invalid texture will set the SDL error message
     /// to &quot;Invalid texture&quot;.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateTexture"/>
-    /// <seealso cref="CreateTextureFromSurface"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateTexture" />
+    /// <seealso cref="CreateTextureFromSurface" />
     /// </remarks>
 
     public static void DestroyTexture(nint texture) {
@@ -238,10 +236,10 @@ public static unsafe partial class Sdl {
     /// You do not need to (and in fact, shouldn't) call this function unless you
     /// are planning to call into OpenGL/Direct3D/Metal/whatever directly, in
     /// addition to using an SDL_Renderer.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool FlushRenderer(nint renderer) {
         if (renderer == nint.Zero) {
@@ -274,11 +272,11 @@ public static unsafe partial class Sdl {
     /// If a rendering target is active, this will return the size of the rendering
     /// target in pixels, otherwise return the value of
     /// SDL_GetRenderOutputSize().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderOutputSize"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderOutputSize" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static Rect GetCurrentRenderOutputSize(nint renderer) {
         if (renderer == nint.Zero) {
@@ -293,10 +291,10 @@ public static unsafe partial class Sdl {
     /// A render driver is a set of code that handles rendering and texture
     /// management on a particular display. Normally there is only one, but some
     /// drivers may have several available with different capabilities.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRenderer"/>
-    /// <seealso cref="GetRenderDriver"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="GetRenderDriver" />
     /// </remarks>
     /// <returns>Returns the number of built in render drivers.</returns>
 
@@ -322,16 +320,16 @@ public static unsafe partial class Sdl {
     /// <summary>Get the clip rectangle for the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an <see cref="Rect"/> structure filled in with the current clipping area or an empty rectangle if clipping is disabled.</param>
+    /// <param name="rect">an <see cref="Rect" /> structure filled in with the current clipping area or an empty rectangle if clipping is disabled.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function gets the
     /// cliprect for the current render target.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderClipEnabled"/>
-    /// <seealso cref="SetRenderClipRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderClipEnabled" />
+    /// <seealso cref="SetRenderClipRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static Rect GetRenderClipRect(nint renderer) {
         if (renderer == nint.Zero) {
@@ -357,11 +355,11 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the rendering context.</param>
     /// <param name="scale">a pointer filled in with the current color scale value.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderColorScale"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderColorScale" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static float GetRenderColorScale(nint renderer) {
         if (renderer == nint.Zero) {
@@ -374,13 +372,13 @@ public static unsafe partial class Sdl {
     /// <summary>Get the blend mode used for drawing operations.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode"/>.</param>
+    /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode" />.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderDrawBlendMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderDrawBlendMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool GetRenderDrawBlendMode(nint renderer, nint blendMode) {
         if (renderer == nint.Zero) {
@@ -400,12 +398,12 @@ public static unsafe partial class Sdl {
     /// <param name="b">a pointer filled in with the blue value used to draw on the rendering target.</param>
     /// <param name="a">a pointer filled in with the alpha value used to draw on the rendering target; usually SDL_ALPHA_OPAQUE (255).</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColorFloat"/>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColorFloat" />
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool GetRenderDrawColor(nint renderer, out byte r, out byte g, out byte b, out byte a) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -420,12 +418,12 @@ public static unsafe partial class Sdl {
     /// <summary>Get the color used for drawing operations (Rect, Line and Clear).</summary>
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColorFloat"/>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColorFloat" />
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns a <see cref="Color"/> on success or a blank <see cref="Color"/> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns a <see cref="Color" /> on success or a blank <see cref="Color" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static Color GetRenderDrawColor(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -453,12 +451,12 @@ public static unsafe partial class Sdl {
     /// <param name="b">a pointer filled in with the blue value used to draw on the rendering target.</param>
     /// <param name="a">a pointer filled in with the alpha value used to draw on the rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderDrawColorFloat"/>
-    /// <seealso cref="GetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderDrawColorFloat" />
+    /// <seealso cref="GetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FColor GetRenderDrawColorFloat(nint renderer) {
         if (renderer == nint.Zero) {
@@ -475,9 +473,9 @@ public static unsafe partial class Sdl {
     /// The list of rendering drivers is given in the order that they are normally
     /// initialized by default; the drivers that seem more reasonable to choose
     /// first (as far as the SDL developers believe) are earlier in the list.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumRenderDrivers"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumRenderDrivers" />
     /// </remarks>
     /// <returns>Returns the name of the rendering driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
 
@@ -497,8 +495,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="window">the window to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns the rendering context on successor <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -518,8 +516,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="texture">the texture to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a pointer to theSDL_Renderer that created the texture, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
 
@@ -539,10 +537,10 @@ public static unsafe partial class Sdl {
 
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRenderer"/>
-    /// <seealso cref="CreateRendererWithProperties"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="CreateRendererWithProperties" />
     /// </remarks>
     /// <returns>Returns the name of the selected renderer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -562,8 +560,8 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// The following read-only properties are provided by SDL:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -599,11 +597,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function gets the width and height of the logical rendering output, or
     /// the output size in pixels if a logical resolution is not enabled.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderLogicalPresentation"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static Rect GetRenderLogicalPresentation(nint renderer, out RendererLogicalPresentation mode) {
         if (renderer == nint.Zero) {
@@ -636,11 +634,11 @@ public static unsafe partial class Sdl {
     /// presentation, based on the presentation mode and output size. If logical
     /// presentation is disabled, it will fill the rectangle with the output size,
     /// in pixels.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderLogicalPresentation"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FRect GetRenderLogicalPresentationRect(nint renderer) {
         if (renderer == nint.Zero) {
@@ -659,9 +657,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function returns void *, so SDL doesn't have to include Metal's
     /// headers, but it can be safely cast to an id&lt;MTLRenderCommandEncoder&gt;.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderMetalLayer"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderMetalLayer" />
     /// </remarks>
     /// <returns>(void *) Returns an id&lt;MTLRenderCommandEncoder&gt; on success, or <see langword="null" /> ifthe renderer isn't a Metal renderer or there was an error.</returns>
 
@@ -682,9 +680,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function returns void *, so SDL doesn't have to include Metal's
     /// headers, but it can be safely cast to a CAMetalLayer *.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderMetalCommandEncoder"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderMetalCommandEncoder" />
     /// </remarks>
     /// <returns>(void *) Returns a CAMetalLayer * on success, or <see langword="null" /> if the rendererisn't a Metal renderer.</returns>
 
@@ -718,11 +716,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This returns the <see langword="true" /> output size in pixels, ignoring any render targets or
     /// logical size and presentation.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetCurrentRenderOutputSize"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetCurrentRenderOutputSize" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static Rect GetRenderOutputSize(nint renderer) {
         if (renderer == nint.Zero) {
@@ -754,10 +752,10 @@ public static unsafe partial class Sdl {
     /// viewport which is safe to have interactible content. You should continue
     /// rendering into the rest of the render target, but it should not contain
     /// visually important or interactible content.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static Rect GetRenderSafeArea(nint renderer) {
         if (renderer == nint.Zero) {
@@ -786,11 +784,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Each render target has its own scale. This function gets the scale for the
     /// current render target.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderScale"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderScale" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FPoint GetRenderScale(nint renderer) {
         if (renderer == nint.Zero) {
@@ -806,9 +804,9 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// The default render target is the window for which the renderer was created,
     /// and is reported a <see langword="null" /> here.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderTarget"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderTarget" />
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns the current render target or <see langword="null" />for the default render target.</returns>
 
@@ -826,16 +824,16 @@ public static unsafe partial class Sdl {
     /// <summary>Get the drawing area for the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an <see cref="Rect"/> structure filled in with the current drawing area.</param>
+    /// <param name="rect">an <see cref="Rect" /> structure filled in with the current drawing area.</param>
     /// <remarks>
     /// Each render target has its own viewport. This function gets the viewport
     /// for the current render target.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderViewportSet"/>
-    /// <seealso cref="SetRenderViewport"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderViewportSet" />
+    /// <seealso cref="SetRenderViewport" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool GetRenderViewport(nint renderer, out Rect rect) {
         if (renderer == nint.Zero) {
@@ -853,11 +851,11 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the renderer to toggle.</param>
     /// <param name="vsync">an int filled with the current vertical refresh sync interval. See SDL_SetRenderVSync() for the meaning of the value.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderVSync"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderVSync" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static int GetRenderVsync(nint renderer) {
         if (renderer == nint.Zero) {
@@ -872,11 +870,11 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the renderer to toggle.</param>
     /// <param name="vsync">an int filled with the current vertical refresh sync interval. See SDL_SetRenderVSync() for the meaning of the value.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderVSync"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderVSync" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool GetRenderVSync(nint renderer, out int vsync) {
         if (renderer == nint.Zero) {
@@ -893,8 +891,8 @@ public static unsafe partial class Sdl {
 
     /// <param name="renderer">the renderer to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -917,11 +915,11 @@ public static unsafe partial class Sdl {
     /// the clip rectangle. Note, that clearing will also set/fill all pixels of
     /// the rendering target to current renderer draw color, so make sure to invoke
     /// SDL_SetRenderDrawColor() when needed.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderClear(nint renderer) {
         if (renderer == nint.Zero) {
@@ -940,12 +938,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Each render target has its own clip rectangle. This function checks the
     /// cliprect for the current render target.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderClipRect"/>
-    /// <seealso cref="SetRenderClipRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderClipRect" />
+    /// <seealso cref="SetRenderClipRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if clipping is enabled or <see langword="false" /> if not; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> if clipping is enabled or <see langword="false" /> if not; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderClipEnabled(nint renderer) {
         if (renderer == nint.Zero) {
@@ -979,12 +977,12 @@ public static unsafe partial class Sdl {
     /// <param name="y">a pointer filled with the y coordinate in render coordinates.</param>
     /// <remarks>
     /// This takes into account several states:
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderLogicalPresentation"/>
-    /// <seealso cref="SetRenderScale"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
+    /// <seealso cref="SetRenderScale" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FPoint RenderCoordinatesFromWindow(nint renderer, FPoint windowPoint) {
         if (renderer == nint.Zero) {
@@ -1018,13 +1016,13 @@ public static unsafe partial class Sdl {
     /// <param name="window_y">a pointer filled with the y coordinate in window coordinates.</param>
     /// <remarks>
     /// This takes into account several states:
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderLogicalPresentation"/>
-    /// <seealso cref="SetRenderScale"/>
-    /// <seealso cref="SetRenderViewport"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
+    /// <seealso cref="SetRenderScale" />
+    /// <seealso cref="SetRenderViewport" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FPoint RenderCoordinatesToWindow(nint renderer, float x, float y) {
         if (renderer == nint.Zero) {
@@ -1043,13 +1041,13 @@ public static unsafe partial class Sdl {
     /// <param name="window_y">a pointer filled with the y coordinate in window coordinates.</param>
     /// <remarks>
     /// This takes into account several states:
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderLogicalPresentation"/>
-    /// <seealso cref="SetRenderScale"/>
-    /// <seealso cref="SetRenderViewport"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
+    /// <seealso cref="SetRenderScale" />
+    /// <seealso cref="SetRenderViewport" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static FPoint RenderCoordinatesToWindow(nint renderer, FPoint point) {
         if (renderer == nint.Zero) {
@@ -1069,12 +1067,12 @@ public static unsafe partial class Sdl {
     /// SDL_Renderer. Note that this is a convenience function for
     /// debugging, with severe limitations, and not intended to be used for
     /// production apps and games.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderDebugTextFormat"/>
-    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderDebugTextFormat" />
+    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderDebugText(nint renderer, float x, float y, string str) {
         if (renderer == nint.Zero) {
@@ -1098,12 +1096,12 @@ public static unsafe partial class Sdl {
     /// SDL_Renderer. Note that this is a convenience function for
     /// debugging, with severe limitations, and not intended to be used for
     /// production apps and games.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderDebugTextFormat"/>
-    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderDebugTextFormat" />
+    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderDebugText(nint renderer, FPoint location, string str) {
         if (renderer == nint.Zero) {
@@ -1123,12 +1121,12 @@ public static unsafe partial class Sdl {
     /// This function will render a printf()-style format string to a renderer.
     /// Note that this is a convinence function for debugging, with severe
     /// limitations, and is not intended to be used for production apps and games.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderDebugText"/>
-    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderDebugText" />
+    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderDebugTextFormat(nint renderer, float x, float y, string fmt) {
         if (renderer == nint.Zero) {
@@ -1152,12 +1150,12 @@ public static unsafe partial class Sdl {
     /// This function will render a printf()-style format string to a renderer.
     /// Note that this is a convinence function for debugging, with severe
     /// limitations, and is not intended to be used for production apps and games.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderDebugText"/>
-    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderDebugText" />
+    /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderDebugTextFormat(nint renderer, FPoint location, string fmt) {
         if (renderer == nint.Zero) {
@@ -1171,11 +1169,11 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the renderer which should fill a rectangle.</param>
     /// <param name="rect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderFillRects"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderFillRects" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderFillRect(nint renderer, ref FRect rect) {
         if (renderer == nint.Zero) {
@@ -1194,11 +1192,11 @@ public static unsafe partial class Sdl {
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderFillRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderFillRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderFillRects(nint renderer, Span<FRect> rects) {
         if (renderer == nint.Zero) {
@@ -1217,11 +1215,11 @@ public static unsafe partial class Sdl {
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderFillRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderFillRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderFillRects(nint renderer, FRect[] rects) {
         if (renderer == nint.Zero) {
@@ -1239,12 +1237,12 @@ public static unsafe partial class Sdl {
     /// <param name="indices">(optional) An array of integer indices into the 'vertices' array, if <see langword="null" /> all vertices will be rendered in sequential order.</param>
     /// <param name="num_indices">number of indices.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderGeometryRaw"/>
-    /// <seealso cref="SetRenderTextureAddressMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderGeometryRaw" />
+    /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderGeometry(nint renderer, nint texture, Span<Vertex> vertices, Span<int> indices) {
         if (renderer == nint.Zero) {
@@ -1267,12 +1265,12 @@ public static unsafe partial class Sdl {
     /// <param name="indices">(optional) An array of integer indices into the 'vertices' array, if <see langword="null" /> all vertices will be rendered in sequential order.</param>
     /// <param name="num_indices">number of indices.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderGeometryRaw"/>
-    /// <seealso cref="SetRenderTextureAddressMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderGeometryRaw" />
+    /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderGeometry(nint renderer, nint texture, Vertex[] vertices, int[] indices) {
         if (renderer == nint.Zero) {
@@ -1290,12 +1288,12 @@ public static unsafe partial class Sdl {
     /// <param name="indices">(optional) An array of integer indices into the 'vertices' array, if <see langword="null" /> all vertices will be rendered in sequential order.</param>
     /// <param name="num_indices">number of indices.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderGeometryRaw"/>
-    /// <seealso cref="SetRenderTextureAddressMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderGeometryRaw" />
+    /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderGeometry(nint renderer, nint texture, Span<Vertex> vertices, int[] indices) {
         if (renderer == nint.Zero) {
@@ -1313,12 +1311,12 @@ public static unsafe partial class Sdl {
     /// <param name="indices">(optional) An array of integer indices into the 'vertices' array, if <see langword="null" /> all vertices will be rendered in sequential order.</param>
     /// <param name="num_indices">number of indices.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderGeometryRaw"/>
-    /// <seealso cref="SetRenderTextureAddressMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderGeometryRaw" />
+    /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderGeometry(nint renderer, nint texture, Vertex[] vertices, Span<int> indices) {
         if (renderer == nint.Zero) {
@@ -1342,12 +1340,12 @@ public static unsafe partial class Sdl {
     /// <param name="num_indices">number of indices.</param>
     /// <param name="size_indices">index size: 1 (byte), 2 (short), 4 (int).</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderGeometry"/>
-    /// <seealso cref="SetRenderTextureAddressMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderGeometry" />
+    /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderGeometryRaw(nint renderer, nint texture, nint xy, int xyStride, nint color,
             int colorStride, nint uv, int uvStride, int numVertices, nint indices, int numIndices, int sizeIndices) {
@@ -1370,11 +1368,11 @@ public static unsafe partial class Sdl {
     /// <param name="x2">the x coordinate of the end point.</param>
     /// <param name="y2">the y coordinate of the end point.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderLines"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderLines" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderLine(nint renderer, float x1, float y1, float x2, float y2) {
         if (renderer == nint.Zero) {
@@ -1395,11 +1393,11 @@ public static unsafe partial class Sdl {
     /// <param name="x2">the x coordinate of the end point.</param>
     /// <param name="y2">the y coordinate of the end point.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderLines"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderLines" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderLine(nint renderer, FPoint point1, FPoint point2) {
         if (renderer == nint.Zero) {
@@ -1414,11 +1412,11 @@ public static unsafe partial class Sdl {
     /// <param name="points">the points along the lines.</param>
     /// <param name="count">the number of points, drawing count-1 lines.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderLine"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderLine" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderLines(nint renderer, Span<FPoint> points) {
         if (renderer == nint.Zero) {
@@ -1437,11 +1435,11 @@ public static unsafe partial class Sdl {
     /// <param name="points">the points along the lines.</param>
     /// <param name="count">the number of points, drawing count-1 lines.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderLine"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderLine" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderLines(nint renderer, FPoint[] points) {
         if (renderer == nint.Zero) {
@@ -1456,11 +1454,11 @@ public static unsafe partial class Sdl {
     /// <param name="x">the x coordinate of the point.</param>
     /// <param name="y">the y coordinate of the point.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderPoints"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderPoints" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderPoint(nint renderer, float x, float y) {
         if (renderer == nint.Zero) {
@@ -1479,11 +1477,11 @@ public static unsafe partial class Sdl {
     /// <param name="x">the x coordinate of the point.</param>
     /// <param name="y">the y coordinate of the point.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderPoints"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderPoints" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderPoint(nint renderer, FPoint point) {
         if (renderer == nint.Zero) {
@@ -1498,11 +1496,11 @@ public static unsafe partial class Sdl {
     /// <param name="points">the points to draw.</param>
     /// <param name="count">the number of points to draw.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderPoint"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderPoint" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderPoints(nint renderer, Span<FPoint> points) {
         if (renderer == nint.Zero) {
@@ -1521,11 +1519,11 @@ public static unsafe partial class Sdl {
     /// <param name="points">the points to draw.</param>
     /// <param name="count">the number of points to draw.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderPoint"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderPoint" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderPoints(nint renderer, FPoint[] points) {
         if (renderer == nint.Zero) {
@@ -1543,22 +1541,22 @@ public static unsafe partial class Sdl {
     /// directly put a line on the screen, but rather updates the backbuffer. As
     /// such, you compose your entire scene and present the composed backbuffer
     /// to the screen as a complete picture.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateRenderer"/>
-    /// <seealso cref="RenderClear"/>
-    /// <seealso cref="RenderFillRect"/>
-    /// <seealso cref="RenderFillRects"/>
-    /// <seealso cref="RenderLine"/>
-    /// <seealso cref="RenderLines"/>
-    /// <seealso cref="RenderPoint"/>
-    /// <seealso cref="RenderPoints"/>
-    /// <seealso cref="RenderRect"/>
-    /// <seealso cref="RenderRects"/>
-    /// <seealso cref="SetRenderDrawBlendMode"/>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="RenderClear" />
+    /// <seealso cref="RenderFillRect" />
+    /// <seealso cref="RenderFillRects" />
+    /// <seealso cref="RenderLine" />
+    /// <seealso cref="RenderLines" />
+    /// <seealso cref="RenderPoint" />
+    /// <seealso cref="RenderPoints" />
+    /// <seealso cref="RenderRect" />
+    /// <seealso cref="RenderRects" />
+    /// <seealso cref="SetRenderDrawBlendMode" />
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderPresent(nint renderer) {
         if (renderer == nint.Zero) {
@@ -1574,13 +1572,13 @@ public static unsafe partial class Sdl {
     /// <summary>Read pixels from the current rendering target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an <see cref="Rect"/> structure representing the area to read, which will be clipped to the current viewport, or <see langword="null" /> for the entire viewport.</param>
+    /// <param name="rect">an <see cref="Rect" /> structure representing the area to read, which will be clipped to the current viewport, or <see langword="null" /> for the entire viewport.</param>
     /// <remarks>
     /// The returned surface contains pixels inside the desired area clipped to the
     /// current viewport, and should be freed with
     /// SDL_DestroySurface().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL_Surface on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -1600,11 +1598,11 @@ public static unsafe partial class Sdl {
     /// <param name="renderer">the renderer which should draw a rectangle.</param>
     /// <param name="rect">a pointer to the destination rectangle, or <see langword="null" /> to outline the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderRects"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderRects" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderRect(nint renderer, ref FRect rect) {
         if (renderer == nint.Zero) {
@@ -1623,11 +1621,11 @@ public static unsafe partial class Sdl {
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderRects(nint renderer, Span<FRect> rects) {
         if (renderer == nint.Zero) {
@@ -1646,11 +1644,11 @@ public static unsafe partial class Sdl {
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderRects(nint renderer, FRect[] rects) {
         if (renderer == nint.Zero) {
@@ -1666,12 +1664,12 @@ public static unsafe partial class Sdl {
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTextureRotated"/>
-    /// <seealso cref="RenderTextureTiled"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTextureRotated" />
+    /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, ref FRect dstrect) {
         if (renderer == nint.Zero) {
@@ -1691,12 +1689,12 @@ public static unsafe partial class Sdl {
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTextureRotated"/>
-    /// <seealso cref="RenderTextureTiled"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTextureRotated" />
+    /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, nint dstrect) {
         FRect srect = new();
@@ -1722,12 +1720,12 @@ public static unsafe partial class Sdl {
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTextureRotated"/>
-    /// <seealso cref="RenderTextureTiled"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTextureRotated" />
+    /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, nint dstrect) {
         FRect drect = new();
@@ -1748,12 +1746,12 @@ public static unsafe partial class Sdl {
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTextureRotated"/>
-    /// <seealso cref="RenderTextureTiled"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTextureRotated" />
+    /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, ref FRect dstrect) {
         FRect srect = new();
@@ -1771,7 +1769,7 @@ public static unsafe partial class Sdl {
 
     /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
-    /// <param name="srcrect">the <see cref="Rect"/> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
+    /// <param name="srcrect">the <see cref="Rect" /> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
     /// <param name="leftWidth">the width, in pixels, of the left corners in srcrect.</param>
     /// <param name="rightWidth">the width, in pixels, of the right corners in srcrect.</param>
     /// <param name="topHeight">the height, in pixels, of the top corners in srcrect.</param>
@@ -1784,11 +1782,11 @@ public static unsafe partial class Sdl {
     /// remaining pixels. The corners are then scaled using scale and fit into
     /// the corners of the destination rectangle. The sides and center are then
     /// stretched into place to cover the remaining destination rectangle.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTexture9Grid(nint renderer, nint texture, ref FRect srcrect, float leftWidth,
             float rightWidth, float topHeight, float bottomHeight, float scale, ref FRect dstrect) {
@@ -1812,11 +1810,11 @@ public static unsafe partial class Sdl {
     /// <param name="right">a pointer to a point indicating where the top-right corner of srcrect should be mapped to, or <see langword="null" /> for the rendering target's top-right corner.</param>
     /// <param name="down">a pointer to a point indicating where the bottom-left corner of srcrect should be mapped to, or <see langword="null" /> for the rendering target's bottom-left corner.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> You may only call this function from the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: You may only call this function from the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTextureAffine(nint renderer, nint texture, in FRect srcrect, in FPoint origin,
             in FPoint right, in FPoint down) {
@@ -1839,11 +1837,11 @@ public static unsafe partial class Sdl {
     /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
     /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, ref FRect dstrect,
             double angle, ref FPoint center, FlipMode flip) {
         if (renderer == nint.Zero) {
@@ -1866,11 +1864,11 @@ public static unsafe partial class Sdl {
     /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
     /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, ref FPoint center, FlipMode flip) {
         FRect srect = new();
         if (renderer == nint.Zero) {
@@ -1891,11 +1889,11 @@ public static unsafe partial class Sdl {
     /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
     /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, ref FPoint center, FlipMode flip) {
         FRect drect = new();
         if (renderer == nint.Zero) {
@@ -1916,11 +1914,11 @@ public static unsafe partial class Sdl {
     /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
     /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, nint center, FlipMode flip) {
         FRect srect = new();
         FPoint centerPoint = new();
@@ -1946,11 +1944,11 @@ public static unsafe partial class Sdl {
     /// <param name="center">a pointer to a point indicating the point around which dstrect will be rotated (if <see langword="null" />, rotation will be done around dstrect.w/2, dstrect.h/2).</param>
     /// <param name="flip">an SDL_FlipMode value stating which flipping actions should be performed on the texture.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, nint center, FlipMode flip) {
         FRect drect = new();
         FPoint centerPoint = new();
@@ -1978,11 +1976,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// The pixels in srcrect will be repeated as many times as needed to
     /// completely fill dstrect.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="RenderTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool RenderTextureTiled(nint renderer, nint texture, ref FRect srcrect, float scale,
             ref FRect dstrect) {
@@ -2002,10 +2000,10 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This is useful if you're saving and restoring the viewport and want to know
     /// whether you should restore a specific rectangle or <see langword="null" />.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderViewport"/>
-    /// <seealso cref="SetRenderViewport"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderViewport" />
+    /// <seealso cref="SetRenderViewport" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the viewport was set to a specific rectangle, or<see langword="false" /> if it was set to <see langword="null" /> (the entire target).</returns>
 
@@ -2023,16 +2021,16 @@ public static unsafe partial class Sdl {
     /// <summary>Set the clip rectangle for rendering on the specified target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">an <see cref="Rect"/> structure representing the clip area, relative to the viewport, or <see langword="null" /> to disable clipping.</param>
+    /// <param name="rect">an <see cref="Rect" /> structure representing the clip area, relative to the viewport, or <see langword="null" /> to disable clipping.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function sets the
     /// cliprect for the current render target.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderClipRect"/>
-    /// <seealso cref="RenderClipEnabled"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderClipRect" />
+    /// <seealso cref="RenderClipEnabled" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderClipRect(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
@@ -2054,11 +2052,11 @@ public static unsafe partial class Sdl {
     /// value while rendering. This can be used to adjust the brightness of colors
     /// during HDR rendering, or changing HDR video brightness when playing on an
     /// SDR display.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderColorScale"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderColorScale" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderColorScale(nint renderer, float scale) {
         if (renderer == nint.Zero) {
@@ -2074,14 +2072,14 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">the <see cref="BlendMode"/> to use for blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode" /> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawBlendMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawBlendMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawBlendMode(nint renderer, uint blendMode) {
         if (renderer == nint.Zero) {
@@ -2097,14 +2095,14 @@ public static unsafe partial class Sdl {
     /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="blendMode">the <see cref="BlendMode"/> to use for blending.</param>
+    /// <param name="blendMode">the <see cref="BlendMode" /> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawBlendMode"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawBlendMode" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawBlendMode(nint renderer, BlendMode mode) {
         if (renderer == nint.Zero) {
@@ -2127,12 +2125,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Set the color for drawing or filling rectangles, lines, and points, and for
     /// SDL_RenderClear().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColor"/>
-    /// <seealso cref="SetRenderDrawColorFloat"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColor" />
+    /// <seealso cref="SetRenderDrawColorFloat" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawColor(nint renderer, byte r, byte g, byte b, byte a) {
         if (renderer == nint.Zero) {
@@ -2155,12 +2153,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Set the color for drawing or filling rectangles, lines, and points, and for
     /// SDL_RenderClear().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColor"/>
-    /// <seealso cref="SetRenderDrawColorFloat"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColor" />
+    /// <seealso cref="SetRenderDrawColorFloat" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawColor(nint renderer, Color color) {
         if (renderer == nint.Zero) {
@@ -2179,12 +2177,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Set the color for drawing or filling rectangles, lines, and points, and for
     /// SDL_RenderClear().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColorFloat"/>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColorFloat" />
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawColorFloat(nint renderer, float r, float g, float b, float a) {
         if (renderer == nint.Zero) {
@@ -2207,12 +2205,12 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// Set the color for drawing or filling rectangles, lines, and points, and for
     /// SDL_RenderClear().
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderDrawColorFloat"/>
-    /// <seealso cref="SetRenderDrawColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderDrawColorFloat" />
+    /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderDrawColorFloat(nint renderer, FColor color) {
         if (renderer == nint.Zero) {
@@ -2231,13 +2229,13 @@ public static unsafe partial class Sdl {
     /// This function sets the width and height of the logical rendering output.
     /// The renderer will act as if the current render target is always the
     /// requested dimensions, scaling to the actual resolution as necessary.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ConvertEventToRenderCoordinates"/>
-    /// <seealso cref="GetRenderLogicalPresentation"/>
-    /// <seealso cref="GetRenderLogicalPresentationRect"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ConvertEventToRenderCoordinates" />
+    /// <seealso cref="GetRenderLogicalPresentation" />
+    /// <seealso cref="GetRenderLogicalPresentationRect" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderLogicalPresentation(nint renderer, int w, int h,
             RendererLogicalPresentation mode) {
@@ -2260,11 +2258,11 @@ public static unsafe partial class Sdl {
     /// The drawing coordinates are scaled by the x/y scaling factors before they
     /// are used by the renderer. This allows resolution independent drawing with a
     /// single coordinate system.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderScale"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderScale" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderScale(nint renderer, float scaleX, float scaleY) {
         if (renderer == nint.Zero) {
@@ -2285,11 +2283,11 @@ public static unsafe partial class Sdl {
     /// The default render target is the window for which the renderer was created.
     /// To stop rendering to a texture and render to the window again, call this
     /// function with a <see langword="null" /> texture.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderTarget"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderTarget" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetRenderTarget(nint renderer, nint texture) {
         if (renderer == nint.Zero) {
@@ -2312,17 +2310,17 @@ public static unsafe partial class Sdl {
     /// <summary>Set the drawing area for rendering on the current target.</summary>
 
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="rect">the <see cref="Rect"/> structure representing the drawing area, or <see langword="null" /> to set the viewport to the entire target.</param>
+    /// <param name="rect">the <see cref="Rect" /> structure representing the drawing area, or <see langword="null" /> to set the viewport to the entire target.</param>
     /// <remarks>
     /// Drawing will clip to this area (separately from any clipping done with
     /// SDL_SetRenderClipRect), and the top left of the
     /// area will become coordinate (0, 0) for future drawing commands.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderViewport"/>
-    /// <seealso cref="RenderViewportSet"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderViewport" />
+    /// <seealso cref="RenderViewportSet" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderViewport(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
@@ -2342,11 +2340,11 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// When a renderer is created, vsync defaults to
     /// SDL_RENDERER_VSYNC_DISABLED.
-    /// <para><strong>Thread Safety:</strong> This function should only be called on the main thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderVSync"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderVSync" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetRenderVSync(nint renderer, int vsync) {
         if (renderer == nint.Zero) {

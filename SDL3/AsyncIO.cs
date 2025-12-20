@@ -6,19 +6,20 @@ using System.Runtime.InteropServices;
 namespace SharpSDL3;
 
 public static partial class Sdl {
-    /// <summary>Use this function to create a new SDL_AsyncIO object for reading from and/or writing to a named file.</summary>
 
+    /// <summary>
+    /// Use this function to create a new SDL_AsyncIO object for reading from and/or writing to a named file.
+    /// </summary>
     /// <param name="file">a UTF-8 string representing the filename to open.</param>
     /// <param name="mode">an ASCII string representing the mode to be used for opening the file.</param>
     /// <remarks>
     /// The mode string understands the following values:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CloseAsyncIo"/>
-    /// <seealso cref="ReadAsyncIo"/>
-    /// <seealso cref="WriteAsyncIo"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CloseAsyncIo" />
+    /// <seealso cref="ReadAsyncIo" />
+    /// <seealso cref="WriteAsyncIo" />
     /// </remarks>
     /// <returns>(SDL_AsyncIO *) Returns a pointer to theSDL_AsyncIO structure that is created or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
-
     public static nint AsyncIoFromFile(string file, string mode) {
         if (string.IsNullOrEmpty(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
@@ -35,28 +36,33 @@ public static partial class Sdl {
             : result;
     }
 
+    /// <summary>
+    /// Close and free any allocated resources for an async I/O object.
+    /// </summary>
+    /// <param name="asyncio">a pointer to an SDL_AsyncIO structure to close.</param>
+    /// <param name="flush"><see langword="true" /> if data should sync to disk before the task completes.</param>
+    /// <param name="queue">a queue to add to the new SDL_AsyncIO to.</param>
+    /// <param name="userdata">an app-defined pointer that will be provided with the task results.</param>
+    /// <returns>Returns <see langword="true" /></returns>
+    /// <exception cref="ArgumentException"></exception>
     public static SdlBool CloseAsyncIo(nint asyncio, SdlBool flush, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
         }
-        if (queue == nint.Zero) {
-            throw new ArgumentException("Queue cannot be null.", nameof(queue));
-        }
-        return SDL_CloseAsyncIO(asyncio, flush, queue, userdata);
+        return queue == nint.Zero ? throw new ArgumentException("Queue cannot be null.", nameof(queue)) : SDL_CloseAsyncIO(asyncio, flush, queue, userdata);
     }
 
     /// <summary>Create a task queue for tracking multiple I/O operations.</summary>
     /// <remarks>
     /// Async I/O operations are assigned to a queue when started. The queue can be
     /// checked for completed tasks thereafter.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="DestroyAsyncIoQueue"/>
-    /// <seealso cref="GetAsyncIoResult"/>
-    /// <seealso cref="WaitAsyncIoResult"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="DestroyAsyncIoQueue" />
+    /// <seealso cref="GetAsyncIoResult" />
+    /// <seealso cref="WaitAsyncIoResult" />
     /// </remarks>
     /// <returns>(SDL_AsyncIOQueue *) Returns a new task queue object or<see langword="null" /> if there was an error; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreateAsyncIoQueue() {
         nint result = SDL_CreateAsyncIOQueue();
         return result == nint.Zero
@@ -64,17 +70,17 @@ public static partial class Sdl {
             : result;
     }
 
-    /// <summary>Destroy a previously-created async I/O task queue.</summary>
-
+    /// <summary>
+    /// Destroy a previously-created async I/O task queue.
+    /// </summary>
     /// <param name="queue">the task queue to destroy.</param>
     /// <remarks>
     /// If there are still tasks pending for this queue, this call will block until
     /// those tasks are finished. All those tasks will be deallocated. Their
     /// results will be lost to the app.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread, so long as no otherthread is waiting on the queue withSDL_WaitAsyncIOResult.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread, so long as no other thread is waiting on the queue with <see cref="WaitAsyncIoResult" />.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-
     public static void DestroyAsyncIoQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -83,47 +89,40 @@ public static partial class Sdl {
     }
 
     /// <summary>Query an async I/O task queue for completed tasks.</summary>
-
     /// <param name="queue">the async I/O task queue to query.</param>
     /// <param name="outcome">details of a finished task will be written here. May not be <see langword="null" />.</param>
     /// <remarks>
-    /// If a task assigned to this queue has finished, this will return true and
-    /// fill in outcome with the details of the task. If no task in the queue has
-    /// finished, this function will return false. This function does not block.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAsyncIoResult"/>
+    /// <para>If a task assigned to this queue has finished, this will return true and
+    /// fill in outcome with the details of the task.</para>
+    /// <para>If no task in the queue has finished, this function will return false.</para>
+    /// <para>This function does not block.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WaitAsyncIoResult" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if a task has completed, <see langword="false" /> otherwise.</returns>
-
     public static SdlBool GetAsyncIoResult(nint queue, out AsyncIoOutcome outcome) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
         SdlBool result = SDL_GetAsyncIOResult(queue, out outcome);
-        if (!result) {
-            throw new InvalidOperationException("Failed to get AsyncIO result.");
-        }
-        return result;
+        return !result ? throw new InvalidOperationException("Failed to get AsyncIO result.") : result;
     }
 
     /// <summary>Use this function to get the size of the data stream in an SDL_AsyncIO.</summary>
-
     /// <param name="asyncio">the SDL_AsyncIO to get the size of the data stream from.</param>
     /// <remarks>
     /// This call is not asynchronous; it assumes that obtaining this info is a
     /// non-blocking operation in most reasonable cases.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns the size of the data stream in theSDL_IOStream on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns the size of the data stream in the <see cref="IoStream" /> on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
     public static long GetAsyncIoSize(nint asyncio) {
         return asyncio == nint.Zero ? throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio)) : SDL_GetAsyncIOSize(asyncio);
     }
 
     /// <summary>Load all the data from a file path, asynchronously.</summary>
-
     /// <param name="file">the path to read all available data from.</param>
     /// <param name="queue">a queue to add the new SDL_AsyncIO to.</param>
     /// <param name="userdata">an app-defined pointer that will be provided with the task results.</param>
@@ -132,21 +131,41 @@ public static partial class Sdl {
     /// to complete. On a successful return, this work will continue in the
     /// background. If the work begins, even failure is asynchronous: a failing
     /// return value from this function only means the work couldn't start at all.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="LoadFile_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="LoadFileIo" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
-
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError" /> for more information.</returns>
     public static SdlBool LoadFileAsync(string file, nint queue, nint userdata) {
         if (string.IsNullOrEmpty(file)) {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
-        if (queue == nint.Zero) {
-            throw new ArgumentException("Queue cannot be null.", nameof(queue));
-        }
-        return SDL_LoadFileAsync(file, queue, userdata);
+        return queue == nint.Zero ? throw new ArgumentException("Queue cannot be null.", nameof(queue)) : SDL_LoadFileAsync(file, queue, userdata);
     }
 
+    /// <summary>
+    /// Start an async read.
+    /// </summary>
+    /// <param name="asyncio">a pointer to an SDL_AsyncIO structure.</param>
+    /// <param name="ptr">a pointer to a buffer to read data into.</param>
+    /// <param name="offset">the position to start reading in the data source.</param>
+    /// <param name="size">the number of bytes to read from the data source.</param>
+    /// <param name="queue">a queue to add the new SDL_AsyncIO to.</param>
+    /// <param name="userdata">an app-defined pointer that will be provided with the task results.</param>
+    /// <remarks>
+    /// <para>This function reads up to <paramref name="size" /> bytes from <paramref name="offset" /> position in the data source to the area pointed at by ptr.</para>
+    /// <para>This function may read fewer bytes than requested.</para>
+    /// <para>This function returns as quickly as possible; it does not wait for the read to complete.</para>
+    /// <para>On a successful return, this work will continue in the background. If the work begins, even failure is asynchronous: a failing return value from this function only means the work couldn't start at all.</para>
+    /// <para><paramref name="ptr" /> must remain available until the work is done, and may be accessed by the system at any time until then.</para>
+    /// <para>Do not allocate it on the stack, as this might take longer than the life of the calling function to complete!</para>
+    /// <para>An SDL_AsyncIOQueue must be specified. The newly-created task will be added to it when it completes its work.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <seealso cref="WriteAsyncIo" />
+    /// <seealso cref="CreateAsyncIoQueue" />
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError" /> for more information.</returns>
+    /// <exception cref="ArgumentException">Invalid <paramref name="asyncio" /> handle or <paramref name="ptr" /> must not be zero/null.</exception>
     public static SdlBool ReadAsyncIo(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
@@ -154,24 +173,19 @@ public static partial class Sdl {
         if (ptr == nint.Zero) {
             throw new ArgumentException("Pointer cannot be null.", nameof(ptr));
         }
-        if (queue == nint.Zero) {
-            throw new ArgumentException("Queue cannot be null.", nameof(queue));
-        }
-        return SDL_ReadAsyncIO(asyncio, ptr, offset, size, queue, userdata);
+        return queue == nint.Zero ? throw new ArgumentException("Queue cannot be null.", nameof(queue)) : SDL_ReadAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
-    /// <summary>Wake up any threads that are blocking in SDL_WaitAsyncIOResult().</summary>
-
+    /// <summary>Wake up any threads that are blocking in <see cref="WaitAsyncIoResult" />.</summary>
     /// <param name="queue">the async I/O task queue to signal.</param>
     /// <remarks>
     /// This will unblock any threads that are sleeping in a call to
     /// SDL_WaitAsyncIOResult for the specified queue, and
     /// cause them to return from that function.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAsyncIoResult"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WaitAsyncIoResult" />
     /// </remarks>
-
     public static void SignalAsyncIoQueue(nint queue) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -180,19 +194,17 @@ public static partial class Sdl {
     }
 
     /// <summary>Block until an async I/O task queue has a completed task.</summary>
-
     /// <param name="queue">the async I/O task queue to wait on.</param>
     /// <param name="outcome">details of a finished task will be written here. May not be <see langword="null" />.</param>
-    /// <param name="timeoutMS">the maximum time to wait, in milliseconds, or -1 to wait indefinitely.</param>
+    /// <param name="timeoutMs">the maximum time to wait, in milliseconds, or -1 to wait indefinitely.</param>
     /// <remarks>
     /// This function puts the calling thread to sleep until there a task assigned
     /// to the queue that has finished.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SignalAsyncIoQueue"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SignalAsyncIoQueue" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if task has completed, <see langword="false" /> otherwise.</returns>
-
     public static SdlBool WaitAsyncIoResult(nint queue, out AsyncIoOutcome outcome, int timeoutMs) {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
@@ -201,6 +213,27 @@ public static partial class Sdl {
         return !result ? throw new InvalidOperationException("Failed to wait for AsyncIO result.") : result;
     }
 
+    /// <summary>
+    /// Start an async write.
+    /// </summary>
+    /// <param name="asyncio">a pointer to an SDL_AsyncIO structure.</param>
+    /// <param name="ptr">a pointer to a buffer to write data from.</param>
+    /// <param name="offset">the position to start writing to the data source.</param>
+    /// <param name="size">the number of bytes to write to the data source.</param>
+    /// <param name="queue">a queue to add the new SDL_AsyncIO to.</param>
+    /// <param name="userdata">an app-defined pointer that will be provided with the task results.</param>
+    /// <remarks>
+    /// <para>This function writes <paramref name="size " /> bytes from <paramref name="offset" /> position in the data source to the area pointed at by ptr.</para>
+    /// <para>This function returns as quickly as possible; it does not wait for the write to complete.</para>
+    /// <para>On a successful return, this work will continue in the background. If the work begins, even failure is asynchronous: a failing return value from this function only means the work couldn't start at all.</para>
+    /// <para><paramref name="ptr" /> must remain available until the work is done, and may be accessed by the system at any time until then.</para>
+    /// <para>Do not allocate it on the stack, as this might take longer than the life of the calling function to complete!</para>
+    /// <para>An SDL_AsyncIOQueue must be specified. The newly-created task will be added to it when it completes its work.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError" /> for more information.</returns>
+    /// <exception cref="ArgumentException">Invalid <paramref name="asyncio" /> handle or <paramref name="ptr" /> cannot be zero/null.</exception>
     public static SdlBool WriteAsyncIo(nint asyncio, nint ptr, ulong offset, ulong size, nint queue, nint userdata) {
         if (asyncio == nint.Zero) {
             throw new ArgumentException("Invalid asyncio handle.", nameof(asyncio));
@@ -208,10 +241,7 @@ public static partial class Sdl {
         if (ptr == nint.Zero) {
             throw new ArgumentException("Pointer cannot be null.", nameof(ptr));
         }
-        if (queue == nint.Zero) {
-            throw new ArgumentException("Queue cannot be null.", nameof(queue));
-        }
-        return SDL_WriteAsyncIO(asyncio, ptr, offset, size, queue, userdata);
+        return queue == nint.Zero ? throw new ArgumentException("Queue cannot be null.", nameof(queue)) : SDL_WriteAsyncIO(asyncio, ptr, offset, size, queue, userdata);
     }
 
     [LibraryImport(NativeLibName, StringMarshalling = Marshalling),

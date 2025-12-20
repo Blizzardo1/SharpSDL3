@@ -41,10 +41,10 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// Add a font that will be used for glyphs that are not in the current font.
     /// The fallback font should have the same size and style as the current font.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created both fonts.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="ClearFallbackFonts"/>
-    /// <seealso cref="RemoveFallbackFont"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created both fonts.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="ClearFallbackFonts" />
+    /// <seealso cref="RemoveFallbackFont" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -58,16 +58,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Append UTF-8 text to a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="string">the UTF-8 text to insert.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DeleteTextString"/>
-    /// <seealso cref="InsertTextString"/>
-    /// <seealso cref="SetTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DeleteTextString" />
+    /// <seealso cref="InsertTextString" />
+    /// <seealso cref="SetTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -83,16 +83,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Append UTF-8 text to a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="string">the UTF-8 text to insert.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DeleteTextString"/>
-    /// <seealso cref="InsertTextString"/>
-    /// <seealso cref="SetTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DeleteTextString" />
+    /// <seealso cref="InsertTextString" />
+    /// <seealso cref="SetTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -105,10 +105,10 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to modify.</param>
     /// <remarks>
     /// This updates any TTF_Text objects using this font.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AddFallbackFont"/>
-    /// <seealso cref="RemoveFallbackFont"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AddFallbackFont" />
+    /// <seealso cref="RemoveFallbackFont" />
     /// </remarks>
 
     public static void ClearFallbackFonts(Font font) {
@@ -122,10 +122,10 @@ public static unsafe partial class Ttf {
     /// Call this when done with a font. This function will free any resources
     /// associated with it. It is safe to call this function on <see langword="null" />, for example
     /// on the result of a failed call to TTF_OpenFont().
-    /// <para><strong>Thread Safety:</strong> This function should not be called while any other thread is using thefont.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="OpenFont"/>
-    /// <seealso cref="OpenFontIo"/>
+    /// <para><strong>Thread Safety</strong>: This function should not be called while any other thread is using thefont.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="OpenFont" />
+    /// <seealso cref="OpenFontIo" />
     /// </remarks>
 
     public static void CloseFont(Font font) {
@@ -137,9 +137,9 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// The copy will be distinct from the original, but will share the font file
     /// and have the same size and style as the original.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the original font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CloseFont"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the original font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CloseFont" />
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Font CopyFont(Font existingFont) {
@@ -151,11 +151,11 @@ public static unsafe partial class Ttf {
 
     /// <param name="device">the SDL_GPUDevice to use for creating textures and drawing text.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the device.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGpuTextEngineWithProperties"/>
-    /// <seealso cref="DestroyGpuTextEngine"/>
-    /// <seealso cref="GetGpuTextDrawData"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the device.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateGpuTextEngineWithProperties" />
+    /// <seealso cref="DestroyGpuTextEngine" />
+    /// <seealso cref="GetGpuTextDrawData" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -177,11 +177,11 @@ public static unsafe partial class Ttf {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the device.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGpuTextEngine"/>
-    /// <seealso cref="DestroyGpuTextEngine"/>
-    /// <seealso cref="GetGpuTextDrawData"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the device.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateGpuTextEngine" />
+    /// <seealso cref="DestroyGpuTextEngine" />
+    /// <seealso cref="GetGpuTextDrawData" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -196,11 +196,11 @@ public static unsafe partial class Ttf {
 
     /// <param name="renderer">the renderer to use for creating textures and drawing text.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the renderer.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DestroyRendererTextEngine"/>
-    /// <seealso cref="DrawRendererText"/>
-    /// <seealso cref="CreateRendererTextEngineWithProperties"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the renderer.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DestroyRendererTextEngine" />
+    /// <seealso cref="DrawRendererText" />
+    /// <seealso cref="CreateRendererTextEngineWithProperties" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -222,11 +222,11 @@ public static unsafe partial class Ttf {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the renderer.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateRendererTextEngine"/>
-    /// <seealso cref="DestroyRendererTextEngine"/>
-    /// <seealso cref="DrawRendererText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the renderer.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateRendererTextEngine" />
+    /// <seealso cref="DestroyRendererTextEngine" />
+    /// <seealso cref="DrawRendererText" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -247,10 +247,10 @@ public static unsafe partial class Ttf {
 
     /// <summary>Create a text engine for drawing text on SDL surfaces.</summary>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DestroySurfaceTextEngine"/>
-    /// <seealso cref="DrawSurfaceText"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DestroySurfaceTextEngine" />
+    /// <seealso cref="DrawSurfaceText" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -270,11 +270,11 @@ public static unsafe partial class Ttf {
     /// <param name="text">the text to use, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font and <see cref="TextEngine"/>.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DestroyText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font and <see cref="TextEngine" />.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DestroyText" />
     /// </remarks>
-    /// <returns>(TTF_Text *) Returns a <see cref="Text"/> object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Text *) Returns a <see cref="Text" /> object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         nint tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
@@ -296,9 +296,9 @@ public static unsafe partial class Ttf {
     /// <param name="text">the text to use, in UTF-8 encoding.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font and textengine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="DestroyText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font and textengine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="DestroyText" />
     /// </remarks>
     /// <returns>(TTF_Text *) Returns a TTF_Text object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -308,16 +308,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Delete UTF-8 text from a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="offset">the offset, in bytes, from the beginning of the string if &gt;= 0, the offset from the end of the string if &lt; 0. Note that this does not do UTF-8 validation, so you should only delete at UTF-8 sequence boundaries.</param>
     /// <param name="length">the length of text to delete, in bytes, or -1 for the remainder of the string.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString"/>
-    /// <seealso cref="InsertTextString"/>
-    /// <seealso cref="SetTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AppendTextString" />
+    /// <seealso cref="InsertTextString" />
+    /// <seealso cref="SetTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -334,9 +334,9 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// All text created by this engine should be destroyed before calling this
     /// function.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGpuTextEngine"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the engine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateGpuTextEngine" />
     /// </remarks>
 
     public static void DestroyGpuTextEngine(nint engine) {
@@ -352,9 +352,9 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// All text created by this engine should be destroyed before calling this
     /// function.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateRendererTextEngine"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the engine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateRendererTextEngine" />
     /// </remarks>
 
     public static void DestroyRendererTextEngine(TextEngine engine) {
@@ -370,9 +370,9 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// All text created by this engine should be destroyed before calling this
     /// function.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateSurfaceTextEngine"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the engine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateSurfaceTextEngine" />
     /// </remarks>
 
     public static void DestroySurfaceTextEngine(TextEngine engine) {
@@ -386,9 +386,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="text">the text to destroy.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateText" />
     /// </remarks>
 
     public static void DestroyText(Text text) {
@@ -407,10 +407,10 @@ public static unsafe partial class Ttf {
     /// text must have been created using a TTF_TextEngine from
     /// TTF_CreateRendererTextEngine(), and will
     /// draw using the renderer passed to that function.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateRendererTextEngine"/>
-    /// <seealso cref="CreateText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateRendererTextEngine" />
+    /// <seealso cref="CreateText" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -421,7 +421,7 @@ public static unsafe partial class Ttf {
         return TTF_DrawRendererText(text.Handle, x, y);
     }
 
-    /// <seealso cref="CreateSurfaceTextEngine()"/>
+    /// <seealso cref="CreateSurfaceTextEngine()" />
     /// <summary>Draw text to an SDL surface.</summary>
 
     /// <param name="text">the text to draw.</param>
@@ -431,10 +431,10 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// text must have been created using a TTF_TextEngine from
     /// TTF_CreateSurfaceTextEngine().
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateSurfaceTextEngine"/>
-    /// <seealso cref="CreateText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateSurfaceTextEngine" />
+    /// <seealso cref="CreateText" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -453,8 +453,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <param name="ch">the codepoint to check.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if font provides a glyph for this character, <see langword="false" /> ifnot.</returns>
 
@@ -471,8 +471,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// This is a positive value, relative to the baseline.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font's ascent.</returns>
 
@@ -490,8 +490,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// This is a negative value, relative to the baseline.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font's descent.</returns>
 
@@ -505,8 +505,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This defaults to TTF_DIRECTION_INVALID if it
     /// hasn't been set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the direction to be used for textshaping.</returns>
 
@@ -543,9 +543,9 @@ public static unsafe partial class Ttf {
     /// <param name="hdpi">a pointer filled in with the target horizontal DPI.</param>
     /// <param name="vdpi">a pointer filled in with the target vertical DPI.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontSizeDpi"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontSizeDpi" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -562,8 +562,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// This string is dictated by the contents of the font file.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font's family name.</returns>
 
@@ -581,8 +581,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// The generation is incremented each time font properties change that require
     /// rebuilding glyphs, such as style, size, etc.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font generation or 0 on failure; call <see cref="Sdl.GetError()" />for more information.</returns>
 
@@ -599,8 +599,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// This is usually equal to point size.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font's height.</returns>
 
@@ -618,9 +618,9 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// The hinter setting is a single value:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontHinting"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontHinting" />
     /// </remarks>
     /// <returns>Returns the font's current hintervalue, or TTF_HINTING_INVALID if the font isinvalid.</returns>
 
@@ -632,9 +632,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontKerning"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontKerning" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if kerning is enabled, <see langword="false" /> otherwise.</returns>
 
@@ -650,9 +650,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontLineSkip"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontLineSkip" />
     /// </remarks>
     /// <returns>Returns the font's recommended spacing.</returns>
 
@@ -664,9 +664,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontOutline"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontOutline" />
     /// </remarks>
     /// <returns>Returns the font's current outline value.</returns>
 
@@ -684,8 +684,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// The following read-write properties are provided by SDL:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure;call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -700,9 +700,9 @@ public static unsafe partial class Ttf {
     /// <summary>Get the script used for text shaping a font.</summary>
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TagToString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TagToString" />
     /// </remarks>
     /// <returns>Returns anISO 15924 code or 0 if a script hasn't been set.</returns>
     public static int GetFontScript(Font font) {
@@ -712,9 +712,9 @@ public static unsafe partial class Ttf {
     /// <summary>Query whether Signed Distance Field rendering is enabled for a font.</summary>
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontSdf"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontSdf" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if enabled, <see langword="false" /> otherwise.</returns>
     public static bool GetFontSdf(Font font) {
@@ -728,10 +728,10 @@ public static unsafe partial class Ttf {
     /// <summary>Get the size of a font.</summary>
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontSize"/>
-    /// <seealso cref="SetFontSizeDpi"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontSize" />
+    /// <seealso cref="SetFontSizeDpi" />
     /// </remarks>
     /// <returns>Returns the size of the font, or 0.0f on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
     public static float GetFontSize(Font font) {
@@ -747,9 +747,9 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// The font styles are a set of bit flags, OR'd together:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontStyle"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontStyle" />
     /// </remarks>
     /// <returns>Returns the current font style,as a set of bit flags.</returns>
 
@@ -762,8 +762,8 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to query.</param>
     /// <remarks>
     /// This string is dictated by the contents of the font file.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the font's style name.</returns>
 
@@ -779,8 +779,8 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.2.2.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.2.2.</para>
     /// </remarks>
     /// <returns>Returns the font's current weight.</returns>
 
@@ -792,9 +792,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetFontWrapAlignment"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetFontWrapAlignment" />
     /// </remarks>
     /// <returns>Returns the font'scurrent wrap alignment option.</returns>
 
@@ -809,9 +809,9 @@ public static unsafe partial class Ttf {
     /// <param name="patch">to be filled in with the param version number. Can be <see langword="null" />.</param>
     /// <remarks>
     /// TTF_Init() should be called before calling this function.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="Init"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="Init" />
     /// </remarks>
 
     public static void GetFreeTypeVersion(out int major, out int minor, out int patch) {
@@ -837,8 +837,8 @@ public static unsafe partial class Ttf {
     /// <param name="ch">the codepoint to check.</param>
     /// <param name="image_type">a pointer filled in with the glyph image type, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -857,8 +857,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This is useful for text engine implementations, which can call this with
     /// the glyph_index in a TTF_CopyOperation
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns an SDL_Surface containing the glyph, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -876,8 +876,8 @@ public static unsafe partial class Ttf {
     /// <param name="ch">the current codepoint.</param>
     /// <param name="kerning">a pointer filled in with the kerning size between the two glyphs, in pixels, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -900,8 +900,8 @@ public static unsafe partial class Ttf {
     /// <param name="advance">a pointer filled in with the distance to the next glyph from the left edge of this glyph's bounding box.</param>
     /// <remarks>
     /// To understand what these metrics mean, here is a useful link:
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -917,9 +917,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="ch">the character code to check.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function is thread-safe.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TagToString"/>
+    /// <para><strong>Thread Safety</strong>: This function is thread-safe.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TagToString" />
     /// </remarks>
     /// <returns>Returns anISO 15924 codeon success, or 0 on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -943,10 +943,10 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// text must have been created using a TTF_TextEngine from
     /// TTF_CreateGPUTextEngine().
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CreateGpuTextEngine"/>
-    /// <seealso cref="CreateText"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CreateGpuTextEngine" />
+    /// <seealso cref="CreateText" />
     /// </remarks>
     /// <returns>(TTF_GPUAtlasDrawSequence *) Returns a <see langword="null" />terminated linked list ofTTF_GPUAtlasDrawSequence objects or <see langword="null" /> if thepassed text is empty or in case of failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -961,9 +961,9 @@ public static unsafe partial class Ttf {
 
     /// <param name="engine">a TTF_TextEngine object created with TTF_CreateGPUTextEngine().</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetGpuTextEngineWinding"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the engine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetGpuTextEngineWinding" />
     /// </remarks>
     /// <returns>Returns the windingorder used by the GPU text engine orTTF_GPU_TEXTENGINE_WINDING_INVALID incase of error.</returns>
 
@@ -981,8 +981,8 @@ public static unsafe partial class Ttf {
     /// <param name="patch">to be filled in with the param version number. Can be <see langword="null" />.</param>
     /// <remarks>
     /// If HarfBuzz is not available, the version reported is 0.0.0.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
 
     public static void GetHarfBuzzVersion(out int major, out int minor, out int patch) {
@@ -1003,14 +1003,14 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the next substring in a text object</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="substring">the TTF_SubString to query.</param>
     /// <param name="next">a pointer filled in with the next substring.</param>
     /// <remarks>
     /// If called at the end of the text, this will return a zero length substring
     /// with the TTF_SUBSTRING_TEXT_END flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static unsafe bool GetNextTextSubString(Text text, SubString substring, out SubString next) {
@@ -1043,13 +1043,13 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the next substring in a text object</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="substring">the TTF_SubString to query.</param>
     /// <remarks>
     /// If called at the end of the text, this will return a zero length substring
     /// with the TTF_SUBSTRING_TEXT_END flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1062,8 +1062,8 @@ public static unsafe partial class Ttf {
 
     /// <param name="font">the font to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the number of FreeType font faces.</returns>
 
@@ -1078,15 +1078,15 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the previous substring in a text object</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="substring">the TTF_SubString to query.</param>
     /// <param name="previous">a pointer filled in with the previous substring in the text object.</param>
     /// <remarks>
     /// If called at the start of the text, this will return a zero length
     /// substring with the TTF_SUBSTRING_TEXT_START
     /// flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static unsafe bool GetPreviousTextSubString(Text text, SubString substring, out SubString previous) {
@@ -1117,14 +1117,14 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the previous substring in a text object</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="substring">the TTF_SubString to query.</param>
     /// <remarks>
     /// If called at the start of the text, this will return a zero length
     /// substring with the TTF_SUBSTRING_TEXT_START
     /// flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1142,8 +1142,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This will report the width and height, in pixels, of the space that the
     /// specified string will take to fully render.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool GetStringSize(Font font, string text, ulong length, int w, int h) {
@@ -1161,8 +1161,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This will report the width and height, in pixels, of the space that the
     /// specified string will take to fully render.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns
     public static bool GetStringSize(Font font, string text, ulong length, Size size) {
@@ -1179,8 +1179,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This will report the width and height, in pixels, of the space that the
     /// specified string will take to fully render.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1203,8 +1203,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This will report the width and height, in pixels, of the space that the
     /// specified string will take to fully render.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1242,16 +1242,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the color of a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="r">a pointer filled in with the red color value in the range of 0-255, may be discarded.</param>
     /// <param name="g">a pointer filled in with the green color value in the range of 0-255, may be discarded.</param>
     /// <param name="b">a pointer filled in with the blue color value in the range of 0-255, may be discarded.</param>
     /// <param name="a">a pointer filled in with the alpha value in the range of 0-255, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColorFloat"/>
-    /// <seealso cref="SetTextColor"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColorFloat" />
+    /// <seealso cref="SetTextColor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1292,16 +1292,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the color of a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="r">a pointer filled in with the red color value, normally in the range of 0-1, may be discarded.</param>
     /// <param name="g">a pointer filled in with the green color value, normally in the range of 0-1, may be discarded.</param>
     /// <param name="b">a pointer filled in with the blue color value, normally in the range of 0-1, may be discarded.</param>
     /// <param name="a">a pointer filled in with the alpha value in the range of 0-1, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColor"/>
-    /// <seealso cref="SetTextColorFloat"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColor" />
+    /// <seealso cref="SetTextColorFloat" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1316,8 +1316,8 @@ public static unsafe partial class Ttf {
     /// <param name="text">the text to query.</param>
     /// <remarks>
     /// This defaults to the direction of the font used by the text object.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns the direction to be used for textshaping.</returns>
 
@@ -1330,11 +1330,11 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the text engine used by a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetTextEngine"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetTextEngine" />
     /// </remarks>
     /// <returns>(TTF_TextEngine *) Returns theTTF_TextEngine used by the text on success or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1353,13 +1353,13 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the font used by a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetTextFont"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetTextFont" />
     /// </remarks>
-    /// <returns>(TTF_Font *) Returns the <see cref="Font"/> used by the texton success or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
+    /// <returns>(TTF_Font *) Returns the <see cref="Font" /> used by the texton success or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Font GetTextFont(Text text) {
         if (text.Handle == nint.Zero) {
@@ -1396,13 +1396,13 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the position of a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="x">a pointer filled in with the x offset of the upper left corner of this text in pixels, may be discarded.</param>
     /// <param name="y">a pointer filled in with the y offset of the upper left corner of this text in pixels, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetTextPosition"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetTextPosition" />
     /// </remarks>
 
     public static Point GetTextPosition(Text text) {
@@ -1412,10 +1412,10 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the properties associated with a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure;call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1431,9 +1431,9 @@ public static unsafe partial class Ttf {
     /// <param name="text">the text to query.</param>
     /// <remarks>
     /// This defaults to the script of the font used by the text object.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TagToString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TagToString" />
     /// </remarks>
     /// <returns>Returns anISO 15924 codeor 0 if a script hasn't been set on either the text object or the font.</returns>
 
@@ -1465,14 +1465,14 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the size of a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="w">a pointer filled in with the width of the text, in pixels, may be discarded.</param>
     /// <param name="h">a pointer filled in with the height of the text, in pixels, may be discarded.</param>
     /// <remarks>
     /// The size of the text may change when the font or font style and size
     /// change.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1483,7 +1483,7 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the substring of a text object that surrounds a text offset.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="offset">a byte offset into the text string.</param>
     /// <param name="substring">a pointer filled in with the substring containing the offset.</param>
     /// <remarks>
@@ -1493,11 +1493,11 @@ public static unsafe partial class Ttf {
     /// is greater than or equal to the length of the text string, this will return
     /// a zero length substring at the end of the text with the
     /// TTF_SUBSTRING_TEXT_END flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is <see langword="null"/></exception>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text" /> is <see langword="null" /></exception>
     public static bool GetTextSubString(Text text, int offset, SubString substring) {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
@@ -1506,7 +1506,7 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the substring of a text object that contains the given line.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="line">a zero-based line index, in the range [0 .. text-&gt;num_lines-1].</param>
     /// <param name="substring">a pointer filled in with the substring containing the offset.</param>
     /// <remarks>
@@ -1516,8 +1516,8 @@ public static unsafe partial class Ttf {
     /// greater than or equal to text-&gt;num_lines this will return a zero length
     /// substring at the end of the text with the
     /// TTF_SUBSTRING_TEXT_END flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     /// <exception cref="ArgumentNullException"></exception>
@@ -1550,7 +1550,7 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the substring of a text object that contains the given line.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="line">a zero-based line index, in the range [0 .. text-&gt;num_lines-1].</param>
     /// <remarks>
     /// If line is less than 0, this will return a zero length substring at the
@@ -1559,8 +1559,8 @@ public static unsafe partial class Ttf {
     /// greater than or equal to text-&gt;num_lines this will return a zero length
     /// substring at the end of the text with the
     /// TTF_SUBSTRING_TEXT_END flag set.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1574,14 +1574,14 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the portion of a text string that is closest to a point.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="x">the x coordinate relative to the left side of the text, may be outside the bounds of the text area.</param>
     /// <param name="y">the y coordinate relative to the top side of the text, may be outside the bounds of the text area.</param>
     /// <param name="substring">a pointer filled in with the closest substring of text to the given point.</param>
     /// <remarks>
     /// This will return the closest substring of text to the given point.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static unsafe bool GetTextSubStringForPoint(Text text, int x, int y, out SubString substring) {
@@ -1602,12 +1602,12 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the portion of a text string that is closest to a point.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="substring">a pointer filled in with the closest substring of text to the given point.</param>
     /// <remarks>
     /// This will return the closest substring of text to the given point.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool GetTextSubStringForPoint(Text text, Point point, out SubString substring) {
@@ -1615,13 +1615,13 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the portion of a text string that is closest to a point.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="x">the x coordinate relative to the left side of the text, may be outside the bounds of the text area.</param>
     /// <param name="y">the y coordinate relative to the top side of the text, may be outside the bounds of the text area.</param>
     /// <remarks>
     /// This will return the closest substring of text to the given point.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1636,11 +1636,11 @@ public static unsafe partial class Ttf {
 
     /// <summary>Get the portion of a text string that is closest to a point.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <remarks>
     /// This will return the closest substring of text to the given point.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static SubString GetTextSubStringForPoint(Text text, Point point) {
@@ -1653,13 +1653,13 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get the substrings of a text object that contain a range of text.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="offset">a byte offset into the text string.</param>
     /// <param name="length">the length of the range being queried, in bytes, or -1 for the remainder of the string.</param>
     /// <param name="count">a pointer filled in with the number of substrings returned, may be discarded.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>(TTF_SubString **) Returns a <see langword="null" /> terminated array ofsubstring pointers or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information. This is a single allocation that should be freed withSDL_free() when it is no longer needed.</returns>
     public static unsafe SubString[] GetTextSubStringsForRange(Text text, int offset, int length, out int count) {
@@ -1693,12 +1693,12 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Get whether wrapping is enabled on a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <param name="wrapWidth">a pointer filled in with the maximum width in pixels or 0 if the text is being wrapped on newline characters.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="SetTextWrapWidth"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="SetTextWrapWidth" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool GetTextWrapWidth(Text text, out int wrapWidth) {
@@ -1720,17 +1720,17 @@ public static unsafe partial class Ttf {
     public static bool Init() => TTF_Init();
 
     /// <summary>Insert UTF-8 text into a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="offset">the offset, in bytes, from the beginning of the string if &gt;= 0, the offset from the end of the string if &lt; 0. Note that this does not do UTF-8 validation, so you should only insert at UTF-8 sequence boundaries.</param>
     /// <param name="str">the UTF-8 text to insert.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString(Text, string)"/>
-    /// <seealso cref="DeleteTextString"/>
-    /// <seealso cref="SetTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AppendTextString(Text, string)" />
+    /// <seealso cref="DeleteTextString" />
+    /// <seealso cref="SetTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool InsertTextString(Text text, int offset, string str, ulong length) {
@@ -1741,16 +1741,16 @@ public static unsafe partial class Ttf {
 
     /// <summary>Insert UTF-8 text into a text object.</summary>
 
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="offset">the offset, in bytes, from the beginning of the string if &gt;= 0, the offset from the end of the string if &lt; 0. Note that this does not do UTF-8 validation, so you should only insert at UTF-8 sequence boundaries.</param>
     /// <param name="str">the UTF-8 text to insert.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString(Text, string)"/>
-    /// <seealso cref="DeleteTextString"/>
-    /// <seealso cref="SetTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AppendTextString(Text, string)" />
+    /// <seealso cref="DeleteTextString" />
+    /// <seealso cref="SetTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool InsertTextString(Text text, int offset, string str) {
@@ -1783,8 +1783,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool MeasureString(Font font, string text, nuint length, int maxWidth, out int measuredWidth, out int measuredLength) {
@@ -1808,8 +1808,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool MeasureString(Font font, string text, int maxWidth, out int measuredWidth, out int measuredLength) {
@@ -1831,8 +1831,8 @@ public static unsafe partial class Ttf {
     /// <param name="measuredSize">the measured size, both width and height.</param>
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching maxWidth.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1850,8 +1850,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Size MeasureString(Font font, string text, int maxWidth) {
@@ -1865,8 +1865,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This reports the number of characters that can be rendered before reaching
     /// max_width.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1894,9 +1894,9 @@ public static unsafe partial class Ttf {
     /// Some .fon fonts will have several sizes embedded in the file, so the point
     /// size becomes the index of choosing which size. If the value is too high,
     /// the last indexed size will be the default.
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CloseFont"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CloseFont" />
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -1926,9 +1926,9 @@ public static unsafe partial class Ttf {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="CloseFont"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="CloseFont" />
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Font OpenFontWithProperties(int props) {
@@ -1945,10 +1945,10 @@ public static unsafe partial class Ttf {
     /// <param name="fallback">the font to remove as a fallback.</param>
     /// <remarks>
     /// This updates any TTF_Text objects using this font.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created both fonts.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AddFallbackFont"/>
-    /// <seealso cref="ClearFallbackFonts"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created both fonts.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AddFallbackFont" />
+    /// <seealso cref="ClearFallbackFonts" />
     /// </remarks>
     public static void RemoveFallbackFont(Font font, Font fallback) {
         TTF_RemoveFallbackFont(font.Handle, fallback.Handle);
@@ -2032,18 +2032,18 @@ public static unsafe partial class Ttf {
     /// <param name="fg">the foreground color for the text.</param>
     /// <remarks>
     /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
-    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
+    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped" /> instead if you need to wrap the output to multiple lines.</para>
     /// <para>This will not wrap on newline characters.</para>
-    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended(Font, string, Color)"/>, and <see cref="RenderTextLcd"/>.</para>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
-    /// <seealso cref="RenderTextBlended(Font, string, Color)"/>
-    /// <seealso cref="RenderTextLcd"/>
-    /// <seealso cref="RenderTextShaded"/>
-    /// <seealso cref="RenderTextSolid(Font, string, Color)"/>
-    /// <seealso cref="RenderTextSolidWrapped"/>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded" />, <see cref="RenderTextBlended(Font, string, Color)" />, and <see cref="RenderTextLcd" />.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0</para>
+    /// <seealso cref="RenderTextBlended(Font, string, Color)" />
+    /// <seealso cref="RenderTextLcd" />
+    /// <seealso cref="RenderTextShaded" />
+    /// <seealso cref="RenderTextSolid(Font, string, Color)" />
+    /// <seealso cref="RenderTextSolidWrapped" />
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
+    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero" /> if there was an error.</returns>
     public static nint RenderTextSolid(Font font, string text, ulong length, Color fg) {
         ArgumentException.ThrowIfNullOrEmpty(text);
         return font.Handle == nint.Zero ? nint.Zero : TTF_RenderText_Solid(font.Handle, text, length, fg);
@@ -2057,18 +2057,18 @@ public static unsafe partial class Ttf {
     /// <param name="fg">the foreground color for the text.</param>
     /// <remarks>
     /// This function will allocate a new 8-bit, palettized surface. The surface's 0 pixel will be the color key, giving a transparent background. The 1 pixel will be set to the text color.
-    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped"/> instead if you need to wrap the output to multiple lines.</para>
+    /// <para>This will not word-wrap the string; you'll get a surface with a single line of text, as long as the string requires. You can use <see cref="RenderTextSolidWrapped" /> instead if you need to wrap the output to multiple lines.</para>
     /// <para>This will not wrap on newline characters.</para>
-    /// <para>You can render at other quality levels with <see cref="RenderTextShaded"/>, <see cref="RenderTextBlended(Font, string, Color)"/>, and <see cref="RenderTextLcd"/>.</para>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
-    /// <seealso cref="RenderTextBlended(Font, string, Color)"/>
-    /// <seealso cref="RenderTextLcd"/>
-    /// <seealso cref="RenderTextShaded"/>
-    /// <seealso cref="RenderTextSolid(Font, string, Color)"/>
-    /// <seealso cref="RenderTextSolidWrapped"/>
+    /// <para>You can render at other quality levels with <see cref="RenderTextShaded" />, <see cref="RenderTextBlended(Font, string, Color)" />, and <see cref="RenderTextLcd" />.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0</para>
+    /// <seealso cref="RenderTextBlended(Font, string, Color)" />
+    /// <seealso cref="RenderTextLcd" />
+    /// <seealso cref="RenderTextShaded" />
+    /// <seealso cref="RenderTextSolid(Font, string, Color)" />
+    /// <seealso cref="RenderTextSolidWrapped" />
     /// </remarks>
-    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero"/> if there was an error.</returns>
+    /// <returns>(SDL_Surface *) Returns a new 8-bit, palettized surface, or <see cref="nint.Zero" /> if there was an error.</returns>
     public static nint RenderTextSolid(Font font, string text, Color fg) {
         return RenderTextSolid(font, text, (ulong)text.Length, fg);
     }
@@ -2084,8 +2084,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This function only supports left-to-right text shaping if SDL_ttf was not
     /// built with HarfBuzz support.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontDirection(Font font, Direction direction) {
@@ -2100,11 +2100,11 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to set a new hinter setting on.</param>
     /// <param name="hinting">the new hinter setting.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font, and clears
+    /// This updates any <see cref="Text" /> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontHinting"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontHinting" />
     /// </remarks>
     public static void SetFontHinting(Font font, Hinting hinting) {
         if (!Enum.IsDefined(hinting)) {
@@ -2121,9 +2121,9 @@ public static unsafe partial class Ttf {
     /// policy unless you have a strong reason to disable it, as it tends to
     /// produce better rendering (with kerning disabled, some fonts might render
     /// the word kerning as something that looks like keming for example).
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontKerning"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontKerning" />
     /// </remarks>
     public static void SetFontKerning(Font font, bool enabled) {
         TTF_SetFontKerning(font.Handle, enabled);
@@ -2134,8 +2134,8 @@ public static unsafe partial class Ttf {
     /// <param name="languageBcp47">a null-terminated string containing the desired language's BCP47 code. Or null to reset the value.</param>
     /// <remarks>
     /// If SDL_ttf was not built with HarfBuzz support, this function returns <see langword="false" />.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontLanguage(Font font, string languageBcp47) {
@@ -2150,10 +2150,10 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to modify.</param>
     /// <param name="lineSkip">the new line spacing for the font.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontLineSkip"/>
+    /// This updates any <see cref="Text" /> objects using this font.
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontLineSkip" />
     /// </remarks>
     public static void SetFontLineSkip(Font font, int lineSkip) {
         TTF_SetFontLineSkip(font.Handle, lineSkip);
@@ -2170,9 +2170,9 @@ public static unsafe partial class Ttf {
     /// <item>TTF_PROP_FONT_OUTLINE_MITER_LIMIT_NUMBER</item>
     /// </list>
     /// when setting the font outline.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontOutline"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontOutline" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontOutline(Font font, int outline) {
@@ -2188,9 +2188,9 @@ public static unsafe partial class Ttf {
     /// <param name="script">an ISO 15924 code .</param>
     /// <remarks>
     /// This returns <see langword="false" /> if SDL_ttf isn't built with HarfBuzz support.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="StringToTag"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="StringToTag" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontScript(Font font, int script) {
@@ -2207,9 +2207,9 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// SDF is a technique that helps fonts look sharp even when scaling and
     /// rotating, and requires special shader support for display.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontSdf"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontSdf" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontSdf(Font font, bool enabled) {
@@ -2224,11 +2224,11 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to resize.</param>
     /// <param name="ptSize">the new point size.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font, and clears
+    /// This updates any <see cref="Text" /> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontSize"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontSize" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontSize(Font font, float ptSize) {
@@ -2249,12 +2249,12 @@ public static unsafe partial class Ttf {
     /// <param name="hDpi">the target horizontal DPI.</param>
     /// <param name="vDpi">the target vertical DPI.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font, and clears
+    /// This updates any <see cref="Text" /> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontSize"/>
-    /// <seealso cref="GetFontSizeDpi"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontSize" />
+    /// <seealso cref="GetFontSizeDpi" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetFontSizeDpi(Font font, float ptSize, int hDpi, int vDpi) {
@@ -2269,11 +2269,11 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to set a new style on.</param>
     /// <param name="style">the new style values to set, OR'd together.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font, and clears
+    /// This updates any <see cref="Text" /> objects using this font, and clears
     /// already-generated glyphs, if any, from the cache.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontStyle"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontStyle" />
     /// </remarks>
     public static void SetFontStyle(Font font, FontStyle style) {
         if (!Enum.IsDefined(style)) {
@@ -2286,10 +2286,10 @@ public static unsafe partial class Ttf {
     /// <param name="font">the font to set a new wrap alignment option on.</param>
     /// <param name="align">the new wrap alignment option.</param>
     /// <remarks>
-    /// This updates any <see cref="Text"/> objects using this font.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the font.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetFontWrapAlignment"/>
+    /// This updates any <see cref="Text" /> objects using this font.
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the font.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetFontWrapAlignment" />
     /// </remarks>
     public static void SetFontWrapAlignment(Font font, HorizontalAlignment align) {
         if (!Enum.IsDefined(align)) {
@@ -2298,13 +2298,13 @@ public static unsafe partial class Ttf {
         TTF_SetFontWrapAlignment(font.Handle, align);
     }
 
-    /// <summary>Sets the winding order of the vertices returned by <see cref="GetGpuTextDrawData"/> for a particular GPU text engine.</summary>
-    /// <param name="engine">a TTF_TextEngine object created with <see cref="CreateGpuTextEngine"/>.</param>
+    /// <summary>Sets the winding order of the vertices returned by <see cref="GetGpuTextDrawData" /> for a particular GPU text engine.</summary>
+    /// <param name="engine">a TTF_TextEngine object created with <see cref="CreateGpuTextEngine" />.</param>
     /// <param name="winding">the new winding order option.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the engine.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetGpuTextEngineWinding"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the engine.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetGpuTextEngineWinding" />
     /// </remarks>
     public static void SetGpuTextEngineWinding(nint engine, GpuTextEngineWinding winding) {
         if (engine == nint.Zero) {
@@ -2314,17 +2314,17 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="r">the red color value in the range of 0-255.</param>
     /// <param name="g">the green color value in the range of 0-255.</param>
     /// <param name="b">the blue color value in the range of 0-255.</param>
     /// <param name="a">the alpha value in the range of 0-255.</param>
     /// <remarks>
     /// The default text color is white (255, 255, 255, 255).
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColor(Text)"/>
-    /// <seealso cref="SetTextColorFloat(Text, FColor)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColor(Text)" />
+    /// <seealso cref="SetTextColorFloat(Text, FColor)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColor(Text text, byte r, byte g, byte b, byte a) {
@@ -2332,14 +2332,14 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="color">the color value.</param>
     /// <remarks>
     /// The default text color is white (255, 255, 255, 255).
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColor(Text)"/>
-    /// <seealso cref="SetTextColorFloat(Text, FColor)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColor(Text)" />
+    /// <seealso cref="SetTextColorFloat(Text, FColor)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColor(Text text, Color color) {
@@ -2347,17 +2347,17 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="r">the red color value, normally in the range of 0-1.</param>
     /// <param name="g">the green color value, normally in the range of 0-1.</param>
     /// <param name="b">the blue color value, normally in the range of 0-1.</param>
     /// <param name="a">the alpha value in the range of 0-1.</param>
     /// <remarks>
     /// The default text color is white (1.0f, 1.0f, 1.0f, 1.0f).
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColorFloat(Text, out FColor)"/>
-    /// <seealso cref="SetTextColor(Text, Color)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColorFloat(Text, out FColor)" />
+    /// <seealso cref="SetTextColor(Text, Color)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextColorFloat(Text text, float r, float g, float b, float a) {
@@ -2365,14 +2365,14 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the color of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="color">the color value</param>
     /// <remarks>
     /// The default text color is white (1.0f, 1.0f, 1.0f, 1.0f).
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextColorFloat(Text, out FColor)"/>
-    /// <seealso cref="SetTextColor(Text, Color)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextColorFloat(Text, out FColor)" />
+    /// <seealso cref="SetTextColor(Text, Color)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
@@ -2386,8 +2386,8 @@ public static unsafe partial class Ttf {
     /// <remarks>
     /// This function only supports left-to-right text shaping if SDL_ttf was not
     /// built with HarfBuzz support.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextDirection(Text text, Direction direction) {
@@ -2395,13 +2395,13 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the text engine used by a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="engine">the text engine to use for drawing.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextEngine"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextEngine" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextEngine(Text text, TextEngine engine) {
@@ -2413,15 +2413,15 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the font used by a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="font">the font to use, may be discarded.</param>
     /// <remarks>
     /// When a text object has a font, any changes to the font will automatically
     /// regenerate the text. If you set the font to <see langword="null" />, the text will continue to
     /// render but changes to the font will no longer affect the text.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextFont"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextFont" />
     /// </remarks>
     /// <returns>Returns <see langword="false" /> if the text pointer is null; otherwise, <see langword="true" />. call<see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextFont(Text text, Font font) {
@@ -2429,29 +2429,29 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the position of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="x">the x offset of the upper left corner of this text in pixels.</param>
     /// <param name="y">the y offset of the upper left corner of this text in pixels.</param>
     /// <remarks>
     /// This can be used to position multiple text objects within a single wrapping
     /// text area.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextPosition(Text)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextPosition(Text)" />
     /// </remarks>
     public static bool SetTextPosition(Text text, int x, int y) {
         return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_SetTextPosition(text.Handle, x, y);
     }
 
     /// <summary>Set the position of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
-    /// <param name="position">the <see cref="Point"/> struct that provides xy coordinates</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
+    /// <param name="position">the <see cref="Point" /> struct that provides xy coordinates</param>
     /// <remarks>
     /// This can be used to position multiple text objects within a single wrapping
     /// text area.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextPosition(Text)"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextPosition(Text)" />
     /// </remarks>
     public static bool SetTextPosition(Text text, Point position) {
         return SetTextPosition(text, position.X, position.Y);
@@ -2462,9 +2462,9 @@ public static unsafe partial class Ttf {
     /// <param name="script">an ISO 15924 code .</param>
     /// <remarks>
     /// This returns <see langword="false" /> if SDL_ttf isn't built with HarfBuzz support.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="StringToTag"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="StringToTag" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextScript(Text text, int script) {
@@ -2472,16 +2472,16 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set the UTF-8 text used by a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="str">the UTF-8 text to use, may be discarded.</param>
     /// <param name="length">the length of the text, in bytes, or 0 for null terminated text.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="AppendTextString"/>
-    /// <seealso cref="DeleteTextString"/>
-    /// <seealso cref="InsertTextString"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="AppendTextString" />
+    /// <seealso cref="DeleteTextString" />
+    /// <seealso cref="InsertTextString" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextString(Text text, string str, ulong length) {
@@ -2491,16 +2491,16 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set whether whitespace should be visible when wrapping a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="visible"><see langword="true" /> to show whitespace when wrapping text, <see langword="false" /> to hide it.</param>
     /// <remarks>
     /// If the whitespace is visible, it will take up space for purposes of
     /// alignment and wrapping. This is good for editing, but looks better when
     /// centered or aligned if whitespace around line wrapping is hidden. This
     /// defaults <see langword="false" />.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TextWrapWhitespaceVisible"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TextWrapWhitespaceVisible" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextWrapWhitespaceVisible(Text text, bool visible) {
@@ -2508,13 +2508,13 @@ public static unsafe partial class Ttf {
     }
 
     /// <summary>Set whether wrapping is enabled on a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to modify.</param>
+    /// <param name="text">the <see cref="Text" /> to modify.</param>
     /// <param name="wrapWidth">the maximum width in pixels, 0 to wrap on newline characters.</param>
     /// <remarks>
     /// This function may cause the internal text representation to be rebuilt.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="GetTextWrapWidth"/>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="GetTextWrapWidth" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool SetTextWrapWidth(Text text, int wrapWidth) {
@@ -2524,12 +2524,12 @@ public static unsafe partial class Ttf {
     /// <summary>Convert from a 4 character string to a 32-bit tag.</summary>
     /// <param name="string">the 4 character string to convert.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TagToString"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TagToString" />
     /// </remarks>
     /// <returns>Returns the 32-bit representation of the string.</returns>
-    /// <exception cref="ArgumentException">Thrown if <paramref name="str"/> is not exactly 4 characters long, or if <paramref name="str"/> contains <see langword="null"/> characters.</exception>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="str" /> is not exactly 4 characters long, or if <paramref name="str" /> contains <see langword="null" /> characters.</exception>
     public static int StringToTag(string str) {
         ArgumentException.ThrowIfNullOrEmpty(str);
 
@@ -2548,9 +2548,9 @@ public static unsafe partial class Ttf {
     /// <param name="tag">the 32-bit tag to convert.</param>
     /// <param name="size">the size of the buffer pointed at by string, should be at least 4.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> It is safe to call this function from any thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
-    /// <seealso cref="TagToString"/>
+    /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
+    /// <seealso cref="TagToString" />
     /// </remarks>
     /// <returns>a pointer filled in with the 4 character representation of the tag.</returns>
     /// <exception cref="ArgumentException">Thrown if the length of characters exceeds 5: 4 tag characters and one null-terminated character.</exception>
@@ -2562,13 +2562,13 @@ public static unsafe partial class Ttf {
     /// <summary>
     /// Return whether whitespace is shown when wrapping a text object.
     /// </summary>
-    /// <param name="text">the <see cref="Text"/> to query.</param>
+    /// <param name="text">the <see cref="Text" /> to query.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0</para>
     /// </remarks>
-    /// <returns><see langword="true"/> if whitespace is shown when wrapping text, or <see langword="false"/> otherwise.</returns>
-    /// <exception cref="ArgumentNullException">Thrown is <paramref name="text"/> is <see langword="null"/>.</exception>
+    /// <returns><see langword="true" /> if whitespace is shown when wrapping text, or <see langword="false" /> otherwise.</returns>
+    /// <exception cref="ArgumentNullException">Thrown is <paramref name="text" /> is <see langword="null" />.</exception>
     public static bool TextWrapWhitespaceVisible(Text text) {
         return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_TextWrapWhitespaceVisible(text.Handle);
     }
@@ -2576,16 +2576,16 @@ public static unsafe partial class Ttf {
     public static int TtfVersion() => TTF_Version();
 
     /// <summary>Update the layout of a text object.</summary>
-    /// <param name="text">the <see cref="Text"/> to update.</param>
+    /// <param name="text">the <see cref="Text" /> to update.</param>
     /// <remarks>
     /// This is automatically done when the layout is requested or the text is
     /// rendered, but you can call this if you need more control over the timing of
     /// when the layout and text engine representation are updated.
-    /// <para><strong>Thread Safety:</strong> This function should be called on the thread that created the text.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL_ttf 3.0.0.</para>
+    /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the text.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL_ttf 3.0.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
-    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text"/> is <see langword="null"/>.</exception>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="text" /> is <see langword="null" />.</exception>
     public static bool UpdateText(Text text) {
         return text.Handle == nint.Zero ? throw new ArgumentNullException(nameof(text), "Text cannot be null.") : TTF_UpdateText(text.Handle);
     }
@@ -2597,11 +2597,11 @@ public static unsafe partial class Ttf {
     public static int Version() => Sdl.VersionNum(Major, Minor, Micro);
 
     /// <summary>Get a mask of the specified subsystems which are currently initialized.</summary>
-    /// <param name="flags">any of the flags used by <see cref="Init"/>; see <see cref="Init"/> for details.</param>
+    /// <param name="flags">any of the flags used by <see cref="Init" />; see <see cref="Init" /> for details.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="Init"/>
-    /// <seealso cref="InitSubSystem"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="Init" />
+    /// <seealso cref="InitSubSystem" />
     /// </remarks>
     /// <returns>Returns a mask of all initialized subsystems if flags is 0, otherwise it returns the initialization status of the specified subsystems.</returns>
     public static int WasInit() {

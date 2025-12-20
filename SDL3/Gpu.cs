@@ -16,9 +16,9 @@ public static partial class Sdl {
     /// freed by the user. The command buffer may only be used on the thread it was
     /// acquired on. The command buffer should be submitted on the thread it was
     /// acquired on.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGpuCommandBuffer"/>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SubmitGpuCommandBuffer" />
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
     /// </remarks>
     /// <returns>(SDL_GPUCommandBuffer *) Returns a command buffer,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -41,18 +41,18 @@ public static partial class Sdl {
     /// automatically be submitted for presentation when the command buffer is
     /// submitted. The swapchain texture should only be referenced by the command
     /// buffer used to acquire it.
-    /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGpuDevice"/>
-    /// <seealso cref="SubmitGpuCommandBuffer"/>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
-    /// <seealso cref="CancelGpuCommandBuffer"/>
-    /// <seealso cref="GetWindowSizeInPixels"/>
-    /// <seealso cref="WaitForGpuSwapchain"/>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="SetGpuAllowedFramesInFlight"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called from the thread that created thewindow.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ClaimWindowForGpuDevice" />
+    /// <seealso cref="SubmitGpuCommandBuffer" />
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
+    /// <seealso cref="CancelGpuCommandBuffer" />
+    /// <seealso cref="GetWindowSizeInPixels" />
+    /// <seealso cref="WaitForGpuSwapchain" />
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="SetGpuAllowedFramesInFlight" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool AcquireGpuSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
@@ -81,8 +81,8 @@ public static partial class Sdl {
     /// texture in the compute pass. All operations related to compute pipelines
     /// must take place inside of a compute pass. You must not begin another
     /// compute pass, or a render pass or copy pass before ending the compute pass.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="EndGpuComputePass"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="EndGpuComputePass" />
     /// </remarks>
     /// <returns>(SDL_GPUComputePass *) Returns a compute pass handle.</returns>
 
@@ -103,7 +103,7 @@ public static partial class Sdl {
     /// All operations related to copying to or from buffers or textures take place
     /// inside a copy pass. You must not begin another copy pass, or a render pass
     /// or compute pass before ending the copy pass.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_GPUCopyPass *) Returns a copy pass handle.</returns>
 
@@ -128,8 +128,8 @@ public static partial class Sdl {
     /// pass. A default viewport and scissor state are automatically set when this
     /// is called. You cannot begin another render pass, or begin a compute pass or
     /// copy pass until you have ended the render pass.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="EndGpuRenderPass"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="EndGpuRenderPass" />
     /// </remarks>
     /// <returns>(SDL_GPURenderPass *) Returns a render pass handle.</returns>
 
@@ -146,7 +146,7 @@ public static partial class Sdl {
     /// <param name="compute_pass">a compute pass handle.</param>
     /// <param name="compute_pipeline">a compute pipeline to bind.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void BindGpuComputePipeline(nint computePass, nint computePipeline) {
@@ -165,8 +165,8 @@ public static partial class Sdl {
     /// <remarks>
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuComputeSamplers(nint computePass, uint firstSlot,
@@ -186,8 +186,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_COMPUTE_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuComputeStorageBuffers(nint computePass, uint firstSlot,
@@ -207,8 +207,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_COMPUTE_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuComputeStorageTextures(nint computePass, uint firstSlot,
@@ -228,8 +228,8 @@ public static partial class Sdl {
     /// <remarks>
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuFragmentSamplers(nint renderPass, uint firstSlot,
@@ -249,8 +249,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuFragmentStorageBuffers(nint renderPass, uint firstSlot,
@@ -270,8 +270,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuFragmentStorageTextures(nint renderPass, uint firstSlot,
@@ -288,7 +288,7 @@ public static partial class Sdl {
     /// <param name="graphics_pipeline">the graphics pipeline to bind.</param>
     /// <remarks>
     /// A graphics pipeline must be bound before making any draw calls.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void BindGpuGraphicsPipeline(nint renderPass, nint graphicsPipeline) {
@@ -304,7 +304,7 @@ public static partial class Sdl {
     /// <param name="binding">a pointer to a struct containing an index buffer and offset.</param>
     /// <param name="index_element_size">whether the index values in the buffer are 16- or 32-bit.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void BindGpuIndexBuffer(nint renderPass, in GpuBufferBinding binding,
@@ -322,7 +322,7 @@ public static partial class Sdl {
     /// <param name="bindings">an array of SDL_GPUBufferBinding structs containing vertex buffers and offset values.</param>
     /// <param name="num_bindings">the number of bindings in the bindings array.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void BindGpuVertexBuffers(nint renderPass, uint firstSlot,
@@ -342,8 +342,8 @@ public static partial class Sdl {
     /// <remarks>
     /// The textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_SAMPLER.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuVertexSamplers(nint renderPass, uint firstSlot,
@@ -363,8 +363,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These buffers must have been created with
     /// SDL_GPU_BUFFERUSAGE_GRAPHICS_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuVertexStorageBuffers(nint renderPass, uint firstSlot,
@@ -384,8 +384,8 @@ public static partial class Sdl {
     /// <remarks>
     /// These textures must have been created with
     /// SDL_GPU_TEXTUREUSAGE_GRAPHICS_STORAGE_READ.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
     /// </remarks>
 
     public static void BindGpuVertexStorageTextures(nint renderPass, uint firstSlot,
@@ -402,7 +402,7 @@ public static partial class Sdl {
     /// <param name="info">the blit info struct containing the blit parameters.</param>
     /// <remarks>
     /// This function must not be called inside of any pass.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void BlitGpuTexture(nint commandBuffer, in GpuBlitInfo info) {
@@ -419,7 +419,7 @@ public static partial class Sdl {
     /// <param name="height">height in pixels.</param>
     /// <param name="depth_or_layer_count">depth for 3D textures or layer count otherwise.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the size of a texture with this format anddimensions.</returns>
 
@@ -435,12 +435,12 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <remarks>
     /// None of the enqueued commands are executed.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="AcquireGpuCommandBuffer"/>
-    /// <seealso cref="AcquireGpuSwapchainTexture"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="AcquireGpuCommandBuffer" />
+    /// <seealso cref="AcquireGpuSwapchainTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool CancelGpuCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
@@ -458,14 +458,14 @@ public static partial class Sdl {
     /// SDL_AcquireGPUSwapchainTexture is called
     /// using the window. You should only call this function from the thread that
     /// created the window.
-    /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="ReleaseWindowFromGpuDevice"/>
-    /// <seealso cref="WindowSupportsGpuPresentMode"/>
-    /// <seealso cref="WindowSupportsGpuSwapchainComposition"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called from the thread that created thewindow.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="ReleaseWindowFromGpuDevice" />
+    /// <seealso cref="WindowSupportsGpuPresentMode" />
+    /// <seealso cref="WindowSupportsGpuSwapchainComposition" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, or <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool ClaimWindowForGpuDevice(nint device, nint window) {
         if (device == nint.Zero) {
@@ -487,7 +487,7 @@ public static partial class Sdl {
     /// <remarks>
     /// This copy occurs on the GPU timeline. You may assume the copy has finished
     /// in subsequent commands.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void CopyGpuBufferToBuffer(nint copyPass, in GpuBufferLocation source,
@@ -510,7 +510,7 @@ public static partial class Sdl {
     /// <remarks>
     /// This copy occurs on the GPU timeline. You may assume the copy has finished
     /// in subsequent commands.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void CopyGpuTextureToTexture(nint copyPass, in GpuTextureLocation source,
@@ -528,19 +528,19 @@ public static partial class Sdl {
     /// <remarks>
     /// The contents of this buffer are undefined until data is written to the
     /// buffer.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGpuBuffer"/>
-    /// <seealso cref="DownloadFromGpuBuffer"/>
-    /// <seealso cref="CopyGpuBufferToBuffer"/>
-    /// <seealso cref="BindGpuVertexBuffers"/>
-    /// <seealso cref="BindGpuIndexBuffer"/>
-    /// <seealso cref="BindGpuVertexStorageBuffers"/>
-    /// <seealso cref="BindGpuFragmentStorageBuffers"/>
-    /// <seealso cref="DrawGpuPrimitivesIndirect"/>
-    /// <seealso cref="DrawGpuIndexedPrimitivesIndirect"/>
-    /// <seealso cref="BindGpuComputeStorageBuffers"/>
-    /// <seealso cref="DispatchGpuComputeIndirect"/>
-    /// <seealso cref="ReleaseGpuBuffer"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="UploadToGpuBuffer" />
+    /// <seealso cref="DownloadFromGpuBuffer" />
+    /// <seealso cref="CopyGpuBufferToBuffer" />
+    /// <seealso cref="BindGpuVertexBuffers" />
+    /// <seealso cref="BindGpuIndexBuffer" />
+    /// <seealso cref="BindGpuVertexStorageBuffers" />
+    /// <seealso cref="BindGpuFragmentStorageBuffers" />
+    /// <seealso cref="DrawGpuPrimitivesIndirect" />
+    /// <seealso cref="DrawGpuIndexedPrimitivesIndirect" />
+    /// <seealso cref="BindGpuComputeStorageBuffers" />
+    /// <seealso cref="DispatchGpuComputeIndirect" />
+    /// <seealso cref="ReleaseGpuBuffer" />
     /// </remarks>
     /// <returns>(SDL_GPUBuffer *) Returns a buffer object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -558,11 +558,11 @@ public static partial class Sdl {
     /// <remarks>
     /// Shader resource bindings must be authored to follow a particular order
     /// depending on the shader format.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BindGpuComputePipeline"/>
-    /// <seealso cref="ReleaseGpuComputePipeline"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BindGpuComputePipeline" />
+    /// <seealso cref="ReleaseGpuComputePipeline" />
     /// </remarks>
-    /// <returns>(SDL_GPUComputePipeline *) Returns a computepipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_GPUComputePipeline *) Returns a computepipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateGpuComputePipeline(nint device, in GpuComputePipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
@@ -578,12 +578,12 @@ public static partial class Sdl {
     /// <param name="name">the preferred GPU driver, or <see langword="null" /> to let SDL pick the optimal driver.</param>
     /// <remarks>
     /// The GPU driver name can be one of the following:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuDeviceWithProperties"/>
-    /// <seealso cref="GetGpuShaderFormats"/>
-    /// <seealso cref="GetGpuDeviceDriver"/>
-    /// <seealso cref="DestroyGpuDevice"/>
-    /// <seealso cref="GpuSupportsShaderFormats"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuDeviceWithProperties" />
+    /// <seealso cref="GetGpuShaderFormats" />
+    /// <seealso cref="GetGpuDeviceDriver" />
+    /// <seealso cref="DestroyGpuDevice" />
+    /// <seealso cref="GpuSupportsShaderFormats" />
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -602,11 +602,11 @@ public static partial class Sdl {
     /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGpuShaderFormats"/>
-    /// <seealso cref="GetGpuDeviceDriver"/>
-    /// <seealso cref="DestroyGpuDevice"/>
-    /// <seealso cref="GpuSupportsProperties"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetGpuShaderFormats" />
+    /// <seealso cref="GetGpuDeviceDriver" />
+    /// <seealso cref="DestroyGpuDevice" />
+    /// <seealso cref="GpuSupportsProperties" />
     /// </remarks>
     /// <returns>(SDL_GPUDevice *) Returns a GPU context on success or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -621,12 +621,12 @@ public static partial class Sdl {
     /// <remarks>
     /// There are optional properties that can be provided through props. These
     /// are the supported properties:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuShader"/>
-    /// <seealso cref="BindGpuGraphicsPipeline"/>
-    /// <seealso cref="ReleaseGpuGraphicsPipeline"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuShader" />
+    /// <seealso cref="BindGpuGraphicsPipeline" />
+    /// <seealso cref="ReleaseGpuGraphicsPipeline" />
     /// </remarks>
-    /// <returns>(SDL_GPUGraphicsPipeline *) Returns a graphicspipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>(SDL_GPUGraphicsPipeline *) Returns a graphicspipeline object on success, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateGpuGraphicsPipeline(nint device, in GpuGraphicsPipelineCreateInfo createinfo) {
         if (device == nint.Zero) {
@@ -642,10 +642,10 @@ public static partial class Sdl {
     /// <remarks>
     /// There are optional properties that can be provided through props. These
     /// are the supported properties:
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="BindGpuVertexSamplers"/>
-    /// <seealso cref="BindGpuFragmentSamplers"/>
-    /// <seealso cref="ReleaseGpuSampler"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="BindGpuVertexSamplers" />
+    /// <seealso cref="BindGpuFragmentSamplers" />
+    /// <seealso cref="ReleaseGpuSampler" />
     /// </remarks>
     /// <returns>(SDL_GPUSampler *) Returns a sampler object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -663,9 +663,9 @@ public static partial class Sdl {
     /// <remarks>
     /// Shader resource bindings must be authored to follow a particular order
     /// depending on the shader format.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuGraphicsPipeline"/>
-    /// <seealso cref="ReleaseGpuShader"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuGraphicsPipeline" />
+    /// <seealso cref="ReleaseGpuShader" />
     /// </remarks>
     /// <returns>(SDL_GPUShader *) Returns a shader object on success, or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -683,17 +683,17 @@ public static partial class Sdl {
     /// <remarks>
     /// The contents of this texture are undefined until data is written to the
     /// texture.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGpuTexture"/>
-    /// <seealso cref="DownloadFromGpuTexture"/>
-    /// <seealso cref="BindGpuVertexSamplers"/>
-    /// <seealso cref="BindGpuVertexStorageTextures"/>
-    /// <seealso cref="BindGpuFragmentSamplers"/>
-    /// <seealso cref="BindGpuFragmentStorageTextures"/>
-    /// <seealso cref="BindGpuComputeStorageTextures"/>
-    /// <seealso cref="BlitGpuTexture"/>
-    /// <seealso cref="ReleaseGpuTexture"/>
-    /// <seealso cref="GpuTextureSupportsFormat"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="UploadToGpuTexture" />
+    /// <seealso cref="DownloadFromGpuTexture" />
+    /// <seealso cref="BindGpuVertexSamplers" />
+    /// <seealso cref="BindGpuVertexStorageTextures" />
+    /// <seealso cref="BindGpuFragmentSamplers" />
+    /// <seealso cref="BindGpuFragmentStorageTextures" />
+    /// <seealso cref="BindGpuComputeStorageTextures" />
+    /// <seealso cref="BlitGpuTexture" />
+    /// <seealso cref="ReleaseGpuTexture" />
+    /// <seealso cref="GpuTextureSupportsFormat" />
     /// </remarks>
     /// <returns>(SDL_GPUTexture *) Returns a texture object on success,  <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -711,12 +711,12 @@ public static partial class Sdl {
     /// <remarks>
     /// Download buffers can be particularly expensive to create, so it is good
     /// practice to reuse them if data will be downloaded regularly.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGpuBuffer"/>
-    /// <seealso cref="DownloadFromGpuBuffer"/>
-    /// <seealso cref="UploadToGpuTexture"/>
-    /// <seealso cref="DownloadFromGpuTexture"/>
-    /// <seealso cref="ReleaseGpuTransferBuffer"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="UploadToGpuBuffer" />
+    /// <seealso cref="DownloadFromGpuBuffer" />
+    /// <seealso cref="UploadToGpuTexture" />
+    /// <seealso cref="DownloadFromGpuTexture" />
+    /// <seealso cref="ReleaseGpuTransferBuffer" />
     /// </remarks>
     /// <returns>(SDL_GPUTransferBuffer *) Returns a transferbuffer on success, or <see langword="null" /> on failure; call <see cref="GetError()" />for more information.</returns>
 
@@ -731,8 +731,8 @@ public static partial class Sdl {
 
     /// <param name="device">a GPU Context to destroy.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuDevice"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuDevice" />
     /// </remarks>
 
     public static void DestroyGpuDevice(nint device) {
@@ -750,7 +750,7 @@ public static partial class Sdl {
     /// <param name="groupcount_z">number of local workgroups to dispatch in the Z dimension.</param>
     /// <remarks>
     /// You must not call this function before binding a compute pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DispatchGpuCompute(nint computePass, uint groupcountX, uint groupcountY, uint groupcountZ) {
@@ -769,7 +769,7 @@ public static partial class Sdl {
     /// The buffer layout should match the layout of
     /// SDL_GPUIndirectDispatchCommand. You must
     /// not call this function before binding a compute pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DispatchGpuComputeIndirect(nint computePass, nint buffer, uint offset) {
@@ -787,7 +787,7 @@ public static partial class Sdl {
     /// <remarks>
     /// This data is not guaranteed to be copied until the command buffer fence is
     /// signaled.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DownloadFromGpuBuffer(nint copyPass, in GpuBufferRegion source,
@@ -806,7 +806,7 @@ public static partial class Sdl {
     /// <remarks>
     /// This data is not guaranteed to be copied until the command buffer fence is
     /// signaled.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DownloadFromGpuTexture(nint copyPass, in GpuTextureRegion source,
@@ -827,7 +827,7 @@ public static partial class Sdl {
     /// <param name="first_instance">the ID of the first instance to draw.</param>
     /// <remarks>
     /// You must not call this function before binding a graphics pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DrawGpuIndexedPrimitives(nint renderPass, uint numIndices, uint numInstances,
@@ -849,7 +849,7 @@ public static partial class Sdl {
     /// match the layout of
     /// SDL_GPUIndexedIndirectDrawCommand. You
     /// must not call this function before binding a graphics pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DrawGpuIndexedPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
@@ -868,7 +868,7 @@ public static partial class Sdl {
     /// <param name="first_instance">the ID of the first instance to draw.</param>
     /// <remarks>
     /// You must not call this function before binding a graphics pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DrawGpuPrimitives(nint renderPass, uint numVertices, uint numInstances,
@@ -890,7 +890,7 @@ public static partial class Sdl {
     /// match the layout of
     /// SDL_GPUIndirectDrawCommand. You must not call
     /// this function before binding a graphics pipeline.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void DrawGpuPrimitivesIndirect(nint renderPass, nint buffer, uint offset, uint drawCount) {
@@ -906,7 +906,7 @@ public static partial class Sdl {
     /// <remarks>
     /// All bound compute state on the command buffer is unset. The compute pass
     /// handle is now invalid.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void EndGpuComputePass(nint computePass) {
@@ -920,7 +920,7 @@ public static partial class Sdl {
 
     /// <param name="copy_pass">a copy pass handle.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void EndGpuCopyPass(nint copyPass) {
@@ -936,7 +936,7 @@ public static partial class Sdl {
     /// <remarks>
     /// All bound graphics state on the render pass command buffer is unset. The
     /// render pass handle is now invalid.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void EndGpuRenderPass(nint renderPass) {
@@ -952,7 +952,7 @@ public static partial class Sdl {
     /// <param name="texture">a texture with more than 1 mip level.</param>
     /// <remarks>
     /// This function must not be called inside of any pass.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void GenerateMipmapsForGpuTexture(nint commandBuffer, nint texture) {
@@ -969,7 +969,7 @@ public static partial class Sdl {
 
     /// <param name="device">a GPU context to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the name of the device's driver, or <see langword="null" /> on error.</returns>
 
@@ -986,8 +986,8 @@ public static partial class Sdl {
     /// <remarks>
     /// The GPU drivers are presented in the order in which they are normally
     /// checked during initialization.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetNumGpuDrivers"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetNumGpuDrivers" />
     /// </remarks>
     /// <returns>Returns the name of the GPU driver with the given index.</returns>
 
@@ -1002,7 +1002,7 @@ public static partial class Sdl {
 
     /// <param name="device">a GPU context to query.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns a bitflag indicatingwhich shader formats the driver is able to consume.</returns>
 
@@ -1019,7 +1019,7 @@ public static partial class Sdl {
     /// <param name="window">an SDL_Window that has been claimed.</param>
     /// <remarks>
     /// Note that this format can change if the swapchain parameters change.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns the texture formatof the swapchain.</returns>
 
@@ -1035,8 +1035,8 @@ public static partial class Sdl {
 
     /// <summary>Get the number of GPU drivers compiled into SDL.</summary>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetGpuDriver"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetGpuDriver" />
     /// </remarks>
     /// <returns>Returns the number of built in GPU drivers.</returns>
 
@@ -1048,8 +1048,8 @@ public static partial class Sdl {
 
     /// <param name="props">the properties to use.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuDeviceWithProperties"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuDeviceWithProperties" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
@@ -1062,8 +1062,8 @@ public static partial class Sdl {
     /// <param name="format_flags">a bitflag indicating which shader formats the app is able to provide.</param>
     /// <param name="name">the preferred GPU driver, or <see langword="null" /> to let SDL pick the optimal driver.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuDevice"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuDevice" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> otherwise.</returns>
 
@@ -1081,8 +1081,8 @@ public static partial class Sdl {
 
     /// <param name="format">the texture format you want to know the texel size of.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="UploadToGpuTexture"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="UploadToGpuTexture" />
     /// </remarks>
     /// <returns>Returns the texel block size of the texture format.</returns>
 
@@ -1100,7 +1100,7 @@ public static partial class Sdl {
     /// <param name="type">the type of texture (2D, 3D, Cube).</param>
     /// <param name="usage">a bitmask of all usage scenarios to check.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns whether the texture format is supported for this type andusage.</returns>
 
@@ -1123,7 +1123,7 @@ public static partial class Sdl {
     /// <param name="format">the texture format to check.</param>
     /// <param name="sample_count">the sample count to check.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns whether the sample count is supported for this textureformat.</returns>
 
@@ -1146,7 +1146,7 @@ public static partial class Sdl {
     /// <param name="text">a UTF-8 string constant to insert as the label.</param>
     /// <remarks>
     /// Useful for debugging.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void InsertGpuDebugLabel(nint commandBuffer, string text) {
@@ -1165,7 +1165,7 @@ public static partial class Sdl {
     /// You must unmap the transfer buffer before encoding upload commands. The
     /// memory is owned by the graphics driver - do NOT call SDL_free()
     /// on the returned pointer.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(void *) Returns the address of the mapped transfer buffer memory, or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -1183,8 +1183,8 @@ public static partial class Sdl {
 
     /// <param name="command_buffer">a command buffer.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PushGpuDebugGroup"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PushGpuDebugGroup" />
     /// </remarks>
 
     public static void PopGpuDebugGroup(nint commandBuffer) {
@@ -1202,7 +1202,7 @@ public static partial class Sdl {
     /// <param name="length">the length of the data to write.</param>
     /// <remarks>
     /// Subsequent draw calls will use this uniform data.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void PushGpuComputeUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
@@ -1219,8 +1219,8 @@ public static partial class Sdl {
     /// <remarks>
     /// Used for denoting groups of calls when viewing the command buffer
     /// callstream in a graphics debugging tool.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="PopGpuDebugGroup"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="PopGpuDebugGroup" />
     /// </remarks>
 
     public static void PushGpuDebugGroup(nint commandBuffer, string name) {
@@ -1238,7 +1238,7 @@ public static partial class Sdl {
     /// <param name="length">the length of the data to write.</param>
     /// <remarks>
     /// Subsequent draw calls will use this uniform data.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void PushGpuFragmentUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
@@ -1256,7 +1256,7 @@ public static partial class Sdl {
     /// <param name="length">the length of the data to write.</param>
     /// <remarks>
     /// Subsequent draw calls will use this uniform data.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void PushGpuVertexUniformData(nint commandBuffer, uint slotIndex, nint data, uint length) {
@@ -1271,8 +1271,8 @@ public static partial class Sdl {
     /// <param name="device">a GPU context.</param>
     /// <param name="fence">a fence.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the fence is signaled, <see langword="false" /> if it is not.</returns>
 
@@ -1292,7 +1292,7 @@ public static partial class Sdl {
     /// <param name="buffer">a buffer to be destroyed.</param>
     /// <remarks>
     /// You must not reference the buffer after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuBuffer(nint device, nint buffer) {
@@ -1311,7 +1311,7 @@ public static partial class Sdl {
     /// <param name="compute_pipeline">a compute pipeline to be destroyed.</param>
     /// <remarks>
     /// You must not reference the compute pipeline after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuComputePipeline(nint device, nint computePipeline) {
@@ -1330,8 +1330,8 @@ public static partial class Sdl {
     /// <param name="fence">a fence.</param>
     /// <remarks>
     /// You must not reference the fence after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
     /// </remarks>
 
     public static void ReleaseGpuFence(nint device, nint fence) {
@@ -1350,7 +1350,7 @@ public static partial class Sdl {
     /// <param name="graphics_pipeline">a graphics pipeline to be destroyed.</param>
     /// <remarks>
     /// You must not reference the graphics pipeline after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuGraphicsPipeline(nint device, nint graphicsPipeline) {
@@ -1369,7 +1369,7 @@ public static partial class Sdl {
     /// <param name="sampler">a sampler to be destroyed.</param>
     /// <remarks>
     /// You must not reference the sampler after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuSampler(nint device, nint sampler) {
@@ -1388,7 +1388,7 @@ public static partial class Sdl {
     /// <param name="shader">a shader to be destroyed.</param>
     /// <remarks>
     /// You must not reference the shader after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuShader(nint device, nint shader) {
@@ -1407,7 +1407,7 @@ public static partial class Sdl {
     /// <param name="texture">a texture to be destroyed.</param>
     /// <remarks>
     /// You must not reference the texture after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuTexture(nint device, nint texture) {
@@ -1426,7 +1426,7 @@ public static partial class Sdl {
     /// <param name="transfer_buffer">a transfer buffer to be destroyed.</param>
     /// <remarks>
     /// You must not reference the transfer buffer after calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void ReleaseGpuTransferBuffer(nint device, nint transferBuffer) {
@@ -1444,8 +1444,8 @@ public static partial class Sdl {
     /// <param name="device">a GPU context.</param>
     /// <param name="window">an SDL_Window that has been claimed.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGpuDevice"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ClaimWindowForGpuDevice" />
     /// </remarks>
 
     public static void ReleaseWindowFromGpuDevice(nint device, nint window) {
@@ -1470,9 +1470,9 @@ public static partial class Sdl {
     /// fill the swapchain texture pointer with <see langword="null" />, and
     /// SDL_WaitAndAcquireGPUSwapchainTexture()
     /// will block.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetGpuAllowedFramesInFlight(nint device, uint allowedFramesInFlight) {
         if (device == nint.Zero) {
@@ -1486,9 +1486,9 @@ public static partial class Sdl {
     /// <param name="render_pass">a render pass handle.</param>
     /// <param name="blend_constants">the blend constant color.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GPU_BLENDFACTOR_CONSTANT_COLOR"/>
-    /// <seealso cref="GPU_BLENDFACTOR_ONE_MINUS_CONSTANT_COLOR"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GPU_BLENDFACTOR_CONSTANT_COLOR" />
+    /// <seealso cref="GPU_BLENDFACTOR_ONE_MINUS_CONSTANT_COLOR" />
     /// </remarks>
 
     public static void SetGpuBlendConstants(nint renderPass, FColor blendConstants) {
@@ -1508,9 +1508,9 @@ public static partial class Sdl {
     /// SDL_PROP_GPU_BUFFER_CREATE_NAME_STRING
     /// with SDL_CreateGPUBuffer instead of this function to
     /// avoid thread safety issues.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe, you must make sure the buffer is notsimultaneously used by any other thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuBuffer"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe, you must make sure the buffer is notsimultaneously used by any other thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuBuffer" />
     /// </remarks>
 
     public static void SetGpuBufferName(nint device, nint buffer, string text) {
@@ -1528,7 +1528,7 @@ public static partial class Sdl {
     /// <param name="render_pass">a render pass handle.</param>
     /// <param name="scissor">the scissor area to set.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void SetGpuScissor(nint renderPass, in Rect scissor) {
@@ -1543,7 +1543,7 @@ public static partial class Sdl {
     /// <param name="render_pass">a render pass handle.</param>
     /// <param name="reference">the stencil reference value to set.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void SetGpuStencilReference(nint renderPass, byte reference) {
@@ -1566,11 +1566,11 @@ public static partial class Sdl {
     /// SDL_WindowSupportsGPUPresentMode /
     /// SDL_WindowSupportsGPUSwapchainComposition
     /// prior to calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WindowSupportsGpuPresentMode"/>
-    /// <seealso cref="WindowSupportsGpuSwapchainComposition"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WindowSupportsGpuPresentMode" />
+    /// <seealso cref="WindowSupportsGpuSwapchainComposition" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> if successful, <see langword="false" /> on error; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SetGpuSwapchainParameters(nint device, nint window, GpuSwapchainComposition swapchainComposition, GpuPresentMode presentMode) {
         if (device == nint.Zero) {
@@ -1592,9 +1592,9 @@ public static partial class Sdl {
     /// SDL_PROP_GPU_TEXTURE_CREATE_NAME_STRING
     /// with SDL_CreateGPUTexture instead of this function
     /// to avoid thread safety issues.
-    /// <para><strong>Thread Safety:</strong> This function is not thread safe, you must make sure the texture is notsimultaneously used by any other thread.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="CreateGpuTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function is not thread safe, you must make sure the texture is notsimultaneously used by any other thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateGpuTexture" />
     /// </remarks>
 
     public static void SetGpuTextureName(nint device, nint texture, string text) {
@@ -1612,7 +1612,7 @@ public static partial class Sdl {
     /// <param name="render_pass">a render pass handle.</param>
     /// <param name="viewport">the viewport to set.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void SetGpuViewport(nint renderPass, in GpuViewport viewport) {
@@ -1627,13 +1627,13 @@ public static partial class Sdl {
     /// <param name="command_buffer">a command buffer.</param>
     /// <remarks>
     /// It is invalid to use the command buffer after this is called.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGpuCommandBuffer"/>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="AcquireGpuSwapchainTexture"/>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AcquireGpuCommandBuffer" />
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="AcquireGpuSwapchainTexture" />
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool SubmitGpuCommandBuffer(nint commandBuffer) {
         if (commandBuffer == nint.Zero) {
@@ -1648,12 +1648,12 @@ public static partial class Sdl {
     /// <remarks>
     /// You must release this fence when it is no longer needed or it will cause a
     /// leak. It is invalid to use the command buffer after this is called.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGpuCommandBuffer"/>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="AcquireGpuSwapchainTexture"/>
-    /// <seealso cref="SubmitGpuCommandBuffer"/>
-    /// <seealso cref="ReleaseGpuFence"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AcquireGpuCommandBuffer" />
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="AcquireGpuSwapchainTexture" />
+    /// <seealso cref="SubmitGpuCommandBuffer" />
+    /// <seealso cref="ReleaseGpuFence" />
     /// </remarks>
     /// <returns>(SDL_GPUFence *) Returns a fence associated with thecommand buffer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -1669,7 +1669,7 @@ public static partial class Sdl {
     /// <param name="device">a GPU context.</param>
     /// <param name="transfer_buffer">a previously mapped transfer buffer.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UnmapGpuTransferBuffer(nint device, nint transferBuffer) {
@@ -1691,7 +1691,7 @@ public static partial class Sdl {
     /// <remarks>
     /// The upload occurs on the GPU timeline. You may assume that the upload has
     /// finished in subsequent commands.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UploadToGpuBuffer(nint copyPass, in GpuTransferBufferLocation source,
@@ -1711,7 +1711,7 @@ public static partial class Sdl {
     /// <remarks>
     /// The upload occurs on the GPU timeline. You may assume that the upload has
     /// finished in subsequent commands.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
 
     public static void UploadToGpuTexture(nint copyPass, in GpuTextureTransferInfo source,
@@ -1736,13 +1736,13 @@ public static partial class Sdl {
     /// buffer used to acquire it. It is an error to call
     /// SDL_CancelGPUCommandBuffer() after a
     /// swapchain texture is acquired.
-    /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGpuCommandBuffer"/>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
-    /// <seealso cref="AcquireGpuSwapchainTexture"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called from the thread that created thewindow.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SubmitGpuCommandBuffer" />
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
+    /// <seealso cref="AcquireGpuSwapchainTexture" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on error; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool WaitAndAcquireGpuSwapchainTexture(nint commandBuffer, nint window,
             out nint swapchainTexture, out uint swapchainTextureWidth, out uint swapchainTextureHeight) {
@@ -1762,11 +1762,11 @@ public static partial class Sdl {
     /// <param name="fences">an array of fences to wait on.</param>
     /// <param name="num_fences">the number of fences in the fences array.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence"/>
-    /// <seealso cref="WaitForGpuIdle"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SubmitGpuCommandBufferAndAcquireFence" />
+    /// <seealso cref="WaitForGpuIdle" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool WaitForGpuFences(nint device, bool waitAll, Span<nint> fences, uint numFences) {
         if (device == nint.Zero) {
@@ -1779,10 +1779,10 @@ public static partial class Sdl {
 
     /// <param name="device">a GPU context.</param>
     /// <remarks>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="WaitForGpuFences"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="WaitForGpuFences" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool WaitForGpuIdle(nint device) {
         if (device == nint.Zero) {
@@ -1796,13 +1796,13 @@ public static partial class Sdl {
     /// <param name="device">a GPU context.</param>
     /// <param name="window">a window that has been claimed.</param>
     /// <remarks>
-    /// <para><strong>Thread Safety:</strong> This function should only be called from the thread that created thewindow.</para>
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="AcquireGpuSwapchainTexture"/>
-    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture"/>
-    /// <seealso cref="SetGpuAllowedFramesInFlight"/>
+    /// <para><strong>Thread Safety</strong>: This function should only be called from the thread that created thewindow.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="AcquireGpuSwapchainTexture" />
+    /// <seealso cref="WaitAndAcquireGpuSwapchainTexture" />
+    /// <seealso cref="SetGpuAllowedFramesInFlight" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()"/> for more information.</returns>
+    /// <returns>Returns <see langword="true" /> on success, <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool WaitForGpuSwapchain(nint device, nint window) {
         if (device == nint.Zero) {
@@ -1821,8 +1821,8 @@ public static partial class Sdl {
     /// <param name="present_mode">the presentation mode to check.</param>
     /// <remarks>
     /// The window must be claimed before calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGpuDevice"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ClaimWindowForGpuDevice" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 
@@ -1843,8 +1843,8 @@ public static partial class Sdl {
     /// <param name="swapchain_composition">the swapchain composition to check.</param>
     /// <remarks>
     /// The window must be claimed before calling this function.
-    /// <para><strong>Version:</strong> This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="ClaimWindowForGpuDevice"/>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="ClaimWindowForGpuDevice" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if supported, <see langword="false" /> if unsupported.</returns>
 

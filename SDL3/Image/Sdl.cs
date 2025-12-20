@@ -294,9 +294,9 @@ public static unsafe partial class Sdl {
     /// API. This can be significantly more efficient than using a CPU-bound
     /// SDL_Surface if you don't need to manipulate the image directly after
     /// loading it.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="LoadTextureTyped_IO"/>
-    /// <seealso cref="LoadTexture_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="LoadTextureTyped_IO" />
+    /// <seealso cref="LoadTexture_IO" />
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns a new texture, or <see langword="null" /> on error.</returns>
 
@@ -492,25 +492,25 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is AVIF data, zero otherwise.</returns>
 
@@ -573,24 +573,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is ICO data, zero otherwise.</returns>
 
@@ -653,24 +653,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is CUR data, zero otherwise.</returns>
 
@@ -733,24 +733,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is BMP data, zero otherwise.</returns>
 
@@ -813,24 +813,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is GIF data, zero otherwise.</returns>
 
@@ -893,24 +893,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is JPG data, zero otherwise.</returns>
 
@@ -973,24 +973,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is JXL data, zero otherwise.</returns>
 
@@ -1053,24 +1053,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is LBM data, zero otherwise.</returns>
 
@@ -1133,24 +1133,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is PCX data, zero otherwise.</returns>
 
@@ -1213,24 +1213,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is PNG data, zero otherwise.</returns>
 
@@ -1293,24 +1293,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is PNM data, zero otherwise.</returns>
 
@@ -1373,24 +1373,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is SVG data, zero otherwise.</returns>
 
@@ -1453,24 +1453,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is QOI data, zero otherwise.</returns>
 
@@ -1533,24 +1533,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is TIFF data, zero otherwise.</returns>
 
@@ -1613,24 +1613,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is XCF data, zero otherwise.</returns>
 
@@ -1693,24 +1693,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXV"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXV" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is XPM data, zero otherwise.</returns>
 
@@ -1773,24 +1773,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isWEBP"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is XV data, zero otherwise.</returns>
 
@@ -1853,24 +1853,24 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// This function attempts to determine if a file is a given filetype, reading
     /// the least amount possible from the SDL_IOStream (usually a few bytes).
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="isAVIF"/>
-    /// <seealso cref="isICO"/>
-    /// <seealso cref="isCUR"/>
-    /// <seealso cref="isBMP"/>
-    /// <seealso cref="isGIF"/>
-    /// <seealso cref="isJPG"/>
-    /// <seealso cref="isJXL"/>
-    /// <seealso cref="isLBM"/>
-    /// <seealso cref="isPCX"/>
-    /// <seealso cref="isPNG"/>
-    /// <seealso cref="isPNM"/>
-    /// <seealso cref="isSVG"/>
-    /// <seealso cref="isQOI"/>
-    /// <seealso cref="isTIF"/>
-    /// <seealso cref="isXCF"/>
-    /// <seealso cref="isXPM"/>
-    /// <seealso cref="isXV"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="isAVIF" />
+    /// <seealso cref="isICO" />
+    /// <seealso cref="isCUR" />
+    /// <seealso cref="isBMP" />
+    /// <seealso cref="isGIF" />
+    /// <seealso cref="isJPG" />
+    /// <seealso cref="isJXL" />
+    /// <seealso cref="isLBM" />
+    /// <seealso cref="isPCX" />
+    /// <seealso cref="isPNG" />
+    /// <seealso cref="isPNM" />
+    /// <seealso cref="isSVG" />
+    /// <seealso cref="isQOI" />
+    /// <seealso cref="isTIF" />
+    /// <seealso cref="isXCF" />
+    /// <seealso cref="isXPM" />
+    /// <seealso cref="isXV" />
     /// </remarks>
     /// <returns>Returns non-zero if this is WEBP data, zero otherwise.</returns>
 
@@ -2756,8 +2756,8 @@ public static unsafe partial class Sdl {
     /// The returned surface will be an 8bpp indexed surface, if possible,
     /// otherwise it will be 32bpp. If you always want 32-bit data, use
     /// IMG_ReadXPMFromArrayToRGB888() instead.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="ReadXPMFromArrayToRGB888"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="ReadXPMFromArrayToRGB888" />
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
@@ -2796,8 +2796,8 @@ public static unsafe partial class Sdl {
     /// The returned surface will always be a 32-bit RGB surface. If you want 8-bit
     /// indexed colors (and the XPM data allows it), use
     /// IMG_ReadXPMFromArray() instead.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="ReadXPMFromArray"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="ReadXPMFromArray" />
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
@@ -2836,8 +2836,8 @@ public static unsafe partial class Sdl {
     /// <param name="quality">the desired quality, ranging between 0 (lowest) and 100 (highest).</param>
     /// <remarks>
     /// If the file already exists, it will be overwritten.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="SaveAVIF_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SaveAVIF_IO" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -2912,8 +2912,8 @@ public static unsafe partial class Sdl {
     /// <param name="file">path on the filesystem to write new file to.</param>
     /// <remarks>
     /// If the file already exists, it will be overwritten.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="SavePNG_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SavePNG_IO" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -2989,8 +2989,8 @@ public static unsafe partial class Sdl {
     /// <param name="quality">[0; 33] is Lowest quality, [34; 66] is Middle quality, [67; 100] is Highest quality.</param>
     /// <remarks>
     /// If the file already exists, it will be overwritten.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="SaveJPG_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="SaveJPG_IO" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
@@ -3063,8 +3063,8 @@ public static unsafe partial class Sdl {
     /// <remarks>
     /// When done with the returned animation, the app should dispose of it with a
     /// call to IMG_FreeAnimation().
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="FreeAnimation"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="FreeAnimation" />
     /// </remarks>
     /// <returns>(IMG_Animation *) Returns a newIMG_Animation, or <see langword="null" /> on error.</returns>
 
@@ -3169,10 +3169,10 @@ public static unsafe partial class Sdl {
     /// <param name="anim">IMG_Animation to dispose of.</param>
     /// <remarks>
     /// The provided anim pointer is not valid once this call returns.
-    /// <para><strong>Version:</strong> This function is available since SDL_image 3.0.0.</para>
-    /// <seealso cref="LoadAnimation"/>
-    /// <seealso cref="LoadAnimation_IO"/>
-    /// <seealso cref="LoadAnimationTyped_IO"/>
+    /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// <seealso cref="LoadAnimation" />
+    /// <seealso cref="LoadAnimation_IO" />
+    /// <seealso cref="LoadAnimationTyped_IO" />
     /// </remarks>
 
     public static void FreeAnimation(nint anim) {
