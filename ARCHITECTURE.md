@@ -13,140 +13,46 @@ functional subsystems that mirror SDL3's own module structure.
 
 ```mermaid
 graph TB
-    subgraph Application Layer
-        APP[Your Application]
-    end
+    APP[Application]
 
-    subgraph SharpSDL3 Managed Layer
+    subgraph managed ["SharpSDL3 — Managed C# Layer"]
         direction TB
-
-        subgraph Core["Core (Sdl.cs — 7,883 lines)"]
-            INIT[Init / Quit / Version]
-            MARSHAL[StructureToPointer / PointerToStructure]
-            PROPS[Properties / Hints]
-            THREAD[Threads / TLS]
-        end
-
-        subgraph Graphics["Graphics & Rendering"]
-            RENDER[Render.cs — 2,583 lines<br/>Create/Destroy Renderer<br/>Draw Primitives, Viewport]
-            GPU[Gpu.cs — 2,186 lines<br/>Command Buffers, Pipelines<br/>Shaders, Compute]
-            TEX[Textures.cs — 751 lines<br/>Create/Update Textures<br/>Texture Properties]
-            SURFACE[Surface Operations<br/>Blit, Convert, Fill]
-            GL[OpenGL.cs — 275 lines<br/>GL Context Management]
-            MTL[Metal.cs — 38 lines]
-        end
-
-        subgraph Input["Input Devices"]
-            MOUSE[Mouse.cs — 566 lines<br/>Cursor, State, Warp]
-            KB[Keyboard / Text Input]
-            GAMEPAD[GamePad.cs — 1,484 lines<br/>Mappings, Axes, Buttons]
-            JOY[JoySticks.cs — 1,425 lines<br/>Axes, Hats, Balls, Power]
-            HAPTIC[Haptic.cs — 759 lines<br/>Force Feedback Effects]
-            TOUCH[Touch.cs — 129 lines]
-            HID[HID.cs — 287 lines]
-            SENSOR[Sensors.cs — 283 lines]
-        end
-
-        subgraph Audio["Audio"]
-            AUD[Audio.cs — 1,382 lines<br/>Devices, Streams<br/>Format Conversion]
-        end
-
-        subgraph Events["Event System"]
-            EVT[Events.cs — 483 lines<br/>Poll, Filter, Watch]
-            LOG[Logger.cs — 430 lines<br/>Priority Levels, Output]
-            ASSERT[Assertion.cs — 165 lines]
-        end
-
-        subgraph FileIO["File I/O & Storage"]
-            IO[IO.cs — 889 lines<br/>Stream Abstraction]
-            STORE[Storage.cs — 482 lines<br/>Title/User/File Storage]
-            FS[FileSystem.cs — 204 lines]
-            ASYNC[AsyncIO.cs — 282 lines]
-            DIALOG[FileDialog.cs — 97 lines]
-        end
-
-        subgraph System["System & Platform"]
-            SYS[System.cs — 336 lines<br/>DateTime, Power, Locale]
-            CPU[CpuInfo.cs — 316 lines<br/>SIMD, Cache, Threads]
-            PLAT[Platform.cs — 271 lines]
-            TIMER[Timer.cs — 237 lines]
-        end
-
-        subgraph Sync["Synchronization"]
-            MUTEX[Mutex.cs — 554 lines]
-            ATOM[Atomic.cs — 332 lines]
-            SEM[Semaphore.cs — 79 lines]
-        end
-
-        subgraph UI["User Interface"]
-            TRAY[Tray.cs — 597 lines<br/>System Tray Menus]
-            MBOX[MessageBox.cs — 208 lines]
-            CAM[Camera.cs — 387 lines]
-        end
-
-        subgraph Extensions["Extension Libraries"]
-            IMG[Image/<br/>SDL3_image bindings<br/>PNG, JPG, WebP loading]
-            MIX[Mixer/<br/>SDL3_mixer bindings<br/>Music, Chunks, Channels]
-            TTF[TTF/<br/>SDL3_ttf bindings<br/>Font Rendering, Glyphs]
-        end
-
-        subgraph DataTypes["Shared Data Types"]
-            STRUCTS[Structs/ — 128 files<br/>Rect, Color, Event,<br/>AudioSpec, Surface, ...]
-            ENUMS[Enums/ — 114 files<br/>EventType, PixelFormat,<br/>WindowFlags, BlendMode, ...]
-            CONST[Constants.cs — 583 lines<br/>SDL Property Strings]
-            DEL[Delegates.cs — 101 lines<br/>Callback Signatures]
-            BOOL[SdlBool, SdlException<br/>Marshallers]
-        end
+        CORE[Core<br/>Init, Window, Surface,<br/>Properties, Threads]
+        GFX[Graphics<br/>Render, GPU, Textures,<br/>OpenGL, Metal]
+        INPUT[Input<br/>Mouse, Keyboard, Gamepad,<br/>Joystick, Touch, Haptic]
+        AUDIO[Audio<br/>Devices, Streams,<br/>Format Conversion]
+        EVENTS[Events & Logging<br/>Poll, Filter, Watch,<br/>Log Priorities]
+        FILEIO[File I/O<br/>Streams, Storage,<br/>Async, Dialogs]
+        SYS[System<br/>Platform, CPU Info,<br/>Timers, Sync Primitives]
+        EXT[Extensions<br/>Image, Mixer, TTF]
+        DATA[Shared Data Types<br/>128 Structs, 114 Enums,<br/>Delegates, Constants]
     end
 
-    subgraph Native["Native SDL3 (C Library)"]
-        SDL3[libSDL3.so / SDL3.dll / libSDL3.dylib]
-        SDL3_IMG[SDL3_image]
-        SDL3_MIX[SDL3_mixer]
-        SDL3_TTF[SDL3_ttf]
+    subgraph native ["Native C Libraries"]
+        SDL3[SDL3]
+        SDL3_EXT[SDL3_image  SDL3_mixer  SDL3_ttf]
     end
 
-    APP --> Core
-    APP --> Graphics
-    APP --> Input
-    APP --> Audio
-    APP --> Events
-    APP --> FileIO
-    APP --> UI
-    APP --> Extensions
+    APP --> CORE
+    APP --> GFX
+    APP --> INPUT
+    APP --> AUDIO
+    APP --> EVENTS
+    APP --> FILEIO
+    APP --> SYS
+    APP --> EXT
 
-    Core --> DataTypes
-    Graphics --> DataTypes
-    Input --> DataTypes
-    Audio --> DataTypes
-    Events --> DataTypes
-    FileIO --> DataTypes
-    System --> DataTypes
-    Sync --> DataTypes
-    UI --> DataTypes
-    Extensions --> DataTypes
+    CORE --> DATA
+    GFX --> DATA
+    INPUT --> DATA
+    AUDIO --> DATA
+    EVENTS --> DATA
+    FILEIO --> DATA
+    SYS --> DATA
+    EXT --> DATA
 
-    Graphics -.->|LogError| LOG
-    Input -.->|LogError| LOG
-    Audio -.->|LogError| LOG
-    FileIO -.->|LogError| LOG
-    UI -.->|LogError| LOG
-
-    RENDER --- TEX
-    RENDER --- SURFACE
-
-    Core -->|LibraryImport P/Invoke| SDL3
-    Graphics -->|LibraryImport P/Invoke| SDL3
-    Input -->|LibraryImport P/Invoke| SDL3
-    Audio -->|LibraryImport P/Invoke| SDL3
-    Events -->|LibraryImport P/Invoke| SDL3
-    FileIO -->|LibraryImport P/Invoke| SDL3
-    System -->|LibraryImport P/Invoke| SDL3
-    Sync -->|LibraryImport P/Invoke| SDL3
-    UI -->|LibraryImport P/Invoke| SDL3
-    IMG -->|LibraryImport P/Invoke| SDL3_IMG
-    MIX -->|LibraryImport P/Invoke| SDL3_MIX
-    TTF -->|LibraryImport P/Invoke| SDL3_TTF
+    DATA -->|LibraryImport<br/>P/Invoke| SDL3
+    EXT -->|LibraryImport<br/>P/Invoke| SDL3_EXT
 ```
 
 ---
