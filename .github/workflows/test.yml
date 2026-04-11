@@ -1,0 +1,103 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, dev ]
+  pull_request:
+    branches: [ main, dev ]
+
+jobs:
+  test:
+    name: Unit Tests & Coverage
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SharpSDL3.sln
+
+    - name: Build
+      run: dotnet build SharpSDL3.sln -c Release --no-restore
+
+    - name: Run tests with coverage
+      shell: bash
+      run: |
+        dotnet test tests/SharpSDL3.Tests/SharpSDL3.Tests.csproj \
+          -c Release \
+          --no-build \
+          --verbosity normal \
+          --logger "trx;LogFileName=test-results.trx" \
+          --results-directory ./TestResults \
+          /p:CollectCoverage=true \
+          /p:CoverletOutputFormat=cobertura \
+          /p:CoverletOutput=./TestResults/coverage.cobertura.xml \
+          "/p:Include=[SharpSDL3]*" \
+          /p:ExcludeByAttribute=GeneratedCodeAttribute \
+          /p:Threshold=25 \
+          /p:ThresholdType=line
+
+    - name: Install ReportGenerator
+      if: matrix.os == 'ubuntu-22.04'
+      run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+    - name: Generate coverage report
+      if: matrix.os == 'ubuntu-22.04'
+      run: |
+        reportgenerator \
+          -reports:./TestResults/coverage.cobertura.xml \
+          -targetdir:./TestResults/CoverageReport \
+          -reporttypes:"Html;MarkdownSummaryGithub;Badges" \
+          -title:"SharpSDL3 Code Coverage"
+
+    - name: Post coverage summary to job
+      if: matrix.os == 'ubuntu-22.04' && always()
+      shell: bash
+      run: |
+        if [ -f ./TestResults/CoverageReport/SummaryGithub.md ]; then
+          cat ./TestResults/CoverageReport/SummaryGithub.md >> "$GITHUB_STEP_SUMMARY"
+        fi
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.os }}
+        path: ./TestResults/*.trx
+
+    - name: Upload coverage report
+      if: matrix.os == 'ubuntu-22.04'
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: |
+          ./TestResults/coverage.cobertura.xml
+          ./TestResults/CoverageReport/
+
+  fuzz:
+    name: Fuzz Tests
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore dependencies
+      run: dotnet restore SharpSDL3.sln
+
+    - name: Build
+      run: dotnet build SharpSDL3.sln -c Release --no-restore
+
+    - name: Run fuzz tests
+      run: dotnet test tests/SharpSDL3.Tests/SharpSDL3.Tests.csproj -c Release --no-build --verbosity normal --filter "FullyQualifiedName~FuzzTests"
