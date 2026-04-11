@@ -1,3 +1,4 @@
+using System;
 using SharpSDL3;
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;

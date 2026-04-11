@@ -1,3 +1,4 @@
+using System;
 using SharpSDL3;
 using Xunit;
 
@@ -25,7 +26,8 @@ public class SdlExceptionTests
     [Fact]
     public void SdlException_CanBeThrown()
     {
-        Assert.Throws<SdlException>(() => throw new SdlException("boom"));
+        var ex = Assert.Throws<SdlException>((Action)(() => throw new SdlException("boom")));
+        Assert.Equal("boom", ex.Message);
     }
 
     [Fact]

@@ -1,3 +1,5 @@
+using System;
+using System.Collections.Generic;
 using SharpSDL3;
 using Xunit;
 
