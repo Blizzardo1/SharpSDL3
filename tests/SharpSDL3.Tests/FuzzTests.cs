@@ -1,3 +1,4 @@
+using System;
 using System.Runtime.InteropServices;
 using SharpSDL3;
 using SharpSDL3.Enums;
