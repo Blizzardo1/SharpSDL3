@@ -109,21 +109,26 @@ jobs:
           --verbosity normal \
           --logger "trx;LogFileName=test-results.trx" \
           --results-directory ./TestResults \
-          -p:CollectCoverage=true \
-          -p:CoverletOutputFormat=cobertura \
-          -p:CoverletOutput=./TestResults/coverage.cobertura.xml \
-          "-p:Include=[SharpSDL3]*" \
-          -p:ExcludeByAttribute=GeneratedCodeAttribute
+          --collect:"XPlat Code Coverage"
+
+    - name: Find coverage file
+      if: matrix.os == 'ubuntu-22.04'
+      id: find-coverage
+      shell: bash
+      run: |
+        COV=$(find ./TestResults -name "coverage.cobertura.xml" -type f | head -1)
+        echo "Found coverage at: $COV"
+        echo "path=$COV" >> "$GITHUB_OUTPUT"
 
     - name: Install ReportGenerator
       if: matrix.os == 'ubuntu-22.04'
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
     - name: Generate coverage report
-      if: matrix.os == 'ubuntu-22.04'
+      if: matrix.os == 'ubuntu-22.04' && steps.find-coverage.outputs.path != ''
       run: |
         reportgenerator \
-          -reports:./TestResults/coverage.cobertura.xml \
+          -reports:"${{ steps.find-coverage.outputs.path }}" \
           -targetdir:./TestResults/CoverageReport \
           -reporttypes:"Html;MarkdownSummaryGithub;Badges" \
           -title:"SharpSDL3 Code Coverage"
@@ -149,7 +154,7 @@ jobs:
       with:
         name: coverage-report
         path: |
-          ./TestResults/coverage.cobertura.xml
+          ./TestResults/**/coverage.cobertura.xml
           ./TestResults/CoverageReport/
 
   fuzz:
