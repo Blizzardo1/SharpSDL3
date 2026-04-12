@@ -76,9 +76,14 @@ jobs:
       if: runner.os == 'Windows'
       shell: pwsh
       run: |
+        Write-Host "SDL3 archive contents:"
+        Get-ChildItem "$env:TEMP\sdl3" -Recurse | ForEach-Object { Write-Host $_.FullName }
+        $dll = Get-ChildItem "$env:TEMP\sdl3" -Recurse -Filter "SDL3.dll" | Select-Object -First 1
+        if (-not $dll) { throw "SDL3.dll not found in extracted archive" }
+        Write-Host "Found SDL3.dll at: $($dll.FullName)"
         $testBin = "tests\SharpSDL3.Tests\bin\Release\net9.0"
         New-Item -ItemType Directory -Path $testBin -Force | Out-Null
-        Copy-Item "$env:TEMP\sdl3\SDL3-${{ env.SDL3_VERSION }}\lib\x64\SDL3.dll" -Destination $testBin -Force
+        Copy-Item $dll.FullName -Destination $testBin -Force
 
     # --- Build and test ---
     - name: Restore dependencies
