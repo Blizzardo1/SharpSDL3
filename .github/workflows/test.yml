@@ -109,11 +109,11 @@ jobs:
           --verbosity normal \
           --logger "trx;LogFileName=test-results.trx" \
           --results-directory ./TestResults \
-          /p:CollectCoverage=true \
-          /p:CoverletOutputFormat=cobertura \
-          /p:CoverletOutput=./TestResults/coverage.cobertura.xml \
-          "/p:Include=[SharpSDL3]*" \
-          /p:ExcludeByAttribute=GeneratedCodeAttribute
+          -p:CollectCoverage=true \
+          -p:CoverletOutputFormat=cobertura \
+          -p:CoverletOutput=./TestResults/coverage.cobertura.xml \
+          "-p:Include=[SharpSDL3]*" \
+          -p:ExcludeByAttribute=GeneratedCodeAttribute
 
     - name: Install ReportGenerator
       if: matrix.os == 'ubuntu-22.04'
