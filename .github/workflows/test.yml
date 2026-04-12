@@ -29,7 +29,14 @@ jobs:
     # --- SDL3 installation (Linux) ---
     - name: Install build dependencies (Linux)
       if: runner.os == 'Linux'
-      run: sudo apt-get update && sudo apt-get install -y cmake build-essential
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential \
+          libx11-dev libxext-dev libxcursor-dev libxi-dev \
+          libxfixes-dev libxrandr-dev libxrender-dev libxss-dev \
+          libwayland-dev libxkbcommon-dev libegl-dev \
+          libpulse-dev libasound2-dev libpipewire-0.3-dev \
+          libdbus-1-dev libdrm-dev libgbm-dev
 
     - name: Cache SDL3 build (Linux/macOS)
       if: runner.os != 'Windows'
@@ -157,7 +164,14 @@ jobs:
         dotnet-version: '9.0.x'
 
     - name: Install build dependencies
-      run: sudo apt-get update && sudo apt-get install -y cmake build-essential
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y cmake build-essential \
+          libx11-dev libxext-dev libxcursor-dev libxi-dev \
+          libxfixes-dev libxrandr-dev libxrender-dev libxss-dev \
+          libwayland-dev libxkbcommon-dev libegl-dev \
+          libpulse-dev libasound2-dev libpipewire-0.3-dev \
+          libdbus-1-dev libdrm-dev libgbm-dev
 
     - name: Cache SDL3 build
       uses: actions/cache@v4
