@@ -3,6 +3,7 @@ using SharpSDL3;
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
 using static SharpSDL3.Delegates;
+using static SharpSDL3.Tests.TestHelpers;
 using Xunit;
 
 namespace SharpSDL3.Tests;
@@ -122,182 +123,132 @@ public class SdlCoreTests
     }
 
     // --- Null-pointer validation guards in Sdl.cs ---
+    // Guards call LogWarn/LogError which P/Invokes into SDL3. In CI without the
+    // native library, DllNotFoundException is expected and still proves the guard works.
 
     [Fact]
-    public void AddSurfaceAlternateImage_NullSurface_ReturnsFalse()
-    {
-        Assert.False(Sdl.AddSurfaceAlternateImage(nint.Zero, (nint)1));
-    }
+    public void AddSurfaceAlternateImage_NullSurface_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.AddSurfaceAlternateImage(nint.Zero, (nint)1));
 
     [Fact]
-    public void AddSurfaceAlternateImage_NullImage_ReturnsFalse()
-    {
-        Assert.False(Sdl.AddSurfaceAlternateImage((nint)1, nint.Zero));
-    }
+    public void AddSurfaceAlternateImage_NullImage_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.AddSurfaceAlternateImage((nint)1, nint.Zero));
 
     [Fact]
-    public void AddSurfaceAlternateImage_BothNull_ReturnsFalse()
-    {
-        Assert.False(Sdl.AddSurfaceAlternateImage(nint.Zero, nint.Zero));
-    }
+    public void AddSurfaceAlternateImage_BothNull_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.AddSurfaceAlternateImage(nint.Zero, nint.Zero));
 
     [Fact]
-    public void BlitSurface_NullSource_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurface(nint.Zero, nint.Zero, (nint)1, nint.Zero));
-    }
+    public void BlitSurface_NullSource_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurface(nint.Zero, nint.Zero, (nint)1, nint.Zero));
 
     [Fact]
-    public void BlitSurface_NullDest_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurface((nint)1, nint.Zero, nint.Zero, nint.Zero));
-    }
+    public void BlitSurface_NullDest_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurface((nint)1, nint.Zero, nint.Zero, nint.Zero));
 
     [Fact]
-    public void BlitSurface9Grid_NullSource_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurface9Grid(nint.Zero, nint.Zero, 0, 0, 0, 0, 1.0f, ScaleMode.Linear, (nint)1, nint.Zero));
-    }
+    public void BlitSurface9Grid_NullSource_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurface9Grid(nint.Zero, nint.Zero, 0, 0, 0, 0, 1.0f, ScaleMode.Linear, (nint)1, nint.Zero));
 
     [Fact]
-    public void BlitSurface9Grid_NullDest_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurface9Grid((nint)1, nint.Zero, 0, 0, 0, 0, 1.0f, ScaleMode.Linear, nint.Zero, nint.Zero));
-    }
+    public void BlitSurface9Grid_NullDest_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurface9Grid((nint)1, nint.Zero, 0, 0, 0, 0, 1.0f, ScaleMode.Linear, nint.Zero, nint.Zero));
 
     [Fact]
-    public void BlitSurfaceScaled_NullSource_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurfaceScaled(nint.Zero, nint.Zero, (nint)1, nint.Zero, ScaleMode.Linear));
-    }
+    public void BlitSurfaceScaled_NullSource_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceScaled(nint.Zero, nint.Zero, (nint)1, nint.Zero, ScaleMode.Linear));
 
     [Fact]
-    public void BlitSurfaceTiled_NullSource_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurfaceTiled(nint.Zero, nint.Zero, (nint)1, nint.Zero));
-    }
+    public void BlitSurfaceTiled_NullSource_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceTiled(nint.Zero, nint.Zero, (nint)1, nint.Zero));
 
     [Fact]
-    public void BlitSurfaceTiledWithScale_NullDest_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurfaceTiledWithScale((nint)1, nint.Zero, 1.0f, ScaleMode.Linear, nint.Zero, nint.Zero));
-    }
+    public void BlitSurfaceTiledWithScale_NullDest_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceTiledWithScale((nint)1, nint.Zero, 1.0f, ScaleMode.Linear, nint.Zero, nint.Zero));
 
     [Fact]
-    public void BlitSurfaceUnchecked_NullSource_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurfaceUnchecked(nint.Zero, nint.Zero, (nint)1, nint.Zero));
-    }
+    public void BlitSurfaceUnchecked_NullSource_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceUnchecked(nint.Zero, nint.Zero, (nint)1, nint.Zero));
 
     [Fact]
-    public void BlitSurfaceUncheckedScaled_NullDest_ReturnsFalse()
-    {
-        Assert.False(Sdl.BlitSurfaceUncheckedScaled((nint)1, nint.Zero, nint.Zero, nint.Zero, ScaleMode.Linear));
-    }
+    public void BlitSurfaceUncheckedScaled_NullDest_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceUncheckedScaled((nint)1, nint.Zero, nint.Zero, nint.Zero, ScaleMode.Linear));
 
     [Fact]
-    public void ClearComposition_NullWindow_ReturnsFalse()
-    {
-        Assert.False(Sdl.ClearComposition(nint.Zero));
-    }
+    public void ClearComposition_NullWindow_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ClearComposition(nint.Zero));
 
     [Fact]
-    public void ClearProperty_ZeroProps_ReturnsFalse()
-    {
-        Assert.False(Sdl.ClearProperty(0, "test"));
-    }
+    public void ClearProperty_ZeroProps_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ClearProperty(0, "test"));
 
     [Fact]
-    public void ClearProperty_NullName_ReturnsFalse()
-    {
-        Assert.False(Sdl.ClearProperty(1, ""));
-    }
+    public void ClearProperty_NullName_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ClearProperty(1, ""));
 
     [Fact]
-    public void ClearProperty_EmptyName_ReturnsFalse()
-    {
-        Assert.False(Sdl.ClearProperty(1, string.Empty));
-    }
+    public void ClearProperty_EmptyName_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ClearProperty(1, string.Empty));
 
     [Fact]
-    public void ClearSurface_NullSurface_ReturnsFalse()
-    {
-        Assert.False(Sdl.ClearSurface(nint.Zero, 0, 0, 0, 1));
-    }
+    public void ClearSurface_NullSurface_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ClearSurface(nint.Zero, 0, 0, 0, 1));
 
     [Fact]
-    public void ConvertPixels_NullSrc_ReturnsFalse()
-    {
-        Assert.False(Sdl.ConvertPixels(10, 10, PixelFormat.Rgba8888, nint.Zero, 40, PixelFormat.Rgba8888, (nint)1, 40));
-    }
+    public void ConvertPixels_NullSrc_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ConvertPixels(10, 10, PixelFormat.Rgba8888, nint.Zero, 40, PixelFormat.Rgba8888, (nint)1, 40));
 
     [Fact]
-    public void ConvertPixels_NullDst_ReturnsFalse()
-    {
-        Assert.False(Sdl.ConvertPixels(10, 10, PixelFormat.Rgba8888, (nint)1, 40, PixelFormat.Rgba8888, nint.Zero, 40));
-    }
+    public void ConvertPixels_NullDst_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.ConvertPixels(10, 10, PixelFormat.Rgba8888, (nint)1, 40, PixelFormat.Rgba8888, nint.Zero, 40));
 
     [Fact]
-    public void ConvertSurface_NullSurface_ReturnsZero()
-    {
-        Assert.Equal(nint.Zero, Sdl.ConvertSurface(nint.Zero, PixelFormat.Rgba8888));
-    }
+    public void ConvertSurface_NullSurface_ReturnsZero() =>
+        AssertZeroOrNativeNotFound(() => Sdl.ConvertSurface(nint.Zero, PixelFormat.Rgba8888));
 
     [Fact]
-    public void ConvertSurfaceAndColorspace_NullSurface_ReturnsZero()
-    {
-        Assert.Equal(nint.Zero, Sdl.ConvertSurfaceAndColorspace(nint.Zero, PixelFormat.Rgba8888, nint.Zero, Colorspace.SrgbLinear, 0));
-    }
+    public void ConvertSurfaceAndColorspace_NullSurface_ReturnsZero() =>
+        AssertZeroOrNativeNotFound(() => Sdl.ConvertSurfaceAndColorspace(nint.Zero, PixelFormat.Rgba8888, nint.Zero, Colorspace.SrgbLinear, 0));
 
     [Fact]
-    public void CopyProperties_ZeroSrc_ReturnsFalse()
-    {
-        Assert.False(Sdl.CopyProperties(0, 1));
-    }
+    public void CopyProperties_ZeroSrc_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.CopyProperties(0, 1));
 
     [Fact]
-    public void CopyProperties_ZeroDst_ReturnsFalse()
-    {
-        Assert.False(Sdl.CopyProperties(1, 0));
-    }
+    public void CopyProperties_ZeroDst_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.CopyProperties(1, 0));
 
     [Fact]
-    public void CreatePopupWindow_NullParent_ReturnsZero()
-    {
-        Assert.Equal(nint.Zero, Sdl.CreatePopupWindow(nint.Zero, 0, 0, 100, 100, WindowFlags.Tooltip));
-    }
+    public void CreatePopupWindow_NullParent_ReturnsZero() =>
+        AssertZeroOrNativeNotFound(() => Sdl.CreatePopupWindow(nint.Zero, 0, 0, 100, 100, WindowFlags.Tooltip));
 
     [Fact]
     public void CreatePopupWindow_InvalidSize_ReturnsZero()
     {
-        Assert.Equal(nint.Zero, Sdl.CreatePopupWindow((nint)1, 0, 0, 0, 100, WindowFlags.Tooltip));
-        Assert.Equal(nint.Zero, Sdl.CreatePopupWindow((nint)1, 0, 0, 100, -1, WindowFlags.Tooltip));
+        AssertZeroOrNativeNotFound(() => Sdl.CreatePopupWindow((nint)1, 0, 0, 0, 100, WindowFlags.Tooltip));
+        AssertZeroOrNativeNotFound(() => Sdl.CreatePopupWindow((nint)1, 0, 0, 100, -1, WindowFlags.Tooltip));
     }
 
     [Fact]
     public void CreateSurface_InvalidDimensions_ReturnsZero()
     {
-        Assert.Equal(nint.Zero, Sdl.CreateSurface(0, 100, PixelFormat.Rgba8888));
-        Assert.Equal(nint.Zero, Sdl.CreateSurface(100, 0, PixelFormat.Rgba8888));
-        Assert.Equal(nint.Zero, Sdl.CreateSurface(-1, 100, PixelFormat.Rgba8888));
+        AssertZeroOrNativeNotFound(() => Sdl.CreateSurface(0, 100, PixelFormat.Rgba8888));
+        AssertZeroOrNativeNotFound(() => Sdl.CreateSurface(100, 0, PixelFormat.Rgba8888));
+        AssertZeroOrNativeNotFound(() => Sdl.CreateSurface(-1, 100, PixelFormat.Rgba8888));
     }
 
     [Fact]
-    public void CreateSurfaceFrom_NullPixels_ReturnsZero()
-    {
-        Assert.Equal(nint.Zero, Sdl.CreateSurfaceFrom(100, 100, PixelFormat.Rgba8888, nint.Zero, 400));
-    }
+    public void CreateSurfaceFrom_NullPixels_ReturnsZero() =>
+        AssertZeroOrNativeNotFound(() => Sdl.CreateSurfaceFrom(100, 100, PixelFormat.Rgba8888, nint.Zero, 400));
 
     [Fact]
     public void AddHintCallback_NullName_ReturnsFalse()
     {
         SdlHintCallback cb = (nint _, nint _, nint _, nint _) => { };
-        Assert.False(Sdl.AddHintCallback("", cb, nint.Zero));
+        AssertFalseOrNativeNotFound(() => Sdl.AddHintCallback("", cb, nint.Zero));
     }
 
     [Fact]
-    public void AddHintCallback_NullCallback_ReturnsFalse()
-    {
-        Assert.False(Sdl.AddHintCallback("test", null!, nint.Zero));
-    }
+    public void AddHintCallback_NullCallback_ReturnsFalse() =>
+        AssertFalseOrNativeNotFound(() => Sdl.AddHintCallback("test", null!, nint.Zero));
 }

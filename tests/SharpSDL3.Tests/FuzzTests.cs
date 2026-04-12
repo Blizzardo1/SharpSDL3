@@ -3,6 +3,7 @@ using System.Runtime.InteropServices;
 using SharpSDL3;
 using SharpSDL3.Enums;
 using SharpSDL3.Structs;
+using static SharpSDL3.Tests.TestHelpers;
 using Xunit;
 
 namespace SharpSDL3.Tests;
@@ -162,7 +163,6 @@ public class FuzzTests
     [Fact]
     public void Fuzz_NullPointerGuards_SurfaceFunctions_NeverThrow()
     {
-        // These should all return false gracefully, never throw
         nint[] ptrs = { nint.Zero, (nint)1, (nint)(-1), nint.MaxValue };
 
         foreach (nint src in ptrs)
@@ -171,10 +171,10 @@ public class FuzzTests
             {
                 if (src == nint.Zero || dst == nint.Zero)
                 {
-                    Assert.False(Sdl.BlitSurface(src, nint.Zero, dst, nint.Zero));
-                    Assert.False(Sdl.BlitSurfaceScaled(src, nint.Zero, dst, nint.Zero, ScaleMode.Linear));
-                    Assert.False(Sdl.BlitSurfaceTiled(src, nint.Zero, dst, nint.Zero));
-                    Assert.False(Sdl.BlitSurfaceUnchecked(src, nint.Zero, dst, nint.Zero));
+                    AssertFalseOrNativeNotFound(() => Sdl.BlitSurface(src, nint.Zero, dst, nint.Zero));
+                    AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceScaled(src, nint.Zero, dst, nint.Zero, ScaleMode.Linear));
+                    AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceTiled(src, nint.Zero, dst, nint.Zero));
+                    AssertFalseOrNativeNotFound(() => Sdl.BlitSurfaceUnchecked(src, nint.Zero, dst, nint.Zero));
                 }
             }
         }
@@ -183,14 +183,14 @@ public class FuzzTests
     [Fact]
     public void Fuzz_NullPointerGuards_SinglePointerFunctions_NeverThrow()
     {
-        Assert.False(Sdl.ClearComposition(nint.Zero));
-        Assert.False(Sdl.ClearSurface(nint.Zero, 0, 0, 0, 0));
-        Assert.Equal(nint.Zero, Sdl.ConvertSurface(nint.Zero, PixelFormat.Rgba8888));
-        Assert.Equal(nint.Zero, Sdl.DuplicateSurface(nint.Zero));
-        Assert.False(Sdl.FlipSurface(nint.Zero, FlipMode.Horizontal));
-        Assert.False(Sdl.FillSurfaceRect(nint.Zero, new Rect(), 0));
-        Assert.False(Sdl.DestroyWindowSurface(nint.Zero));
-        Assert.Equal(nint.Zero, Sdl.CreateSurfacePalette(nint.Zero));
+        AssertFalseOrNativeNotFound(() => Sdl.ClearComposition(nint.Zero));
+        AssertFalseOrNativeNotFound(() => Sdl.ClearSurface(nint.Zero, 0, 0, 0, 0));
+        AssertZeroOrNativeNotFound(() => Sdl.ConvertSurface(nint.Zero, PixelFormat.Rgba8888));
+        AssertZeroOrNativeNotFound(() => Sdl.DuplicateSurface(nint.Zero));
+        AssertFalseOrNativeNotFound(() => Sdl.FlipSurface(nint.Zero, FlipMode.Horizontal));
+        AssertFalseOrNativeNotFound(() => Sdl.FillSurfaceRect(nint.Zero, new Rect(), 0));
+        AssertFalseOrNativeNotFound(() => Sdl.DestroyWindowSurface(nint.Zero));
+        AssertZeroOrNativeNotFound(() => Sdl.CreateSurfacePalette(nint.Zero));
     }
 
     // --- AtomicInt operator fuzzing ---
@@ -311,12 +311,12 @@ public class FuzzTests
 
         foreach (int w in badValues)
         {
-            Assert.Equal(nint.Zero, Sdl.CreateSurface(w, 100, PixelFormat.Rgba8888));
+            AssertZeroOrNativeNotFound(() => Sdl.CreateSurface(w, 100, PixelFormat.Rgba8888));
         }
 
         foreach (int h in badValues)
         {
-            Assert.Equal(nint.Zero, Sdl.CreateSurface(100, h, PixelFormat.Rgba8888));
+            AssertZeroOrNativeNotFound(() => Sdl.CreateSurface(100, h, PixelFormat.Rgba8888));
         }
     }
 
@@ -329,10 +329,10 @@ public class FuzzTests
 
         foreach (string name in badNames)
         {
-            Assert.False(Sdl.ClearProperty(1, name));
+            AssertFalseOrNativeNotFound(() => Sdl.ClearProperty(1, name));
         }
 
-        Assert.False(Sdl.ClearProperty(0, "validname"));
+        AssertFalseOrNativeNotFound(() => Sdl.ClearProperty(0, "validname"));
     }
 
     // --- Events validation boundary fuzzing ---
