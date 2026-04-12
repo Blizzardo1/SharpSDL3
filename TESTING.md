@@ -7,10 +7,17 @@ SharpSDL3 uses [xUnit](https://xunit.net/) for unit testing and
 Tests run automatically on every push and pull request via GitHub Actions across
 Linux, Windows, and macOS.
 
-The test suite is designed around a key constraint: the native SDL3 library is
-**not** loaded during CI. All tests exercise the **managed C# code** —
-validation guards, struct marshalling, operator overloads, enum definitions, and
-pure utility functions — without calling into the native SDL3 shared library.
+The test suite has two tiers:
+
+1. **Unit tests** — exercise managed C# code (validation guards, struct
+   marshalling, operator overloads, enums, constants) without requiring the
+   native SDL3 library. These always pass regardless of environment.
+2. **Native integration tests** — call through to the real SDL3 library to
+   verify init, surface creation, blitting, logging, and more. These require
+   SDL3 to be installed and gracefully pass (with a skip message) when it is not.
+
+The CI pipeline builds SDL3 from source (configurable version) on all three
+platforms so both tiers run end-to-end.
 
 ---
 
@@ -36,6 +43,32 @@ pure utility functions — without calling into the native SDL3 shared library.
 | `EnumTests.cs` | Numeric values for `LogCategory`, `LogPriority`, `EventType`, `WindowFlags`; flags combination | ~15 |
 | `ConstantsTests.cs` | All constants non-null, `SDL.` prefix, no duplicates, spot-check specific values | 7 |
 | `SdlExceptionTests.cs` | Message storage, inheritance, throw/catch behavior | 4 |
+
+### Native Integration Tests
+
+`NativeIntegrationTests.cs` uses an `SdlFixture` that calls `Sdl.Init()` once
+for the test collection. If SDL3 is not available, every test writes
+"SKIPPED" to the test output and returns (passes silently).
+
+| Test | What It Verifies |
+|---|---|
+| `Init_Succeeded` | SDL3 initializes without error |
+| `GetVersion_ReturnsNonZero` | Native version call works |
+| `VersionNum_MatchesGetVersion` | Version is >= 3.0.0 |
+| `ClearError_ReturnsTrue` | Error state management |
+| `GetError_AfterClear_ReturnsEmpty` | Error cleared to empty string |
+| `CreateProperties_ReturnsNonZero` | Property group lifecycle |
+| `ClearProperty_OnValidProps_ReturnsTrue` | Property clearing works |
+| `CreateSurface_ValidArgs_ReturnsNonZero` | Surface allocation |
+| `DuplicateSurface_ValidSurface_ReturnsNonZero` | Surface duplication |
+| `ClearSurface_ValidSurface_ReturnsTrue` | Surface fill with color |
+| `FlipSurface_ValidSurface_ReturnsTrue` | Surface flip |
+| `BlitSurface_TwoValidSurfaces_ReturnsTrue` | Surface-to-surface blit |
+| `CreatePalette_ValidCount_ReturnsNonZero` | Palette allocation |
+| `Log_ValidMessage_DoesNotThrow` | Logging works end-to-end |
+| `LogCritical_ValidMessage_DoesNotThrow` | Critical log level works |
+| `GetLogPriority_ValidCategory_ReturnsNonInvalid` | Log priority query |
+| `GetTicks_ReturnsNonZero` | Timer subsystem works |
 
 ### Fuzz Tests
 
@@ -154,7 +187,15 @@ After a workflow run:
 
 ### Workflow: `test.yml`
 
-Triggered on every push and pull request to `main` and `dev`.
+Triggered on push to `main`, `dev`, and `feature/**` tags, and on PRs to
+`main`/`dev`.
+
+The SDL3 version is set once at the top of the workflow:
+
+```yaml
+env:
+  SDL3_VERSION: "3.4.4"    # change this to upgrade
+```
 
 ```
 ┌─────────────────────────────────────────────────────────┐
@@ -162,14 +203,15 @@ Triggered on every push and pull request to `main` and `dev`.
 │                                                         │
 │  1. Checkout                                            │
 │  2. Setup .NET 9                                        │
-│  3. Restore dependencies                                │
-│  4. Build (Release)                                     │
+│  3. Install SDL3                                        │
+│     ├─ Linux/macOS: build from source (cached)          │
+│     └─ Windows: download pre-built DLL                  │
+│  4. Restore + Build                                     │
 │  5. Run tests with Coverlet coverage collection         │
-│  6. [ubuntu only] Install ReportGenerator               │
-│  7. [ubuntu only] Generate HTML + Markdown + Badge      │
-│  8. [ubuntu only] Post coverage summary to job          │
-│  9. Upload test results (.trx) as artifact              │
-│ 10. [ubuntu only] Upload coverage report as artifact    │
+│  6. [ubuntu only] Generate coverage report              │
+│  7. [ubuntu only] Post coverage summary to job          │
+│  8. Upload test results (.trx) as artifact              │
+│  9. [ubuntu only] Upload coverage report as artifact    │
 └─────────────────────────────────────────────────────────┘
 
 ┌─────────────────────────────────────────────────────────┐
@@ -177,10 +219,17 @@ Triggered on every push and pull request to `main` and `dev`.
 │                                                         │
 │  1. Checkout                                            │
 │  2. Setup .NET 9                                        │
-│  3. Restore + Build                                     │
-│  4. Run fuzz tests (filtered by FuzzTests class)        │
+│  3. Build and install SDL3 from source (cached)         │
+│  4. Restore + Build                                     │
+│  5. Run fuzz tests (filtered by FuzzTests class)        │
 └─────────────────────────────────────────────────────────┘
 ```
+
+### Changing the SDL3 Version
+
+Edit the `SDL3_VERSION` environment variable at the top of `.github/workflows/test.yml`.
+The build cache is keyed on version + OS, so changing the version automatically
+rebuilds on the next run.
 
 ### Artifacts Produced
 
