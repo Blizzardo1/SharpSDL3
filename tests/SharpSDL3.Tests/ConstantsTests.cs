@@ -30,7 +30,7 @@ public class ConstantsTests
     }
 
     [Fact]
-    public void AllConstants_StartWithSdlPrefix()
+    public void PropertyConstants_StartWithSdlDotPrefix()
     {
         var fields = typeof(Constants).GetFields(
             System.Reflection.BindingFlags.Public |
@@ -38,9 +38,29 @@ public class ConstantsTests
 
         foreach (var field in fields)
         {
+            if (!field.Name.StartsWith("SdlProp", StringComparison.Ordinal))
+                continue;
+
             var value = (string?)field.GetValue(null);
             Assert.StartsWith("SDL.", value!,
                 StringComparison.Ordinal);
+        }
+    }
+
+    [Fact]
+    public void HintConstants_AreUppercaseWithUnderscores()
+    {
+        var fields = typeof(Constants).GetFields(
+            System.Reflection.BindingFlags.Public |
+            System.Reflection.BindingFlags.Static);
+
+        foreach (var field in fields)
+        {
+            if (!field.Name.StartsWith("SdlHint", StringComparison.Ordinal))
+                continue;
+
+            var value = (string?)field.GetValue(null);
+            Assert.Matches("^[A-Z0-9_]+$", value!);
         }
     }
 
