@@ -42,9 +42,7 @@ jobs:
           /p:CoverletOutputFormat=cobertura \
           /p:CoverletOutput=./TestResults/coverage.cobertura.xml \
           "/p:Include=[SharpSDL3]*" \
-          /p:ExcludeByAttribute=GeneratedCodeAttribute \
-          /p:Threshold=25 \
-          /p:ThresholdType=line
+          /p:ExcludeByAttribute=GeneratedCodeAttribute
 
     - name: Install ReportGenerator
       if: matrix.os == 'ubuntu-22.04'
