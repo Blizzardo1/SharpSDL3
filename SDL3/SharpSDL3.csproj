@@ -11,6 +11,19 @@
 		<GenerateDocumentationFile>True</GenerateDocumentationFile>
 	</PropertyGroup>
 
+	<PropertyGroup>
+		<PackageId>SharpSDL3</PackageId>
+		<Version>0.1.0</Version>
+		<Authors>Blizzardo1</Authors>
+		<Description>C# bindings for SDL3 using modern .NET LibraryImport P/Invoke</Description>
+		<PackageLicenseExpression>Zlib</PackageLicenseExpression>
+		<PackageTags>sdl;sdl3;gamedev;multimedia;bindings;interop</PackageTags>
+		<RepositoryUrl>https://github.com/Blizzardo1/SharpSDL3</RepositoryUrl>
+		<RepositoryType>git</RepositoryType>
+		<IncludeSymbols>true</IncludeSymbols>
+		<SymbolPackageFormat>snupkg</SymbolPackageFormat>
+	</PropertyGroup>
+
 	<ItemGroup>
 	  <Compile Remove="Surface.cs" />
 	</ItemGroup>

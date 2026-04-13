@@ -157,6 +157,38 @@ jobs:
           ./TestResults/**/coverage.cobertura.xml
           ./TestResults/CoverageReport/
 
+  package:
+    name: Build NuGet Package
+    needs: test
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore
+      run: dotnet restore SDL3/SharpSDL3.csproj
+
+    - name: Pack
+      run: |
+        dotnet pack SDL3/SharpSDL3.csproj \
+          -c Release \
+          --no-restore \
+          -o ./artifacts \
+          -p:Version=0.1.0-preview.${{ github.run_number }}
+
+    - name: Upload NuGet package
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-package
+        path: |
+          ./artifacts/*.nupkg
+          ./artifacts/*.snupkg
+
   fuzz:
     name: Fuzz Tests
     runs-on: ubuntu-22.04
