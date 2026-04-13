@@ -111,27 +111,26 @@ jobs:
           --results-directory ./TestResults \
           --collect:"XPlat Code Coverage"
 
-    - name: Find coverage file
-      if: matrix.os == 'ubuntu-22.04'
-      id: find-coverage
-      shell: bash
-      run: |
-        COV=$(find ./TestResults -name "coverage.cobertura.xml" -type f | head -1)
-        echo "Found coverage at: $COV"
-        echo "path=$COV" >> "$GITHUB_OUTPUT"
-
     - name: Install ReportGenerator
       if: matrix.os == 'ubuntu-22.04'
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
     - name: Generate coverage report
-      if: matrix.os == 'ubuntu-22.04' && steps.find-coverage.outputs.path != ''
+      if: matrix.os == 'ubuntu-22.04'
+      shell: bash
       run: |
-        reportgenerator \
-          -reports:"${{ steps.find-coverage.outputs.path }}" \
-          -targetdir:./TestResults/CoverageReport \
-          -reporttypes:"Html;MarkdownSummaryGithub;Badges" \
-          -title:"SharpSDL3 Code Coverage"
+        COV=$(find ./TestResults -name "coverage.cobertura.xml" -type f | head -1)
+        if [ -n "$COV" ]; then
+          echo "Generating report from: $COV"
+          reportgenerator \
+            -reports:"$COV" \
+            -targetdir:./TestResults/CoverageReport \
+            -reporttypes:"Html;MarkdownSummaryGithub;Badges" \
+            -title:"SharpSDL3 Code Coverage"
+        else
+          echo "No coverage file found — skipping report generation"
+          find ./TestResults -type f
+        fi
 
     - name: Post coverage summary to job
       if: matrix.os == 'ubuntu-22.04' && always()
@@ -146,10 +145,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: test-results-${{ matrix.os }}
-        path: ./TestResults/*.trx
+        path: |
+          ./TestResults/**/*.trx
 
     - name: Upload coverage report
-      if: matrix.os == 'ubuntu-22.04'
+      if: matrix.os == 'ubuntu-22.04' && always()
       uses: actions/upload-artifact@v4
       with:
         name: coverage-report
