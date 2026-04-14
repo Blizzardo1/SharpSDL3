@@ -20,7 +20,7 @@ public static unsafe partial class Mixer {
 #if WINDOWS
     private const string NativeLibName = "SDL3_mixer";
 #else
-	private const string NativeLibName = "SDL3_sound";
+    private const string NativeLibName = "SDL3_sound";
 #endif
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
