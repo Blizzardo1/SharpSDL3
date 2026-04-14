@@ -17,11 +17,7 @@ public static unsafe partial class Mixer {
     public const int Micro = 2;
     public const int Minor = 4;
 
-#if WINDOWS
     private const string NativeLibName = "SDL3_mixer";
-#else
-    private const string NativeLibName = "SDL3_sound";
-#endif
 
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void MixChannelFinishedCallback(int channel);
