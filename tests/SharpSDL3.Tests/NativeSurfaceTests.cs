@@ -24,7 +24,7 @@ public class NativeSurfaceTests
     public void Surface_CreateAndDestroy_MultipleFormats()
     {
         if (!RequireSdl()) return;
-        var formats = new[] { PixelFormat.Rgba8888, PixelFormat.Argb8888, PixelFormat.Rgb888 };
+        var formats = new[] { PixelFormat.Rgba8888, PixelFormat.Argb8888, PixelFormat.Bgra8888 };
         foreach (var fmt in formats)
         {
             nint surface = Sdl.CreateSurface(64, 64, fmt);
