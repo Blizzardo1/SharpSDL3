@@ -1,0 +1,247 @@
+name: Tests
+
+on:
+  push:
+    branches: [ main, dev ]
+    tags: [ 'feature/**' ]
+  pull_request:
+    branches: [ main, dev ]
+
+env:
+  SDL3_VERSION: "3.4.4"
+
+jobs:
+  test:
+    name: Unit Tests & Coverage
+    strategy:
+      matrix:
+        os: [ubuntu-22.04, windows-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    # --- SDL3 installation (Linux) ---
+    - name: Install build dependencies (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake pkg-config \
+          libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev \
+          libxi-dev libxss-dev libxtst-dev libxkbcommon-dev libxrender-dev \
+          libwayland-dev libdecor-0-dev \
+          libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev \
+          libasound2-dev libpulse-dev libpipewire-0.3-dev libsndio-dev \
+          libdbus-1-dev libibus-1.0-dev libudev-dev
+
+    - name: Cache SDL3 build (Linux/macOS)
+      if: runner.os != 'Windows'
+      uses: actions/cache@v4
+      id: sdl3-cache
+      with:
+        path: /tmp/sdl3-install
+        key: sdl3-${{ env.SDL3_VERSION }}-${{ runner.os }}
+
+    - name: Build SDL3 from source (Linux/macOS)
+      if: runner.os != 'Windows' && steps.sdl3-cache.outputs.cache-hit != 'true'
+      shell: bash
+      run: |
+        curl -L "https://github.com/libsdl-org/SDL/releases/download/release-${{ env.SDL3_VERSION }}/SDL3-${{ env.SDL3_VERSION }}.tar.gz" \
+          -o /tmp/sdl3-src.tar.gz
+        tar xzf /tmp/sdl3-src.tar.gz -C /tmp
+        cmake -S "/tmp/SDL3-${{ env.SDL3_VERSION }}" -B /tmp/sdl3-build \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_INSTALL_PREFIX=/tmp/sdl3-install \
+          -DSDL_TESTS=OFF -DSDL_EXAMPLES=OFF
+        cmake --build /tmp/sdl3-build --config Release --parallel
+        cmake --install /tmp/sdl3-build
+
+    - name: Install SDL3 system-wide (Linux)
+      if: runner.os == 'Linux'
+      run: |
+        sudo cp /tmp/sdl3-install/lib/libSDL3* /usr/local/lib/
+        sudo ldconfig
+
+    - name: Set SDL3 library path (macOS)
+      if: runner.os == 'macOS'
+      run: echo "DYLD_LIBRARY_PATH=/tmp/sdl3-install/lib" >> "$GITHUB_ENV"
+
+    # --- SDL3 installation (Windows) ---
+    - name: Download SDL3 pre-built (Windows)
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        $url = "https://github.com/libsdl-org/SDL/releases/download/release-${{ env.SDL3_VERSION }}/SDL3-${{ env.SDL3_VERSION }}-win32-x64.zip"
+        Invoke-WebRequest -Uri $url -OutFile "$env:TEMP\sdl3.zip"
+        Expand-Archive -Path "$env:TEMP\sdl3.zip" -DestinationPath "$env:TEMP\sdl3" -Force
+
+    - name: Copy SDL3 DLL to test output (Windows)
+      if: runner.os == 'Windows'
+      shell: pwsh
+      run: |
+        Write-Host "SDL3 archive contents:"
+        Get-ChildItem "$env:TEMP\sdl3" -Recurse | ForEach-Object { Write-Host $_.FullName }
+        $dll = Get-ChildItem "$env:TEMP\sdl3" -Recurse -Filter "SDL3.dll" | Select-Object -First 1
+        if (-not $dll) { throw "SDL3.dll not found in extracted archive" }
+        Write-Host "Found SDL3.dll at: $($dll.FullName)"
+        $testBin = "tests\SharpSDL3.Tests\bin\Release\net9.0"
+        New-Item -ItemType Directory -Path $testBin -Force | Out-Null
+        Copy-Item $dll.FullName -Destination $testBin -Force
+
+    # --- Build and test ---
+    - name: Restore dependencies
+      run: dotnet restore SharpSDL3.sln
+
+    - name: Build
+      run: dotnet build SharpSDL3.sln -c Release --no-restore
+
+    - name: Run tests with coverage
+      shell: bash
+      run: |
+        dotnet test tests/SharpSDL3.Tests/SharpSDL3.Tests.csproj \
+          -c Release \
+          --no-build \
+          --verbosity normal \
+          --logger "trx;LogFileName=test-results.trx" \
+          --results-directory ./TestResults \
+          --collect:"XPlat Code Coverage"
+
+    - name: Install ReportGenerator
+      if: matrix.os == 'ubuntu-22.04'
+      run: dotnet tool install --global dotnet-reportgenerator-globaltool
+
+    - name: Generate coverage report
+      if: matrix.os == 'ubuntu-22.04'
+      shell: bash
+      run: |
+        COV=$(find ./TestResults -name "coverage.cobertura.xml" -type f | head -1)
+        if [ -n "$COV" ]; then
+          echo "Generating report from: $COV"
+          reportgenerator \
+            -reports:"$COV" \
+            -targetdir:./TestResults/CoverageReport \
+            -reporttypes:"Html;MarkdownSummaryGithub;Badges" \
+            -title:"SharpSDL3 Code Coverage"
+        else
+          echo "No coverage file found — skipping report generation"
+          find ./TestResults -type f
+        fi
+
+    - name: Post coverage summary to job
+      if: matrix.os == 'ubuntu-22.04' && always()
+      shell: bash
+      run: |
+        if [ -f ./TestResults/CoverageReport/SummaryGithub.md ]; then
+          cat ./TestResults/CoverageReport/SummaryGithub.md >> "$GITHUB_STEP_SUMMARY"
+        fi
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: test-results-${{ matrix.os }}
+        path: |
+          ./TestResults/**/*.trx
+
+    - name: Upload coverage report
+      if: matrix.os == 'ubuntu-22.04' && always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: coverage-report
+        path: |
+          ./TestResults/**/coverage.cobertura.xml
+          ./TestResults/CoverageReport/
+
+  package:
+    name: Build NuGet Package
+    needs: test
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Restore
+      run: dotnet restore SDL3/SharpSDL3.csproj
+
+    - name: Pack
+      run: |
+        dotnet pack SDL3/SharpSDL3.csproj \
+          -c Release \
+          --no-restore \
+          -o ./artifacts \
+          -p:Version=0.1.0-preview.${{ github.run_number }}
+
+    - name: Upload NuGet package
+      uses: actions/upload-artifact@v4
+      with:
+        name: nuget-package
+        path: |
+          ./artifacts/*.nupkg
+          ./artifacts/*.snupkg
+
+  fuzz:
+    name: Fuzz Tests
+    runs-on: ubuntu-22.04
+
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Setup .NET 9
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: '9.0.x'
+
+    - name: Install build dependencies
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y build-essential cmake pkg-config \
+          libx11-dev libxext-dev libxrandr-dev libxcursor-dev libxfixes-dev \
+          libxi-dev libxss-dev libxtst-dev libxkbcommon-dev libxrender-dev \
+          libwayland-dev libdecor-0-dev \
+          libdrm-dev libgbm-dev libgl1-mesa-dev libgles2-mesa-dev libegl1-mesa-dev \
+          libasound2-dev libpulse-dev libpipewire-0.3-dev libsndio-dev \
+          libdbus-1-dev libibus-1.0-dev libudev-dev
+
+    - name: Cache SDL3 build
+      uses: actions/cache@v4
+      id: sdl3-cache-fuzz
+      with:
+        path: /tmp/sdl3-install
+        key: sdl3-${{ env.SDL3_VERSION }}-Linux
+
+    - name: Build SDL3 from source
+      if: steps.sdl3-cache-fuzz.outputs.cache-hit != 'true'
+      run: |
+        curl -L "https://github.com/libsdl-org/SDL/releases/download/release-${{ env.SDL3_VERSION }}/SDL3-${{ env.SDL3_VERSION }}.tar.gz" \
+          -o /tmp/sdl3-src.tar.gz
+        tar xzf /tmp/sdl3-src.tar.gz -C /tmp
+        cmake -S "/tmp/SDL3-${{ env.SDL3_VERSION }}" -B /tmp/sdl3-build \
+          -DCMAKE_BUILD_TYPE=Release \
+          -DCMAKE_INSTALL_PREFIX=/tmp/sdl3-install \
+          -DSDL_TESTS=OFF -DSDL_EXAMPLES=OFF
+        cmake --build /tmp/sdl3-build --config Release --parallel
+        cmake --install /tmp/sdl3-build
+
+    - name: Install SDL3 system-wide
+      run: |
+        sudo cp /tmp/sdl3-install/lib/libSDL3* /usr/local/lib/
+        sudo ldconfig
+
+    - name: Restore dependencies
+      run: dotnet restore SharpSDL3.sln
+
+    - name: Build
+      run: dotnet build SharpSDL3.sln -c Release --no-restore
+
+    - name: Run fuzz tests
+      run: dotnet test tests/SharpSDL3.Tests/SharpSDL3.Tests.csproj -c Release --no-build --verbosity normal --filter "FullyQualifiedName~FuzzTests"
