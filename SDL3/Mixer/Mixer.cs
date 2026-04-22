@@ -11,17 +11,47 @@ public static unsafe partial class Mixer {
     public const string EffectMaxSpeed = "EFFECTSMAXSPEED";
 
     /// <summary>
-    /// Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
+    /// The current major version of SDL_mixer headers.
     /// </summary>
+    /// <remarks>
+    /// <para>If this were SDL_mixer version 3.2.1, this value would be 3.</para>
+    /// <para><strong>Version</strong>: This macro is available since SDL_mixer 3.0.0</para>
+    /// </remarks>
     public const int Major = 3;
-    public const int Micro = 2;
+    
+    /// <summary>
+    /// The current minor version of SDL_mixer headers.
+    /// </summary>
+    /// <remarks>
+    /// <para>If this were SDL_mixer version 3.2.1, this value would be 2.</para>
+    /// <para><strong>Version</strong>: This macro is available since SDL_mixer 3.0.0</para>
+    /// </remarks>
     public const int Minor = 4;
+    
+    /// <summary>
+    /// The current micro (or patchlevel) version of SDL_mixer headers.
+    /// </summary>
+    /// <remarks>
+    /// <para>If this were SDL_mixer version 3.2.1, this value would be 1.</para>
+    /// <para><strong>Version</strong>: This macro is available since SDL_mixer 3.0.0</para>
+    /// </remarks>
+    public const int Micro = 2;
 
+#if WINDOWS
     private const string NativeLibName = "SDL3_mixer";
+#else
+	private const string NativeLibName = "SDL3_sound";
+#endif
 
+    /// <summary>
+    /// 
+    /// </summary>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate void MixChannelFinishedCallback(int channel);
 
+    /// <summary>
+    /// 
+    /// </summary>
     [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
     public delegate bool MixEachSoundFontCallback(string a, nint b);
 
@@ -106,9 +136,9 @@ public static unsafe partial class Mixer {
             return -1;
         }
 
-        nint pChunk = Sdl.Malloc(Sdl.SizeOf<Chunk>());
+        var pChunk = Sdl.Malloc(Sdl.SizeOf<Chunk>());
         *(Chunk*)pChunk = chunk;
-        int result = Mix_FadeInChannel(channel, pChunk, loops, ms);
+        var result = Mix_FadeInChannel(channel, pChunk, loops, ms);
         Sdl.Free(pChunk);
 
         if (result == -1) {
@@ -124,7 +154,7 @@ public static unsafe partial class Mixer {
             return -1;
         }
 
-        int result = Mix_FadeInChannelTimed(channel, (nint)Unsafe.AsPointer(ref chunk), loops, ms, ticks);
+        var result = Mix_FadeInChannelTimed(channel, (nint)Unsafe.AsPointer(ref chunk), loops, ms, ticks);
 
         if (result == -1) {
             Sdl.LogError(LogCategory.Error, $"Failed to fade in channel: {Sdl.GetError()}");
@@ -255,14 +285,14 @@ public static unsafe partial class Mixer {
     }
 
     public static string GetSoundFonts() {
-        string soundFonts = Mix_GetSoundFonts();
+        var soundFonts = Mix_GetSoundFonts();
         return string.IsNullOrEmpty(soundFonts) 
             ? throw new SdlException($"Failed to get sound fonts: {Sdl.GetError()}") 
             : soundFonts;
     }
 
     public static string GetTimidityCfg() {
-        string timidityCfg = Mix_GetTimidityCfg();
+        var timidityCfg = Mix_GetTimidityCfg();
         return string.IsNullOrEmpty(timidityCfg) 
             ? throw new SdlException($"Failed to get Timidity configuration: {Sdl.GetError()}")
             : timidityCfg;
@@ -394,7 +424,7 @@ public static unsafe partial class Mixer {
     /// Use <see cref="Quit" /> to deinitialize when done.
     /// </remarks>
     public static MixInit Initialize(MixInit flags) {
-        MixInit result = Mix_Init(flags);
+        var result = Mix_Init(flags);
         if (result != flags) {
             Sdl.LogError(LogCategory.Audio, $"Failed to initialize SDL3_mixer with flags {flags}: {Sdl.GetError()}");
         }
@@ -413,8 +443,8 @@ public static unsafe partial class Mixer {
     /// If <paramref name="spec" /> is null, SDL3_mixer uses reasonable defaults.
     /// </remarks>
     public static void OpenAudio(AudioDeviceId deviceId, AudioSpec? spec = null) {
-        AudioSpec nativeSpec = spec ?? default;
-        bool result = Mix_OpenAudio(deviceId, spec.HasValue ? (nint)Unsafe.AsPointer(ref nativeSpec) : nint.Zero);
+        var nativeSpec = spec ?? default;
+        var result = Mix_OpenAudio(deviceId, spec.HasValue ? (nint)Unsafe.AsPointer(ref nativeSpec) : nint.Zero);
         if (!result) {
             Sdl.LogError(LogCategory.Audio, $"Failed to open audio device: {Sdl.GetError()}");
         }
@@ -492,14 +522,14 @@ public static unsafe partial class Mixer {
             throw new ArgumentNullException(nameof(filePath));
         }
 
-        nint musicPtr = Mix_LoadMUS(filePath);
+        var musicPtr = Mix_LoadMUS(filePath);
         if (musicPtr == nint.Zero) {
             Sdl.LogError(LogCategory.Audio, $"Failed to load music file: {Sdl.GetError()}");
             return default; // Return default Music struct instead of comparing.
         }
 
-        // Use unsafe code to avoid runtime marshalling
-        Music music = *(Music*)musicPtr;
+        // Use unsafe code to avoid runtime marshaling
+        var music = *(Music*)musicPtr;
 
         if (music.Interface != nint.Zero) return music;
         
@@ -518,8 +548,8 @@ public static unsafe partial class Mixer {
     /// <remarks>
     /// Dispose of the returned <see cref="Chunk" /> when no longer needed.
     /// </remarks>
+    
     /// <summary>Loads a WAV from a file path.</summary>
-
     /// <param name="path">the file path of the WAV file to open.</param>
     /// <param name="spec">a pointer to an SDL_AudioSpec that will be set to the WAVE data's format details on successful return.</param>
     /// <param name="audio_buf">a pointer filled with the audio data, allocated by the function.</param>
@@ -531,20 +561,20 @@ public static unsafe partial class Mixer {
     /// <seealso cref="free" />
     /// <seealso cref="LoadWAV_IO" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success. audio_buf will be filled with a pointerto an allocated buffer containing the audio data, and audio_len is filledwith the length of that audio buffer in bytes.</returns>
+    /// <returns>Returns <see langword="true" /> on success. audio_buf will be filled with a pointer to an allocated buffer containing the audio data, and audio_len is filled with the length of that audio buffer in bytes.</returns>
 
     public static unsafe Chunk LoadWav(string filePath) {
         if (string.IsNullOrEmpty(filePath)) {
             throw new ArgumentNullException(nameof(filePath));
         }
 
-        nint chunkPtr = Mix_LoadWAV(filePath);
+        var chunkPtr = Mix_LoadWAV(filePath);
         if (chunkPtr == nint.Zero) {
             Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
             return default;
         }
 
-        Chunk chunk = *(Chunk*)chunkPtr;
+        var chunk = *(Chunk*)chunkPtr;
         if (chunk.AudioBuffer != nint.Zero) return chunk;
         
         Sdl.LogError(LogCategory.Audio, $"Failed to load WAV file: {Sdl.GetError()}");
@@ -566,9 +596,9 @@ public static unsafe partial class Mixer {
             return -1;
         }
 
-        nint pChunk = (nint)Unsafe.AsPointer(ref chunk);
+        var pChunk = (nint)Unsafe.AsPointer(ref chunk);
 
-        int result = Mix_PlayChannel(channel, pChunk, loops);
+        var result = Mix_PlayChannel(channel, pChunk, loops);
         if (result == -1 && channel == -1) {
             throw new SdlException($"No available channel for playback: {Sdl.GetError()}");
         }
@@ -586,7 +616,7 @@ public static unsafe partial class Mixer {
             return -1;
         }
 
-        nint pChunk = (nint)Unsafe.AsPointer(ref chunk);
+        var pChunk = (nint)Unsafe.AsPointer(ref chunk);
 
         return Mix_PlayChannelTimed(channel, pChunk, loops, ticks);
     }
@@ -700,11 +730,11 @@ public static unsafe partial class Mixer {
      * the data, but it cannot be resized (so you can't add a reverb effect that
      * goes past the end of the buffer without saving some state between runs to
      * add it into the next callback, or resample the buffer to a smaller size to
-     * speed it up, etc).
+     * speed it up, etc.).
      *
      * The `arg` pointer supplied here is passed to the callback as-is, for
      * whatever the callback might want to do with it (keep track of some ongoing
-     * state, settings, etc).
+     * state, settings, etc.).
      *
      * Passing a <see langword="null" /> callback disables the post-mix callback until such a time as
      * a new one callback is set.
@@ -792,7 +822,7 @@ public static unsafe partial class Mixer {
             return false;
         }
 
-        bool result = Mix_PlayMusic(music, loops);
+        var result = Mix_PlayMusic(music, loops);
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to play music: {Sdl.GetError()}");
         }
