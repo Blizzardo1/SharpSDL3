@@ -28,7 +28,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentNullException(nameof(filter), "Filter function pointer cannot be null.");
         }
         // Call the native method and check the result
-        SdlBool result = SDL_AddEventWatch(filter, userdata);
+        var result = SDL_AddEventWatch(filter, userdata);
         return result;
     }
 
@@ -126,7 +126,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there is no event filter set.</returns>
     public static bool GetEventFilter(out SdlEventFilter filter, out nint userdata) {
         // Call the native method and check the result
-        SdlBool result = SDL_GetEventFilter(out filter, out userdata);
+        var result = SDL_GetEventFilter(out filter, out userdata);
         return result;
     }
 
@@ -148,7 +148,7 @@ public static unsafe partial class Sdl {
 
         try {
             // Call the native method and check the result
-            nint result = SDL_GetWindowFromEvent(ref @event);
+            var result = SDL_GetWindowFromEvent(ref @event);
             // Perform additional validation or processing if needed
             if (result == nint.Zero) {
                 LogError(LogCategory.Error, "Failed to get window from event.");
@@ -225,7 +225,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentException("minType cannot be greater than maxType.", nameof(minType));
         }
         // Call the native method
-        int result = SDL_PeepEvents(events, numEvents, action, (uint)minType, (uint)maxType);
+        var result = SDL_PeepEvents(events, numEvents, action, (uint)minType, (uint)maxType);
         return result;
     }
 
@@ -245,7 +245,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> if this got an event or <see langword="false" /> if there are none available.</returns>
     public static bool PollEvent(out Event @event) {
         // Call the native method and check the result
-        SdlBool result = SDL_PollEvent(out @event);
+        var result = SDL_PollEvent(out @event);
 
         if (!result) {
             return false;
@@ -387,7 +387,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> if there was an error while waiting for events; call <see cref="GetError()" /> for more information.</returns>
     public static bool WaitEvent(out Event @event) {
-        SdlBool result = SDL_WaitEvent(out @event);
+        var result = SDL_WaitEvent(out @event);
 
         if (!result) {
             LogError(LogCategory.Error, "Failed to wait for event.");
@@ -417,7 +417,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(timeoutMs), "Timeout value cannot be negative.");
         }
 
-        SdlBool result = SDL_WaitEventTimeout(out @event, timeoutMs);
+        var result = SDL_WaitEventTimeout(out @event, timeoutMs);
         if (!result) {
             LogError(LogCategory.Error, "Failed to wait for event with timeout.");
         }

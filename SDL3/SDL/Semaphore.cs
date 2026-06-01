@@ -8,7 +8,7 @@ namespace SharpSDL3;
 public static partial class Sdl {
 
     public static nint Create(uint initialValue) {
-        nint sem = SDL_CreateSemaphore(initialValue);
+        var sem = SDL_CreateSemaphore(initialValue);
         if (sem == 0) {
             throw new InvalidOperationException("CreateSemaphore failed");
         }

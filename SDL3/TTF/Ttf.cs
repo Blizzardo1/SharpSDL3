@@ -143,7 +143,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Font CopyFont(Font existingFont) {
-        Font font = TTF_CopyFont(existingFont.Handle);
+        var font = TTF_CopyFont(existingFont.Handle);
         return font;
     }
 
@@ -163,11 +163,11 @@ public static unsafe partial class Ttf {
         if (device == nint.Zero) {
             throw new ArgumentNullException(nameof(device), "Device cannot be null.");
         }
-        nint tePtr = TTF_CreateGPUTextEngine(device);
+        var tePtr = TTF_CreateGPUTextEngine(device);
         if (tePtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create renderer text engine. SDL Error: {Sdl.GetError()}");
         }
-        TextEngine engine = *(TextEngine*)tePtr;
+        var engine = *(TextEngine*)tePtr;
         engine.Handle = tePtr;
         return engine;
     }
@@ -208,11 +208,11 @@ public static unsafe partial class Ttf {
         if (renderer == nint.Zero) {
             throw new ArgumentNullException(nameof(renderer), "Renderer cannot be null.");
         }
-        nint tePtr = TTF_CreateRendererTextEngine(renderer);
+        var tePtr = TTF_CreateRendererTextEngine(renderer);
         if (tePtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create renderer text engine. SDL Error: {Sdl.GetError()}");
         }
-        TextEngine engine = *(TextEngine*)tePtr;
+        var engine = *(TextEngine*)tePtr;
         engine.Handle = tePtr;
         return engine;
     }
@@ -234,12 +234,12 @@ public static unsafe partial class Ttf {
         if (props == 0) {
             throw new ArgumentNullException(nameof(props), "Properties cannot be null.");
         }
-        nint tePtr = TTF_CreateRendererTextEngineWithProperties(props);
+        var tePtr = TTF_CreateRendererTextEngineWithProperties(props);
         if (tePtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create renderer text engine. SDL Error: {Sdl.GetError()}");
         }
 
-        TextEngine engine = *(TextEngine*)tePtr;
+        var engine = *(TextEngine*)tePtr;
         engine.Handle = tePtr;
 
         return engine;
@@ -255,11 +255,11 @@ public static unsafe partial class Ttf {
     /// <returns>(TTF_TextEngine *) Returns aTTF_TextEngine object or <see langword="null" /> on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static unsafe TextEngine CreateSurfaceTextEngine() {
-        nint tePtr = TTF_CreateSurfaceTextEngine();
+        var tePtr = TTF_CreateSurfaceTextEngine();
         if (tePtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create surface text engine. SDL Error: {Sdl.GetError()}");
         }
-        TextEngine engine = *(TextEngine*)tePtr;
+        var engine = *(TextEngine*)tePtr;
         engine.Handle = tePtr;
         return engine;
     }
@@ -277,7 +277,7 @@ public static unsafe partial class Ttf {
     /// <returns>(TTF_Text *) Returns a <see cref="Text" /> object or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Text CreateText(TextEngine engine, Font font, string text, int length) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        nint tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
+        var tPtr = TTF_CreateText(engine.Handle, font.Handle, text, (nuint)length);
         if (tPtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to create text. SDL Error: {Sdl.GetError()}");
         }
@@ -477,7 +477,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font's ascent.</returns>
 
     public static int GetFontAscent(Font font) {
-        int result = TTF_GetFontAscent(font.Handle);
+        var result = TTF_GetFontAscent(font.Handle);
         if (result < 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font ascent. SDL Error: {Sdl.GetError()}");
             return 0;
@@ -515,8 +515,8 @@ public static unsafe partial class Ttf {
     }
 
     public static bool GetFontDpi(Font font, out int hdpi, out int vdpi) {
-        nint pHdpi = Sdl.Malloc(4);
-        nint pVdpi = Sdl.Malloc(4);
+        var pHdpi = Sdl.Malloc(4);
+        var pVdpi = Sdl.Malloc(4);
 
         bool result = TTF_GetFontDPI(font.Handle, pHdpi, pVdpi);
 
@@ -550,11 +550,11 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Size GetFontDpi(Font font) {
-        if (GetFontDpi(font, out int hdpi, out int vdpi)) {
+        if (GetFontDpi(font, out var hdpi, out var vdpi)) {
             return new Size(hdpi, vdpi);
         }
 
-        return new();
+        return new Size();
     }
 
     /// <summary>Query a font's family name.</summary>
@@ -568,7 +568,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font's family name.</returns>
 
     public static string GetFontFamilyName(Font font) {
-        string result = TTF_GetFontFamilyName(font.Handle);
+        var result = TTF_GetFontFamilyName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
             Sdl.LogError(LogCategory.System, $"Failed to get font family name. SDL Error: {Sdl.GetError()}");
         }
@@ -587,7 +587,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font generation or 0 on failure; call <see cref="Sdl.GetError()" />for more information.</returns>
 
     public static int GetFontGeneration(Font font) {
-        int generation = TTF_GetFontGeneration(font.Handle);
+        var generation = TTF_GetFontGeneration(font.Handle);
         if (generation == 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font generation. SDL Error: {Sdl.GetError()}");
         }
@@ -605,7 +605,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font's height.</returns>
 
     public static int GetFontHeight(Font font) {
-        int result = TTF_GetFontHeight(font.Handle);
+        var result = TTF_GetFontHeight(font.Handle);
         if (result < 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font height. SDL Error: {Sdl.GetError()}");
             return 0;
@@ -671,7 +671,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font's current outline value.</returns>
 
     public static int GetFontOutline(Font font) {
-        int result = TTF_GetFontOutline(font.Handle);
+        var result = TTF_GetFontOutline(font.Handle);
         if (result < 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font outline. SDL Error: {Sdl.GetError()}");
             return 0;
@@ -690,7 +690,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns a valid property ID on success or 0 on failure;call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static int GetFontProperties(Font font) {
-        int props = TTF_GetFontProperties(font.Handle);
+        var props = TTF_GetFontProperties(font.Handle);
         if (props == 0) {
             throw new InvalidOperationException($"Failed to get font properties. SDL Error: {Sdl.GetError()}");
         }
@@ -735,7 +735,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns the size of the font, or 0.0f on failure; call<see cref="Sdl.GetError()" /> for more information.</returns>
     public static float GetFontSize(Font font) {
-        float size = TTF_GetFontSize(font.Handle);
+        var size = TTF_GetFontSize(font.Handle);
         if (size <= 0.01f) {
             Sdl.LogError(LogCategory.Error, $"Failed to get font size. SDL Error: {Sdl.GetError()}");
         }
@@ -768,7 +768,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the font's style name.</returns>
 
     public static string GetFontStyleName(Font font) {
-        string result = TTF_GetFontStyleName(font.Handle);
+        var result = TTF_GetFontStyleName(font.Handle);
         if (string.IsNullOrEmpty(result)) {
             Sdl.LogError(LogCategory.System, $"Failed to get font style name. SDL Error: {Sdl.GetError()}");
         }
@@ -815,9 +815,9 @@ public static unsafe partial class Ttf {
     /// </remarks>
 
     public static void GetFreeTypeVersion(out int major, out int minor, out int patch) {
-        nint ma = Sdl.Malloc(4);
-        nint mi = Sdl.Malloc(4);
-        nint pa = Sdl.Malloc(4);
+        var ma = Sdl.Malloc(4);
+        var mi = Sdl.Malloc(4);
+        var pa = Sdl.Malloc(4);
 
         TTF_GetFreeTypeVersion(ma, mi, pa);
         major = Marshal.ReadInt32(ma);
@@ -928,7 +928,7 @@ public static unsafe partial class Ttf {
             throw new ArgumentOutOfRangeException(nameof(ch), "The character code must be a valid Unicode code point.");
         }
 
-        int script = TTF_GetGlyphScript(ch);
+        var script = TTF_GetGlyphScript(ch);
 
         if (script == 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get glyph script for character {ch}. SDL Error: {Sdl.GetError()}");
@@ -986,9 +986,9 @@ public static unsafe partial class Ttf {
     /// </remarks>
 
     public static void GetHarfBuzzVersion(out int major, out int minor, out int patch) {
-        nint ma = Sdl.Malloc(4);
-        nint mi = Sdl.Malloc(4);
-        nint pa = Sdl.Malloc(4);
+        var ma = Sdl.Malloc(4);
+        var mi = Sdl.Malloc(4);
+        var pa = Sdl.Malloc(4);
         major = Marshal.ReadInt32(ma);
         minor = Marshal.ReadInt32(mi);
         patch = Marshal.ReadInt32(pa);
@@ -1016,16 +1016,16 @@ public static unsafe partial class Ttf {
     public static unsafe bool GetNextTextSubString(Text text, SubString substring, out SubString next) {
         if (text.Handle == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Text cannot be null.");
-            next = new();
+            next = new SubString();
             return false;
         }
 
         if (substring.Handle == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Substring cannot be null.");
-            next = new();
+            next = new SubString();
             return false;
         }
-        nint pNext = Sdl.Malloc(Sdl.SizeOf<SubString>());
+        var pNext = Sdl.Malloc(Sdl.SizeOf<SubString>());
         try {
             bool result = TTF_GetNextTextSubString(text.Handle, substring.Handle, pNext);
 
@@ -1054,7 +1054,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static SubString GetNextTextSubString(Text text, SubString substring) {
-        _ = GetNextTextSubString(text, substring, out SubString next);
+        _ = GetNextTextSubString(text, substring, out var next);
         return next;
     }
 
@@ -1068,7 +1068,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns the number of FreeType font faces.</returns>
 
     public static int GetNumFontFaces(Font font) {
-        int result = TTF_GetNumFontFaces(font.Handle);
+        var result = TTF_GetNumFontFaces(font.Handle);
         if (result < 0) {
             Sdl.LogError(LogCategory.Error, $"Failed to get number of font faces. SDL Error: {Sdl.GetError()}");
             return 0;
@@ -1092,17 +1092,17 @@ public static unsafe partial class Ttf {
     public static unsafe bool GetPreviousTextSubString(Text text, SubString substring, out SubString previous) {
         if (text.Handle == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Text cannot be null.");
-            previous = new();
+            previous = new SubString();
             return false;
         }
 
         if (substring.Handle == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Substring cannot be null.");
-            previous = new();
+            previous = new SubString();
             return false;
         }
 
-        nint pPrevious = Sdl.Malloc(Sdl.SizeOf<SubString>());
+        var pPrevious = Sdl.Malloc(Sdl.SizeOf<SubString>());
         try {
             bool result = TTF_GetPreviousTextSubString(text.Handle, substring.Handle, pPrevious);
             if (!result) {
@@ -1129,7 +1129,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static SubString GetPreviousTextSubString(Text text, SubString substring) {
-        _ = GetPreviousTextSubString(text, substring, out SubString previous);
+        _ = GetPreviousTextSubString(text, substring, out var previous);
         return previous;
     }
 
@@ -1216,10 +1216,10 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint pr = Sdl.Malloc(1);
-        nint pg = Sdl.Malloc(1);
-        nint pb = Sdl.Malloc(1);
-        nint pa = Sdl.Malloc(1);
+        var pr = Sdl.Malloc(1);
+        var pg = Sdl.Malloc(1);
+        var pb = Sdl.Malloc(1);
+        var pa = Sdl.Malloc(1);
         try {
             bool result = TTF_GetTextColor(text.Handle, pr, pg, pb, pa);
             if (!result) {
@@ -1256,7 +1256,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Color GetTextColor(Text text) {
-        GetTextColor(text, out byte r, out byte g, out byte b, out byte a);
+        GetTextColor(text, out var r, out var g, out var b, out var a);
         return new Color() { R = r, G = g, B = b, A = a };
     }
 
@@ -1264,10 +1264,10 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint pr = Sdl.Malloc(sizeof(float));
-        nint pg = Sdl.Malloc(sizeof(float));
-        nint pb = Sdl.Malloc(sizeof(float));
-        nint pa = Sdl.Malloc(sizeof(float));
+        var pr = Sdl.Malloc(sizeof(float));
+        var pg = Sdl.Malloc(sizeof(float));
+        var pb = Sdl.Malloc(sizeof(float));
+        var pa = Sdl.Malloc(sizeof(float));
         try {
             bool result = TTF_GetTextColorFloat(text.Handle, pr, pg, pb, pa);
 
@@ -1306,7 +1306,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static bool GetTextColorFloat(Text text, out FColor color) {
-        bool result = GetTextColorFloat(text, out float r, out float g, out float b, out float a);
+        var result = GetTextColorFloat(text, out var r, out var g, out var b, out var a);
         color = new FColor() { R = r, G = g, B = b, A = a };
         return result;
     }
@@ -1342,11 +1342,11 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint tePtr = TTF_GetTextEngine(text.Handle);
+        var tePtr = TTF_GetTextEngine(text.Handle);
         if (tePtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to get text engine. SDL Error: {Sdl.GetError()}");
         }
-        TextEngine engine = *(TextEngine*)tePtr;
+        var engine = *(TextEngine*)tePtr;
         engine.Handle = tePtr;
         return engine;
     }
@@ -1365,12 +1365,12 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint fPtr = TTF_GetTextFont(text.Handle);
+        var fPtr = TTF_GetTextFont(text.Handle);
         if (fPtr == nint.Zero) {
             throw new InvalidOperationException($"Failed to get text font. SDL Error: {Sdl.GetError()}");
         }
 #pragma warning disable CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
-        Font font = *(Font*)fPtr;
+        var font = *(Font*)fPtr;
 #pragma warning restore CS8500 // This takes the address of, gets the size of, or declares a pointer to a managed type
         font.Handle = fPtr;
         return font;
@@ -1380,8 +1380,8 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint px = Sdl.Malloc(sizeof(int));
-        nint py = Sdl.Malloc(sizeof(int));
+        var px = Sdl.Malloc(sizeof(int));
+        var py = Sdl.Malloc(sizeof(int));
 
         bool result = TTF_GetTextPosition(text.Handle, px, py);
 
@@ -1406,7 +1406,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
 
     public static Point GetTextPosition(Text text) {
-        GetTextPosition(text, out int x, out int y);
+        GetTextPosition(text, out var x, out var y);
         return new Point() { X = x, Y = y };
     }
 
@@ -1449,8 +1449,8 @@ public static unsafe partial class Ttf {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
 
-        nint pw = Sdl.Malloc(sizeof(int));
-        nint ph = Sdl.Malloc(sizeof(int));
+        var pw = Sdl.Malloc(sizeof(int));
+        var ph = Sdl.Malloc(sizeof(int));
 
         bool result = TTF_GetTextSize(text.Handle, pw, ph);
 
@@ -1477,7 +1477,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static Size GetTextSize(Text text) {
-        GetTextSize(text, out int w, out int h);
+        GetTextSize(text, out var w, out var h);
         return new Size() { Width = w, Height = h };
     }
 
@@ -1530,7 +1530,7 @@ public static unsafe partial class Ttf {
             throw new ArgumentOutOfRangeException(nameof(line), "Line index cannot be negative.");
         }
 
-        nint pSubstring = Sdl.Malloc(Sdl.SizeOf<SubString>());
+        var pSubstring = Sdl.Malloc(Sdl.SizeOf<SubString>());
         try {
             bool result = TTF_GetTextSubStringForLine(text.Handle, line, pSubstring);
 
@@ -1565,7 +1565,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static SubString GetTextSubStringForLine(Text text, int line) {
-        bool result = GetTextSubStringForLine(text, line, out SubString substring);
+        var result = GetTextSubStringForLine(text, line, out var substring);
         if (!result) {
             Sdl.LogError(LogCategory.Error, "Failed to get text substring for line.");
             return new SubString();
@@ -1588,7 +1588,7 @@ public static unsafe partial class Ttf {
         if (text.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
-        nint pSubstring = Sdl.Malloc(Sdl.SizeOf<SubString>());
+        var pSubstring = Sdl.Malloc(Sdl.SizeOf<SubString>());
 
         bool result = TTF_GetTextSubStringForPoint(text.Handle, x, y, pSubstring);
         if (!result) {
@@ -1626,7 +1626,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static SubString GetTextSubStringForPoint(Text text, int x, int y) {
-        bool result = GetTextSubStringForPoint(text, x, y, out SubString substring);
+        var result = GetTextSubStringForPoint(text, x, y, out var substring);
         if (!result) {
             Sdl.LogError(LogCategory.Error, "Failed to get text substring for point.");
             return new SubString();
@@ -1644,7 +1644,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static SubString GetTextSubStringForPoint(Text text, Point point) {
-        bool result = GetTextSubStringForPoint(text, point, out SubString substring);
+        var result = GetTextSubStringForPoint(text, point, out var substring);
         if (!result) {
             Sdl.LogError(LogCategory.Error, "Failed to get text substring for point.");
             return new SubString();
@@ -1671,17 +1671,17 @@ public static unsafe partial class Ttf {
             throw new ArgumentOutOfRangeException(nameof(offset), "Offset cannot be negative.");
         }
 
-        nint pCount = Sdl.Malloc(sizeof(int));
+        var pCount = Sdl.Malloc(sizeof(int));
 
-        nint pSubStrings = TTF_GetTextSubStringsForRange(text.Handle, offset, length, pCount);
+        var pSubStrings = TTF_GetTextSubStringsForRange(text.Handle, offset, length, pCount);
         count = Marshal.ReadInt32(pCount);
 
         if (pSubStrings == nint.Zero) {
             Sdl.LogError(LogCategory.Error, "Failed to get text substrings for range.");
         }
 
-        SubString[] substrings = new SubString[count];
-        for (int i = 0; i < count; i++) {
+        var substrings = new SubString[count];
+        for (var i = 0; i < count; i++) {
             // Issue: might be a problem with PtrToStructure<T>
             substrings[i] = *(SubString*)(pSubStrings + i * (int)Sdl.SizeOf<SubString>());
         }
@@ -1706,7 +1706,7 @@ public static unsafe partial class Ttf {
             throw new ArgumentNullException(nameof(text), "Text cannot be null.");
         }
 
-        nint pWrapWidth = Sdl.Malloc(sizeof(int));
+        var pWrapWidth = Sdl.Malloc(sizeof(int));
 
         bool result = TTF_GetTextWrapWidth(text.Handle, pWrapWidth);
 
@@ -1789,7 +1789,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool MeasureString(Font font, string text, nuint length, int maxWidth, out int measuredWidth, out int measuredLength) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        bool result = TTF_MeasureString(font.Handle, text, length, maxWidth, out int mW, out nuint mL);
+        bool result = TTF_MeasureString(font.Handle, text, length, maxWidth, out var mW, out var mL);
 
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
@@ -1814,7 +1814,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static bool MeasureString(Font font, string text, int maxWidth, out int measuredWidth, out int measuredLength) {
         ArgumentException.ThrowIfNullOrEmpty(text);
-        bool result = MeasureString(font, text, (nuint)text.Length, maxWidth, out int mW, out int mL);
+        var result = MeasureString(font, text, (nuint)text.Length, maxWidth, out var mW, out var mL);
 
         if (!result) {
             Sdl.LogError(LogCategory.Error, $"Failed to measure string '{text}'. SDL Error: {Sdl.GetError()}");
@@ -1837,7 +1837,7 @@ public static unsafe partial class Ttf {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
 
     public static bool MeasureString(Font font, string text, int maxWidth, out Size measuredSize) {
-        bool result = MeasureString(font, text, maxWidth, out int mW, out int mL);
+        var result = MeasureString(font, text, maxWidth, out var mW, out var mL);
 
         measuredSize = new Size(mW, mL);
         return result;
@@ -1855,7 +1855,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Size MeasureString(Font font, string text, int maxWidth) {
-        MeasureString(font, text, maxWidth, out Size measuredSize);
+        MeasureString(font, text, maxWidth, out var measuredSize);
         return measuredSize;
     }
 
@@ -1909,7 +1909,7 @@ public static unsafe partial class Ttf {
             throw new FileNotFoundException($"Font file not found: {file}", file);
         }
 
-        Font fontPtr = TTF_OpenFont(file, ptSize);
+        var fontPtr = TTF_OpenFont(file, ptSize);
 
         return fontPtr;
     }
@@ -1918,7 +1918,7 @@ public static unsafe partial class Ttf {
         if (src.Handle == nint.Zero) {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        Font font = TTF_OpenFontIO(src.Handle, closeIo, ptSize);
+        var font = TTF_OpenFontIO(src.Handle, closeIo, ptSize);
         return font;
     }
 
@@ -1932,7 +1932,7 @@ public static unsafe partial class Ttf {
     /// </remarks>
     /// <returns>(TTF_Font *) Returns a valid TTF_Font, or <see langword="null" /> on failure; call <see cref="Sdl.GetError()" /> for more information.</returns>
     public static Font OpenFontWithProperties(int props) {
-        Font font = TTF_OpenFontWithProperties(props);
+        var font = TTF_OpenFontWithProperties(props);
         return font;
     }
 
@@ -1966,11 +1966,11 @@ public static unsafe partial class Ttf {
             throw new ArgumentException("Both foreground and background colors cannot be fully transparent.");
         }
 
-        nint result = TTF_RenderGlyph_LCD(font.Handle, ch, fg, bg);
+        var result = TTF_RenderGlyph_LCD(font.Handle, ch, fg, bg);
         if (result == nint.Zero) {
             Sdl.LogError(LogCategory.Error, $"Failed to render glyph {ch} with LCD quality. SDL Error: {Sdl.GetError()}");
         }
-        Surface surface = *(Surface*)result;
+        var surface = *(Surface*)result;
         return surface;
     }
 
@@ -2536,7 +2536,7 @@ public static unsafe partial class Ttf {
         if (str.Length != 4) {
             throw new ArgumentException("String must be exactly 4 characters long.", nameof(str));
         }
-        for(int i = 0; i < 4; i++) {
+        for(var i = 0; i < 4; i++) {
             if (str[i] == '\0') {
                 throw new ArgumentException("String must not contain null characters.", nameof(str));
             }
@@ -2555,7 +2555,7 @@ public static unsafe partial class Ttf {
     /// <returns>a pointer filled in with the 4 character representation of the tag.</returns>
     /// <exception cref="ArgumentException">Thrown if the length of characters exceeds 5: 4 tag characters and one null-terminated character.</exception>
     public static string TagToString(int tag, ulong size) {
-        TTF_TagToString(tag, out string str, size);
+        TTF_TagToString(tag, out var str, size);
         return str.Length > 5 ? throw new ArgumentException("String must be at most 4 characters long with a null-terminated character '\\0'.", nameof(tag)) : str[..4];
     }
 

@@ -14,7 +14,7 @@ public static class OwnedStringMarshaller {
     /// </summary>
     /// <returns>A managed string.</returns>
     public static string ConvertToManaged(nint unmanaged) {
-        string? result = Marshal.PtrToStringUTF8(unmanaged);
+        var result = Marshal.PtrToStringUTF8(unmanaged);
         return result ?? "";
     }
 }

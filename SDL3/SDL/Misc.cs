@@ -29,7 +29,7 @@ public static partial class Sdl {
             throw new ArgumentException("URL is not well-formed.", nameof(url));
         }
 
-        SdlBool result = SDL_OpenURL(url);
+        var result = SDL_OpenURL(url);
         if (!result) {
             LogError(LogCategory.Error, $"Failed to open URL: {url}");
         }

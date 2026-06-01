@@ -15,7 +15,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int Close(nint dev) {
-        int result = SDL_hid_close(dev);
+        var result = SDL_hid_close(dev);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to close HID device: {GetError()}");
         }
@@ -23,7 +23,7 @@ public static unsafe partial class Sdl {
     }
 
     public static uint DeviceChangeCount() {
-        uint result = SDL_hid_device_change_count();
+        var result = SDL_hid_device_change_count();
         if (result == 0) {
             LogError(LogCategory.Error, $"Failed to get HID device change count: {GetError()}");
         }
@@ -31,7 +31,7 @@ public static unsafe partial class Sdl {
     }
 
     public static Span<HidDeviceInfo> Enumerate(ushort vendorId, ushort productId) {
-        nint result = SDL_hid_enumerate(vendorId, productId);
+        var result = SDL_hid_enumerate(vendorId, productId);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to enumerate HID devices: {GetError()}");
             return [];
@@ -51,7 +51,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int Exit() {
-        int result = SDL_hid_exit();
+        var result = SDL_hid_exit();
         if (result != 0) {
             LogError(LogCategory.Error, $"Failed to exit HID API: {GetError()}");
         }
@@ -69,7 +69,7 @@ public static unsafe partial class Sdl {
     }
 
     public static Span<HidDeviceInfo> GetDeviceInfo(nint dev) {
-        nint result = SDL_hid_get_device_info(dev);
+        var result = SDL_hid_get_device_info(dev);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to get HID device info: {GetError()}");
             return [];
@@ -89,7 +89,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetFeatureReport(nint dev, nint data, nuint length) {
-        int result = SDL_hid_get_feature_report(dev, data, length);
+        var result = SDL_hid_get_feature_report(dev, data, length);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get feature report from HID device: {GetError()}");
         }
@@ -97,7 +97,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetIndexedString(nint dev, int stringIndex, string @string, nuint maxLen) {
-        int result = SDL_hid_get_indexed_string(dev, stringIndex, @string, maxLen);
+        var result = SDL_hid_get_indexed_string(dev, stringIndex, @string, maxLen);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get indexed string from HID device: {GetError()}");
         }
@@ -105,7 +105,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetInputReport(nint dev, nint data, nuint length) {
-        int result = SDL_hid_get_input_report(dev, data, length);
+        var result = SDL_hid_get_input_report(dev, data, length);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get input report from HID device: {GetError()}");
         }
@@ -113,7 +113,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetManufacturerString(nint dev, string @string, nuint maxLen) {
-        int result = SDL_hid_get_manufacturer_string(dev, @string, maxLen);
+        var result = SDL_hid_get_manufacturer_string(dev, @string, maxLen);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get manufacturer string from HID device: {GetError()}");
         }
@@ -121,7 +121,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetProductString(nint dev, string @string, nuint maxLen) {
-        int result = SDL_hid_get_product_string(dev, @string, maxLen);
+        var result = SDL_hid_get_product_string(dev, @string, maxLen);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get product string from HID device: {GetError()}");
         }
@@ -129,7 +129,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetReportDescriptor(nint dev, nint buf, nuint bufSize) {
-        int result = SDL_hid_get_report_descriptor(dev, buf, bufSize);
+        var result = SDL_hid_get_report_descriptor(dev, buf, bufSize);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get report descriptor from HID device: {GetError()}");
         }
@@ -137,7 +137,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int GetSerialNumberString(nint dev, string @string, nuint maxLen) {
-        int result = SDL_hid_get_serial_number_string(dev, @string, maxLen);
+        var result = SDL_hid_get_serial_number_string(dev, @string, maxLen);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to get serial number string from HID device: {GetError()}");
         }
@@ -145,7 +145,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int Init() {
-        int result = SDL_hid_init();
+        var result = SDL_hid_init();
         if (result != 0) {
             LogError(LogCategory.Error, $"Failed to initialize HID API: {GetError()}");
         }
@@ -153,7 +153,7 @@ public static unsafe partial class Sdl {
     }
 
     public static nint Open(ushort vendorId, ushort productId, string serialNumber) {
-        nint result = SDL_hid_open(vendorId, productId, serialNumber);
+        var result = SDL_hid_open(vendorId, productId, serialNumber);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to open HID device: {GetError()}");
         }
@@ -161,7 +161,7 @@ public static unsafe partial class Sdl {
     }
 
     public static nint OpenPath(string path) {
-        nint result = SDL_hid_open_path(path);
+        var result = SDL_hid_open_path(path);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to open HID device at path {path}: {GetError()}");
         }
@@ -169,7 +169,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int Read(nint dev, nint data, nuint length) {
-        int result = SDL_hid_read(dev, data, length);
+        var result = SDL_hid_read(dev, data, length);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to read from HID device: {GetError()}");
         }
@@ -177,7 +177,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int ReadTimeout(nint dev, nint data, nuint length, int milliseconds) {
-        int result = SDL_hid_read_timeout(dev, data, length, milliseconds);
+        var result = SDL_hid_read_timeout(dev, data, length, milliseconds);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to read from HID device: {GetError()}");
         }
@@ -185,7 +185,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int SendFeatureReport(nint dev, nint data, nuint length) {
-        int result = SDL_hid_send_feature_report(dev, data, length);
+        var result = SDL_hid_send_feature_report(dev, data, length);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to send feature report to HID device: {GetError()}");
         }
@@ -193,7 +193,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int SetNonblocking(nint dev, int nonBlock) {
-        int result = SDL_hid_set_nonblocking(dev, nonBlock);
+        var result = SDL_hid_set_nonblocking(dev, nonBlock);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to set non-blocking mode for HID device: {GetError()}");
         }
@@ -201,7 +201,7 @@ public static unsafe partial class Sdl {
     }
 
     public static int Write(nint dev, nint data, nuint length) {
-        int result = SDL_hid_write(dev, data, length);
+        var result = SDL_hid_write(dev, data, length);
         if (result < 0) {
             LogError(LogCategory.Error, $"Failed to write to HID device: {GetError()}");
         }

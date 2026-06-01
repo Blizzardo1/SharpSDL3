@@ -23,7 +23,7 @@ public static unsafe partial class Sdl {
         if (camera == nint.Zero) {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
-        nint frame = SDL_AcquireCameraFrame(camera, out timestampNs);
+        var frame = SDL_AcquireCameraFrame(camera, out timestampNs);
         if (frame == nint.Zero) {
             LogError(LogCategory.Error, "Failed to acquire camera frame. Camera handle may be invalid.");
         }
@@ -60,7 +60,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(index), "Index is out of range.");
         }
 
-        string driverName = SDL_GetCameraDriver(index);
+        var driverName = SDL_GetCameraDriver(index);
         if (string.IsNullOrEmpty(driverName)) {
             LogError(LogCategory.Error, $"Failed to retrieve camera driver at index {index}.");
         }
@@ -84,7 +84,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
         
-        SdlBool result = SDL_GetCameraFormat(camera, out spec);
+        var result = SDL_GetCameraFormat(camera, out spec);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get camera format. Camera handle may be invalid.");
         }
@@ -105,7 +105,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
         
-        uint cameraId = SDL_GetCameraID(camera);
+        var cameraId = SDL_GetCameraID(camera);
         if (cameraId == 0) {
             LogError(LogCategory.Error, $"Failed to get camera ID. Camera handle may be invalid.");
         }
@@ -122,7 +122,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a human-readable device name or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
     public static string GetCameraName(uint instanceId) {
-        string cameraName = SDL_GetCameraName(instanceId);
+        var cameraName = SDL_GetCameraName(instanceId);
         if (string.IsNullOrEmpty(cameraName)) {
             LogError(LogCategory.Error, $"Failed to retrieve camera name for instance ID {instanceId}.");
         }
@@ -144,7 +144,7 @@ public static unsafe partial class Sdl {
         if (camera == nint.Zero) {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
-        int permissionState = SDL_GetCameraPermissionState(camera);
+        var permissionState = SDL_GetCameraPermissionState(camera);
         if (permissionState < 0) {
             LogError(LogCategory.Error, $"Failed to get camera permission state. Error code: {permissionState}");
         }
@@ -163,7 +163,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the position of the camera on the system hardware.</returns>
     public static CameraPosition GetCameraPosition(uint instanceId) {
-        CameraPosition position = SDL_GetCameraPosition(instanceId);
+        var position = SDL_GetCameraPosition(instanceId);
 
         // Add validation or additional logic to make the wrapper less trivial
         if (!Enum.IsDefined(position)) {
@@ -184,7 +184,7 @@ public static unsafe partial class Sdl {
         if (camera == nint.Zero) {
             throw new ArgumentNullException(nameof(camera), "Camera handle cannot be null.");
         }
-        uint properties = SDL_GetCameraProperties(camera);
+        var properties = SDL_GetCameraProperties(camera);
         if (properties == 0) {
             LogError(LogCategory.Error, "Failed to get camera properties. Camera handle may be invalid.");
         }
@@ -203,7 +203,7 @@ public static unsafe partial class Sdl {
     /// <para>This should be freed with <see cref="Free" /> when it is no longer needed.</para>
     /// </returns>
     public static Span<nint> GetCameras(out int count) {
-        nint result = SDL_GetCameras(out count);
+        var result = SDL_GetCameras(out count);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve camera list.");
@@ -215,13 +215,13 @@ public static unsafe partial class Sdl {
             return [];
         }
 
-        nint[] ptrArray = new nint[count];
+        var ptrArray = new nint[count];
 
-        for (int i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
             ptrArray[i] = Marshal.ReadIntPtr(result, i * sizeof(nint));
         }
 
-        Span<nint> cameras = new(ptrArray);
+        Span<nint> cameras = new Span<IntPtr>(ptrArray);
 
         return cameras.ToArray();
     }
@@ -243,7 +243,7 @@ public static unsafe partial class Sdl {
     /// </returns>
 
     public static Span<nint> GetCameraSupportedFormats(uint instanceId, out int count) {
-        nint result = SDL_GetCameraSupportedFormats(instanceId, out count);
+        var result = SDL_GetCameraSupportedFormats(instanceId, out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve camera formats.");
             return [];
@@ -254,13 +254,13 @@ public static unsafe partial class Sdl {
             return [];
         }
 
-        nint[] ptrArray = new nint[count];
+        var ptrArray = new nint[count];
 
-        for (int i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
             ptrArray[i] = Marshal.ReadIntPtr(result, i * sizeof(nint));
         }
 
-        Span<nint> cameraFormats = new(ptrArray);
+        Span<nint> cameraFormats = new Span<IntPtr>(ptrArray);
 
         return cameraFormats.ToArray();
     }
@@ -274,7 +274,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the current camera driver or <see langword="null" /> if no driver has been initialized.</returns>
     public static string GetCurrentCameraDriver() {
-        string driverName = SDL_GetCurrentCameraDriver();
+        var driverName = SDL_GetCurrentCameraDriver();
         if (string.IsNullOrEmpty(driverName)) {
             LogError(LogCategory.Error, "Failed to retrieve current camera driver.");
         }
@@ -309,7 +309,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Camera *) Returns an SDL_Camera object or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint OpenCamera(uint instanceId, ref CameraSpec spec) {
-        nint camera = SDL_OpenCamera(instanceId, ref spec);
+        var camera = SDL_OpenCamera(instanceId, ref spec);
         if (camera == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to open camera with instance ID {instanceId}.");
         }

@@ -33,7 +33,7 @@ public static partial class Sdl {
             throw new ArgumentException("Interval must be greater than zero.", nameof(interval));
         }
 
-        uint timerId = SDL_AddTimer(interval, callback, userdata);
+        var timerId = SDL_AddTimer(interval, callback, userdata);
 
         return timerId == 0 ? throw new InvalidOperationException("Failed to add timer. SDL_AddTimer returned 0.") : timerId;
     }
@@ -62,7 +62,7 @@ public static partial class Sdl {
             throw new ArgumentException("Interval must be greater than zero.", nameof(interval));
         }
 
-        uint timerId = SDL_AddTimerNS(interval, callback, userdata);
+        var timerId = SDL_AddTimerNS(interval, callback, userdata);
 
         return timerId == 0 ? throw new InvalidOperationException("Failed to add timer. SDL_AddTimerNS returned 0.") : timerId;
     }
@@ -84,9 +84,9 @@ public static partial class Sdl {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ms));
         }
 
-        ulong start = GetTicks();
+        var start = GetTicks();
         SDL_Delay(ms);
-        ulong end = GetTicks();
+        var end = GetTicks();
 
         if (end - start < ms) {
             throw new InvalidOperationException("Delay did not delay for the expected duration.");
@@ -109,9 +109,9 @@ public static partial class Sdl {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
         }
 
-        ulong start = GetTicksNs();
+        var start = GetTicksNs();
         SDL_DelayNS(ns);
-        ulong end = GetTicksNs();
+        var end = GetTicksNs();
 
         if (end - start < ns) {
             throw new InvalidOperationException("DelayNS did not delay for the expected duration.");
@@ -135,9 +135,9 @@ public static partial class Sdl {
             throw new ArgumentException("Delay duration must be greater than zero.", nameof(ns));
         }
 
-        ulong start = GetTicksNs();
+        var start = GetTicksNs();
         SDL_DelayPrecise(ns);
-        ulong end = GetTicksNs();
+        var end = GetTicksNs();
 
         if (end - start < ns) {
             throw new InvalidOperationException("DelayPrecise did not delay for the expected duration.");

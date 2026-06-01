@@ -29,7 +29,7 @@ public static partial class Sdl {
             throw new ArgumentException("Mode cannot be null or empty.", nameof(mode));
         }
 
-        nint result = SDL_AsyncIOFromFile(file, mode);
+        var result = SDL_AsyncIOFromFile(file, mode);
 
         return result == nint.Zero
             ? throw new InvalidOperationException($"Failed to create AsyncIO from file: {file} with mode: {mode}")
@@ -64,7 +64,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_AsyncIOQueue *) Returns a new task queue object or<see langword="null" /> if there was an error; call <see cref="GetError()" /> for more information.</returns>
     public static nint CreateAsyncIoQueue() {
-        nint result = SDL_CreateAsyncIOQueue();
+        var result = SDL_CreateAsyncIOQueue();
         return result == nint.Zero
             ? throw new InvalidOperationException("Failed to create AsyncIO queue.")
             : result;
@@ -105,7 +105,7 @@ public static partial class Sdl {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
-        SdlBool result = SDL_GetAsyncIOResult(queue, out outcome);
+        var result = SDL_GetAsyncIOResult(queue, out outcome);
         return !result ? throw new InvalidOperationException("Failed to get AsyncIO result.") : result;
     }
 
@@ -209,7 +209,7 @@ public static partial class Sdl {
         if (queue == nint.Zero) {
             throw new ArgumentException("Invalid queue handle.", nameof(queue));
         }
-        SdlBool result = SDL_WaitAsyncIOResult(queue, out outcome, timeoutMs);
+        var result = SDL_WaitAsyncIOResult(queue, out outcome, timeoutMs);
         return !result ? throw new InvalidOperationException("Failed to wait for AsyncIO result.") : result;
     }
 

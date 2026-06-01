@@ -34,7 +34,7 @@ public static partial class Sdl {
     /// <returns>(SDL_MouseID *) Returns a 0 terminated array of mouseinstance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free" /> when itis no longer needed.</returns>
 
     public static nint GetMice(out int count) {
-        nint result = SDL_GetMice(out count);
+        var result = SDL_GetMice(out count);
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get mice.");
         }
@@ -58,7 +58,7 @@ public static partial class Sdl {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
 
-        string mouseName = SDL_GetMouseNameForID(instanceId);
+        var mouseName = SDL_GetMouseNameForID(instanceId);
         if (string.IsNullOrEmpty(mouseName)) {
             throw new InvalidOperationException($"Failed to retrieve mouse name for instance ID {instanceId}.");
         }
@@ -124,7 +124,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a 32-bit bitmask ofthe button state that can be bitwise-compared against theSDL_BUTTON_MASK(X) macro.</returns>
     public static MouseButtonFlags GetRelativeMouseState(out float x, out float y) {
-        MouseButtonFlags state = SDL_GetRelativeMouseState(out x, out y);
+        var state = SDL_GetRelativeMouseState(out x, out y);
 
         if (x < -10000 || x > 10000 || y < -10000 || y > 10000) {
             throw new InvalidOperationException("Relative mouse coordinates are out of expected range.");
@@ -186,7 +186,7 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(y), "Mouse coordinates must be non-negative.");
         }
 
-        SdlBool result = SDL_WarpMouseGlobal(x, y);
+        var result = SDL_WarpMouseGlobal(x, y);
         if (!result) {
             LogError(LogCategory.Error, "Failed to warp mouse globally.");
         }
@@ -214,7 +214,7 @@ public static partial class Sdl {
             throw new ArgumentException("Window handle cannot be null.", nameof(window));
         }
 
-        SdlBool result = SDL_SetWindowRelativeMouseMode(window, enabled);
+        var result = SDL_SetWindowRelativeMouseMode(window, enabled);
         if (!result) {
             LogError(LogCategory.Error, $"Failed to set relative mouse mode for the specified window. {GetError()}");
         }
@@ -237,7 +237,7 @@ public static partial class Sdl {
             throw new ArgumentException("Window handle cannot be null.", nameof(window));
         }
 
-        SdlBool result = SDL_GetWindowRelativeMouseMode(window);
+        var result = SDL_GetWindowRelativeMouseMode(window);
         if (!result) {
             LogError(LogCategory.Error, $"Failed to retrieve relative mouse mode for the specified window. {GetError()}");
         }
@@ -261,7 +261,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static bool CaptureMouse(bool enabled) {
-        SdlBool result = SDL_CaptureMouse(enabled);
+        var result = SDL_CaptureMouse(enabled);
         if (!result) {
             LogError(LogCategory.Error, "Failed to capture mouse.");
         }
@@ -313,7 +313,7 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(hotY), "Hotspot Y coordinate must be within the cursor dimensions.");
         }
 
-        nint cursor = SDL_CreateCursor(data, mask, w, h, hotX, hotY);
+        var cursor = SDL_CreateCursor(data, mask, w, h, hotX, hotY);
         if (cursor == nint.Zero) {
             throw new InvalidOperationException("Failed to create cursor.");
         }
@@ -359,7 +359,7 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(hotY), "Hotspot coordinates must be non-negative.");
         }
 
-        nint cursor = SDL_CreateColorCursor(surface, hotX, hotY);
+        var cursor = SDL_CreateColorCursor(surface, hotX, hotY);
         if (cursor == nint.Zero) {
             throw new InvalidOperationException("Failed to create color cursor.");
         }
@@ -382,7 +382,7 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(id), "Invalid system cursor ID.");
         }
 
-        nint cursor = SDL_CreateSystemCursor(id);
+        var cursor = SDL_CreateSystemCursor(id);
         if (cursor == nint.Zero) {
             throw new InvalidOperationException("Failed to create system cursor.");
         }
@@ -409,7 +409,7 @@ public static partial class Sdl {
             throw new ArgumentException("Cursor handle cannot be null.", nameof(cursor));
         }
 
-        SdlBool result = SDL_SetCursor(cursor);
+        var result = SDL_SetCursor(cursor);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set the specified cursor.");
         }

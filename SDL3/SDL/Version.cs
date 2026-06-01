@@ -16,7 +16,6 @@ public static partial class Sdl {
     /// <seealso cref="GetVersion" />
     /// </remarks>
     /// <returns>Returns an arbitrary string, uniquely identifying the exactrevision of the SDL library in use.</returns>
-
     public static string GetRevision() {
         return SDL_GetRevision();
     }

@@ -39,7 +39,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        int effectId = SDL_CreateHapticEffect(haptic, ref effect);
+        var effectId = SDL_CreateHapticEffect(haptic, ref effect);
         if (effectId < 0) {
             LogError(LogCategory.Error, "Failed to create haptic effect.");
         }
@@ -100,7 +100,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        uint features = SDL_GetHapticFeatures(haptic);
+        var features = SDL_GetHapticFeatures(haptic);
         if (features == 0) {
             LogError(LogCategory.Error, "Failed to retrieve haptic features.");
         }
@@ -119,7 +119,7 @@ public static partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        nint haptic = SDL_GetHapticFromID(instanceId);
+        var haptic = SDL_GetHapticFromID(instanceId);
         if (haptic == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to retrieve haptic device with ID: {instanceId}");
         }
@@ -138,7 +138,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        uint id = SDL_GetHapticID(haptic);
+        var id = SDL_GetHapticID(haptic);
         if (id == 0) {
             LogError(LogCategory.Error, "Failed to retrieve haptic ID.");
         }
@@ -158,7 +158,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        string name = SDL_GetHapticName(haptic);
+        var name = SDL_GetHapticName(haptic);
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "Failed to retrieve haptic name.");
         }
@@ -180,7 +180,7 @@ public static partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        string name = SDL_GetHapticNameForID(instanceId);
+        var name = SDL_GetHapticNameForID(instanceId);
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, $"Failed to retrieve haptic name for ID: {instanceId}");
             return string.Empty;
@@ -198,7 +198,7 @@ public static partial class Sdl {
     /// <returns>(SDL_HapticID *) Returns a 0 terminated array of hapticdevice instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" />for more information. This should be freed with <see cref="Free" /> whenit is no longer needed.</returns>
 
     public static Span<nint> GetHaptics() {
-        nint result = SDL_GetHaptics(out int count);
+        var result = SDL_GetHaptics(out var count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve haptic devices.");
             return [];
@@ -207,8 +207,8 @@ public static partial class Sdl {
             LogWarn(LogCategory.System, "No haptic devices found.");
             return [];
         }
-        nint[] ptrs = new nint[count];
-        for (int i = 0; i < count; i++) {
+        var ptrs = new nint[count];
+        for (var i = 0; i < count; i++) {
             ptrs[i] = Marshal.ReadIntPtr(result, i * Marshal.SizeOf<nint>());
         }
         return new Span<nint>(ptrs);
@@ -232,7 +232,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        int maxEffects = SDL_GetMaxHapticEffects(haptic);
+        var maxEffects = SDL_GetMaxHapticEffects(haptic);
         if (maxEffects < 0) {
             LogError(LogCategory.Error, "Failed to retrieve maximum haptic effects.");
         }
@@ -254,7 +254,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        int maxEffectsPlaying = SDL_GetMaxHapticEffectsPlaying(haptic);
+        var maxEffectsPlaying = SDL_GetMaxHapticEffectsPlaying(haptic);
         if (maxEffectsPlaying < 0) {
             LogError(LogCategory.Error, "Failed to retrieve maximum haptic effects playing.");
         }
@@ -275,7 +275,7 @@ public static partial class Sdl {
         if (haptic == nint.Zero) {
             throw new ArgumentException("Haptic handle cannot be null.", nameof(haptic));
         }
-        int numAxes = SDL_GetNumHapticAxes(haptic);
+        var numAxes = SDL_GetNumHapticAxes(haptic);
         if (numAxes < 0) {
             LogError(LogCategory.Error, "Failed to retrieve number of haptic axes.");
         }
@@ -382,7 +382,7 @@ public static partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        nint haptic = SDL_OpenHaptic(instanceId);
+        var haptic = SDL_OpenHaptic(instanceId);
         if (haptic == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to open haptic device with ID: {instanceId}");
         }
@@ -405,7 +405,7 @@ public static partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick handle cannot be null.", nameof(joystick));
         }
-        nint haptic = SDL_OpenHapticFromJoystick(joystick);
+        var haptic = SDL_OpenHapticFromJoystick(joystick);
         if (haptic == nint.Zero) {
             LogError(LogCategory.Error, "Failed to open haptic from joystick.");
         }
@@ -421,7 +421,7 @@ public static partial class Sdl {
     /// <returns>(SDL_Haptic *) Returns the haptic device identifier or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenHapticFromMouse() {
-        nint haptic = SDL_OpenHapticFromMouse();
+        var haptic = SDL_OpenHapticFromMouse();
         if (haptic == nint.Zero) {
             LogError(LogCategory.Error, "Failed to open haptic from mouse.");
         }

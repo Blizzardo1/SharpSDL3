@@ -16,7 +16,7 @@ public static partial class Sdl {
 
         LogInfo(LogCategory.System, $"Showing message box with title: {Marshal.PtrToStringAnsi(messageboxdata.Title)}");
         // Call the native method
-        SdlBool result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
+        var result = SDL_ShowMessageBox(ref messageboxdata, out buttonid);
 
         // Check the result and handle errors
         if (!result) {
@@ -135,7 +135,7 @@ public static partial class Sdl {
 
         var buttonDataArray = new MessageBoxButtonData[buttonData.Length];
 
-        for (int i = 0; i < buttonData.Length; i++) {
+        for (var i = 0; i < buttonData.Length; i++) {
             buttonDataArray[i] = new MessageBoxButtonData {
                 Flags = accelerator == (MessageBoxDefaultButton)buttonData[i][2] ? accelerator : MessageBoxDefaultButton.EscapeKeyDefault,
                 ButtonID = (int)buttonData[i][1],
@@ -154,7 +154,7 @@ public static partial class Sdl {
         };
 
         try {
-            bool result = ShowMessageBox(ref messageboxdata, out int buttonid);
+            var result = ShowMessageBox(ref messageboxdata, out var buttonid);
 
             if (!result) {
                 throw new InvalidOperationException("Failed to display the message box.");
@@ -163,7 +163,7 @@ public static partial class Sdl {
             return (MessageBoxResult)buttonid;
         } finally {
             // Ensure all unmanaged resources are freed
-            foreach (MessageBoxButtonData button in buttonDataArray) {
+            foreach (var button in buttonDataArray) {
                 Marshal.FreeHGlobal(button.Text);
             }
 
@@ -191,7 +191,7 @@ public static partial class Sdl {
             throw new ArgumentException("Title and message cannot be null or empty.");
         }
 
-        SdlBool result = SDL_ShowSimpleMessageBox(flags, title, message, window);
+        var result = SDL_ShowSimpleMessageBox(flags, title, message, window);
 
         if (!result) {
             throw new InvalidOperationException("Failed to display the simple message box.");

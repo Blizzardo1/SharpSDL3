@@ -28,7 +28,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetIoProperties(IoStream context) {
-        uint result = SDL_GetIOProperties(context.Handle);
+        var result = SDL_GetIOProperties(context.Handle);
         return result == 0 ? throw new IOException($"GetIOProperties failed: {GetError()}") : result;
     }
 
@@ -40,7 +40,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the size of the data stream in the <see cref="IoStream" /> on success or a negative error code on failure; call <see cref="GetError()" /> for more information.</returns>
     public static long GetIoSize(IoStream context) {
-        long result = SDL_GetIOSize(context.Handle);
+        var result = SDL_GetIOSize(context.Handle);
         return result == 0 ? throw new IOException($"GetIOSize failed: {GetError()}") : result;
     }
 
@@ -55,7 +55,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns an <see cref="IoStatus" /> enum with the current state.</returns>
     public static IoStatus GetIoStatus(IoStream context) {
-        IoStatus result = SDL_GetIOStatus(context.Handle);
+        var result = SDL_GetIOStatus(context.Handle);
         return result == 0 ? throw new IOException($"GetIOStatus failed: {GetError()}") : result;
     }
 
@@ -75,7 +75,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns a pointer to a new <see cref="IoStream" /> structure or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static IoStream IoFromConstMem(nint mem, nuint size) {
-        nint result = SDL_IOFromConstMem(mem, size);
+        var result = SDL_IOFromConstMem(mem, size);
         if (result == nint.Zero) {
             throw new IOException($"IOFromConstMem failed: {GetError()}");
         }
@@ -100,7 +100,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns a pointer to a new <see cref="IoStream" /> structure or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static IoStream IoFromDynamicMem() {
-        nint result = SDL_IOFromDynamicMem();
+        var result = SDL_IOFromDynamicMem();
         if (result == nint.Zero) {
             throw new IOException($"IOFromDynamicMem failed: {GetError()}");
         }
@@ -112,7 +112,7 @@ public static partial class Sdl {
     }
 
     public static IoStream IoFromFile(string file, string mode) {
-        nint result = SDL_IOFromFile(file, mode);
+        var result = SDL_IOFromFile(file, mode);
         if (result == nint.Zero) {
             throw new IOException($"IOFromFile failed: {GetError()}");
         }
@@ -140,7 +140,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_IOStream *) Returns a pointer to a new <see cref="IoStream" /> structure or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static IoStream IoFromMem(nint mem, nuint size) {
-        nint result = SDL_IOFromMem(mem, size);
+        var result = SDL_IOFromMem(mem, size);
         if (result == nint.Zero) {
             throw new IOException($"IOFromMem failed: {GetError()}");
         }
@@ -163,7 +163,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of bytes written or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nuint IoPrintf(IoStream context, string fmt) {
-        nuint result = SDL_IOprintf(context.Handle, fmt);
+        var result = SDL_IOprintf(context.Handle, fmt);
         return result == 0 ? throw new IOException($"IOprintf failed: {GetError()}") : result;
     }
 
@@ -181,7 +181,7 @@ public static partial class Sdl {
     /// <returns>(void *) Returns the data or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint LoadFile(string file, out nuint dataSize) {
         // Initialize the variable to avoid CS0165
-        nint result = SDL_LoadFile(file, out nuint ds);
+        var result = SDL_LoadFile(file, out var ds);
         if (result == 0) {
             throw new IOException($"LoadFile failed: {GetError()}");
         }
@@ -191,7 +191,7 @@ public static partial class Sdl {
 
     public static nint LoadFileIo(IoStream src, out nuint dataSize, bool closeIo) {
         // Initialize the variable to avoid CS0165
-        nint result = SDL_LoadFile_IO(src.Handle, out nuint ds, closeIo);
+        var result = SDL_LoadFile_IO(src.Handle, out var ds, closeIo);
         if (result == 0) {
             throw new IOException($"LoadFile_IO failed: {GetError()}");
         }
@@ -201,7 +201,7 @@ public static partial class Sdl {
     }
 
     public static IoStream OpenIo(ref IoStreamInterface iFace, nint userdata) {
-        nint result = SDL_OpenIO(ref iFace, userdata);
+        var result = SDL_OpenIO(ref iFace, userdata);
         if (result == 0) {
             throw new IOException($"OpenIO failed: {GetError()}");
         }
@@ -214,7 +214,7 @@ public static partial class Sdl {
     }
 
     public static nuint ReadIo(IoStream context, nint ptr, nuint size) {
-        nuint result = SDL_ReadIO(context.Handle, ptr, size);
+        var result = SDL_ReadIO(context.Handle, ptr, size);
         return result == 0 ? throw new IOException($"ReadIO failed: {GetError()}") : result;
     }
 
@@ -230,7 +230,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS16Be(IoStream src, out short value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS16BE(src.Handle, out short v);
+        bool result = SDL_ReadS16BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS16BE failed: {GetError()}");
         }
@@ -250,7 +250,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS16Le(IoStream src, out short value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS16LE(src.Handle, out short v);
+        bool result = SDL_ReadS16LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS16LE failed: {GetError()}");
         }
@@ -270,7 +270,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS32Be(IoStream src, out int value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS32BE(src.Handle, out int v);
+        bool result = SDL_ReadS32BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS32BE failed: {GetError()}");
         }
@@ -290,7 +290,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS32Le(IoStream src, out int value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS32LE(src.Handle, out int v);
+        bool result = SDL_ReadS32LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS32LE failed: {GetError()}");
         }
@@ -310,7 +310,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS64Be(IoStream src, out long value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS64BE(src.Handle, out long v);
+        bool result = SDL_ReadS64BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS64BE failed: {GetError()}");
         }
@@ -330,7 +330,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS64Le(IoStream src, out long value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS64LE(src.Handle, out long v);
+        bool result = SDL_ReadS64LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS64LE failed: {GetError()}");
         }
@@ -353,7 +353,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadS8(IoStream src, out sbyte value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadS8(src.Handle, out sbyte v);
+        bool result = SDL_ReadS8(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadS8 failed: {GetError()}");
         }
@@ -373,7 +373,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU16Be(IoStream src, out ushort value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU16BE(src.Handle, out ushort v);
+        bool result = SDL_ReadU16BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU16BE failed: {GetError()}");
         }
@@ -393,7 +393,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU16Le(IoStream src, out ushort value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU16LE(src.Handle, out ushort v);
+        bool result = SDL_ReadU16LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU16LE failed: {GetError()}");
         }
@@ -413,7 +413,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU32Be(IoStream src, out uint value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU32BE(src.Handle, out uint v);
+        bool result = SDL_ReadU32BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU32BE failed: {GetError()}");
         }
@@ -433,7 +433,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU32Le(IoStream src, out uint value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU32LE(src.Handle, out uint v);
+        bool result = SDL_ReadU32LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU32LE failed: {GetError()}");
         }
@@ -453,7 +453,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU64Be(IoStream src, out ulong value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU64BE(src.Handle, out ulong v);
+        bool result = SDL_ReadU64BE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU64BE failed: {GetError()}");
         }
@@ -473,7 +473,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on successful write or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU64Le(IoStream src, out ulong value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU64LE(src.Handle, out ulong v);
+        bool result = SDL_ReadU64LE(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU64LE failed: {GetError()}");
         }
@@ -497,7 +497,7 @@ public static partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure or EOF; call <see cref="GetError()" /> for more information.</returns>
     public static bool ReadU8(IoStream src, out byte value) {
         // Initialize the variable to avoid CS0165
-        bool result = SDL_ReadU8(src.Handle, out byte v);
+        bool result = SDL_ReadU8(src.Handle, out var v);
         if (!result) {
             throw new IOException($"ReadU8 failed: {GetError()}");
         }
@@ -516,18 +516,18 @@ public static partial class Sdl {
     }
 
     public static long SeekIo(IoStream context, long offset, IoWhence whence) {
-        long result = SDL_SeekIO(context.Handle, offset, whence);
+        var result = SDL_SeekIO(context.Handle, offset, whence);
         return result < 0 ? throw new IOException($"SeekIO failed: {GetError()}") : result;
     }
 
     public static long TellIo(IoStream context) {
-        long result = SDL_TellIO(context.Handle);
+        var result = SDL_TellIO(context.Handle);
         return result < 0 ? throw new IOException($"TellIO failed: {GetError()}") : result;
     }
 
 
     public static nuint WriteIo(IoStream context, nint ptr, nuint size) {
-        nuint result = SDL_WriteIO(context.Handle, ptr, size);
+        var result = SDL_WriteIO(context.Handle, ptr, size);
         return result < size ? throw new IOException($"WriteIO failed: {GetError()}") : result;
     }
 

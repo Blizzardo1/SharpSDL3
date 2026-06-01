@@ -4,7 +4,8 @@ using System.Runtime.InteropServices;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Sdl {
+public static unsafe partial class Sdl
+{
     private const string ImageLibName = "SDL3_image";
     /* WIKI CATEGORY: SDLImage */
 
@@ -15,23 +16,34 @@ public static unsafe partial class Sdl {
      *
      * A simple library to load images of various formats as SDL surfaces
      */
-    /**
-     * Printable format: "%d.%d.%d", MAJOR, MINOR, MICRO
-     */
+
+    /// <summary>
+    /// The major version number of the SDL_image library.
+    /// </summary>
     public const int ImageMajor = 3;
+    /// <summary>
+    /// The minor version number of the SDL_image library.
+    /// </summary>
     public const int ImageMinor = 3;
+
+    /// <summary>
+    /// The micro (patch) version number of the SDL_image library.
+    /// </summary>
     public const int ImageMicro = 0;
 
-    /**
-     * This is the version number macro for the current SDL_image version.
-     */
-
+    /// <summary>
+    /// Returns the SDL_image version as an integer.
+    /// </summary>
+    /// <returns>The SDL_image version as an integer.</returns>
     public static int ImageVersion() => VersionNum(ImageMajor, ImageMinor, ImageMicro);
 
-    /**
-     * This macro will evaluate to <see langword="true" /> if compiled with SDL_image at least X.Y.Z.
-     */
-
+    /// <summary>
+    /// Returns <see langword="true" /> if compiled with SDL_image at least X.Y.Z.
+    /// </summary>
+    /// <param name="major">The major version number to check against.</param>
+    /// <param name="minor">The minor version number to check against.</param>
+    /// <param name="patch">The patch version number to check against.</param>
+    /// <returns><see langword="true" /> if compiled with SDL_image at least X.Y.Z, otherwise <see langword="false" />.</returns>
     public static bool ImageVersionAtLeast(int major, int minor, int patch) =>
         (ImageMajor >= major)
         && (ImageMajor > major || ImageMinor >= minor)
@@ -48,6 +60,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial int IMG_Version();
 
+    /// <summary>
+    /// Gets the version of the dynamically linked SDL_image library.
+    /// </summary>
+    /// <returns>The SDL_image version as an integer.</returns>
     public static int GetImageVersion() => IMG_Version();
 
     /**
@@ -91,7 +107,7 @@ public static unsafe partial class Sdl {
      * loading, much like passing a <see langword="null" /> for type.
      *
      * If you are using SDL's 2D rendering API, there is an equivalent call to
-     * load images directly into an Texture for use by the GPU without using a
+     * load images directly into a Texture for use by the GPU without using a
      * software surface: call IMG_LoadTextureTyped_IO() instead.
      *
      * When done with the returned surface, the app should dispose of it with a
@@ -114,198 +130,257 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
-    public static nint LoadTypedImage(nint src, bool closeio, string type) {
-        if (src == nint.Zero) {
+    /// <summary>
+    /// Loads an image from an IOStream into a software surface.
+    /// </summary>
+    /// <param name="src">An IOStream that data will be read from.</param>
+    /// <param name="closeio"><see langword="true" /> to close/free the IOStream before returning, <see langword="false" /> to leave it open.</param>
+    /// <param name="type">A filename extension that represent this data ("BMP", "GIF", "PNG", etc).</param>
+    /// <remarks>
+    /// <para>A Surface is a buffer of pixels in memory accessible by the CPU. Use
+    /// this if you plan to hand the data to something else or manipulate it
+    /// further in code.</para>
+    /// 
+    /// <para>There are no guarantees about what format the new Surface data will be;
+    /// in many cases, SDL_image will attempt to supply a surface that exactly
+    /// matches the provided image, but in others it might have to convert (either
+    /// because the image is in a format that SDL doesn't directly support or
+    /// because it's compressed data that could reasonably uncompress to various
+    /// formats and SDL_image had to pick one). You can inspect a Surface for
+    /// its specifics, and use <see cref="ConvertSurface"/> to then migrate to any supported
+    /// </para>
+    /// 
+    /// <para>If the image format supports a transparent pixel, SDL will set the colorkey
+    /// for the surface. You can enable RLE acceleration on the surface afterwards
+    /// by calling: <see cref="SetSurfaceColorKey"/> with (image, SDL_RLEACCEL, image->format->colorkey);</para>
+    /// 
+    /// <para>If <paramref name="closeio"/> is <see langword="true" />, <paramref name="src"/> will be closed before returning, whether this
+    /// function succeeds or not. SDL_image reads everything it needs from <paramref name="src"/>
+    /// during this call in any case.</para>
+    /// 
+    /// <para>Even though this function accepts a file type, SDL_image may still try
+    /// other decoders that are capable of detecting file type from the contents of
+    /// the image data, but may rely on the caller-provided type string for formats
+    /// If <paramref name="type"/> is <see langword="null" />, SDL_image will rely solely on
+    /// its ability to guess the format.</para>
+    /// 
+    /// <para>There is a separate function to read files from disk without having to deal
+    /// with IOStream: <c>IMG_Load("filename.jpg")</c> will call this function and
+    /// manage those details for you, determining the file type from the filename's
+    /// extension.</para>
+    /// 
+    /// <para>There is also <c>IMG_Load_IO()</c>, which is equivalent to this function except
+    /// that it will rely on SDL_image to determine what type of data it is
+    /// loading, much like passing <see langword="null" /> for type.</para>
+    /// 
+    /// <para>If you are using SDL's 2D rendering API, there is an equivalent call to
+    /// load images directly into a Texture for use by the GPU without using a
+    /// software surface: call IMG_LoadTextureTyped_IO() instead.</para>
+    /// 
+    /// <para>When done with the returned surface, the app should dispose of it with a
+    /// call to <see cref="DestroySurface"/>.</para>
+    /// <para><strong>Since</strong>: This function is available since SDL_image 3.0.0.</para>
+    /// </remarks>
+    /// <returns>A new SDL surface, or <see langword="null" /> on error.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="src"/> is <see langword="null" />.</exception>
+    public static nint LoadTypedImageIo(nint src, bool closeio, string type)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTyped_IO(src, closeio, type);
     }
 
-    /**
-     * Load an image from a filesystem path into a software surface.
-     *
-     * An Surface is a buffer of pixels in memory accessible by the CPU. Use
-     * this if you plan to hand the data to something else or manipulate it
-     * further in code.
-     *
-     * There are no guarantees about what format the new Surface data will be;
-     * in many cases, SDL_image will attempt to supply a surface that exactly
-     * matches the provided image, but in others it might have to convert (either
-     * because the image is in a format that SDL doesn't directly support or
-     * because it's compressed data that could reasonably uncompress to various
-     * formats and SDL_image had to pick one). You can inspect an Surface for
-     * its specifics, and use SDL_ConvertSurface to then migrate to any supported
-     * format.
-     *
-     * If the image format supports a transparent pixel, SDL will set the colorkey
-     * for the surface. You can enable RLE acceleration on the surface afterwards
-     * by calling: SDL_SetSurfaceColorKey(image, SDL_RLEACCEL,
-     * image->format->colorkey);
-     *
-     * There is a separate function to read files from an IOStream, if you
-     * need an i/o abstraction to provide data from anywhere instead of a simple
-     * filesystem read; that function is IMG_Load_IO().
-     *
-     * If you are using SDL's 2D rendering API, there is an equivalent call to
-     * load images directly into an Texture for use by the GPU without using a
-     * software surface: call IMG_LoadTexture() instead.
-     *
-     * When done with the returned surface, the app should dispose of it with a
-     * call to
-     * [SDL_DestroySurface](https://wiki.libsdl.org/SDL3/SDL_DestroySurface)
-     * ().
-     *
-     * \param file a path on the filesystem to load an image from.
-     * \returns a new SDL surface, or <see langword="null" /> on error.
-     *
-     * \since This function is available since SDL_image 3.0.0.
-     *
-     * \sa IMG_LoadTyped_IO
-     * \sa IMG_Load_IO
-     * \sa SDL_DestroySurface
-     */
-
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_Load(string file);
 
-    public static nint LoadImage(string file) {
-        if (string.IsNullOrWhiteSpace(file)) {
+    /// <summary>
+    /// Loads an image from a filesystem path into a software surface.
+    /// </summary>
+    /// <param name="file">A path on the filesystem to load an image from.</param>
+    /// <remarks>
+    /// <para>
+    /// A Surface is a buffer of pixels in memory accessible by the CPU.
+    /// Use this if you plan to hand the data to something else or manipulate it
+    /// further in code.
+    /// </para>
+    /// <para>
+    /// There are no guarantees about what format the new Surface data will be;
+    /// in many cases, SDL_image will attempt to supply a surface that exactly
+    /// matches the provided image, but in others it might have to convert (either
+    /// because the image is in a format that SDL doesn't directly support or
+    /// because it's compressed data that could reasonably uncompress to various
+    /// formats and SDL_image had to pick one). You can inspect a Surface for its 
+    /// specifics, and use <see cref="ConvertSurface"/> to then migrate to any supported format.
+    /// </para>
+    /// <para>
+    /// If the image format supports a transparent pixel, SDL will set the colorkey
+    /// for the surface. You can enable RLE acceleration on the surface afterwards
+    /// by calling: SDL_SetSurfaceColorKey(image, SDL_RLEACCEL, image->format->colorkey);
+    /// </para>
+    /// <para>
+    /// There is a separate function to read files from an IOStream, if you
+    /// need an i/o abstraction to provide data from anywhere instead of a simple
+    /// filesystem read; that function is <see cref="LoadIo"/>.
+    /// </para>
+    /// <para>
+    /// If you are using SDL's 2D rendering API, there is an equivalent call to
+    /// load images directly into a <see cref="Texture"/> for use by the GPU without using a
+    /// software surface: call <see cref="LoadTexture"/> instead.
+    /// </para>
+    /// <para>
+    /// When done with the returned surface, the app should dispose of it with a
+    /// call to <see cref="DestroySurface"/>.
+    /// </para>
+    /// <para>
+    /// <strong>Since</strong>: This function is available since SDL_image 3.0.0.
+    /// </para>
+    /// </remarks>
+    /// <seealso cref="LoadIo"/>
+    /// <seealso cref="LoadTypedIo"/>
+    /// <seealso cref="DestroySurface"/>
+    /// <returns>A new SDL surface, or <see langword="null" /> on error.</returns>
+    /// <exception cref="ArgumentException">Thrown if <paramref name="file"/> is <see langword="null" /> or empty.</exception>
+    public static nint LoadImage(string file)
+    {
+        if (string.IsNullOrWhiteSpace(file))
+        {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
 
-        nint surface = IMG_Load(file);
-        if (surface == nint.Zero) {
+        var surface = IMG_Load(file);
+        if (surface == nint.Zero)
+        {
             LogError(LogCategory.System, $"Failed to load image from file: {file}. SDL Error: {GetError()}");
         }
 
         return surface;
     }
 
-    /**
-     * Load an image from an SDL data source into a software surface.
-     *
-     * An Surface is a buffer of pixels in memory accessible by the CPU. Use
-     * this if you plan to hand the data to something else or manipulate it
-     * further in code.
-     *
-     * There are no guarantees about what format the new Surface data will be;
-     * in many cases, SDL_image will attempt to supply a surface that exactly
-     * matches the provided image, but in others it might have to convert (either
-     * because the image is in a format that SDL doesn't directly support or
-     * because it's compressed data that could reasonably uncompress to various
-     * formats and SDL_image had to pick one). You can inspect an Surface for
-     * its specifics, and use SDL_ConvertSurface to then migrate to any supported
-     * format.
-     *
-     * If the image format supports a transparent pixel, SDL will set the colorkey
-     * for the surface. You can enable RLE acceleration on the surface afterwards
-     * by calling: SDL_SetSurfaceColorKey(image, SDL_RLEACCEL,
-     * image->format->colorkey);
-     *
-     * If `closeio` is <see langword="true" />, `src` will be closed before returning, whether this
-     * function succeeds or not. SDL_image reads everything it needs from `src`
-     * during this call in any case.
-     *
-     * There is a separate function to read files from disk without having to deal
-     * with IOStream: `IMG_Load("filename.jpg")` will call this function and
-     * manage those details for you, determining the file type from the filename's
-     * extension.
-     *
-     * There is also IMG_LoadTyped_IO(), which is equivalent to this function
-     * except a file extension (like "BMP", "JPG", etc) can be specified, in case
-     * SDL_image cannot autodetect the file format.
-     *
-     * If you are using SDL's 2D rendering API, there is an equivalent call to
-     * load images directly into an Texture for use by the GPU without using a
-     * software surface: call IMG_LoadTexture_IO() instead.
-     *
-     * When done with the returned surface, the app should dispose of it with a
-     * call to SDL_DestroySurface().
-     *
-     * \param src an IOStream that data will be read from.
-     * \param closeio <see langword="true" /> to close/free the IOStream before returning, <see langword="false" />
-     *                to leave it open.
-     * \returns a new SDL surface, or <see langword="null" /> on error.
-     *
-     * \since This function is available since SDL_image 3.0.0.
-     *
-     * \sa IMG_Load
-     * \sa IMG_LoadTyped_IO
-     * \sa SDL_DestroySurface
-     */
-
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_Load_IO(nint src, [MarshalAs(BoolType)] bool closeio);
 
-    public static nint LoadImageIo(nint src, bool closeio) {
-        if (src == nint.Zero) {
+    /// <summary>
+    /// Loads an image from an IOStream into a software surface.
+    /// </summary>
+    /// <param name="src">An IOStream that data will be read from.</param>
+    /// <param name="closeio"><see langword="true" /> to close/free the IOStream before returning, <see langword="false" /> to leave it open.</param>
+    /// <remarks>
+    /// <para>
+    /// A Surface is a buffer of pixels in memory accessible by the CPU. Use
+    /// this if you plan to hand the data to something else or manipulate it
+    /// further in code.
+    /// </para>
+    /// <para>
+    /// There are no guarantees about what format the new Surface data will be;
+    /// in many cases, SDL_image will attempt to supply a surface that exactly
+    /// matches the provided image, but in others it might have to convert (either
+    /// because the image is in a format that SDL doesn't directly support or
+    /// because it's compressed data that could reasonably uncompress to various
+    /// formats and SDL_image had to pick one). You can inspect a Surface for
+    /// its specifics, and use SDL_ConvertSurface to then migrate to any supported
+    /// format.
+    /// </para>
+    /// <para>
+    /// If the image format supports a transparent pixel, SDL will set the colorkey
+    /// for the surface. You can enable RLE acceleration on the surface afterwards
+    /// by calling: <see cref="SetSurfaceColorKey"/>  with (image, SDL_RLEACCEL, image->format->colorkey);
+    /// </para>
+    /// <para>
+    /// If <paramref name="closeio"/> is <see langword="true" />, <paramref name="src"/> will be closed before returning, whether this
+    /// function succeeds or not. SDL_image reads everything it needs from <paramref name="src"/>
+    /// during this call in any case.
+    /// </para>
+    /// <para>
+    /// There is a separate function to read files from disk without having to deal
+    /// with IOStream: `IMG_Load("filename.jpg")` will call this function and
+    /// manage those details for you, determining the file type from the filename's
+    /// extension.
+    /// </para>
+    /// <para>
+    /// There is also <see cref="LoadImageTypedIo"/>, which is equivalent to this function
+    /// except a file extension (like "BMP", "JPG", etc) can be specified, in case
+    /// SDL_image cannot autodetect the file format.
+    /// </para>
+    /// <para>
+    /// If you are using SDL's 2D rendering API, there is an equivalent call to
+    /// load images directly into a Texture for use by the GPU without using a
+    /// software surface: call <see cref="LoadTextureIo"/> instead.
+    /// </para>
+    /// <para>
+    /// When done with the returned surface, the app should dispose of it with a
+    /// call to <see cref="DestroySurface"/>.
+    /// </para>
+    ///
+    /// <para> <strong>Since</strong>: This function is available since SDL_image 3.0.0.</para>
+    ///
+    /// <see cref="LoadImage"/>
+    /// <see cref="LoadImageTypedIo"/>
+    /// <see cref="DestroySurface"/>
+    /// </remarks>
+    /// <returns>A new SDL surface, or <see langword="null" /> on error.</returns>
+    /// <exception cref="ArgumentNullException">Thrown if <paramref name="src"/> is <see langword="null" />.</exception>
+    public static nint LoadImageIo(nint src, bool closeio)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        nint surface = IMG_Load_IO(src, closeio);
-        if (surface == nint.Zero) {
+        var surface = IMG_Load_IO(src, closeio);
+        if (surface == nint.Zero)
+        {
             LogError(LogCategory.System, $"Failed to load image from IOStream. SDL Error: {GetError()}");
         }
         return surface;
     }
 
-    /**
-     * Load an image from a filesystem path into a GPU texture.
-     *
-     * An Texture represents an image in GPU memory, usable by SDL's 2D Render
-     * API. This can be significantly more efficient than using a CPU-bound
-     * Surface if you don't need to manipulate the image directly after
-     * loading it.
-     *
-     * If the loaded image has transparency or a colorkey, a texture with an alpha
-     * channel will be created. Otherwise, SDL_image will attempt to create an
-     * Texture in the most format that most reasonably represents the image
-     * data (but in many cases, this will just end up being 32-bit RGB or 32-bit
-     * RGBA).
-     *
-     * There is a separate function to read files from an IOStream, if you
-     * need an i/o abstraction to provide data from anywhere instead of a simple
-     * filesystem read; that function is IMG_LoadTexture_IO().
-     *
-     * If you would rather decode an image to an Surface (a buffer of pixels
-     * in CPU memory), call IMG_Load() instead.
-     *
-     * When done with the returned texture, the app should dispose of it with a
-     * call to SDL_DestroyTexture().
-     *
-     * \param renderer the SDL_Renderer to use to create the GPU texture.
-     * \param file a path on the filesystem to load an image from.
-     * \returns a new texture, or <see langword="null" /> on error.
-     *
-     * \since This function is available since SDL_image 3.0.0.
-     *
-     * \sa IMG_LoadTextureTyped_IO
-     * \sa IMG_LoadTexture_IO
-     */
-
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTexture(nint renderer, string file);
 
     /// <summary>Load an image from a filesystem path into a GPU texture.</summary>
-
     /// <param name="renderer">the SDL_Renderer to use to create the GPU texture.</param>
     /// <param name="file">a path on the filesystem to load an image from.</param>
     /// <remarks>
-    /// An SDL_Texture represents an image in GPU memory, usable by SDL's 2D Render
+    /// <para>
+    /// A Texture represents an image in GPU memory, usable by SDL's 2D Render
     /// API. This can be significantly more efficient than using a CPU-bound
-    /// SDL_Surface if you don't need to manipulate the image directly after
+    /// Surface if you don't need to manipulate the image directly after
     /// loading it.
+    /// </para>
+    /// <para>
+    /// If the loaded image has transparency or a colorkey, a texture with an alpha
+    /// channel will be created. Otherwise, SDL_image will attempt to create an
+    /// Texture in the most appropriate format that most reasonably represents the image
+    /// data (but in many cases, this will just end up being 32-bit RGB or 32-bit RGBA).
+    /// </para>
+    /// <para>
+    /// There is a separate function to read files from an IOStream, <see cref="LoadTextureIo"/>, if you
+    /// need an i/o abstraction to provide data from anywhere instead of a simple
+    /// filesystem read.
+    /// </para>
+    /// <para>
+    /// If you would rather decode an image to an Surface (a buffer of pixels
+    /// in CPU memory), call <see cref="Load"/> instead.
+    /// </para>
+    /// <para>
+    /// When done with the returned texture, the app should dispose of it with a
+    /// call to <see cref="DestroyTexture"/>.
+    /// </para>
     /// <para><strong>Version</strong>: This function is available since SDL_image 3.0.0.</para>
     /// <seealso cref="LoadTextureTyped_IO" />
     /// <seealso cref="LoadTexture_IO" />
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns a new texture, or <see langword="null" /> on error.</returns>
-
-    public static nint LoadTexture(nint renderer, string file) {
-        if (string.IsNullOrWhiteSpace(file)) {
+    public static nint LoadTexture(nint renderer, string file)
+    {
+        if (string.IsNullOrWhiteSpace(file))
+        {
             throw new ArgumentException("File path cannot be null or empty.", nameof(file));
         }
-        nint texture = IMG_LoadTexture(renderer, file);
-        if (texture == nint.Zero) {
+        var texture = IMG_LoadTexture(renderer, file);
+        if (texture == nint.Zero)
+        {
             LogError(LogCategory.System, $"Failed to load texture from file: {file}. SDL Error: {GetError()}");
         }
         return texture;
@@ -360,12 +435,15 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTexture_IO(nint renderer, nint src, [MarshalAs(BoolType)] bool closeio);
 
-    public static nint LoadTextureIo(nint renderer, nint src, bool closeio) {
-        if (src == nint.Zero) {
+    public static nint LoadTextureIo(nint renderer, nint src, bool closeio)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        nint texture = IMG_LoadTexture_IO(renderer, src, closeio);
-        if (texture == nint.Zero) {
+        var texture = IMG_LoadTexture_IO(renderer, src, closeio);
+        if (texture == nint.Zero)
+        {
             LogError(LogCategory.System, $"Failed to load texture from IOStream. SDL Error: {GetError()}");
         }
         return texture;
@@ -428,12 +506,15 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadTextureTyped_IO(nint renderer, nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
-    public static nint LoadTextureTypedIo(nint renderer, nint src, bool closeio, string type) {
-        if (src == nint.Zero) {
+    public static nint LoadTextureTypedIo(nint renderer, nint src, bool closeio, string type)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        nint texture = IMG_LoadTextureTyped_IO(renderer, src, closeio, type);
-        if (texture == nint.Zero) {
+        var texture = IMG_LoadTextureTyped_IO(renderer, src, closeio, type);
+        if (texture == nint.Zero)
+        {
             LogError(LogCategory.System, $"Failed to load texture from IOStream. SDL Error: {GetError()}");
         }
         return texture;
@@ -513,9 +594,10 @@ public static unsafe partial class Sdl {
     /// <seealso cref="isWEBP" />
     /// </remarks>
     /// <returns>Returns non-zero if this is AVIF data, zero otherwise.</returns>
-
-    public static bool IsAvif(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsAvif(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isAVIF(src);
@@ -594,8 +676,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is ICO data, zero otherwise.</returns>
 
-    public static bool IsIco(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsIco(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isICO(src);
@@ -674,8 +758,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is CUR data, zero otherwise.</returns>
 
-    public static bool IsCur(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsCur(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isCUR(src);
@@ -754,8 +840,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is BMP data, zero otherwise.</returns>
 
-    public static bool IsBmp(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsBmp(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isBMP(src);
@@ -834,8 +922,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is GIF data, zero otherwise.</returns>
 
-    public static bool IsGif(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsGif(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isGIF(src);
@@ -914,8 +1004,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is JPG data, zero otherwise.</returns>
 
-    public static bool IsJpg(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsJpg(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isJPG(src);
@@ -994,8 +1086,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is JXL data, zero otherwise.</returns>
 
-    public static bool IsJxl(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsJxl(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isJXL(src);
@@ -1074,8 +1168,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is LBM data, zero otherwise.</returns>
 
-    public static bool IsLbm(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsLbm(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isLBM(src);
@@ -1154,8 +1250,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PCX data, zero otherwise.</returns>
 
-    public static bool IsPcx(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsPcx(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPCX(src);
@@ -1234,8 +1332,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PNG data, zero otherwise.</returns>
 
-    public static bool IsPng(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsPng(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPNG(src);
@@ -1314,8 +1414,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is PNM data, zero otherwise.</returns>
 
-    public static bool IsPnm(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsPnm(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isPNM(src);
@@ -1394,8 +1496,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is SVG data, zero otherwise.</returns>
 
-    public static bool IsSvg(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsSvg(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isSVG(src);
@@ -1474,8 +1578,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is QOI data, zero otherwise.</returns>
 
-    public static bool IsQoi(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsQoi(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isQOI(src);
@@ -1554,8 +1660,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is TIFF data, zero otherwise.</returns>
 
-    public static bool IsTif(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsTif(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isTIF(src);
@@ -1634,8 +1742,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XCF data, zero otherwise.</returns>
 
-    public static bool IsXcf(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsXcf(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXCF(src);
@@ -1714,8 +1824,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XPM data, zero otherwise.</returns>
 
-    public static bool IsXpm(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsXpm(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXPM(src);
@@ -1794,8 +1906,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is XV data, zero otherwise.</returns>
 
-    public static bool IsXv(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsXv(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isXV(src);
@@ -1874,8 +1988,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns non-zero if this is WEBP data, zero otherwise.</returns>
 
-    public static bool IsWebp(nint src) {
-        if (src == nint.Zero) {
+    public static bool IsWebp(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_isWEBP(src);
@@ -1917,8 +2033,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadAVIF_IO(nint src);
 
-    public static nint LoadAvifIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadAvifIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadAVIF_IO(src);
@@ -1960,8 +2078,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadICO_IO(nint src);
 
-    public static nint LoadIcoIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadIcoIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadICO_IO(src);
@@ -2003,8 +2123,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadCUR_IO(nint src);
 
-    public static nint LoadCurIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadCurIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadCUR_IO(src);
@@ -2046,8 +2168,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadBMP_IO(nint src);
 
-    public static nint LoadBmpIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadBmpIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadBMP_IO(src);
@@ -2089,8 +2213,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadGIF_IO(nint src);
 
-    public static nint LoadGifIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadGifIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadGIF_IO(src);
@@ -2132,8 +2258,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadJPG_IO(nint src);
 
-    public static nint LoadJpgIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadJpgIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadJPG_IO(src);
@@ -2175,8 +2303,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadJXL_IO(nint src);
 
-    public static nint LoadJxlIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadJxlIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadJXL_IO(src);
@@ -2218,8 +2348,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadLBM_IO(nint src);
 
-    public static nint LoadLbmIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadLbmIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadLBM_IO(src);
@@ -2261,8 +2393,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPCX_IO(nint src);
 
-    public static nint LoadPcxIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadPcxIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPCX_IO(src);
@@ -2304,8 +2438,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPNG_IO(nint src);
 
-    public static nint LoadPngIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadPngIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPNG_IO(src);
@@ -2347,8 +2483,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadPNM_IO(nint src);
 
-    public static nint LoadPnmIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadPnmIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadPNM_IO(src);
@@ -2390,8 +2528,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadSVG_IO(nint src);
 
-    public static nint LoadSvgIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadSvgIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadSVG_IO(src);
@@ -2433,8 +2573,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadQOI_IO(nint src);
 
-    public static nint LoadQoiIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadQoiIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadQOI_IO(src);
@@ -2476,8 +2618,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTGA_IO(nint src);
 
-    public static nint LoadTgaIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadTgaIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTGA_IO(src);
@@ -2519,8 +2663,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadTIF_IO(nint src);
 
-    public static nint LoadTifIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadTifIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadTIF_IO(src);
@@ -2562,8 +2708,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXCF_IO(nint src);
 
-    public static nint LoadXcfIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadXcfIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXCF_IO(src);
@@ -2605,8 +2753,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXPM_IO(nint src);
 
-    public static nint LoadXpmIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadXpmIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXPM_IO(src);
@@ -2648,8 +2798,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadXV_IO(nint src);
 
-    public static nint LoadXvIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadXvIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadXV_IO(src);
@@ -2691,8 +2843,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadWEBP_IO(nint src);
 
-    public static nint LoadWebpIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadWebpIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadWEBP_IO(src);
@@ -2721,8 +2875,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadSizedSVG_IO(nint src, int width, int height);
 
-    public static nint LoadSizedSvgIo(nint src, int width, int height) {
-        if (src == nint.Zero) {
+    public static nint LoadSizedSvgIo(nint src, int width, int height)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadSizedSVG_IO(src, width, height);
@@ -2761,8 +2917,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
-    public static nint ReadXpmFromArray(string[] xpm) {
-        if (xpm == null) {
+    public static nint ReadXpmFromArray(string[] xpm)
+    {
+        if (xpm == null)
+        {
             throw new ArgumentNullException(nameof(xpm), "XPM data cannot be null.");
         }
         return IMG_ReadXPMFromArray(xpm);
@@ -2801,8 +2959,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL surface, or <see langword="null" /> on error.</returns>
 
-    public static nint ReadXpmFromArrayToRgb888(string[] xpm) {
-        if (xpm == null) {
+    public static nint ReadXpmFromArrayToRgb888(string[] xpm)
+    {
+        if (xpm == null)
+        {
             throw new ArgumentNullException(nameof(xpm), "XPM data cannot be null.");
         }
         return IMG_ReadXPMFromArrayToRGB888(xpm);
@@ -2841,11 +3001,14 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static bool SaveAvif(nint surface, string file, int quality) {
-        if (surface == nint.Zero) {
+    public static bool SaveAvif(nint surface, string file, int quality)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (file == null) {
+        if (file == null)
+        {
             throw new ArgumentNullException(nameof(file), "File path cannot be null.");
         }
         return IMG_SaveAVIF(surface, file, quality);
@@ -2877,11 +3040,14 @@ public static unsafe partial class Sdl {
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveAVIF_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio, int quality);
 
-    public static bool SaveAvifIo(nint surface, nint dst, bool closeio, int quality) {
-        if (surface == nint.Zero) {
+    public static bool SaveAvifIo(nint surface, nint dst, bool closeio, int quality)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == nint.Zero) {
+        if (dst == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SaveAVIF_IO(surface, dst, closeio, quality);
@@ -2917,11 +3083,14 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static bool SavePng(nint surface, string file) {
-        if (surface == nint.Zero) {
+    public static bool SavePng(nint surface, string file)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (file == null) {
+        if (file == null)
+        {
             throw new ArgumentNullException(nameof(file), "File path cannot be null.");
         }
         return IMG_SavePNG(surface, file);
@@ -2951,11 +3120,14 @@ public static unsafe partial class Sdl {
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SavePNG_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio);
 
-    public static bool SavePngIo(nint surface, nint dst, bool closeio) {
-        if (surface == nint.Zero) {
+    public static bool SavePngIo(nint surface, nint dst, bool closeio)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == nint.Zero) {
+        if (dst == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SavePNG_IO(surface, dst, closeio);
@@ -2994,11 +3166,14 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
-    public static bool SaveJpg(nint surface, string file, int quality) {
-        if (surface == nint.Zero) {
+    public static bool SaveJpg(nint surface, string file, int quality)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (file == null) {
+        if (file == null)
+        {
             throw new ArgumentNullException(nameof(file), "File path cannot be null.");
         }
         return IMG_SaveJPG(surface, file, quality);
@@ -3030,11 +3205,14 @@ public static unsafe partial class Sdl {
     [return: MarshalAs(BoolType)]
     private static partial bool IMG_SaveJPG_IO(nint surface, nint dst, [MarshalAs(BoolType)] bool closeio, int quality);
 
-    public static bool SaveJpgIo(nint surface, nint dst, bool closeio, int quality) {
-        if (surface == nint.Zero) {
+    public static bool SaveJpgIo(nint surface, nint dst, bool closeio, int quality)
+    {
+        if (surface == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(surface), "Surface cannot be null.");
         }
-        if (dst == nint.Zero) {
+        if (dst == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(dst), "IOStream cannot be null.");
         }
         return IMG_SaveJPG_IO(surface, dst, closeio, quality);
@@ -3068,8 +3246,10 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(IMG_Animation *) Returns a newIMG_Animation, or <see langword="null" /> on error.</returns>
 
-    public static nint LoadAnimation(string file) {
-        if (file == null) {
+    public static nint LoadAnimation(string file)
+    {
+        if (file == null)
+        {
             throw new ArgumentNullException(nameof(file), "File path cannot be null.");
         }
         return IMG_LoadAnimation(file);
@@ -3098,8 +3278,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadAnimation_IO(nint src, [MarshalAs(BoolType)] bool closeio);
 
-    public static nint LoadAnimationIo(nint src, bool closeio) {
-        if (src == nint.Zero) {
+    public static nint LoadAnimationIo(nint src, bool closeio)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadAnimation_IO(src, closeio);
@@ -3137,11 +3319,14 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName, StringMarshalling = Marshalling)]
     private static partial nint IMG_LoadAnimationTyped_IO(nint src, [MarshalAs(BoolType)] bool closeio, string type);
 
-    public static nint LoadAnimationTypedIo(nint src, bool closeio, string type) {
-        if (src == nint.Zero) {
+    public static nint LoadAnimationTypedIo(nint src, bool closeio, string type)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
-        if (type == null) {
+        if (type == null)
+        {
             throw new ArgumentNullException(nameof(type), "Type cannot be null.");
         }
         return IMG_LoadAnimationTyped_IO(src, closeio, type);
@@ -3175,8 +3360,10 @@ public static unsafe partial class Sdl {
     /// <seealso cref="LoadAnimationTyped_IO" />
     /// </remarks>
 
-    public static void FreeAnimation(nint anim) {
-        if (anim == nint.Zero) {
+    public static void FreeAnimation(nint anim)
+    {
+        if (anim == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(anim), "Animation cannot be null.");
         }
         IMG_FreeAnimation(anim);
@@ -3204,8 +3391,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadGIFAnimation_IO(nint src);
 
-    public static nint LoadGifAnimationIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadGifAnimationIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadGIFAnimation_IO(src);
@@ -3233,8 +3422,10 @@ public static unsafe partial class Sdl {
     [LibraryImport(ImageLibName)]
     private static partial nint IMG_LoadWEBPAnimation_IO(nint src);
 
-    public static nint LoadWebpAnimationIo(nint src) {
-        if (src == nint.Zero) {
+    public static nint LoadWebpAnimationIo(nint src)
+    {
+        if (src == nint.Zero)
+        {
             throw new ArgumentNullException(nameof(src), "IOStream cannot be null.");
         }
         return IMG_LoadWEBPAnimation_IO(src);

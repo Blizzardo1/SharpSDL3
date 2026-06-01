@@ -8,7 +8,7 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Sdl {
+public static partial class Sdl {
     /// <summary>Use this function to query if an audio device is paused.</summary>
 
     /// <param name="deviceId">a device opened by <see cref="OpenAudioDevice" />.</param>
@@ -166,7 +166,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(SDL_AudioStream *) Returns a new audio stream on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint CreateAudioStream(ref AudioSpec srcSpec, ref AudioSpec dstSpec) {
-        nint result = SDL_CreateAudioStream(ref srcSpec, ref dstSpec);
+        var result = SDL_CreateAudioStream(ref srcSpec, ref dstSpec);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "CreateAudioStream: Failed to create audio stream.");
         }
@@ -218,7 +218,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>(int *) Returns an array of the current channel mapping, with as many elements as the current output spec's channels, or <see langword="null" /> if default. This should be freed with <see cref="Free" /> when it is no longer needed.</returns>
     public static int[] GetAudioDeviceChannelMap(uint deviceId) {
-        nint result = SDL_GetAudioDeviceChannelMap(deviceId, out int count);
+        var result = SDL_GetAudioDeviceChannelMap(deviceId, out var count);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetAudioDeviceChannelMap: Failed to get audio device channel map.");
@@ -234,9 +234,9 @@ public static unsafe partial class Sdl {
                 return [];
         }
 
-        int[] map = new int[count];
+        var map = new int[count];
 
-        for (int i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
             map[i] = Marshal.ReadInt32(result, i * sizeof(int));
         }
 
@@ -272,7 +272,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gain of the device or -1.0f on failure; call <see cref="GetError()" /> for more information.</returns>
     public static float GetAudioDeviceGain(uint deviceId) {
-        float result = SDL_GetAudioDeviceGain(deviceId);
+        var result = SDL_GetAudioDeviceGain(deviceId);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioDeviceGain: Failed to get audio device gain.");
         }
@@ -289,7 +289,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the audio device, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
     public static string GetAudioDeviceName(uint deviceId) {
-        string name = SDL_GetAudioDeviceName(deviceId);
+        var name = SDL_GetAudioDeviceName(deviceId);
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "GetAudioDeviceName: Failed to get audio device name.");
         }
@@ -308,7 +308,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the audio driver at the requested index,  <see langword="null" /> if an invalid index was specified.</returns>
     public static string GetAudioDriver(int index) {
-        string driver = SDL_GetAudioDriver(index);
+        var driver = SDL_GetAudioDriver(index);
         if (string.IsNullOrEmpty(driver)) {
             LogError(LogCategory.Error, "GetAudioDriver: Failed to get audio driver.");
         }
@@ -323,7 +323,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the human-readable name of the specified audio format or &quot;SDL_AUDIO_UNKNOWN&quot; if the format isn't recognized.</returns>
     public static string GetAudioFormatName(AudioFormat format) {
-        string name = SDL_GetAudioFormatName(format);
+        var name = SDL_GetAudioFormatName(format);
         if (string.IsNullOrEmpty(name)) {
             LogError(LogCategory.Error, "GetAudioFormatName: Failed to get audio format name.");
         }
@@ -344,7 +344,7 @@ public static unsafe partial class Sdl {
     /// This should be freed with <see cref="Free" /> whenit is no longer needed.
     /// </returns>
     public static uint[] GetAudioPlaybackDevices(out int count) {
-        nint result = SDL_GetAudioPlaybackDevices(out count);
+        var result = SDL_GetAudioPlaybackDevices(out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetAudioPlaybackDevices: Failed to get audio playback devices.");
             throw new InvalidOperationException("GetAudioPlaybackDevices failed.");
@@ -355,9 +355,9 @@ public static unsafe partial class Sdl {
             return [];
         }
 
-        int[] playbackDevicesI = new int[count];
+        var playbackDevicesI = new int[count];
         Marshal.Copy(result, playbackDevicesI, 0, count);
-        uint[] playbackDevicesU = Array.ConvertAll(playbackDevicesI, x => (uint)x);
+        var playbackDevicesU = Array.ConvertAll(playbackDevicesI, x => (uint)x);
         return playbackDevicesU;
     }
 
@@ -376,7 +376,7 @@ public static unsafe partial class Sdl {
     /// This should be freed with <see cref="Free" /> when it is no longer needed.
     /// </returns>
     public static uint[] GetAudioRecordingDevices(out int count) {
-        nint result = SDL_GetAudioRecordingDevices(out count);
+        var result = SDL_GetAudioRecordingDevices(out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetAudioRecordingDevices: Failed to get audio recording devices.");
         }
@@ -386,9 +386,9 @@ public static unsafe partial class Sdl {
             return [];
         }
 
-        int[] recordingDevicesI = new int[count];
+        var recordingDevicesI = new int[count];
         Marshal.Copy(result, recordingDevicesI, 0, count);
-        uint[] recordingDevices = Array.ConvertAll(recordingDevicesI, x => (uint)x);
+        var recordingDevices = Array.ConvertAll(recordingDevicesI, x => (uint)x);
 
         return recordingDevices;
     }
@@ -406,7 +406,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of converted/resampled bytes available or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static int GetAudioStreamAvailable(nint stream) {
-        int result = SDL_GetAudioStreamAvailable(stream);
+        var result = SDL_GetAudioStreamAvailable(stream);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioStreamAvailable: Failed to get audio stream available.");
         }
@@ -427,7 +427,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of bytes read from the stream or -1 on failure;call <see cref="GetError()" /> for more information.</returns>
     public static int GetAudioStreamData(nint stream, nint buf, int len) {
-        int result = SDL_GetAudioStreamData(stream, buf, len);
+        var result = SDL_GetAudioStreamData(stream, buf, len);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioStreamData: Failed to get audio stream data.");
         }
@@ -445,7 +445,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the bound audio device, or 0 if not bound or invalid.</returns>
     public static uint GetAudioStreamDevice(nint stream) {
-        uint result = SDL_GetAudioStreamDevice(stream);
+        var result = SDL_GetAudioStreamDevice(stream);
         if (result == 0) {
             LogError(LogCategory.Error, "GetAudioStreamDevice: Failed to get audio stream device.");
         }
@@ -479,7 +479,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the frequency ratio of the stream or 0.0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static float GetAudioStreamFrequencyRatio(nint stream) {
-        float result = SDL_GetAudioStreamFrequencyRatio(stream);
+        var result = SDL_GetAudioStreamFrequencyRatio(stream);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioStreamFrequencyRatio: Failed to get audio stream frequency ratio.");
         }
@@ -496,7 +496,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the gain of the stream or -1.0f on failure; call <see cref="GetError()" /> for more information.</returns>
     public static float GetAudioStreamGain(nint stream) {
-        float result = SDL_GetAudioStreamGain(stream);
+        var result = SDL_GetAudioStreamGain(stream);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioStreamGain: Failed to get audio stream gain.");
         }
@@ -517,7 +517,7 @@ public static unsafe partial class Sdl {
     /// <para>This should be freed with <see cref="Free" /> when it is no longer needed.</para>
     /// </returns>
     public static int[] GetAudioStreamInputChannelMap(nint stream, out int count) {
-        nint result = SDL_GetAudioStreamInputChannelMap(stream, out count);
+        var result = SDL_GetAudioStreamInputChannelMap(stream, out count);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetAudioStreamInputChannelMap: Failed to get audio stream input channel map.");
@@ -528,9 +528,9 @@ public static unsafe partial class Sdl {
             LogError(LogCategory.Error, "GetAudioStreamInputChannelMap: Invalid channel map count.");
         }
 
-        int[] map = new int[count];
+        var map = new int[count];
 
-        for (int i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
             map[i] = Marshal.ReadInt32(result, i * sizeof(int));
         }
 
@@ -551,7 +551,7 @@ public static unsafe partial class Sdl {
     /// <para>This should be freed with <see cref="Free" /> when it is no longer needed.</para>
     /// </returns>
     public static int[] GetAudioStreamOutputChannelMap(nint stream, out int count) {
-        nint result = SDL_GetAudioStreamOutputChannelMap(stream, out count);
+        var result = SDL_GetAudioStreamOutputChannelMap(stream, out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "GetAudioStreamOutputChannelMap: Failed to get audio stream input channel map.");
             return [];
@@ -561,9 +561,9 @@ public static unsafe partial class Sdl {
             LogError(LogCategory.Error, "GetAudioStreamOutputChannelMap: Invalid channel map count.");
         }
 
-        int[] map = new int[count];
+        var map = new int[count];
 
-        for (int i = 0; i < count; i++) {
+        for (var i = 0; i < count; i++) {
             map[i] = Marshal.ReadInt32(result, i * sizeof(int));
         }
 
@@ -578,7 +578,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint GetAudioStreamProperties(nint stream) {
-        uint result = SDL_GetAudioStreamProperties(stream);
+        var result = SDL_GetAudioStreamProperties(stream);
         if (result == 0) {
             LogError(LogCategory.Error, "GetAudioStreamProperties: Failed to get audio stream properties.");
         }
@@ -598,7 +598,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of bytes queued or -1 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static int GetAudioStreamQueued(nint stream) {
-        int result = SDL_GetAudioStreamQueued(stream);
+        var result = SDL_GetAudioStreamQueued(stream);
         if (result < 0) {
             LogError(LogCategory.Error, "GetAudioStreamQueued: Failed to get audio stream queued.");
         }
@@ -614,7 +614,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the name of the current audio driver or <see langword="null" /> if no driver has been initialized.</returns>
     public static string GetCurrentAudioDriver() {
-        string driver = SDL_GetCurrentAudioDriver();
+        var driver = SDL_GetCurrentAudioDriver();
         if (string.IsNullOrEmpty(driver)) {
             LogError(LogCategory.Error, "GetCurrentAudioDriver: Failed to get current audio driver.");
         }
@@ -633,7 +633,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the number of built-in audio drivers.</returns>
     public static int GetNumAudioDrivers() {
-        int numDrivers = SDL_GetNumAudioDrivers();
+        var numDrivers = SDL_GetNumAudioDrivers();
         if (numDrivers < 0) {
             LogError(LogCategory.Error, "GetNumAudioDrivers: Failed to get number of audio drivers.");
         }
@@ -649,7 +649,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns a byte value that can be passed to memset.</returns>
     public static int GetSilenceValueForFormat(AudioFormat format) {
-        int silenceValue = SDL_GetSilenceValueForFormat(format);
+        var silenceValue = SDL_GetSilenceValueForFormat(format);
         if (silenceValue < 0) {
             LogError(LogCategory.Error, "GetSilenceValueForFormat: Failed to get silence value for format.");
         }
@@ -666,7 +666,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if <paramref name="deviceId" /> is a physical device, <see langword="false" /> if it is logical.</returns>
     public static SdlBool IsAudioDevicePhysical(uint deviceId) {
-        SdlBool result = SDL_IsAudioDevicePhysical(deviceId);
+        var result = SDL_IsAudioDevicePhysical(deviceId);
         if (!result) {
             LogError(LogCategory.Error, "IsAudioDevicePhysical: Failed to check if audio device is physical.");
         }
@@ -682,7 +682,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if <paramref name="deviceId" /> is a playback device, <see langword="false" /> if it is recording.</returns>
     public static SdlBool IsAudioDevicePlayback(uint deviceId) {
-        SdlBool result = SDL_IsAudioDevicePlayback(deviceId);
+        var result = SDL_IsAudioDevicePlayback(deviceId);
         if (!result) {
             LogError(LogCategory.Error, "IsAudioDevicePlayback: Failed to check if audio device is playback.");
         }
@@ -713,7 +713,7 @@ public static unsafe partial class Sdl {
     /// </returns>
     public static SdlBool LoadWav(string path, out AudioSpec spec,
         out nuint audioBuf, out uint audioLen) {
-        SdlBool result = SDL_LoadWAV(path, out spec, out audioBuf, out audioLen);
+        var result = SDL_LoadWAV(path, out spec, out audioBuf, out audioLen);
         if (!result) {
             LogError(LogCategory.Error, "LoadWAV: Failed to load WAV.");
         }
@@ -775,7 +775,7 @@ public static unsafe partial class Sdl {
     /// </returns>
     public static SdlBool LoadWavIo(nint src, SdlBool closeIo, out AudioSpec spec,
         out nuint audioBuf, out uint audioLen) {
-        SdlBool result = SDL_LoadWAV_IO(src, closeIo, out spec, out audioBuf, out audioLen);
+        var result = SDL_LoadWAV_IO(src, closeIo, out spec, out audioBuf, out audioLen);
         if (!result) {
             LogError(LogCategory.Error, "LoadWAV_IO: Failed to load WAV IO.");
         }
@@ -793,7 +793,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool LockAudioStream(nint stream) {
-        SdlBool result = SDL_LockAudioStream(stream);
+        var result = SDL_LockAudioStream(stream);
         if (!result) {
             LogError(LogCategory.Error, "LockAudioStream: Failed to lock audio stream.");
         }
@@ -815,7 +815,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool MixAudio(nint dst, nint src, AudioFormat format, uint len, float volume) {
-        SdlBool result = SDL_MixAudio(dst, src, format, len, volume);
+        var result = SDL_MixAudio(dst, src, format, len, volume);
         if (!result) {
             LogError(LogCategory.Error, "MixAudio: Failed to mix audio.");
         }
@@ -836,7 +836,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns the device ID on successor 0 on failure; call <see cref="GetError()" /> for more information.</returns>
     public static uint OpenAudioDevice(uint deviceId, ref AudioSpec spec) {
-        uint result = SDL_OpenAudioDevice(deviceId, ref spec);
+        var result = SDL_OpenAudioDevice(deviceId, ref spec);
         if (result == 0) {
             LogError(LogCategory.Error, "OpenAudioDevice: Failed to open audio device.");
         }
@@ -861,7 +861,7 @@ public static unsafe partial class Sdl {
     /// </returns>
     public static nint OpenAudioDeviceStream(uint deviceId, ref AudioSpec spec,
             SdlAudioStreamCallback callback, nint userdata) {
-        nint result = SDL_OpenAudioDeviceStream(deviceId, ref spec, callback, userdata);
+        var result = SDL_OpenAudioDeviceStream(deviceId, ref spec, callback, userdata);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "OpenAudioDeviceStream: Failed to open audio device stream.");
         }
@@ -881,7 +881,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool PauseAudioDevice(uint deviceId) {
-        SdlBool result = SDL_PauseAudioDevice(deviceId);
+        var result = SDL_PauseAudioDevice(deviceId);
         if (!result) {
             LogError(LogCategory.Error, "PauseAudioDevice: Failed to pause audio device.");
         }
@@ -900,7 +900,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool PauseAudioStreamDevice(nint stream) {
-        SdlBool result = SDL_PauseAudioStreamDevice(stream);
+        var result = SDL_PauseAudioStreamDevice(stream);
         if (!result) {
             LogError(LogCategory.Error, "PauseAudioStreamDevice: Failed to pause audio stream device.");
         }
@@ -922,7 +922,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool PutAudioStreamData(nint stream, nint buf, int len) {
-        SdlBool result = SDL_PutAudioStreamData(stream, buf, len);
+        var result = SDL_PutAudioStreamData(stream, buf, len);
         if (!result) {
             LogError(LogCategory.Error, "PutAudioStreamData: Failed to put audio stream data.");
         }
@@ -941,7 +941,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool ResumeAudioDevice(uint deviceId) {
-        SdlBool result = SDL_ResumeAudioDevice(deviceId);
+        var result = SDL_ResumeAudioDevice(deviceId);
         if (!result) {
             LogError(LogCategory.Error, "ResumeAudioDevice: Failed to resume audio device.");
         }
@@ -959,7 +959,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool ResumeAudioStreamDevice(nint stream) {
-        SdlBool result = SDL_ResumeAudioStreamDevice(stream);
+        var result = SDL_ResumeAudioStreamDevice(stream);
         if (!result) {
             LogError(LogCategory.Error, "ResumeAudioStreamDevice: Failed to resume audio stream device.");
         }
@@ -977,7 +977,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool SetAudioDeviceGain(uint deviceId, float gain) {
-        SdlBool result = SDL_SetAudioDeviceGain(deviceId, gain);
+        var result = SDL_SetAudioDeviceGain(deviceId, gain);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioDeviceGain: Failed to set audio device gain.");
         }
@@ -996,7 +996,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool SetAudioPostmixCallback(uint deviceId, SdlAudioPostmixCallback callback, nint userdata) {
-        SdlBool result = SDL_SetAudioPostmixCallback(deviceId, callback, userdata);
+        var result = SDL_SetAudioPostmixCallback(deviceId, callback, userdata);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioPostmixCallback: Failed to set audio postmix callback.");
         }
@@ -1019,7 +1019,7 @@ public static unsafe partial class Sdl {
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static SdlBool SetAudioStreamFormat(nint stream, ref AudioSpec srcSpec, ref AudioSpec dstSpec) {
-        SdlBool result = SDL_SetAudioStreamFormat(stream, ref srcSpec, ref dstSpec);
+        var result = SDL_SetAudioStreamFormat(stream, ref srcSpec, ref dstSpec);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamFormat: Failed to set audio stream format.");
         }
@@ -1041,7 +1041,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool SetAudioStreamFrequencyRatio(nint stream, float ratio) {
-        SdlBool result = SDL_SetAudioStreamFrequencyRatio(stream, ratio);
+        var result = SDL_SetAudioStreamFrequencyRatio(stream, ratio);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamFrequencyRatio: Failed to set audio stream frequency ratio.");
         }
@@ -1063,7 +1063,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError" /> for more information.</returns>
     public static SdlBool SetAudioStreamGain(nint stream, float gain) {
-        SdlBool result = SDL_SetAudioStreamGain(stream,  gain);
+        var result = SDL_SetAudioStreamGain(stream,  gain);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamGain: Failed to set the audio stream gain.");
         }
@@ -1083,7 +1083,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information. This only fails if stream is <see langword="null" />.</returns>
     public static SdlBool SetAudioStreamGetCallback(nint stream, SdlAudioStreamCallback callback, nint userdata) {
-        SdlBool result = SDL_SetAudioStreamGetCallback(stream, callback, userdata);
+        var result = SDL_SetAudioStreamGetCallback(stream, callback, userdata);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamGetCallback: Failed to set audio stream get callback.");
         }
@@ -1104,7 +1104,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool SetAudioStreamInputChannelMap(nint stream, Span<int> channelMap, int count) {
-        SdlBool result = SDL_SetAudioStreamInputChannelMap(stream, channelMap, count);
+        var result = SDL_SetAudioStreamInputChannelMap(stream, channelMap, count);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamInputChannelMap: Failed to set audio stream input channel map.");
         }
@@ -1125,7 +1125,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool SetAudioStreamOutputChannelMap(nint stream, Span<int> channelMap, int count) {
-        SdlBool result = SDL_SetAudioStreamOutputChannelMap(stream, channelMap, count);
+        var result = SDL_SetAudioStreamOutputChannelMap(stream, channelMap, count);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamOutputChannelMap: Failed to set audio stream output channel map.");
         }
@@ -1144,7 +1144,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information. This only fails if stream is <see langword="null" />.</returns>
     public static SdlBool SetAudioStreamPutCallback(nint stream, SdlAudioStreamCallback callback, nint userdata) {
-        SdlBool result = SDL_SetAudioStreamPutCallback(stream, callback, userdata);
+        var result = SDL_SetAudioStreamPutCallback(stream, callback, userdata);
         if (!result) {
             LogError(LogCategory.Error, "SetAudioStreamPutCallback: Failed to set audio stream put callback.");
         }
@@ -1188,7 +1188,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool UnlockAudioStream(nint stream) {
-        SdlBool result = SDL_UnlockAudioStream(stream);
+        var result = SDL_UnlockAudioStream(stream);
         if (!result) {
             LogError(LogCategory.Error, "UnlockAudioStream: Failed to unlock audio stream.");
         }
