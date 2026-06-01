@@ -15,7 +15,7 @@ jobs:
     name: Unit Tests & Coverage
     strategy:
       matrix:
-        os: [ubuntu-22.04, windows-latest, macos-latest]
+        os: [ubuntu-24.04, windows-latest, macos-latest]
     runs-on: ${{ matrix.os }}
 
     steps:
@@ -89,7 +89,7 @@ jobs:
         $dll = Get-ChildItem "$env:TEMP\sdl3" -Recurse -Filter "SDL3.dll" | Select-Object -First 1
         if (-not $dll) { throw "SDL3.dll not found in extracted archive" }
         Write-Host "Found SDL3.dll at: $($dll.FullName)"
-        $testBin = "tests\SharpSDL3.Tests\bin\Release\net9.0"
+        $testBin = "tests\SharpSDL3.Tests\bin\Release\net10.0"
         New-Item -ItemType Directory -Path $testBin -Force | Out-Null
         Copy-Item $dll.FullName -Destination $testBin -Force
 
@@ -112,11 +112,11 @@ jobs:
           --collect:"XPlat Code Coverage"
 
     - name: Install ReportGenerator
-      if: matrix.os == 'ubuntu-22.04'
+      if: matrix.os == 'ubuntu-24.04'
       run: dotnet tool install --global dotnet-reportgenerator-globaltool
 
     - name: Generate coverage report
-      if: matrix.os == 'ubuntu-22.04'
+      if: matrix.os == 'ubuntu-24.04'
       shell: bash
       run: |
         COV=$(find ./TestResults -name "coverage.cobertura.xml" -type f | head -1)
@@ -133,7 +133,7 @@ jobs:
         fi
 
     - name: Post coverage summary to job
-      if: matrix.os == 'ubuntu-22.04' && always()
+      if: matrix.os == 'ubuntu-24.04' && always()
       shell: bash
       run: |
         if [ -f ./TestResults/CoverageReport/SummaryGithub.md ]; then
@@ -149,7 +149,7 @@ jobs:
           ./TestResults/**/*.trx
 
     - name: Upload coverage report
-      if: matrix.os == 'ubuntu-22.04' && always()
+      if: matrix.os == 'ubuntu-24.04' && always()
       uses: actions/upload-artifact@v4
       with:
         name: coverage-report
@@ -160,7 +160,7 @@ jobs:
   package:
     name: Build NuGet Package
     needs: test
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - uses: actions/checkout@v4
@@ -191,7 +191,7 @@ jobs:
 
   fuzz:
     name: Fuzz Tests
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
 
     steps:
     - uses: actions/checkout@v4
