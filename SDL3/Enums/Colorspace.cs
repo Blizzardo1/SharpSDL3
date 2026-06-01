@@ -15,7 +15,7 @@ public enum Colorspace {
     Srgb = 0x120005A0,
 
     /// <summary>
-    /// his is a linear colorspace and the default colorspace for floating point surfaces. On Windows this is the scRGB colorspace, and on Apple platforms this is kCGColorSpaceExtendedLinearSRGB for EDR content
+    /// This is a linear colorspace and the default colorspace for floating point surfaces. On Windows this is the scRGB colorspace, and on Apple platforms this is kCGColorSpaceExtendedLinearSRGB for EDR content
     /// </summary>
     SrgbLinear = 0x12000500,
     
