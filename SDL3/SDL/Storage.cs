@@ -24,7 +24,7 @@ public static partial class Sdl {
         if (storage == nint.Zero) {
             throw new ArgumentException("Storage handle must not be null.", nameof(storage));
         }
-        SdlBool result = SDL_CloseStorage(storage);
+        var result = SDL_CloseStorage(storage);
         if (!result) {
             throw new InvalidOperationException("Failed to close storage.");
         }
@@ -123,7 +123,7 @@ public static partial class Sdl {
         if (string.IsNullOrEmpty(path)) {
             throw new ArgumentException("Path must not be null or empty.", nameof(path));
         }
-        SdlBool result = SDL_GetStorageFileSize(storage, path, out ulong length);
+        var result = SDL_GetStorageFileSize(storage, path, out var length);
         if (!result) {
             throw new InvalidOperationException($"Failed to get file size for path: {path}");
         }
@@ -148,7 +148,7 @@ public static partial class Sdl {
         if (string.IsNullOrEmpty(path)) {
             throw new ArgumentException("Path must not be null or empty.", nameof(path));
         }
-        SdlBool result = SDL_GetStoragePathInfo(storage, path, out PathInfo info);
+        var result = SDL_GetStoragePathInfo(storage, path, out var info);
         if (!result) {
             throw new InvalidOperationException($"Failed to get path info for: {path}");
         }
@@ -201,7 +201,7 @@ public static partial class Sdl {
         if (string.IsNullOrEmpty(pattern)) {
             throw new ArgumentException("Pattern must not be null or empty.", nameof(pattern));
         }
-        nint result = SDL_GlobStorageDirectory(storage, path, pattern, flags, out count);
+        var result = SDL_GlobStorageDirectory(storage, path, pattern, flags, out count);
         if (result == nint.Zero) {
             throw new InvalidOperationException($"Failed to glob storage directory: {path}");
         }

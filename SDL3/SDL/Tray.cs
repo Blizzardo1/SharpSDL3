@@ -8,15 +8,14 @@ using static SharpSDL3.Delegates;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Sdl {
-    /// <summary>Simulate a click on a tray entry.</summary>
+public static partial class Sdl {
 
+    /// <summary>Simulate a click on a tray entry.</summary>
     /// <param name="entry">The entry to activate.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
-
     public static void ClickTrayEntry(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -25,7 +24,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create an icon to be placed in the operating system's tray, or equivalent.</summary>
-
     /// <param name="icon">a surface to be used as icon. May be <see langword="null" />.</param>
     /// <param name="tooltip">a tooltip to be displayed when the mouse hovers the icon in UTF-8 encoding. Not supported on all platforms. May be <see langword="null" />.</param>
     /// <remarks>
@@ -39,7 +37,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DestroyTray" />
     /// </remarks>
     /// <returns>(SDL_Tray *) Returns The newly created system tray icon.</returns>
-
     public static nint CreateTray(nint icon, string tooltip) {
         if (icon == nint.Zero) {
             throw new ArgumentNullException(nameof(icon), "Icon cannot be null.");
@@ -47,7 +44,7 @@ public static unsafe partial class Sdl {
         if (string.IsNullOrWhiteSpace(tooltip)) {
             throw new ArgumentException("Tooltip cannot be null or empty.", nameof(tooltip));
         }
-        nint tray = SDL_CreateTray(icon, tooltip);
+        var tray = SDL_CreateTray(icon, tooltip);
         if (tray == nint.Zero) {
             LogError(LogCategory.Error, "Failed to create tray.");
         }
@@ -55,7 +52,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a menu for a system tray.</summary>
-
     /// <param name="tray">the tray to bind the menu to.</param>
     /// <remarks>
     /// This should be called at most once per tray icon.
@@ -66,12 +62,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayMenuParentTray" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
-
     public static nint CreateTrayMenu(nint tray) {
         if (tray == nint.Zero) {
             throw new ArgumentNullException(nameof(tray), "Tray cannot be null.");
         }
-        nint menu = SDL_CreateTrayMenu(tray);
+        var menu = SDL_CreateTrayMenu(tray);
         if (menu == nint.Zero) {
             LogError(LogCategory.Error, "Failed to create tray menu.");
         }
@@ -79,7 +74,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Create a submenu for a system tray entry.</summary>
-
     /// <param name="entry">the tray entry to bind the menu to.</param>
     /// <remarks>
     /// This should be called at most once per tray entry.
@@ -90,12 +84,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayMenuParentEntry" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
-
     public static nint CreateTraySubmenu(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
         }
-        nint submenu = SDL_CreateTraySubmenu(entry);
+        var submenu = SDL_CreateTraySubmenu(entry);
         if (submenu == nint.Zero) {
             LogError(LogCategory.Error, "Failed to create tray submenu.");
         }
@@ -103,7 +96,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Destroys a tray object.</summary>
-
     /// <param name="tray">the tray icon to be destroyed.</param>
     /// <remarks>
     /// This also destroys all associated menus and entries.
@@ -120,9 +112,7 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Returns a list of entries in the menu, in order.</summary>
-
     /// <param name="menu">The menu to get entries from.</param>
-    /// <param name="count">An optional pointer to obtain the number of entries in the menu.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
@@ -130,34 +120,33 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
     /// <returns>(const SDL_TrayEntry **) Returns a <see langword="null" />-terminated list ofentries within the given menu. The pointer becomes invalid when anyfunction that inserts or deletes entries in the menu is called.</returns>
-
     public static Span<nint> GetTrayEntries(nint menu) {
-        nint result = SDL_GetTrayEntries(menu, out int size);
+        var result = SDL_GetTrayEntries(menu, out var size);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray entries.");
             return [];
         }
 
-        if (size < 0) {
-            LogError(LogCategory.Error, "Invalid size returned for tray entries.");
-            return [];
-        }
-        if (size == 0) {
-            return [];
+        switch (size)
+        {
+            case < 0:
+                LogError(LogCategory.Error, "Invalid size returned for tray entries.");
+                return [];
+            case 0:
+                return [];
         }
 
-        nint[] entries = new nint[size];
+        var entries = new nint[size];
 
         Marshal.Copy(result, entries, 0, size);
 
-        Span<nint> array = new(ref result);
+        Span<nint> array = new Span<IntPtr>(ref result);
 
         return array.ToArray();
     }
 
     /// <summary>Gets whether or not an entry is checked.</summary>
-
     /// <param name="entry">the entry to be read.</param>
     /// <remarks>
     /// The entry must have been created with the
@@ -169,7 +158,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetTrayEntryChecked" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the entry is checked; <see langword="false" /> otherwise.</returns>
-
     public static bool GetTrayEntryChecked(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -182,7 +170,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets whether or not an entry is enabled.</summary>
-
     /// <param name="entry">the entry to be read.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
@@ -192,7 +179,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetTrayEntryEnabled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the entry is enabled; <see langword="false" /> otherwise.</returns>
-
     public static bool GetTrayEntryEnabled(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -205,7 +191,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets the label of an entry.</summary>
-
     /// <param name="entry">the entry to be read.</param>
     /// <remarks>
     /// If the returned value is <see langword="null" />, the entry is a separator.
@@ -216,12 +201,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetTrayEntryLabel" />
     /// </remarks>
     /// <returns>Returns the label of the entry in UTF-8 encoding.</returns>
-
     public static string GetTrayEntryLabel(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
         }
-        string label = SDL_GetTrayEntryLabel(entry);
+        var label = SDL_GetTrayEntryLabel(entry);
         if (string.IsNullOrEmpty(label)) {
             LogError(LogCategory.Error, "Failed to get tray entry label.");
         }
@@ -229,7 +213,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets the menu containing a certain tray entry.</summary>
-
     /// <param name="entry">the entry for which to get the parent menu.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
@@ -237,12 +220,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the parent menu.</returns>
-
     public static nint GetTrayEntryParent(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
         }
-        nint parent = SDL_GetTrayEntryParent(entry);
+        var parent = SDL_GetTrayEntryParent(entry);
         if (parent == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray entry parent.");
         }
@@ -250,7 +232,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets a previously created tray menu.</summary>
-
     /// <param name="tray">the tray entry to bind the menu to.</param>
     /// <remarks>
     /// You should have called SDL_CreateTrayMenu() on the
@@ -261,12 +242,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateTrayMenu" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
-
     public static nint GetTrayMenu(nint tray) {
         if (tray == nint.Zero) {
             throw new ArgumentNullException(nameof(tray), "Tray cannot be null.");
         }
-        nint menu = SDL_GetTrayMenu(tray);
+        var menu = SDL_GetTrayMenu(tray);
         if (menu == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray menu.");
         }
@@ -274,7 +254,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets the entry for which the menu is a submenu, if the current menu is a submenu.</summary>
-
     /// <param name="menu">the menu for which to get the parent entry.</param>
     /// <remarks>
     /// Either this function or
@@ -286,12 +265,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayMenuParentTray" />
     /// </remarks>
     /// <returns>(SDL_TrayEntry *) Returns the parent entry, or <see langword="null" /> ifthis menu is not a submenu.</returns>
-
     public static nint GetTrayMenuParentEntry(nint menu) {
         if (menu == nint.Zero) {
             throw new ArgumentNullException(nameof(menu), "Menu cannot be null.");
         }
-        nint parentEntry = SDL_GetTrayMenuParentEntry(menu);
+        var parentEntry = SDL_GetTrayMenuParentEntry(menu);
         if (parentEntry == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray menu parent entry.");
         }
@@ -299,7 +277,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets the tray for which this menu is the first-level menu, if the current menu isn't a submenu.</summary>
-
     /// <param name="menu">the menu for which to get the parent enttrayry.</param>
     /// <remarks>
     /// Either this function or
@@ -311,12 +288,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayMenuParentEntry" />
     /// </remarks>
     /// <returns>(SDL_Tray *) Returns the parent tray, or <see langword="null" /> if this menu is asubmenu.</returns>
-
     public static nint GetTrayMenuParentTray(nint menu) {
         if (menu == nint.Zero) {
             throw new ArgumentNullException(nameof(menu), "Menu cannot be null.");
         }
-        nint parentTray = SDL_GetTrayMenuParentTray(menu);
+        var parentTray = SDL_GetTrayMenuParentTray(menu);
         if (parentTray == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray menu parent tray.");
         }
@@ -324,7 +300,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Gets a previously created tray entry submenu.</summary>
-
     /// <param name="entry">the tray entry to bind the menu to.</param>
     /// <remarks>
     /// You should have called SDL_CreateTraySubmenu() on
@@ -335,12 +310,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateTraySubmenu" />
     /// </remarks>
     /// <returns>(SDL_TrayMenu *) Returns the newly created menu.</returns>
-
     public static nint GetTraySubmenu(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
         }
-        nint submenu = SDL_GetTraySubmenu(entry);
+        var submenu = SDL_GetTraySubmenu(entry);
         if (submenu == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get tray submenu.");
         }
@@ -348,7 +322,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Insert a tray entry at a given position.</summary>
-
     /// <param name="menu">the menu to append the entry to.</param>
     /// <param name="pos">the desired position for the new entry. Entries at or following this place will be moved. If pos is -1, the entry is appended.</param>
     /// <param name="label">the text to be displayed on the entry, in UTF-8 encoding, or <see langword="null" /> for a separator.</param>
@@ -364,7 +337,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayEntryParent" />
     /// </remarks>
     /// <returns>(SDL_TrayEntry *) Returns the newly created entry, or <see langword="null" />if pos is out of bounds.</returns>
-
     public static nint InsertTrayEntryAt(nint menu, int pos, string label, TrayEntryFlags flags) {
         if (menu == nint.Zero) {
             throw new ArgumentNullException(nameof(menu), "Menu cannot be null.");
@@ -372,7 +344,7 @@ public static unsafe partial class Sdl {
         if (string.IsNullOrWhiteSpace(label)) {
             throw new ArgumentException("Label cannot be null or empty.", nameof(label));
         }
-        nint entry = SDL_InsertTrayEntryAt(menu, pos, label, flags);
+        var entry = SDL_InsertTrayEntryAt(menu, pos, label, flags);
         if (entry == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to insert tray entry at position {pos}.");
         }
@@ -380,7 +352,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Removes a tray entry.</summary>
-
     /// <param name="entry">The entry to be deleted.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should be called on the thread that created the tray.</para>
@@ -388,7 +359,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayEntries" />
     /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
-
     public static void RemoveTrayEntry(nint entry) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -397,7 +367,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Sets a callback to be invoked when the entry is selected.</summary>
-
     /// <param name="entry">the entry to be updated.</param>
     /// <param name="callback">a callback to be invoked when the entry is selected.</param>
     /// <param name="userdata">an optional pointer to pass extra data to the callback when it will be invoked.</param>
@@ -407,7 +376,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetTrayEntries" />
     /// <seealso cref="InsertTrayEntryAt" />
     /// </remarks>
-
     public static void SetTrayEntryCallback(nint entry, SdlTrayCallback callback, nint userdata) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -419,9 +387,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Sets whether or not an entry is checked.</summary>
-
     /// <param name="entry">the entry to be updated.</param>
-    /// <param name="checked"><see langword="true" /> if the entry should be checked; <see langword="false" /> otherwise.</param>
+    /// <param name="check"><see langword="true" /> if the entry should be checked; <see langword="false" /> otherwise.</param>
     /// <remarks>
     /// The entry must have been created with the
     /// SDL_TRAYENTRY_CHECKBOX flag.
@@ -431,7 +398,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt" />
     /// <seealso cref="GetTrayEntryChecked" />
     /// </remarks>
-
     public static void SetTrayEntryChecked(nint entry, bool check) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -440,7 +406,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Sets whether or not an entry is enabled.</summary>
-
     /// <param name="entry">the entry to be updated.</param>
     /// <param name="enabled"><see langword="true" /> if the entry should be enabled; <see langword="false" /> otherwise.</param>
     /// <remarks>
@@ -450,16 +415,14 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt" />
     /// <seealso cref="GetTrayEntryEnabled" />
     /// </remarks>
-
     public static void SetTrayEntryEnabled(nint entry, bool enabled) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
         }
         SDL_SetTrayEntryEnabled(entry, enabled);
     }
-
+    
     /// <summary>Sets the label of an entry.</summary>
-
     /// <param name="entry">the entry to be updated.</param>
     /// <param name="label">the new label for the entry in UTF-8 encoding.</param>
     /// <remarks>
@@ -473,7 +436,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="InsertTrayEntryAt" />
     /// <seealso cref="GetTrayEntryLabel" />
     /// </remarks>
-
     public static void SetTrayEntryLabel(nint entry, string label) {
         if (entry == nint.Zero) {
             throw new ArgumentNullException(nameof(entry), "Entry cannot be null.");
@@ -485,7 +447,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Updates the system tray icon's icon.</summary>
-
     /// <param name="tray">the tray icon to be updated.</param>
     /// <param name="icon">the new icon. May be <see langword="null" />.</param>
     /// <remarks>
@@ -493,7 +454,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateTray" />
     /// </remarks>
-
     public static void SetTrayIcon(nint tray, nint icon) {
         if (tray == nint.Zero) {
             throw new ArgumentNullException(nameof(tray), "Tray cannot be null.");
@@ -505,7 +465,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Updates the system tray icon's tooltip.</summary>
-
     /// <param name="tray">the tray icon to be updated.</param>
     /// <param name="tooltip">the new tooltip in UTF-8 encoding. May be <see langword="null" />.</param>
     /// <remarks>
@@ -513,7 +472,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateTray" />
     /// </remarks>
-
     public static void SetTrayTooltip(nint tray, string tooltip) {
         if (tray == nint.Zero) {
             throw new ArgumentNullException(nameof(tray), "Tray cannot be null.");

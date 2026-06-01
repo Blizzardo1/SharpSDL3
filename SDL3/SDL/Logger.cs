@@ -17,7 +17,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the default log output callback.</returns>
     public static SdlLogOutputFunction GetDefaultLogOutputFunction() {
-        SdlLogOutputFunction? callback = SDL_GetDefaultLogOutputFunction();
+        var callback = SDL_GetDefaultLogOutputFunction();
         return callback ?? throw new InvalidOperationException("Failed to retrieve default log output function.");
     }
 

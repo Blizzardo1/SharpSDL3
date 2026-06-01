@@ -24,7 +24,7 @@ public static unsafe partial class Sdl {
         if (desc.Name == nint.Zero) {
             throw new ArgumentException("Virtual joystick description must have a valid name.", nameof(desc));
         }
-        uint instanceId = SDL_AttachVirtualJoystick(ref desc);
+        var instanceId = SDL_AttachVirtualJoystick(ref desc);
         if (instanceId == 0) {
             throw new InvalidOperationException("Failed to attach virtual joystick.");
         }
@@ -59,7 +59,7 @@ public static unsafe partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        SdlBool result = SDL_DetachVirtualJoystick(instanceId);
+        var result = SDL_DetachVirtualJoystick(instanceId);
         if (!result) {
             throw new InvalidOperationException($"Failed to detach virtual joystick with instance ID {instanceId}.");
         }
@@ -88,7 +88,7 @@ public static unsafe partial class Sdl {
         if (axis < 0) {
             throw new ArgumentException("Axis cannot be negative.", nameof(axis));
         }
-        short axisValue = SDL_GetJoystickAxis(joystick, axis);
+        var axisValue = SDL_GetJoystickAxis(joystick, axis);
         return axisValue;
     }
 
@@ -110,7 +110,7 @@ public static unsafe partial class Sdl {
         if (axis < 0) {
             throw new ArgumentException("Axis cannot be negative.", nameof(axis));
         }
-        SdlBool result = SDL_GetJoystickAxisInitialState(joystick, axis, out state);
+        var result = SDL_GetJoystickAxisInitialState(joystick, axis, out state);
         return result;
     }
 
@@ -136,7 +136,7 @@ public static unsafe partial class Sdl {
         if (ball < 0) {
             throw new ArgumentException("Ball cannot be negative.", nameof(ball));
         }
-        SdlBool result = SDL_GetJoystickBall(joystick, ball, out dx, out dy);
+        var result = SDL_GetJoystickBall(joystick, ball, out dx, out dy);
         return result;
     }
 
@@ -157,7 +157,7 @@ public static unsafe partial class Sdl {
         if (button < 0) {
             throw new ArgumentException("Button cannot be negative.", nameof(button));
         }
-        SdlBool buttonState = SDL_GetJoystickButton(joystick, button);
+        var buttonState = SDL_GetJoystickButton(joystick, button);
         return buttonState;
     }
 
@@ -173,7 +173,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        JoystickConnectionState connectionState = SDL_GetJoystickConnectionState(joystick);
+        var connectionState = SDL_GetJoystickConnectionState(joystick);
         return connectionState;
     }
 
@@ -190,7 +190,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        ushort firmwareVersion = SDL_GetJoystickFirmwareVersion(joystick);
+        var firmwareVersion = SDL_GetJoystickFirmwareVersion(joystick);
         return firmwareVersion;
     }
 
@@ -206,7 +206,7 @@ public static unsafe partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        nint joystick = SDL_GetJoystickFromID(instanceId);
+        var joystick = SDL_GetJoystickFromID(instanceId);
         if (joystick == nint.Zero) {
             throw new InvalidOperationException($"Failed to get joystick from ID {instanceId}.");
         }
@@ -227,7 +227,7 @@ public static unsafe partial class Sdl {
         if (playerIndex < 0) {
             throw new ArgumentException("Player index cannot be negative.", nameof(playerIndex));
         }
-        nint joystick = SDL_GetJoystickFromPlayerIndex(playerIndex);
+        var joystick = SDL_GetJoystickFromPlayerIndex(playerIndex);
         if (joystick == nint.Zero) {
             throw new InvalidOperationException($"Failed to get joystick from player index {playerIndex}.");
         }
@@ -249,7 +249,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        SdlGuid guid = SDL_GetJoystickGUID(joystick);
+        var guid = SDL_GetJoystickGUID(joystick);
         if (guid.Data == null) {
             throw new InvalidOperationException("Failed to get joystick GUID.");
         }
@@ -311,7 +311,7 @@ public static unsafe partial class Sdl {
         if (hat < 0) {
             throw new ArgumentException("Hat cannot be negative.", nameof(hat));
         }
-        byte hatValue = SDL_GetJoystickHat(joystick, hat);
+        var hatValue = SDL_GetJoystickHat(joystick, hat);
         return hatValue;
     }
 
@@ -327,7 +327,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        uint id = SDL_GetJoystickID(joystick);
+        var id = SDL_GetJoystickID(joystick);
         return id;
     }
 
@@ -344,7 +344,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        string joystickName = SDL_GetJoystickName(joystick);
+        var joystickName = SDL_GetJoystickName(joystick);
         if (string.IsNullOrEmpty(joystickName)) {
             throw new InvalidOperationException("Failed to get joystick name.");
         }
@@ -367,7 +367,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
 
-        string joystickName = SDL_GetJoystickNameForID(instanceId);
+        var joystickName = SDL_GetJoystickNameForID(instanceId);
         if (string.IsNullOrEmpty(joystickName)) {
             throw new InvalidOperationException($"No joystick found for instance ID {instanceId}.");
         }
@@ -388,7 +388,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        string joystickPath = SDL_GetJoystickPath(joystick);
+        var joystickPath = SDL_GetJoystickPath(joystick);
         if (string.IsNullOrEmpty(joystickPath)) {
             throw new InvalidOperationException("Failed to get joystick path.");
         }
@@ -410,7 +410,7 @@ public static unsafe partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        string joystickPath = SDL_GetJoystickPathForID(instanceId);
+        var joystickPath = SDL_GetJoystickPathForID(instanceId);
         if (string.IsNullOrEmpty(joystickPath)) {
             throw new InvalidOperationException($"No joystick found for instance ID {instanceId}.");
         }
@@ -432,7 +432,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        int playerIndex = SDL_GetJoystickPlayerIndex(joystick);
+        var playerIndex = SDL_GetJoystickPlayerIndex(joystick);
         if (playerIndex < 0) {
             throw new InvalidOperationException("Failed to get joystick player index.");
         }
@@ -475,7 +475,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        PowerState powerState = SDL_GetJoystickPowerInfo(joystick, out percent);
+        var powerState = SDL_GetJoystickPowerInfo(joystick, out percent);
         return powerState;
     }
 
@@ -493,7 +493,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        ushort product = SDL_GetJoystickProduct(joystick);
+        var product = SDL_GetJoystickProduct(joystick);
         return product;
     }
 
@@ -530,7 +530,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        ushort productVersion = SDL_GetJoystickProductVersion(joystick);
+        var productVersion = SDL_GetJoystickProductVersion(joystick);
         return productVersion;
     }
 
@@ -566,7 +566,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        uint properties = SDL_GetJoystickProperties(joystick);
+        var properties = SDL_GetJoystickProperties(joystick);
         return properties;
     }
 
@@ -581,13 +581,13 @@ public static unsafe partial class Sdl {
     /// <returns>(SDL_JoystickID *) Returns a 0 terminated array ofjoystick instance IDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freedwith <see cref="Free" /> when it is no longer needed.</returns>
 
     public static List<nint> GetJoysticks(out int count) {
-        nint joystickArrayPtr = SDL_GetJoysticks(out count);
+        var joystickArrayPtr = SDL_GetJoysticks(out count);
         if (joystickArrayPtr == 0 || count <= 0) {
             return [];
         }
 
-        List<nint> joysticks = new(count);
-        for (int i = 0; i < count; i++) {
+        List<nint> joysticks = new List<IntPtr>(count);
+        for (var i = 0; i < count; i++) {
             nint joystick = Marshal.ReadInt32(joystickArrayPtr, i * nint.Size);
             joysticks.Add(joystick);
         }
@@ -608,7 +608,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        string serial = SDL_GetJoystickSerial(joystick);
+        var serial = SDL_GetJoystickSerial(joystick);
         if (string.IsNullOrEmpty(serial)) {
             throw new InvalidOperationException("Failed to get joystick serial.");
         }
@@ -628,7 +628,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        JoystickType joystickType = SDL_GetJoystickType(joystick);
+        var joystickType = SDL_GetJoystickType(joystick);
         return joystickType;
     }
 
@@ -664,7 +664,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        ushort vendor = SDL_GetJoystickVendor(joystick);
+        var vendor = SDL_GetJoystickVendor(joystick);
         return vendor;
     }
 
@@ -706,7 +706,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        int numAxes = SDL_GetNumJoystickAxes(joystick);
+        var numAxes = SDL_GetNumJoystickAxes(joystick);
         return numAxes;
     }
 
@@ -728,7 +728,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        int numBalls = SDL_GetNumJoystickBalls(joystick);
+        var numBalls = SDL_GetNumJoystickBalls(joystick);
         return numBalls;
     }
 
@@ -748,7 +748,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        int numButtons = SDL_GetNumJoystickButtons(joystick);
+        var numButtons = SDL_GetNumJoystickButtons(joystick);
         return numButtons;
     }
 
@@ -768,7 +768,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        int numHats = SDL_GetNumJoystickHats(joystick);
+        var numHats = SDL_GetNumJoystickHats(joystick);
         return numHats;
     }
 
@@ -795,7 +795,7 @@ public static unsafe partial class Sdl {
         if (instanceId == 0) {
             throw new ArgumentException("Instance ID cannot be zero.", nameof(instanceId));
         }
-        SdlBool result = SDL_IsJoystickVirtual(instanceId);
+        var result = SDL_IsJoystickVirtual(instanceId);
         return result;
     }
 
@@ -811,7 +811,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        SdlBool connected = SDL_JoystickConnected(joystick);
+        var connected = SDL_JoystickConnected(joystick);
         return connected;
     }
 
@@ -853,7 +853,7 @@ public static unsafe partial class Sdl {
     /// <returns>(SDL_Joystick *) Returns a joystick identifier or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint OpenJoystick(uint instanceId) {
-        nint joystick = SDL_OpenJoystick(instanceId);
+        var joystick = SDL_OpenJoystick(instanceId);
         if (joystick == nint.Zero) {
             throw new SdlException($"Failed to open joystick with instance ID {instanceId}. {GetError()}");
         }
@@ -880,7 +880,7 @@ public static unsafe partial class Sdl {
         if (lowFrequencyRumble < 0 || highFrequencyRumble < 0) {
             throw new ArgumentException("Rumble values cannot be negative.");
         }
-        SdlBool result = SDL_RumbleJoystick(joystick, lowFrequencyRumble, highFrequencyRumble, durationMs);
+        var result = SDL_RumbleJoystick(joystick, lowFrequencyRumble, highFrequencyRumble, durationMs);
         return result;
     }
 
@@ -905,7 +905,7 @@ public static unsafe partial class Sdl {
         if (leftRumble < 0 || rightRumble < 0) {
             throw new ArgumentException("Rumble values cannot be negative.");
         }
-        SdlBool result = SDL_RumbleJoystickTriggers(joystick, leftRumble, rightRumble, durationMs);
+        var result = SDL_RumbleJoystickTriggers(joystick, leftRumble, rightRumble, durationMs);
         return result;
     }
 
@@ -929,7 +929,7 @@ public static unsafe partial class Sdl {
         if (size <= 0) {
             throw new ArgumentException("Size must be positive.", nameof(size));
         }
-        SdlBool result = SDL_SendJoystickEffect(joystick, data, size);
+        var result = SDL_SendJoystickEffect(joystick, data, size);
         return result;
     }
 
@@ -962,7 +962,7 @@ public static unsafe partial class Sdl {
         if (numValues <= 0) {
             throw new ArgumentException("Number of values must be positive.", nameof(numValues));
         }
-        SdlBool result = SDL_SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, data, numValues);
+        var result = SDL_SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, data, numValues);
         return result;
     }
 
@@ -996,7 +996,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentException("Data array cannot be null or empty.", nameof(data));
         }
 
-        nint pData = Marshal.AllocHGlobal(data.Length * sizeof(float));
+        var pData = Marshal.AllocHGlobal(data.Length * sizeof(float));
 
         bool result = SendJoystickVirtualSensorData(joystick, type, sensorTimestamp, pData, data.Length);
 
@@ -1042,7 +1042,7 @@ public static unsafe partial class Sdl {
         if (joystick == nint.Zero) {
             throw new ArgumentException("Joystick cannot be null.", nameof(joystick));
         }
-        SdlBool result = SDL_SetJoystickLED(joystick, red, green, blue);
+        var result = SDL_SetJoystickLED(joystick, red, green, blue);
         return result;
     }
 
@@ -1063,7 +1063,7 @@ public static unsafe partial class Sdl {
         if (playerIndex < 0) {
             throw new ArgumentException("Player index cannot be negative.", nameof(playerIndex));
         }
-        SdlBool result = SDL_SetJoystickPlayerIndex(joystick, playerIndex);
+        var result = SDL_SetJoystickPlayerIndex(joystick, playerIndex);
         return result;
     }
 
@@ -1091,7 +1091,7 @@ public static unsafe partial class Sdl {
         if (axis < 0) {
             throw new ArgumentException("Axis cannot be negative.", nameof(axis));
         }
-        SdlBool result = SDL_SetJoystickVirtualAxis(joystick, axis, value);
+        var result = SDL_SetJoystickVirtualAxis(joystick, axis, value);
         return result;
     }
 
@@ -1120,7 +1120,7 @@ public static unsafe partial class Sdl {
         if (ball < 0) {
             throw new ArgumentException("Ball cannot be negative.", nameof(ball));
         }
-        SdlBool result = SDL_SetJoystickVirtualBall(joystick, ball, xrel, yrel);
+        var result = SDL_SetJoystickVirtualBall(joystick, ball, xrel, yrel);
         return result;
     }
 
@@ -1148,7 +1148,7 @@ public static unsafe partial class Sdl {
         if (button < 0) {
             throw new ArgumentException("Button cannot be negative.", nameof(button));
         }
-        SdlBool result = SDL_SetJoystickVirtualButton(joystick, button, down);
+        var result = SDL_SetJoystickVirtualButton(joystick, button, down);
         return result;
     }
 
@@ -1176,7 +1176,7 @@ public static unsafe partial class Sdl {
         if (hat < 0) {
             throw new ArgumentException("Hat cannot be negative.", nameof(hat));
         }
-        SdlBool result = SDL_SetJoystickVirtualHat(joystick, hat, value);
+        var result = SDL_SetJoystickVirtualHat(joystick, hat, value);
         return result;
     }
 
@@ -1211,7 +1211,7 @@ public static unsafe partial class Sdl {
         if (finger < 0) {
             throw new ArgumentException("Finger cannot be negative.", nameof(finger));
         }
-        SdlBool result = SDL_SetJoystickVirtualTouchpad(joystick, touchpad, finger, down, x, y, pressure);
+        var result = SDL_SetJoystickVirtualTouchpad(joystick, touchpad, finger, down, x, y, pressure);
         return result;
     }
 

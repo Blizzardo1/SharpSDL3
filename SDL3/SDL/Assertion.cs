@@ -12,7 +12,6 @@ namespace SharpSDL3;
 /// </summary>
 public static partial class Sdl {
     /// <summary>Get the current assertion handler.</summary>
-
     /// <param name="pUserData">pointer which is filled with the &quot;userdata&quot; pointer that was passed to SDL_SetAssertionHandler().</param>
     /// <remarks>
     /// <para>This returns the function pointer that is called when an assertion is triggered.</para>
@@ -24,7 +23,7 @@ public static partial class Sdl {
     /// </remarks>
     /// <returns>Returns the <see cref="SdlAssertionHandler" /> that is called when an assert triggers.</returns>
     public static SdlAssertionHandler GetAssertionHandler(out nint pUserData) {
-        SdlAssertionHandler? handler = SDL_GetAssertionHandler(out pUserData);
+        var handler = SDL_GetAssertionHandler(out pUserData);
         return handler ?? throw new InvalidOperationException("Failed to get assertion handler.");
     }
 
@@ -42,7 +41,7 @@ public static partial class Sdl {
     /// This memory should not be modified or freed by the application.
     /// This pointer remains valid until the next call to <see cref="Quit" /> or <see cref="ResetAssertionReport" />.</returns>
     public static nint GetAssertionReport() {
-        nint report = SDL_GetAssertionReport();
+        var report = SDL_GetAssertionReport();
         return report == nint.Zero ? throw new InvalidOperationException("Failed to get assertion report.") : report;
     }
 
@@ -58,9 +57,8 @@ public static partial class Sdl {
     /// <seealso cref="GetAssertionHandler" />
     /// </remarks>
     /// <returns>Returns the defaultSDL_AssertionHandler that is called when an assert triggers.</returns>
-
     public static SdlAssertionHandler GetDefaultAssertionHandler() {
-        SdlAssertionHandler handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
+        var handler = SDL_GetDefaultAssertionHandler() ?? throw new InvalidOperationException("Failed to get default assertion handler.");
         return handler;
     }
 
@@ -82,7 +80,7 @@ public static partial class Sdl {
         }
 
         // Call the native method
-        AssertState result = SDL_ReportAssertion(ref data, func, file, line);
+        var result = SDL_ReportAssertion(ref data, func, file, line);
 
         // Handle the result or add additional logic
         switch (result) {
@@ -105,6 +103,8 @@ public static partial class Sdl {
             case AssertState.AlwaysIgnore:
                 LogWarn(LogCategory.System, "Always ignoring assertion...");
                 break;
+            default:
+                throw new ArgumentOutOfRangeException();
         }
 
         return result;

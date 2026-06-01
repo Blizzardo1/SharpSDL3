@@ -115,7 +115,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureAlphaMod(texture, out byte alpha);
+        SDL_GetTextureAlphaMod(texture, out var alpha);
         return alpha;
     }
 
@@ -143,7 +143,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureAlphaModFloat(texture, out float alpha);
+        SDL_GetTextureAlphaModFloat(texture, out var alpha);
         return alpha;
     }
 
@@ -191,7 +191,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureColorMod(texture, out byte r, out byte g, out byte b);
+        SDL_GetTextureColorMod(texture, out var r, out var g, out var b);
         return new Color() { R = r, G = g, B = b };
     }
 
@@ -221,7 +221,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureColorModFloat(texture, out float r, out float g, out float b);
+        SDL_GetTextureColorModFloat(texture, out var r, out var g, out var b);
         return new FColor() { R = r, G = g, B = b };
     }
 
@@ -264,7 +264,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureScaleMode(texture, out ScaleMode scaleMode);
+        SDL_GetTextureScaleMode(texture, out var scaleMode);
         return scaleMode;
     }
 
@@ -290,8 +290,8 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        SDL_GetTextureSize(texture, out float w, out float h);
-        return new(w, h);
+        SDL_GetTextureSize(texture, out var w, out var h);
+        return new Vector2(w, h);
     }
 
     /// <summary>Lock a portion of the texture for write-only pixel access.</summary>
@@ -343,7 +343,7 @@ public static unsafe partial class Sdl {
         if (texture == nint.Zero) {
             LogError(LogCategory.Render, "Texture is null");
         }
-        Rect trect = Marshal.PtrToStructure<Rect>(rect);
+        var trect = Marshal.PtrToStructure<Rect>(rect);
         return SDL_LockTexture(texture, ref trect, out pixels, out pitch);
     }
 

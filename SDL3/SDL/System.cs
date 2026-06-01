@@ -113,7 +113,7 @@ public static partial class Sdl {
             "November",
             "December"
         ];
-        string selectedMonth = months[month - 1];
+        var selectedMonth = months[month - 1];
         return shortCode ? selectedMonth[..3] : selectedMonth;
     }
 

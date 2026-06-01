@@ -6,10 +6,9 @@ using System.Runtime.InteropServices.Marshalling;
 
 namespace SharpSDL3;
 
-public static unsafe partial class Sdl {
+public static partial class Sdl {
     /// <summary>Get the touch device name as reported from the driver.</summary>
-
-    /// <param name="touchID">the touch device instance ID.</param>
+    /// <param name="touchId">the touch device instance ID.</param>
     /// <remarks>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
@@ -20,7 +19,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentException("Touch ID cannot be zero.", nameof(touchId));
         }
 
-        string deviceName = SDL_GetTouchDeviceName(touchId);
+        var deviceName = SDL_GetTouchDeviceName(touchId);
 
         if (string.IsNullOrEmpty(deviceName)) {
             throw new InvalidOperationException($"Failed to retrieve the name for touch device with ID {touchId}.");
@@ -30,8 +29,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a list of registered touch devices.</summary>
-
-    /// <param name="count">a pointer filled in with the number of devices returned, may be discarded.</param>
     /// <remarks>
     /// On some platforms SDL first sees the touch device if it was actually used.
     /// Therefore the returned list might be empty, although devices are available.
@@ -41,21 +38,20 @@ public static unsafe partial class Sdl {
     /// <returns>(SDL_TouchID *) Returns a 0 terminated array of touch deviceIDs or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This should be freed with <see cref="Free" /> when it is no longer needed.</returns>
 
     public static Span<nint> GetTouchDevices() {
-        nint result = SDL_GetTouchDevices(out int count);
+        var result = SDL_GetTouchDevices(out var count);
 
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
-        nint[] data = new nint[count];
+        var data = new nint[count];
         Marshal.Copy(result, data, 0, count);
 
         return data;
     }
 
     /// <summary>Get the type of the given touch device.</summary>
-
-    /// <param name="touchID">the ID of a touch device.</param>
+    /// <param name="touchId">the ID of a touch device.</param>
     /// <remarks>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
@@ -65,7 +61,7 @@ public static unsafe partial class Sdl {
         if (touchId == 0) {
             throw new ArgumentException("Touch ID cannot be zero.", nameof(touchId));
         }
-        TouchDeviceType deviceType = SDL_GetTouchDeviceType(touchId);
+        var deviceType = SDL_GetTouchDeviceType(touchId);
         if (deviceType == TouchDeviceType.Invalid) {
             throw new InvalidOperationException($"Failed to retrieve the type for touch device with ID {touchId}.");
         }
@@ -82,12 +78,12 @@ public static unsafe partial class Sdl {
     /// <returns>(SDL_Finger **) Returns a <see langword="null" /> terminated array ofSDL_Finger pointers or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This is a single allocation that should be freed with <see cref="Free" /> when it is no longer needed.</returns>
 
     public static Span<nint> GetTouchFingers(ulong touchId) {
-        nint result = SDL_GetTouchFingers(touchId, out int count);
+        var result = SDL_GetTouchFingers(touchId, out var count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
-        nint[] data = new nint[count];
+        var data = new nint[count];
         Marshal.Copy(result, data, 0, count);
 
         return data;
@@ -103,12 +99,12 @@ public static unsafe partial class Sdl {
     /// <returns>(SDL_Finger **) Returns a <see langword="null" /> terminated array ofSDL_Finger pointers or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information. This is a single allocation that should be freed with <see cref="Free" /> when it is no longer needed.</returns>
 
     public static Span<nint> GetTouchFingers(ulong touchId, out int count) {
-        nint result = SDL_GetTouchFingers(touchId, out count);
+        var result = SDL_GetTouchFingers(touchId, out count);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to retrieve touch devices.");
         }
 
-        nint[] data = new nint[count];
+        var data = new nint[count];
         Marshal.Copy(result, data, 0, count);
 
         return data;

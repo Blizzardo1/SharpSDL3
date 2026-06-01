@@ -10,7 +10,7 @@ namespace SharpSDL3;
 public static partial class Sdl {
 
     public static nint EglGetCurrentConfig() {
-        nint result = SDL_EGL_GetCurrentConfig();
+        var result = SDL_EGL_GetCurrentConfig();
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get current EGL config.");
         }
@@ -18,7 +18,7 @@ public static partial class Sdl {
     }
 
     public static nint EglGetCurrentDisplay() {
-        nint result = SDL_EGL_GetCurrentDisplay();
+        var result = SDL_EGL_GetCurrentDisplay();
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get current EGL display.");
         }
@@ -29,7 +29,7 @@ public static partial class Sdl {
         if (string.IsNullOrWhiteSpace(proc)) {
             throw new ArgumentException("Procedure name cannot be null, empty, or whitespace.", nameof(proc));
         }
-        nint result = SDL_EGL_GetProcAddress(proc);
+        var result = SDL_EGL_GetProcAddress(proc);
         if (result == nint.Zero) {
             throw new InvalidOperationException($"Failed to get EGL procedure address for: {proc}");
         }
@@ -40,7 +40,7 @@ public static partial class Sdl {
         if (window == nint.Zero) {
             throw new ArgumentNullException(nameof(window), "Window cannot be null.");
         }
-        nint result = SDL_EGL_GetWindowSurface(window);
+        var result = SDL_EGL_GetWindowSurface(window);
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get EGL window surface.");
         }
@@ -66,7 +66,7 @@ public static partial class Sdl {
         if (window == nint.Zero) {
             throw new ArgumentNullException(nameof(window), "Window cannot be null.");
         }
-        nint result = SDL_GL_CreateContext(window);
+        var result = SDL_GL_CreateContext(window);
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to create OpenGL context.");
         }
@@ -77,7 +77,7 @@ public static partial class Sdl {
         if (context == nint.Zero) {
             throw new ArgumentNullException(nameof(context), "Context cannot be null.");
         }
-        SdlBool result = SDL_GL_DestroyContext(context);
+        var result = SDL_GL_DestroyContext(context);
         if (!result) {
             throw new InvalidOperationException("Failed to destroy OpenGL context.");
         }
@@ -88,7 +88,7 @@ public static partial class Sdl {
         if (string.IsNullOrWhiteSpace(extension)) {
             throw new ArgumentException("Extension name cannot be null, empty, or whitespace.", nameof(extension));
         }
-        SdlBool result = SDL_GL_ExtensionSupported(extension);
+        var result = SDL_GL_ExtensionSupported(extension);
         if (!result) {
             throw new InvalidOperationException($"OpenGL extension not supported: {extension}");
         }
@@ -99,7 +99,7 @@ public static partial class Sdl {
         if (attr < 0 || attr > GlAttr.EglPlatform) {
             throw new ArgumentOutOfRangeException(nameof(attr), "Invalid OpenGL attribute.");
         }
-        SdlBool result = SDL_GL_GetAttribute(attr, out value);
+        var result = SDL_GL_GetAttribute(attr, out value);
         if (!result) {
             throw new InvalidOperationException($"Failed to get OpenGL attribute: {attr}");
         }
@@ -107,7 +107,7 @@ public static partial class Sdl {
     }
 
     public static nint GlGetCurrentContext() {
-        nint result = SDL_GL_GetCurrentContext();
+        var result = SDL_GL_GetCurrentContext();
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get current OpenGL context.");
         }
@@ -115,7 +115,7 @@ public static partial class Sdl {
     }
 
     public static nint GlGetCurrentWindow() {
-        nint result = SDL_GL_GetCurrentWindow();
+        var result = SDL_GL_GetCurrentWindow();
         if (result == nint.Zero) {
             throw new InvalidOperationException("Failed to get current OpenGL window.");
         }
@@ -126,7 +126,7 @@ public static partial class Sdl {
         if (string.IsNullOrWhiteSpace(proc)) {
             throw new ArgumentException("Procedure name cannot be null, empty, or whitespace.", nameof(proc));
         }
-        nint result = SDL_GL_GetProcAddress(proc);
+        var result = SDL_GL_GetProcAddress(proc);
         if (result == nint.Zero) {
             throw new InvalidOperationException($"Failed to get OpenGL procedure address for: {proc}");
         }
@@ -134,7 +134,7 @@ public static partial class Sdl {
     }
 
     public static SdlBool GlGetSwapInterval(out int interval) {
-        SdlBool result = SDL_GL_GetSwapInterval(out interval);
+        var result = SDL_GL_GetSwapInterval(out interval);
         if (!result) {
             throw new InvalidOperationException("Failed to get OpenGL swap interval.");
         }
@@ -146,7 +146,7 @@ public static partial class Sdl {
             throw new ArgumentException("Path cannot be null, empty, or whitespace.", nameof(path));
         }
 
-        SdlBool result = SDL_GL_LoadLibrary(path);
+        var result = SDL_GL_LoadLibrary(path);
         if (!result) {
             throw new InvalidOperationException($"Failed to load OpenGL library from path: {path}");
         }
@@ -161,7 +161,7 @@ public static partial class Sdl {
         if (context == nint.Zero) {
             throw new ArgumentNullException(nameof(context), "Context cannot be null.");
         }
-        SdlBool result = SDL_GL_MakeCurrent(window, context);
+        var result = SDL_GL_MakeCurrent(window, context);
         return !result ? throw new InvalidOperationException("Failed to make OpenGL context current.") : result;
     }
 
@@ -176,7 +176,7 @@ public static partial class Sdl {
         if (value < 0) {
             throw new ArgumentOutOfRangeException(nameof(value), "Attribute value cannot be negative.");
         }
-        SdlBool result = SDL_GL_SetAttribute(attr, value);
+        var result = SDL_GL_SetAttribute(attr, value);
         if (!result) {
             throw new InvalidOperationException($"Failed to set OpenGL attribute: {attr}");
         }
@@ -187,7 +187,7 @@ public static partial class Sdl {
         if (interval < 0) {
             throw new ArgumentOutOfRangeException(nameof(interval), "Swap interval cannot be negative.");
         }
-        SdlBool result = SDL_GL_SetSwapInterval(interval);
+        var result = SDL_GL_SetSwapInterval(interval);
         if (!result) {
             throw new InvalidOperationException($"Failed to set OpenGL swap interval: {interval}");
         }
@@ -198,7 +198,7 @@ public static partial class Sdl {
         if (window == nint.Zero) {
             throw new ArgumentNullException(nameof(window), "Window cannot be null.");
         }
-        SdlBool result = SDL_GL_SwapWindow(window);
+        var result = SDL_GL_SwapWindow(window);
         if (!result) {
             throw new InvalidOperationException("Failed to swap OpenGL window.");
         }

@@ -502,7 +502,7 @@ public static unsafe partial class Sdl {
             throw new ArgumentException("GUID data cannot be null.", nameof(guid));
         }
 
-        string mapping = SDL_GetGamepadMappingForGUID(guid);
+        var mapping = SDL_GetGamepadMappingForGUID(guid);
         if (string.IsNullOrEmpty(mapping)) {
             throw new InvalidOperationException("No mapping found for the provided GUID.");
         }
@@ -860,7 +860,7 @@ public static unsafe partial class Sdl {
         if (gamepad == nint.Zero) {
             throw new ArgumentException("Gamepad handle cannot be null.", nameof(gamepad));
         }
-        SdlBool result = SDL_GetGamepadTouchpadFinger(gamepad, touchpad, finger, out SdlBool sdlDown, out x, out y, out pressure);
+        var result = SDL_GetGamepadTouchpadFinger(gamepad, touchpad, finger, out var sdlDown, out x, out y, out pressure);
         down = sdlDown;
         return result;
     }

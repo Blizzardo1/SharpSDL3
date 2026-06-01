@@ -39,7 +39,7 @@ public static partial class Sdl {
     /// <returns>(SDL_Condition *) Returns a new condition variable or <see langword="null" />on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateCondition() {
-        nint cond = SDL_CreateCondition();
+        var cond = SDL_CreateCondition();
         if (cond == nint.Zero) {
             throw new InvalidOperationException($"Failed to create condition variable: {GetError()}");
         }
@@ -58,7 +58,7 @@ public static partial class Sdl {
     /// <returns>(SDL_Mutex *) Returns the initialized and unlocked mutex or<see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateMutex() {
-        nint mutex = SDL_CreateMutex();
+        var mutex = SDL_CreateMutex();
         if (mutex == nint.Zero) {
             throw new InvalidOperationException($"Failed to create mutex: {GetError()}");
         }
@@ -85,7 +85,7 @@ public static partial class Sdl {
     /// <returns>(SDL_RWLock *) Returns the initialized and unlockedread/write lock or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
 
     public static nint CreateRwLock() {
-        nint rwlock = SDL_CreateRWLock();
+        var rwlock = SDL_CreateRWLock();
         if (rwlock == nint.Zero) {
             throw new InvalidOperationException($"Failed to create RW lock: {GetError()}");
         }
@@ -287,7 +287,7 @@ public static partial class Sdl {
             return false;
         }
 
-        SdlBool result = SDL_ShouldQuit(ref state);
+        var result = SDL_ShouldQuit(ref state);
         if (!result.Equals(SdlBool.True)) {
             LogInfo(LogCategory.System, "ShouldQuit: SDL_ShouldQuit returned false.");
         } else {
@@ -478,10 +478,10 @@ public static partial class Sdl {
             throw new ArgumentOutOfRangeException(nameof(timeoutMs), "Timeout must be non-negative.");
         }
 
-        SdlBool result = SDL_WaitConditionTimeout(cond, mutex, timeoutMs);
+        var result = SDL_WaitConditionTimeout(cond, mutex, timeoutMs);
 
         if (!result) {
-            string error = GetError();
+            var error = GetError();
             if (!string.IsNullOrEmpty(error)) {
                 throw new InvalidOperationException($"WaitConditionTimeout failed: {error}");
             }

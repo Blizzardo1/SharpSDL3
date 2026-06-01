@@ -9,26 +9,24 @@ namespace SharpSDL3;
 
 public static unsafe partial class Sdl {
     /// <summary>Add a set of synchronization semaphores for the current frame.</summary>
-
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="wait_stage_mask">the VkPipelineStageFlags for the wait.</param>
-    /// <param name="wait_semaphore">a VkSempahore to wait on before rendering the current frame, or 0 if not needed.</param>
-    /// <param name="signal_semaphore">a VkSempahore that SDL will signal when rendering for the current frame is complete, or 0 if not needed.</param>
+    /// <param name="waitStageMask">the VkPipelineStageFlags for the wait.</param>
+    /// <param name="waitSemaphore">a VkSempahore to wait on before rendering the current frame, or 0 if not needed.</param>
+    /// <param name="signalSemaphore">a VkSempahore that SDL will signal when rendering for the current frame is complete, or 0 if not needed.</param>
     /// <remarks>
-    /// The Vulkan renderer will wait for wait_semaphore before submitting
-    /// rendering commands and signal signal_semaphore after rendering commands
+    /// The Vulkan renderer will wait for <paramref name="waitSemaphore"/> before submitting
+    /// rendering commands and signal <paramref name="signalSemaphore"/> after rendering commands
     /// are complete for this frame.
     /// <para><strong>Thread Safety</strong>: It is NOT safe to call this function from two threads at once.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool AddVulkanRenderSemaphores(nint renderer, uint waitStageMask, long waitSemaphore,
             long signalSemaphore) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_AddVulkanRenderSemaphores(renderer, waitStageMask, waitSemaphore, signalSemaphore);
+        var result = SDL_AddVulkanRenderSemaphores(renderer, waitStageMask, waitSemaphore, signalSemaphore);
         if (!result) {
             LogError(LogCategory.Error, "Failed to add Vulkan render semaphores");
         }
@@ -36,14 +34,13 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Convert the coordinates in an event to render coordinates.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <param name="event">the event to modify.</param>
     /// <remarks>
     /// This takes into account several states:
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="RenderCoordinatesFromWindow" />
+    /// <seealso cref="RenderCoordinatesFromWindow(nint, FPoint)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool ConvertEventToRenderCoordinates(nint renderer, ref Event @event) {
@@ -51,7 +48,7 @@ public static unsafe partial class Sdl {
             throw new SdlException("Renderer is null");
         }
 
-        Event* eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
+        var eventPtr = (Event*)Marshal.AllocHGlobal(Marshal.SizeOf<Event>());
         bool result = SDL_ConvertEventToRenderCoordinates(renderer, ref eventPtr);
 
         if (!result) {
@@ -82,23 +79,20 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRendererName" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreateRenderer(nint window, string? name) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "Window is null");
             return nint.Zero;
         }
 
-        nint result = SDL_CreateRenderer(window, name);
+        var result = SDL_CreateRenderer(window, name);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, $"Failed to create renderer: {GetError()}");
         }
         return result;
     }
 
-    /// <summary>Create a 2D rendering context for a window, with the specified properties.</summary>
-
-    /// <param name="props">the properties to use.</param>
+    /// <summary>Create a 2D rendering context for a window, with the specified properties.</summary>    /// <param name="props">the properties to use.</param>
     /// <remarks>
     /// These are the supported properties:
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -110,18 +104,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRendererName" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreateRendererWithProperties(uint props) {
-        nint result = SDL_CreateRendererWithProperties(props);
+        var result = SDL_CreateRendererWithProperties(props);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to create renderer with properties");
         }
         return result;
     }
 
-    /// <summary>Create a 2D software rendering context for a surface.</summary>
-
-    /// <param name="surface">the <see cref="Surface" /> structure representing the surface where rendering is done.</param>
+    /// <summary>Create a 2D software rendering context for a surface.</summary>    /// <param name="surface">the <see cref="Surface" /> structure representing the surface where rendering is done.</param>
     /// <remarks>
     /// Two other API which can be used to create SDL_Renderer:
     /// SDL_CreateRenderer() and
@@ -134,40 +125,23 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DestroyRenderer" />
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a valid rendering context or <see langword="null" />if there was an error; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint CreateSoftwareRenderer(nint surface) {
         if (surface == nint.Zero) {
             LogError(LogCategory.Error, "Surface is null");
             return nint.Zero;
         }
-        nint result = SDL_CreateSoftwareRenderer(surface);
+        var result = SDL_CreateSoftwareRenderer(surface);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to create software renderer");
         }
         return result;
     }
 
-    public static bool CreateWindowAndRenderer(string title, int width, int height, WindowFlags windowFlags,
-        out nint window, out nint renderer) {
-        if (string.IsNullOrEmpty(title)) {
-            LogError(LogCategory.Error, "Title is null or empty");
-            window = nint.Zero;
-            renderer = nint.Zero;
-            return false;
-        }
-        SdlBool result = SDL_CreateWindowAndRenderer(title, width, height, windowFlags, out window, out renderer);
-        if (!result) {
-            LogError(LogCategory.Error, "Failed to create window and renderer");
-        }
-        return result;
-    }
-
     /// <summary>Create a window and default renderer.</summary>
-
     /// <param name="title">the title of the window, in UTF-8 encoding.</param>
     /// <param name="width">the width of the window.</param>
     /// <param name="height">the height of the window.</param>
-    /// <param name="window_flags">the flags used to create the window (see SDL_CreateWindow()).</param>
+    /// <param name="windowFlags">the flags used to create the window (see SDL_CreateWindow()).</param>
     /// <param name="window">a pointer filled with the window, or <see langword="null" /> on error.</param>
     /// <param name="renderer">a pointer filled with the renderer, or <see langword="null" /> on error.</param>
     /// <remarks>
@@ -177,7 +151,34 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateWindow" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static bool CreateWindowAndRenderer(string title, int width, int height, WindowFlags windowFlags,
+        out nint window, out nint renderer) {
+        if (string.IsNullOrEmpty(title)) {
+            LogError(LogCategory.Error, "Title is null or empty");
+            window = nint.Zero;
+            renderer = nint.Zero;
+            return false;
+        }
+        var result = SDL_CreateWindowAndRenderer(title, width, height, windowFlags, out window, out renderer);
+        if (!result) {
+            LogError(LogCategory.Error, "Failed to create window and renderer");
+        }
+        return result;
+    }
 
+    /// <summary>Create a window and default renderer.</summary>
+    /// <param name="title">the title of the window, in UTF-8 encoding.</param>
+    /// <param name="width">the width of the window.</param>
+    /// <param name="height">the height of the window.</param>
+    /// <param name="windowFlags">the flags used to create the window (see SDL_CreateWindow()).</param>
+    /// <param name="renderer">a pointer filled with the renderer, or <see langword="null" /> on error.</param>
+    /// <remarks>
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="CreateRenderer" />
+    /// <seealso cref="CreateWindow" />
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static nint CreateWindowAndRenderer(string title, int width, int height,
             WindowFlags windowFlags, out nint renderer) {
         if (string.IsNullOrEmpty(title)) {
@@ -185,7 +186,7 @@ public static unsafe partial class Sdl {
             renderer = nint.Zero;
             return nint.Zero;
         }
-        SdlBool result = CreateWindowAndRenderer(title, width, height, windowFlags, out nint window, out renderer);
+        SdlBool result = CreateWindowAndRenderer(title, width, height, windowFlags, out var window, out renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to create window and renderer");
         }
@@ -193,7 +194,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Destroy the rendering context for a window and free all associated textures.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// This should be called before destroying the associated window.
@@ -201,7 +201,6 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// <seealso cref="CreateRenderer" />
     /// </remarks>
-
     public static void DestroyRenderer(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -210,7 +209,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Destroy the specified texture.</summary>
-
     /// <param name="texture">the texture to destroy.</param>
     /// <remarks>
     /// Passing <see langword="null" /> or an otherwise invalid texture will set the SDL error message
@@ -220,7 +218,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateTexture" />
     /// <seealso cref="CreateTextureFromSurface" />
     /// </remarks>
-
     public static void DestroyTexture(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Error, "Texture is null");
@@ -230,7 +227,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Force the rendering context to flush any pending commands and state.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// You do not need to (and in fact, shouldn't) call this function unless you
@@ -240,23 +236,35 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool FlushRenderer(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_FlushRenderer(renderer);
+        var result = SDL_FlushRenderer(renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to flush render");
         }
         return result;
     }
 
+    /// <summary>Get the current output size in pixels of a rendering context.</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <param name="w">a pointer filled in with the current width.</param>
+    /// <param name="h">a pointer filled in with the current height.</param>
+    /// <remarks>
+    /// If a rendering target is active, this will return the size of the rendering
+    /// target in pixels, otherwise return the value of
+    /// <see cref="GetRenderOutputSize(nint, out int, out int)"/>.
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetRenderOutputSize(nint, out int, out int)" />
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool GetCurrentRenderOutputSize(nint renderer, out int w, out int h) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetCurrentRenderOutputSize(renderer, out w, out h);
+        var result = SDL_GetCurrentRenderOutputSize(renderer, out w, out h);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get current render output size");
         }
@@ -264,26 +272,22 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the current output size in pixels of a rendering context.</summary>
-
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="w">a pointer filled in with the current width.</param>
-    /// <param name="h">a pointer filled in with the current height.</param>
     /// <remarks>
     /// If a rendering target is active, this will return the size of the rendering
     /// target in pixels, otherwise return the value of
-    /// SDL_GetRenderOutputSize().
+    /// <see cref="GetRenderOutputSize(nint, out int, out int)"/>.
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderOutputSize" />
+    /// <seealso cref="GetRenderOutputSize(nint, out int, out int)" />
     /// </remarks>
-    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
+    /// <returns>Returns a <see cref="Rect"/> filled with the Width and Height.</returns>
     public static Rect GetCurrentRenderOutputSize(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetCurrentRenderOutputSize(renderer, out int w, out int h);
-        return new() { W = w, H = h };
+        _ = GetCurrentRenderOutputSize(renderer, out var w, out var h);
+        return new Rect { W = w, H = h };
     }
 
     /// <summary>Get the number of 2D rendering drivers available for the current display.</summary>
@@ -297,9 +301,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderDriver" />
     /// </remarks>
     /// <returns>Returns the number of built in render drivers.</returns>
-
     public static int GetNumRenderDrivers() {
-        int result = SDL_GetNumRenderDrivers();
+        var result = SDL_GetNumRenderDrivers();
         if (result < 0) {
             LogError(LogCategory.Error, "Failed to get number of render drivers");
         }
@@ -310,16 +313,14 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderClipRect(renderer, out rect);
+        var result = SDL_GetRenderClipRect(renderer, out rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render clip rect");
         }
         return result;
     }
 
-    /// <summary>Get the clip rectangle for the current target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the clip rectangle for the current target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">an <see cref="Rect" /> structure filled in with the current clipping area or an empty rectangle if clipping is disabled.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function gets the
@@ -330,12 +331,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderClipRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static Rect GetRenderClipRect(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderClipRect(renderer, out Rect rect);
+        _ = GetRenderClipRect(renderer, out var rect);
         return rect;
     }
 
@@ -343,16 +343,14 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderColorScale(renderer, out scale);
+        var result = SDL_GetRenderColorScale(renderer, out scale);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render color scale");
         }
         return result;
     }
 
-    /// <summary>Get the color scale used for render operations.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the color scale used for render operations.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="scale">a pointer filled in with the current color scale value.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -360,18 +358,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderColorScale" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static float GetRenderColorScale(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderColorScale(renderer, out float scale);
+        _ = GetRenderColorScale(renderer, out var scale);
         return scale;
     }
 
-    /// <summary>Get the blend mode used for drawing operations.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the blend mode used for drawing operations.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="blendMode">a pointer filled in with the current <see cref="BlendMode" />.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -379,12 +374,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawBlendMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool GetRenderDrawBlendMode(nint renderer, nint blendMode) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderDrawBlendMode(renderer, blendMode);
+        var result = SDL_GetRenderDrawBlendMode(renderer, blendMode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render draw blend mode");
         }
@@ -408,7 +402,7 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderDrawColor(renderer, out r, out g, out b, out a);
+        var result = SDL_GetRenderDrawColor(renderer, out r, out g, out b, out a);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render draw color");
         }
@@ -428,24 +422,22 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderDrawColor(renderer, out byte r, out byte g, out byte b, out byte a);
-        return new() { R = r, G = g, B = b, A = a };
+        _ = GetRenderDrawColor(renderer, out var r, out var g, out var b, out var a);
+        return new Color { R = r, G = g, B = b, A = a };
     }
 
     public static bool GetRenderDrawColorFloat(nint renderer, out float r, out float g, out float b, out float a) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderDrawColorFloat(renderer, out r, out g, out b, out a);
+        var result = SDL_GetRenderDrawColorFloat(renderer, out r, out g, out b, out a);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render draw color float");
         }
         return result;
     }
 
-    /// <summary>Get the color used for drawing operations (Rect, Line and Clear).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the color used for drawing operations (Rect, Line and Clear).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="r">a pointer filled in with the red value used to draw on the rendering target.</param>
     /// <param name="g">a pointer filled in with the green value used to draw on the rendering target.</param>
     /// <param name="b">a pointer filled in with the blue value used to draw on the rendering target.</param>
@@ -457,18 +449,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderDrawColor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static FColor GetRenderDrawColorFloat(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderDrawColorFloat(renderer, out float r, out float g, out float b, out float a);
-        return new() { R = r, G = g, B = b, A = a };
+        _ = GetRenderDrawColorFloat(renderer, out var r, out var g, out var b, out var a);
+        return new FColor { R = r, G = g, B = b, A = a };
     }
 
-    /// <summary>Use this function to get the name of a built in 2D rendering driver.</summary>
-
-    /// <param name="index">the index of the rendering driver; the value ranges from 0 to SDL_GetNumRenderDrivers() - 1.</param>
+    /// <summary>Use this function to get the name of a built in 2D rendering driver.</summary>    /// <param name="index">the index of the rendering driver; the value ranges from 0 to SDL_GetNumRenderDrivers() - 1.</param>
     /// <remarks>
     /// The list of rendering drivers is given in the order that they are normally
     /// initialized by default; the drivers that seem more reasonable to choose
@@ -478,64 +467,55 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetNumRenderDrivers" />
     /// </remarks>
     /// <returns>Returns the name of the rendering driver at the requestedindex, or <see langword="null" /> if an invalid index was specified.</returns>
-
     public static string GetRenderDriver(int index) {
         if (index < 0) {
             LogError(LogCategory.Error, "Index is negative");
             return string.Empty;
         }
-        string result = SDL_GetRenderDriver(index);
+        var result = SDL_GetRenderDriver(index);
         if (string.IsNullOrEmpty(result)) {
             LogError(LogCategory.Error, "Failed to get render driver");
         }
         return result;
     }
 
-    /// <summary>Get the renderer associated with a window.</summary>
-
-    /// <param name="window">the window to query.</param>
+    /// <summary>Get the renderer associated with a window.</summary>    /// <param name="window">the window to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns the rendering context on successor <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint GetRenderer(nint window) {
         if (window == nint.Zero) {
             LogError(LogCategory.Error, "Window is null");
             return nint.Zero;
         }
-        nint result = SDL_GetRenderer(window);
+        var result = SDL_GetRenderer(window);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get renderer");
         }
         return result;
     }
 
-    /// <summary>Get the renderer that created an SDL_Texture.</summary>
-
-    /// <param name="texture">the texture to query.</param>
+    /// <summary>Get the renderer that created an SDL_Texture.</summary>    /// <param name="texture">the texture to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Renderer *) Returns a pointer to theSDL_Renderer that created the texture, or <see langword="null" /> on failure;call <see cref="GetError()" /> for more information.</returns>
-
     public static nint GetRendererFromTexture(nint texture) {
         if (texture == nint.Zero) {
             LogError(LogCategory.Error, "Texture is null");
             return nint.Zero;
         }
-        nint result = SDL_GetRendererFromTexture(texture);
+        var result = SDL_GetRendererFromTexture(texture);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get renderer from texture");
         }
         return result;
     }
 
-    /// <summary>Get the name of a renderer.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the name of a renderer.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
@@ -543,33 +523,29 @@ public static unsafe partial class Sdl {
     /// <seealso cref="CreateRendererWithProperties" />
     /// </remarks>
     /// <returns>Returns the name of the selected renderer, or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static string GetRendererName(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        string result = SDL_GetRendererName(renderer);
+        var result = SDL_GetRendererName(renderer);
         if (string.IsNullOrEmpty(result)) {
             LogError(LogCategory.Error, "Failed to get renderer name");
         }
         return result;
     }
 
-    /// <summary>Get the properties associated with a renderer.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the properties associated with a renderer.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// The following read-only properties are provided by SDL:
     /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns a valid property ID on success or 0 on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static uint GetRendererProperties(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        uint result = SDL_GetRendererProperties(renderer);
+        var result = SDL_GetRendererProperties(renderer);
         if (result == 0) {
             LogError(LogCategory.Error, "Failed to get renderer properties");
         }
@@ -581,16 +557,14 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderLogicalPresentation(renderer, out w, out h, out mode);
+        var result = SDL_GetRenderLogicalPresentation(renderer, out w, out h, out mode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render logical presentation");
         }
         return result;
     }
 
-    /// <summary>Get device independent resolution and presentation mode for rendering.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get device independent resolution and presentation mode for rendering.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="w">an int to be filled with the width.</param>
     /// <param name="h">an int to be filled with the height.</param>
     /// <param name="mode">the presentation mode used.</param>
@@ -602,32 +576,29 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderLogicalPresentation" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static Rect GetRenderLogicalPresentation(nint renderer, out RendererLogicalPresentation mode) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = GetRenderLogicalPresentation(renderer, out int w, out int h, out mode);
+        SdlBool result = GetRenderLogicalPresentation(renderer, out var w, out var h, out mode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render logical presentation");
         }
-        return new() { W = w, H = h };
+        return new Rect { W = w, H = h };
     }
 
     public static bool GetRenderLogicalPresentationRect(nint renderer, out FRect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderLogicalPresentationRect(renderer, out rect);
+        var result = SDL_GetRenderLogicalPresentationRect(renderer, out rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render logical presentation rect");
         }
         return result;
     }
 
-    /// <summary>Get the final presentation rectangle for rendering.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get the final presentation rectangle for rendering.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">a pointer filled in with the final presentation rectangle, may be discarded.</param>
     /// <remarks>
     /// This function returns the calculated rectangle used for logical
@@ -639,12 +610,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderLogicalPresentation" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static FRect GetRenderLogicalPresentationRect(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderLogicalPresentationRect(renderer, out FRect rect);
+        var result = SDL_GetRenderLogicalPresentationRect(renderer, out var rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render logical presentation rect");
         }
@@ -652,7 +622,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the Metal command encoder for the current frame.</summary>
-
     /// <param name="renderer">the renderer to query.</param>
     /// <remarks>
     /// This function returns void *, so SDL doesn't have to include Metal's
@@ -662,12 +631,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderMetalLayer" />
     /// </remarks>
     /// <returns>(void *) Returns an id&lt;MTLRenderCommandEncoder&gt; on success, or <see langword="null" /> ifthe renderer isn't a Metal renderer or there was an error.</returns>
-
     public static nint GetRenderMetalCommandEncoder(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        nint result = SDL_GetRenderMetalCommandEncoder(renderer);
+        var result = SDL_GetRenderMetalCommandEncoder(renderer);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get render metal command encoder");
         }
@@ -675,7 +643,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the CAMetalLayer associated with the given Metal renderer.</summary>
-
     /// <param name="renderer">the renderer to query.</param>
     /// <remarks>
     /// This function returns void *, so SDL doesn't have to include Metal's
@@ -685,31 +652,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderMetalCommandEncoder" />
     /// </remarks>
     /// <returns>(void *) Returns a CAMetalLayer * on success, or <see langword="null" /> if the rendererisn't a Metal renderer.</returns>
-
     public static nint GetRenderMetalLayer(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        nint result = SDL_GetRenderMetalLayer(renderer);
+        var result = SDL_GetRenderMetalLayer(renderer);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get render metal layer");
         }
         return result;
     }
 
-    public static bool GetRenderOutputSize(nint renderer, out int w, out int h) {
-        if (renderer == nint.Zero) {
-            throw new SdlException("Renderer is null");
-        }
-        SdlBool result = SDL_GetRenderOutputSize(renderer, out w, out h);
-        if (!result) {
-            LogError(LogCategory.Error, "Failed to get render output size");
-        }
-        return result;
-    }
-
     /// <summary>Get the output size in pixels of a rendering context.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <param name="w">a pointer filled in with the width in pixels.</param>
     /// <param name="h">a pointer filled in with the height in pixels.</param>
@@ -718,31 +672,39 @@ public static unsafe partial class Sdl {
     /// logical size and presentation.
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetCurrentRenderOutputSize" />
+    /// <seealso cref="GetCurrentRenderOutputSize(nint, out int, out int)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
-    public static Rect GetRenderOutputSize(nint renderer) {
+    public static bool GetRenderOutputSize(nint renderer, out int w, out int h) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderOutputSize(renderer, out int w, out int h);
-        return new() { W = w, H = h };
-    }
-
-    public static bool GetRenderSafeArea(nint renderer, out Rect rect) {
-        if (renderer == nint.Zero) {
-            throw new SdlException("Renderer is null");
-        }
-        SdlBool result = SDL_GetRenderSafeArea(renderer, out rect);
+        var result = SDL_GetRenderOutputSize(renderer, out w, out h);
         if (!result) {
-            LogError(LogCategory.Error, "Failed to get render safe area");
+            LogError(LogCategory.Error, "Failed to get render output size");
         }
         return result;
     }
 
-    /// <summary>Get the safe area for rendering within the current viewport.</summary>
+    /// <summary>Get the output size in pixels of a rendering context.</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <remarks>
+    /// This returns the <see langword="true" /> output size in pixels, ignoring any render targets or
+    /// logical size and presentation.
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="GetCurrentRenderOutputSize(nint, out int, out int)" />
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static Rect GetRenderOutputSize(nint renderer) {
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        _ = GetRenderOutputSize(renderer, out var w, out var h);
+        return new Rect { W = w, H = h };
+    }
 
+    /// <summary>Get the safe area for rendering within the current viewport.</summary>
     /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">a pointer filled in with the area that is safe for interactive content.</param>
     /// <remarks>
@@ -756,28 +718,39 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
-    public static Rect GetRenderSafeArea(nint renderer) {
+    public static bool GetRenderSafeArea(nint renderer, out Rect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderSafeArea(renderer, out Rect rect);
-        return rect;
-    }
-
-    public static bool GetRenderScale(nint renderer, out float scaleX, out float scaleY) {
-        if (renderer == nint.Zero) {
-            throw new SdlException("Renderer is null");
-        }
-        SdlBool result = SDL_GetRenderScale(renderer, out scaleX, out scaleY);
+        var result = SDL_GetRenderSafeArea(renderer, out rect);
         if (!result) {
-            LogError(LogCategory.Error, "Failed to get render scale");
+            LogError(LogCategory.Error, "Failed to get render safe area");
         }
         return result;
     }
 
-    /// <summary>Get the drawing scale for the current target.</summary>
+    /// <summary>Get the safe area for rendering within the current viewport.</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <remarks>
+    /// Some devices have portions of the screen which are partially obscured or
+    /// not interactive, possibly due to on-screen controls, curved edges, camera
+    /// notches, TV overscan, etc. This function provides the area of the current
+    /// viewport which is safe to have interactible content. You should continue
+    /// rendering into the rest of the render target, but it should not contain
+    /// visually important or interactible content.
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static Rect GetRenderSafeArea(nint renderer) {
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        _ = GetRenderSafeArea(renderer, out var rect);
+        return rect;
+    }
 
+    /// <summary>Get the drawing scale for the current target.</summary>
     /// <param name="renderer">the rendering context.</param>
     /// <param name="scaleX">a pointer filled in with the horizontal scaling factor.</param>
     /// <param name="scaleY">a pointer filled in with the vertical scaling factor.</param>
@@ -789,17 +762,36 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderScale" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
+    public static bool GetRenderScale(nint renderer, out float scaleX, out float scaleY) {
+        if (renderer == nint.Zero) {
+            throw new SdlException("Renderer is null");
+        }
+        var result = SDL_GetRenderScale(renderer, out scaleX, out scaleY);
+        if (!result) {
+            LogError(LogCategory.Error, "Failed to get render scale");
+        }
+        return result;
+    }
 
+    /// <summary>Get the drawing scale for the current target.</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <remarks>
+    /// Each render target has its own scale. This function gets the scale for the
+    /// current render target.
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderScale" />
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static FPoint GetRenderScale(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderScale(renderer, out float scaleX, out float scaleY);
-        return new() { X = scaleX, Y = scaleY };
+        _ = GetRenderScale(renderer, out var scaleX, out var scaleY);
+        return new FPoint { X = scaleX, Y = scaleY };
     }
 
     /// <summary>Get the current render target.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// The default render target is the window for which the renderer was created,
@@ -809,12 +801,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTarget" />
     /// </remarks>
     /// <returns>(SDL_Texture *) Returns the current render target or <see langword="null" />for the default render target.</returns>
-
     public static nint GetRenderTarget(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        nint result = SDL_GetRenderTarget(renderer);
+        var result = SDL_GetRenderTarget(renderer);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get render target");
         }
@@ -822,7 +813,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the drawing area for the current target.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">an <see cref="Rect" /> structure filled in with the current drawing area.</param>
     /// <remarks>
@@ -834,12 +824,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderViewport" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool GetRenderViewport(nint renderer, out Rect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderViewport(renderer, out rect);
+        var result = SDL_GetRenderViewport(renderer, out rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render viewport");
         }
@@ -847,40 +836,35 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get VSync of the given renderer.</summary>
-
     /// <param name="renderer">the renderer to toggle.</param>
-    /// <param name="vsync">an int filled with the current vertical refresh sync interval. See SDL_SetRenderVSync() for the meaning of the value.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetRenderVSync" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static int GetRenderVsync(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = GetRenderVSync(renderer, out int vsync);
+        _ = GetRenderVSync(renderer, out var vsync);
         return vsync;
     }
 
     /// <summary>Get VSync of the given renderer.</summary>
-
     /// <param name="renderer">the renderer to toggle.</param>
-    /// <param name="vsync">an int filled with the current vertical refresh sync interval. See SDL_SetRenderVSync() for the meaning of the value.</param>
+    /// <param name="vsync">an int filled with the current vertical refresh sync interval. See <see cref="SetRenderVSync"/> for the meaning of the value.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// <seealso cref="SetRenderVSync" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool GetRenderVSync(nint renderer, out int vsync) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_GetRenderVSync(renderer, out vsync);
+        var result = SDL_GetRenderVSync(renderer, out vsync);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render VSync");
         }
@@ -888,19 +872,17 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get the window associated with a renderer.</summary>
-
     /// <param name="renderer">the renderer to query.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: It is safe to call this function from any thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Window *) Returns the window on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint GetRenderWindow(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        nint result = SDL_GetRenderWindow(renderer);
+        var result = SDL_GetRenderWindow(renderer);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to get render window");
         }
@@ -908,7 +890,6 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Clear the current rendering target with the drawing color.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// This function clears the entire rendering target, ignoring the viewport and
@@ -917,15 +898,14 @@ public static unsafe partial class Sdl {
     /// SDL_SetRenderDrawColor() when needed.
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="SetRenderDrawColor" />
+    /// <seealso cref="SetRenderDrawColor(nint, byte, byte, byte, byte)" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderClear(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderClear(renderer);
+        var result = SDL_RenderClear(renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to clear render");
         }
@@ -933,35 +913,45 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get whether clipping is enabled on the given render target.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function checks the
     /// cliprect for the current render target.
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
-    /// <seealso cref="GetRenderClipRect" />
+    /// <seealso cref="GetRenderClipRect(nint, out Rect)" />
     /// <seealso cref="SetRenderClipRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if clipping is enabled or <see langword="false" /> if not; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderClipEnabled(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderClipEnabled(renderer);
+        var result = SDL_RenderClipEnabled(renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to get render clip enabled");
         }
         return result;
     }
 
+    /// <summary>Get a point in render coordinates when given a point in window coordinates.</summary>
+    /// <param name="renderer">the rendering context.</param>
+    /// <param name="windowX">the x coordinate in window coordinates.</param>
+    /// <param name="windowY">the y coordinate in window coordinates.</param>
+    /// <remarks>
+    /// This takes into account several states:
+    /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
+    /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
+    /// <seealso cref="SetRenderLogicalPresentation" />
+    /// <seealso cref="SetRenderScale" />
+    /// </remarks>
+    /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static SdlBool RenderCoordinatesFromWindow(nint renderer, float windowX, float windowY,
         out float x, out float y) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderCoordinatesFromWindow(renderer, windowX, windowY, out x, out y);
+        var result = SDL_RenderCoordinatesFromWindow(renderer, windowX, windowY, out x, out y);
         if (!result) {
             LogError(LogCategory.Error, "Failed to convert coordinates from window");
         }
@@ -969,12 +959,8 @@ public static unsafe partial class Sdl {
     }
 
     /// <summary>Get a point in render coordinates when given a point in window coordinates.</summary>
-
     /// <param name="renderer">the rendering context.</param>
-    /// <param name="window_x">the x coordinate in window coordinates.</param>
-    /// <param name="window_y">the y coordinate in window coordinates.</param>
-    /// <param name="x">a pointer filled with the x coordinate in render coordinates.</param>
-    /// <param name="y">a pointer filled with the y coordinate in render coordinates.</param>
+    /// <param name="windowPoint">the window coordinates.</param>
     /// <remarks>
     /// This takes into account several states:
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -983,16 +969,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderScale" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static FPoint RenderCoordinatesFromWindow(nint renderer, FPoint windowPoint) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderCoordinatesFromWindow(renderer, windowPoint.X, windowPoint.Y, out float x, out float y);
+        var result = SDL_RenderCoordinatesFromWindow(renderer, windowPoint.X, windowPoint.Y, out var x, out var y);
         if (!result) {
             LogError(LogCategory.Error, "Failed to convert coordinates from window");
         }
-        return new() { X = x, Y = y };
+        return new FPoint { X = x, Y = y };
     }
 
     public static bool RenderCoordinatesToWindow(nint renderer, float x, float y, out float windowX,
@@ -1000,16 +985,14 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderCoordinatesToWindow(renderer, x, y, out windowX, out windowY);
+        var result = SDL_RenderCoordinatesToWindow(renderer, x, y, out windowX, out windowY);
         if (!result) {
             LogError(LogCategory.Error, "Failed to convert coordinates to window");
         }
         return result;
     }
 
-    /// <summary>Get a point in window coordinates when given a point in render coordinates.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Get a point in window coordinates when given a point in render coordinates.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="x">the x coordinate in render coordinates.</param>
     /// <param name="y">the y coordinate in render coordinates.</param>
     /// <param name="window_x">a pointer filled with the x coordinate in window coordinates.</param>
@@ -1023,17 +1006,15 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderViewport" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static FPoint RenderCoordinatesToWindow(nint renderer, float x, float y) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        _ = RenderCoordinatesToWindow(renderer, x, y, out float windowX, out float windowY);
-        return new() { X = windowX, Y = windowY };
+        _ = RenderCoordinatesToWindow(renderer, x, y, out var windowX, out var windowY);
+        return new FPoint { X = windowX, Y = windowY };
     }
 
     /// <summary>Get a point in window coordinates when given a point in render coordinates.</summary>
-
     /// <param name="renderer">the rendering context.</param>
     /// <param name="x">the x coordinate in render coordinates.</param>
     /// <param name="y">the y coordinate in render coordinates.</param>
@@ -1048,7 +1029,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderViewport" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static FPoint RenderCoordinatesToWindow(nint renderer, FPoint point) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1056,9 +1036,7 @@ public static unsafe partial class Sdl {
         return RenderCoordinatesToWindow(renderer, point.X, point.Y);
     }
 
-    /// <summary>Draw debug text to an SDL_Renderer.</summary>
-
-    /// <param name="renderer">the renderer which should draw a line of text.</param>
+    /// <summary>Draw debug text to an SDL_Renderer.</summary>    /// <param name="renderer">the renderer which should draw a line of text.</param>
     /// <param name="x">the x coordinate where the top-left corner of the text will draw.</param>
     /// <param name="y">the y coordinate where the top-left corner of the text will draw.</param>
     /// <param name="str">the string to render.</param>
@@ -1073,21 +1051,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderDebugText(nint renderer, float x, float y, string str) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderDebugText(renderer, x, y, str);
+        var result = SDL_RenderDebugText(renderer, x, y, str);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render debug text");
         }
         return result;
     }
 
-    /// <summary>Draw debug text to an SDL_Renderer.</summary>
-
-    /// <param name="renderer">the renderer which should draw a line of text.</param>
+    /// <summary>Draw debug text to an SDL_Renderer.</summary>    /// <param name="renderer">the renderer which should draw a line of text.</param>
     /// <param name="x">the x coordinate where the top-left corner of the text will draw.</param>
     /// <param name="y">the y coordinate where the top-left corner of the text will draw.</param>
     /// <param name="str">the string to render.</param>
@@ -1102,7 +1077,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderDebugText(nint renderer, FPoint location, string str) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1110,9 +1084,7 @@ public static unsafe partial class Sdl {
         return RenderDebugText(renderer, location.X, location.Y, str);
     }
 
-    /// <summary>Draw debug text to an SDL_Renderer.</summary>
-
-    /// <param name="renderer">the renderer which should draw the text.</param>
+    /// <summary>Draw debug text to an SDL_Renderer.</summary>    /// <param name="renderer">the renderer which should draw the text.</param>
     /// <param name="x">the x coordinate where the top-left corner of the text will draw.</param>
     /// <param name="y">the y coordinate where the top-left corner of the text will draw.</param>
     /// <param name="fmt">the format string to draw.</param>
@@ -1127,21 +1099,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderDebugTextFormat(nint renderer, float x, float y, string fmt) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderDebugTextFormat(renderer, x, y, fmt);
+        var result = SDL_RenderDebugTextFormat(renderer, x, y, fmt);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render debug text format");
         }
         return result;
     }
 
-    /// <summary>Draw debug text to an SDL_Renderer.</summary>
-
-    /// <param name="renderer">the renderer which should draw the text.</param>
+    /// <summary>Draw debug text to an SDL_Renderer.</summary>    /// <param name="renderer">the renderer which should draw the text.</param>
     /// <param name="x">the x coordinate where the top-left corner of the text will draw.</param>
     /// <param name="y">the y coordinate where the top-left corner of the text will draw.</param>
     /// <param name="fmt">the format string to draw.</param>
@@ -1156,7 +1125,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="DEBUG_TEXT_FONT_CHARACTER_SIZE" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderDebugTextFormat(nint renderer, FPoint location, string fmt) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1164,9 +1132,7 @@ public static unsafe partial class Sdl {
         return RenderDebugTextFormat(renderer, location.X, location.Y, fmt);
     }
 
-    /// <summary>Fill a rectangle on the current rendering target with the drawing color at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should fill a rectangle.</param>
+    /// <summary>Fill a rectangle on the current rendering target with the drawing color at subpixel precision.</summary>    /// <param name="renderer">the renderer which should fill a rectangle.</param>
     /// <param name="rect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -1174,21 +1140,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderFillRects" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderFillRect(nint renderer, ref FRect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderFillRect(renderer, ref rect);
+        var result = SDL_RenderFillRect(renderer, ref rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render fill rect");
         }
         return result;
     }
 
-    /// <summary>Fill some number of rectangles on the current rendering target with the drawing color at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should fill multiple rectangles.</param>
+    /// <summary>Fill some number of rectangles on the current rendering target with the drawing color at subpixel precision.</summary>    /// <param name="renderer">the renderer which should fill multiple rectangles.</param>
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
@@ -1197,21 +1160,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderFillRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderFillRects(nint renderer, Span<FRect> rects) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderFillRects(renderer, rects, rects.Length);
+        var result = SDL_RenderFillRects(renderer, rects, rects.Length);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render fill rects");
         }
         return result;
     }
 
-    /// <summary>Fill some number of rectangles on the current rendering target with the drawing color at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should fill multiple rectangles.</param>
+    /// <summary>Fill some number of rectangles on the current rendering target with the drawing color at subpixel precision.</summary>    /// <param name="renderer">the renderer which should fill multiple rectangles.</param>
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
@@ -1220,7 +1180,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderFillRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderFillRects(nint renderer, FRect[] rects) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1228,9 +1187,7 @@ public static unsafe partial class Sdl {
         return RenderFillRects(renderer, rects.AsSpan());
     }
 
-    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">(optional) The SDL texture to use.</param>
     /// <param name="vertices">vertices.</param>
     /// <param name="num_vertices">number of vertices.</param>
@@ -1243,12 +1200,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderGeometry(nint renderer, nint texture, Span<Vertex> vertices, Span<int> indices) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderGeometry(renderer, texture, vertices, vertices.Length, indices,
+        var result = SDL_RenderGeometry(renderer, texture, vertices, vertices.Length, indices,
             indices.Length);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render geometry");
@@ -1256,9 +1212,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">(optional) The SDL texture to use.</param>
     /// <param name="vertices">vertices.</param>
     /// <param name="num_vertices">number of vertices.</param>
@@ -1271,7 +1225,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderGeometry(nint renderer, nint texture, Vertex[] vertices, int[] indices) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1279,9 +1232,7 @@ public static unsafe partial class Sdl {
         return RenderGeometry(renderer, texture, vertices.AsSpan(), indices.AsSpan());
     }
 
-    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">(optional) The SDL texture to use.</param>
     /// <param name="vertices">vertices.</param>
     /// <param name="num_vertices">number of vertices.</param>
@@ -1294,7 +1245,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderGeometry(nint renderer, nint texture, Span<Vertex> vertices, int[] indices) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1302,9 +1252,7 @@ public static unsafe partial class Sdl {
         return RenderGeometry(renderer, texture, vertices, indices.AsSpan());
     }
 
-    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex array Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">(optional) The SDL texture to use.</param>
     /// <param name="vertices">vertices.</param>
     /// <param name="num_vertices">number of vertices.</param>
@@ -1317,7 +1265,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderGeometry(nint renderer, nint texture, Vertex[] vertices, Span<int> indices) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1325,9 +1272,7 @@ public static unsafe partial class Sdl {
         return RenderGeometry(renderer, texture, vertices.AsSpan(), indices);
     }
 
-    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex arrays Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Render a list of triangles, optionally using a texture and indices into the vertex arrays Color and alpha modulation is done per vertex (SDL_SetTextureColorMod and SDL_SetTextureAlphaMod are ignored).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">(optional) The SDL texture to use.</param>
     /// <param name="xy">vertex positions.</param>
     /// <param name="xy_stride">byte size to move from one element to the next element.</param>
@@ -1346,13 +1291,12 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderTextureAddressMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderGeometryRaw(nint renderer, nint texture, nint xy, int xyStride, nint color,
             int colorStride, nint uv, int uvStride, int numVertices, nint indices, int numIndices, int sizeIndices) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderGeometryRaw(renderer, texture, xy, xyStride, color, colorStride, uv, uvStride,
+        var result = SDL_RenderGeometryRaw(renderer, texture, xy, xyStride, color, colorStride, uv, uvStride,
             numVertices, indices, numIndices, sizeIndices);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render geometry raw");
@@ -1360,9 +1304,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Draw a line on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw a line.</param>
+    /// <summary>Draw a line on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw a line.</param>
     /// <param name="x1">the x coordinate of the start point.</param>
     /// <param name="y1">the y coordinate of the start point.</param>
     /// <param name="x2">the x coordinate of the end point.</param>
@@ -1373,21 +1315,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderLines" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderLine(nint renderer, float x1, float y1, float x2, float y2) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderLine(renderer, x1, y1, x2, y2);
+        var result = SDL_RenderLine(renderer, x1, y1, x2, y2);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render line");
         }
         return result;
     }
 
-    /// <summary>Draw a line on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw a line.</param>
+    /// <summary>Draw a line on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw a line.</param>
     /// <param name="x1">the x coordinate of the start point.</param>
     /// <param name="y1">the y coordinate of the start point.</param>
     /// <param name="x2">the x coordinate of the end point.</param>
@@ -1398,7 +1337,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderLines" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderLine(nint renderer, FPoint point1, FPoint point2) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1406,9 +1344,7 @@ public static unsafe partial class Sdl {
         return RenderLine(renderer, point1.X, point1.Y, point2.X, point2.Y);
     }
 
-    /// <summary>Draw a series of connected lines on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple lines.</param>
+    /// <summary>Draw a series of connected lines on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple lines.</param>
     /// <param name="points">the points along the lines.</param>
     /// <param name="count">the number of points, drawing count-1 lines.</param>
     /// <remarks>
@@ -1417,21 +1353,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderLine" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderLines(nint renderer, Span<FPoint> points) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderLines(renderer, points, points.Length);
+        var result = SDL_RenderLines(renderer, points, points.Length);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render lines");
         }
         return result;
     }
 
-    /// <summary>Draw a series of connected lines on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple lines.</param>
+    /// <summary>Draw a series of connected lines on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple lines.</param>
     /// <param name="points">the points along the lines.</param>
     /// <param name="count">the number of points, drawing count-1 lines.</param>
     /// <remarks>
@@ -1440,7 +1373,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderLine" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderLines(nint renderer, FPoint[] points) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1448,9 +1380,7 @@ public static unsafe partial class Sdl {
         return RenderLines(renderer, points.AsSpan());
     }
 
-    /// <summary>Draw a point on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw a point.</param>
+    /// <summary>Draw a point on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw a point.</param>
     /// <param name="x">the x coordinate of the point.</param>
     /// <param name="y">the y coordinate of the point.</param>
     /// <remarks>
@@ -1459,21 +1389,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderPoints" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderPoint(nint renderer, float x, float y) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderPoint(renderer, x, y);
+        var result = SDL_RenderPoint(renderer, x, y);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render point");
         }
         return result;
     }
 
-    /// <summary>Draw a point on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw a point.</param>
+    /// <summary>Draw a point on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw a point.</param>
     /// <param name="x">the x coordinate of the point.</param>
     /// <param name="y">the y coordinate of the point.</param>
     /// <remarks>
@@ -1482,7 +1409,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderPoints" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderPoint(nint renderer, FPoint point) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1490,9 +1416,7 @@ public static unsafe partial class Sdl {
         return RenderPoint(renderer, point.X, point.Y);
     }
 
-    /// <summary>Draw multiple points on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple points.</param>
+    /// <summary>Draw multiple points on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple points.</param>
     /// <param name="points">the points to draw.</param>
     /// <param name="count">the number of points to draw.</param>
     /// <remarks>
@@ -1501,21 +1425,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderPoint" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderPoints(nint renderer, Span<FPoint> points) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderPoints(renderer, points, points.Length);
+        var result = SDL_RenderPoints(renderer, points, points.Length);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render points");
         }
         return result;
     }
 
-    /// <summary>Draw multiple points on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple points.</param>
+    /// <summary>Draw multiple points on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple points.</param>
     /// <param name="points">the points to draw.</param>
     /// <param name="count">the number of points to draw.</param>
     /// <remarks>
@@ -1524,7 +1445,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderPoint" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderPoints(nint renderer, FPoint[] points) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1532,9 +1452,7 @@ public static unsafe partial class Sdl {
         return RenderPoints(renderer, points.AsSpan());
     }
 
-    /// <summary>Update the screen with any rendering performed since the previous call.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Update the screen with any rendering performed since the previous call.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// SDL's rendering functions operate on a backbuffer; that is, calling a
     /// rendering function such as SDL_RenderLine() does not
@@ -1557,21 +1475,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderPresent(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderPresent(renderer);
+        var result = SDL_RenderPresent(renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to present render");
         }
         return result;
     }
 
-    /// <summary>Read pixels from the current rendering target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Read pixels from the current rendering target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">an <see cref="Rect" /> structure representing the area to read, which will be clipped to the current viewport, or <see langword="null" /> for the entire viewport.</param>
     /// <remarks>
     /// The returned surface contains pixels inside the desired area clipped to the
@@ -1581,21 +1496,18 @@ public static unsafe partial class Sdl {
     /// <para><strong>Version</strong>: This function is available since SDL 3.2.0.</para>
     /// </remarks>
     /// <returns>(SDL_Surface *) Returns a new SDL_Surface on success or <see langword="null" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static nint RenderReadPixels(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        nint result = SDL_RenderReadPixels(renderer, ref rect);
+        var result = SDL_RenderReadPixels(renderer, ref rect);
         if (result == nint.Zero) {
             LogError(LogCategory.Error, "Failed to read pixels from render");
         }
         return result;
     }
 
-    /// <summary>Draw a rectangle on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw a rectangle.</param>
+    /// <summary>Draw a rectangle on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw a rectangle.</param>
     /// <param name="rect">a pointer to the destination rectangle, or <see langword="null" /> to outline the entire rendering target.</param>
     /// <remarks>
     /// <para><strong>Thread Safety</strong>: This function should only be called on the main thread.</para>
@@ -1603,21 +1515,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderRects" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderRect(nint renderer, ref FRect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderRect(renderer, ref rect);
+        var result = SDL_RenderRect(renderer, ref rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render rect");
         }
         return result;
     }
 
-    /// <summary>Draw some number of rectangles on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple rectangles.</param>
+    /// <summary>Draw some number of rectangles on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple rectangles.</param>
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
@@ -1626,21 +1535,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderRects(nint renderer, Span<FRect> rects) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderRects(renderer, rects, rects.Length);
+        var result = SDL_RenderRects(renderer, rects, rects.Length);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render rects");
         }
         return result;
     }
 
-    /// <summary>Draw some number of rectangles on the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should draw multiple rectangles.</param>
+    /// <summary>Draw some number of rectangles on the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should draw multiple rectangles.</param>
     /// <param name="rects">a pointer to an array of destination rectangles.</param>
     /// <param name="count">the number of rectangles.</param>
     /// <remarks>
@@ -1649,7 +1555,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderRects(nint renderer, FRect[] rects) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -1657,9 +1562,7 @@ public static unsafe partial class Sdl {
         return RenderRects(renderer, rects.AsSpan());
     }
 
-    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
@@ -1670,21 +1573,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, ref FRect dstrect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderTexture(renderer, texture, ref srcrect, ref dstrect);
+        var result = SDL_RenderTexture(renderer, texture, ref srcrect, ref dstrect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render texture");
         }
         return result;
     }
 
-    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
@@ -1695,10 +1595,9 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, nint dstrect) {
-        FRect srect = new();
-        FRect drect = new();
+        FRect srect = new FRect();
+        FRect drect = new FRect();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1713,9 +1612,7 @@ public static unsafe partial class Sdl {
         return RenderTexture(renderer, texture, ref srect, ref drect);
     }
 
-    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
@@ -1726,9 +1623,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTexture(nint renderer, nint texture, ref FRect srcrect, nint dstrect) {
-        FRect drect = new();
+        FRect drect = new FRect();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1739,9 +1635,7 @@ public static unsafe partial class Sdl {
         return RenderTexture(renderer, texture, ref srcrect, ref drect);
     }
 
-    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Copy a portion of the texture to the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="dstrect">a pointer to the destination rectangle, or <see langword="null" /> for the entire rendering target.</param>
@@ -1752,9 +1646,8 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTextureTiled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTexture(nint renderer, nint texture, nint srcrect, ref FRect dstrect) {
-        FRect srect = new();
+        FRect srect = new FRect();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1765,9 +1658,7 @@ public static unsafe partial class Sdl {
         return RenderTexture(renderer, texture, ref srect, ref dstrect);
     }
 
-    /// <summary>Perform a scaled copy using the 9-grid algorithm to the current rendering target at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Perform a scaled copy using the 9-grid algorithm to the current rendering target at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">the <see cref="Rect" /> structure representing the rectangle to be used for the 9-grid, or <see langword="null" /> to use the entire texture.</param>
     /// <param name="leftWidth">the width, in pixels, of the left corners in srcrect.</param>
@@ -1787,13 +1678,12 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTexture" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTexture9Grid(nint renderer, nint texture, ref FRect srcrect, float leftWidth,
             float rightWidth, float topHeight, float bottomHeight, float scale, ref FRect dstrect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderTexture9Grid(renderer, texture, ref srcrect, leftWidth, rightWidth,
+        var result = SDL_RenderTexture9Grid(renderer, texture, ref srcrect, leftWidth, rightWidth,
             topHeight, bottomHeight, scale, ref dstrect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render texture 9 grid");
@@ -1801,9 +1691,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Copy a portion of the source texture to the current rendering target, with affine transform, at subpixel precision.</summary>
-
-    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
+    /// <summary>Copy a portion of the source texture to the current rendering target, with affine transform, at subpixel precision.</summary>    /// <param name="renderer">the renderer which should copy parts of a texture.</param>
     /// <param name="texture">the source texture.</param>
     /// <param name="srcrect">a pointer to the source rectangle, or <see langword="null" /> for the entire texture.</param>
     /// <param name="origin">a pointer to a point indicating where the top-left corner of srcrect should be mapped to, or <see langword="null" /> for the rendering target's origin.</param>
@@ -1815,13 +1703,12 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTexture" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTextureAffine(nint renderer, nint texture, in FRect srcrect, in FPoint origin,
             in FPoint right, in FPoint down) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderTextureAffine(renderer, texture, in srcrect, in origin, in right, in down);
+        var result = SDL_RenderTextureAffine(renderer, texture, in srcrect, in origin, in right, in down);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render texture affine");
         }
@@ -1847,7 +1734,7 @@ public static unsafe partial class Sdl {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderTextureRotated(renderer, texture, ref srcrect, ref dstrect, angle, ref center,
+        var result = SDL_RenderTextureRotated(renderer, texture, ref srcrect, ref dstrect, angle, ref center,
             flip);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render texture rotated");
@@ -1870,7 +1757,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, ref FPoint center, FlipMode flip) {
-        FRect srect = new();
+        FRect srect = new FRect();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1895,7 +1782,7 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, ref FPoint center, FlipMode flip) {
-        FRect drect = new();
+        FRect drect = new FRect();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1920,8 +1807,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, nint srcrect, ref FRect dstrect, double angle, nint center, FlipMode flip) {
-        FRect srect = new();
-        FPoint centerPoint = new();
+        FRect srect = new FRect();
+        FPoint centerPoint = new FPoint();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1950,8 +1837,8 @@ public static unsafe partial class Sdl {
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
     public static bool RenderTextureRotated(nint renderer, nint texture, ref FRect srcrect, nint dstrect, double angle, nint center, FlipMode flip) {
-        FRect drect = new();
-        FPoint centerPoint = new();
+        FRect drect = new FRect();
+        FPoint centerPoint = new FPoint();
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
@@ -1981,22 +1868,19 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderTexture" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool RenderTextureTiled(nint renderer, nint texture, ref FRect srcrect, float scale,
             ref FRect dstrect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderTextureTiled(renderer, texture, ref srcrect, scale, ref dstrect);
+        var result = SDL_RenderTextureTiled(renderer, texture, ref srcrect, scale, ref dstrect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to render texture tiled");
         }
         return result;
     }
 
-    /// <summary>Return whether an explicit rectangle was set as the viewport.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Return whether an explicit rectangle was set as the viewport.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <remarks>
     /// This is useful if you're saving and restoring the viewport and want to know
     /// whether you should restore a specific rectangle or <see langword="null" />.
@@ -2006,21 +1890,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderViewport" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> if the viewport was set to a specific rectangle, or<see langword="false" /> if it was set to <see langword="null" /> (the entire target).</returns>
-
     public static bool RenderViewportSet(nint renderer) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_RenderViewportSet(renderer);
+        var result = SDL_RenderViewportSet(renderer);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render viewport");
         }
         return result;
     }
 
-    /// <summary>Set the clip rectangle for rendering on the specified target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the clip rectangle for rendering on the specified target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">an <see cref="Rect" /> structure representing the clip area, relative to the viewport, or <see langword="null" /> to disable clipping.</param>
     /// <remarks>
     /// Each render target has its own clip rectangle. This function sets the
@@ -2031,21 +1912,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderClipEnabled" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderClipRect(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderClipRect(renderer, ref rect);
+        var result = SDL_SetRenderClipRect(renderer, ref rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render clip rect");
         }
         return result;
     }
 
-    /// <summary>Set the color scale used for render operations.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the color scale used for render operations.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="scale">the color scale value.</param>
     /// <remarks>
     /// The color scale is an additional scale multiplied into the pixel color
@@ -2057,21 +1935,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderColorScale" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderColorScale(nint renderer, float scale) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderColorScale(renderer, scale);
+        var result = SDL_SetRenderColorScale(renderer, scale);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render color scale");
         }
         return result;
     }
 
-    /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="blendMode">the <see cref="BlendMode" /> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
@@ -2080,21 +1955,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderDrawBlendMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawBlendMode(nint renderer, uint blendMode) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderDrawBlendMode(renderer, blendMode);
+        var result = SDL_SetRenderDrawBlendMode(renderer, blendMode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render draw blend mode");
         }
         return result;
     }
 
-    /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the blend mode used for drawing operations (Fill and Line).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="blendMode">the <see cref="BlendMode" /> to use for blending.</param>
     /// <remarks>
     /// If the blend mode is not supported, the closest supported mode is chosen.
@@ -2103,21 +1975,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderDrawBlendMode" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawBlendMode(nint renderer, BlendMode mode) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderDrawBlendMode(renderer, (uint)mode);
+        var result = SDL_SetRenderDrawBlendMode(renderer, (uint)mode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render draw blend mode");
         }
         return result;
     }
 
-    /// <summary>Set the color used for drawing operations.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the color used for drawing operations.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="r">the red value used to draw on the rendering target.</param>
     /// <param name="g">the green value used to draw on the rendering target.</param>
     /// <param name="b">the blue value used to draw on the rendering target.</param>
@@ -2131,21 +2000,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColorFloat" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawColor(nint renderer, byte r, byte g, byte b, byte a) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderDrawColor(renderer, r, g, b, a);
+        var result = SDL_SetRenderDrawColor(renderer, r, g, b, a);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render draw color");
         }
         return result;
     }
 
-    /// <summary>Set the color used for drawing operations.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the color used for drawing operations.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="r">the red value used to draw on the rendering target.</param>
     /// <param name="g">the green value used to draw on the rendering target.</param>
     /// <param name="b">the blue value used to draw on the rendering target.</param>
@@ -2159,7 +2025,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColorFloat" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawColor(nint renderer, Color color) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -2167,9 +2032,7 @@ public static unsafe partial class Sdl {
         return SetRenderDrawColor(renderer, color.R, color.G, color.B, color.A);
     }
 
-    /// <summary>Set the color used for drawing operations (Rect, Line and Clear).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the color used for drawing operations (Rect, Line and Clear).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="r">the red value used to draw on the rendering target.</param>
     /// <param name="g">the green value used to draw on the rendering target.</param>
     /// <param name="b">the blue value used to draw on the rendering target.</param>
@@ -2183,21 +2046,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawColorFloat(nint renderer, float r, float g, float b, float a) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderDrawColorFloat(renderer, r, g, b, a);
+        var result = SDL_SetRenderDrawColorFloat(renderer, r, g, b, a);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render draw color float");
         }
         return result;
     }
 
-    /// <summary>Set the color used for drawing operations (Rect, Line and Clear).</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the color used for drawing operations (Rect, Line and Clear).</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="r">the red value used to draw on the rendering target.</param>
     /// <param name="g">the green value used to draw on the rendering target.</param>
     /// <param name="b">the blue value used to draw on the rendering target.</param>
@@ -2211,7 +2071,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="SetRenderDrawColor" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderDrawColorFloat(nint renderer, FColor color) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -2219,9 +2078,7 @@ public static unsafe partial class Sdl {
         return SetRenderDrawColorFloat(renderer, color.R, color.G, color.B, color.A);
     }
 
-    /// <summary>Set a device-independent resolution and presentation mode for rendering.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set a device-independent resolution and presentation mode for rendering.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="w">the width of the logical resolution.</param>
     /// <param name="h">the height of the logical resolution.</param>
     /// <param name="mode">the presentation mode used.</param>
@@ -2236,22 +2093,19 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderLogicalPresentationRect" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderLogicalPresentation(nint renderer, int w, int h,
             RendererLogicalPresentation mode) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderLogicalPresentation(renderer, w, h, mode);
+        var result = SDL_SetRenderLogicalPresentation(renderer, w, h, mode);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render logical presentation");
         }
         return result;
     }
 
-    /// <summary>Set the drawing scale for rendering on the current target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the drawing scale for rendering on the current target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="scaleX">the horizontal scaling factor.</param>
     /// <param name="scaleY">the vertical scaling factor.</param>
     /// <remarks>
@@ -2263,21 +2117,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderScale" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderScale(nint renderer, float scaleX, float scaleY) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderScale(renderer, scaleX, scaleY);
+        var result = SDL_SetRenderScale(renderer, scaleX, scaleY);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render scale");
         }
         return result;
     }
 
-    /// <summary>Set a texture as the current rendering target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set a texture as the current rendering target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="texture">the targeted texture, which must be created with the SDL_TEXTUREACCESS_TARGET flag, or <see langword="null" /> to render to the window instead of a texture.</param>
     /// <remarks>
     /// The default render target is the window for which the renderer was created.
@@ -2288,7 +2139,6 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderTarget" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static SdlBool SetRenderTarget(nint renderer, nint texture) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
@@ -2299,7 +2149,7 @@ public static unsafe partial class Sdl {
             return false;
         }
 
-        SdlBool result = SDL_SetRenderTarget(renderer, texture);
+        var result = SDL_SetRenderTarget(renderer, texture);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render target");
         }
@@ -2307,9 +2157,7 @@ public static unsafe partial class Sdl {
         return result;
     }
 
-    /// <summary>Set the drawing area for rendering on the current target.</summary>
-
-    /// <param name="renderer">the rendering context.</param>
+    /// <summary>Set the drawing area for rendering on the current target.</summary>    /// <param name="renderer">the rendering context.</param>
     /// <param name="rect">the <see cref="Rect" /> structure representing the drawing area, or <see langword="null" /> to set the viewport to the entire target.</param>
     /// <remarks>
     /// Drawing will clip to this area (separately from any clipping done with
@@ -2321,21 +2169,18 @@ public static unsafe partial class Sdl {
     /// <seealso cref="RenderViewportSet" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderViewport(nint renderer, ref Rect rect) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderViewport(renderer, ref rect);
+        var result = SDL_SetRenderViewport(renderer, ref rect);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render viewport");
         }
         return result;
     }
 
-    /// <summary>Toggle VSync of the given renderer.</summary>
-
-    /// <param name="renderer">the renderer to toggle.</param>
+    /// <summary>Toggle VSync of the given renderer.</summary>    /// <param name="renderer">the renderer to toggle.</param>
     /// <param name="vsync">the vertical refresh sync interval.</param>
     /// <remarks>
     /// When a renderer is created, vsync defaults to
@@ -2345,12 +2190,11 @@ public static unsafe partial class Sdl {
     /// <seealso cref="GetRenderVSync" />
     /// </remarks>
     /// <returns>Returns <see langword="true" /> on success or <see langword="false" /> on failure; call <see cref="GetError()" /> for more information.</returns>
-
     public static bool SetRenderVSync(nint renderer, int vsync) {
         if (renderer == nint.Zero) {
             throw new SdlException("Renderer is null");
         }
-        SdlBool result = SDL_SetRenderVSync(renderer, vsync);
+        var result = SDL_SetRenderVSync(renderer, vsync);
         if (!result) {
             LogError(LogCategory.Error, "Failed to set render VSync");
         }
