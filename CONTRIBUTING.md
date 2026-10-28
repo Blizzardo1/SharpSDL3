@@ -1,169 +1,148 @@
-<!-- omit in toc -->
 # Contributing to SharpSDL3
 
-First off, thanks for taking the time to contribute! ❤️
+Thanks for taking the time to contribute! ❤️
 
-All types of contributions are encouraged and valued. See the [Table of Contents](#table-of-contents) for different ways to help and details about how this project handles them. Please make sure to read the relevant section before making your contribution. It will make it a lot easier for us maintainers and smooth out the experience for all involved. The community looks forward to your contributions. 🎉
+SharpSDL3 is a C# mirror of SDL3, written in a C#-style API (no `SDL_` prefixes). The bindings are largely in place. What the project needs most is **documentation**, **optimization**, and **stable builds on Linux**. If you want to help with any of those, you're in the right place.
 
-> And if you like the project, but just don't have time to contribute, that's fine. There are other easy ways to support the project and show your appreciation, which we would also be very happy about:
-> - Star the project
-> - Tweet about it
-> - Refer this project in your project's readme
-> - Mention the project at local meetups and tell your friends/colleagues
+If you like the project but don't have time to contribute, you can still help by starring the repo, mentioning it in your own project's README, or telling a friend.
 
-<!-- omit in toc -->
 ## Table of Contents
 
 - [Code of Conduct](#code-of-conduct)
 - [I Have a Question](#i-have-a-question)
-- [I Want To Contribute](#i-want-to-contribute)
+- [Ways to Help](#ways-to-help)
+- [Legal Notice](#legal-notice)
 - [Reporting Bugs](#reporting-bugs)
 - [Suggesting Enhancements](#suggesting-enhancements)
 - [Your First Code Contribution](#your-first-code-contribution)
-- [Improving The Documentation](#improving-the-documentation)
-- [Styleguides](#styleguides)
-- [Commit Messages](#commit-messages)
-- [Join The Project Team](#join-the-project-team)
-
+- [Improving the Documentation](#improving-the-documentation)
+- [Style Guide](#style-guide)
+- [Join the Project Team](#join-the-project-team)
 
 ## Code of Conduct
 
 This project and everyone participating in it is governed by the
-[SharpSDL3 Code of Conduct](https://github.com/Blizzardo1/SharpSDL3/blob/master/CODE_OF_CONDUCT.md).
-By participating, you are expected to uphold this code. Please report unacceptable behavior
-to .
-
+[SharpSDL3 Code of Conduct](https://github.com/Blizzardo1/SharpSDL3/blob/main/CODE_OF_CONDUCT.md).
+By participating, you are expected to uphold it. Report unacceptable behavior to <conduct@blizzeta.net>.
 
 ## I Have a Question
 
-> If you want to ask a question, you are more than welcome to join our [Discord](https://discord.gg/TYDwY4ZP).
+- Search the [existing issues](https://github.com/Blizzardo1/SharpSDL3/issues) first. If one fits, comment there.
+- Otherwise, ask on [Discord](https://discord.gg/TYDwY4ZP) or open a [new issue](https://github.com/Blizzardo1/SharpSDL3/issues/new) with as much context as you can: your OS, .NET SDK version, SDL3 version, and what you tried.
+- Prefer IRC? Join `#programming` on `irc.geekshed.net`.
 
-Before you ask a question, it is best to search for existing [Issues](https://github.com/Blizzardo1/SharpSDL3/issues) that might help you. In case you have found a suitable issue and still need clarification, you can write your question in this issue. It is also advisable to search the internet for answers first.
+## Ways to Help
 
-If you then still feel the need to ask a question and need clarification, we recommend the following:
+Not sure where to start? These are the most useful contributions right now:
 
-- Open an [Issue](https://github.com/Blizzardo1/SharpSDL3/issues/new).
-- Provide as much context as you can about what you're running into.
-- Provide project and platform versions (nodejs, npm, etc), depending on what seems relevant.
+- **Document a function.** Pick any public API with no XML doc comment and add one (see [Improving the Documentation](#improving-the-documentation)). A single documented function is a welcome PR.
+- **Add a sample.** A minimal "open a window and handle events" program, or a small demo for a subsystem like audio, input, or rendering.
+- **Add or improve tests** in `tests/SharpSDL3.Tests`. See [TESTING.md](TESTING.md).
+- **Test on your platform** (Linux, macOS, Windows, or others) and report what breaks.
+- **Optimize** hot paths and unnecessary allocations.
+- **Pick something off [TODO.md](TODO.md)** or an issue labeled `good first issue` or `help wanted`.
 
-We will then take care of the issue as soon as possible.
+For how the code is organized, read [ARCHITECTURE.md](ARCHITECTURE.md) first.
 
-<!--
-You might want to create a separate issue tag for questions and include it in this description. People should then tag their issues accordingly.
+## Legal Notice
 
-Depending on how large the project is, you may want to outsource the questioning, e.g. to Stack Overflow or Gitter. You may add additional contact and information possibilities:
-- IRC
-- Slack
-- Gitter
-- Stack Overflow tag
-- Blog
-- FAQ
-- Roadmap
-- E-Mail List
-- Forum
--->
+SharpSDL3 is released under the zlib license (see [LICENSE](LICENSE)). When contributing, you must agree that you authored 100% of the content, that you have the necessary rights to it, and that it may be provided under the project license.
 
-If Discord is not your go-to method of asking, then you can join the [#programming](irc://irc.geekshed.net/programming) channel on Geekshed
+## Reporting Bugs
 
-## I Want To Contribute
+### Before submitting
 
-> ### Legal Notice <!-- omit in toc -->
-> When contributing to this project, you must agree that you have authored 100% of the content, that you have the necessary rights to the content and that the content you contribute may be provided under the project license.
+- Use the latest version of SharpSDL3.
+- Check that it's really a bug and not an environment problem (incompatible .NET SDK or SDL3 version, missing native library).
+- Search the [bug tracker](https://github.com/Blizzardo1/SharpSDL3/issues?q=label%3Abug) and the [SDL Wiki](https://wiki.libsdl.org/SDL3/FrontPage) for the same behavior.
+- Collect: stack trace, OS and architecture, .NET SDK version (`dotnet --info`), SDL3 native library version, and the smallest code that reproduces the problem.
 
-### Reporting Bugs
+### How to submit
 
-<!-- omit in toc -->
-#### Before Submitting a Bug Report
+> **Never report security issues in public.** Email <bugz@blizzeta.net> instead.
 
-A good bug report shouldn't leave others needing to chase you up for more information. Therefore, we ask you to investigate carefully, collect information and describe the issue in detail in your report. Please complete the following steps in advance to help us fix any potential bug as fast as possible.
+Open an [issue](https://github.com/Blizzardo1/SharpSDL3/issues/new) and include:
 
-- Make sure that you are using the latest version.
-- Determine if your bug is really a bug and not an error on your side e.g. using incompatible environment components/versions (Make sure that you have read the [documentation](). If you are looking for support, you might want to check [this section](#i-have-a-question)).
-- To see if other users have experienced (and potentially already solved) the same issue you are having, check if there is not already a bug report existing for your bug or error in the [bug tracker](https://github.com/Blizzardo1/SharpSDL3/issues?q=label%3Abug).
-- Also make sure to search the internet (including Stack Overflow) to see if users outside of the GitHub community have discussed the issue.
-- Collect information about the bug:
-- Stack trace (Traceback)
-- OS, Platform and Version (Windows, Linux, macOS, x86, ARM)
-- Version of the interpreter, compiler, SDK, runtime environment, package manager, depending on what seems relevant.
-- Possibly your input and the output
-- Can you reliably reproduce the issue? And can you also reproduce it with older versions?
+- What you expected to happen and what actually happened.
+- Step-by-step reproduction, ideally a reduced test case.
+- The information you collected above.
 
-<!-- omit in toc -->
-#### How Do I Submit a Good Bug Report?
+A maintainer will label the issue. If it can't be reproduced, it gets `needs-repro` and won't be worked on until it can be. Reproducible bugs are marked `needs-fix`, plus other labels such as `critical` where it applies.
 
-> You must never report security related issues, vulnerabilities or bugs including sensitive information to the issue tracker, or elsewhere in public. Instead sensitive bugs must be sent by email to .
-<!-- You may add a PGP key to allow the messages to be sent encrypted as well. -->
-<!-- This will eventually be added if I can be bothered -->
+## Suggesting Enhancements
 
-We use GitHub issues to track bugs and errors. If you run into an issue with the project:
+Before opening a suggestion:
 
-- Open an [Issue](https://github.com/Blizzardo1/hid-sharp/issues/new). (Since we can't be sure at this point whether it is a bug or not, we ask you not to talk about a bug yet and not to label the issue.)
-- Explain the behavior you would expect and the actual behavior.
-- Please provide as much context as possible and describe the *reproduction steps* that someone else can follow to recreate the issue on their own. This usually includes your code. For good bug reports you should isolate the problem and create a reduced test case.
-- Provide the information you collected in the previous section.
+- Check that you're on the latest version.
+- Read the [README](https://github.com/Blizzardo1/SharpSDL3/blob/main/README.md) to see if it's already covered.
+- Search [issues](https://github.com/Blizzardo1/SharpSDL3/issues) for existing suggestions and comment there rather than duplicating.
+- Consider whether it fits the project's scope: a C#-friendly mirror of SDL3. Features useful to most users are a better fit than niche ones.
 
-Once it's filed:
+When you open one, include a clear title, a detailed description, the current behavior versus what you'd expect, and why it would help most SharpSDL3 users.
 
-- The project team will label the issue accordingly.
-- A team member will try to reproduce the issue with your provided steps. If there are no reproduction steps or no obvious way to reproduce the issue, the team will ask you for those steps and mark the issue as `needs-repro`. Bugs with the `needs-repro` tag will not be addressed until they are reproduced.
-- If the team is able to reproduce the issue, it will be marked `needs-fix`, as well as possibly other tags (such as `critical`), and the issue will be left to be [implemented by someone](#your-first-code-contribution).
+## Your First Code Contribution
 
-<!-- You might want to create an issue template for bugs and errors that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
+### Setup
 
+1. Fork the repository and clone your fork.
+2. Install the .NET SDK version the project targets (check the `.csproj` files and `global.json` if present).
+3. Install the SDL3 native library for your platform. The bindings load it at runtime.
+4. Build and test:
+   ```bash
+   dotnet build SharpSDL3.sln
+   dotnet test
+   ```
 
-### Suggesting Enhancements
+### Workflow
 
-This section guides you through submitting an enhancement suggestion for HID API, **including completely new features and minor improvements to existing functionality**. Following these guidelines will help maintainers and the community to understand your suggestion and find related suggestions.
+1. Create a branch from `main` (for example `docs/sdl-window` or `fix/audio-leak`).
+2. Make your change, keeping it focused on one thing.
+3. Run the build and tests locally.
+4. Open a pull request against `main` and describe what changed and why.
+5. A maintainer will review it. Expect some back-and-forth.
 
-<!-- omit in toc -->
-#### Before Submitting an Enhancement
+### Generated code
 
-- Make sure that you are using the latest version.
-- Read the [Main Readme](https://github.com/Blizzardo1/SharpSDL3/README.md) carefully and find out if the functionality is already covered, maybe by an individual configuration.
-- Perform a [search](https://github.com/Blizzardo1/SharpSDL3/issues) to see if the enhancement has already been suggested. If it has, add a comment to the existing issue instead of opening a new one.
-- Find out whether your idea fits with the scope and aims of the project. It's up to you to make a strong case to convince the project's developers of the merits of this feature. Keep in mind that we want features that will be useful to the majority of our users and not just a small subset. If you're just targeting a minority of users, consider writing an add-on/plugin library.
+Much of the binding code is generated from SDL's headers (see `generate_json.sh` and [ARCHITECTURE.md](ARCHITECTURE.md)). If a file is generated, change the generator rather than hand-editing its output. When updating the bindings, search generated files for `WARN_` to find definitions the generator couldn't handle and that need manual attention.
 
-<!-- omit in toc -->
-#### How Do I Submit a Good Enhancement Suggestion?
+## Improving the Documentation
 
-Enhancement suggestions are tracked as [GitHub issues](https://github.com/Blizzardo1/SharpSDL3/issues).
+Documentation is the project's biggest gap, and the easiest way to start contributing.
 
-- Use a **clear and descriptive title** for the issue to identify the suggestion.
-- Provide a **step-by-step description of the suggested enhancement** in as many details as possible.
-- **Describe the current behavior** and **explain which behavior you expected to see instead** and why. At this point you can also tell which alternatives do not work for you.
-- You may want to **include screenshots and animated GIFs** which help you demonstrate the steps or point out the part which the suggestion is related to. You can use [this tool](https://www.cockos.com/licecap/) to record GIFs on macOS and Windows, and [this tool](https://github.com/colinkeenan/silentcast) or [this tool](https://github.com/GNOME/byzanz) on Linux. <!-- this should only be included if the project has a GUI -->
-- **Explain why this enhancement would be useful** to most HID API users. You may also want to point out the other projects that solved it better and which could serve as inspiration.
+- Add XML doc comments to public types and members.
+- Link each member to its SDL3 Wiki page.
+- Add examples to the README or a `docs/` page.
 
-<!-- You might want to create an issue template for enhancement suggestions that can be used as a guide and that defines the structure of the information to be included. If you do so, reference it here in the description. -->
+Example:
 
-### Your First Code Contribution
-<!-- TODO
-include Setup of env, IDE and typical getting started instructions?
+```csharp
+/// <summary>
+/// Creates a window with the given title, size, and flags.
+/// </summary>
+/// <param name="title">The window title, as UTF-8.</param>
+/// <param name="width">The width of the window, in pixels.</param>
+/// <param name="height">The height of the window, in pixels.</param>
+/// <param name="flags">Window creation flags.</param>
+/// <returns>The new window, or <c>null</c> on failure.</returns>
+/// <remarks>
+/// Wraps <c>SDL_CreateWindow</c>. See
+/// <see href="https://wiki.libsdl.org/SDL3/SDL_CreateWindow">the SDL3 Wiki</see>.
+/// </remarks>
+```
 
--->
+Write descriptions in your own words. Don't copy SDL's documentation verbatim. Summarize it and link to the Wiki for the full details.
 
-Be sure that your code is in a separate branch for your own testing before being pushed for review. Once under review, Code Managers will determine if your PR is accepted to the main branch.
+## Style Guide
 
-### Improving The Documentation
-<!-- TODO
-Updating, improving and correcting the documentation
+- Public API uses C# naming (`PascalCase`) with the `SDL_` prefix dropped. The original SDL-style declarations stay private.
+- Keep `nint` and pointer handling out of the public surface where a safer type or overload is possible.
+- Follow the existing formatting in the file you're editing.
+- Commit messages: a short imperative summary (about 72 characters or fewer), such as `Document SDL_Window functions`. Add a body if the change needs explanation.
 
--->
+## Join the Project Team
 
-We are open to documentation improvements such as implementing Doxygen or other means to create a fluid and easy to read documentation page to help newcomers better understand the inner workings of HID API
+If you'd like to become a regular contributor, email <developer@blizzeta.net> with your GitHub username and a short note about yourself and your past work.
 
-## Styleguides
-### Commit Messages
-<!-- TODO
-
--->
-
-
-## Join The Project Team
-<!-- TODO -->
-Please send an email to <developer@blizzeta.net> with your username and Github link and a little message describing yourself and your past contributions to other projects.
-
-
-<!-- omit in toc -->
 ## Attribution
-This guide is based on the **contributing-gen**, and man does it come in clutch! [Make your own](https://github.com/bttger/contributing-gen)!
+
+This guide is based on [contributing-gen](https://github.com/bttger/contributing-gen).
